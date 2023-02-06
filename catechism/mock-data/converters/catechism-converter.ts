@@ -65,7 +65,7 @@ function indent(indentationLevel: number, sourceCode: string): string {
 function getSourceCodeForPrologue(prologue: Prologue): string {
     return indent(
         1,
-        `
+        `\
         {
             contentType: Content.PROLOGUE,
             pathID: '${prologue.pathID}',
@@ -80,7 +80,7 @@ function getSourceCodeForPrologue(prologue: Prologue): string {
 function getSourceCodeForPart(part: Part): string {
     return indent(
         1,
-        `
+        `\
         {
             contentType: Content.PART,
             pathID: '${part.pathID}',
@@ -149,7 +149,7 @@ function getSourceCode<T extends ContentBase>(content: T, indentationLevel: numb
 function getSourceCodeForSection(section: Section, indentationLevel: number): string {
     return indent(
         indentationLevel,
-        `
+        `\
         {
             contentType: Content.SECTION,
             pathID: '${section.pathID}',
@@ -168,7 +168,7 @@ function getSourceCodeForSection(section: Section, indentationLevel: number): st
 function getSourceCodeForChapter(chapter: Chapter, indentationLevel: number): string {
     return indent(
         indentationLevel,
-        `
+        `\
         {
             contentType: Content.CHAPTER,
             pathID: '${chapter.pathID}',
@@ -187,7 +187,7 @@ function getSourceCodeForChapter(chapter: Chapter, indentationLevel: number): st
 function getSourceCodeForArticle(article: Article, indentationLevel: number): string {
     return indent(
         indentationLevel,
-        `
+        `\
         {
             contentType: Content.ARTICLE,
             pathID: '${article.pathID}',
@@ -206,7 +206,7 @@ function getSourceCodeForArticle(article: Article, indentationLevel: number): st
 function getSourceCodeForArticleParagraph(articleParagraph: ArticleParagraph, indentationLevel: number): string {
     return indent(
         indentationLevel,
-        `
+        `\
         {
             contentType: Content.ARTICLE_PARAGRAPH,
             pathID: '${articleParagraph.pathID}',
@@ -222,7 +222,7 @@ function getSourceCodeForArticleParagraph(articleParagraph: ArticleParagraph, in
 function getSourceCodeForSubarticle(subarticle: Subarticle, indentationLevel: number): string {
     return indent(
         indentationLevel,
-        `
+        `\
         {
             contentType: Content.SUB_ARTICLE,
             pathID: '${subarticle.pathID}',
@@ -238,7 +238,7 @@ function getSourceCodeForSubarticle(subarticle: Subarticle, indentationLevel: nu
 function getSourceCodeForInBrief(inBrief: InBrief, indentationLevel: number): string {
     return indent(
         indentationLevel,
-        `
+        `\
         {
             contentType: Content.IN_BRIEF,
             pathID: '${inBrief.pathID}',
@@ -252,7 +252,7 @@ function getSourceCodeForInBrief(inBrief: InBrief, indentationLevel: number): st
 function getSourceCodeForParagraphGroup(paragraphGroup: ParagraphGroup, indentationLevel: number): string {
     return indent(
         indentationLevel,
-        `
+        `\
         {
             contentType: Content.PARAGRAPH_GROUP,
             pathID: '${paragraphGroup.pathID}',
@@ -268,7 +268,7 @@ function getSourceCodeForParagraphGroup(paragraphGroup: ParagraphGroup, indentat
 function getSourceCodeForBlockQuote(blockQuote: BlockQuote, indentationLevel: number): string {
     return indent(
         indentationLevel,
-        `
+        `\
         {
             contentType: Content.BLOCK_QUOTE,
             pathID: '${blockQuote.pathID}',
@@ -282,7 +282,7 @@ function getSourceCodeForBlockQuote(blockQuote: BlockQuote, indentationLevel: nu
 function getSourceCodeForParagraph(paragraph: Paragraph, indentationLevel: number): string {
     return indent(
         indentationLevel,
-        `
+        `\
         {
             contentType: Content.PARAGRAPH,
             pathID: '${paragraph.pathID}',
@@ -298,7 +298,7 @@ function getSourceCodeForParagraph(paragraph: Paragraph, indentationLevel: numbe
 function getSourceCodeForTextContainer(textContainer: TextContainer, indentationLevel: number): string {
     return indent(
         indentationLevel,
-        `
+        `\
         {
             contentType: Content.TEXT_CONTAINER,
             pathID: '${textContainer.pathID}',
@@ -324,7 +324,7 @@ function getSourceCodeForTextArray(textArray: Array<Text>, indentationLevel: num
 function getSourceCodeForText(text: Text, indentationLevel: number): string {
     return indent(
         indentationLevel,
-        `
+        `\
         {
             contentType: Content.TEXT,
             pathID: '${text.pathID}',
@@ -353,7 +353,7 @@ function getSourceCodeForReference(reference: Reference, indentationLevel: numbe
 function getSourceCodeForBibleReference(reference: BibleReference, indentationLevel: number): string {
     return indent(
         indentationLevel,
-        `
+        `\
         {
             referenceType: ReferenceEnum.BIBLE,
             direct: ${reference.direct},
@@ -371,7 +371,7 @@ function getNumberOrNumberRangeAsString(value: NumberOrNumberRange): string {
 function getSourceCodeForOtherReference(reference: OtherReference, indentationLevel: number): string {
     return indent(
         indentationLevel,
-        `
+        `\
         {
             referenceType: ReferenceEnum.OTHER,
             direct: ${reference.direct},
