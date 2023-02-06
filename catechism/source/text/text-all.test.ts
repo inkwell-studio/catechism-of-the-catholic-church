@@ -8,7 +8,7 @@ import {
     assertStrictEquals,
     assertStringIncludes,
     fail,
-} from '../dependencies.ts';
+} from '../../../dependencies.ts';
 
 //#region setup
 const allTexts: Array<[string, CatechismText]> = [

@@ -1,6 +1,6 @@
 import { TextKey } from './text-key.ts';
 
-import { assertStrictEquals, fail } from '../dependencies.ts';
+import { assertStrictEquals, fail } from '../../../dependencies.ts';
 
 console.log('\nText keys ...');
 

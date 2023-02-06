@@ -1,7 +1,7 @@
 import { Text } from './text-en.ts';
 import { TextKey } from '../types/types.ts';
 
-import { assertNotMatch, assertStrictEquals } from '../dependencies.ts';
+import { assertNotMatch, assertStrictEquals } from '../../../dependencies.ts';
 
 const lineKeys = Object.values(TextKey);
 

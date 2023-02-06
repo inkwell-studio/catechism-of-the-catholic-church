@@ -38,13 +38,22 @@ export const Catechism: CatechismStructure = {
                                     strong: false,
                                     emphasis: false,
                                     smallCaps: false,
+                                },
+                        
+                                {
+                                    contentType: Content.TEXT,
+                                    pathID: '0-0-2',
+                                    content: TextKey.PROLOGUE_01__TEXT_CONTAINER_01__TEXT_03__CONTENT,
+                                    strong: false,
+                                    emphasis: false,
+                                    smallCaps: false,
                                 }
                         ],
                         references: [
                             
                         ],
                         paragraphReferences: [
-                            
+                            6
                         ],
                     },
             
@@ -63,263 +72,45 @@ export const Catechism: CatechismStructure = {
                                     mainContent: [
                                                         
                                                 {
-                                                    contentType: Content.PARAGRAPH,
+                                                    contentType: Content.TEXT_CONTAINER,
                                                     pathID: '0-1-0-0',
-                                                    paragraphNumber: 1,
-                                                    supplementary: true,
                                                     mainContent: [
                                                                             
                                                                     {
-                                                                        contentType: Content.TEXT_CONTAINER,
+                                                                        contentType: Content.TEXT,
                                                                         pathID: '0-1-0-0-0',
-                                                                        mainContent: [
-                                                                                                    
-                                                                                            {
-                                                                                                contentType: Content.TEXT,
-                                                                                                pathID: '0-1-0-0-0-0',
-                                                                                                content: TextKey.PROLOGUE_01__SUB_ARTICLE_01__PARAGRAPH_GROUP_01__PARAGRAPH_01__TEXT_CONTAINER_01__TEXT_01__CONTENT,
-                                                                                                strong: false,
-                                                                                                emphasis: false,
-                                                                                                smallCaps: false,
-                                                                                            }
-                                                                        ],
-                                                                        references: [
+                                                                        content: TextKey.PROLOGUE_01__SUB_ARTICLE_01__PARAGRAPH_GROUP_01__TEXT_CONTAINER_01__TEXT_01__CONTENT,
+                                                                        strong: false,
+                                                                        emphasis: false,
+                                                                        smallCaps: false,
+                                                                    }
+                                                    ],
+                                                    references: [
                                                                             
-                                                                        ],
-                                                                        paragraphReferences: [
-                                                                            5
-                                                                        ],
+                                                                    {
+                                                                        referenceType: ReferenceEnum.OTHER,
+                                                                        direct: true,
+                                                                        source: OtherSourceEnum.SOURCE_1,
+                                                                        pointer: ``,
+                                                                    },
+                                                            
+                                                                    {
+                                                                        referenceType: ReferenceEnum.BIBLE,
+                                                                        direct: false,
+                                                                        book: BibleBook.PSALMS,
+                                                                        chapter: 3,
+                                                                        verses: 3,
+                                                                    },
+                                                            
+                                                                    {
+                                                                        referenceType: ReferenceEnum.OTHER,
+                                                                        direct: false,
+                                                                        source: OtherSourceEnum.SOURCE_3,
+                                                                        pointer: `Ch. IX, p.4`,
                                                                     },
                                                     ],
-                                                },
-                                        
-                                                {
-                                                    contentType: Content.PARAGRAPH,
-                                                    pathID: '0-1-0-1',
-                                                    paragraphNumber: 2,
-                                                    supplementary: true,
-                                                    mainContent: [
-                                                                            
-                                                                    {
-                                                                        contentType: Content.TEXT_CONTAINER,
-                                                                        pathID: '0-1-0-1-0',
-                                                                        mainContent: [
-                                                                                                    
-                                                                                            {
-                                                                                                contentType: Content.TEXT,
-                                                                                                pathID: '0-1-0-1-0-0',
-                                                                                                content: TextKey.PROLOGUE_01__SUB_ARTICLE_01__PARAGRAPH_GROUP_01__PARAGRAPH_02__TEXT_CONTAINER_01__TEXT_01__CONTENT,
-                                                                                                strong: false,
-                                                                                                emphasis: false,
-                                                                                                smallCaps: false,
-                                                                                            },
-                                                                                    
-                                                                                            {
-                                                                                                contentType: Content.TEXT,
-                                                                                                pathID: '0-1-0-1-0-1',
-                                                                                                content: TextKey.PROLOGUE_01__SUB_ARTICLE_01__PARAGRAPH_GROUP_01__PARAGRAPH_02__TEXT_CONTAINER_01__TEXT_02__CONTENT,
-                                                                                                strong: false,
-                                                                                                emphasis: false,
-                                                                                                smallCaps: false,
-                                                                                            },
-                                                                                    
-                                                                                            {
-                                                                                                contentType: Content.TEXT,
-                                                                                                pathID: '0-1-0-1-0-2',
-                                                                                                content: TextKey.PROLOGUE_01__SUB_ARTICLE_01__PARAGRAPH_GROUP_01__PARAGRAPH_02__TEXT_CONTAINER_01__TEXT_03__CONTENT,
-                                                                                                strong: false,
-                                                                                                emphasis: false,
-                                                                                                smallCaps: false,
-                                                                                            }
-                                                                        ],
-                                                                        references: [
-                                                                                                    
-                                                                                            {
-                                                                                                referenceType: ReferenceEnum.OTHER,
-                                                                                                direct: false,
-                                                                                                source: OtherSourceEnum.SOURCE_2,
-                                                                                                pointer: `Article VII, 8, 3, 1-2`,
-                                                                                            },
-                                                                                    
-                                                                                            {
-                                                                                                referenceType: ReferenceEnum.OTHER,
-                                                                                                direct: false,
-                                                                                                source: OtherSourceEnum.SOURCE_2,
-                                                                                                pointer: `Article VII, 8, 3, 1-2`,
-                                                                                            },
-                                                                                    
-                                                                                            {
-                                                                                                referenceType: ReferenceEnum.BIBLE,
-                                                                                                direct: false,
-                                                                                                book: BibleBook.JOHN,
-                                                                                                chapter: 3,
-                                                                                                verses: 1,
-                                                                                            },
-                                                                        ],
-                                                                        paragraphReferences: [
-                                                                            
-                                                                        ],
-                                                                    },
-                                                            
-                                                                    {
-                                                                        contentType: Content.TEXT_CONTAINER,
-                                                                        pathID: '0-1-0-1-1',
-                                                                        mainContent: [
-                                                                                                    
-                                                                                            {
-                                                                                                contentType: Content.TEXT,
-                                                                                                pathID: '0-1-0-1-1-0',
-                                                                                                content: TextKey.PROLOGUE_01__SUB_ARTICLE_01__PARAGRAPH_GROUP_01__PARAGRAPH_02__TEXT_CONTAINER_02__TEXT_01__CONTENT,
-                                                                                                strong: false,
-                                                                                                emphasis: false,
-                                                                                                smallCaps: false,
-                                                                                            },
-                                                                                    
-                                                                                            {
-                                                                                                contentType: Content.TEXT,
-                                                                                                pathID: '0-1-0-1-1-1',
-                                                                                                content: TextKey.PROLOGUE_01__SUB_ARTICLE_01__PARAGRAPH_GROUP_01__PARAGRAPH_02__TEXT_CONTAINER_02__TEXT_02__CONTENT,
-                                                                                                strong: false,
-                                                                                                emphasis: false,
-                                                                                                smallCaps: false,
-                                                                                            }
-                                                                        ],
-                                                                        references: [
-                                                                            
-                                                                        ],
-                                                                        paragraphReferences: [
-                                                                            
-                                                                        ],
-                                                                    },
-                                                    ],
-                                                },
-                                        
-                                                {
-                                                    contentType: Content.BLOCK_QUOTE,
-                                                    pathID: '0-1-0-2',
-                                                    mainContent: [
-                                                                            
-                                                                    {
-                                                                        contentType: Content.TEXT_CONTAINER,
-                                                                        pathID: '0-1-0-2-0',
-                                                                        mainContent: [
-                                                                                                    
-                                                                                            {
-                                                                                                contentType: Content.TEXT,
-                                                                                                pathID: '0-1-0-2-0-0',
-                                                                                                content: TextKey.PROLOGUE_01__SUB_ARTICLE_01__PARAGRAPH_GROUP_01__BLOCK_QUOTE_01__TEXT_CONTAINER_01__TEXT_01__CONTENT,
-                                                                                                strong: false,
-                                                                                                emphasis: false,
-                                                                                                smallCaps: false,
-                                                                                            },
-                                                                                    
-                                                                                            {
-                                                                                                contentType: Content.TEXT,
-                                                                                                pathID: '0-1-0-2-0-1',
-                                                                                                content: TextKey.PROLOGUE_01__SUB_ARTICLE_01__PARAGRAPH_GROUP_01__BLOCK_QUOTE_01__TEXT_CONTAINER_01__TEXT_02__CONTENT,
-                                                                                                strong: false,
-                                                                                                emphasis: false,
-                                                                                                smallCaps: false,
-                                                                                            },
-                                                                                    
-                                                                                            {
-                                                                                                contentType: Content.TEXT,
-                                                                                                pathID: '0-1-0-2-0-2',
-                                                                                                content: TextKey.PROLOGUE_01__SUB_ARTICLE_01__PARAGRAPH_GROUP_01__BLOCK_QUOTE_01__TEXT_CONTAINER_01__TEXT_03__CONTENT,
-                                                                                                strong: false,
-                                                                                                emphasis: false,
-                                                                                                smallCaps: false,
-                                                                                            }
-                                                                        ],
-                                                                        references: [
-                                                                            
-                                                                        ],
-                                                                        paragraphReferences: [
-                                                                            
-                                                                        ],
-                                                                    },
-                                                            
-                                                                    {
-                                                                        contentType: Content.TEXT_CONTAINER,
-                                                                        pathID: '0-1-0-2-1',
-                                                                        mainContent: [
-                                                                                                    
-                                                                                            {
-                                                                                                contentType: Content.TEXT,
-                                                                                                pathID: '0-1-0-2-1-0',
-                                                                                                content: TextKey.PROLOGUE_01__SUB_ARTICLE_01__PARAGRAPH_GROUP_01__BLOCK_QUOTE_01__TEXT_CONTAINER_02__TEXT_01__CONTENT,
-                                                                                                strong: false,
-                                                                                                emphasis: false,
-                                                                                                smallCaps: false,
-                                                                                            },
-                                                                                    
-                                                                                            {
-                                                                                                contentType: Content.TEXT,
-                                                                                                pathID: '0-1-0-2-1-1',
-                                                                                                content: TextKey.PROLOGUE_01__SUB_ARTICLE_01__PARAGRAPH_GROUP_01__BLOCK_QUOTE_01__TEXT_CONTAINER_02__TEXT_02__CONTENT,
-                                                                                                strong: false,
-                                                                                                emphasis: false,
-                                                                                                smallCaps: false,
-                                                                                            },
-                                                                                    
-                                                                                            {
-                                                                                                contentType: Content.TEXT,
-                                                                                                pathID: '0-1-0-2-1-2',
-                                                                                                content: TextKey.PROLOGUE_01__SUB_ARTICLE_01__PARAGRAPH_GROUP_01__BLOCK_QUOTE_01__TEXT_CONTAINER_02__TEXT_03__CONTENT,
-                                                                                                strong: false,
-                                                                                                emphasis: false,
-                                                                                                smallCaps: false,
-                                                                                            }
-                                                                        ],
-                                                                        references: [
-                                                                                                    
-                                                                                            {
-                                                                                                referenceType: ReferenceEnum.OTHER,
-                                                                                                direct: true,
-                                                                                                source: OtherSourceEnum.SOURCE_1,
-                                                                                                pointer: `Ch. IX, p.4`,
-                                                                                            },
-                                                                                    
-                                                                                            {
-                                                                                                referenceType: ReferenceEnum.OTHER,
-                                                                                                direct: true,
-                                                                                                source: OtherSourceEnum.SOURCE_3,
-                                                                                                pointer: `398-401`,
-                                                                                            },
-                                                                        ],
-                                                                        paragraphReferences: [
-                                                                            
-                                                                        ],
-                                                                    },
-                                                            
-                                                                    {
-                                                                        contentType: Content.TEXT_CONTAINER,
-                                                                        pathID: '0-1-0-2-2',
-                                                                        mainContent: [
-                                                                                                    
-                                                                                            {
-                                                                                                contentType: Content.TEXT,
-                                                                                                pathID: '0-1-0-2-2-0',
-                                                                                                content: TextKey.PROLOGUE_01__SUB_ARTICLE_01__PARAGRAPH_GROUP_01__BLOCK_QUOTE_01__TEXT_CONTAINER_03__TEXT_01__CONTENT,
-                                                                                                strong: false,
-                                                                                                emphasis: false,
-                                                                                                smallCaps: false,
-                                                                                            }
-                                                                        ],
-                                                                        references: [
-                                                                                                    
-                                                                                            {
-                                                                                                referenceType: ReferenceEnum.BIBLE,
-                                                                                                direct: true,
-                                                                                                book: BibleBook.ACTS_OF_THE_APOSTLES,
-                                                                                                chapter: 2,
-                                                                                                verses: 1,
-                                                                                            },
-                                                                        ],
-                                                                        paragraphReferences: [
-                                                                            
-                                                                        ],
-                                                                    },
+                                                    paragraphReferences: [
+                                                        
                                                     ],
                                                 },
                                     ],
@@ -335,7 +126,7 @@ export const Catechism: CatechismStructure = {
                                                 {
                                                     contentType: Content.PARAGRAPH,
                                                     pathID: '0-1-1-0',
-                                                    paragraphNumber: 3,
+                                                    paragraphNumber: 1,
                                                     supplementary: false,
                                                     mainContent: [
                                                                             
@@ -366,37 +157,75 @@ export const Catechism: CatechismStructure = {
                                                                             
                                                                         ],
                                                                         paragraphReferences: [
-                                                                            12
+                                                                            33
+                                                                        ],
+                                                                    },
+                                                    ],
+                                                },
+                                    ],
+                                },
+                        
+                                {
+                                    contentType: Content.PARAGRAPH_GROUP,
+                                    pathID: '0-1-2',
+                                    paragraphGroupNumber: 1,
+                                    title: TextKey.PROLOGUE_01__SUB_ARTICLE_01__PARAGRAPH_GROUP_03__TITLE,
+                                    mainContent: [
+                                                        
+                                                {
+                                                    contentType: Content.BLOCK_QUOTE,
+                                                    pathID: '0-1-2-0',
+                                                    mainContent: [
+                                                                            
+                                                                    {
+                                                                        contentType: Content.TEXT_CONTAINER,
+                                                                        pathID: '0-1-2-0-0',
+                                                                        mainContent: [
+                                                                                                    
+                                                                                            {
+                                                                                                contentType: Content.TEXT,
+                                                                                                pathID: '0-1-2-0-0-0',
+                                                                                                content: TextKey.PROLOGUE_01__SUB_ARTICLE_01__PARAGRAPH_GROUP_03__BLOCK_QUOTE_01__TEXT_CONTAINER_01__TEXT_01__CONTENT,
+                                                                                                strong: false,
+                                                                                                emphasis: false,
+                                                                                                smallCaps: false,
+                                                                                            },
+                                                                                    
+                                                                                            {
+                                                                                                contentType: Content.TEXT,
+                                                                                                pathID: '0-1-2-0-0-1',
+                                                                                                content: TextKey.PROLOGUE_01__SUB_ARTICLE_01__PARAGRAPH_GROUP_03__BLOCK_QUOTE_01__TEXT_CONTAINER_01__TEXT_02__CONTENT,
+                                                                                                strong: false,
+                                                                                                emphasis: false,
+                                                                                                smallCaps: false,
+                                                                                            },
+                                                                                    
+                                                                                            {
+                                                                                                contentType: Content.TEXT,
+                                                                                                pathID: '0-1-2-0-0-2',
+                                                                                                content: TextKey.PROLOGUE_01__SUB_ARTICLE_01__PARAGRAPH_GROUP_03__BLOCK_QUOTE_01__TEXT_CONTAINER_01__TEXT_03__CONTENT,
+                                                                                                strong: false,
+                                                                                                emphasis: false,
+                                                                                                smallCaps: false,
+                                                                                            }
+                                                                        ],
+                                                                        references: [
+                                                                            
+                                                                        ],
+                                                                        paragraphReferences: [
+                                                                            
                                                                         ],
                                                                     },
                                                             
                                                                     {
                                                                         contentType: Content.TEXT_CONTAINER,
-                                                                        pathID: '0-1-1-0-1',
+                                                                        pathID: '0-1-2-0-1',
                                                                         mainContent: [
                                                                                                     
                                                                                             {
                                                                                                 contentType: Content.TEXT,
-                                                                                                pathID: '0-1-1-0-1-0',
-                                                                                                content: TextKey.PROLOGUE_01__SUB_ARTICLE_01__PARAGRAPH_GROUP_02__PARAGRAPH_01__TEXT_CONTAINER_02__TEXT_01__CONTENT,
-                                                                                                strong: false,
-                                                                                                emphasis: false,
-                                                                                                smallCaps: false,
-                                                                                            },
-                                                                                    
-                                                                                            {
-                                                                                                contentType: Content.TEXT,
-                                                                                                pathID: '0-1-1-0-1-1',
-                                                                                                content: TextKey.PROLOGUE_01__SUB_ARTICLE_01__PARAGRAPH_GROUP_02__PARAGRAPH_01__TEXT_CONTAINER_02__TEXT_02__CONTENT,
-                                                                                                strong: false,
-                                                                                                emphasis: false,
-                                                                                                smallCaps: false,
-                                                                                            },
-                                                                                    
-                                                                                            {
-                                                                                                contentType: Content.TEXT,
-                                                                                                pathID: '0-1-1-0-1-2',
-                                                                                                content: TextKey.PROLOGUE_01__SUB_ARTICLE_01__PARAGRAPH_GROUP_02__PARAGRAPH_01__TEXT_CONTAINER_02__TEXT_03__CONTENT,
+                                                                                                pathID: '0-1-2-0-1-0',
+                                                                                                content: TextKey.PROLOGUE_01__SUB_ARTICLE_01__PARAGRAPH_GROUP_03__BLOCK_QUOTE_01__TEXT_CONTAINER_02__TEXT_01__CONTENT,
                                                                                                 strong: false,
                                                                                                 emphasis: false,
                                                                                                 smallCaps: false,
@@ -414,20 +243,64 @@ export const Catechism: CatechismStructure = {
                                         
                                                 {
                                                     contentType: Content.PARAGRAPH,
-                                                    pathID: '0-1-1-1',
-                                                    paragraphNumber: 4,
-                                                    supplementary: false,
+                                                    pathID: '0-1-2-1',
+                                                    paragraphNumber: 2,
+                                                    supplementary: true,
                                                     mainContent: [
                                                                             
                                                                     {
                                                                         contentType: Content.TEXT_CONTAINER,
-                                                                        pathID: '0-1-1-1-0',
+                                                                        pathID: '0-1-2-1-0',
                                                                         mainContent: [
                                                                                                     
                                                                                             {
                                                                                                 contentType: Content.TEXT,
-                                                                                                pathID: '0-1-1-1-0-0',
-                                                                                                content: TextKey.PROLOGUE_01__SUB_ARTICLE_01__PARAGRAPH_GROUP_02__PARAGRAPH_02__TEXT_CONTAINER_01__TEXT_01__CONTENT,
+                                                                                                pathID: '0-1-2-1-0-0',
+                                                                                                content: TextKey.PROLOGUE_01__SUB_ARTICLE_01__PARAGRAPH_GROUP_03__PARAGRAPH_01__TEXT_CONTAINER_01__TEXT_01__CONTENT,
+                                                                                                strong: false,
+                                                                                                emphasis: false,
+                                                                                                smallCaps: false,
+                                                                                            }
+                                                                        ],
+                                                                        references: [
+                                                                            
+                                                                        ],
+                                                                        paragraphReferences: [
+                                                                            
+                                                                        ],
+                                                                    },
+                                                            
+                                                                    {
+                                                                        contentType: Content.TEXT_CONTAINER,
+                                                                        pathID: '0-1-2-1-1',
+                                                                        mainContent: [
+                                                                                                    
+                                                                                            {
+                                                                                                contentType: Content.TEXT,
+                                                                                                pathID: '0-1-2-1-1-0',
+                                                                                                content: TextKey.PROLOGUE_01__SUB_ARTICLE_01__PARAGRAPH_GROUP_03__PARAGRAPH_01__TEXT_CONTAINER_02__TEXT_01__CONTENT,
+                                                                                                strong: false,
+                                                                                                emphasis: false,
+                                                                                                smallCaps: false,
+                                                                                            }
+                                                                        ],
+                                                                        references: [
+                                                                            
+                                                                        ],
+                                                                        paragraphReferences: [
+                                                                            
+                                                                        ],
+                                                                    },
+                                                            
+                                                                    {
+                                                                        contentType: Content.TEXT_CONTAINER,
+                                                                        pathID: '0-1-2-1-2',
+                                                                        mainContent: [
+                                                                                                    
+                                                                                            {
+                                                                                                contentType: Content.TEXT,
+                                                                                                pathID: '0-1-2-1-2-0',
+                                                                                                content: TextKey.PROLOGUE_01__SUB_ARTICLE_01__PARAGRAPH_GROUP_03__PARAGRAPH_01__TEXT_CONTAINER_03__TEXT_01__CONTENT,
                                                                                                 strong: false,
                                                                                                 emphasis: false,
                                                                                                 smallCaps: false,
@@ -435,8 +308,111 @@ export const Catechism: CatechismStructure = {
                                                                                     
                                                                                             {
                                                                                                 contentType: Content.TEXT,
-                                                                                                pathID: '0-1-1-1-0-1',
-                                                                                                content: TextKey.PROLOGUE_01__SUB_ARTICLE_01__PARAGRAPH_GROUP_02__PARAGRAPH_02__TEXT_CONTAINER_01__TEXT_02__CONTENT,
+                                                                                                pathID: '0-1-2-1-2-1',
+                                                                                                content: TextKey.PROLOGUE_01__SUB_ARTICLE_01__PARAGRAPH_GROUP_03__PARAGRAPH_01__TEXT_CONTAINER_03__TEXT_02__CONTENT,
+                                                                                                strong: false,
+                                                                                                emphasis: false,
+                                                                                                smallCaps: false,
+                                                                                            }
+                                                                        ],
+                                                                        references: [
+                                                                                                    
+                                                                                            {
+                                                                                                referenceType: ReferenceEnum.BIBLE,
+                                                                                                direct: false,
+                                                                                                book: BibleBook.ACTS_OF_THE_APOSTLES,
+                                                                                                chapter: 3,
+                                                                                                verses: `1-3`,
+                                                                                            },
+                                                                                    
+                                                                                            {
+                                                                                                referenceType: ReferenceEnum.OTHER,
+                                                                                                direct: false,
+                                                                                                source: OtherSourceEnum.SOURCE_2,
+                                                                                                pointer: `Ch. IX, p.4`,
+                                                                                            },
+                                                                        ],
+                                                                        paragraphReferences: [
+                                                                            
+                                                                        ],
+                                                                    },
+                                                    ],
+                                                },
+                                        
+                                                {
+                                                    contentType: Content.PARAGRAPH,
+                                                    pathID: '0-1-2-2',
+                                                    paragraphNumber: 3,
+                                                    supplementary: false,
+                                                    mainContent: [
+                                                                            
+                                                                    {
+                                                                        contentType: Content.TEXT_CONTAINER,
+                                                                        pathID: '0-1-2-2-0',
+                                                                        mainContent: [
+                                                                                                    
+                                                                                            {
+                                                                                                contentType: Content.TEXT,
+                                                                                                pathID: '0-1-2-2-0-0',
+                                                                                                content: TextKey.PROLOGUE_01__SUB_ARTICLE_01__PARAGRAPH_GROUP_03__PARAGRAPH_02__TEXT_CONTAINER_01__TEXT_01__CONTENT,
+                                                                                                strong: false,
+                                                                                                emphasis: false,
+                                                                                                smallCaps: false,
+                                                                                            },
+                                                                                    
+                                                                                            {
+                                                                                                contentType: Content.TEXT,
+                                                                                                pathID: '0-1-2-2-0-1',
+                                                                                                content: TextKey.PROLOGUE_01__SUB_ARTICLE_01__PARAGRAPH_GROUP_03__PARAGRAPH_02__TEXT_CONTAINER_01__TEXT_02__CONTENT,
+                                                                                                strong: false,
+                                                                                                emphasis: false,
+                                                                                                smallCaps: false,
+                                                                                            },
+                                                                                    
+                                                                                            {
+                                                                                                contentType: Content.TEXT,
+                                                                                                pathID: '0-1-2-2-0-2',
+                                                                                                content: TextKey.PROLOGUE_01__SUB_ARTICLE_01__PARAGRAPH_GROUP_03__PARAGRAPH_02__TEXT_CONTAINER_01__TEXT_03__CONTENT,
+                                                                                                strong: false,
+                                                                                                emphasis: false,
+                                                                                                smallCaps: false,
+                                                                                            }
+                                                                        ],
+                                                                        references: [
+                                                                            
+                                                                        ],
+                                                                        paragraphReferences: [
+                                                                            
+                                                                        ],
+                                                                    },
+                                                            
+                                                                    {
+                                                                        contentType: Content.TEXT_CONTAINER,
+                                                                        pathID: '0-1-2-2-1',
+                                                                        mainContent: [
+                                                                                                    
+                                                                                            {
+                                                                                                contentType: Content.TEXT,
+                                                                                                pathID: '0-1-2-2-1-0',
+                                                                                                content: TextKey.PROLOGUE_01__SUB_ARTICLE_01__PARAGRAPH_GROUP_03__PARAGRAPH_02__TEXT_CONTAINER_02__TEXT_01__CONTENT,
+                                                                                                strong: false,
+                                                                                                emphasis: false,
+                                                                                                smallCaps: false,
+                                                                                            },
+                                                                                    
+                                                                                            {
+                                                                                                contentType: Content.TEXT,
+                                                                                                pathID: '0-1-2-2-1-1',
+                                                                                                content: TextKey.PROLOGUE_01__SUB_ARTICLE_01__PARAGRAPH_GROUP_03__PARAGRAPH_02__TEXT_CONTAINER_02__TEXT_02__CONTENT,
+                                                                                                strong: false,
+                                                                                                emphasis: false,
+                                                                                                smallCaps: false,
+                                                                                            },
+                                                                                    
+                                                                                            {
+                                                                                                contentType: Content.TEXT,
+                                                                                                pathID: '0-1-2-2-1-2',
+                                                                                                content: TextKey.PROLOGUE_01__SUB_ARTICLE_01__PARAGRAPH_GROUP_03__PARAGRAPH_02__TEXT_CONTAINER_02__TEXT_03__CONTENT,
                                                                                                 strong: false,
                                                                                                 emphasis: false,
                                                                                                 smallCaps: false,
@@ -504,7 +480,7 @@ export const Catechism: CatechismStructure = {
                                                                                                                         {
                                                                                                                             contentType: Content.PARAGRAPH,
                                                                                                                             pathID: '1-0-0-0-0-0-0',
-                                                                                                                            paragraphNumber: 8,
+                                                                                                                            paragraphNumber: 7,
                                                                                                                             supplementary: false,
                                                                                                                             mainContent: [
                                                                                                                                                                 
@@ -529,23 +505,19 @@ export const Catechism: CatechismStructure = {
                                                                                                                                                                                                 strong: false,
                                                                                                                                                                                                 emphasis: false,
                                                                                                                                                                                                 smallCaps: false,
-                                                                                                                                                                                            }
-                                                                                                                                                            ],
-                                                                                                                                                            references: [
-                                                                                                                                                                                                    
-                                                                                                                                                                                            {
-                                                                                                                                                                                                referenceType: ReferenceEnum.OTHER,
-                                                                                                                                                                                                direct: true,
-                                                                                                                                                                                                source: OtherSourceEnum.SOURCE_1,
-                                                                                                                                                                                                pointer: `Ch. IX, p.4`,
                                                                                                                                                                                             },
                                                                                                                                                                                     
                                                                                                                                                                                             {
-                                                                                                                                                                                                referenceType: ReferenceEnum.OTHER,
-                                                                                                                                                                                                direct: false,
-                                                                                                                                                                                                source: OtherSourceEnum.SOURCE_1,
-                                                                                                                                                                                                pointer: `398-401`,
-                                                                                                                                                                                            },
+                                                                                                                                                                                                contentType: Content.TEXT,
+                                                                                                                                                                                                pathID: '1-0-0-0-0-0-0-0-2',
+                                                                                                                                                                                                content: TextKey.PART_01__SECTION_01__CHAPTER_01__ARTICLE_01__SUB_ARTICLE_01__PARAGRAPH_GROUP_01__PARAGRAPH_01__TEXT_CONTAINER_01__TEXT_03__CONTENT,
+                                                                                                                                                                                                strong: false,
+                                                                                                                                                                                                emphasis: false,
+                                                                                                                                                                                                smallCaps: false,
+                                                                                                                                                                                            }
+                                                                                                                                                            ],
+                                                                                                                                                            references: [
+                                                                                                                                                                
                                                                                                                                                             ],
                                                                                                                                                             paragraphReferences: [
                                                                                                                                                                 
@@ -585,96 +557,7 @@ export const Catechism: CatechismStructure = {
                                                                                                                                                                                             }
                                                                                                                                                             ],
                                                                                                                                                             references: [
-                                                                                                                                                                                                    
-                                                                                                                                                                                            {
-                                                                                                                                                                                                referenceType: ReferenceEnum.BIBLE,
-                                                                                                                                                                                                direct: false,
-                                                                                                                                                                                                book: BibleBook.GENESIS,
-                                                                                                                                                                                                chapter: 3,
-                                                                                                                                                                                                verses: `3-4`,
-                                                                                                                                                                                            },
-                                                                                                                                                            ],
-                                                                                                                                                            paragraphReferences: [
                                                                                                                                                                 
-                                                                                                                                                            ],
-                                                                                                                                                        },
-                                                                                                                            ],
-                                                                                                                        },
-                                                                                                                
-                                                                                                                        {
-                                                                                                                            contentType: Content.PARAGRAPH,
-                                                                                                                            pathID: '1-0-0-0-0-0-1',
-                                                                                                                            paragraphNumber: 9,
-                                                                                                                            supplementary: false,
-                                                                                                                            mainContent: [
-                                                                                                                                                                
-                                                                                                                                                        {
-                                                                                                                                                            contentType: Content.TEXT_CONTAINER,
-                                                                                                                                                            pathID: '1-0-0-0-0-0-1-0',
-                                                                                                                                                            mainContent: [
-                                                                                                                                                                                                    
-                                                                                                                                                                                            {
-                                                                                                                                                                                                contentType: Content.TEXT,
-                                                                                                                                                                                                pathID: '1-0-0-0-0-0-1-0-0',
-                                                                                                                                                                                                content: TextKey.PART_01__SECTION_01__CHAPTER_01__ARTICLE_01__SUB_ARTICLE_01__PARAGRAPH_GROUP_01__PARAGRAPH_02__TEXT_CONTAINER_01__TEXT_01__CONTENT,
-                                                                                                                                                                                                strong: false,
-                                                                                                                                                                                                emphasis: false,
-                                                                                                                                                                                                smallCaps: false,
-                                                                                                                                                                                            }
-                                                                                                                                                            ],
-                                                                                                                                                            references: [
-                                                                                                                                                                                                    
-                                                                                                                                                                                            {
-                                                                                                                                                                                                referenceType: ReferenceEnum.BIBLE,
-                                                                                                                                                                                                direct: false,
-                                                                                                                                                                                                book: BibleBook.GENESIS,
-                                                                                                                                                                                                chapter: 2,
-                                                                                                                                                                                                verses: 2,
-                                                                                                                                                                                            },
-                                                                                                                                                                                    
-                                                                                                                                                                                            {
-                                                                                                                                                                                                referenceType: ReferenceEnum.OTHER,
-                                                                                                                                                                                                direct: true,
-                                                                                                                                                                                                source: OtherSourceEnum.SOURCE_3,
-                                                                                                                                                                                                pointer: `Ch. IX, p.4`,
-                                                                                                                                                                                            },
-                                                                                                                                                            ],
-                                                                                                                                                            paragraphReferences: [
-                                                                                                                                                                
-                                                                                                                                                            ],
-                                                                                                                                                        },
-                                                                                                                                                
-                                                                                                                                                        {
-                                                                                                                                                            contentType: Content.TEXT_CONTAINER,
-                                                                                                                                                            pathID: '1-0-0-0-0-0-1-1',
-                                                                                                                                                            mainContent: [
-                                                                                                                                                                                                    
-                                                                                                                                                                                            {
-                                                                                                                                                                                                contentType: Content.TEXT,
-                                                                                                                                                                                                pathID: '1-0-0-0-0-0-1-1-0',
-                                                                                                                                                                                                content: TextKey.PART_01__SECTION_01__CHAPTER_01__ARTICLE_01__SUB_ARTICLE_01__PARAGRAPH_GROUP_01__PARAGRAPH_02__TEXT_CONTAINER_02__TEXT_01__CONTENT,
-                                                                                                                                                                                                strong: false,
-                                                                                                                                                                                                emphasis: false,
-                                                                                                                                                                                                smallCaps: false,
-                                                                                                                                                                                            }
-                                                                                                                                                            ],
-                                                                                                                                                            references: [
-                                                                                                                                                                                                    
-                                                                                                                                                                                            {
-                                                                                                                                                                                                referenceType: ReferenceEnum.BIBLE,
-                                                                                                                                                                                                direct: false,
-                                                                                                                                                                                                book: BibleBook.JOHN,
-                                                                                                                                                                                                chapter: 1,
-                                                                                                                                                                                                verses: 3,
-                                                                                                                                                                                            },
-                                                                                                                                                                                    
-                                                                                                                                                                                            {
-                                                                                                                                                                                                referenceType: ReferenceEnum.BIBLE,
-                                                                                                                                                                                                direct: true,
-                                                                                                                                                                                                book: BibleBook.ACTS_OF_THE_APOSTLES,
-                                                                                                                                                                                                chapter: 1,
-                                                                                                                                                                                                verses: 3,
-                                                                                                                                                                                            },
                                                                                                                                                             ],
                                                                                                                                                             paragraphReferences: [
                                                                                                                                                                 
@@ -695,7 +578,7 @@ export const Catechism: CatechismStructure = {
                                                                                                                         {
                                                                                                                             contentType: Content.PARAGRAPH,
                                                                                                                             pathID: '1-0-0-0-0-1-0',
-                                                                                                                            paragraphNumber: 10,
+                                                                                                                            paragraphNumber: 8,
                                                                                                                             supplementary: false,
                                                                                                                             mainContent: [
                                                                                                                                                                 
@@ -720,10 +603,25 @@ export const Catechism: CatechismStructure = {
                                                                                                                                                                                                 strong: false,
                                                                                                                                                                                                 emphasis: false,
                                                                                                                                                                                                 smallCaps: false,
+                                                                                                                                                                                            },
+                                                                                                                                                                                    
+                                                                                                                                                                                            {
+                                                                                                                                                                                                contentType: Content.TEXT,
+                                                                                                                                                                                                pathID: '1-0-0-0-0-1-0-0-2',
+                                                                                                                                                                                                content: TextKey.PART_01__SECTION_01__CHAPTER_01__ARTICLE_01__SUB_ARTICLE_01__PARAGRAPH_GROUP_02__PARAGRAPH_01__TEXT_CONTAINER_01__TEXT_03__CONTENT,
+                                                                                                                                                                                                strong: false,
+                                                                                                                                                                                                emphasis: false,
+                                                                                                                                                                                                smallCaps: false,
                                                                                                                                                                                             }
                                                                                                                                                             ],
                                                                                                                                                             references: [
-                                                                                                                                                                
+                                                                                                                                                                                                    
+                                                                                                                                                                                            {
+                                                                                                                                                                                                referenceType: ReferenceEnum.OTHER,
+                                                                                                                                                                                                direct: true,
+                                                                                                                                                                                                source: OtherSourceEnum.SOURCE_1,
+                                                                                                                                                                                                pointer: `398-401`,
+                                                                                                                                                                                            },
                                                                                                                                                             ],
                                                                                                                                                             paragraphReferences: [
                                                                                                                                                                 
@@ -742,20 +640,52 @@ export const Catechism: CatechismStructure = {
                                                                                                                                                                                                 strong: false,
                                                                                                                                                                                                 emphasis: false,
                                                                                                                                                                                                 smallCaps: false,
+                                                                                                                                                                                            },
+                                                                                                                                                                                    
+                                                                                                                                                                                            {
+                                                                                                                                                                                                contentType: Content.TEXT,
+                                                                                                                                                                                                pathID: '1-0-0-0-0-1-0-1-1',
+                                                                                                                                                                                                content: TextKey.PART_01__SECTION_01__CHAPTER_01__ARTICLE_01__SUB_ARTICLE_01__PARAGRAPH_GROUP_02__PARAGRAPH_01__TEXT_CONTAINER_02__TEXT_02__CONTENT,
+                                                                                                                                                                                                strong: false,
+                                                                                                                                                                                                emphasis: false,
+                                                                                                                                                                                                smallCaps: false,
+                                                                                                                                                                                            },
+                                                                                                                                                                                    
+                                                                                                                                                                                            {
+                                                                                                                                                                                                contentType: Content.TEXT,
+                                                                                                                                                                                                pathID: '1-0-0-0-0-1-0-1-2',
+                                                                                                                                                                                                content: TextKey.PART_01__SECTION_01__CHAPTER_01__ARTICLE_01__SUB_ARTICLE_01__PARAGRAPH_GROUP_02__PARAGRAPH_01__TEXT_CONTAINER_02__TEXT_03__CONTENT,
+                                                                                                                                                                                                strong: false,
+                                                                                                                                                                                                emphasis: false,
+                                                                                                                                                                                                smallCaps: false,
                                                                                                                                                                                             }
                                                                                                                                                             ],
                                                                                                                                                             references: [
                                                                                                                                                                                                     
                                                                                                                                                                                             {
-                                                                                                                                                                                                referenceType: ReferenceEnum.BIBLE,
+                                                                                                                                                                                                referenceType: ReferenceEnum.OTHER,
+                                                                                                                                                                                                direct: false,
+                                                                                                                                                                                                source: OtherSourceEnum.SOURCE_2,
+                                                                                                                                                                                                pointer: `742`,
+                                                                                                                                                                                            },
+                                                                                                                                                                                    
+                                                                                                                                                                                            {
+                                                                                                                                                                                                referenceType: ReferenceEnum.OTHER,
                                                                                                                                                                                                 direct: true,
-                                                                                                                                                                                                book: BibleBook.JOHN,
-                                                                                                                                                                                                chapter: 2,
+                                                                                                                                                                                                source: OtherSourceEnum.SOURCE_1,
+                                                                                                                                                                                                pointer: `Article VII, 8, 3, 1-2`,
+                                                                                                                                                                                            },
+                                                                                                                                                                                    
+                                                                                                                                                                                            {
+                                                                                                                                                                                                referenceType: ReferenceEnum.BIBLE,
+                                                                                                                                                                                                direct: false,
+                                                                                                                                                                                                book: BibleBook.HEBREWS,
+                                                                                                                                                                                                chapter: 1,
                                                                                                                                                                                                 verses: 2,
                                                                                                                                                                                             },
                                                                                                                                                             ],
                                                                                                                                                             paragraphReferences: [
-                                                                                                                                                                22
+                                                                                                                                                                
                                                                                                                                                             ],
                                                                                                                                                         },
                                                                                                                                                 
@@ -774,14 +704,7 @@ export const Catechism: CatechismStructure = {
                                                                                                                                                                                             }
                                                                                                                                                             ],
                                                                                                                                                             references: [
-                                                                                                                                                                                                    
-                                                                                                                                                                                            {
-                                                                                                                                                                                                referenceType: ReferenceEnum.BIBLE,
-                                                                                                                                                                                                direct: false,
-                                                                                                                                                                                                book: BibleBook.EPHESIANS,
-                                                                                                                                                                                                chapter: 2,
-                                                                                                                                                                                                verses: 2,
-                                                                                                                                                                                            },
+                                                                                                                                                                
                                                                                                                                                             ],
                                                                                                                                                             paragraphReferences: [
                                                                                                                                                                 
@@ -791,8 +714,10 @@ export const Catechism: CatechismStructure = {
                                                                                                                         },
                                                                                                                 
                                                                                                                         {
-                                                                                                                            contentType: Content.BLOCK_QUOTE,
+                                                                                                                            contentType: Content.PARAGRAPH,
                                                                                                                             pathID: '1-0-0-0-0-1-1',
+                                                                                                                            paragraphNumber: 9,
+                                                                                                                            supplementary: false,
                                                                                                                             mainContent: [
                                                                                                                                                                 
                                                                                                                                                         {
@@ -803,7 +728,7 @@ export const Catechism: CatechismStructure = {
                                                                                                                                                                                             {
                                                                                                                                                                                                 contentType: Content.TEXT,
                                                                                                                                                                                                 pathID: '1-0-0-0-0-1-1-0-0',
-                                                                                                                                                                                                content: TextKey.PART_01__SECTION_01__CHAPTER_01__ARTICLE_01__SUB_ARTICLE_01__PARAGRAPH_GROUP_02__BLOCK_QUOTE_01__TEXT_CONTAINER_01__TEXT_01__CONTENT,
+                                                                                                                                                                                                content: TextKey.PART_01__SECTION_01__CHAPTER_01__ARTICLE_01__SUB_ARTICLE_01__PARAGRAPH_GROUP_02__PARAGRAPH_02__TEXT_CONTAINER_01__TEXT_01__CONTENT,
                                                                                                                                                                                                 strong: false,
                                                                                                                                                                                                 emphasis: false,
                                                                                                                                                                                                 smallCaps: false,
@@ -812,7 +737,7 @@ export const Catechism: CatechismStructure = {
                                                                                                                                                                                             {
                                                                                                                                                                                                 contentType: Content.TEXT,
                                                                                                                                                                                                 pathID: '1-0-0-0-0-1-1-0-1',
-                                                                                                                                                                                                content: TextKey.PART_01__SECTION_01__CHAPTER_01__ARTICLE_01__SUB_ARTICLE_01__PARAGRAPH_GROUP_02__BLOCK_QUOTE_01__TEXT_CONTAINER_01__TEXT_02__CONTENT,
+                                                                                                                                                                                                content: TextKey.PART_01__SECTION_01__CHAPTER_01__ARTICLE_01__SUB_ARTICLE_01__PARAGRAPH_GROUP_02__PARAGRAPH_02__TEXT_CONTAINER_01__TEXT_02__CONTENT,
                                                                                                                                                                                                 strong: false,
                                                                                                                                                                                                 emphasis: false,
                                                                                                                                                                                                 smallCaps: false,
@@ -821,47 +746,7 @@ export const Catechism: CatechismStructure = {
                                                                                                                                                                                             {
                                                                                                                                                                                                 contentType: Content.TEXT,
                                                                                                                                                                                                 pathID: '1-0-0-0-0-1-1-0-2',
-                                                                                                                                                                                                content: TextKey.PART_01__SECTION_01__CHAPTER_01__ARTICLE_01__SUB_ARTICLE_01__PARAGRAPH_GROUP_02__BLOCK_QUOTE_01__TEXT_CONTAINER_01__TEXT_03__CONTENT,
-                                                                                                                                                                                                strong: false,
-                                                                                                                                                                                                emphasis: false,
-                                                                                                                                                                                                smallCaps: false,
-                                                                                                                                                                                            }
-                                                                                                                                                            ],
-                                                                                                                                                            references: [
-                                                                                                                                                                
-                                                                                                                                                            ],
-                                                                                                                                                            paragraphReferences: [
-                                                                                                                                                                
-                                                                                                                                                            ],
-                                                                                                                                                        },
-                                                                                                                            ],
-                                                                                                                        },
-                                                                                                ],
-                                                                                            },
-                                                                                    
-                                                                                            {
-                                                                                                contentType: Content.PARAGRAPH_GROUP,
-                                                                                                pathID: '1-0-0-0-0-2',
-                                                                                                paragraphGroupNumber: 1,
-                                                                                                title: TextKey.PART_01__SECTION_01__CHAPTER_01__ARTICLE_01__SUB_ARTICLE_01__PARAGRAPH_GROUP_03__TITLE,
-                                                                                                mainContent: [
-                                                                                                                                
-                                                                                                                        {
-                                                                                                                            contentType: Content.PARAGRAPH,
-                                                                                                                            pathID: '1-0-0-0-0-2-0',
-                                                                                                                            paragraphNumber: 11,
-                                                                                                                            supplementary: true,
-                                                                                                                            mainContent: [
-                                                                                                                                                                
-                                                                                                                                                        {
-                                                                                                                                                            contentType: Content.TEXT_CONTAINER,
-                                                                                                                                                            pathID: '1-0-0-0-0-2-0-0',
-                                                                                                                                                            mainContent: [
-                                                                                                                                                                                                    
-                                                                                                                                                                                            {
-                                                                                                                                                                                                contentType: Content.TEXT,
-                                                                                                                                                                                                pathID: '1-0-0-0-0-2-0-0-0',
-                                                                                                                                                                                                content: TextKey.PART_01__SECTION_01__CHAPTER_01__ARTICLE_01__SUB_ARTICLE_01__PARAGRAPH_GROUP_03__PARAGRAPH_01__TEXT_CONTAINER_01__TEXT_01__CONTENT,
+                                                                                                                                                                                                content: TextKey.PART_01__SECTION_01__CHAPTER_01__ARTICLE_01__SUB_ARTICLE_01__PARAGRAPH_GROUP_02__PARAGRAPH_02__TEXT_CONTAINER_01__TEXT_03__CONTENT,
                                                                                                                                                                                                 strong: false,
                                                                                                                                                                                                 emphasis: false,
                                                                                                                                                                                                 smallCaps: false,
@@ -870,99 +755,10 @@ export const Catechism: CatechismStructure = {
                                                                                                                                                             references: [
                                                                                                                                                                                                     
                                                                                                                                                                                             {
-                                                                                                                                                                                                referenceType: ReferenceEnum.BIBLE,
-                                                                                                                                                                                                direct: false,
-                                                                                                                                                                                                book: BibleBook.ACTS_OF_THE_APOSTLES,
-                                                                                                                                                                                                chapter: 1,
-                                                                                                                                                                                                verses: `2-4`,
-                                                                                                                                                                                            },
-                                                                                                                                                                                    
-                                                                                                                                                                                            {
-                                                                                                                                                                                                referenceType: ReferenceEnum.BIBLE,
+                                                                                                                                                                                                referenceType: ReferenceEnum.OTHER,
                                                                                                                                                                                                 direct: true,
-                                                                                                                                                                                                book: BibleBook.ACTS_OF_THE_APOSTLES,
-                                                                                                                                                                                                chapter: 2,
-                                                                                                                                                                                                verses: `2-5`,
-                                                                                                                                                                                            },
-                                                                                                                                                            ],
-                                                                                                                                                            paragraphReferences: [
-                                                                                                                                                                
-                                                                                                                                                            ],
-                                                                                                                                                        },
-                                                                                                                            ],
-                                                                                                                        },
-                                                                                                                
-                                                                                                                        {
-                                                                                                                            contentType: Content.BLOCK_QUOTE,
-                                                                                                                            pathID: '1-0-0-0-0-2-1',
-                                                                                                                            mainContent: [
-                                                                                                                                                                
-                                                                                                                                                        {
-                                                                                                                                                            contentType: Content.TEXT_CONTAINER,
-                                                                                                                                                            pathID: '1-0-0-0-0-2-1-0',
-                                                                                                                                                            mainContent: [
-                                                                                                                                                                                                    
-                                                                                                                                                                                            {
-                                                                                                                                                                                                contentType: Content.TEXT,
-                                                                                                                                                                                                pathID: '1-0-0-0-0-2-1-0-0',
-                                                                                                                                                                                                content: TextKey.PART_01__SECTION_01__CHAPTER_01__ARTICLE_01__SUB_ARTICLE_01__PARAGRAPH_GROUP_03__BLOCK_QUOTE_01__TEXT_CONTAINER_01__TEXT_01__CONTENT,
-                                                                                                                                                                                                strong: false,
-                                                                                                                                                                                                emphasis: false,
-                                                                                                                                                                                                smallCaps: false,
-                                                                                                                                                                                            },
-                                                                                                                                                                                    
-                                                                                                                                                                                            {
-                                                                                                                                                                                                contentType: Content.TEXT,
-                                                                                                                                                                                                pathID: '1-0-0-0-0-2-1-0-1',
-                                                                                                                                                                                                content: TextKey.PART_01__SECTION_01__CHAPTER_01__ARTICLE_01__SUB_ARTICLE_01__PARAGRAPH_GROUP_03__BLOCK_QUOTE_01__TEXT_CONTAINER_01__TEXT_02__CONTENT,
-                                                                                                                                                                                                strong: false,
-                                                                                                                                                                                                emphasis: false,
-                                                                                                                                                                                                smallCaps: false,
-                                                                                                                                                                                            }
-                                                                                                                                                            ],
-                                                                                                                                                            references: [
-                                                                                                                                                                                                    
-                                                                                                                                                                                            {
-                                                                                                                                                                                                referenceType: ReferenceEnum.OTHER,
-                                                                                                                                                                                                direct: false,
-                                                                                                                                                                                                source: OtherSourceEnum.SOURCE_2,
-                                                                                                                                                                                                pointer: `398-401`,
-                                                                                                                                                                                            },
-                                                                                                                                                                                    
-                                                                                                                                                                                            {
-                                                                                                                                                                                                referenceType: ReferenceEnum.BIBLE,
-                                                                                                                                                                                                direct: false,
-                                                                                                                                                                                                book: BibleBook.MICAH,
-                                                                                                                                                                                                chapter: 2,
-                                                                                                                                                                                                verses: 2,
-                                                                                                                                                                                            },
-                                                                                                                                                            ],
-                                                                                                                                                            paragraphReferences: [
-                                                                                                                                                                
-                                                                                                                                                            ],
-                                                                                                                                                        },
-                                                                                                                                                
-                                                                                                                                                        {
-                                                                                                                                                            contentType: Content.TEXT_CONTAINER,
-                                                                                                                                                            pathID: '1-0-0-0-0-2-1-1',
-                                                                                                                                                            mainContent: [
-                                                                                                                                                                                                    
-                                                                                                                                                                                            {
-                                                                                                                                                                                                contentType: Content.TEXT,
-                                                                                                                                                                                                pathID: '1-0-0-0-0-2-1-1-0',
-                                                                                                                                                                                                content: TextKey.PART_01__SECTION_01__CHAPTER_01__ARTICLE_01__SUB_ARTICLE_01__PARAGRAPH_GROUP_03__BLOCK_QUOTE_01__TEXT_CONTAINER_02__TEXT_01__CONTENT,
-                                                                                                                                                                                                strong: false,
-                                                                                                                                                                                                emphasis: false,
-                                                                                                                                                                                                smallCaps: false,
-                                                                                                                                                                                            }
-                                                                                                                                                            ],
-                                                                                                                                                            references: [
-                                                                                                                                                                                                    
-                                                                                                                                                                                            {
-                                                                                                                                                                                                referenceType: ReferenceEnum.OTHER,
-                                                                                                                                                                                                direct: false,
-                                                                                                                                                                                                source: OtherSourceEnum.SOURCE_2,
-                                                                                                                                                                                                pointer: `398-401`,
+                                                                                                                                                                                                source: OtherSourceEnum.SOURCE_1,
+                                                                                                                                                                                                pointer: `742`,
                                                                                                                                                                                             },
                                                                                                                                                             ],
                                                                                                                                                             paragraphReferences: [
@@ -977,44 +773,74 @@ export const Catechism: CatechismStructure = {
                                                                     },
                                                             
                                                                     {
-                                                                        contentType: Content.IN_BRIEF,
+                                                                        contentType: Content.SUB_ARTICLE,
                                                                         pathID: '1-0-0-0-1',
+                                                                        subarticleNumber: 2,
+                                                                        title: TextKey.PART_01__SECTION_01__CHAPTER_01__ARTICLE_01__SUB_ARTICLE_02__TITLE,
                                                                         mainContent: [
                                                                                                     
                                                                                             {
-                                                                                                contentType: Content.PARAGRAPH,
+                                                                                                contentType: Content.PARAGRAPH_GROUP,
                                                                                                 pathID: '1-0-0-0-1-0',
-                                                                                                paragraphNumber: 12,
+                                                                                                paragraphGroupNumber: 1,
+                                                                                                title: TextKey.PART_01__SECTION_01__CHAPTER_01__ARTICLE_01__SUB_ARTICLE_02__PARAGRAPH_GROUP_01__TITLE,
+                                                                                                mainContent: [
+                                                                                                                                
+                                                                                                                        {
+                                                                                                                            contentType: Content.PARAGRAPH,
+                                                                                                                            pathID: '1-0-0-0-1-0-0',
+                                                                                                                            paragraphNumber: 10,
+                                                                                                                            supplementary: false,
+                                                                                                                            mainContent: [
+                                                                                                                                                                
+                                                                                                                                                        {
+                                                                                                                                                            contentType: Content.TEXT_CONTAINER,
+                                                                                                                                                            pathID: '1-0-0-0-1-0-0-0',
+                                                                                                                                                            mainContent: [
+                                                                                                                                                                                                    
+                                                                                                                                                                                            {
+                                                                                                                                                                                                contentType: Content.TEXT,
+                                                                                                                                                                                                pathID: '1-0-0-0-1-0-0-0-0',
+                                                                                                                                                                                                content: TextKey.PART_01__SECTION_01__CHAPTER_01__ARTICLE_01__SUB_ARTICLE_02__PARAGRAPH_GROUP_01__PARAGRAPH_01__TEXT_CONTAINER_01__TEXT_01__CONTENT,
+                                                                                                                                                                                                strong: false,
+                                                                                                                                                                                                emphasis: false,
+                                                                                                                                                                                                smallCaps: false,
+                                                                                                                                                                                            }
+                                                                                                                                                            ],
+                                                                                                                                                            references: [
+                                                                                                                                                                                                    
+                                                                                                                                                                                            {
+                                                                                                                                                                                                referenceType: ReferenceEnum.OTHER,
+                                                                                                                                                                                                direct: false,
+                                                                                                                                                                                                source: OtherSourceEnum.SOURCE_1,
+                                                                                                                                                                                                pointer: ``,
+                                                                                                                                                                                            },
+                                                                                                                                                            ],
+                                                                                                                                                            paragraphReferences: [
+                                                                                                                                                                
+                                                                                                                                                            ],
+                                                                                                                                                        },
+                                                                                                                            ],
+                                                                                                                        },
+                                                                                                ],
+                                                                                            },
+                                                                                    
+                                                                                            {
+                                                                                                contentType: Content.PARAGRAPH,
+                                                                                                pathID: '1-0-0-0-1-1',
+                                                                                                paragraphNumber: 11,
                                                                                                 supplementary: false,
                                                                                                 mainContent: [
                                                                                                                                 
                                                                                                                         {
                                                                                                                             contentType: Content.TEXT_CONTAINER,
-                                                                                                                            pathID: '1-0-0-0-1-0-0',
+                                                                                                                            pathID: '1-0-0-0-1-1-0',
                                                                                                                             mainContent: [
                                                                                                                                                                 
                                                                                                                                                         {
                                                                                                                                                             contentType: Content.TEXT,
-                                                                                                                                                            pathID: '1-0-0-0-1-0-0-0',
-                                                                                                                                                            content: TextKey.PART_01__SECTION_01__CHAPTER_01__ARTICLE_01__IN_BRIEF_01__PARAGRAPH_01__TEXT_CONTAINER_01__TEXT_01__CONTENT,
-                                                                                                                                                            strong: false,
-                                                                                                                                                            emphasis: false,
-                                                                                                                                                            smallCaps: false,
-                                                                                                                                                        },
-                                                                                                                                                
-                                                                                                                                                        {
-                                                                                                                                                            contentType: Content.TEXT,
-                                                                                                                                                            pathID: '1-0-0-0-1-0-0-1',
-                                                                                                                                                            content: TextKey.PART_01__SECTION_01__CHAPTER_01__ARTICLE_01__IN_BRIEF_01__PARAGRAPH_01__TEXT_CONTAINER_01__TEXT_02__CONTENT,
-                                                                                                                                                            strong: false,
-                                                                                                                                                            emphasis: false,
-                                                                                                                                                            smallCaps: false,
-                                                                                                                                                        },
-                                                                                                                                                
-                                                                                                                                                        {
-                                                                                                                                                            contentType: Content.TEXT,
-                                                                                                                                                            pathID: '1-0-0-0-1-0-0-2',
-                                                                                                                                                            content: TextKey.PART_01__SECTION_01__CHAPTER_01__ARTICLE_01__IN_BRIEF_01__PARAGRAPH_01__TEXT_CONTAINER_01__TEXT_03__CONTENT,
+                                                                                                                                                            pathID: '1-0-0-0-1-1-0-0',
+                                                                                                                                                            content: TextKey.PART_01__SECTION_01__CHAPTER_01__ARTICLE_01__SUB_ARTICLE_02__PARAGRAPH_01__TEXT_CONTAINER_01__TEXT_01__CONTENT,
                                                                                                                                                             strong: false,
                                                                                                                                                             emphasis: false,
                                                                                                                                                             smallCaps: false,
@@ -1025,15 +851,8 @@ export const Catechism: CatechismStructure = {
                                                                                                                                                         {
                                                                                                                                                             referenceType: ReferenceEnum.OTHER,
                                                                                                                                                             direct: false,
-                                                                                                                                                            source: OtherSourceEnum.SOURCE_2,
-                                                                                                                                                            pointer: `742`,
-                                                                                                                                                        },
-                                                                                                                                                
-                                                                                                                                                        {
-                                                                                                                                                            referenceType: ReferenceEnum.OTHER,
-                                                                                                                                                            direct: true,
-                                                                                                                                                            source: OtherSourceEnum.SOURCE_3,
-                                                                                                                                                            pointer: ``,
+                                                                                                                                                            source: OtherSourceEnum.SOURCE_1,
+                                                                                                                                                            pointer: `Article VII, 8, 3, 1-2`,
                                                                                                                                                         },
                                                                                                                             ],
                                                                                                                             paragraphReferences: [
@@ -1043,13 +862,13 @@ export const Catechism: CatechismStructure = {
                                                                                                                 
                                                                                                                         {
                                                                                                                             contentType: Content.TEXT_CONTAINER,
-                                                                                                                            pathID: '1-0-0-0-1-0-1',
+                                                                                                                            pathID: '1-0-0-0-1-1-1',
                                                                                                                             mainContent: [
                                                                                                                                                                 
                                                                                                                                                         {
                                                                                                                                                             contentType: Content.TEXT,
-                                                                                                                                                            pathID: '1-0-0-0-1-0-1-0',
-                                                                                                                                                            content: TextKey.PART_01__SECTION_01__CHAPTER_01__ARTICLE_01__IN_BRIEF_01__PARAGRAPH_01__TEXT_CONTAINER_02__TEXT_01__CONTENT,
+                                                                                                                                                            pathID: '1-0-0-0-1-1-1-0',
+                                                                                                                                                            content: TextKey.PART_01__SECTION_01__CHAPTER_01__ARTICLE_01__SUB_ARTICLE_02__PARAGRAPH_01__TEXT_CONTAINER_02__TEXT_01__CONTENT,
                                                                                                                                                             strong: false,
                                                                                                                                                             emphasis: false,
                                                                                                                                                             smallCaps: false,
@@ -1057,8 +876,8 @@ export const Catechism: CatechismStructure = {
                                                                                                                                                 
                                                                                                                                                         {
                                                                                                                                                             contentType: Content.TEXT,
-                                                                                                                                                            pathID: '1-0-0-0-1-0-1-1',
-                                                                                                                                                            content: TextKey.PART_01__SECTION_01__CHAPTER_01__ARTICLE_01__IN_BRIEF_01__PARAGRAPH_01__TEXT_CONTAINER_02__TEXT_02__CONTENT,
+                                                                                                                                                            pathID: '1-0-0-0-1-1-1-1',
+                                                                                                                                                            content: TextKey.PART_01__SECTION_01__CHAPTER_01__ARTICLE_01__SUB_ARTICLE_02__PARAGRAPH_01__TEXT_CONTAINER_02__TEXT_02__CONTENT,
                                                                                                                                                             strong: false,
                                                                                                                                                             emphasis: false,
                                                                                                                                                             smallCaps: false,
@@ -1066,8 +885,548 @@ export const Catechism: CatechismStructure = {
                                                                                                                                                 
                                                                                                                                                         {
                                                                                                                                                             contentType: Content.TEXT,
-                                                                                                                                                            pathID: '1-0-0-0-1-0-1-2',
-                                                                                                                                                            content: TextKey.PART_01__SECTION_01__CHAPTER_01__ARTICLE_01__IN_BRIEF_01__PARAGRAPH_01__TEXT_CONTAINER_02__TEXT_03__CONTENT,
+                                                                                                                                                            pathID: '1-0-0-0-1-1-1-2',
+                                                                                                                                                            content: TextKey.PART_01__SECTION_01__CHAPTER_01__ARTICLE_01__SUB_ARTICLE_02__PARAGRAPH_01__TEXT_CONTAINER_02__TEXT_03__CONTENT,
+                                                                                                                                                            strong: false,
+                                                                                                                                                            emphasis: false,
+                                                                                                                                                            smallCaps: false,
+                                                                                                                                                        }
+                                                                                                                            ],
+                                                                                                                            references: [
+                                                                                                                                
+                                                                                                                            ],
+                                                                                                                            paragraphReferences: [
+                                                                                                                                25
+                                                                                                                            ],
+                                                                                                                        },
+                                                                                                ],
+                                                                                            },
+                                                                                    
+                                                                                            {
+                                                                                                contentType: Content.BLOCK_QUOTE,
+                                                                                                pathID: '1-0-0-0-1-2',
+                                                                                                mainContent: [
+                                                                                                                                
+                                                                                                                        {
+                                                                                                                            contentType: Content.TEXT_CONTAINER,
+                                                                                                                            pathID: '1-0-0-0-1-2-0',
+                                                                                                                            mainContent: [
+                                                                                                                                                                
+                                                                                                                                                        {
+                                                                                                                                                            contentType: Content.TEXT,
+                                                                                                                                                            pathID: '1-0-0-0-1-2-0-0',
+                                                                                                                                                            content: TextKey.PART_01__SECTION_01__CHAPTER_01__ARTICLE_01__SUB_ARTICLE_02__BLOCK_QUOTE_01__TEXT_CONTAINER_01__TEXT_01__CONTENT,
+                                                                                                                                                            strong: false,
+                                                                                                                                                            emphasis: false,
+                                                                                                                                                            smallCaps: false,
+                                                                                                                                                        }
+                                                                                                                            ],
+                                                                                                                            references: [
+                                                                                                                                                                
+                                                                                                                                                        {
+                                                                                                                                                            referenceType: ReferenceEnum.BIBLE,
+                                                                                                                                                            direct: true,
+                                                                                                                                                            book: BibleBook.PSALMS,
+                                                                                                                                                            chapter: 1,
+                                                                                                                                                            verses: 3,
+                                                                                                                                                        },
+                                                                                                                            ],
+                                                                                                                            paragraphReferences: [
+                                                                                                                                
+                                                                                                                            ],
+                                                                                                                        },
+                                                                                                                
+                                                                                                                        {
+                                                                                                                            contentType: Content.TEXT_CONTAINER,
+                                                                                                                            pathID: '1-0-0-0-1-2-1',
+                                                                                                                            mainContent: [
+                                                                                                                                                                
+                                                                                                                                                        {
+                                                                                                                                                            contentType: Content.TEXT,
+                                                                                                                                                            pathID: '1-0-0-0-1-2-1-0',
+                                                                                                                                                            content: TextKey.PART_01__SECTION_01__CHAPTER_01__ARTICLE_01__SUB_ARTICLE_02__BLOCK_QUOTE_01__TEXT_CONTAINER_02__TEXT_01__CONTENT,
+                                                                                                                                                            strong: false,
+                                                                                                                                                            emphasis: false,
+                                                                                                                                                            smallCaps: false,
+                                                                                                                                                        },
+                                                                                                                                                
+                                                                                                                                                        {
+                                                                                                                                                            contentType: Content.TEXT,
+                                                                                                                                                            pathID: '1-0-0-0-1-2-1-1',
+                                                                                                                                                            content: TextKey.PART_01__SECTION_01__CHAPTER_01__ARTICLE_01__SUB_ARTICLE_02__BLOCK_QUOTE_01__TEXT_CONTAINER_02__TEXT_02__CONTENT,
+                                                                                                                                                            strong: false,
+                                                                                                                                                            emphasis: false,
+                                                                                                                                                            smallCaps: false,
+                                                                                                                                                        },
+                                                                                                                                                
+                                                                                                                                                        {
+                                                                                                                                                            contentType: Content.TEXT,
+                                                                                                                                                            pathID: '1-0-0-0-1-2-1-2',
+                                                                                                                                                            content: TextKey.PART_01__SECTION_01__CHAPTER_01__ARTICLE_01__SUB_ARTICLE_02__BLOCK_QUOTE_01__TEXT_CONTAINER_02__TEXT_03__CONTENT,
+                                                                                                                                                            strong: false,
+                                                                                                                                                            emphasis: false,
+                                                                                                                                                            smallCaps: false,
+                                                                                                                                                        }
+                                                                                                                            ],
+                                                                                                                            references: [
+                                                                                                                                                                
+                                                                                                                                                        {
+                                                                                                                                                            referenceType: ReferenceEnum.BIBLE,
+                                                                                                                                                            direct: true,
+                                                                                                                                                            book: BibleBook.ACTS_OF_THE_APOSTLES,
+                                                                                                                                                            chapter: 3,
+                                                                                                                                                            verses: `3-5`,
+                                                                                                                                                        },
+                                                                                                                            ],
+                                                                                                                            paragraphReferences: [
+                                                                                                                                
+                                                                                                                            ],
+                                                                                                                        },
+                                                                                                                
+                                                                                                                        {
+                                                                                                                            contentType: Content.TEXT_CONTAINER,
+                                                                                                                            pathID: '1-0-0-0-1-2-2',
+                                                                                                                            mainContent: [
+                                                                                                                                                                
+                                                                                                                                                        {
+                                                                                                                                                            contentType: Content.TEXT,
+                                                                                                                                                            pathID: '1-0-0-0-1-2-2-0',
+                                                                                                                                                            content: TextKey.PART_01__SECTION_01__CHAPTER_01__ARTICLE_01__SUB_ARTICLE_02__BLOCK_QUOTE_01__TEXT_CONTAINER_03__TEXT_01__CONTENT,
+                                                                                                                                                            strong: false,
+                                                                                                                                                            emphasis: false,
+                                                                                                                                                            smallCaps: false,
+                                                                                                                                                        },
+                                                                                                                                                
+                                                                                                                                                        {
+                                                                                                                                                            contentType: Content.TEXT,
+                                                                                                                                                            pathID: '1-0-0-0-1-2-2-1',
+                                                                                                                                                            content: TextKey.PART_01__SECTION_01__CHAPTER_01__ARTICLE_01__SUB_ARTICLE_02__BLOCK_QUOTE_01__TEXT_CONTAINER_03__TEXT_02__CONTENT,
+                                                                                                                                                            strong: false,
+                                                                                                                                                            emphasis: false,
+                                                                                                                                                            smallCaps: false,
+                                                                                                                                                        }
+                                                                                                                            ],
+                                                                                                                            references: [
+                                                                                                                                                                
+                                                                                                                                                        {
+                                                                                                                                                            referenceType: ReferenceEnum.BIBLE,
+                                                                                                                                                            direct: false,
+                                                                                                                                                            book: BibleBook.EPHESIANS,
+                                                                                                                                                            chapter: 1,
+                                                                                                                                                            verses: 2,
+                                                                                                                                                        },
+                                                                                                                            ],
+                                                                                                                            paragraphReferences: [
+                                                                                                                                
+                                                                                                                            ],
+                                                                                                                        },
+                                                                                                ],
+                                                                                            },
+                                                                        ],
+                                                                    },
+                                                            
+                                                                    {
+                                                                        contentType: Content.IN_BRIEF,
+                                                                        pathID: '1-0-0-0-2',
+                                                                        mainContent: [
+                                                                                                    
+                                                                                            {
+                                                                                                contentType: Content.PARAGRAPH,
+                                                                                                pathID: '1-0-0-0-2-0',
+                                                                                                paragraphNumber: 12,
+                                                                                                supplementary: true,
+                                                                                                mainContent: [
+                                                                                                                                
+                                                                                                                        {
+                                                                                                                            contentType: Content.TEXT_CONTAINER,
+                                                                                                                            pathID: '1-0-0-0-2-0-0',
+                                                                                                                            mainContent: [
+                                                                                                                                                                
+                                                                                                                                                        {
+                                                                                                                                                            contentType: Content.TEXT,
+                                                                                                                                                            pathID: '1-0-0-0-2-0-0-0',
+                                                                                                                                                            content: TextKey.PART_01__SECTION_01__CHAPTER_01__ARTICLE_01__IN_BRIEF_01__PARAGRAPH_01__TEXT_CONTAINER_01__TEXT_01__CONTENT,
+                                                                                                                                                            strong: false,
+                                                                                                                                                            emphasis: false,
+                                                                                                                                                            smallCaps: false,
+                                                                                                                                                        }
+                                                                                                                            ],
+                                                                                                                            references: [
+                                                                                                                                
+                                                                                                                            ],
+                                                                                                                            paragraphReferences: [
+                                                                                                                                
+                                                                                                                            ],
+                                                                                                                        },
+                                                                                                ],
+                                                                                            },
+                                                                        ],
+                                                                    },
+                                                    ],
+                                                    openingContent: [
+                                                                            
+                                                                    {
+                                                                        contentType: Content.TEXT_CONTAINER,
+                                                                        pathID: '1-0-0-0-0',
+                                                                        mainContent: [
+                                                                                                    
+                                                                                            {
+                                                                                                contentType: Content.TEXT,
+                                                                                                pathID: '1-0-0-0-0-0',
+                                                                                                content: TextKey.PART_01__SECTION_01__CHAPTER_01__ARTICLE_01__TEXT_CONTAINER_01__TEXT_01__CONTENT,
+                                                                                                strong: false,
+                                                                                                emphasis: false,
+                                                                                                smallCaps: false,
+                                                                                            }
+                                                                        ],
+                                                                        references: [
+                                                                                                    
+                                                                                            {
+                                                                                                referenceType: ReferenceEnum.OTHER,
+                                                                                                direct: false,
+                                                                                                source: OtherSourceEnum.SOURCE_1,
+                                                                                                pointer: `Ch. IX, p.4`,
+                                                                                            },
+                                                                        ],
+                                                                        paragraphReferences: [
+                                                                            
+                                                                        ],
+                                                                    },
+                                                            
+                                                                    {
+                                                                        contentType: Content.TEXT_CONTAINER,
+                                                                        pathID: '1-0-0-0-1',
+                                                                        mainContent: [
+                                                                                                    
+                                                                                            {
+                                                                                                contentType: Content.TEXT,
+                                                                                                pathID: '1-0-0-0-1-0',
+                                                                                                content: TextKey.PART_01__SECTION_01__CHAPTER_01__ARTICLE_01__TEXT_CONTAINER_02__TEXT_01__CONTENT,
+                                                                                                strong: false,
+                                                                                                emphasis: false,
+                                                                                                smallCaps: false,
+                                                                                            },
+                                                                                    
+                                                                                            {
+                                                                                                contentType: Content.TEXT,
+                                                                                                pathID: '1-0-0-0-1-1',
+                                                                                                content: TextKey.PART_01__SECTION_01__CHAPTER_01__ARTICLE_01__TEXT_CONTAINER_02__TEXT_02__CONTENT,
+                                                                                                strong: false,
+                                                                                                emphasis: false,
+                                                                                                smallCaps: false,
+                                                                                            },
+                                                                                    
+                                                                                            {
+                                                                                                contentType: Content.TEXT,
+                                                                                                pathID: '1-0-0-0-1-2',
+                                                                                                content: TextKey.PART_01__SECTION_01__CHAPTER_01__ARTICLE_01__TEXT_CONTAINER_02__TEXT_03__CONTENT,
+                                                                                                strong: false,
+                                                                                                emphasis: false,
+                                                                                                smallCaps: false,
+                                                                                            }
+                                                                        ],
+                                                                        references: [
+                                                                                                    
+                                                                                            {
+                                                                                                referenceType: ReferenceEnum.BIBLE,
+                                                                                                direct: false,
+                                                                                                book: BibleBook.EPHESIANS,
+                                                                                                chapter: 1,
+                                                                                                verses: `3-6`,
+                                                                                            },
+                                                                                    
+                                                                                            {
+                                                                                                referenceType: ReferenceEnum.BIBLE,
+                                                                                                direct: false,
+                                                                                                book: BibleBook.ACTS_OF_THE_APOSTLES,
+                                                                                                chapter: 1,
+                                                                                                verses: 3,
+                                                                                            },
+                                                                        ],
+                                                                        paragraphReferences: [
+                                                                            5
+                                                                        ],
+                                                                    },
+                                                    ],
+                                                },
+                                    ],
+                                    openingContent: [
+                                        
+                                    ],
+                                },
+                        ],
+                        openingContent: [
+                                        
+                                {
+                                    contentType: Content.PARAGRAPH,
+                                    pathID: '1-0-0',
+                                    paragraphNumber: 6,
+                                    supplementary: false,
+                                    mainContent: [
+                                                        
+                                                {
+                                                    contentType: Content.TEXT_CONTAINER,
+                                                    pathID: '1-0-0-0',
+                                                    mainContent: [
+                                                                            
+                                                                    {
+                                                                        contentType: Content.TEXT,
+                                                                        pathID: '1-0-0-0-0',
+                                                                        content: TextKey.PART_01__SECTION_01__PARAGRAPH_01__TEXT_CONTAINER_01__TEXT_01__CONTENT,
+                                                                        strong: false,
+                                                                        emphasis: false,
+                                                                        smallCaps: false,
+                                                                    }
+                                                    ],
+                                                    references: [
+                                                        
+                                                    ],
+                                                    paragraphReferences: [
+                                                        
+                                                    ],
+                                                },
+                                    ],
+                                },
+                        
+                                {
+                                    contentType: Content.BLOCK_QUOTE,
+                                    pathID: '1-0-1',
+                                    mainContent: [
+                                                        
+                                                {
+                                                    contentType: Content.TEXT_CONTAINER,
+                                                    pathID: '1-0-1-0',
+                                                    mainContent: [
+                                                                            
+                                                                    {
+                                                                        contentType: Content.TEXT,
+                                                                        pathID: '1-0-1-0-0',
+                                                                        content: TextKey.PART_01__SECTION_01__BLOCK_QUOTE_01__TEXT_CONTAINER_01__TEXT_01__CONTENT,
+                                                                        strong: false,
+                                                                        emphasis: false,
+                                                                        smallCaps: false,
+                                                                    },
+                                                            
+                                                                    {
+                                                                        contentType: Content.TEXT,
+                                                                        pathID: '1-0-1-0-1',
+                                                                        content: TextKey.PART_01__SECTION_01__BLOCK_QUOTE_01__TEXT_CONTAINER_01__TEXT_02__CONTENT,
+                                                                        strong: false,
+                                                                        emphasis: false,
+                                                                        smallCaps: false,
+                                                                    },
+                                                            
+                                                                    {
+                                                                        contentType: Content.TEXT,
+                                                                        pathID: '1-0-1-0-2',
+                                                                        content: TextKey.PART_01__SECTION_01__BLOCK_QUOTE_01__TEXT_CONTAINER_01__TEXT_03__CONTENT,
+                                                                        strong: false,
+                                                                        emphasis: false,
+                                                                        smallCaps: false,
+                                                                    }
+                                                    ],
+                                                    references: [
+                                                                            
+                                                                    {
+                                                                        referenceType: ReferenceEnum.BIBLE,
+                                                                        direct: false,
+                                                                        book: BibleBook.PSALMS,
+                                                                        chapter: 3,
+                                                                        verses: `3-6`,
+                                                                    },
+                                                            
+                                                                    {
+                                                                        referenceType: ReferenceEnum.BIBLE,
+                                                                        direct: false,
+                                                                        book: BibleBook.GENESIS,
+                                                                        chapter: 3,
+                                                                        verses: `3-6`,
+                                                                    },
+                                                            
+                                                                    {
+                                                                        referenceType: ReferenceEnum.OTHER,
+                                                                        direct: false,
+                                                                        source: OtherSourceEnum.SOURCE_1,
+                                                                        pointer: `Article VII, 8, 3, 1-2`,
+                                                                    },
+                                                    ],
+                                                    paragraphReferences: [
+                                                        
+                                                    ],
+                                                },
+                                        
+                                                {
+                                                    contentType: Content.TEXT_CONTAINER,
+                                                    pathID: '1-0-1-1',
+                                                    mainContent: [
+                                                                            
+                                                                    {
+                                                                        contentType: Content.TEXT,
+                                                                        pathID: '1-0-1-1-0',
+                                                                        content: TextKey.PART_01__SECTION_01__BLOCK_QUOTE_01__TEXT_CONTAINER_02__TEXT_01__CONTENT,
+                                                                        strong: false,
+                                                                        emphasis: false,
+                                                                        smallCaps: false,
+                                                                    },
+                                                            
+                                                                    {
+                                                                        contentType: Content.TEXT,
+                                                                        pathID: '1-0-1-1-1',
+                                                                        content: TextKey.PART_01__SECTION_01__BLOCK_QUOTE_01__TEXT_CONTAINER_02__TEXT_02__CONTENT,
+                                                                        strong: false,
+                                                                        emphasis: false,
+                                                                        smallCaps: false,
+                                                                    },
+                                                            
+                                                                    {
+                                                                        contentType: Content.TEXT,
+                                                                        pathID: '1-0-1-1-2',
+                                                                        content: TextKey.PART_01__SECTION_01__BLOCK_QUOTE_01__TEXT_CONTAINER_02__TEXT_03__CONTENT,
+                                                                        strong: false,
+                                                                        emphasis: false,
+                                                                        smallCaps: false,
+                                                                    }
+                                                    ],
+                                                    references: [
+                                                                            
+                                                                    {
+                                                                        referenceType: ReferenceEnum.OTHER,
+                                                                        direct: true,
+                                                                        source: OtherSourceEnum.SOURCE_2,
+                                                                        pointer: ``,
+                                                                    },
+                                                    ],
+                                                    paragraphReferences: [
+                                                        29,10
+                                                    ],
+                                                },
+                                        
+                                                {
+                                                    contentType: Content.TEXT_CONTAINER,
+                                                    pathID: '1-0-1-2',
+                                                    mainContent: [
+                                                                            
+                                                                    {
+                                                                        contentType: Content.TEXT,
+                                                                        pathID: '1-0-1-2-0',
+                                                                        content: TextKey.PART_01__SECTION_01__BLOCK_QUOTE_01__TEXT_CONTAINER_03__TEXT_01__CONTENT,
+                                                                        strong: false,
+                                                                        emphasis: false,
+                                                                        smallCaps: false,
+                                                                    },
+                                                            
+                                                                    {
+                                                                        contentType: Content.TEXT,
+                                                                        pathID: '1-0-1-2-1',
+                                                                        content: TextKey.PART_01__SECTION_01__BLOCK_QUOTE_01__TEXT_CONTAINER_03__TEXT_02__CONTENT,
+                                                                        strong: false,
+                                                                        emphasis: false,
+                                                                        smallCaps: false,
+                                                                    }
+                                                    ],
+                                                    references: [
+                                                        
+                                                    ],
+                                                    paragraphReferences: [
+                                                        
+                                                    ],
+                                                },
+                                    ],
+                                },
+                        ],
+                    },
+            
+                    {
+                        contentType: Content.SECTION,
+                        pathID: '1-1',
+                        sectionNumber: 2,
+                        title: TextKey.PART_01__SECTION_02__TITLE,
+                        mainContent: [
+                                        
+                                {
+                                    contentType: Content.CHAPTER,
+                                    pathID: '1-1-0',
+                                    chapterNumber: 1,
+                                    title: TextKey.PART_01__SECTION_02__CHAPTER_01__TITLE,
+                                    mainContent: [
+                                                        
+                                                {
+                                                    contentType: Content.ARTICLE,
+                                                    pathID: '1-1-0-0',
+                                                    articleNumber: 1,
+                                                    title: TextKey.PART_01__SECTION_02__CHAPTER_01__ARTICLE_01__TITLE,
+                                                    mainContent: [
+                                                                            
+                                                                    {
+                                                                        contentType: Content.IN_BRIEF,
+                                                                        pathID: '1-1-0-0-0',
+                                                                        mainContent: [
+                                                                                                    
+                                                                                            {
+                                                                                                contentType: Content.PARAGRAPH,
+                                                                                                pathID: '1-1-0-0-0-0',
+                                                                                                paragraphNumber: 15,
+                                                                                                supplementary: false,
+                                                                                                mainContent: [
+                                                                                                                                
+                                                                                                                        {
+                                                                                                                            contentType: Content.TEXT_CONTAINER,
+                                                                                                                            pathID: '1-1-0-0-0-0-0',
+                                                                                                                            mainContent: [
+                                                                                                                                                                
+                                                                                                                                                        {
+                                                                                                                                                            contentType: Content.TEXT,
+                                                                                                                                                            pathID: '1-1-0-0-0-0-0-0',
+                                                                                                                                                            content: TextKey.PART_01__SECTION_02__CHAPTER_01__ARTICLE_01__IN_BRIEF_01__PARAGRAPH_01__TEXT_CONTAINER_01__TEXT_01__CONTENT,
+                                                                                                                                                            strong: false,
+                                                                                                                                                            emphasis: false,
+                                                                                                                                                            smallCaps: false,
+                                                                                                                                                        },
+                                                                                                                                                
+                                                                                                                                                        {
+                                                                                                                                                            contentType: Content.TEXT,
+                                                                                                                                                            pathID: '1-1-0-0-0-0-0-1',
+                                                                                                                                                            content: TextKey.PART_01__SECTION_02__CHAPTER_01__ARTICLE_01__IN_BRIEF_01__PARAGRAPH_01__TEXT_CONTAINER_01__TEXT_02__CONTENT,
+                                                                                                                                                            strong: false,
+                                                                                                                                                            emphasis: false,
+                                                                                                                                                            smallCaps: false,
+                                                                                                                                                        },
+                                                                                                                                                
+                                                                                                                                                        {
+                                                                                                                                                            contentType: Content.TEXT,
+                                                                                                                                                            pathID: '1-1-0-0-0-0-0-2',
+                                                                                                                                                            content: TextKey.PART_01__SECTION_02__CHAPTER_01__ARTICLE_01__IN_BRIEF_01__PARAGRAPH_01__TEXT_CONTAINER_01__TEXT_03__CONTENT,
+                                                                                                                                                            strong: false,
+                                                                                                                                                            emphasis: false,
+                                                                                                                                                            smallCaps: false,
+                                                                                                                                                        }
+                                                                                                                            ],
+                                                                                                                            references: [
+                                                                                                                                
+                                                                                                                            ],
+                                                                                                                            paragraphReferences: [
+                                                                                                                                
+                                                                                                                            ],
+                                                                                                                        },
+                                                                                                                
+                                                                                                                        {
+                                                                                                                            contentType: Content.TEXT_CONTAINER,
+                                                                                                                            pathID: '1-1-0-0-0-0-1',
+                                                                                                                            mainContent: [
+                                                                                                                                                                
+                                                                                                                                                        {
+                                                                                                                                                            contentType: Content.TEXT,
+                                                                                                                                                            pathID: '1-1-0-0-0-0-1-0',
+                                                                                                                                                            content: TextKey.PART_01__SECTION_02__CHAPTER_01__ARTICLE_01__IN_BRIEF_01__PARAGRAPH_01__TEXT_CONTAINER_02__TEXT_01__CONTENT,
+                                                                                                                                                            strong: false,
+                                                                                                                                                            emphasis: false,
+                                                                                                                                                            smallCaps: false,
+                                                                                                                                                        },
+                                                                                                                                                
+                                                                                                                                                        {
+                                                                                                                                                            contentType: Content.TEXT,
+                                                                                                                                                            pathID: '1-1-0-0-0-0-1-1',
+                                                                                                                                                            content: TextKey.PART_01__SECTION_02__CHAPTER_01__ARTICLE_01__IN_BRIEF_01__PARAGRAPH_01__TEXT_CONTAINER_02__TEXT_02__CONTENT,
                                                                                                                                                             strong: false,
                                                                                                                                                             emphasis: false,
                                                                                                                                                             smallCaps: false,
@@ -1089,20 +1448,20 @@ export const Catechism: CatechismStructure = {
                                                                             
                                                                     {
                                                                         contentType: Content.PARAGRAPH,
-                                                                        pathID: '1-0-0-0-0',
-                                                                        paragraphNumber: 7,
+                                                                        pathID: '1-1-0-0-0',
+                                                                        paragraphNumber: 13,
                                                                         supplementary: false,
                                                                         mainContent: [
                                                                                                     
                                                                                             {
                                                                                                 contentType: Content.TEXT_CONTAINER,
-                                                                                                pathID: '1-0-0-0-0-0',
+                                                                                                pathID: '1-1-0-0-0-0',
                                                                                                 mainContent: [
                                                                                                                                 
                                                                                                                         {
                                                                                                                             contentType: Content.TEXT,
-                                                                                                                            pathID: '1-0-0-0-0-0-0',
-                                                                                                                            content: TextKey.PART_01__SECTION_01__CHAPTER_01__ARTICLE_01__PARAGRAPH_01__TEXT_CONTAINER_01__TEXT_01__CONTENT,
+                                                                                                                            pathID: '1-1-0-0-0-0-0',
+                                                                                                                            content: TextKey.PART_01__SECTION_02__CHAPTER_01__ARTICLE_01__PARAGRAPH_01__TEXT_CONTAINER_01__TEXT_01__CONTENT,
                                                                                                                             strong: false,
                                                                                                                             emphasis: false,
                                                                                                                             smallCaps: false,
@@ -1110,8 +1469,124 @@ export const Catechism: CatechismStructure = {
                                                                                                                 
                                                                                                                         {
                                                                                                                             contentType: Content.TEXT,
-                                                                                                                            pathID: '1-0-0-0-0-0-1',
-                                                                                                                            content: TextKey.PART_01__SECTION_01__CHAPTER_01__ARTICLE_01__PARAGRAPH_01__TEXT_CONTAINER_01__TEXT_02__CONTENT,
+                                                                                                                            pathID: '1-1-0-0-0-0-1',
+                                                                                                                            content: TextKey.PART_01__SECTION_02__CHAPTER_01__ARTICLE_01__PARAGRAPH_01__TEXT_CONTAINER_01__TEXT_02__CONTENT,
+                                                                                                                            strong: false,
+                                                                                                                            emphasis: false,
+                                                                                                                            smallCaps: false,
+                                                                                                                        }
+                                                                                                ],
+                                                                                                references: [
+                                                                                                                                
+                                                                                                                        {
+                                                                                                                            referenceType: ReferenceEnum.OTHER,
+                                                                                                                            direct: false,
+                                                                                                                            source: OtherSourceEnum.SOURCE_3,
+                                                                                                                            pointer: `398-401`,
+                                                                                                                        },
+                                                                                                                
+                                                                                                                        {
+                                                                                                                            referenceType: ReferenceEnum.OTHER,
+                                                                                                                            direct: true,
+                                                                                                                            source: OtherSourceEnum.SOURCE_2,
+                                                                                                                            pointer: `Article VII, 8, 3, 1-2`,
+                                                                                                                        },
+                                                                                                                
+                                                                                                                        {
+                                                                                                                            referenceType: ReferenceEnum.BIBLE,
+                                                                                                                            direct: false,
+                                                                                                                            book: BibleBook.PSALMS,
+                                                                                                                            chapter: 1,
+                                                                                                                            verses: 1,
+                                                                                                                        },
+                                                                                                                
+                                                                                                                        {
+                                                                                                                            referenceType: ReferenceEnum.OTHER,
+                                                                                                                            direct: true,
+                                                                                                                            source: OtherSourceEnum.SOURCE_3,
+                                                                                                                            pointer: ``,
+                                                                                                                        },
+                                                                                                ],
+                                                                                                paragraphReferences: [
+                                                                                                    
+                                                                                                ],
+                                                                                            },
+                                                                                    
+                                                                                            {
+                                                                                                contentType: Content.TEXT_CONTAINER,
+                                                                                                pathID: '1-1-0-0-0-1',
+                                                                                                mainContent: [
+                                                                                                                                
+                                                                                                                        {
+                                                                                                                            contentType: Content.TEXT,
+                                                                                                                            pathID: '1-1-0-0-0-1-0',
+                                                                                                                            content: TextKey.PART_01__SECTION_02__CHAPTER_01__ARTICLE_01__PARAGRAPH_01__TEXT_CONTAINER_02__TEXT_01__CONTENT,
+                                                                                                                            strong: false,
+                                                                                                                            emphasis: false,
+                                                                                                                            smallCaps: false,
+                                                                                                                        }
+                                                                                                ],
+                                                                                                references: [
+                                                                                                                                
+                                                                                                                        {
+                                                                                                                            referenceType: ReferenceEnum.OTHER,
+                                                                                                                            direct: true,
+                                                                                                                            source: OtherSourceEnum.SOURCE_1,
+                                                                                                                            pointer: `Ch. IX, p.4`,
+                                                                                                                        },
+                                                                                                ],
+                                                                                                paragraphReferences: [
+                                                                                                    
+                                                                                                ],
+                                                                                            },
+                                                                                    
+                                                                                            {
+                                                                                                contentType: Content.TEXT_CONTAINER,
+                                                                                                pathID: '1-1-0-0-0-2',
+                                                                                                mainContent: [
+                                                                                                                                
+                                                                                                                        {
+                                                                                                                            contentType: Content.TEXT,
+                                                                                                                            pathID: '1-1-0-0-0-2-0',
+                                                                                                                            content: TextKey.PART_01__SECTION_02__CHAPTER_01__ARTICLE_01__PARAGRAPH_01__TEXT_CONTAINER_03__TEXT_01__CONTENT,
+                                                                                                                            strong: false,
+                                                                                                                            emphasis: false,
+                                                                                                                            smallCaps: false,
+                                                                                                                        }
+                                                                                                ],
+                                                                                                references: [
+                                                                                                                                
+                                                                                                                        {
+                                                                                                                            referenceType: ReferenceEnum.BIBLE,
+                                                                                                                            direct: true,
+                                                                                                                            book: BibleBook.MICAH,
+                                                                                                                            chapter: 3,
+                                                                                                                            verses: 3,
+                                                                                                                        },
+                                                                                                ],
+                                                                                                paragraphReferences: [
+                                                                                                    
+                                                                                                ],
+                                                                                            },
+                                                                        ],
+                                                                    },
+                                                            
+                                                                    {
+                                                                        contentType: Content.PARAGRAPH,
+                                                                        pathID: '1-1-0-0-1',
+                                                                        paragraphNumber: 14,
+                                                                        supplementary: false,
+                                                                        mainContent: [
+                                                                                                    
+                                                                                            {
+                                                                                                contentType: Content.TEXT_CONTAINER,
+                                                                                                pathID: '1-1-0-0-1-0',
+                                                                                                mainContent: [
+                                                                                                                                
+                                                                                                                        {
+                                                                                                                            contentType: Content.TEXT,
+                                                                                                                            pathID: '1-1-0-0-1-0-0',
+                                                                                                                            content: TextKey.PART_01__SECTION_02__CHAPTER_01__ARTICLE_01__PARAGRAPH_02__TEXT_CONTAINER_01__TEXT_01__CONTENT,
                                                                                                                             strong: false,
                                                                                                                             emphasis: false,
                                                                                                                             smallCaps: false,
@@ -1119,8 +1594,843 @@ export const Catechism: CatechismStructure = {
                                                                                                                 
                                                                                                                         {
                                                                                                                             contentType: Content.TEXT,
-                                                                                                                            pathID: '1-0-0-0-0-0-2',
-                                                                                                                            content: TextKey.PART_01__SECTION_01__CHAPTER_01__ARTICLE_01__PARAGRAPH_01__TEXT_CONTAINER_01__TEXT_03__CONTENT,
+                                                                                                                            pathID: '1-1-0-0-1-0-1',
+                                                                                                                            content: TextKey.PART_01__SECTION_02__CHAPTER_01__ARTICLE_01__PARAGRAPH_02__TEXT_CONTAINER_01__TEXT_02__CONTENT,
+                                                                                                                            strong: false,
+                                                                                                                            emphasis: false,
+                                                                                                                            smallCaps: false,
+                                                                                                                        },
+                                                                                                                
+                                                                                                                        {
+                                                                                                                            contentType: Content.TEXT,
+                                                                                                                            pathID: '1-1-0-0-1-0-2',
+                                                                                                                            content: TextKey.PART_01__SECTION_02__CHAPTER_01__ARTICLE_01__PARAGRAPH_02__TEXT_CONTAINER_01__TEXT_03__CONTENT,
+                                                                                                                            strong: false,
+                                                                                                                            emphasis: false,
+                                                                                                                            smallCaps: false,
+                                                                                                                        }
+                                                                                                ],
+                                                                                                references: [
+                                                                                                    
+                                                                                                ],
+                                                                                                paragraphReferences: [
+                                                                                                    
+                                                                                                ],
+                                                                                            },
+                                                                                    
+                                                                                            {
+                                                                                                contentType: Content.TEXT_CONTAINER,
+                                                                                                pathID: '1-1-0-0-1-1',
+                                                                                                mainContent: [
+                                                                                                                                
+                                                                                                                        {
+                                                                                                                            contentType: Content.TEXT,
+                                                                                                                            pathID: '1-1-0-0-1-1-0',
+                                                                                                                            content: TextKey.PART_01__SECTION_02__CHAPTER_01__ARTICLE_01__PARAGRAPH_02__TEXT_CONTAINER_02__TEXT_01__CONTENT,
+                                                                                                                            strong: false,
+                                                                                                                            emphasis: false,
+                                                                                                                            smallCaps: false,
+                                                                                                                        }
+                                                                                                ],
+                                                                                                references: [
+                                                                                                                                
+                                                                                                                        {
+                                                                                                                            referenceType: ReferenceEnum.OTHER,
+                                                                                                                            direct: false,
+                                                                                                                            source: OtherSourceEnum.SOURCE_1,
+                                                                                                                            pointer: ``,
+                                                                                                                        },
+                                                                                                                
+                                                                                                                        {
+                                                                                                                            referenceType: ReferenceEnum.BIBLE,
+                                                                                                                            direct: true,
+                                                                                                                            book: BibleBook.GENESIS,
+                                                                                                                            chapter: 3,
+                                                                                                                            verses: `3-4`,
+                                                                                                                        },
+                                                                                                                
+                                                                                                                        {
+                                                                                                                            referenceType: ReferenceEnum.OTHER,
+                                                                                                                            direct: false,
+                                                                                                                            source: OtherSourceEnum.SOURCE_3,
+                                                                                                                            pointer: `Ch. IX, p.4`,
+                                                                                                                        },
+                                                                                                ],
+                                                                                                paragraphReferences: [
+                                                                                                    
+                                                                                                ],
+                                                                                            },
+                                                                                    
+                                                                                            {
+                                                                                                contentType: Content.TEXT_CONTAINER,
+                                                                                                pathID: '1-1-0-0-1-2',
+                                                                                                mainContent: [
+                                                                                                                                
+                                                                                                                        {
+                                                                                                                            contentType: Content.TEXT,
+                                                                                                                            pathID: '1-1-0-0-1-2-0',
+                                                                                                                            content: TextKey.PART_01__SECTION_02__CHAPTER_01__ARTICLE_01__PARAGRAPH_02__TEXT_CONTAINER_03__TEXT_01__CONTENT,
+                                                                                                                            strong: false,
+                                                                                                                            emphasis: false,
+                                                                                                                            smallCaps: false,
+                                                                                                                        },
+                                                                                                                
+                                                                                                                        {
+                                                                                                                            contentType: Content.TEXT,
+                                                                                                                            pathID: '1-1-0-0-1-2-1',
+                                                                                                                            content: TextKey.PART_01__SECTION_02__CHAPTER_01__ARTICLE_01__PARAGRAPH_02__TEXT_CONTAINER_03__TEXT_02__CONTENT,
+                                                                                                                            strong: false,
+                                                                                                                            emphasis: false,
+                                                                                                                            smallCaps: false,
+                                                                                                                        },
+                                                                                                                
+                                                                                                                        {
+                                                                                                                            contentType: Content.TEXT,
+                                                                                                                            pathID: '1-1-0-0-1-2-2',
+                                                                                                                            content: TextKey.PART_01__SECTION_02__CHAPTER_01__ARTICLE_01__PARAGRAPH_02__TEXT_CONTAINER_03__TEXT_03__CONTENT,
+                                                                                                                            strong: false,
+                                                                                                                            emphasis: false,
+                                                                                                                            smallCaps: false,
+                                                                                                                        }
+                                                                                                ],
+                                                                                                references: [
+                                                                                                                                
+                                                                                                                        {
+                                                                                                                            referenceType: ReferenceEnum.BIBLE,
+                                                                                                                            direct: false,
+                                                                                                                            book: BibleBook.MICAH,
+                                                                                                                            chapter: 2,
+                                                                                                                            verses: 2,
+                                                                                                                        },
+                                                                                                ],
+                                                                                                paragraphReferences: [
+                                                                                                    18
+                                                                                                ],
+                                                                                            },
+                                                                        ],
+                                                                    },
+                                                    ],
+                                                },
+                                        
+                                                {
+                                                    contentType: Content.ARTICLE,
+                                                    pathID: '1-1-0-1',
+                                                    articleNumber: 2,
+                                                    title: TextKey.PART_01__SECTION_02__CHAPTER_01__ARTICLE_02__TITLE,
+                                                    mainContent: [
+                                                                            
+                                                                    {
+                                                                        contentType: Content.IN_BRIEF,
+                                                                        pathID: '1-1-0-1-0',
+                                                                        mainContent: [
+                                                                                                    
+                                                                                            {
+                                                                                                contentType: Content.PARAGRAPH,
+                                                                                                pathID: '1-1-0-1-0-0',
+                                                                                                paragraphNumber: 19,
+                                                                                                supplementary: false,
+                                                                                                mainContent: [
+                                                                                                                                
+                                                                                                                        {
+                                                                                                                            contentType: Content.TEXT_CONTAINER,
+                                                                                                                            pathID: '1-1-0-1-0-0-0',
+                                                                                                                            mainContent: [
+                                                                                                                                                                
+                                                                                                                                                        {
+                                                                                                                                                            contentType: Content.TEXT,
+                                                                                                                                                            pathID: '1-1-0-1-0-0-0-0',
+                                                                                                                                                            content: TextKey.PART_01__SECTION_02__CHAPTER_01__ARTICLE_02__IN_BRIEF_01__PARAGRAPH_01__TEXT_CONTAINER_01__TEXT_01__CONTENT,
+                                                                                                                                                            strong: false,
+                                                                                                                                                            emphasis: false,
+                                                                                                                                                            smallCaps: false,
+                                                                                                                                                        },
+                                                                                                                                                
+                                                                                                                                                        {
+                                                                                                                                                            contentType: Content.TEXT,
+                                                                                                                                                            pathID: '1-1-0-1-0-0-0-1',
+                                                                                                                                                            content: TextKey.PART_01__SECTION_02__CHAPTER_01__ARTICLE_02__IN_BRIEF_01__PARAGRAPH_01__TEXT_CONTAINER_01__TEXT_02__CONTENT,
+                                                                                                                                                            strong: false,
+                                                                                                                                                            emphasis: false,
+                                                                                                                                                            smallCaps: false,
+                                                                                                                                                        }
+                                                                                                                            ],
+                                                                                                                            references: [
+                                                                                                                                                                
+                                                                                                                                                        {
+                                                                                                                                                            referenceType: ReferenceEnum.BIBLE,
+                                                                                                                                                            direct: false,
+                                                                                                                                                            book: BibleBook.EPHESIANS,
+                                                                                                                                                            chapter: 2,
+                                                                                                                                                            verses: 1,
+                                                                                                                                                        },
+                                                                                                                                                
+                                                                                                                                                        {
+                                                                                                                                                            referenceType: ReferenceEnum.BIBLE,
+                                                                                                                                                            direct: false,
+                                                                                                                                                            book: BibleBook.JOHN,
+                                                                                                                                                            chapter: 1,
+                                                                                                                                                            verses: `2-5`,
+                                                                                                                                                        },
+                                                                                                                                                
+                                                                                                                                                        {
+                                                                                                                                                            referenceType: ReferenceEnum.OTHER,
+                                                                                                                                                            direct: false,
+                                                                                                                                                            source: OtherSourceEnum.SOURCE_3,
+                                                                                                                                                            pointer: `Ch. IX, p.4`,
+                                                                                                                                                        },
+                                                                                                                            ],
+                                                                                                                            paragraphReferences: [
+                                                                                                                                
+                                                                                                                            ],
+                                                                                                                        },
+                                                                                                                
+                                                                                                                        {
+                                                                                                                            contentType: Content.TEXT_CONTAINER,
+                                                                                                                            pathID: '1-1-0-1-0-0-1',
+                                                                                                                            mainContent: [
+                                                                                                                                                                
+                                                                                                                                                        {
+                                                                                                                                                            contentType: Content.TEXT,
+                                                                                                                                                            pathID: '1-1-0-1-0-0-1-0',
+                                                                                                                                                            content: TextKey.PART_01__SECTION_02__CHAPTER_01__ARTICLE_02__IN_BRIEF_01__PARAGRAPH_01__TEXT_CONTAINER_02__TEXT_01__CONTENT,
+                                                                                                                                                            strong: false,
+                                                                                                                                                            emphasis: false,
+                                                                                                                                                            smallCaps: false,
+                                                                                                                                                        }
+                                                                                                                            ],
+                                                                                                                            references: [
+                                                                                                                                                                
+                                                                                                                                                        {
+                                                                                                                                                            referenceType: ReferenceEnum.OTHER,
+                                                                                                                                                            direct: false,
+                                                                                                                                                            source: OtherSourceEnum.SOURCE_3,
+                                                                                                                                                            pointer: ``,
+                                                                                                                                                        },
+                                                                                                                            ],
+                                                                                                                            paragraphReferences: [
+                                                                                                                                
+                                                                                                                            ],
+                                                                                                                        },
+                                                                                                ],
+                                                                                            },
+                                                                        ],
+                                                                    },
+                                                    ],
+                                                    openingContent: [
+                                                                            
+                                                                    {
+                                                                        contentType: Content.PARAGRAPH,
+                                                                        pathID: '1-1-0-1-0',
+                                                                        paragraphNumber: 16,
+                                                                        supplementary: false,
+                                                                        mainContent: [
+                                                                                                    
+                                                                                            {
+                                                                                                contentType: Content.TEXT_CONTAINER,
+                                                                                                pathID: '1-1-0-1-0-0',
+                                                                                                mainContent: [
+                                                                                                                                
+                                                                                                                        {
+                                                                                                                            contentType: Content.TEXT,
+                                                                                                                            pathID: '1-1-0-1-0-0-0',
+                                                                                                                            content: TextKey.PART_01__SECTION_02__CHAPTER_01__ARTICLE_02__PARAGRAPH_01__TEXT_CONTAINER_01__TEXT_01__CONTENT,
+                                                                                                                            strong: false,
+                                                                                                                            emphasis: false,
+                                                                                                                            smallCaps: false,
+                                                                                                                        },
+                                                                                                                
+                                                                                                                        {
+                                                                                                                            contentType: Content.TEXT,
+                                                                                                                            pathID: '1-1-0-1-0-0-1',
+                                                                                                                            content: TextKey.PART_01__SECTION_02__CHAPTER_01__ARTICLE_02__PARAGRAPH_01__TEXT_CONTAINER_01__TEXT_02__CONTENT,
+                                                                                                                            strong: false,
+                                                                                                                            emphasis: false,
+                                                                                                                            smallCaps: false,
+                                                                                                                        },
+                                                                                                                
+                                                                                                                        {
+                                                                                                                            contentType: Content.TEXT,
+                                                                                                                            pathID: '1-1-0-1-0-0-2',
+                                                                                                                            content: TextKey.PART_01__SECTION_02__CHAPTER_01__ARTICLE_02__PARAGRAPH_01__TEXT_CONTAINER_01__TEXT_03__CONTENT,
+                                                                                                                            strong: false,
+                                                                                                                            emphasis: false,
+                                                                                                                            smallCaps: false,
+                                                                                                                        }
+                                                                                                ],
+                                                                                                references: [
+                                                                                                    
+                                                                                                ],
+                                                                                                paragraphReferences: [
+                                                                                                    
+                                                                                                ],
+                                                                                            },
+                                                                        ],
+                                                                    },
+                                                            
+                                                                    {
+                                                                        contentType: Content.PARAGRAPH,
+                                                                        pathID: '1-1-0-1-1',
+                                                                        paragraphNumber: 17,
+                                                                        supplementary: true,
+                                                                        mainContent: [
+                                                                                                    
+                                                                                            {
+                                                                                                contentType: Content.TEXT_CONTAINER,
+                                                                                                pathID: '1-1-0-1-1-0',
+                                                                                                mainContent: [
+                                                                                                                                
+                                                                                                                        {
+                                                                                                                            contentType: Content.TEXT,
+                                                                                                                            pathID: '1-1-0-1-1-0-0',
+                                                                                                                            content: TextKey.PART_01__SECTION_02__CHAPTER_01__ARTICLE_02__PARAGRAPH_02__TEXT_CONTAINER_01__TEXT_01__CONTENT,
+                                                                                                                            strong: false,
+                                                                                                                            emphasis: false,
+                                                                                                                            smallCaps: false,
+                                                                                                                        }
+                                                                                                ],
+                                                                                                references: [
+                                                                                                                                
+                                                                                                                        {
+                                                                                                                            referenceType: ReferenceEnum.OTHER,
+                                                                                                                            direct: true,
+                                                                                                                            source: OtherSourceEnum.SOURCE_3,
+                                                                                                                            pointer: `742`,
+                                                                                                                        },
+                                                                                                                
+                                                                                                                        {
+                                                                                                                            referenceType: ReferenceEnum.BIBLE,
+                                                                                                                            direct: true,
+                                                                                                                            book: BibleBook.GENESIS,
+                                                                                                                            chapter: 1,
+                                                                                                                            verses: 1,
+                                                                                                                        },
+                                                                                                ],
+                                                                                                paragraphReferences: [
+                                                                                                    
+                                                                                                ],
+                                                                                            },
+                                                                                    
+                                                                                            {
+                                                                                                contentType: Content.TEXT_CONTAINER,
+                                                                                                pathID: '1-1-0-1-1-1',
+                                                                                                mainContent: [
+                                                                                                                                
+                                                                                                                        {
+                                                                                                                            contentType: Content.TEXT,
+                                                                                                                            pathID: '1-1-0-1-1-1-0',
+                                                                                                                            content: TextKey.PART_01__SECTION_02__CHAPTER_01__ARTICLE_02__PARAGRAPH_02__TEXT_CONTAINER_02__TEXT_01__CONTENT,
+                                                                                                                            strong: false,
+                                                                                                                            emphasis: false,
+                                                                                                                            smallCaps: false,
+                                                                                                                        },
+                                                                                                                
+                                                                                                                        {
+                                                                                                                            contentType: Content.TEXT,
+                                                                                                                            pathID: '1-1-0-1-1-1-1',
+                                                                                                                            content: TextKey.PART_01__SECTION_02__CHAPTER_01__ARTICLE_02__PARAGRAPH_02__TEXT_CONTAINER_02__TEXT_02__CONTENT,
+                                                                                                                            strong: false,
+                                                                                                                            emphasis: false,
+                                                                                                                            smallCaps: false,
+                                                                                                                        }
+                                                                                                ],
+                                                                                                references: [
+                                                                                                                                
+                                                                                                                        {
+                                                                                                                            referenceType: ReferenceEnum.BIBLE,
+                                                                                                                            direct: false,
+                                                                                                                            book: BibleBook.JOHN,
+                                                                                                                            chapter: 1,
+                                                                                                                            verses: `3-5`,
+                                                                                                                        },
+                                                                                                                
+                                                                                                                        {
+                                                                                                                            referenceType: ReferenceEnum.BIBLE,
+                                                                                                                            direct: false,
+                                                                                                                            book: BibleBook.ACTS_OF_THE_APOSTLES,
+                                                                                                                            chapter: 3,
+                                                                                                                            verses: `3-4`,
+                                                                                                                        },
+                                                                                                ],
+                                                                                                paragraphReferences: [
+                                                                                                    
+                                                                                                ],
+                                                                                            },
+                                                                        ],
+                                                                    },
+                                                            
+                                                                    {
+                                                                        contentType: Content.PARAGRAPH,
+                                                                        pathID: '1-1-0-1-2',
+                                                                        paragraphNumber: 18,
+                                                                        supplementary: true,
+                                                                        mainContent: [
+                                                                                                    
+                                                                                            {
+                                                                                                contentType: Content.TEXT_CONTAINER,
+                                                                                                pathID: '1-1-0-1-2-0',
+                                                                                                mainContent: [
+                                                                                                                                
+                                                                                                                        {
+                                                                                                                            contentType: Content.TEXT,
+                                                                                                                            pathID: '1-1-0-1-2-0-0',
+                                                                                                                            content: TextKey.PART_01__SECTION_02__CHAPTER_01__ARTICLE_02__PARAGRAPH_03__TEXT_CONTAINER_01__TEXT_01__CONTENT,
+                                                                                                                            strong: false,
+                                                                                                                            emphasis: false,
+                                                                                                                            smallCaps: false,
+                                                                                                                        }
+                                                                                                ],
+                                                                                                references: [
+                                                                                                                                
+                                                                                                                        {
+                                                                                                                            referenceType: ReferenceEnum.OTHER,
+                                                                                                                            direct: false,
+                                                                                                                            source: OtherSourceEnum.SOURCE_1,
+                                                                                                                            pointer: ``,
+                                                                                                                        },
+                                                                                                                
+                                                                                                                        {
+                                                                                                                            referenceType: ReferenceEnum.OTHER,
+                                                                                                                            direct: false,
+                                                                                                                            source: OtherSourceEnum.SOURCE_2,
+                                                                                                                            pointer: `398-401`,
+                                                                                                                        },
+                                                                                                                
+                                                                                                                        {
+                                                                                                                            referenceType: ReferenceEnum.BIBLE,
+                                                                                                                            direct: false,
+                                                                                                                            book: BibleBook.ACTS_OF_THE_APOSTLES,
+                                                                                                                            chapter: 1,
+                                                                                                                            verses: 3,
+                                                                                                                        },
+                                                                                                                
+                                                                                                                        {
+                                                                                                                            referenceType: ReferenceEnum.BIBLE,
+                                                                                                                            direct: false,
+                                                                                                                            book: BibleBook.PSALMS,
+                                                                                                                            chapter: 2,
+                                                                                                                            verses: `3-5`,
+                                                                                                                        },
+                                                                                                ],
+                                                                                                paragraphReferences: [
+                                                                                                    
+                                                                                                ],
+                                                                                            },
+                                                                                    
+                                                                                            {
+                                                                                                contentType: Content.TEXT_CONTAINER,
+                                                                                                pathID: '1-1-0-1-2-1',
+                                                                                                mainContent: [
+                                                                                                                                
+                                                                                                                        {
+                                                                                                                            contentType: Content.TEXT,
+                                                                                                                            pathID: '1-1-0-1-2-1-0',
+                                                                                                                            content: TextKey.PART_01__SECTION_02__CHAPTER_01__ARTICLE_02__PARAGRAPH_03__TEXT_CONTAINER_02__TEXT_01__CONTENT,
+                                                                                                                            strong: false,
+                                                                                                                            emphasis: false,
+                                                                                                                            smallCaps: false,
+                                                                                                                        }
+                                                                                                ],
+                                                                                                references: [
+                                                                                                                                
+                                                                                                                        {
+                                                                                                                            referenceType: ReferenceEnum.OTHER,
+                                                                                                                            direct: false,
+                                                                                                                            source: OtherSourceEnum.SOURCE_3,
+                                                                                                                            pointer: `Article VII, 8, 3, 1-2`,
+                                                                                                                        },
+                                                                                                                
+                                                                                                                        {
+                                                                                                                            referenceType: ReferenceEnum.BIBLE,
+                                                                                                                            direct: true,
+                                                                                                                            book: BibleBook.MICAH,
+                                                                                                                            chapter: 3,
+                                                                                                                            verses: 1,
+                                                                                                                        },
+                                                                                                ],
+                                                                                                paragraphReferences: [
+                                                                                                    
+                                                                                                ],
+                                                                                            },
+                                                                        ],
+                                                                    },
+                                                    ],
+                                                },
+                                        
+                                                {
+                                                    contentType: Content.ARTICLE,
+                                                    pathID: '1-1-0-2',
+                                                    articleNumber: 3,
+                                                    title: TextKey.PART_01__SECTION_02__CHAPTER_01__ARTICLE_03__TITLE,
+                                                    mainContent: [
+                                                                            
+                                                                    {
+                                                                        contentType: Content.IN_BRIEF,
+                                                                        pathID: '1-1-0-2-0',
+                                                                        mainContent: [
+                                                                                                    
+                                                                                            {
+                                                                                                contentType: Content.PARAGRAPH,
+                                                                                                pathID: '1-1-0-2-0-0',
+                                                                                                paragraphNumber: 23,
+                                                                                                supplementary: false,
+                                                                                                mainContent: [
+                                                                                                                                
+                                                                                                                        {
+                                                                                                                            contentType: Content.TEXT_CONTAINER,
+                                                                                                                            pathID: '1-1-0-2-0-0-0',
+                                                                                                                            mainContent: [
+                                                                                                                                                                
+                                                                                                                                                        {
+                                                                                                                                                            contentType: Content.TEXT,
+                                                                                                                                                            pathID: '1-1-0-2-0-0-0-0',
+                                                                                                                                                            content: TextKey.PART_01__SECTION_02__CHAPTER_01__ARTICLE_03__IN_BRIEF_01__PARAGRAPH_01__TEXT_CONTAINER_01__TEXT_01__CONTENT,
+                                                                                                                                                            strong: false,
+                                                                                                                                                            emphasis: false,
+                                                                                                                                                            smallCaps: false,
+                                                                                                                                                        },
+                                                                                                                                                
+                                                                                                                                                        {
+                                                                                                                                                            contentType: Content.TEXT,
+                                                                                                                                                            pathID: '1-1-0-2-0-0-0-1',
+                                                                                                                                                            content: TextKey.PART_01__SECTION_02__CHAPTER_01__ARTICLE_03__IN_BRIEF_01__PARAGRAPH_01__TEXT_CONTAINER_01__TEXT_02__CONTENT,
+                                                                                                                                                            strong: false,
+                                                                                                                                                            emphasis: false,
+                                                                                                                                                            smallCaps: false,
+                                                                                                                                                        },
+                                                                                                                                                
+                                                                                                                                                        {
+                                                                                                                                                            contentType: Content.TEXT,
+                                                                                                                                                            pathID: '1-1-0-2-0-0-0-2',
+                                                                                                                                                            content: TextKey.PART_01__SECTION_02__CHAPTER_01__ARTICLE_03__IN_BRIEF_01__PARAGRAPH_01__TEXT_CONTAINER_01__TEXT_03__CONTENT,
+                                                                                                                                                            strong: false,
+                                                                                                                                                            emphasis: false,
+                                                                                                                                                            smallCaps: false,
+                                                                                                                                                        }
+                                                                                                                            ],
+                                                                                                                            references: [
+                                                                                                                                
+                                                                                                                            ],
+                                                                                                                            paragraphReferences: [
+                                                                                                                                
+                                                                                                                            ],
+                                                                                                                        },
+                                                                                                                
+                                                                                                                        {
+                                                                                                                            contentType: Content.TEXT_CONTAINER,
+                                                                                                                            pathID: '1-1-0-2-0-0-1',
+                                                                                                                            mainContent: [
+                                                                                                                                                                
+                                                                                                                                                        {
+                                                                                                                                                            contentType: Content.TEXT,
+                                                                                                                                                            pathID: '1-1-0-2-0-0-1-0',
+                                                                                                                                                            content: TextKey.PART_01__SECTION_02__CHAPTER_01__ARTICLE_03__IN_BRIEF_01__PARAGRAPH_01__TEXT_CONTAINER_02__TEXT_01__CONTENT,
+                                                                                                                                                            strong: false,
+                                                                                                                                                            emphasis: false,
+                                                                                                                                                            smallCaps: false,
+                                                                                                                                                        },
+                                                                                                                                                
+                                                                                                                                                        {
+                                                                                                                                                            contentType: Content.TEXT,
+                                                                                                                                                            pathID: '1-1-0-2-0-0-1-1',
+                                                                                                                                                            content: TextKey.PART_01__SECTION_02__CHAPTER_01__ARTICLE_03__IN_BRIEF_01__PARAGRAPH_01__TEXT_CONTAINER_02__TEXT_02__CONTENT,
+                                                                                                                                                            strong: false,
+                                                                                                                                                            emphasis: false,
+                                                                                                                                                            smallCaps: false,
+                                                                                                                                                        },
+                                                                                                                                                
+                                                                                                                                                        {
+                                                                                                                                                            contentType: Content.TEXT,
+                                                                                                                                                            pathID: '1-1-0-2-0-0-1-2',
+                                                                                                                                                            content: TextKey.PART_01__SECTION_02__CHAPTER_01__ARTICLE_03__IN_BRIEF_01__PARAGRAPH_01__TEXT_CONTAINER_02__TEXT_03__CONTENT,
+                                                                                                                                                            strong: false,
+                                                                                                                                                            emphasis: false,
+                                                                                                                                                            smallCaps: false,
+                                                                                                                                                        }
+                                                                                                                            ],
+                                                                                                                            references: [
+                                                                                                                                                                
+                                                                                                                                                        {
+                                                                                                                                                            referenceType: ReferenceEnum.OTHER,
+                                                                                                                                                            direct: true,
+                                                                                                                                                            source: OtherSourceEnum.SOURCE_1,
+                                                                                                                                                            pointer: `742`,
+                                                                                                                                                        },
+                                                                                                                            ],
+                                                                                                                            paragraphReferences: [
+                                                                                                                                
+                                                                                                                            ],
+                                                                                                                        },
+                                                                                                                
+                                                                                                                        {
+                                                                                                                            contentType: Content.TEXT_CONTAINER,
+                                                                                                                            pathID: '1-1-0-2-0-0-2',
+                                                                                                                            mainContent: [
+                                                                                                                                                                
+                                                                                                                                                        {
+                                                                                                                                                            contentType: Content.TEXT,
+                                                                                                                                                            pathID: '1-1-0-2-0-0-2-0',
+                                                                                                                                                            content: TextKey.PART_01__SECTION_02__CHAPTER_01__ARTICLE_03__IN_BRIEF_01__PARAGRAPH_01__TEXT_CONTAINER_03__TEXT_01__CONTENT,
+                                                                                                                                                            strong: false,
+                                                                                                                                                            emphasis: false,
+                                                                                                                                                            smallCaps: false,
+                                                                                                                                                        },
+                                                                                                                                                
+                                                                                                                                                        {
+                                                                                                                                                            contentType: Content.TEXT,
+                                                                                                                                                            pathID: '1-1-0-2-0-0-2-1',
+                                                                                                                                                            content: TextKey.PART_01__SECTION_02__CHAPTER_01__ARTICLE_03__IN_BRIEF_01__PARAGRAPH_01__TEXT_CONTAINER_03__TEXT_02__CONTENT,
+                                                                                                                                                            strong: false,
+                                                                                                                                                            emphasis: false,
+                                                                                                                                                            smallCaps: false,
+                                                                                                                                                        }
+                                                                                                                            ],
+                                                                                                                            references: [
+                                                                                                                                                                
+                                                                                                                                                        {
+                                                                                                                                                            referenceType: ReferenceEnum.OTHER,
+                                                                                                                                                            direct: false,
+                                                                                                                                                            source: OtherSourceEnum.SOURCE_3,
+                                                                                                                                                            pointer: `Ch. IX, p.4`,
+                                                                                                                                                        },
+                                                                                                                                                
+                                                                                                                                                        {
+                                                                                                                                                            referenceType: ReferenceEnum.BIBLE,
+                                                                                                                                                            direct: false,
+                                                                                                                                                            book: BibleBook.EPHESIANS,
+                                                                                                                                                            chapter: 3,
+                                                                                                                                                            verses: `2-3`,
+                                                                                                                                                        },
+                                                                                                                                                
+                                                                                                                                                        {
+                                                                                                                                                            referenceType: ReferenceEnum.BIBLE,
+                                                                                                                                                            direct: true,
+                                                                                                                                                            book: BibleBook.PSALMS,
+                                                                                                                                                            chapter: 2,
+                                                                                                                                                            verses: 1,
+                                                                                                                                                        },
+                                                                                                                            ],
+                                                                                                                            paragraphReferences: [
+                                                                                                                                
+                                                                                                                            ],
+                                                                                                                        },
+                                                                                                ],
+                                                                                            },
+                                                                        ],
+                                                                    },
+                                                    ],
+                                                    openingContent: [
+                                                                            
+                                                                    {
+                                                                        contentType: Content.PARAGRAPH,
+                                                                        pathID: '1-1-0-2-0',
+                                                                        paragraphNumber: 20,
+                                                                        supplementary: false,
+                                                                        mainContent: [
+                                                                                                    
+                                                                                            {
+                                                                                                contentType: Content.TEXT_CONTAINER,
+                                                                                                pathID: '1-1-0-2-0-0',
+                                                                                                mainContent: [
+                                                                                                                                
+                                                                                                                        {
+                                                                                                                            contentType: Content.TEXT,
+                                                                                                                            pathID: '1-1-0-2-0-0-0',
+                                                                                                                            content: TextKey.PART_01__SECTION_02__CHAPTER_01__ARTICLE_03__PARAGRAPH_01__TEXT_CONTAINER_01__TEXT_01__CONTENT,
+                                                                                                                            strong: false,
+                                                                                                                            emphasis: false,
+                                                                                                                            smallCaps: false,
+                                                                                                                        }
+                                                                                                ],
+                                                                                                references: [
+                                                                                                                                
+                                                                                                                        {
+                                                                                                                            referenceType: ReferenceEnum.BIBLE,
+                                                                                                                            direct: false,
+                                                                                                                            book: BibleBook.HEBREWS,
+                                                                                                                            chapter: 3,
+                                                                                                                            verses: 1,
+                                                                                                                        },
+                                                                                                ],
+                                                                                                paragraphReferences: [
+                                                                                                    
+                                                                                                ],
+                                                                                            },
+                                                                                    
+                                                                                            {
+                                                                                                contentType: Content.TEXT_CONTAINER,
+                                                                                                pathID: '1-1-0-2-0-1',
+                                                                                                mainContent: [
+                                                                                                                                
+                                                                                                                        {
+                                                                                                                            contentType: Content.TEXT,
+                                                                                                                            pathID: '1-1-0-2-0-1-0',
+                                                                                                                            content: TextKey.PART_01__SECTION_02__CHAPTER_01__ARTICLE_03__PARAGRAPH_01__TEXT_CONTAINER_02__TEXT_01__CONTENT,
+                                                                                                                            strong: false,
+                                                                                                                            emphasis: false,
+                                                                                                                            smallCaps: false,
+                                                                                                                        },
+                                                                                                                
+                                                                                                                        {
+                                                                                                                            contentType: Content.TEXT,
+                                                                                                                            pathID: '1-1-0-2-0-1-1',
+                                                                                                                            content: TextKey.PART_01__SECTION_02__CHAPTER_01__ARTICLE_03__PARAGRAPH_01__TEXT_CONTAINER_02__TEXT_02__CONTENT,
+                                                                                                                            strong: false,
+                                                                                                                            emphasis: false,
+                                                                                                                            smallCaps: false,
+                                                                                                                        },
+                                                                                                                
+                                                                                                                        {
+                                                                                                                            contentType: Content.TEXT,
+                                                                                                                            pathID: '1-1-0-2-0-1-2',
+                                                                                                                            content: TextKey.PART_01__SECTION_02__CHAPTER_01__ARTICLE_03__PARAGRAPH_01__TEXT_CONTAINER_02__TEXT_03__CONTENT,
+                                                                                                                            strong: false,
+                                                                                                                            emphasis: false,
+                                                                                                                            smallCaps: false,
+                                                                                                                        }
+                                                                                                ],
+                                                                                                references: [
+                                                                                                                                
+                                                                                                                        {
+                                                                                                                            referenceType: ReferenceEnum.OTHER,
+                                                                                                                            direct: false,
+                                                                                                                            source: OtherSourceEnum.SOURCE_1,
+                                                                                                                            pointer: `Ch. IX, p.4`,
+                                                                                                                        },
+                                                                                                ],
+                                                                                                paragraphReferences: [
+                                                                                                    
+                                                                                                ],
+                                                                                            },
+                                                                                    
+                                                                                            {
+                                                                                                contentType: Content.TEXT_CONTAINER,
+                                                                                                pathID: '1-1-0-2-0-2',
+                                                                                                mainContent: [
+                                                                                                                                
+                                                                                                                        {
+                                                                                                                            contentType: Content.TEXT,
+                                                                                                                            pathID: '1-1-0-2-0-2-0',
+                                                                                                                            content: TextKey.PART_01__SECTION_02__CHAPTER_01__ARTICLE_03__PARAGRAPH_01__TEXT_CONTAINER_03__TEXT_01__CONTENT,
+                                                                                                                            strong: false,
+                                                                                                                            emphasis: false,
+                                                                                                                            smallCaps: false,
+                                                                                                                        },
+                                                                                                                
+                                                                                                                        {
+                                                                                                                            contentType: Content.TEXT,
+                                                                                                                            pathID: '1-1-0-2-0-2-1',
+                                                                                                                            content: TextKey.PART_01__SECTION_02__CHAPTER_01__ARTICLE_03__PARAGRAPH_01__TEXT_CONTAINER_03__TEXT_02__CONTENT,
+                                                                                                                            strong: false,
+                                                                                                                            emphasis: false,
+                                                                                                                            smallCaps: false,
+                                                                                                                        },
+                                                                                                                
+                                                                                                                        {
+                                                                                                                            contentType: Content.TEXT,
+                                                                                                                            pathID: '1-1-0-2-0-2-2',
+                                                                                                                            content: TextKey.PART_01__SECTION_02__CHAPTER_01__ARTICLE_03__PARAGRAPH_01__TEXT_CONTAINER_03__TEXT_03__CONTENT,
+                                                                                                                            strong: false,
+                                                                                                                            emphasis: false,
+                                                                                                                            smallCaps: false,
+                                                                                                                        }
+                                                                                                ],
+                                                                                                references: [
+                                                                                                    
+                                                                                                ],
+                                                                                                paragraphReferences: [
+                                                                                                    
+                                                                                                ],
+                                                                                            },
+                                                                        ],
+                                                                    },
+                                                            
+                                                                    {
+                                                                        contentType: Content.PARAGRAPH,
+                                                                        pathID: '1-1-0-2-1',
+                                                                        paragraphNumber: 21,
+                                                                        supplementary: false,
+                                                                        mainContent: [
+                                                                                                    
+                                                                                            {
+                                                                                                contentType: Content.TEXT_CONTAINER,
+                                                                                                pathID: '1-1-0-2-1-0',
+                                                                                                mainContent: [
+                                                                                                                                
+                                                                                                                        {
+                                                                                                                            contentType: Content.TEXT,
+                                                                                                                            pathID: '1-1-0-2-1-0-0',
+                                                                                                                            content: TextKey.PART_01__SECTION_02__CHAPTER_01__ARTICLE_03__PARAGRAPH_02__TEXT_CONTAINER_01__TEXT_01__CONTENT,
+                                                                                                                            strong: false,
+                                                                                                                            emphasis: false,
+                                                                                                                            smallCaps: false,
+                                                                                                                        },
+                                                                                                                
+                                                                                                                        {
+                                                                                                                            contentType: Content.TEXT,
+                                                                                                                            pathID: '1-1-0-2-1-0-1',
+                                                                                                                            content: TextKey.PART_01__SECTION_02__CHAPTER_01__ARTICLE_03__PARAGRAPH_02__TEXT_CONTAINER_01__TEXT_02__CONTENT,
+                                                                                                                            strong: false,
+                                                                                                                            emphasis: false,
+                                                                                                                            smallCaps: false,
+                                                                                                                        }
+                                                                                                ],
+                                                                                                references: [
+                                                                                                    
+                                                                                                ],
+                                                                                                paragraphReferences: [
+                                                                                                    
+                                                                                                ],
+                                                                                            },
+                                                                                    
+                                                                                            {
+                                                                                                contentType: Content.TEXT_CONTAINER,
+                                                                                                pathID: '1-1-0-2-1-1',
+                                                                                                mainContent: [
+                                                                                                                                
+                                                                                                                        {
+                                                                                                                            contentType: Content.TEXT,
+                                                                                                                            pathID: '1-1-0-2-1-1-0',
+                                                                                                                            content: TextKey.PART_01__SECTION_02__CHAPTER_01__ARTICLE_03__PARAGRAPH_02__TEXT_CONTAINER_02__TEXT_01__CONTENT,
+                                                                                                                            strong: false,
+                                                                                                                            emphasis: false,
+                                                                                                                            smallCaps: false,
+                                                                                                                        },
+                                                                                                                
+                                                                                                                        {
+                                                                                                                            contentType: Content.TEXT,
+                                                                                                                            pathID: '1-1-0-2-1-1-1',
+                                                                                                                            content: TextKey.PART_01__SECTION_02__CHAPTER_01__ARTICLE_03__PARAGRAPH_02__TEXT_CONTAINER_02__TEXT_02__CONTENT,
+                                                                                                                            strong: false,
+                                                                                                                            emphasis: false,
+                                                                                                                            smallCaps: false,
+                                                                                                                        }
+                                                                                                ],
+                                                                                                references: [
+                                                                                                    
+                                                                                                ],
+                                                                                                paragraphReferences: [
+                                                                                                    `9-12`
+                                                                                                ],
+                                                                                            },
+                                                                        ],
+                                                                    },
+                                                            
+                                                                    {
+                                                                        contentType: Content.PARAGRAPH,
+                                                                        pathID: '1-1-0-2-2',
+                                                                        paragraphNumber: 22,
+                                                                        supplementary: false,
+                                                                        mainContent: [
+                                                                                                    
+                                                                                            {
+                                                                                                contentType: Content.TEXT_CONTAINER,
+                                                                                                pathID: '1-1-0-2-2-0',
+                                                                                                mainContent: [
+                                                                                                                                
+                                                                                                                        {
+                                                                                                                            contentType: Content.TEXT,
+                                                                                                                            pathID: '1-1-0-2-2-0-0',
+                                                                                                                            content: TextKey.PART_01__SECTION_02__CHAPTER_01__ARTICLE_03__PARAGRAPH_03__TEXT_CONTAINER_01__TEXT_01__CONTENT,
                                                                                                                             strong: false,
                                                                                                                             emphasis: false,
                                                                                                                             smallCaps: false,
@@ -1139,858 +2449,6 @@ export const Catechism: CatechismStructure = {
                                                                                                                             referenceType: ReferenceEnum.OTHER,
                                                                                                                             direct: true,
                                                                                                                             source: OtherSourceEnum.SOURCE_3,
-                                                                                                                            pointer: `742`,
-                                                                                                                        },
-                                                                                                                
-                                                                                                                        {
-                                                                                                                            referenceType: ReferenceEnum.BIBLE,
-                                                                                                                            direct: false,
-                                                                                                                            book: BibleBook.MICAH,
-                                                                                                                            chapter: 1,
-                                                                                                                            verses: `1-4`,
-                                                                                                                        },
-                                                                                                                
-                                                                                                                        {
-                                                                                                                            referenceType: ReferenceEnum.BIBLE,
-                                                                                                                            direct: true,
-                                                                                                                            book: BibleBook.PSALMS,
-                                                                                                                            chapter: 3,
-                                                                                                                            verses: 3,
-                                                                                                                        },
-                                                                                                ],
-                                                                                                paragraphReferences: [
-                                                                                                    
-                                                                                                ],
-                                                                                            },
-                                                                                    
-                                                                                            {
-                                                                                                contentType: Content.TEXT_CONTAINER,
-                                                                                                pathID: '1-0-0-0-0-1',
-                                                                                                mainContent: [
-                                                                                                                                
-                                                                                                                        {
-                                                                                                                            contentType: Content.TEXT,
-                                                                                                                            pathID: '1-0-0-0-0-1-0',
-                                                                                                                            content: TextKey.PART_01__SECTION_01__CHAPTER_01__ARTICLE_01__PARAGRAPH_01__TEXT_CONTAINER_02__TEXT_01__CONTENT,
-                                                                                                                            strong: false,
-                                                                                                                            emphasis: false,
-                                                                                                                            smallCaps: false,
-                                                                                                                        }
-                                                                                                ],
-                                                                                                references: [
-                                                                                                    
-                                                                                                ],
-                                                                                                paragraphReferences: [
-                                                                                                    
-                                                                                                ],
-                                                                                            },
-                                                                                    
-                                                                                            {
-                                                                                                contentType: Content.TEXT_CONTAINER,
-                                                                                                pathID: '1-0-0-0-0-2',
-                                                                                                mainContent: [
-                                                                                                                                
-                                                                                                                        {
-                                                                                                                            contentType: Content.TEXT,
-                                                                                                                            pathID: '1-0-0-0-0-2-0',
-                                                                                                                            content: TextKey.PART_01__SECTION_01__CHAPTER_01__ARTICLE_01__PARAGRAPH_01__TEXT_CONTAINER_03__TEXT_01__CONTENT,
-                                                                                                                            strong: false,
-                                                                                                                            emphasis: false,
-                                                                                                                            smallCaps: false,
-                                                                                                                        }
-                                                                                                ],
-                                                                                                references: [
-                                                                                                                                
-                                                                                                                        {
-                                                                                                                            referenceType: ReferenceEnum.BIBLE,
-                                                                                                                            direct: true,
-                                                                                                                            book: BibleBook.GENESIS,
-                                                                                                                            chapter: 3,
-                                                                                                                            verses: `1-2`,
-                                                                                                                        },
-                                                                                                                
-                                                                                                                        {
-                                                                                                                            referenceType: ReferenceEnum.OTHER,
-                                                                                                                            direct: true,
-                                                                                                                            source: OtherSourceEnum.SOURCE_2,
-                                                                                                                            pointer: `Ch. IX, p.4`,
-                                                                                                                        },
-                                                                                                ],
-                                                                                                paragraphReferences: [
-                                                                                                    19
-                                                                                                ],
-                                                                                            },
-                                                                        ],
-                                                                    },
-                                                    ],
-                                                },
-                                        
-                                                {
-                                                    contentType: Content.ARTICLE,
-                                                    pathID: '1-0-0-1',
-                                                    articleNumber: 2,
-                                                    title: TextKey.PART_01__SECTION_01__CHAPTER_01__ARTICLE_02__TITLE,
-                                                    mainContent: [
-                                                                            
-                                                                    {
-                                                                        contentType: Content.SUB_ARTICLE,
-                                                                        pathID: '1-0-0-1-0',
-                                                                        subarticleNumber: 1,
-                                                                        title: TextKey.PART_01__SECTION_01__CHAPTER_01__ARTICLE_02__SUB_ARTICLE_01__TITLE,
-                                                                        mainContent: [
-                                                                                                    
-                                                                                            {
-                                                                                                contentType: Content.PARAGRAPH_GROUP,
-                                                                                                pathID: '1-0-0-1-0-0',
-                                                                                                paragraphGroupNumber: 1,
-                                                                                                title: TextKey.PART_01__SECTION_01__CHAPTER_01__ARTICLE_02__SUB_ARTICLE_01__PARAGRAPH_GROUP_01__TITLE,
-                                                                                                mainContent: [
-                                                                                                                                
-                                                                                                                        {
-                                                                                                                            contentType: Content.PARAGRAPH,
-                                                                                                                            pathID: '1-0-0-1-0-0-0',
-                                                                                                                            paragraphNumber: 16,
-                                                                                                                            supplementary: false,
-                                                                                                                            mainContent: [
-                                                                                                                                                                
-                                                                                                                                                        {
-                                                                                                                                                            contentType: Content.TEXT_CONTAINER,
-                                                                                                                                                            pathID: '1-0-0-1-0-0-0-0',
-                                                                                                                                                            mainContent: [
-                                                                                                                                                                                                    
-                                                                                                                                                                                            {
-                                                                                                                                                                                                contentType: Content.TEXT,
-                                                                                                                                                                                                pathID: '1-0-0-1-0-0-0-0-0',
-                                                                                                                                                                                                content: TextKey.PART_01__SECTION_01__CHAPTER_01__ARTICLE_02__SUB_ARTICLE_01__PARAGRAPH_GROUP_01__PARAGRAPH_01__TEXT_CONTAINER_01__TEXT_01__CONTENT,
-                                                                                                                                                                                                strong: false,
-                                                                                                                                                                                                emphasis: false,
-                                                                                                                                                                                                smallCaps: false,
-                                                                                                                                                                                            }
-                                                                                                                                                            ],
-                                                                                                                                                            references: [
-                                                                                                                                                                
-                                                                                                                                                            ],
-                                                                                                                                                            paragraphReferences: [
-                                                                                                                                                                
-                                                                                                                                                            ],
-                                                                                                                                                        },
-                                                                                                                                                
-                                                                                                                                                        {
-                                                                                                                                                            contentType: Content.TEXT_CONTAINER,
-                                                                                                                                                            pathID: '1-0-0-1-0-0-0-1',
-                                                                                                                                                            mainContent: [
-                                                                                                                                                                                                    
-                                                                                                                                                                                            {
-                                                                                                                                                                                                contentType: Content.TEXT,
-                                                                                                                                                                                                pathID: '1-0-0-1-0-0-0-1-0',
-                                                                                                                                                                                                content: TextKey.PART_01__SECTION_01__CHAPTER_01__ARTICLE_02__SUB_ARTICLE_01__PARAGRAPH_GROUP_01__PARAGRAPH_01__TEXT_CONTAINER_02__TEXT_01__CONTENT,
-                                                                                                                                                                                                strong: false,
-                                                                                                                                                                                                emphasis: false,
-                                                                                                                                                                                                smallCaps: false,
-                                                                                                                                                                                            },
-                                                                                                                                                                                    
-                                                                                                                                                                                            {
-                                                                                                                                                                                                contentType: Content.TEXT,
-                                                                                                                                                                                                pathID: '1-0-0-1-0-0-0-1-1',
-                                                                                                                                                                                                content: TextKey.PART_01__SECTION_01__CHAPTER_01__ARTICLE_02__SUB_ARTICLE_01__PARAGRAPH_GROUP_01__PARAGRAPH_01__TEXT_CONTAINER_02__TEXT_02__CONTENT,
-                                                                                                                                                                                                strong: false,
-                                                                                                                                                                                                emphasis: false,
-                                                                                                                                                                                                smallCaps: false,
-                                                                                                                                                                                            },
-                                                                                                                                                                                    
-                                                                                                                                                                                            {
-                                                                                                                                                                                                contentType: Content.TEXT,
-                                                                                                                                                                                                pathID: '1-0-0-1-0-0-0-1-2',
-                                                                                                                                                                                                content: TextKey.PART_01__SECTION_01__CHAPTER_01__ARTICLE_02__SUB_ARTICLE_01__PARAGRAPH_GROUP_01__PARAGRAPH_01__TEXT_CONTAINER_02__TEXT_03__CONTENT,
-                                                                                                                                                                                                strong: false,
-                                                                                                                                                                                                emphasis: false,
-                                                                                                                                                                                                smallCaps: false,
-                                                                                                                                                                                            }
-                                                                                                                                                            ],
-                                                                                                                                                            references: [
-                                                                                                                                                                                                    
-                                                                                                                                                                                            {
-                                                                                                                                                                                                referenceType: ReferenceEnum.OTHER,
-                                                                                                                                                                                                direct: false,
-                                                                                                                                                                                                source: OtherSourceEnum.SOURCE_1,
-                                                                                                                                                                                                pointer: `742`,
-                                                                                                                                                                                            },
-                                                                                                                                                                                    
-                                                                                                                                                                                            {
-                                                                                                                                                                                                referenceType: ReferenceEnum.OTHER,
-                                                                                                                                                                                                direct: false,
-                                                                                                                                                                                                source: OtherSourceEnum.SOURCE_3,
-                                                                                                                                                                                                pointer: ``,
-                                                                                                                                                                                            },
-                                                                                                                                                            ],
-                                                                                                                                                            paragraphReferences: [
-                                                                                                                                                                
-                                                                                                                                                            ],
-                                                                                                                                                        },
-                                                                                                                                                
-                                                                                                                                                        {
-                                                                                                                                                            contentType: Content.TEXT_CONTAINER,
-                                                                                                                                                            pathID: '1-0-0-1-0-0-0-2',
-                                                                                                                                                            mainContent: [
-                                                                                                                                                                                                    
-                                                                                                                                                                                            {
-                                                                                                                                                                                                contentType: Content.TEXT,
-                                                                                                                                                                                                pathID: '1-0-0-1-0-0-0-2-0',
-                                                                                                                                                                                                content: TextKey.PART_01__SECTION_01__CHAPTER_01__ARTICLE_02__SUB_ARTICLE_01__PARAGRAPH_GROUP_01__PARAGRAPH_01__TEXT_CONTAINER_03__TEXT_01__CONTENT,
-                                                                                                                                                                                                strong: false,
-                                                                                                                                                                                                emphasis: false,
-                                                                                                                                                                                                smallCaps: false,
-                                                                                                                                                                                            }
-                                                                                                                                                            ],
-                                                                                                                                                            references: [
-                                                                                                                                                                                                    
-                                                                                                                                                                                            {
-                                                                                                                                                                                                referenceType: ReferenceEnum.BIBLE,
-                                                                                                                                                                                                direct: false,
-                                                                                                                                                                                                book: BibleBook.JOHN,
-                                                                                                                                                                                                chapter: 3,
-                                                                                                                                                                                                verses: `2-5`,
-                                                                                                                                                                                            },
-                                                                                                                                                            ],
-                                                                                                                                                            paragraphReferences: [
-                                                                                                                                                                
-                                                                                                                                                            ],
-                                                                                                                                                        },
-                                                                                                                            ],
-                                                                                                                        },
-                                                                                                                
-                                                                                                                        {
-                                                                                                                            contentType: Content.TEXT_CONTAINER,
-                                                                                                                            pathID: '1-0-0-1-0-0-1',
-                                                                                                                            mainContent: [
-                                                                                                                                                                
-                                                                                                                                                        {
-                                                                                                                                                            contentType: Content.TEXT,
-                                                                                                                                                            pathID: '1-0-0-1-0-0-1-0',
-                                                                                                                                                            content: TextKey.PART_01__SECTION_01__CHAPTER_01__ARTICLE_02__SUB_ARTICLE_01__PARAGRAPH_GROUP_01__TEXT_CONTAINER_01__TEXT_01__CONTENT,
-                                                                                                                                                            strong: false,
-                                                                                                                                                            emphasis: false,
-                                                                                                                                                            smallCaps: false,
-                                                                                                                                                        }
-                                                                                                                            ],
-                                                                                                                            references: [
-                                                                                                                                                                
-                                                                                                                                                        {
-                                                                                                                                                            referenceType: ReferenceEnum.OTHER,
-                                                                                                                                                            direct: false,
-                                                                                                                                                            source: OtherSourceEnum.SOURCE_3,
-                                                                                                                                                            pointer: ``,
-                                                                                                                                                        },
-                                                                                                                                                
-                                                                                                                                                        {
-                                                                                                                                                            referenceType: ReferenceEnum.BIBLE,
-                                                                                                                                                            direct: true,
-                                                                                                                                                            book: BibleBook.EPHESIANS,
-                                                                                                                                                            chapter: 1,
-                                                                                                                                                            verses: `1-3`,
-                                                                                                                                                        },
-                                                                                                                                                
-                                                                                                                                                        {
-                                                                                                                                                            referenceType: ReferenceEnum.BIBLE,
-                                                                                                                                                            direct: true,
-                                                                                                                                                            book: BibleBook.GENESIS,
-                                                                                                                                                            chapter: 1,
-                                                                                                                                                            verses: `3-5`,
-                                                                                                                                                        },
-                                                                                                                            ],
-                                                                                                                            paragraphReferences: [
-                                                                                                                                
-                                                                                                                            ],
-                                                                                                                        },
-                                                                                                                
-                                                                                                                        {
-                                                                                                                            contentType: Content.PARAGRAPH,
-                                                                                                                            pathID: '1-0-0-1-0-0-2',
-                                                                                                                            paragraphNumber: 17,
-                                                                                                                            supplementary: false,
-                                                                                                                            mainContent: [
-                                                                                                                                                                
-                                                                                                                                                        {
-                                                                                                                                                            contentType: Content.TEXT_CONTAINER,
-                                                                                                                                                            pathID: '1-0-0-1-0-0-2-0',
-                                                                                                                                                            mainContent: [
-                                                                                                                                                                                                    
-                                                                                                                                                                                            {
-                                                                                                                                                                                                contentType: Content.TEXT,
-                                                                                                                                                                                                pathID: '1-0-0-1-0-0-2-0-0',
-                                                                                                                                                                                                content: TextKey.PART_01__SECTION_01__CHAPTER_01__ARTICLE_02__SUB_ARTICLE_01__PARAGRAPH_GROUP_01__PARAGRAPH_02__TEXT_CONTAINER_01__TEXT_01__CONTENT,
-                                                                                                                                                                                                strong: false,
-                                                                                                                                                                                                emphasis: false,
-                                                                                                                                                                                                smallCaps: false,
-                                                                                                                                                                                            },
-                                                                                                                                                                                    
-                                                                                                                                                                                            {
-                                                                                                                                                                                                contentType: Content.TEXT,
-                                                                                                                                                                                                pathID: '1-0-0-1-0-0-2-0-1',
-                                                                                                                                                                                                content: TextKey.PART_01__SECTION_01__CHAPTER_01__ARTICLE_02__SUB_ARTICLE_01__PARAGRAPH_GROUP_01__PARAGRAPH_02__TEXT_CONTAINER_01__TEXT_02__CONTENT,
-                                                                                                                                                                                                strong: false,
-                                                                                                                                                                                                emphasis: false,
-                                                                                                                                                                                                smallCaps: false,
-                                                                                                                                                                                            }
-                                                                                                                                                            ],
-                                                                                                                                                            references: [
-                                                                                                                                                                                                    
-                                                                                                                                                                                            {
-                                                                                                                                                                                                referenceType: ReferenceEnum.OTHER,
-                                                                                                                                                                                                direct: true,
-                                                                                                                                                                                                source: OtherSourceEnum.SOURCE_3,
-                                                                                                                                                                                                pointer: `Article VII, 8, 3, 1-2`,
-                                                                                                                                                                                            },
-                                                                                                                                                            ],
-                                                                                                                                                            paragraphReferences: [
-                                                                                                                                                                
-                                                                                                                                                            ],
-                                                                                                                                                        },
-                                                                                                                                                
-                                                                                                                                                        {
-                                                                                                                                                            contentType: Content.TEXT_CONTAINER,
-                                                                                                                                                            pathID: '1-0-0-1-0-0-2-1',
-                                                                                                                                                            mainContent: [
-                                                                                                                                                                                                    
-                                                                                                                                                                                            {
-                                                                                                                                                                                                contentType: Content.TEXT,
-                                                                                                                                                                                                pathID: '1-0-0-1-0-0-2-1-0',
-                                                                                                                                                                                                content: TextKey.PART_01__SECTION_01__CHAPTER_01__ARTICLE_02__SUB_ARTICLE_01__PARAGRAPH_GROUP_01__PARAGRAPH_02__TEXT_CONTAINER_02__TEXT_01__CONTENT,
-                                                                                                                                                                                                strong: false,
-                                                                                                                                                                                                emphasis: false,
-                                                                                                                                                                                                smallCaps: false,
-                                                                                                                                                                                            }
-                                                                                                                                                            ],
-                                                                                                                                                            references: [
-                                                                                                                                                                
-                                                                                                                                                            ],
-                                                                                                                                                            paragraphReferences: [
-                                                                                                                                                                
-                                                                                                                                                            ],
-                                                                                                                                                        },
-                                                                                                                            ],
-                                                                                                                        },
-                                                                                                ],
-                                                                                            },
-                                                                                    
-                                                                                            {
-                                                                                                contentType: Content.PARAGRAPH_GROUP,
-                                                                                                pathID: '1-0-0-1-0-1',
-                                                                                                paragraphGroupNumber: 1,
-                                                                                                title: TextKey.PART_01__SECTION_01__CHAPTER_01__ARTICLE_02__SUB_ARTICLE_01__PARAGRAPH_GROUP_02__TITLE,
-                                                                                                mainContent: [
-                                                                                                                                
-                                                                                                                        {
-                                                                                                                            contentType: Content.TEXT_CONTAINER,
-                                                                                                                            pathID: '1-0-0-1-0-1-0',
-                                                                                                                            mainContent: [
-                                                                                                                                                                
-                                                                                                                                                        {
-                                                                                                                                                            contentType: Content.TEXT,
-                                                                                                                                                            pathID: '1-0-0-1-0-1-0-0',
-                                                                                                                                                            content: TextKey.PART_01__SECTION_01__CHAPTER_01__ARTICLE_02__SUB_ARTICLE_01__PARAGRAPH_GROUP_02__TEXT_CONTAINER_01__TEXT_01__CONTENT,
-                                                                                                                                                            strong: false,
-                                                                                                                                                            emphasis: false,
-                                                                                                                                                            smallCaps: false,
-                                                                                                                                                        },
-                                                                                                                                                
-                                                                                                                                                        {
-                                                                                                                                                            contentType: Content.TEXT,
-                                                                                                                                                            pathID: '1-0-0-1-0-1-0-1',
-                                                                                                                                                            content: TextKey.PART_01__SECTION_01__CHAPTER_01__ARTICLE_02__SUB_ARTICLE_01__PARAGRAPH_GROUP_02__TEXT_CONTAINER_01__TEXT_02__CONTENT,
-                                                                                                                                                            strong: false,
-                                                                                                                                                            emphasis: false,
-                                                                                                                                                            smallCaps: false,
-                                                                                                                                                        }
-                                                                                                                            ],
-                                                                                                                            references: [
-                                                                                                                                                                
-                                                                                                                                                        {
-                                                                                                                                                            referenceType: ReferenceEnum.OTHER,
-                                                                                                                                                            direct: true,
-                                                                                                                                                            source: OtherSourceEnum.SOURCE_1,
-                                                                                                                                                            pointer: `Article VII, 8, 3, 1-2`,
-                                                                                                                                                        },
-                                                                                                                                                
-                                                                                                                                                        {
-                                                                                                                                                            referenceType: ReferenceEnum.OTHER,
-                                                                                                                                                            direct: true,
-                                                                                                                                                            source: OtherSourceEnum.SOURCE_3,
-                                                                                                                                                            pointer: ``,
-                                                                                                                                                        },
-                                                                                                                            ],
-                                                                                                                            paragraphReferences: [
-                                                                                                                                
-                                                                                                                            ],
-                                                                                                                        },
-                                                                                                                
-                                                                                                                        {
-                                                                                                                            contentType: Content.PARAGRAPH,
-                                                                                                                            pathID: '1-0-0-1-0-1-1',
-                                                                                                                            paragraphNumber: 18,
-                                                                                                                            supplementary: true,
-                                                                                                                            mainContent: [
-                                                                                                                                                                
-                                                                                                                                                        {
-                                                                                                                                                            contentType: Content.TEXT_CONTAINER,
-                                                                                                                                                            pathID: '1-0-0-1-0-1-1-0',
-                                                                                                                                                            mainContent: [
-                                                                                                                                                                                                    
-                                                                                                                                                                                            {
-                                                                                                                                                                                                contentType: Content.TEXT,
-                                                                                                                                                                                                pathID: '1-0-0-1-0-1-1-0-0',
-                                                                                                                                                                                                content: TextKey.PART_01__SECTION_01__CHAPTER_01__ARTICLE_02__SUB_ARTICLE_01__PARAGRAPH_GROUP_02__PARAGRAPH_01__TEXT_CONTAINER_01__TEXT_01__CONTENT,
-                                                                                                                                                                                                strong: false,
-                                                                                                                                                                                                emphasis: false,
-                                                                                                                                                                                                smallCaps: false,
-                                                                                                                                                                                            },
-                                                                                                                                                                                    
-                                                                                                                                                                                            {
-                                                                                                                                                                                                contentType: Content.TEXT,
-                                                                                                                                                                                                pathID: '1-0-0-1-0-1-1-0-1',
-                                                                                                                                                                                                content: TextKey.PART_01__SECTION_01__CHAPTER_01__ARTICLE_02__SUB_ARTICLE_01__PARAGRAPH_GROUP_02__PARAGRAPH_01__TEXT_CONTAINER_01__TEXT_02__CONTENT,
-                                                                                                                                                                                                strong: false,
-                                                                                                                                                                                                emphasis: false,
-                                                                                                                                                                                                smallCaps: false,
-                                                                                                                                                                                            },
-                                                                                                                                                                                    
-                                                                                                                                                                                            {
-                                                                                                                                                                                                contentType: Content.TEXT,
-                                                                                                                                                                                                pathID: '1-0-0-1-0-1-1-0-2',
-                                                                                                                                                                                                content: TextKey.PART_01__SECTION_01__CHAPTER_01__ARTICLE_02__SUB_ARTICLE_01__PARAGRAPH_GROUP_02__PARAGRAPH_01__TEXT_CONTAINER_01__TEXT_03__CONTENT,
-                                                                                                                                                                                                strong: false,
-                                                                                                                                                                                                emphasis: false,
-                                                                                                                                                                                                smallCaps: false,
-                                                                                                                                                                                            }
-                                                                                                                                                            ],
-                                                                                                                                                            references: [
-                                                                                                                                                                                                    
-                                                                                                                                                                                            {
-                                                                                                                                                                                                referenceType: ReferenceEnum.BIBLE,
-                                                                                                                                                                                                direct: true,
-                                                                                                                                                                                                book: BibleBook.EPHESIANS,
-                                                                                                                                                                                                chapter: 1,
-                                                                                                                                                                                                verses: `1-4`,
-                                                                                                                                                                                            },
-                                                                                                                                                            ],
-                                                                                                                                                            paragraphReferences: [
-                                                                                                                                                                
-                                                                                                                                                            ],
-                                                                                                                                                        },
-                                                                                                                            ],
-                                                                                                                        },
-                                                                                                ],
-                                                                                            },
-                                                                                    
-                                                                                            {
-                                                                                                contentType: Content.PARAGRAPH,
-                                                                                                pathID: '1-0-0-1-0-2',
-                                                                                                paragraphNumber: 19,
-                                                                                                supplementary: false,
-                                                                                                mainContent: [
-                                                                                                                                
-                                                                                                                        {
-                                                                                                                            contentType: Content.TEXT_CONTAINER,
-                                                                                                                            pathID: '1-0-0-1-0-2-0',
-                                                                                                                            mainContent: [
-                                                                                                                                                                
-                                                                                                                                                        {
-                                                                                                                                                            contentType: Content.TEXT,
-                                                                                                                                                            pathID: '1-0-0-1-0-2-0-0',
-                                                                                                                                                            content: TextKey.PART_01__SECTION_01__CHAPTER_01__ARTICLE_02__SUB_ARTICLE_01__PARAGRAPH_01__TEXT_CONTAINER_01__TEXT_01__CONTENT,
-                                                                                                                                                            strong: false,
-                                                                                                                                                            emphasis: false,
-                                                                                                                                                            smallCaps: false,
-                                                                                                                                                        },
-                                                                                                                                                
-                                                                                                                                                        {
-                                                                                                                                                            contentType: Content.TEXT,
-                                                                                                                                                            pathID: '1-0-0-1-0-2-0-1',
-                                                                                                                                                            content: TextKey.PART_01__SECTION_01__CHAPTER_01__ARTICLE_02__SUB_ARTICLE_01__PARAGRAPH_01__TEXT_CONTAINER_01__TEXT_02__CONTENT,
-                                                                                                                                                            strong: false,
-                                                                                                                                                            emphasis: false,
-                                                                                                                                                            smallCaps: false,
-                                                                                                                                                        },
-                                                                                                                                                
-                                                                                                                                                        {
-                                                                                                                                                            contentType: Content.TEXT,
-                                                                                                                                                            pathID: '1-0-0-1-0-2-0-2',
-                                                                                                                                                            content: TextKey.PART_01__SECTION_01__CHAPTER_01__ARTICLE_02__SUB_ARTICLE_01__PARAGRAPH_01__TEXT_CONTAINER_01__TEXT_03__CONTENT,
-                                                                                                                                                            strong: false,
-                                                                                                                                                            emphasis: false,
-                                                                                                                                                            smallCaps: false,
-                                                                                                                                                        }
-                                                                                                                            ],
-                                                                                                                            references: [
-                                                                                                                                
-                                                                                                                            ],
-                                                                                                                            paragraphReferences: [
-                                                                                                                                
-                                                                                                                            ],
-                                                                                                                        },
-                                                                                                                
-                                                                                                                        {
-                                                                                                                            contentType: Content.TEXT_CONTAINER,
-                                                                                                                            pathID: '1-0-0-1-0-2-1',
-                                                                                                                            mainContent: [
-                                                                                                                                                                
-                                                                                                                                                        {
-                                                                                                                                                            contentType: Content.TEXT,
-                                                                                                                                                            pathID: '1-0-0-1-0-2-1-0',
-                                                                                                                                                            content: TextKey.PART_01__SECTION_01__CHAPTER_01__ARTICLE_02__SUB_ARTICLE_01__PARAGRAPH_01__TEXT_CONTAINER_02__TEXT_01__CONTENT,
-                                                                                                                                                            strong: false,
-                                                                                                                                                            emphasis: false,
-                                                                                                                                                            smallCaps: false,
-                                                                                                                                                        },
-                                                                                                                                                
-                                                                                                                                                        {
-                                                                                                                                                            contentType: Content.TEXT,
-                                                                                                                                                            pathID: '1-0-0-1-0-2-1-1',
-                                                                                                                                                            content: TextKey.PART_01__SECTION_01__CHAPTER_01__ARTICLE_02__SUB_ARTICLE_01__PARAGRAPH_01__TEXT_CONTAINER_02__TEXT_02__CONTENT,
-                                                                                                                                                            strong: false,
-                                                                                                                                                            emphasis: false,
-                                                                                                                                                            smallCaps: false,
-                                                                                                                                                        }
-                                                                                                                            ],
-                                                                                                                            references: [
-                                                                                                                                                                
-                                                                                                                                                        {
-                                                                                                                                                            referenceType: ReferenceEnum.OTHER,
-                                                                                                                                                            direct: false,
-                                                                                                                                                            source: OtherSourceEnum.SOURCE_2,
-                                                                                                                                                            pointer: `Ch. IX, p.4`,
-                                                                                                                                                        },
-                                                                                                                                                
-                                                                                                                                                        {
-                                                                                                                                                            referenceType: ReferenceEnum.BIBLE,
-                                                                                                                                                            direct: true,
-                                                                                                                                                            book: BibleBook.HEBREWS,
-                                                                                                                                                            chapter: 1,
-                                                                                                                                                            verses: 1,
-                                                                                                                                                        },
-                                                                                                                                                
-                                                                                                                                                        {
-                                                                                                                                                            referenceType: ReferenceEnum.BIBLE,
-                                                                                                                                                            direct: true,
-                                                                                                                                                            book: BibleBook.ACTS_OF_THE_APOSTLES,
-                                                                                                                                                            chapter: 2,
-                                                                                                                                                            verses: `3-6`,
-                                                                                                                                                        },
-                                                                                                                                                
-                                                                                                                                                        {
-                                                                                                                                                            referenceType: ReferenceEnum.OTHER,
-                                                                                                                                                            direct: true,
-                                                                                                                                                            source: OtherSourceEnum.SOURCE_3,
-                                                                                                                                                            pointer: `398-401`,
-                                                                                                                                                        },
-                                                                                                                            ],
-                                                                                                                            paragraphReferences: [
-                                                                                                                                
-                                                                                                                            ],
-                                                                                                                        },
-                                                                                                                
-                                                                                                                        {
-                                                                                                                            contentType: Content.TEXT_CONTAINER,
-                                                                                                                            pathID: '1-0-0-1-0-2-2',
-                                                                                                                            mainContent: [
-                                                                                                                                                                
-                                                                                                                                                        {
-                                                                                                                                                            contentType: Content.TEXT,
-                                                                                                                                                            pathID: '1-0-0-1-0-2-2-0',
-                                                                                                                                                            content: TextKey.PART_01__SECTION_01__CHAPTER_01__ARTICLE_02__SUB_ARTICLE_01__PARAGRAPH_01__TEXT_CONTAINER_03__TEXT_01__CONTENT,
-                                                                                                                                                            strong: false,
-                                                                                                                                                            emphasis: false,
-                                                                                                                                                            smallCaps: false,
-                                                                                                                                                        },
-                                                                                                                                                
-                                                                                                                                                        {
-                                                                                                                                                            contentType: Content.TEXT,
-                                                                                                                                                            pathID: '1-0-0-1-0-2-2-1',
-                                                                                                                                                            content: TextKey.PART_01__SECTION_01__CHAPTER_01__ARTICLE_02__SUB_ARTICLE_01__PARAGRAPH_01__TEXT_CONTAINER_03__TEXT_02__CONTENT,
-                                                                                                                                                            strong: false,
-                                                                                                                                                            emphasis: false,
-                                                                                                                                                            smallCaps: false,
-                                                                                                                                                        }
-                                                                                                                            ],
-                                                                                                                            references: [
-                                                                                                                                                                
-                                                                                                                                                        {
-                                                                                                                                                            referenceType: ReferenceEnum.OTHER,
-                                                                                                                                                            direct: false,
-                                                                                                                                                            source: OtherSourceEnum.SOURCE_1,
-                                                                                                                                                            pointer: `398-401`,
-                                                                                                                                                        },
-                                                                                                                            ],
-                                                                                                                            paragraphReferences: [
-                                                                                                                                
-                                                                                                                            ],
-                                                                                                                        },
-                                                                                                ],
-                                                                                            },
-                                                                                    
-                                                                                            {
-                                                                                                contentType: Content.PARAGRAPH,
-                                                                                                pathID: '1-0-0-1-0-3',
-                                                                                                paragraphNumber: 20,
-                                                                                                supplementary: false,
-                                                                                                mainContent: [
-                                                                                                                                
-                                                                                                                        {
-                                                                                                                            contentType: Content.TEXT_CONTAINER,
-                                                                                                                            pathID: '1-0-0-1-0-3-0',
-                                                                                                                            mainContent: [
-                                                                                                                                                                
-                                                                                                                                                        {
-                                                                                                                                                            contentType: Content.TEXT,
-                                                                                                                                                            pathID: '1-0-0-1-0-3-0-0',
-                                                                                                                                                            content: TextKey.PART_01__SECTION_01__CHAPTER_01__ARTICLE_02__SUB_ARTICLE_01__PARAGRAPH_02__TEXT_CONTAINER_01__TEXT_01__CONTENT,
-                                                                                                                                                            strong: false,
-                                                                                                                                                            emphasis: false,
-                                                                                                                                                            smallCaps: false,
-                                                                                                                                                        },
-                                                                                                                                                
-                                                                                                                                                        {
-                                                                                                                                                            contentType: Content.TEXT,
-                                                                                                                                                            pathID: '1-0-0-1-0-3-0-1',
-                                                                                                                                                            content: TextKey.PART_01__SECTION_01__CHAPTER_01__ARTICLE_02__SUB_ARTICLE_01__PARAGRAPH_02__TEXT_CONTAINER_01__TEXT_02__CONTENT,
-                                                                                                                                                            strong: false,
-                                                                                                                                                            emphasis: false,
-                                                                                                                                                            smallCaps: false,
-                                                                                                                                                        },
-                                                                                                                                                
-                                                                                                                                                        {
-                                                                                                                                                            contentType: Content.TEXT,
-                                                                                                                                                            pathID: '1-0-0-1-0-3-0-2',
-                                                                                                                                                            content: TextKey.PART_01__SECTION_01__CHAPTER_01__ARTICLE_02__SUB_ARTICLE_01__PARAGRAPH_02__TEXT_CONTAINER_01__TEXT_03__CONTENT,
-                                                                                                                                                            strong: false,
-                                                                                                                                                            emphasis: false,
-                                                                                                                                                            smallCaps: false,
-                                                                                                                                                        }
-                                                                                                                            ],
-                                                                                                                            references: [
-                                                                                                                                                                
-                                                                                                                                                        {
-                                                                                                                                                            referenceType: ReferenceEnum.BIBLE,
-                                                                                                                                                            direct: false,
-                                                                                                                                                            book: BibleBook.JOHN,
-                                                                                                                                                            chapter: 1,
-                                                                                                                                                            verses: 1,
-                                                                                                                                                        },
-                                                                                                                                                
-                                                                                                                                                        {
-                                                                                                                                                            referenceType: ReferenceEnum.OTHER,
-                                                                                                                                                            direct: true,
-                                                                                                                                                            source: OtherSourceEnum.SOURCE_3,
-                                                                                                                                                            pointer: `Article VII, 8, 3, 1-2`,
-                                                                                                                                                        },
-                                                                                                                            ],
-                                                                                                                            paragraphReferences: [
-                                                                                                                                
-                                                                                                                            ],
-                                                                                                                        },
-                                                                                                                
-                                                                                                                        {
-                                                                                                                            contentType: Content.TEXT_CONTAINER,
-                                                                                                                            pathID: '1-0-0-1-0-3-1',
-                                                                                                                            mainContent: [
-                                                                                                                                                                
-                                                                                                                                                        {
-                                                                                                                                                            contentType: Content.TEXT,
-                                                                                                                                                            pathID: '1-0-0-1-0-3-1-0',
-                                                                                                                                                            content: TextKey.PART_01__SECTION_01__CHAPTER_01__ARTICLE_02__SUB_ARTICLE_01__PARAGRAPH_02__TEXT_CONTAINER_02__TEXT_01__CONTENT,
-                                                                                                                                                            strong: false,
-                                                                                                                                                            emphasis: false,
-                                                                                                                                                            smallCaps: false,
-                                                                                                                                                        },
-                                                                                                                                                
-                                                                                                                                                        {
-                                                                                                                                                            contentType: Content.TEXT,
-                                                                                                                                                            pathID: '1-0-0-1-0-3-1-1',
-                                                                                                                                                            content: TextKey.PART_01__SECTION_01__CHAPTER_01__ARTICLE_02__SUB_ARTICLE_01__PARAGRAPH_02__TEXT_CONTAINER_02__TEXT_02__CONTENT,
-                                                                                                                                                            strong: false,
-                                                                                                                                                            emphasis: false,
-                                                                                                                                                            smallCaps: false,
-                                                                                                                                                        },
-                                                                                                                                                
-                                                                                                                                                        {
-                                                                                                                                                            contentType: Content.TEXT,
-                                                                                                                                                            pathID: '1-0-0-1-0-3-1-2',
-                                                                                                                                                            content: TextKey.PART_01__SECTION_01__CHAPTER_01__ARTICLE_02__SUB_ARTICLE_01__PARAGRAPH_02__TEXT_CONTAINER_02__TEXT_03__CONTENT,
-                                                                                                                                                            strong: false,
-                                                                                                                                                            emphasis: false,
-                                                                                                                                                            smallCaps: false,
-                                                                                                                                                        }
-                                                                                                                            ],
-                                                                                                                            references: [
-                                                                                                                                
-                                                                                                                            ],
-                                                                                                                            paragraphReferences: [
-                                                                                                                                
-                                                                                                                            ],
-                                                                                                                        },
-                                                                                                ],
-                                                                                            },
-                                                                        ],
-                                                                    },
-                                                            
-                                                                    {
-                                                                        contentType: Content.IN_BRIEF,
-                                                                        pathID: '1-0-0-1-1',
-                                                                        mainContent: [
-                                                                                                    
-                                                                                            {
-                                                                                                contentType: Content.PARAGRAPH,
-                                                                                                pathID: '1-0-0-1-1-0',
-                                                                                                paragraphNumber: 21,
-                                                                                                supplementary: false,
-                                                                                                mainContent: [
-                                                                                                                                
-                                                                                                                        {
-                                                                                                                            contentType: Content.TEXT_CONTAINER,
-                                                                                                                            pathID: '1-0-0-1-1-0-0',
-                                                                                                                            mainContent: [
-                                                                                                                                                                
-                                                                                                                                                        {
-                                                                                                                                                            contentType: Content.TEXT,
-                                                                                                                                                            pathID: '1-0-0-1-1-0-0-0',
-                                                                                                                                                            content: TextKey.PART_01__SECTION_01__CHAPTER_01__ARTICLE_02__IN_BRIEF_01__PARAGRAPH_01__TEXT_CONTAINER_01__TEXT_01__CONTENT,
-                                                                                                                                                            strong: false,
-                                                                                                                                                            emphasis: false,
-                                                                                                                                                            smallCaps: false,
-                                                                                                                                                        }
-                                                                                                                            ],
-                                                                                                                            references: [
-                                                                                                                                
-                                                                                                                            ],
-                                                                                                                            paragraphReferences: [
-                                                                                                                                
-                                                                                                                            ],
-                                                                                                                        },
-                                                                                                ],
-                                                                                            },
-                                                                        ],
-                                                                    },
-                                                    ],
-                                                    openingContent: [
-                                                                            
-                                                                    {
-                                                                        contentType: Content.PARAGRAPH,
-                                                                        pathID: '1-0-0-1-0',
-                                                                        paragraphNumber: 13,
-                                                                        supplementary: false,
-                                                                        mainContent: [
-                                                                                                    
-                                                                                            {
-                                                                                                contentType: Content.TEXT_CONTAINER,
-                                                                                                pathID: '1-0-0-1-0-0',
-                                                                                                mainContent: [
-                                                                                                                                
-                                                                                                                        {
-                                                                                                                            contentType: Content.TEXT,
-                                                                                                                            pathID: '1-0-0-1-0-0-0',
-                                                                                                                            content: TextKey.PART_01__SECTION_01__CHAPTER_01__ARTICLE_02__PARAGRAPH_01__TEXT_CONTAINER_01__TEXT_01__CONTENT,
-                                                                                                                            strong: false,
-                                                                                                                            emphasis: false,
-                                                                                                                            smallCaps: false,
-                                                                                                                        }
-                                                                                                ],
-                                                                                                references: [
-                                                                                                                                
-                                                                                                                        {
-                                                                                                                            referenceType: ReferenceEnum.OTHER,
-                                                                                                                            direct: false,
-                                                                                                                            source: OtherSourceEnum.SOURCE_1,
-                                                                                                                            pointer: `398-401`,
-                                                                                                                        },
-                                                                                                ],
-                                                                                                paragraphReferences: [
-                                                                                                    
-                                                                                                ],
-                                                                                            },
-                                                                                    
-                                                                                            {
-                                                                                                contentType: Content.TEXT_CONTAINER,
-                                                                                                pathID: '1-0-0-1-0-1',
-                                                                                                mainContent: [
-                                                                                                                                
-                                                                                                                        {
-                                                                                                                            contentType: Content.TEXT,
-                                                                                                                            pathID: '1-0-0-1-0-1-0',
-                                                                                                                            content: TextKey.PART_01__SECTION_01__CHAPTER_01__ARTICLE_02__PARAGRAPH_01__TEXT_CONTAINER_02__TEXT_01__CONTENT,
-                                                                                                                            strong: false,
-                                                                                                                            emphasis: false,
-                                                                                                                            smallCaps: false,
-                                                                                                                        }
-                                                                                                ],
-                                                                                                references: [
-                                                                                                                                
-                                                                                                                        {
-                                                                                                                            referenceType: ReferenceEnum.OTHER,
-                                                                                                                            direct: false,
-                                                                                                                            source: OtherSourceEnum.SOURCE_1,
-                                                                                                                            pointer: `Ch. IX, p.4`,
-                                                                                                                        },
-                                                                                                ],
-                                                                                                paragraphReferences: [
-                                                                                                    
-                                                                                                ],
-                                                                                            },
-                                                                        ],
-                                                                    },
-                                                            
-                                                                    {
-                                                                        contentType: Content.PARAGRAPH,
-                                                                        pathID: '1-0-0-1-1',
-                                                                        paragraphNumber: 14,
-                                                                        supplementary: false,
-                                                                        mainContent: [
-                                                                                                    
-                                                                                            {
-                                                                                                contentType: Content.TEXT_CONTAINER,
-                                                                                                pathID: '1-0-0-1-1-0',
-                                                                                                mainContent: [
-                                                                                                                                
-                                                                                                                        {
-                                                                                                                            contentType: Content.TEXT,
-                                                                                                                            pathID: '1-0-0-1-1-0-0',
-                                                                                                                            content: TextKey.PART_01__SECTION_01__CHAPTER_01__ARTICLE_02__PARAGRAPH_02__TEXT_CONTAINER_01__TEXT_01__CONTENT,
-                                                                                                                            strong: false,
-                                                                                                                            emphasis: false,
-                                                                                                                            smallCaps: false,
-                                                                                                                        },
-                                                                                                                
-                                                                                                                        {
-                                                                                                                            contentType: Content.TEXT,
-                                                                                                                            pathID: '1-0-0-1-1-0-1',
-                                                                                                                            content: TextKey.PART_01__SECTION_01__CHAPTER_01__ARTICLE_02__PARAGRAPH_02__TEXT_CONTAINER_01__TEXT_02__CONTENT,
-                                                                                                                            strong: false,
-                                                                                                                            emphasis: false,
-                                                                                                                            smallCaps: false,
-                                                                                                                        },
-                                                                                                                
-                                                                                                                        {
-                                                                                                                            contentType: Content.TEXT,
-                                                                                                                            pathID: '1-0-0-1-1-0-2',
-                                                                                                                            content: TextKey.PART_01__SECTION_01__CHAPTER_01__ARTICLE_02__PARAGRAPH_02__TEXT_CONTAINER_01__TEXT_03__CONTENT,
-                                                                                                                            strong: false,
-                                                                                                                            emphasis: false,
-                                                                                                                            smallCaps: false,
-                                                                                                                        }
-                                                                                                ],
-                                                                                                references: [
-                                                                                                                                
-                                                                                                                        {
-                                                                                                                            referenceType: ReferenceEnum.BIBLE,
-                                                                                                                            direct: false,
-                                                                                                                            book: BibleBook.PSALMS,
-                                                                                                                            chapter: 2,
-                                                                                                                            verses: 1,
-                                                                                                                        },
-                                                                                                                
-                                                                                                                        {
-                                                                                                                            referenceType: ReferenceEnum.OTHER,
-                                                                                                                            direct: true,
-                                                                                                                            source: OtherSourceEnum.SOURCE_2,
                                                                                                                             pointer: ``,
                                                                                                                         },
                                                                                                 ],
@@ -1998,34 +2456,16 @@ export const Catechism: CatechismStructure = {
                                                                                                     
                                                                                                 ],
                                                                                             },
-                                                                        ],
-                                                                    },
-                                                            
-                                                                    {
-                                                                        contentType: Content.PARAGRAPH,
-                                                                        pathID: '1-0-0-1-2',
-                                                                        paragraphNumber: 15,
-                                                                        supplementary: true,
-                                                                        mainContent: [
-                                                                                                    
+                                                                                    
                                                                                             {
                                                                                                 contentType: Content.TEXT_CONTAINER,
-                                                                                                pathID: '1-0-0-1-2-0',
+                                                                                                pathID: '1-1-0-2-2-1',
                                                                                                 mainContent: [
                                                                                                                                 
                                                                                                                         {
                                                                                                                             contentType: Content.TEXT,
-                                                                                                                            pathID: '1-0-0-1-2-0-0',
-                                                                                                                            content: TextKey.PART_01__SECTION_01__CHAPTER_01__ARTICLE_02__PARAGRAPH_03__TEXT_CONTAINER_01__TEXT_01__CONTENT,
-                                                                                                                            strong: false,
-                                                                                                                            emphasis: false,
-                                                                                                                            smallCaps: false,
-                                                                                                                        },
-                                                                                                                
-                                                                                                                        {
-                                                                                                                            contentType: Content.TEXT,
-                                                                                                                            pathID: '1-0-0-1-2-0-1',
-                                                                                                                            content: TextKey.PART_01__SECTION_01__CHAPTER_01__ARTICLE_02__PARAGRAPH_03__TEXT_CONTAINER_01__TEXT_02__CONTENT,
+                                                                                                                            pathID: '1-1-0-2-2-1-0',
+                                                                                                                            content: TextKey.PART_01__SECTION_02__CHAPTER_01__ARTICLE_03__PARAGRAPH_03__TEXT_CONTAINER_02__TEXT_01__CONTENT,
                                                                                                                             strong: false,
                                                                                                                             emphasis: false,
                                                                                                                             smallCaps: false,
@@ -2038,46 +2478,174 @@ export const Catechism: CatechismStructure = {
                                                                                                     
                                                                                                 ],
                                                                                             },
+                                                                                    
+                                                                                            {
+                                                                                                contentType: Content.TEXT_CONTAINER,
+                                                                                                pathID: '1-1-0-2-2-2',
+                                                                                                mainContent: [
+                                                                                                                                
+                                                                                                                        {
+                                                                                                                            contentType: Content.TEXT,
+                                                                                                                            pathID: '1-1-0-2-2-2-0',
+                                                                                                                            content: TextKey.PART_01__SECTION_02__CHAPTER_01__ARTICLE_03__PARAGRAPH_03__TEXT_CONTAINER_03__TEXT_01__CONTENT,
+                                                                                                                            strong: false,
+                                                                                                                            emphasis: false,
+                                                                                                                            smallCaps: false,
+                                                                                                                        },
+                                                                                                                
+                                                                                                                        {
+                                                                                                                            contentType: Content.TEXT,
+                                                                                                                            pathID: '1-1-0-2-2-2-1',
+                                                                                                                            content: TextKey.PART_01__SECTION_02__CHAPTER_01__ARTICLE_03__PARAGRAPH_03__TEXT_CONTAINER_03__TEXT_02__CONTENT,
+                                                                                                                            strong: false,
+                                                                                                                            emphasis: false,
+                                                                                                                            smallCaps: false,
+                                                                                                                        }
+                                                                                                ],
+                                                                                                references: [
+                                                                                                                                
+                                                                                                                        {
+                                                                                                                            referenceType: ReferenceEnum.BIBLE,
+                                                                                                                            direct: false,
+                                                                                                                            book: BibleBook.PSALMS,
+                                                                                                                            chapter: 3,
+                                                                                                                            verses: 1,
+                                                                                                                        },
+                                                                                                ],
+                                                                                                paragraphReferences: [
+                                                                                                    
+                                                                                                ],
+                                                                                            },
                                                                         ],
                                                                     },
                                                     ],
                                                 },
+                                    ],
+                                    openingContent: [
                                         
+                                    ],
+                                },
+                        
+                                {
+                                    contentType: Content.CHAPTER,
+                                    pathID: '1-1-1',
+                                    chapterNumber: 2,
+                                    title: TextKey.PART_01__SECTION_02__CHAPTER_02__TITLE,
+                                    mainContent: [
+                                                        
                                                 {
                                                     contentType: Content.ARTICLE,
-                                                    pathID: '1-0-0-2',
-                                                    articleNumber: 3,
-                                                    title: TextKey.PART_01__SECTION_01__CHAPTER_01__ARTICLE_03__TITLE,
+                                                    pathID: '1-1-1-0',
+                                                    articleNumber: 1,
+                                                    title: TextKey.PART_01__SECTION_02__CHAPTER_02__ARTICLE_01__TITLE,
                                                     mainContent: [
                                                                             
                                                                     {
-                                                                        contentType: Content.SUB_ARTICLE,
-                                                                        pathID: '1-0-0-2-0',
-                                                                        subarticleNumber: 1,
-                                                                        title: TextKey.PART_01__SECTION_01__CHAPTER_01__ARTICLE_03__SUB_ARTICLE_01__TITLE,
+                                                                        contentType: Content.ARTICLE_PARAGRAPH,
+                                                                        pathID: '1-1-1-0-0',
+                                                                        articleParagraphNumber: 1,
+                                                                        title: TextKey.PART_01__SECTION_02__CHAPTER_02__ARTICLE_01__ARTICLE_PARAGRAPH_01__TITLE,
                                                                         mainContent: [
                                                                                                     
                                                                                             {
-                                                                                                contentType: Content.PARAGRAPH_GROUP,
-                                                                                                pathID: '1-0-0-2-0-0',
-                                                                                                paragraphGroupNumber: 1,
-                                                                                                title: TextKey.PART_01__SECTION_01__CHAPTER_01__ARTICLE_03__SUB_ARTICLE_01__PARAGRAPH_GROUP_01__TITLE,
+                                                                                                contentType: Content.SUB_ARTICLE,
+                                                                                                pathID: '1-1-1-0-0-0',
+                                                                                                subarticleNumber: 1,
+                                                                                                title: TextKey.PART_01__SECTION_02__CHAPTER_02__ARTICLE_01__ARTICLE_PARAGRAPH_01__SUB_ARTICLE_01__TITLE,
                                                                                                 mainContent: [
                                                                                                                                 
+                                                                                                                        {
+                                                                                                                            contentType: Content.PARAGRAPH_GROUP,
+                                                                                                                            pathID: '1-1-1-0-0-0-0',
+                                                                                                                            paragraphGroupNumber: 1,
+                                                                                                                            title: TextKey.PART_01__SECTION_02__CHAPTER_02__ARTICLE_01__ARTICLE_PARAGRAPH_01__SUB_ARTICLE_01__PARAGRAPH_GROUP_01__TITLE,
+                                                                                                                            mainContent: [
+                                                                                                                                                                
+                                                                                                                                                        {
+                                                                                                                                                            contentType: Content.BLOCK_QUOTE,
+                                                                                                                                                            pathID: '1-1-1-0-0-0-0-0',
+                                                                                                                                                            mainContent: [
+                                                                                                                                                                                                    
+                                                                                                                                                                                            {
+                                                                                                                                                                                                contentType: Content.TEXT_CONTAINER,
+                                                                                                                                                                                                pathID: '1-1-1-0-0-0-0-0-0',
+                                                                                                                                                                                                mainContent: [
+                                                                                                                                                                                                                                            
+                                                                                                                                                                                                                                    {
+                                                                                                                                                                                                                                        contentType: Content.TEXT,
+                                                                                                                                                                                                                                        pathID: '1-1-1-0-0-0-0-0-0-0',
+                                                                                                                                                                                                                                        content: TextKey.PART_01__SECTION_02__CHAPTER_02__ARTICLE_01__ARTICLE_PARAGRAPH_01__SUB_ARTICLE_01__PARAGRAPH_GROUP_01__BLOCK_QUOTE_01__TEXT_CONTAINER_01__TEXT_01__CONTENT,
+                                                                                                                                                                                                                                        strong: false,
+                                                                                                                                                                                                                                        emphasis: false,
+                                                                                                                                                                                                                                        smallCaps: false,
+                                                                                                                                                                                                                                    },
+                                                                                                                                                                                                                            
+                                                                                                                                                                                                                                    {
+                                                                                                                                                                                                                                        contentType: Content.TEXT,
+                                                                                                                                                                                                                                        pathID: '1-1-1-0-0-0-0-0-0-1',
+                                                                                                                                                                                                                                        content: TextKey.PART_01__SECTION_02__CHAPTER_02__ARTICLE_01__ARTICLE_PARAGRAPH_01__SUB_ARTICLE_01__PARAGRAPH_GROUP_01__BLOCK_QUOTE_01__TEXT_CONTAINER_01__TEXT_02__CONTENT,
+                                                                                                                                                                                                                                        strong: false,
+                                                                                                                                                                                                                                        emphasis: false,
+                                                                                                                                                                                                                                        smallCaps: false,
+                                                                                                                                                                                                                                    }
+                                                                                                                                                                                                ],
+                                                                                                                                                                                                references: [
+                                                                                                                                                                                                    
+                                                                                                                                                                                                ],
+                                                                                                                                                                                                paragraphReferences: [
+                                                                                                                                                                                                    27
+                                                                                                                                                                                                ],
+                                                                                                                                                                                            },
+                                                                                                                                                                                    
+                                                                                                                                                                                            {
+                                                                                                                                                                                                contentType: Content.TEXT_CONTAINER,
+                                                                                                                                                                                                pathID: '1-1-1-0-0-0-0-0-1',
+                                                                                                                                                                                                mainContent: [
+                                                                                                                                                                                                                                            
+                                                                                                                                                                                                                                    {
+                                                                                                                                                                                                                                        contentType: Content.TEXT,
+                                                                                                                                                                                                                                        pathID: '1-1-1-0-0-0-0-0-1-0',
+                                                                                                                                                                                                                                        content: TextKey.PART_01__SECTION_02__CHAPTER_02__ARTICLE_01__ARTICLE_PARAGRAPH_01__SUB_ARTICLE_01__PARAGRAPH_GROUP_01__BLOCK_QUOTE_01__TEXT_CONTAINER_02__TEXT_01__CONTENT,
+                                                                                                                                                                                                                                        strong: false,
+                                                                                                                                                                                                                                        emphasis: false,
+                                                                                                                                                                                                                                        smallCaps: false,
+                                                                                                                                                                                                                                    },
+                                                                                                                                                                                                                            
+                                                                                                                                                                                                                                    {
+                                                                                                                                                                                                                                        contentType: Content.TEXT,
+                                                                                                                                                                                                                                        pathID: '1-1-1-0-0-0-0-0-1-1',
+                                                                                                                                                                                                                                        content: TextKey.PART_01__SECTION_02__CHAPTER_02__ARTICLE_01__ARTICLE_PARAGRAPH_01__SUB_ARTICLE_01__PARAGRAPH_GROUP_01__BLOCK_QUOTE_01__TEXT_CONTAINER_02__TEXT_02__CONTENT,
+                                                                                                                                                                                                                                        strong: false,
+                                                                                                                                                                                                                                        emphasis: false,
+                                                                                                                                                                                                                                        smallCaps: false,
+                                                                                                                                                                                                                                    }
+                                                                                                                                                                                                ],
+                                                                                                                                                                                                references: [
+                                                                                                                                                                                                    
+                                                                                                                                                                                                ],
+                                                                                                                                                                                                paragraphReferences: [
+                                                                                                                                                                                                    
+                                                                                                                                                                                                ],
+                                                                                                                                                                                            },
+                                                                                                                                                            ],
+                                                                                                                                                        },
+                                                                                                                            ],
+                                                                                                                        },
+                                                                                                                
                                                                                                                         {
                                                                                                                             contentType: Content.BLOCK_QUOTE,
-                                                                                                                            pathID: '1-0-0-2-0-0-0',
+                                                                                                                            pathID: '1-1-1-0-0-0-1',
                                                                                                                             mainContent: [
                                                                                                                                                                 
                                                                                                                                                         {
                                                                                                                                                             contentType: Content.TEXT_CONTAINER,
-                                                                                                                                                            pathID: '1-0-0-2-0-0-0-0',
+                                                                                                                                                            pathID: '1-1-1-0-0-0-1-0',
                                                                                                                                                             mainContent: [
                                                                                                                                                                                                     
                                                                                                                                                                                             {
                                                                                                                                                                                                 contentType: Content.TEXT,
-                                                                                                                                                                                                pathID: '1-0-0-2-0-0-0-0-0',
-                                                                                                                                                                                                content: TextKey.PART_01__SECTION_01__CHAPTER_01__ARTICLE_03__SUB_ARTICLE_01__PARAGRAPH_GROUP_01__BLOCK_QUOTE_01__TEXT_CONTAINER_01__TEXT_01__CONTENT,
+                                                                                                                                                                                                pathID: '1-1-1-0-0-0-1-0-0',
+                                                                                                                                                                                                content: TextKey.PART_01__SECTION_02__CHAPTER_02__ARTICLE_01__ARTICLE_PARAGRAPH_01__SUB_ARTICLE_01__BLOCK_QUOTE_01__TEXT_CONTAINER_01__TEXT_01__CONTENT,
                                                                                                                                                                                                 strong: false,
                                                                                                                                                                                                 emphasis: false,
                                                                                                                                                                                                 smallCaps: false,
@@ -2085,72 +2653,8 @@ export const Catechism: CatechismStructure = {
                                                                                                                                                                                     
                                                                                                                                                                                             {
                                                                                                                                                                                                 contentType: Content.TEXT,
-                                                                                                                                                                                                pathID: '1-0-0-2-0-0-0-0-1',
-                                                                                                                                                                                                content: TextKey.PART_01__SECTION_01__CHAPTER_01__ARTICLE_03__SUB_ARTICLE_01__PARAGRAPH_GROUP_01__BLOCK_QUOTE_01__TEXT_CONTAINER_01__TEXT_02__CONTENT,
-                                                                                                                                                                                                strong: false,
-                                                                                                                                                                                                emphasis: false,
-                                                                                                                                                                                                smallCaps: false,
-                                                                                                                                                                                            },
-                                                                                                                                                                                    
-                                                                                                                                                                                            {
-                                                                                                                                                                                                contentType: Content.TEXT,
-                                                                                                                                                                                                pathID: '1-0-0-2-0-0-0-0-2',
-                                                                                                                                                                                                content: TextKey.PART_01__SECTION_01__CHAPTER_01__ARTICLE_03__SUB_ARTICLE_01__PARAGRAPH_GROUP_01__BLOCK_QUOTE_01__TEXT_CONTAINER_01__TEXT_03__CONTENT,
-                                                                                                                                                                                                strong: false,
-                                                                                                                                                                                                emphasis: false,
-                                                                                                                                                                                                smallCaps: false,
-                                                                                                                                                                                            }
-                                                                                                                                                            ],
-                                                                                                                                                            references: [
-                                                                                                                                                                                                    
-                                                                                                                                                                                            {
-                                                                                                                                                                                                referenceType: ReferenceEnum.OTHER,
-                                                                                                                                                                                                direct: true,
-                                                                                                                                                                                                source: OtherSourceEnum.SOURCE_3,
-                                                                                                                                                                                                pointer: `742`,
-                                                                                                                                                                                            },
-                                                                                                                                                            ],
-                                                                                                                                                            paragraphReferences: [
-                                                                                                                                                                
-                                                                                                                                                            ],
-                                                                                                                                                        },
-                                                                                                                            ],
-                                                                                                                        },
-                                                                                                ],
-                                                                                            },
-                                                                                    
-                                                                                            {
-                                                                                                contentType: Content.PARAGRAPH_GROUP,
-                                                                                                pathID: '1-0-0-2-0-1',
-                                                                                                paragraphGroupNumber: 1,
-                                                                                                title: TextKey.PART_01__SECTION_01__CHAPTER_01__ARTICLE_03__SUB_ARTICLE_01__PARAGRAPH_GROUP_02__TITLE,
-                                                                                                mainContent: [
-                                                                                                                                
-                                                                                                                        {
-                                                                                                                            contentType: Content.PARAGRAPH,
-                                                                                                                            pathID: '1-0-0-2-0-1-0',
-                                                                                                                            paragraphNumber: 23,
-                                                                                                                            supplementary: false,
-                                                                                                                            mainContent: [
-                                                                                                                                                                
-                                                                                                                                                        {
-                                                                                                                                                            contentType: Content.TEXT_CONTAINER,
-                                                                                                                                                            pathID: '1-0-0-2-0-1-0-0',
-                                                                                                                                                            mainContent: [
-                                                                                                                                                                                                    
-                                                                                                                                                                                            {
-                                                                                                                                                                                                contentType: Content.TEXT,
-                                                                                                                                                                                                pathID: '1-0-0-2-0-1-0-0-0',
-                                                                                                                                                                                                content: TextKey.PART_01__SECTION_01__CHAPTER_01__ARTICLE_03__SUB_ARTICLE_01__PARAGRAPH_GROUP_02__PARAGRAPH_01__TEXT_CONTAINER_01__TEXT_01__CONTENT,
-                                                                                                                                                                                                strong: false,
-                                                                                                                                                                                                emphasis: false,
-                                                                                                                                                                                                smallCaps: false,
-                                                                                                                                                                                            },
-                                                                                                                                                                                    
-                                                                                                                                                                                            {
-                                                                                                                                                                                                contentType: Content.TEXT,
-                                                                                                                                                                                                pathID: '1-0-0-2-0-1-0-0-1',
-                                                                                                                                                                                                content: TextKey.PART_01__SECTION_01__CHAPTER_01__ARTICLE_03__SUB_ARTICLE_01__PARAGRAPH_GROUP_02__PARAGRAPH_01__TEXT_CONTAINER_01__TEXT_02__CONTENT,
+                                                                                                                                                                                                pathID: '1-1-1-0-0-0-1-0-1',
+                                                                                                                                                                                                content: TextKey.PART_01__SECTION_02__CHAPTER_02__ARTICLE_01__ARTICLE_PARAGRAPH_01__SUB_ARTICLE_01__BLOCK_QUOTE_01__TEXT_CONTAINER_01__TEXT_02__CONTENT,
                                                                                                                                                                                                 strong: false,
                                                                                                                                                                                                 emphasis: false,
                                                                                                                                                                                                 smallCaps: false,
@@ -2158,160 +2662,6 @@ export const Catechism: CatechismStructure = {
                                                                                                                                                             ],
                                                                                                                                                             references: [
                                                                                                                                                                 
-                                                                                                                                                            ],
-                                                                                                                                                            paragraphReferences: [
-                                                                                                                                                                
-                                                                                                                                                            ],
-                                                                                                                                                        },
-                                                                                                                                                
-                                                                                                                                                        {
-                                                                                                                                                            contentType: Content.TEXT_CONTAINER,
-                                                                                                                                                            pathID: '1-0-0-2-0-1-0-1',
-                                                                                                                                                            mainContent: [
-                                                                                                                                                                                                    
-                                                                                                                                                                                            {
-                                                                                                                                                                                                contentType: Content.TEXT,
-                                                                                                                                                                                                pathID: '1-0-0-2-0-1-0-1-0',
-                                                                                                                                                                                                content: TextKey.PART_01__SECTION_01__CHAPTER_01__ARTICLE_03__SUB_ARTICLE_01__PARAGRAPH_GROUP_02__PARAGRAPH_01__TEXT_CONTAINER_02__TEXT_01__CONTENT,
-                                                                                                                                                                                                strong: false,
-                                                                                                                                                                                                emphasis: false,
-                                                                                                                                                                                                smallCaps: false,
-                                                                                                                                                                                            },
-                                                                                                                                                                                    
-                                                                                                                                                                                            {
-                                                                                                                                                                                                contentType: Content.TEXT,
-                                                                                                                                                                                                pathID: '1-0-0-2-0-1-0-1-1',
-                                                                                                                                                                                                content: TextKey.PART_01__SECTION_01__CHAPTER_01__ARTICLE_03__SUB_ARTICLE_01__PARAGRAPH_GROUP_02__PARAGRAPH_01__TEXT_CONTAINER_02__TEXT_02__CONTENT,
-                                                                                                                                                                                                strong: false,
-                                                                                                                                                                                                emphasis: false,
-                                                                                                                                                                                                smallCaps: false,
-                                                                                                                                                                                            },
-                                                                                                                                                                                    
-                                                                                                                                                                                            {
-                                                                                                                                                                                                contentType: Content.TEXT,
-                                                                                                                                                                                                pathID: '1-0-0-2-0-1-0-1-2',
-                                                                                                                                                                                                content: TextKey.PART_01__SECTION_01__CHAPTER_01__ARTICLE_03__SUB_ARTICLE_01__PARAGRAPH_GROUP_02__PARAGRAPH_01__TEXT_CONTAINER_02__TEXT_03__CONTENT,
-                                                                                                                                                                                                strong: false,
-                                                                                                                                                                                                emphasis: false,
-                                                                                                                                                                                                smallCaps: false,
-                                                                                                                                                                                            }
-                                                                                                                                                            ],
-                                                                                                                                                            references: [
-                                                                                                                                                                
-                                                                                                                                                            ],
-                                                                                                                                                            paragraphReferences: [
-                                                                                                                                                                
-                                                                                                                                                            ],
-                                                                                                                                                        },
-                                                                                                                                                
-                                                                                                                                                        {
-                                                                                                                                                            contentType: Content.TEXT_CONTAINER,
-                                                                                                                                                            pathID: '1-0-0-2-0-1-0-2',
-                                                                                                                                                            mainContent: [
-                                                                                                                                                                                                    
-                                                                                                                                                                                            {
-                                                                                                                                                                                                contentType: Content.TEXT,
-                                                                                                                                                                                                pathID: '1-0-0-2-0-1-0-2-0',
-                                                                                                                                                                                                content: TextKey.PART_01__SECTION_01__CHAPTER_01__ARTICLE_03__SUB_ARTICLE_01__PARAGRAPH_GROUP_02__PARAGRAPH_01__TEXT_CONTAINER_03__TEXT_01__CONTENT,
-                                                                                                                                                                                                strong: false,
-                                                                                                                                                                                                emphasis: false,
-                                                                                                                                                                                                smallCaps: false,
-                                                                                                                                                                                            },
-                                                                                                                                                                                    
-                                                                                                                                                                                            {
-                                                                                                                                                                                                contentType: Content.TEXT,
-                                                                                                                                                                                                pathID: '1-0-0-2-0-1-0-2-1',
-                                                                                                                                                                                                content: TextKey.PART_01__SECTION_01__CHAPTER_01__ARTICLE_03__SUB_ARTICLE_01__PARAGRAPH_GROUP_02__PARAGRAPH_01__TEXT_CONTAINER_03__TEXT_02__CONTENT,
-                                                                                                                                                                                                strong: false,
-                                                                                                                                                                                                emphasis: false,
-                                                                                                                                                                                                smallCaps: false,
-                                                                                                                                                                                            }
-                                                                                                                                                            ],
-                                                                                                                                                            references: [
-                                                                                                                                                                                                    
-                                                                                                                                                                                            {
-                                                                                                                                                                                                referenceType: ReferenceEnum.OTHER,
-                                                                                                                                                                                                direct: false,
-                                                                                                                                                                                                source: OtherSourceEnum.SOURCE_2,
-                                                                                                                                                                                                pointer: `742`,
-                                                                                                                                                                                            },
-                                                                                                                                                                                    
-                                                                                                                                                                                            {
-                                                                                                                                                                                                referenceType: ReferenceEnum.OTHER,
-                                                                                                                                                                                                direct: false,
-                                                                                                                                                                                                source: OtherSourceEnum.SOURCE_1,
-                                                                                                                                                                                                pointer: `398-401`,
-                                                                                                                                                                                            },
-                                                                                                                                                            ],
-                                                                                                                                                            paragraphReferences: [
-                                                                                                                                                                
-                                                                                                                                                            ],
-                                                                                                                                                        },
-                                                                                                                            ],
-                                                                                                                        },
-                                                                                                ],
-                                                                                            },
-                                                                                    
-                                                                                            {
-                                                                                                contentType: Content.PARAGRAPH_GROUP,
-                                                                                                pathID: '1-0-0-2-0-2',
-                                                                                                paragraphGroupNumber: 1,
-                                                                                                title: TextKey.PART_01__SECTION_01__CHAPTER_01__ARTICLE_03__SUB_ARTICLE_01__PARAGRAPH_GROUP_03__TITLE,
-                                                                                                mainContent: [
-                                                                                                                                
-                                                                                                                        {
-                                                                                                                            contentType: Content.PARAGRAPH,
-                                                                                                                            pathID: '1-0-0-2-0-2-0',
-                                                                                                                            paragraphNumber: 24,
-                                                                                                                            supplementary: false,
-                                                                                                                            mainContent: [
-                                                                                                                                                                
-                                                                                                                                                        {
-                                                                                                                                                            contentType: Content.TEXT_CONTAINER,
-                                                                                                                                                            pathID: '1-0-0-2-0-2-0-0',
-                                                                                                                                                            mainContent: [
-                                                                                                                                                                                                    
-                                                                                                                                                                                            {
-                                                                                                                                                                                                contentType: Content.TEXT,
-                                                                                                                                                                                                pathID: '1-0-0-2-0-2-0-0-0',
-                                                                                                                                                                                                content: TextKey.PART_01__SECTION_01__CHAPTER_01__ARTICLE_03__SUB_ARTICLE_01__PARAGRAPH_GROUP_03__PARAGRAPH_01__TEXT_CONTAINER_01__TEXT_01__CONTENT,
-                                                                                                                                                                                                strong: false,
-                                                                                                                                                                                                emphasis: false,
-                                                                                                                                                                                                smallCaps: false,
-                                                                                                                                                                                            },
-                                                                                                                                                                                    
-                                                                                                                                                                                            {
-                                                                                                                                                                                                contentType: Content.TEXT,
-                                                                                                                                                                                                pathID: '1-0-0-2-0-2-0-0-1',
-                                                                                                                                                                                                content: TextKey.PART_01__SECTION_01__CHAPTER_01__ARTICLE_03__SUB_ARTICLE_01__PARAGRAPH_GROUP_03__PARAGRAPH_01__TEXT_CONTAINER_01__TEXT_02__CONTENT,
-                                                                                                                                                                                                strong: false,
-                                                                                                                                                                                                emphasis: false,
-                                                                                                                                                                                                smallCaps: false,
-                                                                                                                                                                                            }
-                                                                                                                                                            ],
-                                                                                                                                                            references: [
-                                                                                                                                                                                                    
-                                                                                                                                                                                            {
-                                                                                                                                                                                                referenceType: ReferenceEnum.BIBLE,
-                                                                                                                                                                                                direct: true,
-                                                                                                                                                                                                book: BibleBook.PSALMS,
-                                                                                                                                                                                                chapter: 1,
-                                                                                                                                                                                                verses: 1,
-                                                                                                                                                                                            },
-                                                                                                                                                                                    
-                                                                                                                                                                                            {
-                                                                                                                                                                                                referenceType: ReferenceEnum.OTHER,
-                                                                                                                                                                                                direct: true,
-                                                                                                                                                                                                source: OtherSourceEnum.SOURCE_1,
-                                                                                                                                                                                                pointer: `398-401`,
-                                                                                                                                                                                            },
-                                                                                                                                                                                    
-                                                                                                                                                                                            {
-                                                                                                                                                                                                referenceType: ReferenceEnum.OTHER,
-                                                                                                                                                                                                direct: true,
-                                                                                                                                                                                                source: OtherSourceEnum.SOURCE_1,
-                                                                                                                                                                                                pointer: `Ch. IX, p.4`,
-                                                                                                                                                                                            },
                                                                                                                                                             ],
                                                                                                                                                             paragraphReferences: [
                                                                                                                                                                 
@@ -2322,168 +2672,20 @@ export const Catechism: CatechismStructure = {
                                                                                                                 
                                                                                                                         {
                                                                                                                             contentType: Content.PARAGRAPH,
-                                                                                                                            pathID: '1-0-0-2-0-2-1',
-                                                                                                                            paragraphNumber: 25,
-                                                                                                                            supplementary: true,
-                                                                                                                            mainContent: [
-                                                                                                                                                                
-                                                                                                                                                        {
-                                                                                                                                                            contentType: Content.TEXT_CONTAINER,
-                                                                                                                                                            pathID: '1-0-0-2-0-2-1-0',
-                                                                                                                                                            mainContent: [
-                                                                                                                                                                                                    
-                                                                                                                                                                                            {
-                                                                                                                                                                                                contentType: Content.TEXT,
-                                                                                                                                                                                                pathID: '1-0-0-2-0-2-1-0-0',
-                                                                                                                                                                                                content: TextKey.PART_01__SECTION_01__CHAPTER_01__ARTICLE_03__SUB_ARTICLE_01__PARAGRAPH_GROUP_03__PARAGRAPH_02__TEXT_CONTAINER_01__TEXT_01__CONTENT,
-                                                                                                                                                                                                strong: false,
-                                                                                                                                                                                                emphasis: false,
-                                                                                                                                                                                                smallCaps: false,
-                                                                                                                                                                                            }
-                                                                                                                                                            ],
-                                                                                                                                                            references: [
-                                                                                                                                                                                                    
-                                                                                                                                                                                            {
-                                                                                                                                                                                                referenceType: ReferenceEnum.OTHER,
-                                                                                                                                                                                                direct: true,
-                                                                                                                                                                                                source: OtherSourceEnum.SOURCE_1,
-                                                                                                                                                                                                pointer: `398-401`,
-                                                                                                                                                                                            },
-                                                                                                                                                                                    
-                                                                                                                                                                                            {
-                                                                                                                                                                                                referenceType: ReferenceEnum.OTHER,
-                                                                                                                                                                                                direct: false,
-                                                                                                                                                                                                source: OtherSourceEnum.SOURCE_2,
-                                                                                                                                                                                                pointer: `Ch. IX, p.4`,
-                                                                                                                                                                                            },
-                                                                                                                                                            ],
-                                                                                                                                                            paragraphReferences: [
-                                                                                                                                                                `1-4`
-                                                                                                                                                            ],
-                                                                                                                                                        },
-                                                                                                                                                
-                                                                                                                                                        {
-                                                                                                                                                            contentType: Content.TEXT_CONTAINER,
-                                                                                                                                                            pathID: '1-0-0-2-0-2-1-1',
-                                                                                                                                                            mainContent: [
-                                                                                                                                                                                                    
-                                                                                                                                                                                            {
-                                                                                                                                                                                                contentType: Content.TEXT,
-                                                                                                                                                                                                pathID: '1-0-0-2-0-2-1-1-0',
-                                                                                                                                                                                                content: TextKey.PART_01__SECTION_01__CHAPTER_01__ARTICLE_03__SUB_ARTICLE_01__PARAGRAPH_GROUP_03__PARAGRAPH_02__TEXT_CONTAINER_02__TEXT_01__CONTENT,
-                                                                                                                                                                                                strong: false,
-                                                                                                                                                                                                emphasis: false,
-                                                                                                                                                                                                smallCaps: false,
-                                                                                                                                                                                            },
-                                                                                                                                                                                    
-                                                                                                                                                                                            {
-                                                                                                                                                                                                contentType: Content.TEXT,
-                                                                                                                                                                                                pathID: '1-0-0-2-0-2-1-1-1',
-                                                                                                                                                                                                content: TextKey.PART_01__SECTION_01__CHAPTER_01__ARTICLE_03__SUB_ARTICLE_01__PARAGRAPH_GROUP_03__PARAGRAPH_02__TEXT_CONTAINER_02__TEXT_02__CONTENT,
-                                                                                                                                                                                                strong: false,
-                                                                                                                                                                                                emphasis: false,
-                                                                                                                                                                                                smallCaps: false,
-                                                                                                                                                                                            },
-                                                                                                                                                                                    
-                                                                                                                                                                                            {
-                                                                                                                                                                                                contentType: Content.TEXT,
-                                                                                                                                                                                                pathID: '1-0-0-2-0-2-1-1-2',
-                                                                                                                                                                                                content: TextKey.PART_01__SECTION_01__CHAPTER_01__ARTICLE_03__SUB_ARTICLE_01__PARAGRAPH_GROUP_03__PARAGRAPH_02__TEXT_CONTAINER_02__TEXT_03__CONTENT,
-                                                                                                                                                                                                strong: false,
-                                                                                                                                                                                                emphasis: false,
-                                                                                                                                                                                                smallCaps: false,
-                                                                                                                                                                                            }
-                                                                                                                                                            ],
-                                                                                                                                                            references: [
-                                                                                                                                                                                                    
-                                                                                                                                                                                            {
-                                                                                                                                                                                                referenceType: ReferenceEnum.OTHER,
-                                                                                                                                                                                                direct: true,
-                                                                                                                                                                                                source: OtherSourceEnum.SOURCE_2,
-                                                                                                                                                                                                pointer: `398-401`,
-                                                                                                                                                                                            },
-                                                                                                                                                            ],
-                                                                                                                                                            paragraphReferences: [
-                                                                                                                                                                `4-6`
-                                                                                                                                                            ],
-                                                                                                                                                        },
-                                                                                                                                                
-                                                                                                                                                        {
-                                                                                                                                                            contentType: Content.TEXT_CONTAINER,
-                                                                                                                                                            pathID: '1-0-0-2-0-2-1-2',
-                                                                                                                                                            mainContent: [
-                                                                                                                                                                                                    
-                                                                                                                                                                                            {
-                                                                                                                                                                                                contentType: Content.TEXT,
-                                                                                                                                                                                                pathID: '1-0-0-2-0-2-1-2-0',
-                                                                                                                                                                                                content: TextKey.PART_01__SECTION_01__CHAPTER_01__ARTICLE_03__SUB_ARTICLE_01__PARAGRAPH_GROUP_03__PARAGRAPH_02__TEXT_CONTAINER_03__TEXT_01__CONTENT,
-                                                                                                                                                                                                strong: false,
-                                                                                                                                                                                                emphasis: false,
-                                                                                                                                                                                                smallCaps: false,
-                                                                                                                                                                                            },
-                                                                                                                                                                                    
-                                                                                                                                                                                            {
-                                                                                                                                                                                                contentType: Content.TEXT,
-                                                                                                                                                                                                pathID: '1-0-0-2-0-2-1-2-1',
-                                                                                                                                                                                                content: TextKey.PART_01__SECTION_01__CHAPTER_01__ARTICLE_03__SUB_ARTICLE_01__PARAGRAPH_GROUP_03__PARAGRAPH_02__TEXT_CONTAINER_03__TEXT_02__CONTENT,
-                                                                                                                                                                                                strong: false,
-                                                                                                                                                                                                emphasis: false,
-                                                                                                                                                                                                smallCaps: false,
-                                                                                                                                                                                            },
-                                                                                                                                                                                    
-                                                                                                                                                                                            {
-                                                                                                                                                                                                contentType: Content.TEXT,
-                                                                                                                                                                                                pathID: '1-0-0-2-0-2-1-2-2',
-                                                                                                                                                                                                content: TextKey.PART_01__SECTION_01__CHAPTER_01__ARTICLE_03__SUB_ARTICLE_01__PARAGRAPH_GROUP_03__PARAGRAPH_02__TEXT_CONTAINER_03__TEXT_03__CONTENT,
-                                                                                                                                                                                                strong: false,
-                                                                                                                                                                                                emphasis: false,
-                                                                                                                                                                                                smallCaps: false,
-                                                                                                                                                                                            }
-                                                                                                                                                            ],
-                                                                                                                                                            references: [
-                                                                                                                                                                
-                                                                                                                                                            ],
-                                                                                                                                                            paragraphReferences: [
-                                                                                                                                                                
-                                                                                                                                                            ],
-                                                                                                                                                        },
-                                                                                                                            ],
-                                                                                                                        },
-                                                                                                ],
-                                                                                            },
-                                                                        ],
-                                                                    },
-                                                            
-                                                                    {
-                                                                        contentType: Content.SUB_ARTICLE,
-                                                                        pathID: '1-0-0-2-1',
-                                                                        subarticleNumber: 2,
-                                                                        title: TextKey.PART_01__SECTION_01__CHAPTER_01__ARTICLE_03__SUB_ARTICLE_02__TITLE,
-                                                                        mainContent: [
-                                                                                                    
-                                                                                            {
-                                                                                                contentType: Content.PARAGRAPH_GROUP,
-                                                                                                pathID: '1-0-0-2-1-0',
-                                                                                                paragraphGroupNumber: 1,
-                                                                                                title: TextKey.PART_01__SECTION_01__CHAPTER_01__ARTICLE_03__SUB_ARTICLE_02__PARAGRAPH_GROUP_01__TITLE,
-                                                                                                mainContent: [
-                                                                                                                                
-                                                                                                                        {
-                                                                                                                            contentType: Content.PARAGRAPH,
-                                                                                                                            pathID: '1-0-0-2-1-0-0',
+                                                                                                                            pathID: '1-1-1-0-0-0-2',
                                                                                                                             paragraphNumber: 26,
                                                                                                                             supplementary: false,
                                                                                                                             mainContent: [
                                                                                                                                                                 
                                                                                                                                                         {
                                                                                                                                                             contentType: Content.TEXT_CONTAINER,
-                                                                                                                                                            pathID: '1-0-0-2-1-0-0-0',
+                                                                                                                                                            pathID: '1-1-1-0-0-0-2-0',
                                                                                                                                                             mainContent: [
                                                                                                                                                                                                     
                                                                                                                                                                                             {
                                                                                                                                                                                                 contentType: Content.TEXT,
-                                                                                                                                                                                                pathID: '1-0-0-2-1-0-0-0-0',
-                                                                                                                                                                                                content: TextKey.PART_01__SECTION_01__CHAPTER_01__ARTICLE_03__SUB_ARTICLE_02__PARAGRAPH_GROUP_01__PARAGRAPH_01__TEXT_CONTAINER_01__TEXT_01__CONTENT,
+                                                                                                                                                                                                pathID: '1-1-1-0-0-0-2-0-0',
+                                                                                                                                                                                                content: TextKey.PART_01__SECTION_02__CHAPTER_02__ARTICLE_01__ARTICLE_PARAGRAPH_01__SUB_ARTICLE_01__PARAGRAPH_01__TEXT_CONTAINER_01__TEXT_01__CONTENT,
                                                                                                                                                                                                 strong: false,
                                                                                                                                                                                                 emphasis: false,
                                                                                                                                                                                                 smallCaps: false,
@@ -2491,36 +2693,15 @@ export const Catechism: CatechismStructure = {
                                                                                                                                                                                     
                                                                                                                                                                                             {
                                                                                                                                                                                                 contentType: Content.TEXT,
-                                                                                                                                                                                                pathID: '1-0-0-2-1-0-0-0-1',
-                                                                                                                                                                                                content: TextKey.PART_01__SECTION_01__CHAPTER_01__ARTICLE_03__SUB_ARTICLE_02__PARAGRAPH_GROUP_01__PARAGRAPH_01__TEXT_CONTAINER_01__TEXT_02__CONTENT,
+                                                                                                                                                                                                pathID: '1-1-1-0-0-0-2-0-1',
+                                                                                                                                                                                                content: TextKey.PART_01__SECTION_02__CHAPTER_02__ARTICLE_01__ARTICLE_PARAGRAPH_01__SUB_ARTICLE_01__PARAGRAPH_01__TEXT_CONTAINER_01__TEXT_02__CONTENT,
                                                                                                                                                                                                 strong: false,
                                                                                                                                                                                                 emphasis: false,
                                                                                                                                                                                                 smallCaps: false,
                                                                                                                                                                                             }
                                                                                                                                                             ],
                                                                                                                                                             references: [
-                                                                                                                                                                                                    
-                                                                                                                                                                                            {
-                                                                                                                                                                                                referenceType: ReferenceEnum.OTHER,
-                                                                                                                                                                                                direct: true,
-                                                                                                                                                                                                source: OtherSourceEnum.SOURCE_1,
-                                                                                                                                                                                                pointer: `Ch. IX, p.4`,
-                                                                                                                                                                                            },
-                                                                                                                                                                                    
-                                                                                                                                                                                            {
-                                                                                                                                                                                                referenceType: ReferenceEnum.BIBLE,
-                                                                                                                                                                                                direct: true,
-                                                                                                                                                                                                book: BibleBook.PSALMS,
-                                                                                                                                                                                                chapter: 1,
-                                                                                                                                                                                                verses: 3,
-                                                                                                                                                                                            },
-                                                                                                                                                                                    
-                                                                                                                                                                                            {
-                                                                                                                                                                                                referenceType: ReferenceEnum.OTHER,
-                                                                                                                                                                                                direct: true,
-                                                                                                                                                                                                source: OtherSourceEnum.SOURCE_1,
-                                                                                                                                                                                                pointer: ``,
-                                                                                                                                                                                            },
+                                                                                                                                                                
                                                                                                                                                             ],
                                                                                                                                                             paragraphReferences: [
                                                                                                                                                                 
@@ -2530,162 +2711,87 @@ export const Catechism: CatechismStructure = {
                                                                                                                         },
                                                                                                                 
                                                                                                                         {
-                                                                                                                            contentType: Content.BLOCK_QUOTE,
-                                                                                                                            pathID: '1-0-0-2-1-0-1',
+                                                                                                                            contentType: Content.PARAGRAPH_GROUP,
+                                                                                                                            pathID: '1-1-1-0-0-0-3',
+                                                                                                                            paragraphGroupNumber: 1,
+                                                                                                                            title: TextKey.PART_01__SECTION_02__CHAPTER_02__ARTICLE_01__ARTICLE_PARAGRAPH_01__SUB_ARTICLE_01__PARAGRAPH_GROUP_02__TITLE,
                                                                                                                             mainContent: [
                                                                                                                                                                 
                                                                                                                                                         {
-                                                                                                                                                            contentType: Content.TEXT_CONTAINER,
-                                                                                                                                                            pathID: '1-0-0-2-1-0-1-0',
+                                                                                                                                                            contentType: Content.PARAGRAPH,
+                                                                                                                                                            pathID: '1-1-1-0-0-0-3-0',
+                                                                                                                                                            paragraphNumber: 27,
+                                                                                                                                                            supplementary: false,
                                                                                                                                                             mainContent: [
                                                                                                                                                                                                     
                                                                                                                                                                                             {
-                                                                                                                                                                                                contentType: Content.TEXT,
-                                                                                                                                                                                                pathID: '1-0-0-2-1-0-1-0-0',
-                                                                                                                                                                                                content: TextKey.PART_01__SECTION_01__CHAPTER_01__ARTICLE_03__SUB_ARTICLE_02__PARAGRAPH_GROUP_01__BLOCK_QUOTE_01__TEXT_CONTAINER_01__TEXT_01__CONTENT,
-                                                                                                                                                                                                strong: false,
-                                                                                                                                                                                                emphasis: false,
-                                                                                                                                                                                                smallCaps: false,
-                                                                                                                                                                                            },
-                                                                                                                                                                                    
-                                                                                                                                                                                            {
-                                                                                                                                                                                                contentType: Content.TEXT,
-                                                                                                                                                                                                pathID: '1-0-0-2-1-0-1-0-1',
-                                                                                                                                                                                                content: TextKey.PART_01__SECTION_01__CHAPTER_01__ARTICLE_03__SUB_ARTICLE_02__PARAGRAPH_GROUP_01__BLOCK_QUOTE_01__TEXT_CONTAINER_01__TEXT_02__CONTENT,
-                                                                                                                                                                                                strong: false,
-                                                                                                                                                                                                emphasis: false,
-                                                                                                                                                                                                smallCaps: false,
-                                                                                                                                                                                            },
-                                                                                                                                                                                    
-                                                                                                                                                                                            {
-                                                                                                                                                                                                contentType: Content.TEXT,
-                                                                                                                                                                                                pathID: '1-0-0-2-1-0-1-0-2',
-                                                                                                                                                                                                content: TextKey.PART_01__SECTION_01__CHAPTER_01__ARTICLE_03__SUB_ARTICLE_02__PARAGRAPH_GROUP_01__BLOCK_QUOTE_01__TEXT_CONTAINER_01__TEXT_03__CONTENT,
-                                                                                                                                                                                                strong: false,
-                                                                                                                                                                                                emphasis: false,
-                                                                                                                                                                                                smallCaps: false,
-                                                                                                                                                                                            }
-                                                                                                                                                            ],
-                                                                                                                                                            references: [
+                                                                                                                                                                                                contentType: Content.TEXT_CONTAINER,
+                                                                                                                                                                                                pathID: '1-1-1-0-0-0-3-0-0',
+                                                                                                                                                                                                mainContent: [
+                                                                                                                                                                                                                                            
+                                                                                                                                                                                                                                    {
+                                                                                                                                                                                                                                        contentType: Content.TEXT,
+                                                                                                                                                                                                                                        pathID: '1-1-1-0-0-0-3-0-0-0',
+                                                                                                                                                                                                                                        content: TextKey.PART_01__SECTION_02__CHAPTER_02__ARTICLE_01__ARTICLE_PARAGRAPH_01__SUB_ARTICLE_01__PARAGRAPH_GROUP_02__PARAGRAPH_01__TEXT_CONTAINER_01__TEXT_01__CONTENT,
+                                                                                                                                                                                                                                        strong: false,
+                                                                                                                                                                                                                                        emphasis: false,
+                                                                                                                                                                                                                                        smallCaps: false,
+                                                                                                                                                                                                                                    },
+                                                                                                                                                                                                                            
+                                                                                                                                                                                                                                    {
+                                                                                                                                                                                                                                        contentType: Content.TEXT,
+                                                                                                                                                                                                                                        pathID: '1-1-1-0-0-0-3-0-0-1',
+                                                                                                                                                                                                                                        content: TextKey.PART_01__SECTION_02__CHAPTER_02__ARTICLE_01__ARTICLE_PARAGRAPH_01__SUB_ARTICLE_01__PARAGRAPH_GROUP_02__PARAGRAPH_01__TEXT_CONTAINER_01__TEXT_02__CONTENT,
+                                                                                                                                                                                                                                        strong: false,
+                                                                                                                                                                                                                                        emphasis: false,
+                                                                                                                                                                                                                                        smallCaps: false,
+                                                                                                                                                                                                                                    },
+                                                                                                                                                                                                                            
+                                                                                                                                                                                                                                    {
+                                                                                                                                                                                                                                        contentType: Content.TEXT,
+                                                                                                                                                                                                                                        pathID: '1-1-1-0-0-0-3-0-0-2',
+                                                                                                                                                                                                                                        content: TextKey.PART_01__SECTION_02__CHAPTER_02__ARTICLE_01__ARTICLE_PARAGRAPH_01__SUB_ARTICLE_01__PARAGRAPH_GROUP_02__PARAGRAPH_01__TEXT_CONTAINER_01__TEXT_03__CONTENT,
+                                                                                                                                                                                                                                        strong: false,
+                                                                                                                                                                                                                                        emphasis: false,
+                                                                                                                                                                                                                                        smallCaps: false,
+                                                                                                                                                                                                                                    }
+                                                                                                                                                                                                ],
+                                                                                                                                                                                                references: [
                                                                                                                                                                                                     
-                                                                                                                                                                                            {
-                                                                                                                                                                                                referenceType: ReferenceEnum.OTHER,
-                                                                                                                                                                                                direct: true,
-                                                                                                                                                                                                source: OtherSourceEnum.SOURCE_3,
-                                                                                                                                                                                                pointer: `398-401`,
+                                                                                                                                                                                                ],
+                                                                                                                                                                                                paragraphReferences: [
+                                                                                                                                                                                                    
+                                                                                                                                                                                                ],
                                                                                                                                                                                             },
-                                                                                                                                                            ],
-                                                                                                                                                            paragraphReferences: [
-                                                                                                                                                                
                                                                                                                                                             ],
                                                                                                                                                         },
                                                                                                                                                 
                                                                                                                                                         {
-                                                                                                                                                            contentType: Content.TEXT_CONTAINER,
-                                                                                                                                                            pathID: '1-0-0-2-1-0-1-1',
+                                                                                                                                                            contentType: Content.BLOCK_QUOTE,
+                                                                                                                                                            pathID: '1-1-1-0-0-0-3-1',
                                                                                                                                                             mainContent: [
                                                                                                                                                                                                     
                                                                                                                                                                                             {
-                                                                                                                                                                                                contentType: Content.TEXT,
-                                                                                                                                                                                                pathID: '1-0-0-2-1-0-1-1-0',
-                                                                                                                                                                                                content: TextKey.PART_01__SECTION_01__CHAPTER_01__ARTICLE_03__SUB_ARTICLE_02__PARAGRAPH_GROUP_01__BLOCK_QUOTE_01__TEXT_CONTAINER_02__TEXT_01__CONTENT,
-                                                                                                                                                                                                strong: false,
-                                                                                                                                                                                                emphasis: false,
-                                                                                                                                                                                                smallCaps: false,
-                                                                                                                                                                                            }
-                                                                                                                                                            ],
-                                                                                                                                                            references: [
-                                                                                                                                                                
-                                                                                                                                                            ],
-                                                                                                                                                            paragraphReferences: [
-                                                                                                                                                                
-                                                                                                                                                            ],
-                                                                                                                                                        },
-                                                                                                                                                
-                                                                                                                                                        {
-                                                                                                                                                            contentType: Content.TEXT_CONTAINER,
-                                                                                                                                                            pathID: '1-0-0-2-1-0-1-2',
-                                                                                                                                                            mainContent: [
+                                                                                                                                                                                                contentType: Content.TEXT_CONTAINER,
+                                                                                                                                                                                                pathID: '1-1-1-0-0-0-3-1-0',
+                                                                                                                                                                                                mainContent: [
+                                                                                                                                                                                                                                            
+                                                                                                                                                                                                                                    {
+                                                                                                                                                                                                                                        contentType: Content.TEXT,
+                                                                                                                                                                                                                                        pathID: '1-1-1-0-0-0-3-1-0-0',
+                                                                                                                                                                                                                                        content: TextKey.PART_01__SECTION_02__CHAPTER_02__ARTICLE_01__ARTICLE_PARAGRAPH_01__SUB_ARTICLE_01__PARAGRAPH_GROUP_02__BLOCK_QUOTE_01__TEXT_CONTAINER_01__TEXT_01__CONTENT,
+                                                                                                                                                                                                                                        strong: false,
+                                                                                                                                                                                                                                        emphasis: false,
+                                                                                                                                                                                                                                        smallCaps: false,
+                                                                                                                                                                                                                                    }
+                                                                                                                                                                                                ],
+                                                                                                                                                                                                references: [
                                                                                                                                                                                                     
-                                                                                                                                                                                            {
-                                                                                                                                                                                                contentType: Content.TEXT,
-                                                                                                                                                                                                pathID: '1-0-0-2-1-0-1-2-0',
-                                                                                                                                                                                                content: TextKey.PART_01__SECTION_01__CHAPTER_01__ARTICLE_03__SUB_ARTICLE_02__PARAGRAPH_GROUP_01__BLOCK_QUOTE_01__TEXT_CONTAINER_03__TEXT_01__CONTENT,
-                                                                                                                                                                                                strong: false,
-                                                                                                                                                                                                emphasis: false,
-                                                                                                                                                                                                smallCaps: false,
-                                                                                                                                                                                            }
-                                                                                                                                                            ],
-                                                                                                                                                            references: [
+                                                                                                                                                                                                ],
+                                                                                                                                                                                                paragraphReferences: [
                                                                                                                                                                                                     
-                                                                                                                                                                                            {
-                                                                                                                                                                                                referenceType: ReferenceEnum.BIBLE,
-                                                                                                                                                                                                direct: true,
-                                                                                                                                                                                                book: BibleBook.ACTS_OF_THE_APOSTLES,
-                                                                                                                                                                                                chapter: 3,
-                                                                                                                                                                                                verses: `3-5`,
+                                                                                                                                                                                                ],
                                                                                                                                                                                             },
-                                                                                                                                                                                    
-                                                                                                                                                                                            {
-                                                                                                                                                                                                referenceType: ReferenceEnum.OTHER,
-                                                                                                                                                                                                direct: true,
-                                                                                                                                                                                                source: OtherSourceEnum.SOURCE_2,
-                                                                                                                                                                                                pointer: `Article VII, 8, 3, 1-2`,
-                                                                                                                                                                                            },
-                                                                                                                                                                                    
-                                                                                                                                                                                            {
-                                                                                                                                                                                                referenceType: ReferenceEnum.OTHER,
-                                                                                                                                                                                                direct: false,
-                                                                                                                                                                                                source: OtherSourceEnum.SOURCE_1,
-                                                                                                                                                                                                pointer: `Article VII, 8, 3, 1-2`,
-                                                                                                                                                                                            },
-                                                                                                                                                            ],
-                                                                                                                                                            paragraphReferences: [
-                                                                                                                                                                
-                                                                                                                                                            ],
-                                                                                                                                                        },
-                                                                                                                            ],
-                                                                                                                        },
-                                                                                                                
-                                                                                                                        {
-                                                                                                                            contentType: Content.BLOCK_QUOTE,
-                                                                                                                            pathID: '1-0-0-2-1-0-2',
-                                                                                                                            mainContent: [
-                                                                                                                                                                
-                                                                                                                                                        {
-                                                                                                                                                            contentType: Content.TEXT_CONTAINER,
-                                                                                                                                                            pathID: '1-0-0-2-1-0-2-0',
-                                                                                                                                                            mainContent: [
-                                                                                                                                                                                                    
-                                                                                                                                                                                            {
-                                                                                                                                                                                                contentType: Content.TEXT,
-                                                                                                                                                                                                pathID: '1-0-0-2-1-0-2-0-0',
-                                                                                                                                                                                                content: TextKey.PART_01__SECTION_01__CHAPTER_01__ARTICLE_03__SUB_ARTICLE_02__PARAGRAPH_GROUP_01__BLOCK_QUOTE_02__TEXT_CONTAINER_01__TEXT_01__CONTENT,
-                                                                                                                                                                                                strong: false,
-                                                                                                                                                                                                emphasis: false,
-                                                                                                                                                                                                smallCaps: false,
-                                                                                                                                                                                            }
-                                                                                                                                                            ],
-                                                                                                                                                            references: [
-                                                                                                                                                                                                    
-                                                                                                                                                                                            {
-                                                                                                                                                                                                referenceType: ReferenceEnum.BIBLE,
-                                                                                                                                                                                                direct: false,
-                                                                                                                                                                                                book: BibleBook.HEBREWS,
-                                                                                                                                                                                                chapter: 2,
-                                                                                                                                                                                                verses: `1-4`,
-                                                                                                                                                                                            },
-                                                                                                                                                                                    
-                                                                                                                                                                                            {
-                                                                                                                                                                                                referenceType: ReferenceEnum.BIBLE,
-                                                                                                                                                                                                direct: true,
-                                                                                                                                                                                                book: BibleBook.MICAH,
-                                                                                                                                                                                                chapter: 3,
-                                                                                                                                                                                                verses: `1-2`,
-                                                                                                                                                                                            },
-                                                                                                                                                            ],
-                                                                                                                                                            paragraphReferences: [
-                                                                                                                                                                
                                                                                                                                                             ],
                                                                                                                                                         },
                                                                                                                             ],
@@ -2694,137 +2800,28 @@ export const Catechism: CatechismStructure = {
                                                                                             },
                                                                                     
                                                                                             {
-                                                                                                contentType: Content.PARAGRAPH_GROUP,
-                                                                                                pathID: '1-0-0-2-1-1',
-                                                                                                paragraphGroupNumber: 1,
-                                                                                                title: TextKey.PART_01__SECTION_01__CHAPTER_01__ARTICLE_03__SUB_ARTICLE_02__PARAGRAPH_GROUP_02__TITLE,
+                                                                                                contentType: Content.SUB_ARTICLE,
+                                                                                                pathID: '1-1-1-0-0-1',
+                                                                                                subarticleNumber: 2,
+                                                                                                title: TextKey.PART_01__SECTION_02__CHAPTER_02__ARTICLE_01__ARTICLE_PARAGRAPH_01__SUB_ARTICLE_02__TITLE,
                                                                                                 mainContent: [
                                                                                                                                 
                                                                                                                         {
                                                                                                                             contentType: Content.PARAGRAPH,
-                                                                                                                            pathID: '1-0-0-2-1-1-0',
-                                                                                                                            paragraphNumber: 27,
-                                                                                                                            supplementary: false,
-                                                                                                                            mainContent: [
-                                                                                                                                                                
-                                                                                                                                                        {
-                                                                                                                                                            contentType: Content.TEXT_CONTAINER,
-                                                                                                                                                            pathID: '1-0-0-2-1-1-0-0',
-                                                                                                                                                            mainContent: [
-                                                                                                                                                                                                    
-                                                                                                                                                                                            {
-                                                                                                                                                                                                contentType: Content.TEXT,
-                                                                                                                                                                                                pathID: '1-0-0-2-1-1-0-0-0',
-                                                                                                                                                                                                content: TextKey.PART_01__SECTION_01__CHAPTER_01__ARTICLE_03__SUB_ARTICLE_02__PARAGRAPH_GROUP_02__PARAGRAPH_01__TEXT_CONTAINER_01__TEXT_01__CONTENT,
-                                                                                                                                                                                                strong: false,
-                                                                                                                                                                                                emphasis: false,
-                                                                                                                                                                                                smallCaps: false,
-                                                                                                                                                                                            }
-                                                                                                                                                            ],
-                                                                                                                                                            references: [
-                                                                                                                                                                
-                                                                                                                                                            ],
-                                                                                                                                                            paragraphReferences: [
-                                                                                                                                                                
-                                                                                                                                                            ],
-                                                                                                                                                        },
-                                                                                                                            ],
-                                                                                                                        },
-                                                                                                                
-                                                                                                                        {
-                                                                                                                            contentType: Content.BLOCK_QUOTE,
-                                                                                                                            pathID: '1-0-0-2-1-1-1',
-                                                                                                                            mainContent: [
-                                                                                                                                                                
-                                                                                                                                                        {
-                                                                                                                                                            contentType: Content.TEXT_CONTAINER,
-                                                                                                                                                            pathID: '1-0-0-2-1-1-1-0',
-                                                                                                                                                            mainContent: [
-                                                                                                                                                                                                    
-                                                                                                                                                                                            {
-                                                                                                                                                                                                contentType: Content.TEXT,
-                                                                                                                                                                                                pathID: '1-0-0-2-1-1-1-0-0',
-                                                                                                                                                                                                content: TextKey.PART_01__SECTION_01__CHAPTER_01__ARTICLE_03__SUB_ARTICLE_02__PARAGRAPH_GROUP_02__BLOCK_QUOTE_01__TEXT_CONTAINER_01__TEXT_01__CONTENT,
-                                                                                                                                                                                                strong: false,
-                                                                                                                                                                                                emphasis: false,
-                                                                                                                                                                                                smallCaps: false,
-                                                                                                                                                                                            }
-                                                                                                                                                            ],
-                                                                                                                                                            references: [
-                                                                                                                                                                
-                                                                                                                                                            ],
-                                                                                                                                                            paragraphReferences: [
-                                                                                                                                                                4
-                                                                                                                                                            ],
-                                                                                                                                                        },
-                                                                                                                                                
-                                                                                                                                                        {
-                                                                                                                                                            contentType: Content.TEXT_CONTAINER,
-                                                                                                                                                            pathID: '1-0-0-2-1-1-1-1',
-                                                                                                                                                            mainContent: [
-                                                                                                                                                                                                    
-                                                                                                                                                                                            {
-                                                                                                                                                                                                contentType: Content.TEXT,
-                                                                                                                                                                                                pathID: '1-0-0-2-1-1-1-1-0',
-                                                                                                                                                                                                content: TextKey.PART_01__SECTION_01__CHAPTER_01__ARTICLE_03__SUB_ARTICLE_02__PARAGRAPH_GROUP_02__BLOCK_QUOTE_01__TEXT_CONTAINER_02__TEXT_01__CONTENT,
-                                                                                                                                                                                                strong: false,
-                                                                                                                                                                                                emphasis: false,
-                                                                                                                                                                                                smallCaps: false,
-                                                                                                                                                                                            },
-                                                                                                                                                                                    
-                                                                                                                                                                                            {
-                                                                                                                                                                                                contentType: Content.TEXT,
-                                                                                                                                                                                                pathID: '1-0-0-2-1-1-1-1-1',
-                                                                                                                                                                                                content: TextKey.PART_01__SECTION_01__CHAPTER_01__ARTICLE_03__SUB_ARTICLE_02__PARAGRAPH_GROUP_02__BLOCK_QUOTE_01__TEXT_CONTAINER_02__TEXT_02__CONTENT,
-                                                                                                                                                                                                strong: false,
-                                                                                                                                                                                                emphasis: false,
-                                                                                                                                                                                                smallCaps: false,
-                                                                                                                                                                                            },
-                                                                                                                                                                                    
-                                                                                                                                                                                            {
-                                                                                                                                                                                                contentType: Content.TEXT,
-                                                                                                                                                                                                pathID: '1-0-0-2-1-1-1-1-2',
-                                                                                                                                                                                                content: TextKey.PART_01__SECTION_01__CHAPTER_01__ARTICLE_03__SUB_ARTICLE_02__PARAGRAPH_GROUP_02__BLOCK_QUOTE_01__TEXT_CONTAINER_02__TEXT_03__CONTENT,
-                                                                                                                                                                                                strong: false,
-                                                                                                                                                                                                emphasis: false,
-                                                                                                                                                                                                smallCaps: false,
-                                                                                                                                                                                            }
-                                                                                                                                                            ],
-                                                                                                                                                            references: [
-                                                                                                                                                                
-                                                                                                                                                            ],
-                                                                                                                                                            paragraphReferences: [
-                                                                                                                                                                
-                                                                                                                                                            ],
-                                                                                                                                                        },
-                                                                                                                            ],
-                                                                                                                        },
-                                                                                                ],
-                                                                                            },
-                                                                                    
-                                                                                            {
-                                                                                                contentType: Content.PARAGRAPH_GROUP,
-                                                                                                pathID: '1-0-0-2-1-2',
-                                                                                                paragraphGroupNumber: 1,
-                                                                                                title: TextKey.PART_01__SECTION_01__CHAPTER_01__ARTICLE_03__SUB_ARTICLE_02__PARAGRAPH_GROUP_03__TITLE,
-                                                                                                mainContent: [
-                                                                                                                                
-                                                                                                                        {
-                                                                                                                            contentType: Content.PARAGRAPH,
-                                                                                                                            pathID: '1-0-0-2-1-2-0',
+                                                                                                                            pathID: '1-1-1-0-0-1-0',
                                                                                                                             paragraphNumber: 28,
-                                                                                                                            supplementary: false,
+                                                                                                                            supplementary: true,
                                                                                                                             mainContent: [
                                                                                                                                                                 
                                                                                                                                                         {
                                                                                                                                                             contentType: Content.TEXT_CONTAINER,
-                                                                                                                                                            pathID: '1-0-0-2-1-2-0-0',
+                                                                                                                                                            pathID: '1-1-1-0-0-1-0-0',
                                                                                                                                                             mainContent: [
                                                                                                                                                                                                     
                                                                                                                                                                                             {
                                                                                                                                                                                                 contentType: Content.TEXT,
-                                                                                                                                                                                                pathID: '1-0-0-2-1-2-0-0-0',
-                                                                                                                                                                                                content: TextKey.PART_01__SECTION_01__CHAPTER_01__ARTICLE_03__SUB_ARTICLE_02__PARAGRAPH_GROUP_03__PARAGRAPH_01__TEXT_CONTAINER_01__TEXT_01__CONTENT,
+                                                                                                                                                                                                pathID: '1-1-1-0-0-1-0-0-0',
+                                                                                                                                                                                                content: TextKey.PART_01__SECTION_02__CHAPTER_02__ARTICLE_01__ARTICLE_PARAGRAPH_01__SUB_ARTICLE_02__PARAGRAPH_01__TEXT_CONTAINER_01__TEXT_01__CONTENT,
                                                                                                                                                                                                 strong: false,
                                                                                                                                                                                                 emphasis: false,
                                                                                                                                                                                                 smallCaps: false,
@@ -2832,36 +2829,37 @@ export const Catechism: CatechismStructure = {
                                                                                                                                                                                     
                                                                                                                                                                                             {
                                                                                                                                                                                                 contentType: Content.TEXT,
-                                                                                                                                                                                                pathID: '1-0-0-2-1-2-0-0-1',
-                                                                                                                                                                                                content: TextKey.PART_01__SECTION_01__CHAPTER_01__ARTICLE_03__SUB_ARTICLE_02__PARAGRAPH_GROUP_03__PARAGRAPH_01__TEXT_CONTAINER_01__TEXT_02__CONTENT,
+                                                                                                                                                                                                pathID: '1-1-1-0-0-1-0-0-1',
+                                                                                                                                                                                                content: TextKey.PART_01__SECTION_02__CHAPTER_02__ARTICLE_01__ARTICLE_PARAGRAPH_01__SUB_ARTICLE_02__PARAGRAPH_01__TEXT_CONTAINER_01__TEXT_02__CONTENT,
                                                                                                                                                                                                 strong: false,
                                                                                                                                                                                                 emphasis: false,
                                                                                                                                                                                                 smallCaps: false,
                                                                                                                                                                                             }
                                                                                                                                                             ],
                                                                                                                                                             references: [
+                                                                                                                                                                
+                                                                                                                                                            ],
+                                                                                                                                                            paragraphReferences: [
+                                                                                                                                                                
+                                                                                                                                                            ],
+                                                                                                                                                        },
+                                                                                                                                                
+                                                                                                                                                        {
+                                                                                                                                                            contentType: Content.TEXT_CONTAINER,
+                                                                                                                                                            pathID: '1-1-1-0-0-1-0-1',
+                                                                                                                                                            mainContent: [
                                                                                                                                                                                                     
                                                                                                                                                                                             {
-                                                                                                                                                                                                referenceType: ReferenceEnum.OTHER,
-                                                                                                                                                                                                direct: true,
-                                                                                                                                                                                                source: OtherSourceEnum.SOURCE_1,
-                                                                                                                                                                                                pointer: `Article VII, 8, 3, 1-2`,
-                                                                                                                                                                                            },
-                                                                                                                                                                                    
-                                                                                                                                                                                            {
-                                                                                                                                                                                                referenceType: ReferenceEnum.OTHER,
-                                                                                                                                                                                                direct: false,
-                                                                                                                                                                                                source: OtherSourceEnum.SOURCE_1,
-                                                                                                                                                                                                pointer: `398-401`,
-                                                                                                                                                                                            },
-                                                                                                                                                                                    
-                                                                                                                                                                                            {
-                                                                                                                                                                                                referenceType: ReferenceEnum.BIBLE,
-                                                                                                                                                                                                direct: false,
-                                                                                                                                                                                                book: BibleBook.MICAH,
-                                                                                                                                                                                                chapter: 2,
-                                                                                                                                                                                                verses: `2-4`,
-                                                                                                                                                                                            },
+                                                                                                                                                                                                contentType: Content.TEXT,
+                                                                                                                                                                                                pathID: '1-1-1-0-0-1-0-1-0',
+                                                                                                                                                                                                content: TextKey.PART_01__SECTION_02__CHAPTER_02__ARTICLE_01__ARTICLE_PARAGRAPH_01__SUB_ARTICLE_02__PARAGRAPH_01__TEXT_CONTAINER_02__TEXT_01__CONTENT,
+                                                                                                                                                                                                strong: false,
+                                                                                                                                                                                                emphasis: false,
+                                                                                                                                                                                                smallCaps: false,
+                                                                                                                                                                                            }
+                                                                                                                                                            ],
+                                                                                                                                                            references: [
+                                                                                                                                                                
                                                                                                                                                             ],
                                                                                                                                                             paragraphReferences: [
                                                                                                                                                                 
@@ -2871,19 +2869,21 @@ export const Catechism: CatechismStructure = {
                                                                                                                         },
                                                                                                                 
                                                                                                                         {
-                                                                                                                            contentType: Content.BLOCK_QUOTE,
-                                                                                                                            pathID: '1-0-0-2-1-2-1',
+                                                                                                                            contentType: Content.PARAGRAPH_GROUP,
+                                                                                                                            pathID: '1-1-1-0-0-1-1',
+                                                                                                                            paragraphGroupNumber: 1,
+                                                                                                                            title: TextKey.PART_01__SECTION_02__CHAPTER_02__ARTICLE_01__ARTICLE_PARAGRAPH_01__SUB_ARTICLE_02__PARAGRAPH_GROUP_01__TITLE,
                                                                                                                             mainContent: [
                                                                                                                                                                 
                                                                                                                                                         {
                                                                                                                                                             contentType: Content.TEXT_CONTAINER,
-                                                                                                                                                            pathID: '1-0-0-2-1-2-1-0',
+                                                                                                                                                            pathID: '1-1-1-0-0-1-1-0',
                                                                                                                                                             mainContent: [
                                                                                                                                                                                                     
                                                                                                                                                                                             {
                                                                                                                                                                                                 contentType: Content.TEXT,
-                                                                                                                                                                                                pathID: '1-0-0-2-1-2-1-0-0',
-                                                                                                                                                                                                content: TextKey.PART_01__SECTION_01__CHAPTER_01__ARTICLE_03__SUB_ARTICLE_02__PARAGRAPH_GROUP_03__BLOCK_QUOTE_01__TEXT_CONTAINER_01__TEXT_01__CONTENT,
+                                                                                                                                                                                                pathID: '1-1-1-0-0-1-1-0-0',
+                                                                                                                                                                                                content: TextKey.PART_01__SECTION_02__CHAPTER_02__ARTICLE_01__ARTICLE_PARAGRAPH_01__SUB_ARTICLE_02__PARAGRAPH_GROUP_01__TEXT_CONTAINER_01__TEXT_01__CONTENT,
                                                                                                                                                                                                 strong: false,
                                                                                                                                                                                                 emphasis: false,
                                                                                                                                                                                                 smallCaps: false,
@@ -2891,8 +2891,8 @@ export const Catechism: CatechismStructure = {
                                                                                                                                                                                     
                                                                                                                                                                                             {
                                                                                                                                                                                                 contentType: Content.TEXT,
-                                                                                                                                                                                                pathID: '1-0-0-2-1-2-1-0-1',
-                                                                                                                                                                                                content: TextKey.PART_01__SECTION_01__CHAPTER_01__ARTICLE_03__SUB_ARTICLE_02__PARAGRAPH_GROUP_03__BLOCK_QUOTE_01__TEXT_CONTAINER_01__TEXT_02__CONTENT,
+                                                                                                                                                                                                pathID: '1-1-1-0-0-1-1-0-1',
+                                                                                                                                                                                                content: TextKey.PART_01__SECTION_02__CHAPTER_02__ARTICLE_01__ARTICLE_PARAGRAPH_01__SUB_ARTICLE_02__PARAGRAPH_GROUP_01__TEXT_CONTAINER_01__TEXT_02__CONTENT,
                                                                                                                                                                                                 strong: false,
                                                                                                                                                                                                 emphasis: false,
                                                                                                                                                                                                 smallCaps: false,
@@ -2900,38 +2900,15 @@ export const Catechism: CatechismStructure = {
                                                                                                                                                                                     
                                                                                                                                                                                             {
                                                                                                                                                                                                 contentType: Content.TEXT,
-                                                                                                                                                                                                pathID: '1-0-0-2-1-2-1-0-2',
-                                                                                                                                                                                                content: TextKey.PART_01__SECTION_01__CHAPTER_01__ARTICLE_03__SUB_ARTICLE_02__PARAGRAPH_GROUP_03__BLOCK_QUOTE_01__TEXT_CONTAINER_01__TEXT_03__CONTENT,
+                                                                                                                                                                                                pathID: '1-1-1-0-0-1-1-0-2',
+                                                                                                                                                                                                content: TextKey.PART_01__SECTION_02__CHAPTER_02__ARTICLE_01__ARTICLE_PARAGRAPH_01__SUB_ARTICLE_02__PARAGRAPH_GROUP_01__TEXT_CONTAINER_01__TEXT_03__CONTENT,
                                                                                                                                                                                                 strong: false,
                                                                                                                                                                                                 emphasis: false,
                                                                                                                                                                                                 smallCaps: false,
                                                                                                                                                                                             }
                                                                                                                                                             ],
                                                                                                                                                             references: [
-                                                                                                                                                                                                    
-                                                                                                                                                                                            {
-                                                                                                                                                                                                referenceType: ReferenceEnum.BIBLE,
-                                                                                                                                                                                                direct: false,
-                                                                                                                                                                                                book: BibleBook.GENESIS,
-                                                                                                                                                                                                chapter: 3,
-                                                                                                                                                                                                verses: 1,
-                                                                                                                                                                                            },
-                                                                                                                                                                                    
-                                                                                                                                                                                            {
-                                                                                                                                                                                                referenceType: ReferenceEnum.BIBLE,
-                                                                                                                                                                                                direct: false,
-                                                                                                                                                                                                book: BibleBook.MICAH,
-                                                                                                                                                                                                chapter: 2,
-                                                                                                                                                                                                verses: `1-4`,
-                                                                                                                                                                                            },
-                                                                                                                                                                                    
-                                                                                                                                                                                            {
-                                                                                                                                                                                                referenceType: ReferenceEnum.BIBLE,
-                                                                                                                                                                                                direct: false,
-                                                                                                                                                                                                book: BibleBook.EPHESIANS,
-                                                                                                                                                                                                chapter: 2,
-                                                                                                                                                                                                verses: `1-2`,
-                                                                                                                                                                                            },
+                                                                                                                                                                
                                                                                                                                                             ],
                                                                                                                                                             paragraphReferences: [
                                                                                                                                                                 
@@ -2939,42 +2916,290 @@ export const Catechism: CatechismStructure = {
                                                                                                                                                         },
                                                                                                                                                 
                                                                                                                                                         {
-                                                                                                                                                            contentType: Content.TEXT_CONTAINER,
-                                                                                                                                                            pathID: '1-0-0-2-1-2-1-1',
+                                                                                                                                                            contentType: Content.PARAGRAPH,
+                                                                                                                                                            pathID: '1-1-1-0-0-1-1-1',
+                                                                                                                                                            paragraphNumber: 29,
+                                                                                                                                                            supplementary: false,
                                                                                                                                                             mainContent: [
                                                                                                                                                                                                     
                                                                                                                                                                                             {
-                                                                                                                                                                                                contentType: Content.TEXT,
-                                                                                                                                                                                                pathID: '1-0-0-2-1-2-1-1-0',
-                                                                                                                                                                                                content: TextKey.PART_01__SECTION_01__CHAPTER_01__ARTICLE_03__SUB_ARTICLE_02__PARAGRAPH_GROUP_03__BLOCK_QUOTE_01__TEXT_CONTAINER_02__TEXT_01__CONTENT,
-                                                                                                                                                                                                strong: false,
-                                                                                                                                                                                                emphasis: false,
-                                                                                                                                                                                                smallCaps: false,
+                                                                                                                                                                                                contentType: Content.TEXT_CONTAINER,
+                                                                                                                                                                                                pathID: '1-1-1-0-0-1-1-1-0',
+                                                                                                                                                                                                mainContent: [
+                                                                                                                                                                                                                                            
+                                                                                                                                                                                                                                    {
+                                                                                                                                                                                                                                        contentType: Content.TEXT,
+                                                                                                                                                                                                                                        pathID: '1-1-1-0-0-1-1-1-0-0',
+                                                                                                                                                                                                                                        content: TextKey.PART_01__SECTION_02__CHAPTER_02__ARTICLE_01__ARTICLE_PARAGRAPH_01__SUB_ARTICLE_02__PARAGRAPH_GROUP_01__PARAGRAPH_01__TEXT_CONTAINER_01__TEXT_01__CONTENT,
+                                                                                                                                                                                                                                        strong: false,
+                                                                                                                                                                                                                                        emphasis: false,
+                                                                                                                                                                                                                                        smallCaps: false,
+                                                                                                                                                                                                                                    },
+                                                                                                                                                                                                                            
+                                                                                                                                                                                                                                    {
+                                                                                                                                                                                                                                        contentType: Content.TEXT,
+                                                                                                                                                                                                                                        pathID: '1-1-1-0-0-1-1-1-0-1',
+                                                                                                                                                                                                                                        content: TextKey.PART_01__SECTION_02__CHAPTER_02__ARTICLE_01__ARTICLE_PARAGRAPH_01__SUB_ARTICLE_02__PARAGRAPH_GROUP_01__PARAGRAPH_01__TEXT_CONTAINER_01__TEXT_02__CONTENT,
+                                                                                                                                                                                                                                        strong: false,
+                                                                                                                                                                                                                                        emphasis: false,
+                                                                                                                                                                                                                                        smallCaps: false,
+                                                                                                                                                                                                                                    }
+                                                                                                                                                                                                ],
+                                                                                                                                                                                                references: [
+                                                                                                                                                                                                    
+                                                                                                                                                                                                ],
+                                                                                                                                                                                                paragraphReferences: [
+                                                                                                                                                                                                    
+                                                                                                                                                                                                ],
                                                                                                                                                                                             },
                                                                                                                                                                                     
                                                                                                                                                                                             {
-                                                                                                                                                                                                contentType: Content.TEXT,
-                                                                                                                                                                                                pathID: '1-0-0-2-1-2-1-1-1',
-                                                                                                                                                                                                content: TextKey.PART_01__SECTION_01__CHAPTER_01__ARTICLE_03__SUB_ARTICLE_02__PARAGRAPH_GROUP_03__BLOCK_QUOTE_01__TEXT_CONTAINER_02__TEXT_02__CONTENT,
-                                                                                                                                                                                                strong: false,
-                                                                                                                                                                                                emphasis: false,
-                                                                                                                                                                                                smallCaps: false,
+                                                                                                                                                                                                contentType: Content.TEXT_CONTAINER,
+                                                                                                                                                                                                pathID: '1-1-1-0-0-1-1-1-1',
+                                                                                                                                                                                                mainContent: [
+                                                                                                                                                                                                                                            
+                                                                                                                                                                                                                                    {
+                                                                                                                                                                                                                                        contentType: Content.TEXT,
+                                                                                                                                                                                                                                        pathID: '1-1-1-0-0-1-1-1-1-0',
+                                                                                                                                                                                                                                        content: TextKey.PART_01__SECTION_02__CHAPTER_02__ARTICLE_01__ARTICLE_PARAGRAPH_01__SUB_ARTICLE_02__PARAGRAPH_GROUP_01__PARAGRAPH_01__TEXT_CONTAINER_02__TEXT_01__CONTENT,
+                                                                                                                                                                                                                                        strong: false,
+                                                                                                                                                                                                                                        emphasis: false,
+                                                                                                                                                                                                                                        smallCaps: false,
+                                                                                                                                                                                                                                    }
+                                                                                                                                                                                                ],
+                                                                                                                                                                                                references: [
+                                                                                                                                                                                                                                            
+                                                                                                                                                                                                                                    {
+                                                                                                                                                                                                                                        referenceType: ReferenceEnum.OTHER,
+                                                                                                                                                                                                                                        direct: true,
+                                                                                                                                                                                                                                        source: OtherSourceEnum.SOURCE_3,
+                                                                                                                                                                                                                                        pointer: ``,
+                                                                                                                                                                                                                                    },
+                                                                                                                                                                                                                            
+                                                                                                                                                                                                                                    {
+                                                                                                                                                                                                                                        referenceType: ReferenceEnum.OTHER,
+                                                                                                                                                                                                                                        direct: true,
+                                                                                                                                                                                                                                        source: OtherSourceEnum.SOURCE_1,
+                                                                                                                                                                                                                                        pointer: `Ch. IX, p.4`,
+                                                                                                                                                                                                                                    },
+                                                                                                                                                                                                                            
+                                                                                                                                                                                                                                    {
+                                                                                                                                                                                                                                        referenceType: ReferenceEnum.OTHER,
+                                                                                                                                                                                                                                        direct: true,
+                                                                                                                                                                                                                                        source: OtherSourceEnum.SOURCE_3,
+                                                                                                                                                                                                                                        pointer: ``,
+                                                                                                                                                                                                                                    },
+                                                                                                                                                                                                ],
+                                                                                                                                                                                                paragraphReferences: [
+                                                                                                                                                                                                    
+                                                                                                                                                                                                ],
+                                                                                                                                                                                            },
+                                                                                                                                                            ],
+                                                                                                                                                        },
+                                                                                                                            ],
+                                                                                                                        },
+                                                                                                                
+                                                                                                                        {
+                                                                                                                            contentType: Content.PARAGRAPH_GROUP,
+                                                                                                                            pathID: '1-1-1-0-0-1-2',
+                                                                                                                            paragraphGroupNumber: 1,
+                                                                                                                            title: TextKey.PART_01__SECTION_02__CHAPTER_02__ARTICLE_01__ARTICLE_PARAGRAPH_01__SUB_ARTICLE_02__PARAGRAPH_GROUP_02__TITLE,
+                                                                                                                            mainContent: [
+                                                                                                                                                                
+                                                                                                                                                        {
+                                                                                                                                                            contentType: Content.PARAGRAPH,
+                                                                                                                                                            pathID: '1-1-1-0-0-1-2-0',
+                                                                                                                                                            paragraphNumber: 30,
+                                                                                                                                                            supplementary: true,
+                                                                                                                                                            mainContent: [
+                                                                                                                                                                                                    
+                                                                                                                                                                                            {
+                                                                                                                                                                                                contentType: Content.TEXT_CONTAINER,
+                                                                                                                                                                                                pathID: '1-1-1-0-0-1-2-0-0',
+                                                                                                                                                                                                mainContent: [
+                                                                                                                                                                                                                                            
+                                                                                                                                                                                                                                    {
+                                                                                                                                                                                                                                        contentType: Content.TEXT,
+                                                                                                                                                                                                                                        pathID: '1-1-1-0-0-1-2-0-0-0',
+                                                                                                                                                                                                                                        content: TextKey.PART_01__SECTION_02__CHAPTER_02__ARTICLE_01__ARTICLE_PARAGRAPH_01__SUB_ARTICLE_02__PARAGRAPH_GROUP_02__PARAGRAPH_01__TEXT_CONTAINER_01__TEXT_01__CONTENT,
+                                                                                                                                                                                                                                        strong: false,
+                                                                                                                                                                                                                                        emphasis: false,
+                                                                                                                                                                                                                                        smallCaps: false,
+                                                                                                                                                                                                                                    },
+                                                                                                                                                                                                                            
+                                                                                                                                                                                                                                    {
+                                                                                                                                                                                                                                        contentType: Content.TEXT,
+                                                                                                                                                                                                                                        pathID: '1-1-1-0-0-1-2-0-0-1',
+                                                                                                                                                                                                                                        content: TextKey.PART_01__SECTION_02__CHAPTER_02__ARTICLE_01__ARTICLE_PARAGRAPH_01__SUB_ARTICLE_02__PARAGRAPH_GROUP_02__PARAGRAPH_01__TEXT_CONTAINER_01__TEXT_02__CONTENT,
+                                                                                                                                                                                                                                        strong: false,
+                                                                                                                                                                                                                                        emphasis: false,
+                                                                                                                                                                                                                                        smallCaps: false,
+                                                                                                                                                                                                                                    },
+                                                                                                                                                                                                                            
+                                                                                                                                                                                                                                    {
+                                                                                                                                                                                                                                        contentType: Content.TEXT,
+                                                                                                                                                                                                                                        pathID: '1-1-1-0-0-1-2-0-0-2',
+                                                                                                                                                                                                                                        content: TextKey.PART_01__SECTION_02__CHAPTER_02__ARTICLE_01__ARTICLE_PARAGRAPH_01__SUB_ARTICLE_02__PARAGRAPH_GROUP_02__PARAGRAPH_01__TEXT_CONTAINER_01__TEXT_03__CONTENT,
+                                                                                                                                                                                                                                        strong: false,
+                                                                                                                                                                                                                                        emphasis: false,
+                                                                                                                                                                                                                                        smallCaps: false,
+                                                                                                                                                                                                                                    }
+                                                                                                                                                                                                ],
+                                                                                                                                                                                                references: [
+                                                                                                                                                                                                    
+                                                                                                                                                                                                ],
+                                                                                                                                                                                                paragraphReferences: [
+                                                                                                                                                                                                    
+                                                                                                                                                                                                ],
                                                                                                                                                                                             },
                                                                                                                                                                                     
                                                                                                                                                                                             {
-                                                                                                                                                                                                contentType: Content.TEXT,
-                                                                                                                                                                                                pathID: '1-0-0-2-1-2-1-1-2',
-                                                                                                                                                                                                content: TextKey.PART_01__SECTION_01__CHAPTER_01__ARTICLE_03__SUB_ARTICLE_02__PARAGRAPH_GROUP_03__BLOCK_QUOTE_01__TEXT_CONTAINER_02__TEXT_03__CONTENT,
-                                                                                                                                                                                                strong: false,
-                                                                                                                                                                                                emphasis: false,
-                                                                                                                                                                                                smallCaps: false,
-                                                                                                                                                                                            }
+                                                                                                                                                                                                contentType: Content.TEXT_CONTAINER,
+                                                                                                                                                                                                pathID: '1-1-1-0-0-1-2-0-1',
+                                                                                                                                                                                                mainContent: [
+                                                                                                                                                                                                                                            
+                                                                                                                                                                                                                                    {
+                                                                                                                                                                                                                                        contentType: Content.TEXT,
+                                                                                                                                                                                                                                        pathID: '1-1-1-0-0-1-2-0-1-0',
+                                                                                                                                                                                                                                        content: TextKey.PART_01__SECTION_02__CHAPTER_02__ARTICLE_01__ARTICLE_PARAGRAPH_01__SUB_ARTICLE_02__PARAGRAPH_GROUP_02__PARAGRAPH_01__TEXT_CONTAINER_02__TEXT_01__CONTENT,
+                                                                                                                                                                                                                                        strong: false,
+                                                                                                                                                                                                                                        emphasis: false,
+                                                                                                                                                                                                                                        smallCaps: false,
+                                                                                                                                                                                                                                    }
+                                                                                                                                                                                                ],
+                                                                                                                                                                                                references: [
+                                                                                                                                                                                                    
+                                                                                                                                                                                                ],
+                                                                                                                                                                                                paragraphReferences: [
+                                                                                                                                                                                                    
+                                                                                                                                                                                                ],
+                                                                                                                                                                                            },
+                                                                                                                                                                                    
+                                                                                                                                                                                            {
+                                                                                                                                                                                                contentType: Content.TEXT_CONTAINER,
+                                                                                                                                                                                                pathID: '1-1-1-0-0-1-2-0-2',
+                                                                                                                                                                                                mainContent: [
+                                                                                                                                                                                                                                            
+                                                                                                                                                                                                                                    {
+                                                                                                                                                                                                                                        contentType: Content.TEXT,
+                                                                                                                                                                                                                                        pathID: '1-1-1-0-0-1-2-0-2-0',
+                                                                                                                                                                                                                                        content: TextKey.PART_01__SECTION_02__CHAPTER_02__ARTICLE_01__ARTICLE_PARAGRAPH_01__SUB_ARTICLE_02__PARAGRAPH_GROUP_02__PARAGRAPH_01__TEXT_CONTAINER_03__TEXT_01__CONTENT,
+                                                                                                                                                                                                                                        strong: false,
+                                                                                                                                                                                                                                        emphasis: false,
+                                                                                                                                                                                                                                        smallCaps: false,
+                                                                                                                                                                                                                                    },
+                                                                                                                                                                                                                            
+                                                                                                                                                                                                                                    {
+                                                                                                                                                                                                                                        contentType: Content.TEXT,
+                                                                                                                                                                                                                                        pathID: '1-1-1-0-0-1-2-0-2-1',
+                                                                                                                                                                                                                                        content: TextKey.PART_01__SECTION_02__CHAPTER_02__ARTICLE_01__ARTICLE_PARAGRAPH_01__SUB_ARTICLE_02__PARAGRAPH_GROUP_02__PARAGRAPH_01__TEXT_CONTAINER_03__TEXT_02__CONTENT,
+                                                                                                                                                                                                                                        strong: false,
+                                                                                                                                                                                                                                        emphasis: false,
+                                                                                                                                                                                                                                        smallCaps: false,
+                                                                                                                                                                                                                                    },
+                                                                                                                                                                                                                            
+                                                                                                                                                                                                                                    {
+                                                                                                                                                                                                                                        contentType: Content.TEXT,
+                                                                                                                                                                                                                                        pathID: '1-1-1-0-0-1-2-0-2-2',
+                                                                                                                                                                                                                                        content: TextKey.PART_01__SECTION_02__CHAPTER_02__ARTICLE_01__ARTICLE_PARAGRAPH_01__SUB_ARTICLE_02__PARAGRAPH_GROUP_02__PARAGRAPH_01__TEXT_CONTAINER_03__TEXT_03__CONTENT,
+                                                                                                                                                                                                                                        strong: false,
+                                                                                                                                                                                                                                        emphasis: false,
+                                                                                                                                                                                                                                        smallCaps: false,
+                                                                                                                                                                                                                                    }
+                                                                                                                                                                                                ],
+                                                                                                                                                                                                references: [
+                                                                                                                                                                                                    
+                                                                                                                                                                                                ],
+                                                                                                                                                                                                paragraphReferences: [
+                                                                                                                                                                                                    28
+                                                                                                                                                                                                ],
+                                                                                                                                                                                            },
                                                                                                                                                             ],
-                                                                                                                                                            references: [
-                                                                                                                                                                
+                                                                                                                                                        },
+                                                                                                                                                
+                                                                                                                                                        {
+                                                                                                                                                            contentType: Content.PARAGRAPH,
+                                                                                                                                                            pathID: '1-1-1-0-0-1-2-1',
+                                                                                                                                                            paragraphNumber: 31,
+                                                                                                                                                            supplementary: false,
+                                                                                                                                                            mainContent: [
+                                                                                                                                                                                                    
+                                                                                                                                                                                            {
+                                                                                                                                                                                                contentType: Content.TEXT_CONTAINER,
+                                                                                                                                                                                                pathID: '1-1-1-0-0-1-2-1-0',
+                                                                                                                                                                                                mainContent: [
+                                                                                                                                                                                                                                            
+                                                                                                                                                                                                                                    {
+                                                                                                                                                                                                                                        contentType: Content.TEXT,
+                                                                                                                                                                                                                                        pathID: '1-1-1-0-0-1-2-1-0-0',
+                                                                                                                                                                                                                                        content: TextKey.PART_01__SECTION_02__CHAPTER_02__ARTICLE_01__ARTICLE_PARAGRAPH_01__SUB_ARTICLE_02__PARAGRAPH_GROUP_02__PARAGRAPH_02__TEXT_CONTAINER_01__TEXT_01__CONTENT,
+                                                                                                                                                                                                                                        strong: false,
+                                                                                                                                                                                                                                        emphasis: false,
+                                                                                                                                                                                                                                        smallCaps: false,
+                                                                                                                                                                                                                                    },
+                                                                                                                                                                                                                            
+                                                                                                                                                                                                                                    {
+                                                                                                                                                                                                                                        contentType: Content.TEXT,
+                                                                                                                                                                                                                                        pathID: '1-1-1-0-0-1-2-1-0-1',
+                                                                                                                                                                                                                                        content: TextKey.PART_01__SECTION_02__CHAPTER_02__ARTICLE_01__ARTICLE_PARAGRAPH_01__SUB_ARTICLE_02__PARAGRAPH_GROUP_02__PARAGRAPH_02__TEXT_CONTAINER_01__TEXT_02__CONTENT,
+                                                                                                                                                                                                                                        strong: false,
+                                                                                                                                                                                                                                        emphasis: false,
+                                                                                                                                                                                                                                        smallCaps: false,
+                                                                                                                                                                                                                                    },
+                                                                                                                                                                                                                            
+                                                                                                                                                                                                                                    {
+                                                                                                                                                                                                                                        contentType: Content.TEXT,
+                                                                                                                                                                                                                                        pathID: '1-1-1-0-0-1-2-1-0-2',
+                                                                                                                                                                                                                                        content: TextKey.PART_01__SECTION_02__CHAPTER_02__ARTICLE_01__ARTICLE_PARAGRAPH_01__SUB_ARTICLE_02__PARAGRAPH_GROUP_02__PARAGRAPH_02__TEXT_CONTAINER_01__TEXT_03__CONTENT,
+                                                                                                                                                                                                                                        strong: false,
+                                                                                                                                                                                                                                        emphasis: false,
+                                                                                                                                                                                                                                        smallCaps: false,
+                                                                                                                                                                                                                                    }
+                                                                                                                                                                                                ],
+                                                                                                                                                                                                references: [
+                                                                                                                                                                                                                                            
+                                                                                                                                                                                                                                    {
+                                                                                                                                                                                                                                        referenceType: ReferenceEnum.OTHER,
+                                                                                                                                                                                                                                        direct: true,
+                                                                                                                                                                                                                                        source: OtherSourceEnum.SOURCE_3,
+                                                                                                                                                                                                                                        pointer: ``,
+                                                                                                                                                                                                                                    },
+                                                                                                                                                                                                ],
+                                                                                                                                                                                                paragraphReferences: [
+                                                                                                                                                                                                    
+                                                                                                                                                                                                ],
+                                                                                                                                                                                            },
                                                                                                                                                             ],
-                                                                                                                                                            paragraphReferences: [
-                                                                                                                                                                
+                                                                                                                                                        },
+                                                                                                                                                
+                                                                                                                                                        {
+                                                                                                                                                            contentType: Content.PARAGRAPH,
+                                                                                                                                                            pathID: '1-1-1-0-0-1-2-2',
+                                                                                                                                                            paragraphNumber: 32,
+                                                                                                                                                            supplementary: false,
+                                                                                                                                                            mainContent: [
+                                                                                                                                                                                                    
+                                                                                                                                                                                            {
+                                                                                                                                                                                                contentType: Content.TEXT_CONTAINER,
+                                                                                                                                                                                                pathID: '1-1-1-0-0-1-2-2-0',
+                                                                                                                                                                                                mainContent: [
+                                                                                                                                                                                                                                            
+                                                                                                                                                                                                                                    {
+                                                                                                                                                                                                                                        contentType: Content.TEXT,
+                                                                                                                                                                                                                                        pathID: '1-1-1-0-0-1-2-2-0-0',
+                                                                                                                                                                                                                                        content: TextKey.PART_01__SECTION_02__CHAPTER_02__ARTICLE_01__ARTICLE_PARAGRAPH_01__SUB_ARTICLE_02__PARAGRAPH_GROUP_02__PARAGRAPH_03__TEXT_CONTAINER_01__TEXT_01__CONTENT,
+                                                                                                                                                                                                                                        strong: false,
+                                                                                                                                                                                                                                        emphasis: false,
+                                                                                                                                                                                                                                        smallCaps: false,
+                                                                                                                                                                                                                                    }
+                                                                                                                                                                                                ],
+                                                                                                                                                                                                references: [
+                                                                                                                                                                                                    
+                                                                                                                                                                                                ],
+                                                                                                                                                                                                paragraphReferences: [
+                                                                                                                                                                                                    
+                                                                                                                                                                                                ],
+                                                                                                                                                                                            },
                                                                                                                                                             ],
                                                                                                                                                         },
                                                                                                                             ],
@@ -2986,25 +3211,25 @@ export const Catechism: CatechismStructure = {
                                                             
                                                                     {
                                                                         contentType: Content.IN_BRIEF,
-                                                                        pathID: '1-0-0-2-2',
+                                                                        pathID: '1-1-1-0-1',
                                                                         mainContent: [
                                                                                                     
                                                                                             {
                                                                                                 contentType: Content.PARAGRAPH,
-                                                                                                pathID: '1-0-0-2-2-0',
-                                                                                                paragraphNumber: 29,
+                                                                                                pathID: '1-1-1-0-1-0',
+                                                                                                paragraphNumber: 33,
                                                                                                 supplementary: false,
                                                                                                 mainContent: [
                                                                                                                                 
                                                                                                                         {
                                                                                                                             contentType: Content.TEXT_CONTAINER,
-                                                                                                                            pathID: '1-0-0-2-2-0-0',
+                                                                                                                            pathID: '1-1-1-0-1-0-0',
                                                                                                                             mainContent: [
                                                                                                                                                                 
                                                                                                                                                         {
                                                                                                                                                             contentType: Content.TEXT,
-                                                                                                                                                            pathID: '1-0-0-2-2-0-0-0',
-                                                                                                                                                            content: TextKey.PART_01__SECTION_01__CHAPTER_01__ARTICLE_03__IN_BRIEF_01__PARAGRAPH_01__TEXT_CONTAINER_01__TEXT_01__CONTENT,
+                                                                                                                                                            pathID: '1-1-1-0-1-0-0-0',
+                                                                                                                                                            content: TextKey.PART_01__SECTION_02__CHAPTER_02__ARTICLE_01__IN_BRIEF_01__PARAGRAPH_01__TEXT_CONTAINER_01__TEXT_01__CONTENT,
                                                                                                                                                             strong: false,
                                                                                                                                                             emphasis: false,
                                                                                                                                                             smallCaps: false,
@@ -3012,8 +3237,17 @@ export const Catechism: CatechismStructure = {
                                                                                                                                                 
                                                                                                                                                         {
                                                                                                                                                             contentType: Content.TEXT,
-                                                                                                                                                            pathID: '1-0-0-2-2-0-0-1',
-                                                                                                                                                            content: TextKey.PART_01__SECTION_01__CHAPTER_01__ARTICLE_03__IN_BRIEF_01__PARAGRAPH_01__TEXT_CONTAINER_01__TEXT_02__CONTENT,
+                                                                                                                                                            pathID: '1-1-1-0-1-0-0-1',
+                                                                                                                                                            content: TextKey.PART_01__SECTION_02__CHAPTER_02__ARTICLE_01__IN_BRIEF_01__PARAGRAPH_01__TEXT_CONTAINER_01__TEXT_02__CONTENT,
+                                                                                                                                                            strong: false,
+                                                                                                                                                            emphasis: false,
+                                                                                                                                                            smallCaps: false,
+                                                                                                                                                        },
+                                                                                                                                                
+                                                                                                                                                        {
+                                                                                                                                                            contentType: Content.TEXT,
+                                                                                                                                                            pathID: '1-1-1-0-1-0-0-2',
+                                                                                                                                                            content: TextKey.PART_01__SECTION_02__CHAPTER_02__ARTICLE_01__IN_BRIEF_01__PARAGRAPH_01__TEXT_CONTAINER_01__TEXT_03__CONTENT,
                                                                                                                                                             strong: false,
                                                                                                                                                             emphasis: false,
                                                                                                                                                             smallCaps: false,
@@ -3022,30 +3256,9 @@ export const Catechism: CatechismStructure = {
                                                                                                                             references: [
                                                                                                                                                                 
                                                                                                                                                         {
-                                                                                                                                                            referenceType: ReferenceEnum.OTHER,
-                                                                                                                                                            direct: true,
-                                                                                                                                                            source: OtherSourceEnum.SOURCE_1,
-                                                                                                                                                            pointer: `Ch. IX, p.4`,
-                                                                                                                                                        },
-                                                                                                                                                
-                                                                                                                                                        {
-                                                                                                                                                            referenceType: ReferenceEnum.OTHER,
-                                                                                                                                                            direct: false,
-                                                                                                                                                            source: OtherSourceEnum.SOURCE_2,
-                                                                                                                                                            pointer: `Ch. IX, p.4`,
-                                                                                                                                                        },
-                                                                                                                                                
-                                                                                                                                                        {
-                                                                                                                                                            referenceType: ReferenceEnum.OTHER,
-                                                                                                                                                            direct: false,
-                                                                                                                                                            source: OtherSourceEnum.SOURCE_1,
-                                                                                                                                                            pointer: ``,
-                                                                                                                                                        },
-                                                                                                                                                
-                                                                                                                                                        {
                                                                                                                                                             referenceType: ReferenceEnum.BIBLE,
-                                                                                                                                                            direct: false,
-                                                                                                                                                            book: BibleBook.MICAH,
+                                                                                                                                                            direct: true,
+                                                                                                                                                            book: BibleBook.JOHN,
                                                                                                                                                             chapter: 1,
                                                                                                                                                             verses: 3,
                                                                                                                                                         },
@@ -3057,38 +3270,79 @@ export const Catechism: CatechismStructure = {
                                                                                                                 
                                                                                                                         {
                                                                                                                             contentType: Content.TEXT_CONTAINER,
-                                                                                                                            pathID: '1-0-0-2-2-0-1',
+                                                                                                                            pathID: '1-1-1-0-1-0-1',
                                                                                                                             mainContent: [
                                                                                                                                                                 
                                                                                                                                                         {
                                                                                                                                                             contentType: Content.TEXT,
-                                                                                                                                                            pathID: '1-0-0-2-2-0-1-0',
-                                                                                                                                                            content: TextKey.PART_01__SECTION_01__CHAPTER_01__ARTICLE_03__IN_BRIEF_01__PARAGRAPH_01__TEXT_CONTAINER_02__TEXT_01__CONTENT,
-                                                                                                                                                            strong: false,
-                                                                                                                                                            emphasis: false,
-                                                                                                                                                            smallCaps: false,
-                                                                                                                                                        },
-                                                                                                                                                
-                                                                                                                                                        {
-                                                                                                                                                            contentType: Content.TEXT,
-                                                                                                                                                            pathID: '1-0-0-2-2-0-1-1',
-                                                                                                                                                            content: TextKey.PART_01__SECTION_01__CHAPTER_01__ARTICLE_03__IN_BRIEF_01__PARAGRAPH_01__TEXT_CONTAINER_02__TEXT_02__CONTENT,
-                                                                                                                                                            strong: false,
-                                                                                                                                                            emphasis: false,
-                                                                                                                                                            smallCaps: false,
-                                                                                                                                                        },
-                                                                                                                                                
-                                                                                                                                                        {
-                                                                                                                                                            contentType: Content.TEXT,
-                                                                                                                                                            pathID: '1-0-0-2-2-0-1-2',
-                                                                                                                                                            content: TextKey.PART_01__SECTION_01__CHAPTER_01__ARTICLE_03__IN_BRIEF_01__PARAGRAPH_01__TEXT_CONTAINER_02__TEXT_03__CONTENT,
+                                                                                                                                                            pathID: '1-1-1-0-1-0-1-0',
+                                                                                                                                                            content: TextKey.PART_01__SECTION_02__CHAPTER_02__ARTICLE_01__IN_BRIEF_01__PARAGRAPH_01__TEXT_CONTAINER_02__TEXT_01__CONTENT,
                                                                                                                                                             strong: false,
                                                                                                                                                             emphasis: false,
                                                                                                                                                             smallCaps: false,
                                                                                                                                                         }
                                                                                                                             ],
                                                                                                                             references: [
+                                                                                                                                                                
+                                                                                                                                                        {
+                                                                                                                                                            referenceType: ReferenceEnum.BIBLE,
+                                                                                                                                                            direct: false,
+                                                                                                                                                            book: BibleBook.JOHN,
+                                                                                                                                                            chapter: 2,
+                                                                                                                                                            verses: `3-6`,
+                                                                                                                                                        },
+                                                                                                                                                
+                                                                                                                                                        {
+                                                                                                                                                            referenceType: ReferenceEnum.OTHER,
+                                                                                                                                                            direct: true,
+                                                                                                                                                            source: OtherSourceEnum.SOURCE_1,
+                                                                                                                                                            pointer: `Ch. IX, p.4`,
+                                                                                                                                                        },
+                                                                                                                            ],
+                                                                                                                            paragraphReferences: [
                                                                                                                                 
+                                                                                                                            ],
+                                                                                                                        },
+                                                                                                                
+                                                                                                                        {
+                                                                                                                            contentType: Content.TEXT_CONTAINER,
+                                                                                                                            pathID: '1-1-1-0-1-0-2',
+                                                                                                                            mainContent: [
+                                                                                                                                                                
+                                                                                                                                                        {
+                                                                                                                                                            contentType: Content.TEXT,
+                                                                                                                                                            pathID: '1-1-1-0-1-0-2-0',
+                                                                                                                                                            content: TextKey.PART_01__SECTION_02__CHAPTER_02__ARTICLE_01__IN_BRIEF_01__PARAGRAPH_01__TEXT_CONTAINER_03__TEXT_01__CONTENT,
+                                                                                                                                                            strong: false,
+                                                                                                                                                            emphasis: false,
+                                                                                                                                                            smallCaps: false,
+                                                                                                                                                        },
+                                                                                                                                                
+                                                                                                                                                        {
+                                                                                                                                                            contentType: Content.TEXT,
+                                                                                                                                                            pathID: '1-1-1-0-1-0-2-1',
+                                                                                                                                                            content: TextKey.PART_01__SECTION_02__CHAPTER_02__ARTICLE_01__IN_BRIEF_01__PARAGRAPH_01__TEXT_CONTAINER_03__TEXT_02__CONTENT,
+                                                                                                                                                            strong: false,
+                                                                                                                                                            emphasis: false,
+                                                                                                                                                            smallCaps: false,
+                                                                                                                                                        }
+                                                                                                                            ],
+                                                                                                                            references: [
+                                                                                                                                                                
+                                                                                                                                                        {
+                                                                                                                                                            referenceType: ReferenceEnum.OTHER,
+                                                                                                                                                            direct: true,
+                                                                                                                                                            source: OtherSourceEnum.SOURCE_2,
+                                                                                                                                                            pointer: `742`,
+                                                                                                                                                        },
+                                                                                                                                                
+                                                                                                                                                        {
+                                                                                                                                                            referenceType: ReferenceEnum.BIBLE,
+                                                                                                                                                            direct: false,
+                                                                                                                                                            book: BibleBook.MICAH,
+                                                                                                                                                            chapter: 2,
+                                                                                                                                                            verses: `2-4`,
+                                                                                                                                                        },
                                                                                                                             ],
                                                                                                                             paragraphReferences: [
                                                                                                                                 
@@ -3102,28 +3356,86 @@ export const Catechism: CatechismStructure = {
                                                     openingContent: [
                                                                             
                                                                     {
+                                                                        contentType: Content.TEXT_CONTAINER,
+                                                                        pathID: '1-1-1-0-0',
+                                                                        mainContent: [
+                                                                                                    
+                                                                                            {
+                                                                                                contentType: Content.TEXT,
+                                                                                                pathID: '1-1-1-0-0-0',
+                                                                                                content: TextKey.PART_01__SECTION_02__CHAPTER_02__ARTICLE_01__TEXT_CONTAINER_01__TEXT_01__CONTENT,
+                                                                                                strong: false,
+                                                                                                emphasis: false,
+                                                                                                smallCaps: false,
+                                                                                            },
+                                                                                    
+                                                                                            {
+                                                                                                contentType: Content.TEXT,
+                                                                                                pathID: '1-1-1-0-0-1',
+                                                                                                content: TextKey.PART_01__SECTION_02__CHAPTER_02__ARTICLE_01__TEXT_CONTAINER_01__TEXT_02__CONTENT,
+                                                                                                strong: false,
+                                                                                                emphasis: false,
+                                                                                                smallCaps: false,
+                                                                                            }
+                                                                        ],
+                                                                        references: [
+                                                                                                    
+                                                                                            {
+                                                                                                referenceType: ReferenceEnum.OTHER,
+                                                                                                direct: true,
+                                                                                                source: OtherSourceEnum.SOURCE_2,
+                                                                                                pointer: `Article VII, 8, 3, 1-2`,
+                                                                                            },
+                                                                                    
+                                                                                            {
+                                                                                                referenceType: ReferenceEnum.OTHER,
+                                                                                                direct: false,
+                                                                                                source: OtherSourceEnum.SOURCE_1,
+                                                                                                pointer: `742`,
+                                                                                            },
+                                                                                    
+                                                                                            {
+                                                                                                referenceType: ReferenceEnum.OTHER,
+                                                                                                direct: false,
+                                                                                                source: OtherSourceEnum.SOURCE_3,
+                                                                                                pointer: `Article VII, 8, 3, 1-2`,
+                                                                                            },
+                                                                        ],
+                                                                        paragraphReferences: [
+                                                                            
+                                                                        ],
+                                                                    },
+                                                            
+                                                                    {
                                                                         contentType: Content.PARAGRAPH,
-                                                                        pathID: '1-0-0-2-0',
-                                                                        paragraphNumber: 22,
-                                                                        supplementary: true,
+                                                                        pathID: '1-1-1-0-1',
+                                                                        paragraphNumber: 24,
+                                                                        supplementary: false,
                                                                         mainContent: [
                                                                                                     
                                                                                             {
                                                                                                 contentType: Content.TEXT_CONTAINER,
-                                                                                                pathID: '1-0-0-2-0-0',
+                                                                                                pathID: '1-1-1-0-1-0',
                                                                                                 mainContent: [
                                                                                                                                 
                                                                                                                         {
                                                                                                                             contentType: Content.TEXT,
-                                                                                                                            pathID: '1-0-0-2-0-0-0',
-                                                                                                                            content: TextKey.PART_01__SECTION_01__CHAPTER_01__ARTICLE_03__PARAGRAPH_01__TEXT_CONTAINER_01__TEXT_01__CONTENT,
+                                                                                                                            pathID: '1-1-1-0-1-0-0',
+                                                                                                                            content: TextKey.PART_01__SECTION_02__CHAPTER_02__ARTICLE_01__PARAGRAPH_01__TEXT_CONTAINER_01__TEXT_01__CONTENT,
                                                                                                                             strong: false,
                                                                                                                             emphasis: false,
                                                                                                                             smallCaps: false,
                                                                                                                         }
                                                                                                 ],
                                                                                                 references: [
-                                                                                                    
+                                                                                                                                
+                                                                                                                        {
+                                                                                                                            referenceType: ReferenceEnum.BIBLE,
+                                                                                                                            direct: false,
+                                                                                                                            book: BibleBook.PSALMS,
+                                                                                                                            chapter: 1,
+                                                                                                                            verses: 3,
+                                                                                                                        },
                                                                                                 ],
                                                                                                 paragraphReferences: [
                                                                                                     
@@ -3132,13 +3444,88 @@ export const Catechism: CatechismStructure = {
                                                                                     
                                                                                             {
                                                                                                 contentType: Content.TEXT_CONTAINER,
-                                                                                                pathID: '1-0-0-2-0-1',
+                                                                                                pathID: '1-1-1-0-1-1',
                                                                                                 mainContent: [
                                                                                                                                 
                                                                                                                         {
                                                                                                                             contentType: Content.TEXT,
-                                                                                                                            pathID: '1-0-0-2-0-1-0',
-                                                                                                                            content: TextKey.PART_01__SECTION_01__CHAPTER_01__ARTICLE_03__PARAGRAPH_01__TEXT_CONTAINER_02__TEXT_01__CONTENT,
+                                                                                                                            pathID: '1-1-1-0-1-1-0',
+                                                                                                                            content: TextKey.PART_01__SECTION_02__CHAPTER_02__ARTICLE_01__PARAGRAPH_01__TEXT_CONTAINER_02__TEXT_01__CONTENT,
+                                                                                                                            strong: false,
+                                                                                                                            emphasis: false,
+                                                                                                                            smallCaps: false,
+                                                                                                                        },
+                                                                                                                
+                                                                                                                        {
+                                                                                                                            contentType: Content.TEXT,
+                                                                                                                            pathID: '1-1-1-0-1-1-1',
+                                                                                                                            content: TextKey.PART_01__SECTION_02__CHAPTER_02__ARTICLE_01__PARAGRAPH_01__TEXT_CONTAINER_02__TEXT_02__CONTENT,
+                                                                                                                            strong: false,
+                                                                                                                            emphasis: false,
+                                                                                                                            smallCaps: false,
+                                                                                                                        }
+                                                                                                ],
+                                                                                                references: [
+                                                                                                                                
+                                                                                                                        {
+                                                                                                                            referenceType: ReferenceEnum.BIBLE,
+                                                                                                                            direct: true,
+                                                                                                                            book: BibleBook.MICAH,
+                                                                                                                            chapter: 3,
+                                                                                                                            verses: 1,
+                                                                                                                        },
+                                                                                                ],
+                                                                                                paragraphReferences: [
+                                                                                                    
+                                                                                                ],
+                                                                                            },
+                                                                                    
+                                                                                            {
+                                                                                                contentType: Content.TEXT_CONTAINER,
+                                                                                                pathID: '1-1-1-0-1-2',
+                                                                                                mainContent: [
+                                                                                                                                
+                                                                                                                        {
+                                                                                                                            contentType: Content.TEXT,
+                                                                                                                            pathID: '1-1-1-0-1-2-0',
+                                                                                                                            content: TextKey.PART_01__SECTION_02__CHAPTER_02__ARTICLE_01__PARAGRAPH_01__TEXT_CONTAINER_03__TEXT_01__CONTENT,
+                                                                                                                            strong: false,
+                                                                                                                            emphasis: false,
+                                                                                                                            smallCaps: false,
+                                                                                                                        }
+                                                                                                ],
+                                                                                                references: [
+                                                                                                                                
+                                                                                                                        {
+                                                                                                                            referenceType: ReferenceEnum.OTHER,
+                                                                                                                            direct: false,
+                                                                                                                            source: OtherSourceEnum.SOURCE_2,
+                                                                                                                            pointer: `Article VII, 8, 3, 1-2`,
+                                                                                                                        },
+                                                                                                ],
+                                                                                                paragraphReferences: [
+                                                                                                    
+                                                                                                ],
+                                                                                            },
+                                                                        ],
+                                                                    },
+                                                            
+                                                                    {
+                                                                        contentType: Content.PARAGRAPH,
+                                                                        pathID: '1-1-1-0-2',
+                                                                        paragraphNumber: 25,
+                                                                        supplementary: false,
+                                                                        mainContent: [
+                                                                                                    
+                                                                                            {
+                                                                                                contentType: Content.TEXT_CONTAINER,
+                                                                                                pathID: '1-1-1-0-2-0',
+                                                                                                mainContent: [
+                                                                                                                                
+                                                                                                                        {
+                                                                                                                            contentType: Content.TEXT,
+                                                                                                                            pathID: '1-1-1-0-2-0-0',
+                                                                                                                            content: TextKey.PART_01__SECTION_02__CHAPTER_02__ARTICLE_01__PARAGRAPH_02__TEXT_CONTAINER_01__TEXT_01__CONTENT,
                                                                                                                             strong: false,
                                                                                                                             emphasis: false,
                                                                                                                             smallCaps: false,
@@ -3162,10 +3549,24 @@ export const Catechism: CatechismStructure = {
                                 },
                         ],
                         openingContent: [
+                            
+                        ],
+                    },
+                ],
+                openingContent: [
+                            
+                    {
+                        contentType: Content.PARAGRAPH_GROUP,
+                        pathID: '1-0',
+                        paragraphGroupNumber: 1,
+                        title: TextKey.PART_01__PARAGRAPH_GROUP_01__TITLE,
+                        mainContent: [
                                         
                                 {
-                                    contentType: Content.BLOCK_QUOTE,
+                                    contentType: Content.PARAGRAPH,
                                     pathID: '1-0-0',
+                                    paragraphNumber: 4,
+                                    supplementary: true,
                                     mainContent: [
                                                         
                                                 {
@@ -3176,35 +3577,24 @@ export const Catechism: CatechismStructure = {
                                                                     {
                                                                         contentType: Content.TEXT,
                                                                         pathID: '1-0-0-0-0',
-                                                                        content: TextKey.PART_01__SECTION_01__BLOCK_QUOTE_01__TEXT_CONTAINER_01__TEXT_01__CONTENT,
-                                                                        strong: false,
-                                                                        emphasis: false,
-                                                                        smallCaps: false,
-                                                                    },
-                                                            
-                                                                    {
-                                                                        contentType: Content.TEXT,
-                                                                        pathID: '1-0-0-0-1',
-                                                                        content: TextKey.PART_01__SECTION_01__BLOCK_QUOTE_01__TEXT_CONTAINER_01__TEXT_02__CONTENT,
-                                                                        strong: false,
-                                                                        emphasis: false,
-                                                                        smallCaps: false,
-                                                                    },
-                                                            
-                                                                    {
-                                                                        contentType: Content.TEXT,
-                                                                        pathID: '1-0-0-0-2',
-                                                                        content: TextKey.PART_01__SECTION_01__BLOCK_QUOTE_01__TEXT_CONTAINER_01__TEXT_03__CONTENT,
+                                                                        content: TextKey.PART_01__PARAGRAPH_GROUP_01__PARAGRAPH_01__TEXT_CONTAINER_01__TEXT_01__CONTENT,
                                                                         strong: false,
                                                                         emphasis: false,
                                                                         smallCaps: false,
                                                                     }
                                                     ],
                                                     references: [
-                                                        
+                                                                            
+                                                                    {
+                                                                        referenceType: ReferenceEnum.BIBLE,
+                                                                        direct: true,
+                                                                        book: BibleBook.ACTS_OF_THE_APOSTLES,
+                                                                        chapter: 1,
+                                                                        verses: `2-3`,
+                                                                    },
                                                     ],
                                                     paragraphReferences: [
-                                                        28
+                                                        3
                                                     ],
                                                 },
                                         
@@ -3216,7 +3606,7 @@ export const Catechism: CatechismStructure = {
                                                                     {
                                                                         contentType: Content.TEXT,
                                                                         pathID: '1-0-0-1-0',
-                                                                        content: TextKey.PART_01__SECTION_01__BLOCK_QUOTE_01__TEXT_CONTAINER_02__TEXT_01__CONTENT,
+                                                                        content: TextKey.PART_01__PARAGRAPH_GROUP_01__PARAGRAPH_01__TEXT_CONTAINER_02__TEXT_01__CONTENT,
                                                                         strong: false,
                                                                         emphasis: false,
                                                                         smallCaps: false,
@@ -3225,7 +3615,7 @@ export const Catechism: CatechismStructure = {
                                                                     {
                                                                         contentType: Content.TEXT,
                                                                         pathID: '1-0-0-1-1',
-                                                                        content: TextKey.PART_01__SECTION_01__BLOCK_QUOTE_01__TEXT_CONTAINER_02__TEXT_02__CONTENT,
+                                                                        content: TextKey.PART_01__PARAGRAPH_GROUP_01__PARAGRAPH_01__TEXT_CONTAINER_02__TEXT_02__CONTENT,
                                                                         strong: false,
                                                                         emphasis: false,
                                                                         smallCaps: false,
@@ -3234,7 +3624,7 @@ export const Catechism: CatechismStructure = {
                                                                     {
                                                                         contentType: Content.TEXT,
                                                                         pathID: '1-0-0-1-2',
-                                                                        content: TextKey.PART_01__SECTION_01__BLOCK_QUOTE_01__TEXT_CONTAINER_02__TEXT_03__CONTENT,
+                                                                        content: TextKey.PART_01__PARAGRAPH_GROUP_01__PARAGRAPH_01__TEXT_CONTAINER_02__TEXT_03__CONTENT,
                                                                         strong: false,
                                                                         emphasis: false,
                                                                         smallCaps: false,
@@ -3246,259 +3636,190 @@ export const Catechism: CatechismStructure = {
                                                                         referenceType: ReferenceEnum.OTHER,
                                                                         direct: false,
                                                                         source: OtherSourceEnum.SOURCE_1,
-                                                                        pointer: ``,
-                                                                    },
-                                                    ],
-                                                    paragraphReferences: [
-                                                        
-                                                    ],
-                                                },
-                                        
-                                                {
-                                                    contentType: Content.TEXT_CONTAINER,
-                                                    pathID: '1-0-0-2',
-                                                    mainContent: [
-                                                                            
-                                                                    {
-                                                                        contentType: Content.TEXT,
-                                                                        pathID: '1-0-0-2-0',
-                                                                        content: TextKey.PART_01__SECTION_01__BLOCK_QUOTE_01__TEXT_CONTAINER_03__TEXT_01__CONTENT,
-                                                                        strong: false,
-                                                                        emphasis: false,
-                                                                        smallCaps: false,
-                                                                    }
-                                                    ],
-                                                    references: [
-                                                                            
-                                                                    {
-                                                                        referenceType: ReferenceEnum.BIBLE,
-                                                                        direct: true,
-                                                                        book: BibleBook.HEBREWS,
-                                                                        chapter: 2,
-                                                                        verses: `3-5`,
-                                                                    },
-                                                    ],
-                                                    paragraphReferences: [
-                                                        
-                                                    ],
-                                                },
-                                    ],
-                                },
-                        
-                                {
-                                    contentType: Content.PARAGRAPH,
-                                    pathID: '1-0-1',
-                                    paragraphNumber: 5,
-                                    supplementary: false,
-                                    mainContent: [
-                                                        
-                                                {
-                                                    contentType: Content.TEXT_CONTAINER,
-                                                    pathID: '1-0-1-0',
-                                                    mainContent: [
-                                                                            
-                                                                    {
-                                                                        contentType: Content.TEXT,
-                                                                        pathID: '1-0-1-0-0',
-                                                                        content: TextKey.PART_01__SECTION_01__PARAGRAPH_01__TEXT_CONTAINER_01__TEXT_01__CONTENT,
-                                                                        strong: false,
-                                                                        emphasis: false,
-                                                                        smallCaps: false,
-                                                                    },
-                                                            
-                                                                    {
-                                                                        contentType: Content.TEXT,
-                                                                        pathID: '1-0-1-0-1',
-                                                                        content: TextKey.PART_01__SECTION_01__PARAGRAPH_01__TEXT_CONTAINER_01__TEXT_02__CONTENT,
-                                                                        strong: false,
-                                                                        emphasis: false,
-                                                                        smallCaps: false,
-                                                                    }
-                                                    ],
-                                                    references: [
-                                                        
-                                                    ],
-                                                    paragraphReferences: [
-                                                        
-                                                    ],
-                                                },
-                                        
-                                                {
-                                                    contentType: Content.TEXT_CONTAINER,
-                                                    pathID: '1-0-1-1',
-                                                    mainContent: [
-                                                                            
-                                                                    {
-                                                                        contentType: Content.TEXT,
-                                                                        pathID: '1-0-1-1-0',
-                                                                        content: TextKey.PART_01__SECTION_01__PARAGRAPH_01__TEXT_CONTAINER_02__TEXT_01__CONTENT,
-                                                                        strong: false,
-                                                                        emphasis: false,
-                                                                        smallCaps: false,
-                                                                    },
-                                                            
-                                                                    {
-                                                                        contentType: Content.TEXT,
-                                                                        pathID: '1-0-1-1-1',
-                                                                        content: TextKey.PART_01__SECTION_01__PARAGRAPH_01__TEXT_CONTAINER_02__TEXT_02__CONTENT,
-                                                                        strong: false,
-                                                                        emphasis: false,
-                                                                        smallCaps: false,
-                                                                    }
-                                                    ],
-                                                    references: [
-                                                        
-                                                    ],
-                                                    paragraphReferences: [
-                                                        
-                                                    ],
-                                                },
-                                    ],
-                                },
-                        
-                                {
-                                    contentType: Content.PARAGRAPH,
-                                    pathID: '1-0-2',
-                                    paragraphNumber: 6,
-                                    supplementary: true,
-                                    mainContent: [
-                                                        
-                                                {
-                                                    contentType: Content.TEXT_CONTAINER,
-                                                    pathID: '1-0-2-0',
-                                                    mainContent: [
-                                                                            
-                                                                    {
-                                                                        contentType: Content.TEXT,
-                                                                        pathID: '1-0-2-0-0',
-                                                                        content: TextKey.PART_01__SECTION_01__PARAGRAPH_02__TEXT_CONTAINER_01__TEXT_01__CONTENT,
-                                                                        strong: false,
-                                                                        emphasis: false,
-                                                                        smallCaps: false,
-                                                                    },
-                                                            
-                                                                    {
-                                                                        contentType: Content.TEXT,
-                                                                        pathID: '1-0-2-0-1',
-                                                                        content: TextKey.PART_01__SECTION_01__PARAGRAPH_02__TEXT_CONTAINER_01__TEXT_02__CONTENT,
-                                                                        strong: false,
-                                                                        emphasis: false,
-                                                                        smallCaps: false,
-                                                                    },
-                                                            
-                                                                    {
-                                                                        contentType: Content.TEXT,
-                                                                        pathID: '1-0-2-0-2',
-                                                                        content: TextKey.PART_01__SECTION_01__PARAGRAPH_02__TEXT_CONTAINER_01__TEXT_03__CONTENT,
-                                                                        strong: false,
-                                                                        emphasis: false,
-                                                                        smallCaps: false,
-                                                                    }
-                                                    ],
-                                                    references: [
-                                                        
-                                                    ],
-                                                    paragraphReferences: [
-                                                        24
-                                                    ],
-                                                },
-                                        
-                                                {
-                                                    contentType: Content.TEXT_CONTAINER,
-                                                    pathID: '1-0-2-1',
-                                                    mainContent: [
-                                                                            
-                                                                    {
-                                                                        contentType: Content.TEXT,
-                                                                        pathID: '1-0-2-1-0',
-                                                                        content: TextKey.PART_01__SECTION_01__PARAGRAPH_02__TEXT_CONTAINER_02__TEXT_01__CONTENT,
-                                                                        strong: false,
-                                                                        emphasis: false,
-                                                                        smallCaps: false,
-                                                                    }
-                                                    ],
-                                                    references: [
-                                                                            
-                                                                    {
-                                                                        referenceType: ReferenceEnum.OTHER,
-                                                                        direct: false,
-                                                                        source: OtherSourceEnum.SOURCE_3,
-                                                                        pointer: `742`,
-                                                                    },
-                                                            
-                                                                    {
-                                                                        referenceType: ReferenceEnum.OTHER,
-                                                                        direct: true,
-                                                                        source: OtherSourceEnum.SOURCE_1,
-                                                                        pointer: `Ch. IX, p.4`,
+                                                                        pointer: `398-401`,
                                                                     },
                                                             
                                                                     {
                                                                         referenceType: ReferenceEnum.BIBLE,
-                                                                        direct: false,
+                                                                        direct: true,
                                                                         book: BibleBook.JOHN,
                                                                         chapter: 1,
-                                                                        verses: `3-4`,
-                                                                    },
-                                                    ],
-                                                    paragraphReferences: [
-                                                        13
-                                                    ],
-                                                },
-                                        
-                                                {
-                                                    contentType: Content.TEXT_CONTAINER,
-                                                    pathID: '1-0-2-2',
-                                                    mainContent: [
-                                                                            
-                                                                    {
-                                                                        contentType: Content.TEXT,
-                                                                        pathID: '1-0-2-2-0',
-                                                                        content: TextKey.PART_01__SECTION_01__PARAGRAPH_02__TEXT_CONTAINER_03__TEXT_01__CONTENT,
-                                                                        strong: false,
-                                                                        emphasis: false,
-                                                                        smallCaps: false,
+                                                                        verses: 2,
                                                                     },
                                                             
                                                                     {
-                                                                        contentType: Content.TEXT,
-                                                                        pathID: '1-0-2-2-1',
-                                                                        content: TextKey.PART_01__SECTION_01__PARAGRAPH_02__TEXT_CONTAINER_03__TEXT_02__CONTENT,
-                                                                        strong: false,
-                                                                        emphasis: false,
-                                                                        smallCaps: false,
-                                                                    },
-                                                            
-                                                                    {
-                                                                        contentType: Content.TEXT,
-                                                                        pathID: '1-0-2-2-2',
-                                                                        content: TextKey.PART_01__SECTION_01__PARAGRAPH_02__TEXT_CONTAINER_03__TEXT_03__CONTENT,
-                                                                        strong: false,
-                                                                        emphasis: false,
-                                                                        smallCaps: false,
-                                                                    }
-                                                    ],
-                                                    references: [
-                                                                            
-                                                                    {
-                                                                        referenceType: ReferenceEnum.BIBLE,
+                                                                        referenceType: ReferenceEnum.OTHER,
                                                                         direct: true,
-                                                                        book: BibleBook.EPHESIANS,
-                                                                        chapter: 1,
-                                                                        verses: 3,
+                                                                        source: OtherSourceEnum.SOURCE_2,
+                                                                        pointer: `Ch. IX, p.4`,
                                                                     },
                                                     ],
                                                     paragraphReferences: [
-                                                        
+                                                        30,2
                                                     ],
                                                 },
                                     ],
                                 },
                         ],
                     },
-                ],
-                openingContent: [
-                    
+            
+                    {
+                        contentType: Content.PARAGRAPH,
+                        pathID: '1-1',
+                        paragraphNumber: 5,
+                        supplementary: false,
+                        mainContent: [
+                                        
+                                {
+                                    contentType: Content.TEXT_CONTAINER,
+                                    pathID: '1-1-0',
+                                    mainContent: [
+                                                        
+                                                {
+                                                    contentType: Content.TEXT,
+                                                    pathID: '1-1-0-0',
+                                                    content: TextKey.PART_01__PARAGRAPH_01__TEXT_CONTAINER_01__TEXT_01__CONTENT,
+                                                    strong: false,
+                                                    emphasis: false,
+                                                    smallCaps: false,
+                                                },
+                                        
+                                                {
+                                                    contentType: Content.TEXT,
+                                                    pathID: '1-1-0-1',
+                                                    content: TextKey.PART_01__PARAGRAPH_01__TEXT_CONTAINER_01__TEXT_02__CONTENT,
+                                                    strong: false,
+                                                    emphasis: false,
+                                                    smallCaps: false,
+                                                },
+                                        
+                                                {
+                                                    contentType: Content.TEXT,
+                                                    pathID: '1-1-0-2',
+                                                    content: TextKey.PART_01__PARAGRAPH_01__TEXT_CONTAINER_01__TEXT_03__CONTENT,
+                                                    strong: false,
+                                                    emphasis: false,
+                                                    smallCaps: false,
+                                                }
+                                    ],
+                                    references: [
+                                                        
+                                                {
+                                                    referenceType: ReferenceEnum.BIBLE,
+                                                    direct: true,
+                                                    book: BibleBook.PSALMS,
+                                                    chapter: 3,
+                                                    verses: `3-4`,
+                                                },
+                                        
+                                                {
+                                                    referenceType: ReferenceEnum.OTHER,
+                                                    direct: true,
+                                                    source: OtherSourceEnum.SOURCE_3,
+                                                    pointer: `Article VII, 8, 3, 1-2`,
+                                                },
+                                        
+                                                {
+                                                    referenceType: ReferenceEnum.OTHER,
+                                                    direct: true,
+                                                    source: OtherSourceEnum.SOURCE_1,
+                                                    pointer: `Ch. IX, p.4`,
+                                                },
+                                    ],
+                                    paragraphReferences: [
+                                        
+                                    ],
+                                },
+                        
+                                {
+                                    contentType: Content.TEXT_CONTAINER,
+                                    pathID: '1-1-1',
+                                    mainContent: [
+                                                        
+                                                {
+                                                    contentType: Content.TEXT,
+                                                    pathID: '1-1-1-0',
+                                                    content: TextKey.PART_01__PARAGRAPH_01__TEXT_CONTAINER_02__TEXT_01__CONTENT,
+                                                    strong: false,
+                                                    emphasis: false,
+                                                    smallCaps: false,
+                                                },
+                                        
+                                                {
+                                                    contentType: Content.TEXT,
+                                                    pathID: '1-1-1-1',
+                                                    content: TextKey.PART_01__PARAGRAPH_01__TEXT_CONTAINER_02__TEXT_02__CONTENT,
+                                                    strong: false,
+                                                    emphasis: false,
+                                                    smallCaps: false,
+                                                }
+                                    ],
+                                    references: [
+                                                        
+                                                {
+                                                    referenceType: ReferenceEnum.OTHER,
+                                                    direct: true,
+                                                    source: OtherSourceEnum.SOURCE_2,
+                                                    pointer: ``,
+                                                },
+                                        
+                                                {
+                                                    referenceType: ReferenceEnum.BIBLE,
+                                                    direct: true,
+                                                    book: BibleBook.HEBREWS,
+                                                    chapter: 1,
+                                                    verses: 2,
+                                                },
+                                        
+                                                {
+                                                    referenceType: ReferenceEnum.OTHER,
+                                                    direct: false,
+                                                    source: OtherSourceEnum.SOURCE_1,
+                                                    pointer: `742`,
+                                                },
+                                        
+                                                {
+                                                    referenceType: ReferenceEnum.BIBLE,
+                                                    direct: false,
+                                                    book: BibleBook.GENESIS,
+                                                    chapter: 1,
+                                                    verses: `2-3`,
+                                                },
+                                    ],
+                                    paragraphReferences: [
+                                        
+                                    ],
+                                },
+                        
+                                {
+                                    contentType: Content.TEXT_CONTAINER,
+                                    pathID: '1-1-2',
+                                    mainContent: [
+                                                        
+                                                {
+                                                    contentType: Content.TEXT,
+                                                    pathID: '1-1-2-0',
+                                                    content: TextKey.PART_01__PARAGRAPH_01__TEXT_CONTAINER_03__TEXT_01__CONTENT,
+                                                    strong: false,
+                                                    emphasis: false,
+                                                    smallCaps: false,
+                                                }
+                                    ],
+                                    references: [
+                                                        
+                                                {
+                                                    referenceType: ReferenceEnum.OTHER,
+                                                    direct: true,
+                                                    source: OtherSourceEnum.SOURCE_3,
+                                                    pointer: `742`,
+                                                },
+                                    ],
+                                    paragraphReferences: [
+                                        
+                                    ],
+                                },
+                        ],
+                    },
                 ],
             }
     ]
