@@ -106,4 +106,9 @@ export const Probability = {
         text: 0.10,
         blockQuote: 0.25,
     },
+    text: {
+        strong: 0.1,
+        emphasis: 0.1,
+        smallCaps: 0.05,
+    },
 } as const;

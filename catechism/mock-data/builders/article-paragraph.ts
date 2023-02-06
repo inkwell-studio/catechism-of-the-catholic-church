@@ -1,7 +1,7 @@
 import { getTitleText } from './general.ts';
 import { buildSubarticle } from './subarticle.ts';
-import { intArrayOfRandomLength } from './utils.ts';
 import { Limits } from '../config.ts';
+import { intArrayOfRandomLength } from '../utils.ts';
 import { ArticleParagraph, Content, Subarticle, TextKey } from '../../source/types/types.ts';
 
 export function buildArticleParagraph(articleParagraphNumber: number): ArticleParagraph {

@@ -1,9 +1,9 @@
 // deno-lint-ignore-file
-import { writeSourceCode } from './write.ts';
-import { Limits, Probability } from './config.ts';
-import { chance, intArrayOfRandomLength, MinMax, randomInt } from './builders/utils.ts';
 import { buildPart } from './builders/part.ts';
 import { buildPrologue } from './builders/prologue.ts';
+import { Limits, Probability } from './config.ts';
+import { chance, intArrayOfRandomLength, MinMax, randomInt } from './utils.ts';
+import { writeSourceCode } from './write.ts';
 import {
     CatechismStructure,
     Content,

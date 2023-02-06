@@ -1,5 +1,5 @@
 import { buildTextContainer } from './text-container.ts';
-import { chance, intArrayOfRandomLength } from './utils.ts';
+import { chance, intArrayOfRandomLength } from '../utils.ts';
 import { Limits, Probability } from '../config.ts';
 import { Content, Paragraph, TextContainer } from '../../source/types/types.ts';
 

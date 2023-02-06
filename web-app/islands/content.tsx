@@ -215,11 +215,22 @@ function TextContainerContent(textContainer: TextContainer) {
 }
 
 function PlainText(text: Text, lastFragment: boolean) {
-    // TODO: Handle `strong`, `emphasis`, and `smallCaps`
+    const classes = [];
+    if (text.strong) {
+        classes.push('font-bold');
+    }
+    if (text.emphasis) {
+        classes.push('italic');
+    }
+    if (text.smallCaps) {
+        // TODO: Handle
+    }
+    const classText = classes.join(' ');
+
     const spacer = lastFragment ? '' : ' ';
 
     return (
-        <span>
+        <span class={classText}>
             {getText(text.content)}
             {spacer}
         </span>

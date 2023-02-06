@@ -1,7 +1,7 @@
 import { buildArticleParagraph } from './article-paragraph.ts';
 import { getTitleText } from './general.ts';
 import { buildInBrief } from './in-brief.ts';
-import { chance, intArrayOfRandomLength } from './utils.ts';
+import { chance, intArrayOfRandomLength } from '../utils.ts';
 import { buildSubarticle } from './subarticle.ts';
 import { buildTextContent } from './text-content.ts';
 import { Limits, Probability } from '../config.ts';

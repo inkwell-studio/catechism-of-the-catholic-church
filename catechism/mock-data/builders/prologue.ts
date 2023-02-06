@@ -2,7 +2,7 @@ import { buildSubarticle } from './subarticle.ts';
 import { buildTextContainer } from './text-container.ts';
 
 import { getTitleText } from './general.ts';
-import { intArrayOfRandomLength } from './utils.ts';
+import { intArrayOfRandomLength } from '../utils.ts';
 
 import { Limits } from '../config.ts';
 import { Content, PathID, Prologue, Subarticle, TextContent, TextKey } from '../../source/types/types.ts';

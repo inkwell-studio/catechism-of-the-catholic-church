@@ -1,6 +1,6 @@
 import { buildReferences } from './general.ts';
 import { buildText } from './text.ts';
-import { intArrayOfRandomLength } from './utils.ts';
+import { intArrayOfRandomLength } from '../utils.ts';
 import { Limits } from '../config.ts';
 import { Content, Text, TextContainer } from '../../source/types/types.ts';
 
