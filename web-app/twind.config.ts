@@ -6,7 +6,7 @@ export default {
     presets: [presetTailwind()],
     theme: {
         rules: [
-            ['giraffe', { 'background-color': '#124512' }]
-        ]
+            ['giraffe', { 'background-color': '#124512' }],
+        ],
     },
 } as Options;

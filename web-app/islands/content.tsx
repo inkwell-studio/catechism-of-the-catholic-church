@@ -224,7 +224,7 @@ function PlainText(text: Text, lastFragment: boolean) {
         classes.push('italic');
     }
     if (text.smallCaps) {
-        classes.push('font-variant-caps[small-caps]')
+        classes.push('font-variant-caps[small-caps]');
     }
     const classText = classes.join(' ');
 
