@@ -1,5 +1,5 @@
 import { Options } from '$fresh/plugins/twind.ts';
-import presetTailwind from '$fresh/plugins/';
+import presetTailwind from '@twind/preset-tailwind';
 
 export default {
     selfURL: import.meta.url,
