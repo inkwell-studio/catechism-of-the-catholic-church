@@ -215,7 +215,7 @@ function TextContainerContent(textContainer: TextContainer) {
 }
 
 function PlainText(text: Text, lastFragment: boolean) {
-    const classes = [];
+    const classes = ['font-plex'];
     if (text.strong) {
         classes.push('font-bold');
     }
