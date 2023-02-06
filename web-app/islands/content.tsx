@@ -225,14 +225,30 @@ function PlainText(text: Text, lastFragment: boolean) {
     if (text.smallCaps) {
         // TODO: Handle
     }
-    const classText = classes.join(' ');
 
+    const classText = classes.join(' ');
     const spacer = lastFragment ? '' : ' ';
 
-    return (
-        <span class={classText}>
-            {getText(text.content)}
-            {spacer}
-        </span>
-    );
+    if (text.strong) {
+        return (
+            <strong class={classText}>
+                {getText(text.content)}
+                {spacer}
+            </strong>
+        );
+    } else if (text.emphasis) {
+        return (
+            <em class={classText}>
+                {getText(text.content)}
+                {spacer}
+            </em>
+        );
+    } else {
+        return (
+            <span class={classText}>
+                {getText(text.content)}
+                {spacer}
+            </span>
+        );
+    }
 }
