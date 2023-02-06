@@ -1,6 +1,7 @@
 {
     "tasks": {
-        "build-mock-data": "deno run --allow-read --allow-write utils/mock-data/build.ts"
+        "build-mock-data": "deno run --allow-read --allow-write utils/mock-data/build.ts",
+        "web-app-start": "deno run -A --watch=static/,routes/ web-app/dev.ts"
     },
     "fmt": {
         "files": {
