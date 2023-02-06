@@ -215,7 +215,7 @@ function TextContainerContent(textContainer: TextContainer) {
 }
 
 function PlainText(text: Text, lastFragment: boolean) {
-    const classes = ['giraffe', '[font-variant-caps:small-caps]'];
+    const classes = ['giraffe', 'bg-slate-800', '[font-variant-caps:small-caps]'];
     // const classes = [];
     if (text.strong) {
         classes.push('font-bold');
