@@ -1,4 +1,4 @@
-import { chance, indexLimits, randomBoolean, randomInt } from './utils.ts';
+import { chance, indexLimits, randomBoolean, randomInt } from '../utils.ts';
 import {
     BibleBook,
     BibleReference,

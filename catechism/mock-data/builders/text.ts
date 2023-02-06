@@ -1,4 +1,6 @@
 import { getText } from './text-samples.ts';
+import { Probability } from '../config.ts';
+import { chance } from '../utils.ts';
 import { Content, Text } from '../../source/types/types.ts';
 
 export function buildText(): Text {
@@ -9,8 +11,8 @@ export function buildText(): Text {
         // The proper value will be set later, after all content is created
         // deno-lint-ignore no-explicit-any
         content: getText() as any,
-        strong: false,
-        emphasis: false,
-        smallCaps: false,
+        strong: chance(Probability.text.strong),
+        emphasis: chance(Probability.text.emphasis),
+        smallCaps: chance(Probability.text.smallCaps),
     };
 }

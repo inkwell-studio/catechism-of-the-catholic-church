@@ -5,7 +5,7 @@ import { getTitleText } from './general.ts';
 import { buildParagraphGroup } from './paragraph-group.ts';
 import { buildSection } from './section.ts';
 import { buildTextContent } from './text-content.ts';
-import { chance, intArrayOfRandomLength, randomBoolean } from './utils.ts';
+import { chance, intArrayOfRandomLength, randomBoolean } from '../utils.ts';
 
 export function buildPart(part: PartEnum, index: number): Part {
     const openingContent = buildOpeningContent();

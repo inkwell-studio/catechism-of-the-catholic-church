@@ -1,7 +1,7 @@
 import { getTitleText } from './general.ts';
 import { buildParagraphGroup } from './paragraph-group.ts';
 import { buildTextContent } from './text-content.ts';
-import { chance, intArrayOfRandomLength, randomInt } from './utils.ts';
+import { chance, intArrayOfRandomLength, randomInt } from '../utils.ts';
 import { Content, ParagraphGroup, Subarticle, TextContent, TextKey } from '../../source/types/types.ts';
 import { Limits, Probability } from '../config.ts';
 

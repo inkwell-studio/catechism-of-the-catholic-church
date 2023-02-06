@@ -1,5 +1,5 @@
 import { buildTextContainer } from './text-container.ts';
-import { intArrayOfRandomLength } from './utils.ts';
+import { intArrayOfRandomLength } from '../utils.ts';
 import { BlockQuote, Content, TextContainer } from '../../source/types/types.ts';
 import { Limits } from '../config.ts';
 
