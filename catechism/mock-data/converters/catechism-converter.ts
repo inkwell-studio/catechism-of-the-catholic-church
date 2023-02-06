@@ -1,4 +1,4 @@
-import { ReferenceEnum } from '../../../source/types/reference-enum.ts';
+import { ReferenceEnum } from '../../source/types/reference-enum.ts';
 import {
     Article,
     ArticleParagraph,
@@ -21,7 +21,7 @@ import {
     Subarticle,
     Text,
     TextContainer,
-} from '../../../source/types/types.ts';
+} from '../../source/types/types.ts';
 
 export function getCatechismSourceCode(catechism: CatechismStructure): string {
     const prologueSourceCode = getSourceCodeForPrologue(catechism.prologue);

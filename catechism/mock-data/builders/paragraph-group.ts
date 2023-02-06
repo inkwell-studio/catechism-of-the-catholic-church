@@ -1,4 +1,4 @@
-import { Content, ParagraphGroup, TextContent, TextKey } from '../../../source/types/types.ts';
+import { Content, ParagraphGroup, TextContent, TextKey } from '../../source/types/types.ts';
 import { buildTextContent } from './text-content.ts';
 import { getTitleText } from './general.ts';
 import { intArrayOfRandomLength } from './utils.ts';

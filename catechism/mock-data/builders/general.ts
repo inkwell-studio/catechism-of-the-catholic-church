@@ -8,7 +8,7 @@ import {
     Reference,
     ReferenceEnum,
     TextKey,
-} from '../../../source/types/types.ts';
+} from '../../source/types/types.ts';
 import { Limits, Probability } from '../config.ts';
 
 export function getTitleTextKey(contentType: Content, num: number): TextKey {

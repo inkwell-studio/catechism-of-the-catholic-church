@@ -1,6 +1,6 @@
 import { buildParagraph } from './paragraph.ts';
 import { intArrayOfRandomLength } from './utils.ts';
-import { Content, InBrief, Paragraph } from '../../../source/types/types.ts';
+import { Content, InBrief, Paragraph } from '../../source/types/types.ts';
 import { Limits } from '../config.ts';
 
 export function buildInBrief(): InBrief {

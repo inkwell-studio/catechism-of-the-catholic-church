@@ -1,4 +1,3 @@
-import { PathID } from '../../../source/types/path-id.ts';
 import { buildSubarticle } from './subarticle.ts';
 import { buildTextContainer } from './text-container.ts';
 
@@ -6,8 +5,7 @@ import { getTitleText } from './general.ts';
 import { intArrayOfRandomLength } from './utils.ts';
 
 import { Limits } from '../config.ts';
-import { Content, Prologue, Subarticle, TextContent } from '../../../source/types/types.ts';
-import { TextKey } from '../../../source/types/text-key.ts';
+import { Content, PathID, Prologue, Subarticle, TextContent, TextKey } from '../../source/types/types.ts';
 
 export function buildPrologue(pathID: PathID): Prologue {
     return {

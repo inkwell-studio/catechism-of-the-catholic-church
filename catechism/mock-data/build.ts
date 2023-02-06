@@ -13,9 +13,9 @@ import {
     Part,
     PartEnum,
     Prologue,
-} from '../../source/types/types.ts';
-import { NumberOrNumberRange } from '../../source/types/number-or-number-range.ts';
-import { PathID } from '../../source/types/path-id.ts';
+} from '../source/types/types.ts';
+import { NumberOrNumberRange } from '../source/types/number-or-number-range.ts';
+import { PathID } from '../source/types/path-id.ts';
 
 run();
 

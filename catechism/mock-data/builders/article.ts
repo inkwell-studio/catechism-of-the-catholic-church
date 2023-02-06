@@ -1,20 +1,20 @@
 import { buildArticleParagraph } from './article-paragraph.ts';
 import { getTitleText } from './general.ts';
 import { buildInBrief } from './in-brief.ts';
+import { chance, intArrayOfRandomLength } from './utils.ts';
+import { buildSubarticle } from './subarticle.ts';
+import { buildTextContent } from './text-content.ts';
+import { Limits, Probability } from '../config.ts';
 import {
     Article,
+    ArticleParagraph,
     Content,
     InBrief,
     ParagraphGroup,
     Subarticle,
     TextContent,
     TextKey,
-} from '../../../source/types/types.ts';
-import { chance, intArrayOfRandomLength } from './utils.ts';
-import { buildSubarticle } from './subarticle.ts';
-import { ArticleParagraph } from '../../../source/types/article-paragraph.ts';
-import { buildTextContent } from './text-content.ts';
-import { Limits, Probability } from '../config.ts';
+} from '../../source/types/types.ts';
 
 export function buildArticle(articleNumber: number): Article {
     return {

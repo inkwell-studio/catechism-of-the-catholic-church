@@ -1,8 +1,8 @@
 // deno-lint-ignore-file no-explicit-any
 import { TextKeyAndValue } from './text-key-and-value.ts';
-import { CatechismStructure } from '../../../source/types/catechism-structure.ts';
-import { Content } from '../../../source/types/content.ts';
-import { ContentBase, Paragraph } from '../../../source/types/types.ts';
+import { CatechismStructure } from '../../source/types/catechism-structure.ts';
+import { Content } from '../../source/types/content.ts';
+import { ContentBase, Paragraph } from '../../source/types/types.ts';
 
 type ContentOccurrences = Map<Content, number>;
 

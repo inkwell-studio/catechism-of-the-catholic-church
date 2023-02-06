@@ -1,5 +1,5 @@
-import { TextKey } from '../../../source/types/text-key.ts';
-import { Content, ParagraphGroup, Part, PartEnum, Section, TextContent } from '../../../source/types/types.ts';
+import { TextKey } from '../../source/types/text-key.ts';
+import { Content, ParagraphGroup, Part, PartEnum, Section, TextContent } from '../../source/types/types.ts';
 import { Limits, Probability } from '../config.ts';
 import { getTitleText } from './general.ts';
 import { buildParagraphGroup } from './paragraph-group.ts';
