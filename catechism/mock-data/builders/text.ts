@@ -1,4 +1,4 @@
-import { getText } from './general.ts';
+import { getText } from './text-samples.ts';
 import { Content, Text } from '../../source/types/types.ts';
 
 export function buildText(): Text {
