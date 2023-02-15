@@ -10,7 +10,7 @@ export default function FourHundredFour(props: UnknownPageProps) {
                 </div>
 
                 <strong class='font-bold text-xl md:text-2xl'>
-                    <a href='./' class='hover:underline'>Go Home</a>
+                    <a href='/' class='hover:underline'>Go Home</a>
                 </strong>
             </div>
         </div>

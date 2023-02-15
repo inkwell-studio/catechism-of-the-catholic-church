@@ -24,10 +24,10 @@ export default function Home(props: PageProps) {
     const { element, contentID } = props.data;
 
     let elementToRender = <></>;
-    if (Element.CONTENT === element) {
-        elementToRender = <ContentContainer></ContentContainer>;
-    } else if (Element.TABLE_OF_CONTENTS === element) {
+    if (Element.TABLE_OF_CONTENTS === element) {
         elementToRender = <TableOfContents></TableOfContents>;
+    } else if (Element.CONTENT === element) {
+        elementToRender = <ContentContainer></ContentContainer>;
     }
 
     return (
