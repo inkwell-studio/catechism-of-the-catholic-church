@@ -8,6 +8,7 @@ import { Element, getElementAndContentID } from '../../utils/element.ts';
 
 export function handler(request: Request, context: HandlerContext) {
     const contentPath = context.params.index;
+
     const elementAndContentID = getElementAndContentID(contentPath);
     if (elementAndContentID) {
         return context.render({
@@ -15,7 +16,7 @@ export function handler(request: Request, context: HandlerContext) {
             contentID: elementAndContentID.contentID,
         });
     } else {
-        context.renderNotFound();
+        return context.renderNotFound();
     }
 }
 

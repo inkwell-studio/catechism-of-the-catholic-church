@@ -9,7 +9,7 @@ export enum Element {
 }
 
 export function getElementAndContentID(contentPath: string): { element: Element; contentID: ContentID } | null {
-    if ('table-of-contents' === contentPath) {
+    if (!contentPath || 'table-of-contents' === contentPath) {
         return {
             element: Element.TABLE_OF_CONTENTS,
             contentID: null,
