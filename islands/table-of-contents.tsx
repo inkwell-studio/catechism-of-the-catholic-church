@@ -1,3 +1,3 @@
 export default function TableOfContents() {
-    return '[Table of Contents]';
+    return <div>Table of Contents</div>
 }
