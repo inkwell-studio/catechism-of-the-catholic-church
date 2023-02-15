@@ -12,8 +12,9 @@ import * as $$1 from './islands/changelog.tsx';
 import * as $$2 from './islands/content.tsx';
 import * as $$3 from './islands/menu.tsx';
 import * as $$4 from './islands/search.tsx';
-import * as $$5 from './islands/trail-hierarchical.tsx';
-import * as $$6 from './islands/trail-historical.tsx';
+import * as $$5 from './islands/table-of-contents.tsx';
+import * as $$6 from './islands/trail-hierarchical.tsx';
+import * as $$7 from './islands/trail-historical.tsx';
 
 const manifest = {
     routes: {
@@ -28,8 +29,9 @@ const manifest = {
         './islands/content.tsx': $$2,
         './islands/menu.tsx': $$3,
         './islands/search.tsx': $$4,
-        './islands/trail-hierarchical.tsx': $$5,
-        './islands/trail-historical.tsx': $$6,
+        './islands/table-of-contents.tsx': $$5,
+        './islands/trail-hierarchical.tsx': $$6,
+        './islands/trail-historical.tsx': $$7,
     },
     baseUrl: import.meta.url,
     config,

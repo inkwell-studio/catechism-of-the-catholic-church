@@ -9,8 +9,8 @@ export default function Changelog() {
             } fixed inset-0 z-50 justify-center items-stretch sm:items-center`}
         >
             <div class='relative bg-tan-50 flex flex-col gap-8 items-start rounded-md shadow-2xl w-full sm:w-auto p-4 xs:p-6 sm:p-10'>
-                <button onClick={close} class='absolute top-4 right-4'>Close</button>
-                <strong class='text-xl font-bold'>Updates</strong>
+                <button onClick={close} class='absolute top-2 right-2 rounded-md p-1 hover:bg-red-900/15'>Close</button>
+                <strong class='text-xl font-bold'>Notable updates</strong>
                 <ol class='space-y-6'>
                     {changelog.map((changes) => Changes(changes))}
                 </ol>
