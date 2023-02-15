@@ -1,7 +1,7 @@
 import { getCatechismSourceCode } from './converters/catechism-converter.ts';
 import { TextKeyAndValue } from './converters/text-key-and-value.ts';
 import { determineTextKeysAndValuesAndUpdateCatechismObject } from './converters/text-keys-and-values-converter.ts';
-import { join } from '../dependencies.ts';
+import { join } from '../../dependencies.ts';
 import { CatechismStructure } from '../source/types/catechism-structure.ts';
 
 export function writeSourceCode(catechism: CatechismStructure): void {
@@ -11,9 +11,9 @@ export function writeSourceCode(catechism: CatechismStructure): void {
     const texts = getTextValuesSourceCode(results.texts);
     const catechismCode = getCatechismSourceCode(results.catechism);
 
-    Deno.writeTextFileSync(join('content/source/types', 'text-key.ts'), textKeys);
-    Deno.writeTextFileSync(join('content/source/text', 'text-en.ts'), texts);
-    Deno.writeTextFileSync(join('content/source', 'catechism.ts'), catechismCode);
+    Deno.writeTextFileSync(join('catechism/source/types', 'text-key.ts'), textKeys);
+    Deno.writeTextFileSync(join('catechism/source/text', 'text-en.ts'), texts);
+    Deno.writeTextFileSync(join('catechism/source', 'catechism.ts'), catechismCode);
 }
 
 function getTextKeysSourceCode(texts: Array<TextKeyAndValue>): string {
