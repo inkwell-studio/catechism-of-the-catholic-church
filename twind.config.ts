@@ -69,6 +69,7 @@ export default {
             sans: ['PTSans', 'sans-serif'],
             'sans-caption': ['PTSansCaption', 'sans-serif'],
             serif: ['PTSerif', 'serif'],
+            mono: ['Courier New', 'monospace'],
         },
         extend: {
             fontSize: {

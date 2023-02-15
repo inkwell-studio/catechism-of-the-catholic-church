@@ -1,22 +1,44 @@
-import { PageProps } from "$fresh/server.ts";
+import { HandlerContext, PageProps } from '$fresh/server.ts';
 
 import TableOfContents from '../../islands/table-of-contents.tsx';
-import { ContentContainer } from '../../components/content-container.tsx';
 import { ActionBar } from '../../components/action-bar.tsx';
+import { ContentContainer } from '../../components/content-container.tsx';
+
+import { Element, getElementAndContentID } from '../../utils/element.ts';
+
+export function handler(request: Request, context: HandlerContext) {
+    const contentPath = context.params.index;
+    const elementAndContentID = getElementAndContentID(contentPath);
+    if (elementAndContentID) {
+        return context.render({
+            element: elementAndContentID.element,
+            contentID: elementAndContentID.contentID,
+        });
+    } else {
+        context.renderNotFound();
+    }
+}
 
 export default function Home(props: PageProps) {
+    const { element, contentID } = props.data;
 
-    const contentPath = props.params.index;
+    let elementToRender = <></>;
+    if (Element.CONTENT === element) {
+        elementToRender = <ContentContainer></ContentContainer>;
+    } else if (Element.TABLE_OF_CONTENTS === element) {
+        elementToRender = <TableOfContents></TableOfContents>;
+    }
 
     return (
         <div class='flex flex-col'>
-            <TableOfContents></TableOfContents>
-            <ContentContainer></ContentContainer>
-            {/*
+            {elementToRender}
+            {
+                /*
             <div>
                 <ActionBar></ActionBar>
             </div>
-            */}
+            */
+            }
         </div>
     );
 }

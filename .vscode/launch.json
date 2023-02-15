@@ -8,7 +8,7 @@
             "request": "launch",
             "name": "Mock Data",
             "type": "node",
-            "program": "${workspaceFolder}/content/utils/mock-data/build.ts",
+            "program": "${workspaceFolder}/catechism/mock-data/build.ts",
             "cwd": "${workspaceFolder}",
             "runtimeExecutable": "/usr/local/bin/deno",
             "runtimeArgs": [

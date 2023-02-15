@@ -1,7 +1,8 @@
 import { JSX } from 'preact';
 
 import { state } from '../state/state.ts';
-import { getContent, getText } from '../state/get.ts';
+import { getContent } from '../utils/content.ts';
+import { getText } from '../utils/text.ts';
 import {
     Article,
     ArticleParagraph,
