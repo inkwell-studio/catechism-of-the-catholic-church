@@ -11,10 +11,10 @@ Deno.test('cannot be parsed from non-string values', () => {
         0,
         1,
         {},
-        []
+        [],
     ];
 
-    testCases.forEach(testCase => verifyFailure(testCase));
+    testCases.forEach((testCase) => verifyFailure(testCase));
 });
 
 Deno.test('cannot be parsed from the empty string', () => {
@@ -28,34 +28,34 @@ Deno.test('cannot be parsed from strings containing characters other than number
         'a/1',
         '1/a',
         '1-2',
-        '1.2'
+        '1.2',
     ];
 
-    testCases.forEach(testCase => verifyFailure(testCase));
+    testCases.forEach((testCase) => verifyFailure(testCase));
 });
 
 Deno.test('can be parsed from strings containing only numbers and forward-slashes', () => {
     const testCases = [
-        [ '0', '0' ],
-        [ '1', '1' ],
-        [ '1/2', '1-2' ],
-        [ '3/1/2', '3-1-2' ],
+        ['0', '0'],
+        ['1', '1'],
+        ['1/2', '1-2'],
+        ['3/1/2', '3-1-2'],
     ];
 
     const failures = testCases
-        .map(testCase => {
+        .map((testCase) => {
             const input = testCase[0];
             const expectedResult = testCase[1];
             const actualResult = getPathID(input);
             return { input, expectedResult, actualResult };
         })
-        .filter(result =>
-            result.actualResult !== result.expectedResult
-        );
+        .filter((result) => result.actualResult !== result.expectedResult);
 
     if (failures.length > 0) {
         const message = failures
-            .map(failure => `\tinput: ${failure.input}\t expected: ${failure.expectedResult}\t actual: ${failure.actualResult}`)
+            .map((failure) =>
+                `\tinput: ${failure.input}\t expected: ${failure.expectedResult}\t actual: ${failure.actualResult}`
+            )
             .join('\n');
 
         fail('\n\n' + message + '\n');

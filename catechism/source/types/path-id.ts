@@ -20,8 +20,8 @@ export type PathID =
  */
 export function getPathID(value: string | unknown): PathID | null {
     if (typeof value === 'string' && value) {
-        const validChars = [ '/', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0' ]
-        const sanitizedValue = Array.from(value).filter(char => validChars.includes(char)).join('');
+        const validChars = ['/', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0'];
+        const sanitizedValue = Array.from(value).filter((char) => validChars.includes(char)).join('');
 
         if (sanitizedValue.length !== value.length) {
             return null;
