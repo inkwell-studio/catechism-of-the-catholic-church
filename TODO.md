@@ -1,28 +1,14 @@
 # Tasks
 
-## Table of Contents
-
-- depth:
-  - PART
-    - SECTION
-      - CHAPTER
-        - ARTICLE
-          - SUB ARTICLE
-          - ARTICLE PARAGRAPH
-            - SUB ARTICLE
-      - ARTICLE
-        - SUB ARTICLE
-        - ARTICLE PARAGRAPH
-          - SUB ARTICLE
-
-      ** always ** > IN BRIEF
-
-- include `In Brief` references
+- determine the URL values for the _Table of Contents_ entries (see the `TODO` note in `catechism/artifact-builders/table-of-contents.ts`)
+- write `catechism/artifacts/table-of-contents.json` (see `catechism/artifact-builders/table-of-contents.ts :: write()`)
+- implement the _Table of Contents_ page using the new `table-of-contents.json` file
+- improve the architecture of the `<ContentContainer>` and `<Content>` components (see note in `[...index].tsx`)
 
 - render all content
-  - citation markers
   - opening content
-  - what else?
+  - citation markers
+  - is there anything else?
 - implement content loading
   - cross-reference navigation
   - chapter > chapter navigation
