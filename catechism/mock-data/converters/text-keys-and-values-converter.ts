@@ -3,7 +3,7 @@ import { TextKeyAndValue } from './text-key-and-value.ts';
 import { CatechismStructure } from '../../source/types/catechism-structure.ts';
 import { Content } from '../../source/types/content.ts';
 import { ContentBase, Paragraph } from '../../source/types/types.ts';
-import { hasMainContent, hasOpeningContent } from "../../utils.ts";
+import { hasMainContent, hasOpeningContent } from '../../utils.ts';
 
 type ContentOccurrences = Map<Content, number>;
 

@@ -4,16 +4,10 @@ import { buildPrologue } from './builders/prologue.ts';
 import { Limits, Probability } from './config.ts';
 import { chance, intArrayOfRandomLength, MinMax, randomInt } from './utils.ts';
 import { writeSourceCode } from './write.ts';
-import {
-    CatechismStructure,
-    Content,
-    ContentBase,
-    ContentContainer,
-    PartEnum,
-} from '../source/types/types.ts';
+import { CatechismStructure, Content, ContentBase, ContentContainer, PartEnum } from '../source/types/types.ts';
 import { NumberOrNumberRange } from '../source/types/number-or-number-range.ts';
 import { PathID } from '../source/types/path-id.ts';
-import { getMainAndOpeningContent, getParagraphs, hasMainContent, hasOpeningContent } from '../utils.ts';
+import { getAllParagraphs, getMainAndOpeningContent, hasMainContent, hasOpeningContent } from '../utils.ts';
 
 run();
 
@@ -49,7 +43,7 @@ function buildMockData(): CatechismStructure {
     const results = buildParagraphCrossReferences(catechism);
     catechism = results.catechism;
 
-    const paragraphCount = getParagraphs(catechism).length;
+    const paragraphCount = getAllParagraphs(catechism).length;
     console.log(`\nFinished: built ${paragraphCount} paragraphs with ${results.crossReferenceCount} cross references`);
 
     return catechism;
@@ -135,7 +129,7 @@ function validateCatechism(catechism: CatechismStructure): boolean {
         return false;
     }
 
-    const paragraphNumbers = getParagraphs(catechism).map((p) => p.paragraphNumber);
+    const paragraphNumbers = getAllParagraphs(catechism).map((p) => p.paragraphNumber);
     const uniqueParagraphNumbers = new Set(paragraphNumbers);
 
     const numParagraphs = paragraphNumbers.length;
@@ -161,7 +155,7 @@ function buildParagraphCrossReferences(
 ): { catechism: CatechismStructure; crossReferenceCount: number } {
     catechism = structuredClone(catechism);
 
-    const paragraphNumbers = getParagraphs(catechism).map((p) => p.paragraphNumber);
+    const paragraphNumbers = getAllParagraphs(catechism).map((p) => p.paragraphNumber);
     const maxParagraphNumber = Math.max(...paragraphNumbers);
 
     const prologueResults = helper([catechism.prologue], maxParagraphNumber, 0);

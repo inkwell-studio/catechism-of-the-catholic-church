@@ -1,9 +1,9 @@
-import { Content } from "./content.ts";
+import { Content } from './content.ts';
 
 export type TableOfContents = {
     readonly prologue: Entry;
     readonly parts: Array<Entry>;
-}
+};
 
 export type Entry = {
     readonly contentType: Content;
@@ -11,4 +11,4 @@ export type Entry = {
     readonly url: string;
     readonly firstParagraphNumber: number;
     readonly children: Array<Entry>;
-}
+};

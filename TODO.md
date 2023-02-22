@@ -1,6 +1,7 @@
 # Tasks
 
 ## Table of Contents
+
 - depth:
   - PART
     - SECTION
@@ -12,7 +13,7 @@
       - ARTICLE
         - SUB ARTICLE
         - ARTICLE PARAGRAPH
-            - SUB ARTICLE
+          - SUB ARTICLE
 
       ** always ** > IN BRIEF
 

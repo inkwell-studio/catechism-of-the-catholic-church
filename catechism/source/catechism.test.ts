@@ -1,11 +1,11 @@
 import { Catechism } from './catechism.ts';
 import { Content, ContentBase, PathID, Subarticle } from './types/types.ts';
-import { getParagraphs } from '../utils.ts';
+import { getAllParagraphs } from '../utils.ts';
 import { assert, assertStrictEquals } from '../../dependencies.ts';
 
 console.log('\nCatechism data ...');
 
-const paragraphs = getParagraphs(Catechism);
+const paragraphs = getAllParagraphs(Catechism);
 
 Deno.test('the Prologue pathIDs are correctly set', () => {
     Catechism.prologue.mainContent.forEach((c, index) => {

@@ -1,6 +1,7 @@
+// deno-lint-ignore-file
 import { Catechism } from '../source/catechism.ts';
 import { Content, ContentBase, ContentContainer, Entry, Paragraph, TableOfContents } from '../source/types/types.ts';
-import { hasMainContent, hasOpeningContent } from "../utils.ts";
+import { hasMainContent, hasOpeningContent } from '../utils.ts';
 
 export function buildAndWrite(): void {
     const tableOfContents = build();
@@ -11,7 +12,7 @@ export function buildAndWrite(): void {
 function build(): TableOfContents {
     return {
         prologue: buildEntry(Catechism.prologue),
-        parts: Catechism.parts.map(part => buildEntry(part))
+        parts: Catechism.parts.map((part) => buildEntry(part)),
     };
 }
 
@@ -21,7 +22,7 @@ function buildEntry<T extends ContentBase | ContentBase & ContentContainer>(cont
         title: getTitle(content.contentType),
         url: 'TODO',
         firstParagraphNumber: getFirstParagraphNumber(content),
-        children: buildChildEntries(content)
+        children: buildChildEntries(content),
     };
 }
 
@@ -29,8 +30,8 @@ function buildChildEntries<T extends ContentBase | ContentBase & ContentContaine
     const mainContentExists = hasMainContent(content);
     if (mainContentExists) {
         return (content as ContentContainer).mainContent
-            .filter(content => includible(content))
-            .map(child => buildEntry(child));
+            .filter((content) => includible(content))
+            .map((child) => buildEntry(child));
     } else {
         return [];
     }
@@ -48,14 +49,14 @@ function write(tableOfContents: TableOfContents): void {
  * @returns `true` if the content should be included in the Table of Content, and `false` if not
  */
 function includible<T extends ContentBase>(content: T): boolean {
-    return Content.PROLOGUE === content.contentType
-        || Content.PART === content.contentType
-        || Content.SECTION === content.contentType
-        || Content.CHAPTER === content.contentType
-        || Content.ARTICLE === content.contentType
-        || Content.ARTICLE_PARAGRAPH === content.contentType
-        || Content.SUB_ARTICLE === content.contentType
-        || Content.IN_BRIEF === content.contentType;
+    return Content.PROLOGUE === content.contentType ||
+        Content.PART === content.contentType ||
+        Content.SECTION === content.contentType ||
+        Content.CHAPTER === content.contentType ||
+        Content.ARTICLE === content.contentType ||
+        Content.ARTICLE_PARAGRAPH === content.contentType ||
+        Content.SUB_ARTICLE === content.contentType ||
+        Content.IN_BRIEF === content.contentType;
 }
 
 function getTitle(contentType: Content): string {
@@ -63,6 +64,9 @@ function getTitle(contentType: Content): string {
 }
 
 function getFirstParagraphNumber<T extends ContentBase | ContentBase & ContentContainer>(content: T): number {
+    return 0;
+
+    /*/
     // Perform a depth-first search to find the first paragraph content, then return its number
     if (Content.PARAGRAPH === content.contentType) {
         return (content as Paragraph).paragraphNumber;
@@ -75,5 +79,6 @@ function getFirstParagraphNumber<T extends ContentBase | ContentBase & ContentCo
     }
 
     if (Object.hasOwn(content, 'paragraphNumber'))
+    /*/
 }
 //#endregion

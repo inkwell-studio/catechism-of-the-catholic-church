@@ -1,4 +1,12 @@
-import { CatechismStructure, Content, ContentBase, ContentContainer, Paragraph, Part, Prologue } from './source/types/types.ts';
+import {
+    CatechismStructure,
+    Content,
+    ContentBase,
+    ContentContainer,
+    Paragraph,
+    Part,
+    Prologue,
+} from './source/types/types.ts';
 
 export function hasMainContent<T extends ContentBase>(content: T): boolean {
     // deno-lint-ignore no-explicit-any
@@ -11,6 +19,7 @@ export function hasOpeningContent<T extends ContentBase>(content: T): boolean {
 }
 
 export function getMainAndOpeningContent<T extends ContentBase & ContentContainer>(c: T): Array<T> {
+    // deno-lint-ignore no-explicit-any
     const openingContent = hasOpeningContent(c) ? (c as any).openingContent : [];
 
     return [...openingContent, ...c.mainContent];
@@ -23,7 +32,7 @@ function getAllContent(catechism: CatechismStructure): Array<Prologue | Part> {
 /**
  * @returns the `Paragraph`s of the Catechism in the order that they are listed
  */
- export function getParagraphs(catechism: CatechismStructure): Array<Paragraph> {
+export function getAllParagraphs(catechism: CatechismStructure): Array<Paragraph> {
     const allContent = getAllContent(catechism);
     return helper([], allContent);
 
