@@ -37,10 +37,10 @@ export const Catechism: CatechismStructure = {
                                 }
                         ],
                         references: [
-                            
+
                         ],
                         paragraphReferences: [
-                            
+
                         ],
                     },
                     {
@@ -96,7 +96,7 @@ export const Catechism: CatechismStructure = {
                                                                                             },
                                                                         ],
                                                                         paragraphReferences: [
-                                                                            
+
                                                                         ],
                                                                     },
                                                                     {
@@ -129,7 +129,7 @@ export const Catechism: CatechismStructure = {
                                                                                             }
                                                                         ],
                                                                         references: [
-                                                                            
+
                                                                         ],
                                                                         paragraphReferences: [
                                                                             54
@@ -173,10 +173,10 @@ export const Catechism: CatechismStructure = {
                                                                                             }
                                                                         ],
                                                                         references: [
-                                                                            
+
                                                                         ],
                                                                         paragraphReferences: [
-                                                                            
+
                                                                         ],
                                                                     },
                                                                     {
@@ -217,7 +217,7 @@ export const Catechism: CatechismStructure = {
                                                                                             },
                                                                         ],
                                                                         paragraphReferences: [
-                                                                            
+
                                                                         ],
                                                                     },
                                                     ],
@@ -329,7 +329,7 @@ export const Catechism: CatechismStructure = {
                                                                                             },
                                                                         ],
                                                                         paragraphReferences: [
-                                                                            
+
                                                                         ],
                                                                     },
                                                     ],
@@ -372,7 +372,7 @@ export const Catechism: CatechismStructure = {
                                                                     }
                                                     ],
                                                     references: [
-                                                        
+
                                                     ],
                                                     paragraphReferences: [
                                                         `71-73`,`58-61`
@@ -414,7 +414,7 @@ export const Catechism: CatechismStructure = {
                                                                     }
                                                     ],
                                                     references: [
-                                                        
+
                                                     ],
                                                     paragraphReferences: [
                                                         18
@@ -473,10 +473,10 @@ export const Catechism: CatechismStructure = {
                                                                     }
                                                     ],
                                                     references: [
-                                                        
+
                                                     ],
                                                     paragraphReferences: [
-                                                        
+
                                                     ],
                                                 },
                                     ],
@@ -560,7 +560,7 @@ export const Catechism: CatechismStructure = {
                                                                                                                                                         },
                                                                                                                             ],
                                                                                                                             paragraphReferences: [
-                                                                                                                                
+
                                                                                                                             ],
                                                                                                                         },
                                                                                                 ],
@@ -593,10 +593,10 @@ export const Catechism: CatechismStructure = {
                                                                                                                                                         }
                                                                                                                             ],
                                                                                                                             references: [
-                                                                                                                                
+
                                                                                                                             ],
                                                                                                                             paragraphReferences: [
-                                                                                                                                
+
                                                                                                                             ],
                                                                                                                         },
                                                                                                 ],
@@ -651,7 +651,7 @@ export const Catechism: CatechismStructure = {
                                                                                                                                                         },
                                                                                                                             ],
                                                                                                                             paragraphReferences: [
-                                                                                                                                
+
                                                                                                                             ],
                                                                                                                         },
                                                                                                 ],
@@ -690,10 +690,10 @@ export const Catechism: CatechismStructure = {
                                                                                                                                                         }
                                                                                                                             ],
                                                                                                                             references: [
-                                                                                                                                
+
                                                                                                                             ],
                                                                                                                             paragraphReferences: [
-                                                                                                                                
+
                                                                                                                             ],
                                                                                                                         },
                                                                                                                         {
@@ -718,10 +718,10 @@ export const Catechism: CatechismStructure = {
                                                                                                                                                         }
                                                                                                                             ],
                                                                                                                             references: [
-                                                                                                                                
+
                                                                                                                             ],
                                                                                                                             paragraphReferences: [
-                                                                                                                                
+
                                                                                                                             ],
                                                                                                                         },
                                                                                                 ],
@@ -776,7 +776,7 @@ export const Catechism: CatechismStructure = {
                                                                                                                                                         },
                                                                                                                             ],
                                                                                                                             paragraphReferences: [
-                                                                                                                                
+
                                                                                                                             ],
                                                                                                                         },
                                                                                                                         {
@@ -809,10 +809,10 @@ export const Catechism: CatechismStructure = {
                                                                                                                                                         }
                                                                                                                             ],
                                                                                                                             references: [
-                                                                                                                                
+
                                                                                                                             ],
                                                                                                                             paragraphReferences: [
-                                                                                                                                
+
                                                                                                                             ],
                                                                                                                         },
                                                                                                                         {
@@ -846,7 +846,7 @@ export const Catechism: CatechismStructure = {
                                                                                                                                                         },
                                                                                                                             ],
                                                                                                                             paragraphReferences: [
-                                                                                                                                
+
                                                                                                                             ],
                                                                                                                         },
                                                                                                 ],
@@ -904,7 +904,7 @@ export const Catechism: CatechismStructure = {
                                                                                                                         },
                                                                                                 ],
                                                                                                 paragraphReferences: [
-                                                                                                    
+
                                                                                                 ],
                                                                                             },
                                                                                             {
@@ -921,10 +921,10 @@ export const Catechism: CatechismStructure = {
                                                                                                                         }
                                                                                                 ],
                                                                                                 references: [
-                                                                                                    
+
                                                                                                 ],
                                                                                                 paragraphReferences: [
-                                                                                                    
+
                                                                                                 ],
                                                                                             },
                                                                         ],
@@ -1054,7 +1054,7 @@ export const Catechism: CatechismStructure = {
                                                                                                                                                         },
                                                                                                                             ],
                                                                                                                             paragraphReferences: [
-                                                                                                                                
+
                                                                                                                             ],
                                                                                                                         },
                                                                                                                         {
@@ -1087,10 +1087,10 @@ export const Catechism: CatechismStructure = {
                                                                                                                                                         }
                                                                                                                             ],
                                                                                                                             references: [
-                                                                                                                                
+
                                                                                                                             ],
                                                                                                                             paragraphReferences: [
-                                                                                                                                
+
                                                                                                                             ],
                                                                                                                         },
                                                                                                                         {
@@ -1115,7 +1115,7 @@ export const Catechism: CatechismStructure = {
                                                                                                                                                         }
                                                                                                                             ],
                                                                                                                             references: [
-                                                                                                                                
+
                                                                                                                             ],
                                                                                                                             paragraphReferences: [
                                                                                                                                 59
@@ -1267,7 +1267,7 @@ export const Catechism: CatechismStructure = {
                                                                                                                                                                                             },
                                                                                                                                                             ],
                                                                                                                                                             paragraphReferences: [
-                                                                                                                                                                
+
                                                                                                                                                             ],
                                                                                                                                                         },
                                                                                                                                                         {
@@ -1307,7 +1307,7 @@ export const Catechism: CatechismStructure = {
                                                                                                                                                                                             },
                                                                                                                                                             ],
                                                                                                                                                             paragraphReferences: [
-                                                                                                                                                                
+
                                                                                                                                                             ],
                                                                                                                                                         },
                                                                                                                                                         {
@@ -1332,10 +1332,10 @@ export const Catechism: CatechismStructure = {
                                                                                                                                                                                             }
                                                                                                                                                             ],
                                                                                                                                                             references: [
-                                                                                                                                                                
+
                                                                                                                                                             ],
                                                                                                                                                             paragraphReferences: [
-                                                                                                                                                                
+
                                                                                                                                                             ],
                                                                                                                                                         },
                                                                                                                             ],
@@ -1375,7 +1375,7 @@ export const Catechism: CatechismStructure = {
                                                                                                                                                                                             },
                                                                                                                                                             ],
                                                                                                                                                             paragraphReferences: [
-                                                                                                                                                                
+
                                                                                                                                                             ],
                                                                                                                                                         },
                                                                                                                             ],
@@ -1417,7 +1417,7 @@ export const Catechism: CatechismStructure = {
                                                                                                                                                         },
                                                                                                                             ],
                                                                                                                             paragraphReferences: [
-                                                                                                                                
+
                                                                                                                             ],
                                                                                                                         },
                                                                                                 ],
@@ -1450,10 +1450,10 @@ export const Catechism: CatechismStructure = {
                                                                                                                                                         }
                                                                                                                             ],
                                                                                                                             references: [
-                                                                                                                                
+
                                                                                                                             ],
                                                                                                                             paragraphReferences: [
-                                                                                                                                
+
                                                                                                                             ],
                                                                                                                         },
                                                                                                                         {
@@ -1478,7 +1478,7 @@ export const Catechism: CatechismStructure = {
                                                                                                                                                         },
                                                                                                                             ],
                                                                                                                             paragraphReferences: [
-                                                                                                                                
+
                                                                                                                             ],
                                                                                                                         },
                                                                                                 ],
@@ -1511,10 +1511,10 @@ export const Catechism: CatechismStructure = {
                                                                                                                                                         }
                                                                                                                             ],
                                                                                                                             references: [
-                                                                                                                                
+
                                                                                                                             ],
                                                                                                                             paragraphReferences: [
-                                                                                                                                
+
                                                                                                                             ],
                                                                                                                         },
                                                                                                 ],
@@ -1559,10 +1559,10 @@ export const Catechism: CatechismStructure = {
                                                                                                                         }
                                                                                                 ],
                                                                                                 references: [
-                                                                                                    
+
                                                                                                 ],
                                                                                                 paragraphReferences: [
-                                                                                                    
+
                                                                                                 ],
                                                                                             },
                                                                         ],
@@ -1607,7 +1607,7 @@ export const Catechism: CatechismStructure = {
                                                                                             }
                                                                         ],
                                                                         references: [
-                                                                            
+
                                                                         ],
                                                                         paragraphReferences: [
                                                                             25,14
@@ -1677,7 +1677,7 @@ export const Catechism: CatechismStructure = {
                                                                                                                                                         },
                                                                                                                             ],
                                                                                                                             paragraphReferences: [
-                                                                                                                                
+
                                                                                                                             ],
                                                                                                                         },
                                                                                                 ],
@@ -1747,7 +1747,7 @@ export const Catechism: CatechismStructure = {
                                                                                                                                                         },
                                                                                                                             ],
                                                                                                                             paragraphReferences: [
-                                                                                                                                
+
                                                                                                                             ],
                                                                                                                         },
                                                                                                                         {
@@ -1772,10 +1772,10 @@ export const Catechism: CatechismStructure = {
                                                                                                                                                         }
                                                                                                                             ],
                                                                                                                             references: [
-                                                                                                                                
+
                                                                                                                             ],
                                                                                                                             paragraphReferences: [
-                                                                                                                                
+
                                                                                                                             ],
                                                                                                                         },
                                                                                                                         {
@@ -1814,7 +1814,7 @@ export const Catechism: CatechismStructure = {
                                                                                                                                                         },
                                                                                                                             ],
                                                                                                                             paragraphReferences: [
-                                                                                                                                
+
                                                                                                                             ],
                                                                                                                         },
                                                                                                 ],
@@ -1906,7 +1906,7 @@ export const Catechism: CatechismStructure = {
                                                                                                                         },
                                                                                                 ],
                                                                                                 paragraphReferences: [
-                                                                                                    
+
                                                                                                 ],
                                                                                             },
                                                                                             {
@@ -1940,7 +1940,7 @@ export const Catechism: CatechismStructure = {
                                                                                                                         },
                                                                                                 ],
                                                                                                 paragraphReferences: [
-                                                                                                    
+
                                                                                                 ],
                                                                                             },
                                                                         ],
@@ -1965,10 +1965,10 @@ export const Catechism: CatechismStructure = {
                                                                                                                         }
                                                                                                 ],
                                                                                                 references: [
-                                                                                                    
+
                                                                                                 ],
                                                                                                 paragraphReferences: [
-                                                                                                    
+
                                                                                                 ],
                                                                                             },
                                                                                             {
@@ -2075,7 +2075,7 @@ export const Catechism: CatechismStructure = {
                                                                                                                         },
                                                                                                 ],
                                                                                                 paragraphReferences: [
-                                                                                                    
+
                                                                                                 ],
                                                                                             },
                                                                         ],
@@ -2143,7 +2143,7 @@ export const Catechism: CatechismStructure = {
                                                                                                                                                                                                                                     },
                                                                                                                                                                                                 ],
                                                                                                                                                                                                 paragraphReferences: [
-                                                                                                                                                                                                    
+
                                                                                                                                                                                                 ],
                                                                                                                                                                                             },
                                                                                                                                                             ],
@@ -2174,7 +2174,7 @@ export const Catechism: CatechismStructure = {
                                                                                                                                                                                                                                     }
                                                                                                                                                                                                 ],
                                                                                                                                                                                                 references: [
-                                                                                                                                                                                                    
+
                                                                                                                                                                                                 ],
                                                                                                                                                                                                 paragraphReferences: [
                                                                                                                                                                                                     65,69
@@ -2214,10 +2214,10 @@ export const Catechism: CatechismStructure = {
                                                                                                                                                         }
                                                                                                                             ],
                                                                                                                             references: [
-                                                                                                                                
+
                                                                                                                             ],
                                                                                                                             paragraphReferences: [
-                                                                                                                                
+
                                                                                                                             ],
                                                                                                                         },
                                                                                                                         {
@@ -2254,7 +2254,7 @@ export const Catechism: CatechismStructure = {
                                                                                                                                                                                             }
                                                                                                                                                             ],
                                                                                                                                                             references: [
-                                                                                                                                                                
+
                                                                                                                                                             ],
                                                                                                                                                             paragraphReferences: [
                                                                                                                                                                 `6-9`
@@ -2308,7 +2308,7 @@ export const Catechism: CatechismStructure = {
                                                                                                                                                                                             }
                                                                                                                                                             ],
                                                                                                                                                             references: [
-                                                                                                                                                                
+
                                                                                                                                                             ],
                                                                                                                                                             paragraphReferences: [
                                                                                                                                                                 5
@@ -2342,7 +2342,7 @@ export const Catechism: CatechismStructure = {
                                                                                                                                                                                             }
                                                                                                                                                             ],
                                                                                                                                                             references: [
-                                                                                                                                                                
+
                                                                                                                                                             ],
                                                                                                                                                             paragraphReferences: [
                                                                                                                                                                 79
@@ -2378,7 +2378,7 @@ export const Catechism: CatechismStructure = {
                                                                                                                                                                                             }
                                                                                                                                                             ],
                                                                                                                                                             references: [
-                                                                                                                                                                
+
                                                                                                                                                             ],
                                                                                                                                                             paragraphReferences: [
                                                                                                                                                                 33
@@ -2438,7 +2438,7 @@ export const Catechism: CatechismStructure = {
                                                                                                                                                                                                                                     }
                                                                                                                                                                                                 ],
                                                                                                                                                                                                 references: [
-                                                                                                                                                                                                    
+
                                                                                                                                                                                                 ],
                                                                                                                                                                                                 paragraphReferences: [
                                                                                                                                                                                                     6
@@ -2464,7 +2464,7 @@ export const Catechism: CatechismStructure = {
                                                                                                                                                                                                                                     }
                                                                                                                                                                                                 ],
                                                                                                                                                                                                 references: [
-                                                                                                                                                                                                    
+
                                                                                                                                                                                                 ],
                                                                                                                                                                                                 paragraphReferences: [
                                                                                                                                                                                                     9
@@ -2510,7 +2510,7 @@ export const Catechism: CatechismStructure = {
                                                                                                                                                                                             }
                                                                                                                                                             ],
                                                                                                                                                             references: [
-                                                                                                                                                                
+
                                                                                                                                                             ],
                                                                                                                                                             paragraphReferences: [
                                                                                                                                                                 43
@@ -2546,7 +2546,7 @@ export const Catechism: CatechismStructure = {
                                                                                                                                                                                             }
                                                                                                                                                             ],
                                                                                                                                                             references: [
-                                                                                                                                                                
+
                                                                                                                                                             ],
                                                                                                                                                             paragraphReferences: [
                                                                                                                                                                 56
@@ -2582,10 +2582,10 @@ export const Catechism: CatechismStructure = {
                                                                                                                                                                                             }
                                                                                                                                                             ],
                                                                                                                                                             references: [
-                                                                                                                                                                
+
                                                                                                                                                             ],
                                                                                                                                                             paragraphReferences: [
-                                                                                                                                                                
+
                                                                                                                                                             ],
                                                                                                                                                         },
                                                                                                                             ],
@@ -2613,7 +2613,7 @@ export const Catechism: CatechismStructure = {
                                                                                                                                                         },
                                                                                                                             ],
                                                                                                                             paragraphReferences: [
-                                                                                                                                
+
                                                                                                                             ],
                                                                                                                         },
                                                                                                                         {
@@ -2684,10 +2684,10 @@ export const Catechism: CatechismStructure = {
                                                                                                                                                                                                                                     }
                                                                                                                                                                                                 ],
                                                                                                                                                                                                 references: [
-                                                                                                                                                                                                    
+
                                                                                                                                                                                                 ],
                                                                                                                                                                                                 paragraphReferences: [
-                                                                                                                                                                                                    
+
                                                                                                                                                                                                 ],
                                                                                                                                                                                             },
                                                                                                                                                                                             {
@@ -2776,7 +2776,7 @@ export const Catechism: CatechismStructure = {
                                                                                                                                                                                                                                     }
                                                                                                                                                                                                 ],
                                                                                                                                                                                                 references: [
-                                                                                                                                                                                                    
+
                                                                                                                                                                                                 ],
                                                                                                                                                                                                 paragraphReferences: [
                                                                                                                                                                                                     31
@@ -2838,7 +2838,7 @@ export const Catechism: CatechismStructure = {
                                                                                                                                                                                                                                     }
                                                                                                                                                                                                 ],
                                                                                                                                                                                                 references: [
-                                                                                                                                                                                                    
+
                                                                                                                                                                                                 ],
                                                                                                                                                                                                 paragraphReferences: [
                                                                                                                                                                                                     17
@@ -2889,7 +2889,7 @@ export const Catechism: CatechismStructure = {
                                                                                                                                                                                                                                     },
                                                                                                                                                                                                 ],
                                                                                                                                                                                                 paragraphReferences: [
-                                                                                                                                                                                                    
+
                                                                                                                                                                                                 ],
                                                                                                                                                                                             },
                                                                                                                                                                                             {
@@ -2922,7 +2922,7 @@ export const Catechism: CatechismStructure = {
                                                                                                                                                                                                                                     },
                                                                                                                                                                                                 ],
                                                                                                                                                                                                 paragraphReferences: [
-                                                                                                                                                                                                    
+
                                                                                                                                                                                                 ],
                                                                                                                                                                                             },
                                                                                                                                                             ],
@@ -2971,10 +2971,10 @@ export const Catechism: CatechismStructure = {
                                                                                                                                                                                                                                     }
                                                                                                                                                                                                 ],
                                                                                                                                                                                                 references: [
-                                                                                                                                                                                                    
+
                                                                                                                                                                                                 ],
                                                                                                                                                                                                 paragraphReferences: [
-                                                                                                                                                                                                    
+
                                                                                                                                                                                                 ],
                                                                                                                                                                                             },
                                                                                                                                                                                             {
@@ -3075,7 +3075,7 @@ export const Catechism: CatechismStructure = {
                                                                                                                                                                                                                                     }
                                                                                                                                                                                                 ],
                                                                                                                                                                                                 references: [
-                                                                                                                                                                                                    
+
                                                                                                                                                                                                 ],
                                                                                                                                                                                                 paragraphReferences: [
                                                                                                                                                                                                     3
@@ -3136,7 +3136,7 @@ export const Catechism: CatechismStructure = {
                                                                                                                                                                                                                                     }
                                                                                                                                                                                                 ],
                                                                                                                                                                                                 references: [
-                                                                                                                                                                                                    
+
                                                                                                                                                                                                 ],
                                                                                                                                                                                                 paragraphReferences: [
                                                                                                                                                                                                     42
@@ -3182,10 +3182,10 @@ export const Catechism: CatechismStructure = {
                                                                                                                                                         }
                                                                                                                             ],
                                                                                                                             references: [
-                                                                                                                                
+
                                                                                                                             ],
                                                                                                                             paragraphReferences: [
-                                                                                                                                
+
                                                                                                                             ],
                                                                                                                         },
                                                                                                 ],
@@ -3231,7 +3231,7 @@ export const Catechism: CatechismStructure = {
                                                                                                                         },
                                                                                                 ],
                                                                                                 paragraphReferences: [
-                                                                                                    
+
                                                                                                 ],
                                                                                             },
                                                                         ],
@@ -3240,7 +3240,7 @@ export const Catechism: CatechismStructure = {
                                                 },
                                     ],
                                     openingContent: [
-                                        
+
                                     ],
                                 },
                         ],
@@ -3288,7 +3288,7 @@ export const Catechism: CatechismStructure = {
                                                                                             },
                                                                         ],
                                                                         paragraphReferences: [
-                                                                            
+
                                                                         ],
                                                                     },
                                                     ],
@@ -3361,7 +3361,7 @@ export const Catechism: CatechismStructure = {
                                                                                             }
                                                                         ],
                                                                         references: [
-                                                                            
+
                                                                         ],
                                                                         paragraphReferences: [
                                                                             29,54
@@ -3389,10 +3389,10 @@ export const Catechism: CatechismStructure = {
                                                                                             }
                                                                         ],
                                                                         references: [
-                                                                            
+
                                                                         ],
                                                                         paragraphReferences: [
-                                                                            
+
                                                                         ],
                                                                     },
                                                                     {
@@ -3417,10 +3417,10 @@ export const Catechism: CatechismStructure = {
                                                                                             }
                                                                         ],
                                                                         references: [
-                                                                            
+
                                                                         ],
                                                                         paragraphReferences: [
-                                                                            
+
                                                                         ],
                                                                     },
                                                     ],
@@ -3447,10 +3447,10 @@ export const Catechism: CatechismStructure = {
                                                                     }
                                                     ],
                                                     references: [
-                                                        
+
                                                     ],
                                                     paragraphReferences: [
-                                                        
+
                                                     ],
                                                 },
                                                 {
@@ -3495,7 +3495,7 @@ export const Catechism: CatechismStructure = {
                                                                                             },
                                                                         ],
                                                                         paragraphReferences: [
-                                                                            
+
                                                                         ],
                                                                     },
                                                     ],
@@ -3506,7 +3506,7 @@ export const Catechism: CatechismStructure = {
                     },
                 ],
                 openingContent: [
-                    
+
                 ],
             },            {
                 contentType: Content.PART,
@@ -3708,10 +3708,10 @@ export const Catechism: CatechismStructure = {
                                                                                                                                                         }
                                                                                                                             ],
                                                                                                                             references: [
-                                                                                                                                
+
                                                                                                                             ],
                                                                                                                             paragraphReferences: [
-                                                                                                                                
+
                                                                                                                             ],
                                                                                                                         },
                                                                                                 ],
@@ -3730,7 +3730,7 @@ export const Catechism: CatechismStructure = {
                                                                                                                         }
                                                                                                 ],
                                                                                                 references: [
-                                                                                                    
+
                                                                                                 ],
                                                                                                 paragraphReferences: [
                                                                                                     67,31
@@ -3809,7 +3809,7 @@ export const Catechism: CatechismStructure = {
                                                                                                                                                                                             }
                                                                                                                                                             ],
                                                                                                                                                             references: [
-                                                                                                                                                                
+
                                                                                                                                                             ],
                                                                                                                                                             paragraphReferences: [
                                                                                                                                                                 81
@@ -3935,10 +3935,10 @@ export const Catechism: CatechismStructure = {
                                                                                                                                                         }
                                                                                                                             ],
                                                                                                                             references: [
-                                                                                                                                
+
                                                                                                                             ],
                                                                                                                             paragraphReferences: [
-                                                                                                                                
+
                                                                                                                             ],
                                                                                                                         },
                                                                                                 ],
@@ -3994,7 +3994,7 @@ export const Catechism: CatechismStructure = {
                                                                                                                                                         },
                                                                                                                             ],
                                                                                                                             paragraphReferences: [
-                                                                                                                                
+
                                                                                                                             ],
                                                                                                                         },
                                                                                                                         {
@@ -4034,7 +4034,7 @@ export const Catechism: CatechismStructure = {
                                                                                                                                                         },
                                                                                                                             ],
                                                                                                                             paragraphReferences: [
-                                                                                                                                
+
                                                                                                                             ],
                                                                                                                         },
                                                                                                 ],
@@ -4059,10 +4059,10 @@ export const Catechism: CatechismStructure = {
                                                                                                                                                         }
                                                                                                                             ],
                                                                                                                             references: [
-                                                                                                                                
+
                                                                                                                             ],
                                                                                                                             paragraphReferences: [
-                                                                                                                                
+
                                                                                                                             ],
                                                                                                                         },
                                                                                                                         {
@@ -4103,7 +4103,7 @@ export const Catechism: CatechismStructure = {
                                                                                                                                                         },
                                                                                                                             ],
                                                                                                                             paragraphReferences: [
-                                                                                                                                
+
                                                                                                                             ],
                                                                                                                         },
                                                                                                 ],
@@ -4281,10 +4281,10 @@ export const Catechism: CatechismStructure = {
                                                                                                                                                                                             }
                                                                                                                                                             ],
                                                                                                                                                             references: [
-                                                                                                                                                                
+
                                                                                                                                                             ],
                                                                                                                                                             paragraphReferences: [
-                                                                                                                                                                
+
                                                                                                                                                             ],
                                                                                                                                                         },
                                                                                                                             ],
@@ -4412,7 +4412,7 @@ export const Catechism: CatechismStructure = {
                                                                                                                                                                                             },
                                                                                                                                                             ],
                                                                                                                                                             paragraphReferences: [
-                                                                                                                                                                
+
                                                                                                                                                             ],
                                                                                                                                                         },
                                                                                                                             ],
@@ -4473,7 +4473,7 @@ export const Catechism: CatechismStructure = {
                                                                                                                                                                                             },
                                                                                                                                                             ],
                                                                                                                                                             paragraphReferences: [
-                                                                                                                                                                
+
                                                                                                                                                             ],
                                                                                                                                                         },
                                                                                                                             ],
@@ -4506,10 +4506,10 @@ export const Catechism: CatechismStructure = {
                                                                                                                                                         }
                                                                                                                             ],
                                                                                                                             references: [
-                                                                                                                                
+
                                                                                                                             ],
                                                                                                                             paragraphReferences: [
-                                                                                                                                
+
                                                                                                                             ],
                                                                                                                         },
                                                                                                                         {
@@ -4604,7 +4604,7 @@ export const Catechism: CatechismStructure = {
                                                                                                                                                         },
                                                                                                                             ],
                                                                                                                             paragraphReferences: [
-                                                                                                                                
+
                                                                                                                             ],
                                                                                                                         },
                                                                                                 ],
@@ -4645,7 +4645,7 @@ export const Catechism: CatechismStructure = {
                                                                                                                                                         }
                                                                                                                             ],
                                                                                                                             references: [
-                                                                                                                                
+
                                                                                                                             ],
                                                                                                                             paragraphReferences: [
                                                                                                                                 26
@@ -4681,7 +4681,7 @@ export const Catechism: CatechismStructure = {
                                                                                                                                                         }
                                                                                                                             ],
                                                                                                                             references: [
-                                                                                                                                
+
                                                                                                                             ],
                                                                                                                             paragraphReferences: [
                                                                                                                                 `12-14`
@@ -4729,10 +4729,10 @@ export const Catechism: CatechismStructure = {
                                                                                                                                                                                             }
                                                                                                                                                             ],
                                                                                                                                                             references: [
-                                                                                                                                                                
+
                                                                                                                                                             ],
                                                                                                                                                             paragraphReferences: [
-                                                                                                                                                                
+
                                                                                                                                                             ],
                                                                                                                                                         },
                                                                                                                                                         {
@@ -4757,7 +4757,7 @@ export const Catechism: CatechismStructure = {
                                                                                                                                                                                             }
                                                                                                                                                             ],
                                                                                                                                                             references: [
-                                                                                                                                                                
+
                                                                                                                                                             ],
                                                                                                                                                             paragraphReferences: [
                                                                                                                                                                 75
@@ -4869,7 +4869,7 @@ export const Catechism: CatechismStructure = {
                                                                                                                                                                                             },
                                                                                                                                                             ],
                                                                                                                                                             paragraphReferences: [
-                                                                                                                                                                
+
                                                                                                                                                             ],
                                                                                                                                                         },
                                                                                                                                                         {
@@ -4941,10 +4941,10 @@ export const Catechism: CatechismStructure = {
                                                                                                                                                         }
                                                                                                                             ],
                                                                                                                             references: [
-                                                                                                                                
+
                                                                                                                             ],
                                                                                                                             paragraphReferences: [
-                                                                                                                                
+
                                                                                                                             ],
                                                                                                                         },
                                                                                                                         {
@@ -4961,10 +4961,10 @@ export const Catechism: CatechismStructure = {
                                                                                                                                                         }
                                                                                                                             ],
                                                                                                                             references: [
-                                                                                                                                
+
                                                                                                                             ],
                                                                                                                             paragraphReferences: [
-                                                                                                                                
+
                                                                                                                             ],
                                                                                                                         },
                                                                                                 ],
@@ -5009,7 +5009,7 @@ export const Catechism: CatechismStructure = {
                                                                                                                         }
                                                                                                 ],
                                                                                                 references: [
-                                                                                                    
+
                                                                                                 ],
                                                                                                 paragraphReferences: [
                                                                                                     80
@@ -5045,7 +5045,7 @@ export const Catechism: CatechismStructure = {
                                                                                                                         }
                                                                                                 ],
                                                                                                 references: [
-                                                                                                    
+
                                                                                                 ],
                                                                                                 paragraphReferences: [
                                                                                                     60
@@ -5089,10 +5089,10 @@ export const Catechism: CatechismStructure = {
                                                                                                                         }
                                                                                                 ],
                                                                                                 references: [
-                                                                                                    
+
                                                                                                 ],
                                                                                                 paragraphReferences: [
-                                                                                                    
+
                                                                                                 ],
                                                                                             },
                                                                                             {
@@ -5142,7 +5142,7 @@ export const Catechism: CatechismStructure = {
                                                 },
                                     ],
                                     openingContent: [
-                                        
+
                                     ],
                                 },
                         ],
@@ -5184,7 +5184,7 @@ export const Catechism: CatechismStructure = {
                                                                     },
                                                     ],
                                                     paragraphReferences: [
-                                                        
+
                                                     ],
                                                 },
                                     ],
@@ -5292,7 +5292,7 @@ export const Catechism: CatechismStructure = {
                                                                                             },
                                                                         ],
                                                                         paragraphReferences: [
-                                                                            
+
                                                                         ],
                                                                     },
                                                                     {
@@ -5366,7 +5366,7 @@ export const Catechism: CatechismStructure = {
                                                                                             }
                                                                         ],
                                                                         references: [
-                                                                            
+
                                                                         ],
                                                                         paragraphReferences: [
                                                                             `42-44`
@@ -5386,7 +5386,7 @@ export const Catechism: CatechismStructure = {
                                                                                             }
                                                                         ],
                                                                         references: [
-                                                                            
+
                                                                         ],
                                                                         paragraphReferences: [
                                                                             `63-65`
@@ -5430,7 +5430,7 @@ export const Catechism: CatechismStructure = {
                                                                                             },
                                                                         ],
                                                                         paragraphReferences: [
-                                                                            
+
                                                                         ],
                                                                     },
                                                     ],
@@ -5470,7 +5470,7 @@ export const Catechism: CatechismStructure = {
                                                 },
                                     ],
                                     paragraphReferences: [
-                                        
+
                                     ],
                                 },
                         ],
@@ -5517,10 +5517,10 @@ export const Catechism: CatechismStructure = {
                                                                     }
                                                     ],
                                                     references: [
-                                                        
+
                                                     ],
                                                     paragraphReferences: [
-                                                        
+
                                                     ],
                                                 },
                                                 {
@@ -5553,7 +5553,7 @@ export const Catechism: CatechismStructure = {
                                                                     },
                                                     ],
                                                     paragraphReferences: [
-                                                        
+
                                                     ],
                                                 },
                                     ],
@@ -5586,10 +5586,10 @@ export const Catechism: CatechismStructure = {
                                                                     }
                                                     ],
                                                     references: [
-                                                        
+
                                                     ],
                                                     paragraphReferences: [
-                                                        
+
                                                     ],
                                                 },
                                     ],
@@ -5624,10 +5624,10 @@ export const Catechism: CatechismStructure = {
                                                 }
                                     ],
                                     references: [
-                                        
+
                                     ],
                                     paragraphReferences: [
-                                        
+
                                     ],
                                 },
                         ],
@@ -5739,7 +5739,7 @@ export const Catechism: CatechismStructure = {
                                                                     },
                                                     ],
                                                     paragraphReferences: [
-                                                        
+
                                                     ],
                                                 },
                                                 {
@@ -5800,7 +5800,7 @@ export const Catechism: CatechismStructure = {
                                                                     },
                                                     ],
                                                     paragraphReferences: [
-                                                        
+
                                                     ],
                                                 },
                                     ],
@@ -5841,7 +5841,7 @@ export const Catechism: CatechismStructure = {
                                                                     }
                                                     ],
                                                     references: [
-                                                        
+
                                                     ],
                                                     paragraphReferences: [
                                                         77
@@ -5877,10 +5877,10 @@ export const Catechism: CatechismStructure = {
                                                                     }
                                                     ],
                                                     references: [
-                                                        
+
                                                     ],
                                                     paragraphReferences: [
-                                                        
+
                                                     ],
                                                 },
                                                 {
@@ -5905,10 +5905,10 @@ export const Catechism: CatechismStructure = {
                                                                     }
                                                     ],
                                                     references: [
-                                                        
+
                                                     ],
                                                     paragraphReferences: [
-                                                        
+
                                                     ],
                                                 },
                                     ],
@@ -5955,7 +5955,7 @@ export const Catechism: CatechismStructure = {
                                                                     },
                                                     ],
                                                     paragraphReferences: [
-                                                        
+
                                                     ],
                                                 },
                                     ],
@@ -6040,7 +6040,7 @@ export const Catechism: CatechismStructure = {
                                                                                                                                                                                             },
                                                                                                                                                             ],
                                                                                                                                                             paragraphReferences: [
-                                                                                                                                                                
+
                                                                                                                                                             ],
                                                                                                                                                         },
                                                                                                                             ],
@@ -6081,7 +6081,7 @@ export const Catechism: CatechismStructure = {
                                                                                                                                                                                             },
                                                                                                                                                             ],
                                                                                                                                                             paragraphReferences: [
-                                                                                                                                                                
+
                                                                                                                                                             ],
                                                                                                                                                         },
                                                                                                                             ],
@@ -6131,7 +6131,7 @@ export const Catechism: CatechismStructure = {
                                                                                                                                                                                             },
                                                                                                                                                             ],
                                                                                                                                                             paragraphReferences: [
-                                                                                                                                                                
+
                                                                                                                                                             ],
                                                                                                                                                         },
                                                                                                                             ],
@@ -6170,7 +6170,7 @@ export const Catechism: CatechismStructure = {
                                                                                                                                                                                             },
                                                                                                                                                             ],
                                                                                                                                                             paragraphReferences: [
-                                                                                                                                                                
+
                                                                                                                                                             ],
                                                                                                                                                         },
                                                                                                                                                         {
@@ -6219,7 +6219,7 @@ export const Catechism: CatechismStructure = {
                                                                                                                                                                                             },
                                                                                                                                                             ],
                                                                                                                                                             paragraphReferences: [
-                                                                                                                                                                
+
                                                                                                                                                             ],
                                                                                                                                                         },
                                                                                                                             ],
@@ -6252,10 +6252,10 @@ export const Catechism: CatechismStructure = {
                                                                                                                                                                                             }
                                                                                                                                                             ],
                                                                                                                                                             references: [
-                                                                                                                                                                
+
                                                                                                                                                             ],
                                                                                                                                                             paragraphReferences: [
-                                                                                                                                                                
+
                                                                                                                                                             ],
                                                                                                                                                         },
                                                                                                                             ],
@@ -6278,7 +6278,7 @@ export const Catechism: CatechismStructure = {
                                                                                                                                                                                             }
                                                                                                                                                             ],
                                                                                                                                                             references: [
-                                                                                                                                                                
+
                                                                                                                                                             ],
                                                                                                                                                             paragraphReferences: [
                                                                                                                                                                 12
@@ -6330,10 +6330,10 @@ export const Catechism: CatechismStructure = {
                                                                                                                                                                                             }
                                                                                                                                                             ],
                                                                                                                                                             references: [
-                                                                                                                                                                
+
                                                                                                                                                             ],
                                                                                                                                                             paragraphReferences: [
-                                                                                                                                                                
+
                                                                                                                                                             ],
                                                                                                                                                         },
                                                                                                                                                         {
@@ -6365,7 +6365,7 @@ export const Catechism: CatechismStructure = {
                                                                                                                                                                                             },
                                                                                                                                                             ],
                                                                                                                                                             paragraphReferences: [
-                                                                                                                                                                
+
                                                                                                                                                             ],
                                                                                                                                                         },
                                                                                                                             ],
@@ -6420,7 +6420,7 @@ export const Catechism: CatechismStructure = {
                                                                                                                                                         },
                                                                                                                             ],
                                                                                                                             paragraphReferences: [
-                                                                                                                                
+
                                                                                                                             ],
                                                                                                                         },
                                                                                                                         {
@@ -6453,7 +6453,7 @@ export const Catechism: CatechismStructure = {
                                                                                                                                                         }
                                                                                                                             ],
                                                                                                                             references: [
-                                                                                                                                
+
                                                                                                                             ],
                                                                                                                             paragraphReferences: [
                                                                                                                                 50
@@ -6511,7 +6511,7 @@ export const Catechism: CatechismStructure = {
                                                                                                                                                                                             },
                                                                                                                                                             ],
                                                                                                                                                             paragraphReferences: [
-                                                                                                                                                                
+
                                                                                                                                                             ],
                                                                                                                                                         },
                                                                                                                             ],
@@ -6601,7 +6601,7 @@ export const Catechism: CatechismStructure = {
                                                                                                                                                         },
                                                                                                                             ],
                                                                                                                             paragraphReferences: [
-                                                                                                                                
+
                                                                                                                             ],
                                                                                                                         },
                                                                                                 ],
@@ -6626,7 +6626,7 @@ export const Catechism: CatechismStructure = {
                                                                                                                                                         }
                                                                                                                             ],
                                                                                                                             references: [
-                                                                                                                                
+
                                                                                                                             ],
                                                                                                                             paragraphReferences: [
                                                                                                                                 11,`4-6`
@@ -6646,10 +6646,10 @@ export const Catechism: CatechismStructure = {
                                                                                                                                                         }
                                                                                                                             ],
                                                                                                                             references: [
-                                                                                                                                
+
                                                                                                                             ],
                                                                                                                             paragraphReferences: [
-                                                                                                                                
+
                                                                                                                             ],
                                                                                                                         },
                                                                                                                         {
@@ -6725,7 +6725,7 @@ export const Catechism: CatechismStructure = {
                                                                                                                                                         },
                                                                                                                             ],
                                                                                                                             paragraphReferences: [
-                                                                                                                                
+
                                                                                                                             ],
                                                                                                                         },
                                                                                                 ],
@@ -6764,10 +6764,10 @@ export const Catechism: CatechismStructure = {
                                                                                                                                                         }
                                                                                                                             ],
                                                                                                                             references: [
-                                                                                                                                
+
                                                                                                                             ],
                                                                                                                             paragraphReferences: [
-                                                                                                                                
+
                                                                                                                             ],
                                                                                                                         },
                                                                                                                         {
@@ -6815,7 +6815,7 @@ export const Catechism: CatechismStructure = {
                                                                                                                                                         },
                                                                                                                             ],
                                                                                                                             paragraphReferences: [
-                                                                                                                                
+
                                                                                                                             ],
                                                                                                                         },
                                                                                                                         {
@@ -6840,10 +6840,10 @@ export const Catechism: CatechismStructure = {
                                                                                                                                                         }
                                                                                                                             ],
                                                                                                                             references: [
-                                                                                                                                
+
                                                                                                                             ],
                                                                                                                             paragraphReferences: [
-                                                                                                                                
+
                                                                                                                             ],
                                                                                                                         },
                                                                                                 ],
@@ -6880,7 +6880,7 @@ export const Catechism: CatechismStructure = {
                                                                                                                         }
                                                                                                 ],
                                                                                                 references: [
-                                                                                                    
+
                                                                                                 ],
                                                                                                 paragraphReferences: [
                                                                                                     19
@@ -6936,7 +6936,7 @@ export const Catechism: CatechismStructure = {
                                                                                                                         },
                                                                                                 ],
                                                                                                 paragraphReferences: [
-                                                                                                    
+
                                                                                                 ],
                                                                                             },
                                                                                             {
@@ -6977,7 +6977,7 @@ export const Catechism: CatechismStructure = {
                                                                                                                         },
                                                                                                 ],
                                                                                                 paragraphReferences: [
-                                                                                                    
+
                                                                                                 ],
                                                                                             },
                                                                         ],
@@ -7073,10 +7073,10 @@ export const Catechism: CatechismStructure = {
                                                                                                                         }
                                                                                                 ],
                                                                                                 references: [
-                                                                                                    
+
                                                                                                 ],
                                                                                                 paragraphReferences: [
-                                                                                                    
+
                                                                                                 ],
                                                                                             },
                                                                         ],
@@ -7085,7 +7085,7 @@ export const Catechism: CatechismStructure = {
                                                 },
                                     ],
                                     openingContent: [
-                                        
+
                                     ],
                                 },
                                 {
@@ -7195,7 +7195,7 @@ export const Catechism: CatechismStructure = {
                                                                                                                                                         },
                                                                                                                             ],
                                                                                                                             paragraphReferences: [
-                                                                                                                                
+
                                                                                                                             ],
                                                                                                                         },
                                                                                                                         {
@@ -7234,10 +7234,10 @@ export const Catechism: CatechismStructure = {
                                                                                                                                                                                             }
                                                                                                                                                             ],
                                                                                                                                                             references: [
-                                                                                                                                                                
+
                                                                                                                                                             ],
                                                                                                                                                             paragraphReferences: [
-                                                                                                                                                                
+
                                                                                                                                                             ],
                                                                                                                                                         },
                                                                                                                                                         {
@@ -7319,7 +7319,7 @@ export const Catechism: CatechismStructure = {
                                                                                                                                                                                             }
                                                                                                                                                             ],
                                                                                                                                                             references: [
-                                                                                                                                                                
+
                                                                                                                                                             ],
                                                                                                                                                             paragraphReferences: [
                                                                                                                                                                 39
@@ -7377,7 +7377,7 @@ export const Catechism: CatechismStructure = {
                                                                                                                                                                                             },
                                                                                                                                                             ],
                                                                                                                                                             paragraphReferences: [
-                                                                                                                                                                
+
                                                                                                                                                             ],
                                                                                                                                                         },
                                                                                                                             ],
@@ -7426,7 +7426,7 @@ export const Catechism: CatechismStructure = {
                                                                                                                                                                                             },
                                                                                                                                                             ],
                                                                                                                                                             paragraphReferences: [
-                                                                                                                                                                
+
                                                                                                                                                             ],
                                                                                                                                                         },
                                                                                                                             ],
@@ -7530,7 +7530,7 @@ export const Catechism: CatechismStructure = {
                                                                                                                                                         },
                                                                                                                             ],
                                                                                                                             paragraphReferences: [
-                                                                                                                                
+
                                                                                                                             ],
                                                                                                                         },
                                                                                                                         {
@@ -7570,7 +7570,7 @@ export const Catechism: CatechismStructure = {
                                                                                                                                                         },
                                                                                                                             ],
                                                                                                                             paragraphReferences: [
-                                                                                                                                
+
                                                                                                                             ],
                                                                                                                         },
                                                                                                                         {
@@ -7603,10 +7603,10 @@ export const Catechism: CatechismStructure = {
                                                                                                                                                         }
                                                                                                                             ],
                                                                                                                             references: [
-                                                                                                                                
+
                                                                                                                             ],
                                                                                                                             paragraphReferences: [
-                                                                                                                                
+
                                                                                                                             ],
                                                                                                                         },
                                                                                                 ],
@@ -7648,7 +7648,7 @@ export const Catechism: CatechismStructure = {
                                                                                                                                                         },
                                                                                                                             ],
                                                                                                                             paragraphReferences: [
-                                                                                                                                
+
                                                                                                                             ],
                                                                                                                         },
                                                                                                 ],
@@ -7685,7 +7685,7 @@ export const Catechism: CatechismStructure = {
                                                                                                                         }
                                                                                                 ],
                                                                                                 references: [
-                                                                                                    
+
                                                                                                 ],
                                                                                                 paragraphReferences: [
                                                                                                     49
@@ -7763,7 +7763,7 @@ export const Catechism: CatechismStructure = {
                                                                                                                         }
                                                                                                 ],
                                                                                                 references: [
-                                                                                                    
+
                                                                                                 ],
                                                                                                 paragraphReferences: [
                                                                                                     24,18
@@ -7791,7 +7791,7 @@ export const Catechism: CatechismStructure = {
                                                                                                                         }
                                                                                                 ],
                                                                                                 references: [
-                                                                                                    
+
                                                                                                 ],
                                                                                                 paragraphReferences: [
                                                                                                     78
@@ -7827,10 +7827,10 @@ export const Catechism: CatechismStructure = {
                                                                                                                         }
                                                                                                 ],
                                                                                                 references: [
-                                                                                                    
+
                                                                                                 ],
                                                                                                 paragraphReferences: [
-                                                                                                    
+
                                                                                                 ],
                                                                                             },
                                                                                             {
@@ -7907,7 +7907,7 @@ export const Catechism: CatechismStructure = {
                                                                                             }
                                                                         ],
                                                                         references: [
-                                                                            
+
                                                                         ],
                                                                         paragraphReferences: [
                                                                             `78-80`
@@ -7956,7 +7956,7 @@ export const Catechism: CatechismStructure = {
                                                                                             },
                                                                         ],
                                                                         paragraphReferences: [
-                                                                            
+
                                                                         ],
                                                                     },
                                                     ],
@@ -7989,7 +7989,7 @@ export const Catechism: CatechismStructure = {
                                                                                             }
                                                                         ],
                                                                         references: [
-                                                                            
+
                                                                         ],
                                                                         paragraphReferences: [
                                                                             68
@@ -8017,10 +8017,10 @@ export const Catechism: CatechismStructure = {
                                                                                             }
                                                                         ],
                                                                         references: [
-                                                                            
+
                                                                         ],
                                                                         paragraphReferences: [
-                                                                            
+
                                                                         ],
                                                                     },
                                                     ],
@@ -8061,7 +8061,7 @@ export const Catechism: CatechismStructure = {
                                                                                             },
                                                                         ],
                                                                         paragraphReferences: [
-                                                                            
+
                                                                         ],
                                                                     },
                                                     ],
@@ -8070,12 +8070,12 @@ export const Catechism: CatechismStructure = {
                                 },
                         ],
                         openingContent: [
-                            
+
                         ],
                     },
                 ],
                 openingContent: [
-                    
+
                 ],
             }
     ]
