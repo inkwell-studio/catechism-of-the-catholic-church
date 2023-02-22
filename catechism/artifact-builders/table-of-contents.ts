@@ -1,7 +1,7 @@
 // deno-lint-ignore-file
 import { Catechism } from '../source/catechism.ts';
-import { Content, ContentBase, ContentContainer, Entry, Paragraph, TableOfContents } from '../source/types/types.ts';
-import { getParagraphs, hasMainContent, hasOpeningContent } from '../utils.ts';
+import { Content, ContentBase, ContentContainer, Entry, TableOfContents } from '../source/types/types.ts';
+import { getParagraphs, hasMainContent } from '../utils.ts';
 
 export function buildAndWrite(): void {
     const tableOfContents = build();
@@ -26,7 +26,7 @@ function buildEntry<T extends ContentBase | ContentBase & ContentContainer>(cont
 
     return {
         contentType: content.contentType,
-        title: getTitle(content.contentType),
+        title: getTitle(content),
         url: 'TODO',
         firstParagraphNumber,
         children: buildChildEntries(content),
@@ -66,8 +66,8 @@ function includible<T extends ContentBase>(content: T): boolean {
         Content.IN_BRIEF === content.contentType;
 }
 
-function getTitle(contentType: Content): string {
-    return Content[contentType];
+function getTitle(content: ContentBase): string {
+    return `${Content[content.contentType]} ${content.pathID}`;
 }
 
 /**
