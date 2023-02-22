@@ -29,12 +29,14 @@ It is available at [https://www.catholiccatechism.app/](https://www.catholiccate
 
 ### Tasks
 
-- `deno fmt` (code formatting)
-- `deno test`
+- `deno task pre-commit` (linting, testing, formatting, and artifact creation)
 - `deno task build-mock-data`
 - `deno task web-app-start`
 
-### Committing changes
+### Committing to `master`
+
+The `pre-commit` task should be successfully executed before committing to ensure that the code is linted, correct, and
+formatted, and that the artifacts are kept in-sync with the source.
 
 Commit messages should follow the following pattern:
 
