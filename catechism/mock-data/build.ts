@@ -9,13 +9,11 @@ import {
     Content,
     ContentBase,
     ContentContainer,
-    Paragraph,
-    Part,
     PartEnum,
-    Prologue,
 } from '../source/types/types.ts';
 import { NumberOrNumberRange } from '../source/types/number-or-number-range.ts';
 import { PathID } from '../source/types/path-id.ts';
+import { getMainAndOpeningContent, getParagraphs, hasMainContent, hasOpeningContent } from '../utils.ts';
 
 run();
 
@@ -97,14 +95,6 @@ function getPathID(index: number, parentPathID: PathID): PathID {
     return `${parentPathID}-${index}` as PathID;
 }
 
-function hasOpeningContent<T extends ContentBase>(c: T): boolean {
-    return Object.hasOwn(c, 'openingContent') && Array.isArray((c as any).openingContent);
-}
-
-function hasMainContent<T extends ContentBase>(c: T): boolean {
-    return Object.hasOwn(c, 'mainContent') && Array.isArray((c as any).mainContent);
-}
-
 function setParagraphNumbers(catechism: CatechismStructure): CatechismStructure {
     catechism = structuredClone(catechism);
 
@@ -124,7 +114,7 @@ function setParagraphNumbersHelper<T extends ContentBase & ContentContainer>(
     content.forEach((c) => {
         if (Content.PARAGRAPH === c.contentType) {
             (c as any)['paragraphNumber'] = nextParagraphNumber++;
-        } else if (Array.isArray(c.mainContent)) {
+        } else if (hasMainContent(c)) {
             const mainAndOpeningContent = getMainAndOpeningContent(c);
             const results = setParagraphNumbersHelper(mainAndOpeningContent, nextParagraphNumber);
             nextParagraphNumber = results.nextParagraphNumber;
@@ -137,30 +127,6 @@ function setParagraphNumbersHelper<T extends ContentBase & ContentContainer>(
     });
 
     return { content, nextParagraphNumber };
-}
-
-/**
- * @returns the `Paragraph`s of the Catechism in the order that they are listed
- */
-function getParagraphs(catechism: CatechismStructure): Array<Paragraph> {
-    const allContent = getAllContent(catechism);
-    return helper([], allContent);
-
-    function helper<T extends ContentBase & ContentContainer>(
-        paragraphs: Array<Paragraph>,
-        content: Array<T>,
-    ): Array<Paragraph> {
-        content.forEach((c) => {
-            if (Content.PARAGRAPH === c.contentType) {
-                paragraphs.push(c as unknown as Paragraph);
-            } else if (Array.isArray(c.mainContent)) {
-                const childContent = getMainAndOpeningContent(c);
-                return helper(paragraphs, childContent);
-            }
-        });
-
-        return paragraphs;
-    }
 }
 
 function validateCatechism(catechism: CatechismStructure): boolean {
@@ -220,7 +186,7 @@ function buildParagraphCrossReferences(
                 const references = buildReferences(maxParagraphNumber);
                 (c as any)['paragraphReferences'] = references;
                 crossReferenceCount += references.length;
-            } else if (Content.IN_BRIEF !== c.contentType && Array.isArray(c.mainContent)) {
+            } else if (Content.IN_BRIEF !== c.contentType && hasMainContent(c)) {
                 const mainAndOpeningContent = getMainAndOpeningContent(c);
 
                 const results = helper(
@@ -261,16 +227,5 @@ function buildParagraphCrossReferences(
             return randomInt(paragraphLimits);
         }
     }
-}
-
-// TODO: Remove, if possible
-function getAllContent(catechism: CatechismStructure): Array<Prologue | Part> {
-    return [catechism.prologue, ...catechism.parts];
-}
-
-function getMainAndOpeningContent<T extends ContentBase & ContentContainer>(c: T): Array<T> {
-    const openingContent = Object.hasOwn(c, 'openingContent') ? (c as any)['openingContent'] : [];
-
-    return [...openingContent, ...c.mainContent];
 }
 //#endregion

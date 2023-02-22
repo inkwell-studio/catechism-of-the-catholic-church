@@ -1,42 +1,12 @@
 import { Catechism } from './catechism.ts';
-import { PathID } from './types/path-id.ts';
-import { Subarticle } from './types/subarticle.ts';
+import { Content, ContentBase, PathID, Subarticle } from './types/types.ts';
+import { getParagraphs } from '../utils.ts';
 import { assert, assertStrictEquals } from '../../dependencies.ts';
-
-import { CatechismStructure, Content, ContentBase, ContentContainer, Paragraph } from './types/types.ts';
 
 console.log('\nCatechism data ...');
 
 const paragraphs = getParagraphs(Catechism);
 
-//#region helpers
-/**
- * @returns the `Paragraph`s of the Catechism in the order that they are listed
- */
-function getParagraphs(catechism: CatechismStructure): Array<Paragraph> {
-    return helper([], [catechism.prologue, ...catechism.parts]);
-
-    function helper<T extends ContentBase & ContentContainer>(
-        paragraphs: Array<Paragraph>,
-        content: Array<T>,
-    ): Array<Paragraph> {
-        content.forEach((c) => {
-            if (Content.PARAGRAPH === c.contentType) {
-                paragraphs.push(c as unknown as Paragraph);
-            } else if (Array.isArray(c.mainContent)) {
-                // deno-lint-ignore no-explicit-any
-                const openingContent = Object.hasOwn(c, 'openingContent') ? (c as any)['openingContent'] : [];
-                const childContent = [...openingContent, ...c.mainContent] as Array<ContentBase & ContentContainer>;
-                return helper(paragraphs, childContent);
-            }
-        });
-
-        return paragraphs;
-    }
-}
-//#endregion
-
-//#region tests
 Deno.test('the Prologue pathIDs are correctly set', () => {
     Catechism.prologue.mainContent.forEach((c, index) => {
         const prologuePathIdPrefix = '0-';
@@ -98,4 +68,3 @@ Deno.test('all paragraphs have content', () => {
         assert(paragraph.mainContent.length > 0, `paragraph ${paragraph.paragraphNumber} has no content`)
     );
 });
-//#endregion

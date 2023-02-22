@@ -3,6 +3,7 @@ import { TextKeyAndValue } from './text-key-and-value.ts';
 import { CatechismStructure } from '../../source/types/catechism-structure.ts';
 import { Content } from '../../source/types/content.ts';
 import { ContentBase, Paragraph } from '../../source/types/types.ts';
+import { hasMainContent, hasOpeningContent } from "../../utils.ts";
 
 type ContentOccurrences = Map<Content, number>;
 
@@ -54,17 +55,17 @@ export function determineTextKeysAndValuesAndUpdateCatechismObject(
                 (c as any)[property] = 'TextKey.' + textKeyAndValue.key;
             }
 
-            const hasOpeningContent = Object.hasOwn(c, 'openingContent') && Array.isArray((c as any)['openingContent']);
-            if (hasOpeningContent) {
-                const openingContent = (c as any)['openingContent'];
+            const openingContentExists = hasOpeningContent(c);
+            if (openingContentExists) {
+                const openingContent = (c as any).openingContent;
                 const results = helper(openingContent, c, newPath, texts);
                 texts = results.texts;
                 (c as any)['openingContent'] = results.content;
             }
 
-            const hasMainContent = Object.hasOwn(c, 'mainContent') && Array.isArray((c as any)['mainContent']);
-            if (hasMainContent) {
-                const mainContent = (c as any)['mainContent'];
+            const mainContentExists = hasMainContent(c);
+            if (mainContentExists) {
+                const mainContent = (c as any).mainContent;
                 const results = helper(mainContent, c, newPath, texts);
                 texts = results.texts;
                 (c as any)['mainContent'] = results.content;
