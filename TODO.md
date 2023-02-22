@@ -1,6 +1,23 @@
 # Tasks
 
-- add GitHooks for linting and formatting on commits [to just `master`, if possible]
+## Table of Contents
+- depth:
+  - PART
+    - SECTION
+      - CHAPTER
+        - ARTICLE
+          - SUB ARTICLE
+          - ARTICLE PARAGRAPH
+            - SUB ARTICLE
+      - ARTICLE
+        - SUB ARTICLE
+        - ARTICLE PARAGRAPH
+            - SUB ARTICLE
+
+      ** always ** > IN BRIEF
+
+- include `In Brief` references
+
 - render all content
   - citation markers
   - opening content

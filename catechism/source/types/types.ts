@@ -26,6 +26,7 @@ export * from './reference-base.ts';
 export * from './section.ts';
 export * from './special-content.ts';
 export * from './subarticle.ts';
+export * from './table-of-contents.ts';
 export * from './ten-commandments.ts';
 export * from './text-container.ts';
 export * from './text-content.ts';
