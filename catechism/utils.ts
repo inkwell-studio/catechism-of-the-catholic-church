@@ -34,6 +34,13 @@ function getAllContent(catechism: CatechismStructure): Array<Prologue | Part> {
  */
 export function getAllParagraphs(catechism: CatechismStructure): Array<Paragraph> {
     const allContent = getAllContent(catechism);
+    return getParagraphs(allContent);
+}
+
+/**
+ * @returns the `Paragraph`s of the given content in the order that they are listed
+ */
+export function getParagraphs<T extends ContentBase & ContentContainer>(allContent: Array<T>): Array<Paragraph> {
     return helper([], allContent);
 
     function helper<T extends ContentBase & ContentContainer>(
