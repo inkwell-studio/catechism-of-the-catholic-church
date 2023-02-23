@@ -17,7 +17,6 @@ export * from './other-source-enum.ts';
 export * from './paragraph-group.ts';
 export * from './paragraph.ts';
 export * from './part.ts';
-export * from './part-enum.ts';
 export * from './path-id.ts';
 export * from './prologue.ts';
 export * from './reference-enum.ts';

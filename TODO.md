@@ -1,6 +1,5 @@
 # Tasks
 
-- determine the URL values for the _Table of Contents_ entries (see the `TODO` note in `catechism/artifact-builders/table-of-contents.ts`)
 - write `catechism/artifacts/table-of-contents.json` (see `catechism/artifact-builders/table-of-contents.ts :: write()`)
 - implement the _Table of Contents_ page using the new `table-of-contents.json` file
 - improve the architecture of the `<ContentContainer>` and `<Content>` components (see note in `[...index].tsx`)

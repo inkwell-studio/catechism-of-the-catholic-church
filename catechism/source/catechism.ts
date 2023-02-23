@@ -4,7 +4,6 @@ import {
     CatechismStructure,
     Content,
     OtherSourceEnum,
-    PartEnum,
     ReferenceEnum,
     TextKey,
 } from './types/types.ts';
@@ -489,7 +488,7 @@ export const Catechism: CatechismStructure = {
                     {
                 contentType: Content.PART,
                 pathID: '1',
-                part: PartEnum.PART_ONE,
+                partNumber: 1,
                 title: TextKey.PART_01__TITLE,
                 mainContent: [
                                     {
@@ -3511,7 +3510,7 @@ export const Catechism: CatechismStructure = {
             },            {
                 contentType: Content.PART,
                 pathID: '2',
-                part: PartEnum.PART_TWO,
+                partNumber: 2,
                 title: TextKey.PART_02__TITLE,
                 mainContent: [
                                     {
@@ -5966,7 +5965,7 @@ export const Catechism: CatechismStructure = {
             },            {
                 contentType: Content.PART,
                 pathID: '3',
-                part: PartEnum.PART_THREE,
+                partNumber: 3,
                 title: TextKey.PART_03__TITLE,
                 mainContent: [
                                     {

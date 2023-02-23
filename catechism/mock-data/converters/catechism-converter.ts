@@ -14,7 +14,6 @@ import {
     Paragraph,
     ParagraphGroup,
     Part,
-    PartEnum,
     Prologue,
     Reference,
     Section,
@@ -39,7 +38,6 @@ import {
     CatechismStructure,
     Content,
     OtherSourceEnum,
-    PartEnum,
     ReferenceEnum,
     TextKey,
 } from './types/types.ts';
@@ -87,7 +85,7 @@ function getSourceCodeForPart(part: Part): string {
         {
             contentType: Content.PART,
             pathID: '${part.pathID}',
-            part: PartEnum.${getPartKey(part.part)},
+            partNumber: ${part.partNumber},
             title: ${part.title},
             mainContent: [
                 ${getSourceCodeForContent(part.mainContent, 2)}
@@ -97,11 +95,6 @@ function getSourceCodeForPart(part: Part): string {
             ],
         }`,
     );
-}
-
-function getPartKey(part: PartEnum): string {
-    const match = Object.entries(PartEnum).find((e) => part === e[1]);
-    return match?.[1] ?? '';
 }
 
 function getSourceCodeForContent<T extends ContentBase>(content: Array<T>, indentationLevel: number): string {

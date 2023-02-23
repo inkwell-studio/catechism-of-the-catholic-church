@@ -1,4 +1,4 @@
-import { BibleBook, Content, OtherSourceEnum, PartEnum, ReferenceEnum, TextKey } from './types.ts';
+import { BibleBook, Content, OtherSourceEnum, ReferenceEnum, TextKey } from './types.ts';
 import { assertStrictEquals } from '../../../dependencies.ts';
 
 console.log('\nEnums ...');
@@ -7,7 +7,6 @@ Deno.test('have unique values', () => {
         ...Object.values(BibleBook),
         ...Object.values(Content),
         ...Object.values(OtherSourceEnum),
-        ...Object.values(PartEnum),
         ...Object.values(ReferenceEnum),
         ...Object.values(TextKey),
     ];

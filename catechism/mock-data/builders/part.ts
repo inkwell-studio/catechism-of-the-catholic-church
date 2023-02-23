@@ -1,5 +1,5 @@
 import { TextKey } from '../../source/types/text-key.ts';
-import { Content, ParagraphGroup, Part, PartEnum, Section, TextContent } from '../../source/types/types.ts';
+import { Content, ParagraphGroup, Part, Section, TextContent } from '../../source/types/types.ts';
 import { Limits, Probability } from '../config.ts';
 import { getTitleText } from './general.ts';
 import { buildParagraphGroup } from './paragraph-group.ts';
@@ -7,15 +7,15 @@ import { buildSection } from './section.ts';
 import { buildTextContent } from './text-content.ts';
 import { chance, intArrayOfRandomLength, randomBoolean } from '../utils.ts';
 
-export function buildPart(part: PartEnum, index: number): Part {
+export function buildPart(partNumber: number): Part {
     const openingContent = buildOpeningContent();
     const mainContent = buildSections();
 
     return {
         contentType: Content.PART,
-        pathID: `${index}`,
-        part,
-        title: getTitleText(Content.PART, index) as TextKey,
+        pathID: `${partNumber}`,
+        partNumber,
+        title: getTitleText(Content.PART, partNumber) as TextKey,
         mainContent,
         openingContent,
     };

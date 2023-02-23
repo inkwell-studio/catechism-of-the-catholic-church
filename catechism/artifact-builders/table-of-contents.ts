@@ -1,6 +1,18 @@
 // deno-lint-ignore-file
 import { Catechism } from '../source/catechism.ts';
-import { Content, ContentBase, ContentContainer, Entry, TableOfContents } from '../source/types/types.ts';
+import { ArticleParagraph } from '../source/types/article-paragraph.ts';
+import { Subarticle } from '../source/types/subarticle.ts';
+import {
+    Article,
+    Chapter,
+    Content,
+    ContentBase,
+    ContentContainer,
+    Entry,
+    Part,
+    Section,
+    TableOfContents,
+} from '../source/types/types.ts';
 import { getParagraphs, hasMainContent } from '../utils.ts';
 
 export function buildAndWrite(): void {
@@ -11,12 +23,15 @@ export function buildAndWrite(): void {
 //#region builders
 function build(): TableOfContents {
     return {
-        prologue: buildEntry(Catechism.prologue),
-        parts: Catechism.parts.map((part) => buildEntry(part)),
+        prologue: buildEntry(Catechism.prologue, null),
+        parts: Catechism.parts.map((part) => buildEntry(part, null)),
     };
 }
 
-function buildEntry<T extends ContentBase | ContentBase & ContentContainer>(content: T): Entry {
+function buildEntry<T extends ContentBase | ContentBase & ContentContainer>(
+    content: T,
+    parentUrl: string | null,
+): Entry {
     const firstParagraphNumber = getFirstParagraphNumber(content);
     if (typeof firstParagraphNumber !== 'number') {
         throw Error(
@@ -24,21 +39,26 @@ function buildEntry<T extends ContentBase | ContentBase & ContentContainer>(cont
         );
     }
 
+    const url = getUrl(content, parentUrl);
+
     return {
         contentType: content.contentType,
         title: getTitle(content),
-        url: 'TODO',
+        url,
         firstParagraphNumber,
-        children: buildChildEntries(content),
+        children: buildChildEntries(content, url),
     };
 }
 
-function buildChildEntries<T extends ContentBase | ContentBase & ContentContainer>(content: T): Array<Entry> {
+function buildChildEntries<T extends ContentBase | ContentBase & ContentContainer>(
+    content: T,
+    parentUrl: string,
+): Array<Entry> {
     const mainContentExists = hasMainContent(content);
     if (mainContentExists) {
         return (content as ContentContainer).mainContent
-            .filter((content) => includible(content))
-            .map((child) => buildEntry(child));
+            .filter((content) => includeInTableOfContents(content))
+            .map((child) => buildEntry(child, parentUrl));
     } else {
         return [];
     }
@@ -55,7 +75,7 @@ function write(tableOfContents: TableOfContents): void {
 /**
  * @returns `true` if the content should be included in the Table of Content, and `false` if not
  */
-function includible<T extends ContentBase>(content: T): boolean {
+function includeInTableOfContents<T extends ContentBase>(content: T): boolean {
     return Content.PROLOGUE === content.contentType ||
         Content.PART === content.contentType ||
         Content.SECTION === content.contentType ||
@@ -68,6 +88,37 @@ function includible<T extends ContentBase>(content: T): boolean {
 
 function getTitle(content: ContentBase): string {
     return `${Content[content.contentType]} ${content.pathID}`;
+}
+
+function getUrl<T extends ContentBase>(content: T, parentUrl: string | null): string {
+    const kind = content.contentType.toLowerCase().replaceAll('_', '-');
+    let segment = kind;
+
+    if (Content.PROLOGUE !== content.contentType && Content.IN_BRIEF !== content.contentType) {
+        segment += '-' + getNumber(content);
+    }
+
+    return parentUrl ? parentUrl + `/${segment}` : segment;
+}
+
+function getNumber<T extends ContentBase>(content: T): number {
+    if (Content.PART === content.contentType) {
+        return (content as unknown as Part).partNumber;
+    } else if (Content.SECTION === content.contentType) {
+        return (content as unknown as Section).sectionNumber;
+    } else if (Content.CHAPTER === content.contentType) {
+        return (content as unknown as Chapter).chapterNumber;
+    } else if (Content.ARTICLE === content.contentType) {
+        return (content as unknown as Article).articleNumber;
+    } else if (Content.ARTICLE_PARAGRAPH === content.contentType) {
+        return (content as unknown as ArticleParagraph).articleParagraphNumber;
+    } else if (Content.SUB_ARTICLE === content.contentType) {
+        return (content as unknown as Subarticle).subarticleNumber;
+    } else {
+        throw Error(
+            `An unexpected content type was encountered: ${content.contentType}`,
+        );
+    }
 }
 
 /**

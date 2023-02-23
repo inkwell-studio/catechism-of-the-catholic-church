@@ -4,7 +4,7 @@ import { buildPrologue } from './builders/prologue.ts';
 import { Limits, Probability } from './config.ts';
 import { chance, intArrayOfRandomLength, MinMax, randomInt } from './utils.ts';
 import { writeSourceCode } from './write.ts';
-import { CatechismStructure, Content, ContentBase, ContentContainer, PartEnum } from '../source/types/types.ts';
+import { CatechismStructure, Content, ContentBase, ContentContainer } from '../source/types/types.ts';
 import { NumberOrNumberRange } from '../source/types/number-or-number-range.ts';
 import { PathID } from '../source/types/path-id.ts';
 import { getAllParagraphs, getMainAndOpeningContent, hasMainContent, hasOpeningContent } from '../utils.ts';
@@ -23,9 +23,9 @@ function buildMockData(): CatechismStructure {
     let catechism = {
         prologue: buildPrologue('0'),
         parts: [
-            buildPart(PartEnum.PART_ONE, 1),
-            buildPart(PartEnum.PART_TWO, 2),
-            buildPart(PartEnum.PART_THREE, 3),
+            buildPart(1),
+            buildPart(2),
+            buildPart(3),
         ],
     };
 
