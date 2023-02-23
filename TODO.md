@@ -1,6 +1,5 @@
 # Tasks
 
-- write `catechism/artifacts/table-of-contents.json` (see `catechism/artifact-builders/table-of-contents.ts :: write()`)
 - implement the _Table of Contents_ page using the new `table-of-contents.json` file
 - improve the architecture of the `<ContentContainer>` and `<Content>` components (see note in `[...index].tsx`)
 

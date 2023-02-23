@@ -14,6 +14,7 @@ import {
     TableOfContents,
 } from '../source/types/types.ts';
 import { getParagraphs, hasMainContent } from '../utils.ts';
+import { join } from '../../dependencies.ts';
 
 export function buildAndWrite(): void {
     const tableOfContents = build();
@@ -67,7 +68,10 @@ function buildChildEntries<T extends ContentBase | ContentBase & ContentContaine
 
 //#region writers
 function write(tableOfContents: TableOfContents): void {
-    // TODO: Implement
+    Deno.writeTextFileSync(
+        join('catechism/artifacts', 'table-of-contents.json'),
+        JSON.stringify(tableOfContents, undefined, '    '),
+    );
 }
 //#endregion
 
