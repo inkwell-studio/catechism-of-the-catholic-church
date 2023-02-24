@@ -1,6 +1,6 @@
 import { Content } from './content.ts';
 
-export type TableOfContents = {
+export type TableOfContentsType = {
     readonly prologue: Entry;
     readonly parts: Array<Entry>;
 };

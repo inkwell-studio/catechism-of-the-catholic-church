@@ -11,7 +11,7 @@ import {
     Entry,
     Part,
     Section,
-    TableOfContents,
+    TableOfContentsType,
 } from '../source/types/types.ts';
 import { getParagraphs, hasMainContent } from '../utils.ts';
 import { join } from '../../dependencies.ts';
@@ -22,16 +22,17 @@ export function buildAndWrite(): void {
 }
 
 //#region builders
-function build(): TableOfContents {
+function build(): TableOfContentsType {
+    const contentRoot = '/read';
     return {
-        prologue: buildEntry(Catechism.prologue, null),
-        parts: Catechism.parts.map((part) => buildEntry(part, null)),
+        prologue: buildEntry(Catechism.prologue, contentRoot),
+        parts: Catechism.parts.map((part) => buildEntry(part, contentRoot)),
     };
 }
 
 function buildEntry<T extends ContentBase | ContentBase & ContentContainer>(
     content: T,
-    parentUrl: string | null,
+    parentUrl: string,
 ): Entry {
     const firstParagraphNumber = getFirstParagraphNumber(content);
     if (typeof firstParagraphNumber !== 'number') {
@@ -67,7 +68,7 @@ function buildChildEntries<T extends ContentBase | ContentBase & ContentContaine
 //#endregion
 
 //#region writers
-function write(tableOfContents: TableOfContents): void {
+function write(tableOfContents: TableOfContentsType): void {
     Deno.writeTextFileSync(
         join('catechism/artifacts', 'table-of-contents.json'),
         JSON.stringify(tableOfContents, undefined, '    '),
@@ -94,7 +95,7 @@ function getTitle(content: ContentBase): string {
     return `${Content[content.contentType]} ${content.pathID}`;
 }
 
-function getUrl<T extends ContentBase>(content: T, parentUrl: string | null): string {
+function getUrl<T extends ContentBase>(content: T, parentUrl: string): string {
     const kind = content.contentType.toLowerCase().replaceAll('_', '-');
     let segment = kind;
 
@@ -102,7 +103,7 @@ function getUrl<T extends ContentBase>(content: T, parentUrl: string | null): st
         segment += '-' + getNumber(content);
     }
 
-    return parentUrl ? parentUrl + `/${segment}` : segment;
+    return parentUrl + '/' + segment;
 }
 
 function getNumber<T extends ContentBase>(content: T): number {
