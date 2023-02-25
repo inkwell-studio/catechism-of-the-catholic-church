@@ -1,3 +1,5 @@
+import { Fragment } from 'preact';
+
 import { changelog, CodeChanges, Commit } from '../data/changelog.ts';
 import { state } from '../state/state.ts';
 
@@ -12,7 +14,7 @@ export default function Changelog() {
                 <button onClick={close} class='absolute top-2 right-2 rounded-md p-1 hover:bg-red-900/15'>Close</button>
                 <strong class='text-xl font-bold'>Notable updates</strong>
                 <ol class='space-y-6'>
-                    {changelog.map((changes) => Changes(changes))}
+                    {changelog.map((changes) => <Fragment key={changes}>{Changes(changes)}</Fragment>)}
                 </ol>
                 <a
                     class='hover:underline'
@@ -31,7 +33,7 @@ function Changes(changes: CodeChanges) {
         <div>
             <strong className='font-bold'>{changes.date.toLocaleDateString()}</strong>
             <ol class='list-disc list-inside font-sans'>
-                {changes.commits.map((c) => <li>{Commit(c)}</li>)}
+                {changes.commits.map((c) => <li key={c}>{Commit(c)}</li>)}
             </ol>
         </div>
     );

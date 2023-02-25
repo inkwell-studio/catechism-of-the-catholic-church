@@ -1,4 +1,4 @@
-import { JSX } from 'preact';
+import { Fragment, JSX } from 'preact';
 
 import { state } from '../state/state.ts';
 import { getContent } from '../utils/content.ts';
@@ -26,7 +26,7 @@ export default function Content(): JSX.Element {
         return Intro();
     } else {
         const content = getContent(state.value.path);
-        return <>{content.map((c) => ContentBase(c))}</>;
+        return <>{ContentBaseArray(content)}</>;
     }
 }
 
@@ -81,7 +81,7 @@ function ArticleContent(article: Article) {
     return (
         <>
             <h4 class='text-3xl'>{getText(article.title)}</h4>
-            {article.mainContent.map((c) => ContentBase(c))}
+            {ContentBaseArray(article.mainContent)}
         </>
     );
 }
@@ -93,7 +93,7 @@ function ArticleParagraphContent(articleParagraph: ArticleParagraph) {
             <h5 class='text-2xl'>
                 {getText(articleParagraph.title)}
             </h5>
-            {articleParagraph.mainContent.map((c) => ContentBase(c))}
+            {ContentBaseArray(articleParagraph.mainContent)}
         </>
     );
 }
@@ -112,7 +112,7 @@ function ChapterContent(chapter: Chapter) {
     return (
         <>
             <h3 class='text-4xl'>{getText(chapter.title)}</h3>
-            {chapter.mainContent.map((c) => ContentBase(c))}
+            {ContentBaseArray(chapter.mainContent)}
         </>
     );
 }
@@ -122,7 +122,7 @@ function InBriefContent(inBrief: InBrief) {
         <div class='bg-white bg-opacity-20 border border-red-900/15 border-2 rounded p-3 my-4'>
             <strong class='font-sans text-lg text-purple-900 block mb-1'>In Brief</strong>
             <ol>
-                {inBrief.mainContent.map((c) => <li class='mb-2'>{ContentBase(c)}</li>)}
+                {inBrief.mainContent.map((c) => <li key={c} class='mb-2'>{ContentBase(c)}</li>)}
             </ol>
         </div>
     );
@@ -147,7 +147,7 @@ function ParagraphGroupContent(paragraphGroup: ParagraphGroup) {
     return (
         <>
             <h6 class='text-lg'>{getText(paragraphGroup.title)}</h6>
-            {paragraphGroup.mainContent.map((c) => ContentBase(c))}
+            {ContentBaseArray(paragraphGroup.mainContent)}
         </>
     );
 }
@@ -157,7 +157,7 @@ function PartContent(part: Part) {
     return (
         <>
             <h1 class='text-6xl'>{getText(part.title)}</h1>
-            {part.mainContent.map((c) => ContentBase(c))}
+            {ContentBaseArray(part.mainContent)}
         </>
     );
 }
@@ -167,7 +167,7 @@ function SectionContent(section: Section) {
     return (
         <>
             <h2 class='text-5xl'>{getText(section.title)}</h2>
-            {section.mainContent.map((c) => ContentBase(c))}
+            {ContentBaseArray(section.mainContent)}
         </>
     );
 }
@@ -177,7 +177,7 @@ function SubarticleContent(subarticle: Subarticle) {
     return (
         <>
             <h6 class='text-xl'>{getText(subarticle.title)}</h6>
-            {subarticle.mainContent.map((c) => ContentBase(c))}
+            {ContentBaseArray(subarticle.mainContent)}
         </>
     );
 }
@@ -190,9 +190,9 @@ function TextContainerArray(array: Array<ContentBase | TextContainer>) {
                 ContentEnum.TEXT_CONTAINER === array[index - 1].contentType;
             const spacer = precedingContentWasTextContainer ? ' ' : '';
 
-            return <>{spacer}{TextContainerContent(c as TextContainer)}</>;
+            return <Fragment key={c}>{spacer}{TextContainerContent(c as TextContainer)}</Fragment>;
         } else {
-            return ContentBase(c);
+            return <Fragment key={c}>{ContentBase(c)}</Fragment>;
         }
     });
 }
@@ -207,7 +207,7 @@ function TextContainerContent(textContainer: TextContainer) {
                 {textContainer.mainContent
                     .map((text, index) => {
                         const lastFragment = index === textContainer.mainContent.length - 1;
-                        return PlainText(text as Text, lastFragment);
+                        return <Fragment key={text}>{PlainText(text as Text, lastFragment)}</Fragment>;
                     })}
             </span>
         </span>
@@ -251,4 +251,8 @@ function PlainText(text: Text, lastFragment: boolean) {
             </span>
         );
     }
+}
+
+function ContentBaseArray<T extends ContentBase>(content: Array<T>) {
+    return content.map((c) => <Fragment key={c}>{ContentBase(c)}</Fragment>);
 }

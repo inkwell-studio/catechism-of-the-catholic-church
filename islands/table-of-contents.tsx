@@ -1,3 +1,5 @@
+import { Fragment } from 'preact';
+
 import tableOfContents from '../catechism/artifacts/table-of-contents.json' assert { type: 'json' };
 
 import { Entry, TableOfContentsType } from '../catechism/source/types/types.ts';
@@ -11,7 +13,9 @@ export default function TableOfContents() {
             <h2>Glossary</h2>
             <h2>Main Content</h2>
             <h3>Prologue</h3>
-            {toc.parts.map((part) => EntryElement(part))}
+            {toc.parts.map((part) => <Fragment key={part}>
+                {EntryElement(part)}
+            </Fragment>)}
         </div>
     );
 }
@@ -31,7 +35,7 @@ function Children(children: Array<Entry>) {
     } else {
         return (
             <ol>
-                {children.map((child) => <li>{EntryElement(child)}</li>)}
+                {children.map((child) => <li key={child}>{EntryElement(child)}</li>)}
             </ol>
         );
     }
