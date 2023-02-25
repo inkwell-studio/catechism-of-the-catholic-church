@@ -19,7 +19,7 @@ export default function TableOfContents() {
 function EntryElement(entry: Entry) {
     return (
         <div>
-            <a href={entry.url}>{entry.title}</a> ({entry.firstParagraphNumber})
+            <a href={'/read/' + entry.semanticPath}>{entry.title}</a> ({entry.firstParagraphNumber})
             {Children(entry.children)}
         </div>
     );

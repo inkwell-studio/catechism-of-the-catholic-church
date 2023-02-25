@@ -2,13 +2,13 @@
     "prologue": {
         "contentType": "PROLOGUE",
         "title": "PROLOGUE 0",
-        "url": "/read/prologue",
+        "semanticPath": "prologue",
         "firstParagraphNumber": 1,
         "children": [
             {
                 "contentType": "SUB_ARTICLE",
                 "title": "SUB_ARTICLE 0-1",
-                "url": "/read/prologue/sub-article-1",
+                "semanticPath": "prologue/subarticle-1",
                 "firstParagraphNumber": 1,
                 "children": []
             }
@@ -18,31 +18,31 @@
         {
             "contentType": "PART",
             "title": "PART 1",
-            "url": "/read/part-1",
+            "semanticPath": "part-1",
             "firstParagraphNumber": 5,
             "children": [
                 {
                     "contentType": "SECTION",
                     "title": "SECTION 1-0",
-                    "url": "/read/part-1/section-1",
+                    "semanticPath": "part-1/section-1",
                     "firstParagraphNumber": 5,
                     "children": [
                         {
                             "contentType": "CHAPTER",
                             "title": "CHAPTER 1-0-0",
-                            "url": "/read/part-1/section-1/chapter-1",
+                            "semanticPath": "part-1/section-1/chapter-1",
                             "firstParagraphNumber": 6,
                             "children": [
                                 {
                                     "contentType": "ARTICLE",
                                     "title": "ARTICLE 1-0-0-0",
-                                    "url": "/read/part-1/section-1/chapter-1/article-1",
+                                    "semanticPath": "part-1/section-1/chapter-1/article-1",
                                     "firstParagraphNumber": 8,
                                     "children": [
                                         {
                                             "contentType": "IN_BRIEF",
                                             "title": "IN_BRIEF 1-0-0-0-0",
-                                            "url": "/read/part-1/section-1/chapter-1/article-1/in-brief",
+                                            "semanticPath": "part-1/section-1/chapter-1/article-1/in-brief",
                                             "firstParagraphNumber": 9,
                                             "children": []
                                         }
@@ -53,32 +53,32 @@
                         {
                             "contentType": "CHAPTER",
                             "title": "CHAPTER 1-0-1",
-                            "url": "/read/part-1/section-1/chapter-2",
+                            "semanticPath": "part-1/section-1/chapter-2",
                             "firstParagraphNumber": 12,
                             "children": [
                                 {
                                     "contentType": "ARTICLE",
                                     "title": "ARTICLE 1-0-1-0",
-                                    "url": "/read/part-1/section-1/chapter-2/article-1",
+                                    "semanticPath": "part-1/section-1/chapter-2/article-1",
                                     "firstParagraphNumber": 12,
                                     "children": [
                                         {
                                             "contentType": "ARTICLE_PARAGRAPH",
                                             "title": "ARTICLE_PARAGRAPH 1-0-1-0-0",
-                                            "url": "/read/part-1/section-1/chapter-2/article-1/article-paragraph-1",
+                                            "semanticPath": "part-1/section-1/chapter-2/article-1/article-paragraph-1",
                                             "firstParagraphNumber": 13,
                                             "children": [
                                                 {
                                                     "contentType": "SUB_ARTICLE",
                                                     "title": "SUB_ARTICLE 1-0-1-0-0-0",
-                                                    "url": "/read/part-1/section-1/chapter-2/article-1/article-paragraph-1/sub-article-1",
+                                                    "semanticPath": "part-1/section-1/chapter-2/article-1/article-paragraph-1/subarticle-1",
                                                     "firstParagraphNumber": 13,
                                                     "children": []
                                                 },
                                                 {
                                                     "contentType": "SUB_ARTICLE",
                                                     "title": "SUB_ARTICLE 1-0-1-0-0-1",
-                                                    "url": "/read/part-1/section-1/chapter-2/article-1/article-paragraph-1/sub-article-2",
+                                                    "semanticPath": "part-1/section-1/chapter-2/article-1/article-paragraph-1/subarticle-2",
                                                     "firstParagraphNumber": 14,
                                                     "children": []
                                                 }
@@ -87,7 +87,7 @@
                                         {
                                             "contentType": "IN_BRIEF",
                                             "title": "IN_BRIEF 1-0-1-0-1",
-                                            "url": "/read/part-1/section-1/chapter-2/article-1/in-brief",
+                                            "semanticPath": "part-1/section-1/chapter-2/article-1/in-brief",
                                             "firstParagraphNumber": 20,
                                             "children": []
                                         }
@@ -96,27 +96,27 @@
                                 {
                                     "contentType": "ARTICLE",
                                     "title": "ARTICLE 1-0-1-1",
-                                    "url": "/read/part-1/section-1/chapter-2/article-2",
+                                    "semanticPath": "part-1/section-1/chapter-2/article-2",
                                     "firstParagraphNumber": 22,
                                     "children": [
                                         {
                                             "contentType": "SUB_ARTICLE",
                                             "title": "SUB_ARTICLE 1-0-1-1-0",
-                                            "url": "/read/part-1/section-1/chapter-2/article-2/sub-article-1",
+                                            "semanticPath": "part-1/section-1/chapter-2/article-2/subarticle-1",
                                             "firstParagraphNumber": 23,
                                             "children": []
                                         },
                                         {
                                             "contentType": "SUB_ARTICLE",
                                             "title": "SUB_ARTICLE 1-0-1-1-1",
-                                            "url": "/read/part-1/section-1/chapter-2/article-2/sub-article-2",
+                                            "semanticPath": "part-1/section-1/chapter-2/article-2/subarticle-2",
                                             "firstParagraphNumber": 27,
                                             "children": []
                                         },
                                         {
                                             "contentType": "IN_BRIEF",
                                             "title": "IN_BRIEF 1-0-1-1-2",
-                                            "url": "/read/part-1/section-1/chapter-2/article-2/in-brief",
+                                            "semanticPath": "part-1/section-1/chapter-2/article-2/in-brief",
                                             "firstParagraphNumber": 31,
                                             "children": []
                                         }
@@ -125,20 +125,20 @@
                                 {
                                     "contentType": "ARTICLE",
                                     "title": "ARTICLE 1-0-1-2",
-                                    "url": "/read/part-1/section-1/chapter-2/article-3",
+                                    "semanticPath": "part-1/section-1/chapter-2/article-3",
                                     "firstParagraphNumber": 34,
                                     "children": [
                                         {
                                             "contentType": "SUB_ARTICLE",
                                             "title": "SUB_ARTICLE 1-0-1-2-0",
-                                            "url": "/read/part-1/section-1/chapter-2/article-3/sub-article-1",
+                                            "semanticPath": "part-1/section-1/chapter-2/article-3/subarticle-1",
                                             "firstParagraphNumber": 35,
                                             "children": []
                                         },
                                         {
                                             "contentType": "IN_BRIEF",
                                             "title": "IN_BRIEF 1-0-1-2-1",
-                                            "url": "/read/part-1/section-1/chapter-2/article-3/in-brief",
+                                            "semanticPath": "part-1/section-1/chapter-2/article-3/in-brief",
                                             "firstParagraphNumber": 38,
                                             "children": []
                                         }
@@ -153,38 +153,38 @@
         {
             "contentType": "PART",
             "title": "PART 2",
-            "url": "/read/part-2",
+            "semanticPath": "part-2",
             "firstParagraphNumber": 39,
             "children": [
                 {
                     "contentType": "SECTION",
                     "title": "SECTION 2-0",
-                    "url": "/read/part-2/section-1",
+                    "semanticPath": "part-2/section-1",
                     "firstParagraphNumber": 39,
                     "children": [
                         {
                             "contentType": "CHAPTER",
                             "title": "CHAPTER 2-0-0",
-                            "url": "/read/part-2/section-1/chapter-1",
+                            "semanticPath": "part-2/section-1/chapter-1",
                             "firstParagraphNumber": 41,
                             "children": [
                                 {
                                     "contentType": "ARTICLE",
                                     "title": "ARTICLE 2-0-0-0",
-                                    "url": "/read/part-2/section-1/chapter-1/article-1",
+                                    "semanticPath": "part-2/section-1/chapter-1/article-1",
                                     "firstParagraphNumber": 41,
                                     "children": [
                                         {
                                             "contentType": "SUB_ARTICLE",
                                             "title": "SUB_ARTICLE 2-0-0-0-0",
-                                            "url": "/read/part-2/section-1/chapter-1/article-1/sub-article-1",
+                                            "semanticPath": "part-2/section-1/chapter-1/article-1/subarticle-1",
                                             "firstParagraphNumber": 42,
                                             "children": []
                                         },
                                         {
                                             "contentType": "IN_BRIEF",
                                             "title": "IN_BRIEF 2-0-0-0-1",
-                                            "url": "/read/part-2/section-1/chapter-1/article-1/in-brief",
+                                            "semanticPath": "part-2/section-1/chapter-1/article-1/in-brief",
                                             "firstParagraphNumber": 45,
                                             "children": []
                                         }
@@ -193,27 +193,27 @@
                                 {
                                     "contentType": "ARTICLE",
                                     "title": "ARTICLE 2-0-0-1",
-                                    "url": "/read/part-2/section-1/chapter-1/article-2",
+                                    "semanticPath": "part-2/section-1/chapter-1/article-2",
                                     "firstParagraphNumber": 48,
                                     "children": [
                                         {
                                             "contentType": "SUB_ARTICLE",
                                             "title": "SUB_ARTICLE 2-0-0-1-0",
-                                            "url": "/read/part-2/section-1/chapter-1/article-2/sub-article-1",
+                                            "semanticPath": "part-2/section-1/chapter-1/article-2/subarticle-1",
                                             "firstParagraphNumber": 51,
                                             "children": []
                                         },
                                         {
                                             "contentType": "SUB_ARTICLE",
                                             "title": "SUB_ARTICLE 2-0-0-1-1",
-                                            "url": "/read/part-2/section-1/chapter-1/article-2/sub-article-2",
+                                            "semanticPath": "part-2/section-1/chapter-1/article-2/subarticle-2",
                                             "firstParagraphNumber": 55,
                                             "children": []
                                         },
                                         {
                                             "contentType": "IN_BRIEF",
                                             "title": "IN_BRIEF 2-0-0-1-2",
-                                            "url": "/read/part-2/section-1/chapter-1/article-2/in-brief",
+                                            "semanticPath": "part-2/section-1/chapter-1/article-2/in-brief",
                                             "firstParagraphNumber": 57,
                                             "children": []
                                         }
@@ -222,27 +222,27 @@
                                 {
                                     "contentType": "ARTICLE",
                                     "title": "ARTICLE 2-0-0-2",
-                                    "url": "/read/part-2/section-1/chapter-1/article-3",
+                                    "semanticPath": "part-2/section-1/chapter-1/article-3",
                                     "firstParagraphNumber": 60,
                                     "children": [
                                         {
                                             "contentType": "SUB_ARTICLE",
                                             "title": "SUB_ARTICLE 2-0-0-2-0",
-                                            "url": "/read/part-2/section-1/chapter-1/article-3/sub-article-1",
+                                            "semanticPath": "part-2/section-1/chapter-1/article-3/subarticle-1",
                                             "firstParagraphNumber": 63,
                                             "children": []
                                         },
                                         {
                                             "contentType": "SUB_ARTICLE",
                                             "title": "SUB_ARTICLE 2-0-0-2-1",
-                                            "url": "/read/part-2/section-1/chapter-1/article-3/sub-article-2",
+                                            "semanticPath": "part-2/section-1/chapter-1/article-3/subarticle-2",
                                             "firstParagraphNumber": 66,
                                             "children": []
                                         },
                                         {
                                             "contentType": "IN_BRIEF",
                                             "title": "IN_BRIEF 2-0-0-2-2",
-                                            "url": "/read/part-2/section-1/chapter-1/article-3/in-brief",
+                                            "semanticPath": "part-2/section-1/chapter-1/article-3/in-brief",
                                             "firstParagraphNumber": 68,
                                             "children": []
                                         }
@@ -255,39 +255,39 @@
                 {
                     "contentType": "SECTION",
                     "title": "SECTION 2-1",
-                    "url": "/read/part-2/section-2",
+                    "semanticPath": "part-2/section-2",
                     "firstParagraphNumber": 70,
                     "children": [
                         {
                             "contentType": "CHAPTER",
                             "title": "CHAPTER 2-1-0",
-                            "url": "/read/part-2/section-2/chapter-1",
+                            "semanticPath": "part-2/section-2/chapter-1",
                             "firstParagraphNumber": 70,
                             "children": [
                                 {
                                     "contentType": "ARTICLE",
                                     "title": "ARTICLE 2-1-0-0",
-                                    "url": "/read/part-2/section-2/chapter-1/article-1",
+                                    "semanticPath": "part-2/section-2/chapter-1/article-1",
                                     "firstParagraphNumber": 71,
                                     "children": [
                                         {
                                             "contentType": "SUB_ARTICLE",
                                             "title": "SUB_ARTICLE 2-1-0-0-0",
-                                            "url": "/read/part-2/section-2/chapter-1/article-1/sub-article-1",
+                                            "semanticPath": "part-2/section-2/chapter-1/article-1/subarticle-1",
                                             "firstParagraphNumber": 73,
                                             "children": []
                                         },
                                         {
                                             "contentType": "SUB_ARTICLE",
                                             "title": "SUB_ARTICLE 2-1-0-0-1",
-                                            "url": "/read/part-2/section-2/chapter-1/article-1/sub-article-2",
+                                            "semanticPath": "part-2/section-2/chapter-1/article-1/subarticle-2",
                                             "firstParagraphNumber": 78,
                                             "children": []
                                         },
                                         {
                                             "contentType": "IN_BRIEF",
                                             "title": "IN_BRIEF 2-1-0-0-2",
-                                            "url": "/read/part-2/section-2/chapter-1/article-1/in-brief",
+                                            "semanticPath": "part-2/section-2/chapter-1/article-1/in-brief",
                                             "firstParagraphNumber": 80,
                                             "children": []
                                         }
@@ -296,20 +296,20 @@
                                 {
                                     "contentType": "ARTICLE",
                                     "title": "ARTICLE 2-1-0-1",
-                                    "url": "/read/part-2/section-2/chapter-1/article-2",
+                                    "semanticPath": "part-2/section-2/chapter-1/article-2",
                                     "firstParagraphNumber": 82,
                                     "children": [
                                         {
                                             "contentType": "SUB_ARTICLE",
                                             "title": "SUB_ARTICLE 2-1-0-1-0",
-                                            "url": "/read/part-2/section-2/chapter-1/article-2/sub-article-1",
+                                            "semanticPath": "part-2/section-2/chapter-1/article-2/subarticle-1",
                                             "firstParagraphNumber": 83,
                                             "children": []
                                         },
                                         {
                                             "contentType": "IN_BRIEF",
                                             "title": "IN_BRIEF 2-1-0-1-1",
-                                            "url": "/read/part-2/section-2/chapter-1/article-2/in-brief",
+                                            "semanticPath": "part-2/section-2/chapter-1/article-2/in-brief",
                                             "firstParagraphNumber": 86,
                                             "children": []
                                         }
@@ -324,38 +324,38 @@
         {
             "contentType": "PART",
             "title": "PART 3",
-            "url": "/read/part-3",
+            "semanticPath": "part-3",
             "firstParagraphNumber": 89,
             "children": [
                 {
                     "contentType": "SECTION",
                     "title": "SECTION 3-0",
-                    "url": "/read/part-3/section-1",
+                    "semanticPath": "part-3/section-1",
                     "firstParagraphNumber": 89,
                     "children": [
                         {
                             "contentType": "CHAPTER",
                             "title": "CHAPTER 3-0-0",
-                            "url": "/read/part-3/section-1/chapter-1",
+                            "semanticPath": "part-3/section-1/chapter-1",
                             "firstParagraphNumber": 89,
                             "children": [
                                 {
                                     "contentType": "ARTICLE",
                                     "title": "ARTICLE 3-0-0-0",
-                                    "url": "/read/part-3/section-1/chapter-1/article-1",
+                                    "semanticPath": "part-3/section-1/chapter-1/article-1",
                                     "firstParagraphNumber": 91,
                                     "children": [
                                         {
                                             "contentType": "SUB_ARTICLE",
                                             "title": "SUB_ARTICLE 3-0-0-0-0",
-                                            "url": "/read/part-3/section-1/chapter-1/article-1/sub-article-1",
+                                            "semanticPath": "part-3/section-1/chapter-1/article-1/subarticle-1",
                                             "firstParagraphNumber": 93,
                                             "children": []
                                         },
                                         {
                                             "contentType": "IN_BRIEF",
                                             "title": "IN_BRIEF 3-0-0-0-1",
-                                            "url": "/read/part-3/section-1/chapter-1/article-1/in-brief",
+                                            "semanticPath": "part-3/section-1/chapter-1/article-1/in-brief",
                                             "firstParagraphNumber": 97,
                                             "children": []
                                         }
@@ -368,25 +368,25 @@
                 {
                     "contentType": "SECTION",
                     "title": "SECTION 3-1",
-                    "url": "/read/part-3/section-2",
+                    "semanticPath": "part-3/section-2",
                     "firstParagraphNumber": 100,
                     "children": [
                         {
                             "contentType": "CHAPTER",
                             "title": "CHAPTER 3-1-0",
-                            "url": "/read/part-3/section-2/chapter-1",
+                            "semanticPath": "part-3/section-2/chapter-1",
                             "firstParagraphNumber": 100,
                             "children": [
                                 {
                                     "contentType": "ARTICLE",
                                     "title": "ARTICLE 3-1-0-0",
-                                    "url": "/read/part-3/section-2/chapter-1/article-1",
+                                    "semanticPath": "part-3/section-2/chapter-1/article-1",
                                     "firstParagraphNumber": 102,
                                     "children": [
                                         {
                                             "contentType": "IN_BRIEF",
                                             "title": "IN_BRIEF 3-1-0-0-0",
-                                            "url": "/read/part-3/section-2/chapter-1/article-1/in-brief",
+                                            "semanticPath": "part-3/section-2/chapter-1/article-1/in-brief",
                                             "firstParagraphNumber": 103,
                                             "children": []
                                         }

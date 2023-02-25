@@ -4,17 +4,21 @@ import { ArticleParagraph } from '../source/types/article-paragraph.ts';
 import { Subarticle } from '../source/types/subarticle.ts';
 import {
     Article,
+    buildSemanticPath,
     Chapter,
     Content,
     ContentBase,
     ContentContainer,
     Entry,
+    Paragraph,
     Part,
     Section,
+    SemanticPathSource,
     TableOfContentsType,
 } from '../source/types/types.ts';
 import { getParagraphs, hasMainContent } from '../utils.ts';
 import { join } from '../../dependencies.ts';
+import { ParagraphGroup } from '../source/types/paragraph-group.ts';
 
 export function buildAndWrite(): void {
     const tableOfContents = build();
@@ -23,16 +27,15 @@ export function buildAndWrite(): void {
 
 //#region builders
 function build(): TableOfContentsType {
-    const contentRoot = '/read';
     return {
-        prologue: buildEntry(Catechism.prologue, contentRoot),
-        parts: Catechism.parts.map((part) => buildEntry(part, contentRoot)),
+        prologue: buildEntry(Catechism.prologue, []),
+        parts: Catechism.parts.map((part) => buildEntry(part, [])),
     };
 }
 
 function buildEntry<T extends ContentBase | ContentBase & ContentContainer>(
     content: T,
-    parentUrl: string,
+    ancestors: Array<SemanticPathSource>,
 ): Entry {
     const firstParagraphNumber = getFirstParagraphNumber(content);
     if (typeof firstParagraphNumber !== 'number') {
@@ -41,26 +44,26 @@ function buildEntry<T extends ContentBase | ContentBase & ContentContainer>(
         );
     }
 
-    const url = getUrl(content, parentUrl);
+    const semanticPathSource = getSemanticPathSource(content);
 
     return {
         contentType: content.contentType,
         title: getTitle(content),
-        url,
+        semanticPath: buildSemanticPath(semanticPathSource, ancestors),
         firstParagraphNumber,
-        children: buildChildEntries(content, url),
+        children: buildChildEntries(content, [semanticPathSource, ...ancestors]),
     };
 }
 
 function buildChildEntries<T extends ContentBase | ContentBase & ContentContainer>(
     content: T,
-    parentUrl: string,
+    ancestors: Array<SemanticPathSource>,
 ): Array<Entry> {
     const mainContentExists = hasMainContent(content);
     if (mainContentExists) {
         return (content as ContentContainer).mainContent
             .filter((content) => includeInTableOfContents(content))
-            .map((child) => buildEntry(child, parentUrl));
+            .map((child) => buildEntry(child, ancestors));
     } else {
         return [];
     }
@@ -95,18 +98,16 @@ function getTitle(content: ContentBase): string {
     return `${Content[content.contentType]} ${content.pathID}`;
 }
 
-function getUrl<T extends ContentBase>(content: T, parentUrl: string): string {
-    const kind = content.contentType.toLowerCase().replaceAll('_', '-');
-    let segment = kind;
-
-    if (Content.PROLOGUE !== content.contentType && Content.IN_BRIEF !== content.contentType) {
-        segment += '-' + getNumber(content);
-    }
-
-    return parentUrl + '/' + segment;
+function getSemanticPathSource<T extends ContentBase>(
+    content: T,
+): SemanticPathSource {
+    return {
+        content: content.contentType,
+        number: getNumber(content),
+    };
 }
 
-function getNumber<T extends ContentBase>(content: T): number {
+function getNumber<T extends ContentBase>(content: T): number | null {
     if (Content.PART === content.contentType) {
         return (content as unknown as Part).partNumber;
     } else if (Content.SECTION === content.contentType) {
@@ -119,10 +120,12 @@ function getNumber<T extends ContentBase>(content: T): number {
         return (content as unknown as ArticleParagraph).articleParagraphNumber;
     } else if (Content.SUB_ARTICLE === content.contentType) {
         return (content as unknown as Subarticle).subarticleNumber;
+    } else if (Content.PARAGRAPH_GROUP === content.contentType) {
+        return (content as unknown as ParagraphGroup).paragraphGroupNumber;
+    } else if (Content.PARAGRAPH === content.contentType) {
+        return (content as unknown as Paragraph).paragraphNumber;
     } else {
-        throw Error(
-            `An unexpected content type was encountered: ${content.contentType}`,
-        );
+        return null;
     }
 }
 

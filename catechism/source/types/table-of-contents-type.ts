@@ -1,4 +1,5 @@
 import { Content } from './content.ts';
+import { SemanticPath } from './semantic-path.ts';
 
 export type TableOfContentsType = {
     readonly prologue: Entry;
@@ -8,7 +9,7 @@ export type TableOfContentsType = {
 export type Entry = {
     readonly contentType: Content;
     readonly title: string;
-    readonly url: string;
+    readonly semanticPath: SemanticPath;
     readonly firstParagraphNumber: number;
     readonly children: Array<Entry>;
 };

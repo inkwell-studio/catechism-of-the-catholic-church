@@ -23,6 +23,7 @@ export * from './reference-enum.ts';
 export * from './reference.ts';
 export * from './reference-base.ts';
 export * from './section.ts';
+export * from './semantic-path.ts';
 export * from './special-content.ts';
 export * from './subarticle.ts';
 export * from './table-of-contents-type.ts';

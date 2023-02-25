@@ -1,6 +1,7 @@
 # Tasks
 
 - implement the _Table of Contents_ page using the new `table-of-contents.json` file
+- learn about Preact syntax (e.g. loops)
 - improve the architecture of the `<ContentContainer>` and `<Content>` components (see note in `[...index].tsx`)
 
 - render all content

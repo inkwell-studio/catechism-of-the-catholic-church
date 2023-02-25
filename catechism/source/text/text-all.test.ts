@@ -215,7 +215,7 @@ Deno.test('do not end with whitespace', () => {
 
 Deno.test('begin with a letter, opening quote, or em-dash', () => {
     const regex = /[a-zA-Z“‘—]/;
-    const test = ((line: string) => line[0].match(regex));
+    const test = (line: string) => line[0].match(regex);
 
     testLines((language, line, lineKey) => {
         let valid = test(line);
