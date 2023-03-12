@@ -2,6 +2,8 @@ import { Fragment, JSX } from 'preact';
 
 import { state } from '../state/state.ts';
 import { getContent } from '../utils/content.ts';
+import { ContentID } from '../utils/content-id.ts';
+import { PathID } from '../catechism/source/types/types.ts';
 import { getText } from '../utils/text.ts';
 import {
     Article,
@@ -20,9 +22,10 @@ import {
     TextContainer,
 } from '../catechism/source/types/types.ts';
 
-export default function Content(): JSX.Element {
-    // TODO: Fix
-    if (state.value.path === '1') {
+export default function Content(props: { contentID: ContentID }): JSX.Element {
+    const pathID: PathID = props.contentID ?? state.value.path;
+
+    if (pathID === '1') {
         return Intro();
     } else {
         const content = getContent(state.value.path);

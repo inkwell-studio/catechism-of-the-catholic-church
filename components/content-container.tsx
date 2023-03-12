@@ -1,6 +1,7 @@
+import { ContentID } from '../utils/content-id.ts';
 import Content from '../islands/content.tsx';
 
-export function ContentContainer() {
+export function ContentContainer(props: { contentID: ContentID }) {
     return (
         <div class='flex justify-center'>
             <main class='
@@ -10,7 +11,7 @@ export function ContentContainer() {
                 px-6 xs:px-10 sm:px-20 lg:px-32
                 pb-4 pt-4 sm:pt-8 md:pt-14 md:my-8 lg:pt-16
             '>
-                <Content></Content>
+                <Content contentID={props.contentID}></Content>
             </main>
         </div>
     );

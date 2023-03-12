@@ -27,8 +27,7 @@ export default function Home(props: PageProps) {
     if (Element.TABLE_OF_CONTENTS === element) {
         mainElement = <TableOfContents></TableOfContents>;
     } else if (Element.CONTENT === element) {
-        // TODO: Attempt to pass the contentID into this component and then down into <Content>; then determine if <Content> can discern whether or not to use what's passed in or the state's value
-        mainElement = <ContentContainer></ContentContainer>;
+        mainElement = <ContentContainer contentID={contentID}></ContentContainer>;
     }
 
     return (
