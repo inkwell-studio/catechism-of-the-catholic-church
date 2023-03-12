@@ -18,6 +18,20 @@
                 "--allow-write"
             ],
             "attachSimplePort": 9229
-        }
+        },
+        {
+            "request": "launch",
+            "name": "Web App",
+            "type": "node",
+            "program": "${workspaceFolder}/dev.ts",
+            "cwd": "${workspaceFolder}",
+            "runtimeExecutable": "/usr/local/bin/deno",
+            "runtimeArgs": [
+                "run",
+                "--inspect-brk",
+                "-A",
+            ],
+            "attachSimplePort": 9229
+    },
     ]
 }
