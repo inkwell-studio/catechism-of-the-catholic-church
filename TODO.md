@@ -1,5 +1,7 @@
 # Tasks
 
+- implement navigation by URLs like `part-1/chapter-2/article-3/`
+  - update the logic of `path-id.ts::getPathID` (see the test file)
 - implement the _Table of Contents_ page using the new `table-of-contents.json` file
 
 - render all content
