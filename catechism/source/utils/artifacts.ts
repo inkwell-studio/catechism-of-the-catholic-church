@@ -6,6 +6,9 @@ import {
     TableOfContentsType,
 } from '../../source/types/types.ts';
 
+// deno-lint-ignore no-explicit-any
+const cache: Record<string, any> = {};
+
 export function getContentMap(language: Language): Promise<PathIdContentMap> {
     return getArtifact('renderable-path-id_to_content', language);
 }
@@ -25,11 +28,18 @@ export function getParagraphNumberUrlMap(language: Language): Promise<ParagraphN
 // deno-lint-ignore no-explicit-any
 async function getArtifact(filenamePrefix: string, language: Language): Promise<any> {
     const filepath = `./catechism/artifacts/${filenamePrefix}-${language}.json`;
+    let artifact = cache[filepath];
 
-    try {
-        const artifact = await Deno.readTextFile(filepath);
-        return JSON.parse(artifact);
-    } catch (error) {
-        throw new Error(`Failed to load artifact: ${filepath}`, error);
+    if (artifact) {
+        return artifact;
+    } else {
+        try {
+            artifact = await Deno.readTextFile(filepath);
+            artifact = JSON.parse(artifact);
+            cache[filepath] = artifact;
+            return artifact;
+        } catch (error) {
+            throw new Error(`Failed to load artifact: ${filepath}`, error);
+        }
     }
 }
