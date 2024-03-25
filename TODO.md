@@ -1,11 +1,14 @@
 # Tasks to complete now
 
 - [ ] update UI
+  - [ ] strip the UI
+  - [ ] consider building some sort of style guide/library
+  - [ ] handle mobile psuedo-full-screen behavior
   - [ ] consider using a component library for buttons and other like elements
+    - https://headlessui.com/
     - https://mantine.dev/
     - https://www.radix-ui.com/primitives
     - https://chakra-ui.com/
-    - https://headlessui.com/
   - [ ] handle RTL languages
   - [ ] fonts to consider
     - [ ] Bookman
@@ -14,6 +17,8 @@
   - [ ] dark mode: try to avoid the "window blending" problem (cannot tell where the browser window starts and another
         application window begins)
   - [ ] consider all notes about colors found elsewhere in this file
+  - [ ] update text on intro page
+  - merge
 
 - [ ] update the intro page if appropriate
 - merge
