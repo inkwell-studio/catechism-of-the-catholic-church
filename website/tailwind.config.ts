@@ -7,7 +7,9 @@ export default {
     ],
     darkMode: 'class',
     theme: {
-        colors: {},
+        colors: {
+            white: '#fff'
+        },
         fontFamily: {
             // See `styles.css` for the `@font-face` definitions
             sans: [...defaultTheme.fontFamily.sans],
@@ -19,9 +21,6 @@ export default {
                 // For active link styling
                 'current-true': 'current="true"', // ancestor pages
                 'current-page': 'current="page"', // current page
-            },
-            gridTemplateRows: {
-                'content-with-permanent-footer': '1fr max-content',
             },
             screens: {
                 xs: '320px',

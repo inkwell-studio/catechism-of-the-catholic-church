@@ -3,7 +3,6 @@
 - [ ] update UI
   - [ ] strip the UI
   - [ ] consider building some sort of style guide/library
-  - [ ] handle mobile psuedo-full-screen behavior
   - [ ] consider using a component library for buttons and other like elements
     - https://headlessui.com/
     - https://mantine.dev/
