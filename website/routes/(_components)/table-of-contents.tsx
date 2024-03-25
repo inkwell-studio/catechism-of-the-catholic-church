@@ -80,7 +80,7 @@ function ChildEntry(
     parent: TableOfContentsEntry,
     indentationLevel: number,
 ): JSX.Element {
-    const classes = entry.children.length === 0 ? 'list-disc list-inside marker:text-black/30' : '';
+    const classes = entry.children.length === 0 ? 'list-disc list-inside' : '';
 
     return (
         <li class={classes + ' ml-4'}>

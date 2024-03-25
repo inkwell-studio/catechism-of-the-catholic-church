@@ -8,8 +8,6 @@ export default {
     darkMode: 'class',
     theme: {
         colors: {
-            black: '#000',
-            white: '#fff',
         },
         fontFamily: {
             // See `styles.css` for the `@font-face` definitions

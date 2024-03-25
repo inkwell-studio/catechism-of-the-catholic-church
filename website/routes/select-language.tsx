@@ -5,7 +5,7 @@ import { getNativeLanguageText, getSupportedLanguages } from '../../catechism/so
 
 export default function SelectLanguage(): JSX.Element {
     return (
-        <div class='min-h-screen bg-white flex flex-col items-center'>
+        <div class='min-h-screen flex flex-col items-center'>
             <h1 class='mt-[15vh] font-serif text-3xl text-center'>Select your language:</h1>
             <div class='flex flex-col gap-8 items-center mt-16'>
                 {getLanguages().map((languageData) => (

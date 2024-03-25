@@ -15,7 +15,7 @@ export default function CrossReferenceWindow(): JSX.Element {
 
     if (content.length > 0) {
         return (
-            <div class='absolute z-20 bottom-0 inset-x-0 max-h-[50vh] overflow-y-auto bg-white pb-8 px-4 sm:px-12 border-t border-black'>
+            <div class='absolute z-20 bottom-0 inset-x-0 max-h-[50vh] overflow-y-auto pb-8 px-4 sm:px-12 border-t'>
                 <div class='absolute top-4 right-4'>
                     <Controls paragraphUrl={content[0].url} language={language} />
                 </div>
