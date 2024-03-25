@@ -13,7 +13,7 @@ export function TableOfContents(props: { tableOfContents: TableOfContentsType; l
                 <h2 class='text-3xl text-center'>
                     {translate('Table of Contents', props.language)}
                 </h2>
-                <div class='w-48 mx-auto border border-red-900/50 rounded'></div>
+                <div class='w-48 mx-auto border rounded'></div>
                 <nav class='mx-auto'>
                     <ol class='space-y-6'>
                         <li>
@@ -67,7 +67,7 @@ function EntryContainer(language: Language, entry: TableOfContentsEntry): JSX.El
                 <h3 class='text-3xl'>{entry.title}</h3>
             </a>
             {ParagraphNumbers(language, entry, null, 'opacity-40 font-sans text-xl ml-2')}
-            <ol class='border rounded bg-tan-50 py-4 px-10 mt-2'>
+            <ol class='border rounded py-4 px-10 mt-2'>
                 {entry.children.map((child) => ChildEntry(language, child, entry, 0))}
             </ol>
         </div>

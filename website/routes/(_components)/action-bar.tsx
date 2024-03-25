@@ -11,13 +11,13 @@ import { translate } from '../../logic/shared/translation.ts';
 
 import { Language } from '../../../catechism/source/types/types.ts';
 
-const linkClasses = 'flex items-center text-center py-4 px-8 hover:bg-tan-50 transition-colors';
+const linkClasses = 'flex items-center text-center py-4 px-8 transition-colors';
 
 export function ActionBar(): JSX.Element {
     const language = Selectors.language.value;
 
     return (
-        <div class='relative flex justify-center gap-8 bg-tan-100 border'>
+        <div class='relative flex justify-center gap-8 border'>
             <div class='absolute -top-14 right-2'>
                 <Partial name={PartialEnum.NAVIGATION_BUTTON_NEXT}>
                     <NavigationButton direction='next' />

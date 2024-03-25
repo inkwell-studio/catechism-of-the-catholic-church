@@ -10,7 +10,7 @@ export default function DarkModeToggle(): JSX.Element {
     }
 
     return (
-        <button type='button' onClick={toggle} class='flex items-center py-4 px-8 hover:bg-tan-50 transition-colors'>
+        <button type='button' onClick={toggle} class='flex items-center py-4 px-8 transition-colors'>
             <span class='hidden dark:inline'>
                 <Moon />
             </span>

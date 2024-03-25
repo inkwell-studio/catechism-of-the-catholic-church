@@ -11,7 +11,7 @@ export default function SelectLanguage(): JSX.Element {
                 {getLanguages().map((languageData) => (
                     <a
                         href={`/${languageData.language}`}
-                        class='w-48 bg-tan-50 text-lg font-bold text-center py-8 shadow-lg hover:shadow-xl'
+                        class='w-48 text-lg font-bold text-center py-8 shadow-lg hover:shadow-xl'
                     >
                         {languageData.text}
                     </a>

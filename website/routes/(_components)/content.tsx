@@ -8,7 +8,7 @@ export function Content(props: { content: ContentContainer; language: Language }
     return (
         <main class='h-fit md:py-8'>
             <div class='
-                    relative bg-tan-50 text-justify
+                    relative text-justify
                     rounded-md shadow md:shadow-2xl
                     w-full md:max-w-2xl lg:max-w-3xl
                     px-6 xs:px-10 sm:px-20 lg:px-32

@@ -14,7 +14,7 @@ export function App(props: { children: ComponentChildren }): JSX.Element {
             <Head>
                 <title>{translate('Catechism of the Catholic Church', Selectors.language.value)}</title>
             </Head>
-            <div class='grid grid-rows-content-with-permanent-footer h-screen bg-tan-100'>
+            <div class='grid grid-rows-content-with-permanent-footer h-screen'>
                 <div class='relative overflow-y-auto'>
                     <div class='grid grid-rows-content-with-permanent-footer h-full'>
                         <div class='flex justify-center overflow-y-auto'>

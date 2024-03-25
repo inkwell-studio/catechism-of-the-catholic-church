@@ -9,17 +9,6 @@ export default {
     theme: {
         colors: {
             black: '#000',
-            purple: {
-                '900': '#0f1f6b',
-            },
-            red: {
-                '50': 'hsl(24, 45%, 20%, 15%)',
-                '900': 'hsl(24, 45%, 20%)',
-            },
-            tan: {
-                '50': 'hsl(36, 71%, 94%)',
-                '100': 'hsl(36, 29%, 83%)',
-            },
             white: '#fff',
         },
         fontFamily: {

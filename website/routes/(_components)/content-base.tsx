@@ -148,9 +148,9 @@ function InBriefContent(inBrief: InBrief, language: Language): JSX.Element {
     return (
         <div
             id={getUrlFragment(inBrief.semanticPath, false, language).fragment}
-            class='bg-white bg-opacity-20 border border-red-900/15 border-2 rounded p-3 my-4'
+            class='bg-white bg-opacity-20 border border-2 rounded p-3 my-4'
         >
-            <strong class='font-sans text-lg text-purple-900 block mb-1'>{translate('In Brief', language)}</strong>
+            <strong class='font-sans text-lg block mb-1'>{translate('In Brief', language)}</strong>
             <ol>
                 {getAllChildContent(inBrief).map((c) => (
                     <li key={getUniqueKey(c)} class='mb-2'>
