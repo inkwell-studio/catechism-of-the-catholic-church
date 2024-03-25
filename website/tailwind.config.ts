@@ -7,14 +7,12 @@ export default {
     ],
     darkMode: 'class',
     theme: {
-        colors: {
-        },
+        colors: {},
         fontFamily: {
             // See `styles.css` for the `@font-face` definitions
-            sans: ['PTSans', ...defaultTheme.fontFamily.sans],
-            'sans-caption': ['PTSansCaption', ...defaultTheme.fontFamily.sans],
-            serif: ['PTSerif', ...defaultTheme.fontFamily.serif],
-            mono: ['Courier New', 'monospace'],
+            sans: [...defaultTheme.fontFamily.sans],
+            serif: [...defaultTheme.fontFamily.serif],
+            mono: [...defaultTheme.fontFamily.mono],
         },
         extend: {
             aria: {

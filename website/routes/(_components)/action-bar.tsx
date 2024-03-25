@@ -11,7 +11,7 @@ import { translate } from '../../logic/shared/translation.ts';
 
 import { Language } from '../../../catechism/source/types/types.ts';
 
-const linkClasses = 'flex items-center text-center py-4 px-8 transition-colors';
+const linkClasses = 'flex items-center text-center ';
 
 export function ActionBar(): JSX.Element {
     const language = Selectors.language.value;
@@ -28,7 +28,7 @@ export function ActionBar(): JSX.Element {
                     <NavigationButton direction='previous' />
                 </Partial>
             </div>
-            <div class='flex text-sm'>
+            <div class='flex'>
                 <LinkHome language={language} />
                 <Divider />
                 <LinkTableOfContents language={language} />

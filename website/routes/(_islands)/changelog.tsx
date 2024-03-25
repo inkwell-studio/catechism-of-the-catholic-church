@@ -17,7 +17,7 @@ export default function Changelog(): JSX.Element {
                 >
                     Close
                 </button>
-                <strong class='text-xl font-bold'>Notable updates</strong>
+                <strong>Notable updates</strong>
                 <ol class='space-y-6'>
                     {changelog.map((changes) => <Fragment key={changes.commits[0].hash}>{Changes(changes)}</Fragment>)}
                 </ol>
