@@ -18,6 +18,7 @@ export default function SelectLanguage(): JSX.Element {
                 ))}
             </div>
             <a href='/' class='flex items-center'>
+                {/* Extract this into the new `icons` folder */}
                 <svg
                     xmlns='http://www.w3.org/2000/svg'
                     fill='none'

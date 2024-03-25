@@ -1,6 +1,10 @@
 import { Partial } from '$fresh/runtime.ts';
 import { JSX } from 'preact';
 
+import { IconBook } from './icons/icon-book.tsx';
+import { IconCog } from './icons/icon-cog.tsx';
+import { IconLanguage } from './icons/icon-language.tsx';
+import { IconMagnifyingGlass } from './icons/icon-magnifying-glass.tsx';
 import { NavigationButton } from './navigation-button.tsx';
 import { PartialEnum } from './partial-enum.ts';
 
@@ -11,7 +15,10 @@ import { translate } from '../../logic/shared/translation.ts';
 
 import { Language } from '../../../catechism/source/types/types.ts';
 
-const linkClasses = 'flex items-center text-center ';
+const classes = {
+    icons: 'w-6 h-6 stroke-current stroke-2',
+    topLevelLinks: 'flex items-center text-center',
+} as const;
 
 export function ActionBar(): JSX.Element {
     const language = Selectors.language.value;
@@ -29,11 +36,11 @@ export function ActionBar(): JSX.Element {
                 </Partial>
             </div>
             <div class='flex'>
-                <LinkHome language={language} />
+                <Navigation language={language} />
                 <Divider />
-                <LinkTableOfContents language={language} />
+                <Search language={language} />
                 <Divider />
-                <LinkSelectLanguage language={language} />
+                <Settings language={language} />
                 <Divider />
                 <DarkModeToggle />
             </div>
@@ -41,37 +48,44 @@ export function ActionBar(): JSX.Element {
     );
 }
 
-function LinkHome(props: { language: Language }): JSX.Element {
-    return <a href='/' class={linkClasses}>{translate('Introduction (Home)', props.language)}</a>;
-}
-
-function LinkTableOfContents(props: { language: Language }): JSX.Element {
-    return (
-        <a f-client-nav href={`/${props.language}`} class={linkClasses}>
+function Navigation(props: { language: Language }): JSX.Element {
+    /*
+    <a f-client-nav href={`/${props.language}`} class={topLevelLinkClasses}>
             {translate('Table of Contents', props.language)}
         </a>
+    */
+
+    // return <a href='/' class={classes.topLevelLinks}>{translate('Home', props.language)}</a>;
+
+    return (
+        <div>
+            <IconBook class={classes.icons} />
+        </div>
     );
 }
 
-function LinkSelectLanguage(props: { language: Language }): JSX.Element {
+function Search(props: { language: Language }): JSX.Element {
     return (
-        <a href='/select-language' class={linkClasses + ' gap-4'}>
-            <svg
-                xmlns='http://www.w3.org/2000/svg'
-                fill='none'
-                viewBox='0 0 24 24'
-                stroke-width='1.5'
-                stroke='currentColor'
-                class='w-6 h-6'
-            >
-                <path
-                    stroke-linecap='round'
-                    stroke-linejoin='round'
-                    d='M10.5 21l5.25-11.25L21 21m-9-3h7.5M3 5.621a48.474 48.474 0 016-.371m0 0c1.12 0 2.233.038 3.334.114M9 5.25V3m3.334 2.364C11.176 10.658 7.69 15.08 3 17.502m9.334-12.138c.896.061 1.785.147 2.666.257m-4.589 8.495a18.023 18.023 0 01-3.827-5.802'
-                />
-            </svg>
-            <span>{translate('Select Language', props.language)}</span>
+        <div>
+            <IconMagnifyingGlass class={classes.icons} />
+        </div>
+    );
+}
+
+function Settings(props: { language: Language }): JSX.Element {
+    /*
+    return (
+        <a href='/select-language' class={classes.topLevelLinks + ' gap-4'}>
+            <IconLanguage class={classes.icons} />
+            <span class='hidden'>{translate('Select Language', props.language)}</span>
         </a>
+    );
+    */
+
+    return (
+        <div>
+            <IconCog class={classes.icons} />
+        </div>
     );
 }
 

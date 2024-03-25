@@ -38,6 +38,7 @@ function getNextTheme(): ThemeEnum {
 }
 
 function Moon(): JSX.Element {
+    {/* Extract this into the new `icons` folder */}
     return (
         // Source: https://heroicons.com/ ('moon')
         <svg
@@ -58,6 +59,7 @@ function Moon(): JSX.Element {
 }
 
 function Sun(): JSX.Element {
+    {/* Extract this into the new `icons` folder */}
     return (
         // Source: https://heroicons.com/ ('sun')
         <svg

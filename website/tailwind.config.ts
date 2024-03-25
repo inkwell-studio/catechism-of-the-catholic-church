@@ -8,7 +8,7 @@ export default {
     darkMode: 'class',
     theme: {
         colors: {
-            white: '#fff'
+            white: '#fff',
         },
         fontFamily: {
             // See `styles.css` for the `@font-face` definitions
@@ -24,6 +24,10 @@ export default {
             },
             screens: {
                 xs: '320px',
+            },
+            stroke: {
+                // This value is available by default, but becomes lost if the colors are overwritten (that is, if `theme.colors` is specified)
+                current: 'currentColor',
             },
         },
     },

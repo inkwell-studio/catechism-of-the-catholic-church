@@ -14,6 +14,7 @@ export function NavigationButton(props: { direction: 'next' | 'previous' }): JSX
                 href={node.url}
                 class='block h-12 w-12 rounded-full opacity-30 hover:opacity-100'
             >
+                {/* Extract this into the new `icons` folder */}
                 <svg
                     xmlns='http://www.w3.org/2000/svg'
                     // This is necessary for the entire <a> element to be clickable and function properly with the Fresh Partials
