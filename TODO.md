@@ -1,6 +1,11 @@
 # Tasks to complete now
 
 - [ ] update UI
+  - [ ] consider using a component library for buttons and other like elements
+    - https://mantine.dev/
+    - https://www.radix-ui.com/primitives
+    - https://chakra-ui.com/
+    - https://headlessui.com/
   - [ ] handle RTL languages
   - [ ] fonts to consider
     - [ ] Bookman
@@ -49,11 +54,6 @@
 
 ## Unprioritized
 
-- [ ] consider using a component library for buttons and other like elements
-  - https://mantine.dev/
-  - https://www.radix-ui.com/primitives
-  - https://chakra-ui.com/
-  - https://headlessui.com/
 - [ ] determine the proper status code to use for the paragraph-number redirects
 - [ ] add helpful information and links to the 404 page
 - [ ] look into using Astral for e2e testing: https://astral.deno.dev/
