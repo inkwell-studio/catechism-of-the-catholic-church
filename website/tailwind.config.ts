@@ -25,8 +25,12 @@ export default {
             screens: {
                 xs: '320px',
             },
+            fill: {
+                // This value is available by default, but becomes lost if the colors are overwritten above (that is, if `theme.colors` is specified)
+                current: 'currentColor',
+            },
             stroke: {
-                // This value is available by default, but becomes lost if the colors are overwritten (that is, if `theme.colors` is specified)
+                // This value is available by default, but becomes lost if the colors are overwritten above (that is, if `theme.colors` is specified)
                 current: 'currentColor',
             },
         },

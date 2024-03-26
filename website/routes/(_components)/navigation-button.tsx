@@ -1,5 +1,7 @@
 import { JSX } from 'preact';
 
+import { HeroIcon, Icon } from './icon.tsx';
+
 import { Selectors } from '../../logic/shared/state.ts';
 
 export function NavigationButton(props: { direction: 'next' | 'previous' }): JSX.Element {
@@ -14,41 +16,12 @@ export function NavigationButton(props: { direction: 'next' | 'previous' }): JSX
                 href={node.url}
                 class='block h-12 w-12 rounded-full opacity-30 hover:opacity-100'
             >
-                {/* Extract this into the new `icons` folder */}
-                <svg
-                    xmlns='http://www.w3.org/2000/svg'
-                    // This is necessary for the entire <a> element to be clickable and function properly with the Fresh Partials
-                    pointer-events='none'
-                    fill='none'
-                    viewBox='0 0 24 24'
-                    strokeWidth={1.5}
-                    stroke='currentColor'
-                >
-                    {next ? arrowRight() : arrowLeft()}
-                </svg>
+                {next
+                    ? <Icon icon={HeroIcon.ARROW_RIGHT} insideLink={true} class='fill-current' />
+                    : <Icon icon={HeroIcon.ARROW_LEFT} insideLink={true} class='fill-current' />}
             </a>
         );
     } else {
         return <></>;
     }
-}
-
-function arrowRight(): JSX.Element {
-    return (
-        <path
-            strokeLinecap='round'
-            strokeLinejoin='round'
-            d='M12.75 15l3-3m0 0l-3-3m3 3h-7.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z'
-        />
-    );
-}
-
-function arrowLeft(): JSX.Element {
-    return (
-        <path
-            strokeLinecap='round'
-            strokeLinejoin='round'
-            d='M11.25 9l-3 3m0 0l3 3m-3-3h7.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z'
-        />
-    );
 }

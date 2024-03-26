@@ -2,13 +2,15 @@ import { JSX } from 'preact';
 
 // All of these icons come from: https://heroicons.com/
 export enum HeroIcon {
+    ARROW_LEFT = 'arrow-left',
+    ARROW_RIGHT = 'arrow-right',
     BOOK = 'book',
     COG = 'cog',
     LANGUAGE = 'language',
     MAGNIFYING_GLASS = 'magnifying-glass',
 }
 
-export function Icon(props: { icon: HeroIcon; insideLink?: boolean; class?: string; }): JSX.Element {
+export function Icon(props: { icon: HeroIcon; insideLink?: boolean; class?: string }): JSX.Element {
     return getHeroIcon(props.icon, props.insideLink, props.class);
 }
 
@@ -21,7 +23,8 @@ function getHeroIcon(icon: HeroIcon, insideLink?: boolean, classes?: string): JS
             fill='none'
             viewBox='0 0 24 24'
             class={classes}
-            {... insideLink ? { 'pointer-events': 'none' } : null}
+            // This is necessary for the entire <a> element to be clickable and function properly with the Fresh Partials
+            {...insideLink ? { 'pointer-events': 'none' } : null}
         >
             {svgPath}
         </svg>
@@ -29,6 +32,22 @@ function getHeroIcon(icon: HeroIcon, insideLink?: boolean, classes?: string): JS
 }
 
 const SvgPaths: Record<HeroIcon, JSX.Element> = {
+    [HeroIcon.ARROW_LEFT]: (
+        <path
+            fill-rule='evenodd'
+            d='M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25Zm-4.28 9.22a.75.75 0 0 0 0 1.06l3 3a.75.75 0 1 0 1.06-1.06l-1.72-1.72h5.69a.75.75 0 0 0 0-1.5h-5.69l1.72-1.72a.75.75 0 0 0-1.06-1.06l-3 3Z'
+            clip-rule='evenodd'
+        />
+    ),
+    [HeroIcon.ARROW_RIGHT]: (
+        <>
+            <path
+                fill-rule='evenodd'
+                d='M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25Zm4.28 10.28a.75.75 0 0 0 0-1.06l-3-3a.75.75 0 1 0-1.06 1.06l1.72 1.72H8.25a.75.75 0 0 0 0 1.5h5.69l-1.72 1.72a.75.75 0 1 0 1.06 1.06l3-3Z'
+                clip-rule='evenodd'
+            />
+        </>
+    ),
     [HeroIcon.BOOK]: (
         <path
             stroke-linecap='round'

@@ -1,7 +1,7 @@
 import { Partial } from '$fresh/runtime.ts';
 import { JSX } from 'preact';
 
-import { Icon, HeroIcon } from './icon.tsx';
+import { HeroIcon, Icon } from './icon.tsx';
 import { NavigationButton } from './navigation-button.tsx';
 import { PartialEnum } from './partial-enum.ts';
 
