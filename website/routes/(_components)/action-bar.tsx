@@ -1,10 +1,7 @@
 import { Partial } from '$fresh/runtime.ts';
 import { JSX } from 'preact';
 
-import { IconBook } from './icons/icon-book.tsx';
-import { IconCog } from './icons/icon-cog.tsx';
-import { IconLanguage } from './icons/icon-language.tsx';
-import { IconMagnifyingGlass } from './icons/icon-magnifying-glass.tsx';
+import { Icon, HeroIcon } from './icon.tsx';
 import { NavigationButton } from './navigation-button.tsx';
 import { PartialEnum } from './partial-enum.ts';
 
@@ -59,7 +56,7 @@ function Navigation(props: { language: Language }): JSX.Element {
 
     return (
         <div>
-            <IconBook class={classes.icons} />
+            <Icon icon={HeroIcon.BOOK} insideLink={true} class={classes.icons} />
         </div>
     );
 }
@@ -67,7 +64,7 @@ function Navigation(props: { language: Language }): JSX.Element {
 function Search(props: { language: Language }): JSX.Element {
     return (
         <div>
-            <IconMagnifyingGlass class={classes.icons} />
+            <Icon icon={HeroIcon.LANGUAGE} insideLink={true} class={classes.icons} />
         </div>
     );
 }
@@ -76,7 +73,7 @@ function Settings(props: { language: Language }): JSX.Element {
     /*
     return (
         <a href='/select-language' class={classes.topLevelLinks + ' gap-4'}>
-            <IconLanguage class={classes.icons} />
+            <IconLanguage insideLink={true} class={classes.icons} />
             <span class='hidden'>{translate('Select Language', props.language)}</span>
         </a>
     );
@@ -84,7 +81,7 @@ function Settings(props: { language: Language }): JSX.Element {
 
     return (
         <div>
-            <IconCog class={classes.icons} />
+            <Icon icon={HeroIcon.COG} insideLink={true} class={classes.icons} />
         </div>
     );
 }
