@@ -16,7 +16,7 @@ export function App(props: { children: ComponentChildren }): JSX.Element {
                 <title>{translate('Catechism of the Catholic Church', Selectors.language.value)}</title>
             </Head>
             {/* TODO: Finalize this height (it should be equal to the action bar and any additional desired spacing) */}
-            <div class='mb-20'>
+            <div class='mb-36'>
                 <Partial name={PartialEnum.CONTENT_MAIN}>
                     <ContentStart />
                     {props.children}
