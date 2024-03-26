@@ -7,9 +7,6 @@ export default {
     ],
     darkMode: 'class',
     theme: {
-        colors: {
-            white: '#fff',
-        },
         fontFamily: {
             // See `styles.css` for the `@font-face` definitions
             sans: [...defaultTheme.fontFamily.sans],
@@ -22,14 +19,19 @@ export default {
                 'current-true': 'current="true"', // ancestor pages
                 'current-page': 'current="page"', // current page
             },
-            screens: {
-                xs: '320px',
-            },
             fill: {
+                // TODO: Remove these notes if `theme.colors` is not overwritten
                 // This value is available by default, but becomes lost if the colors are overwritten above (that is, if `theme.colors` is specified)
                 current: 'currentColor',
             },
+            maxWidth: {
+                '22': '5.5rem',
+            },
+            screens: {
+                xs: '320px',
+            },
             stroke: {
+                // TODO: Remove these notes if `theme.colors` is not overwritten
                 // This value is available by default, but becomes lost if the colors are overwritten above (that is, if `theme.colors` is specified)
                 current: 'currentColor',
             },

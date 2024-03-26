@@ -1,9 +1,12 @@
 import { JSX } from 'preact';
 
 // All of these icons come from: https://heroicons.com/
+// TODO: Remove unused icons
 export enum HeroIcon {
     ARROW_LEFT = 'arrow-left',
+    ARROW_LEFT_LONG = 'arrow-left-long',
     ARROW_RIGHT = 'arrow-right',
+    ARROW_RIGHT_LONG = 'arrow-right-long',
     BOOK = 'book',
     COG = 'cog',
     LANGUAGE = 'language',
@@ -23,8 +26,10 @@ function getHeroIcon(icon: HeroIcon, insideLink?: boolean, classes?: string): JS
             fill='none'
             viewBox='0 0 24 24'
             class={classes}
-            // This is necessary for the entire <a> element to be clickable and function properly with the Fresh Partials
-            {...insideLink ? { 'pointer-events': 'none' } : null}
+            {
+                // This is necessary for the entire <a> element to be clickable and function properly with the Fresh Partials
+                ...insideLink ? { 'pointer-events': 'none' } : null
+            }
         >
             {svgPath}
         </svg>
@@ -39,14 +44,18 @@ const SvgPaths: Record<HeroIcon, JSX.Element> = {
             clip-rule='evenodd'
         />
     ),
+    [HeroIcon.ARROW_LEFT_LONG]: (
+        <path stroke-linecap='round' stroke-linejoin='round' d='M6.75 15.75 3 12m0 0 3.75-3.75M3 12h18' />
+    ),
     [HeroIcon.ARROW_RIGHT]: (
-        <>
-            <path
-                fill-rule='evenodd'
-                d='M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25Zm4.28 10.28a.75.75 0 0 0 0-1.06l-3-3a.75.75 0 1 0-1.06 1.06l1.72 1.72H8.25a.75.75 0 0 0 0 1.5h5.69l-1.72 1.72a.75.75 0 1 0 1.06 1.06l3-3Z'
-                clip-rule='evenodd'
-            />
-        </>
+        <path
+            fill-rule='evenodd'
+            d='M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25Zm-4.28 9.22a.75.75 0 0 0 0 1.06l3 3a.75.75 0 1 0 1.06-1.06l-1.72-1.72h5.69a.75.75 0 0 0 0-1.5h-5.69l1.72-1.72a.75.75 0 0 0-1.06-1.06l-3 3Z'
+            clip-rule='evenodd'
+        />
+    ),
+    [HeroIcon.ARROW_RIGHT_LONG]: (
+        <path stroke-linecap='round' stroke-linejoin='round' d='M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3' />
     ),
     [HeroIcon.BOOK]: (
         <path
