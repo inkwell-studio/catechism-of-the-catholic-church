@@ -6,7 +6,7 @@ import { ContentContainer, Language } from '../../../catechism/source/types/type
 
 export function Content(props: { content: ContentContainer; language: Language }): JSX.Element {
     return (
-        <main class='relative text-justify px-4 sm:px-8'>
+        <main class='relative text-justify px-4'>
             <div class='max-w-prose mx-auto'>
                 <ContentBase content={props.content} language={props.language}></ContentBase>
             </div>

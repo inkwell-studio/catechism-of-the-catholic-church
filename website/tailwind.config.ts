@@ -28,6 +28,7 @@ export default {
                 '22': '5.5rem',
             },
             screens: {
+                // TODO: Re-implement this (overwriting all the default values) on an as-needed basis, and only after all major UI functionality has been implemented
                 xs: '320px',
             },
             stroke: {
