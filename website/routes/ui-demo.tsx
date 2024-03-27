@@ -1,8 +1,10 @@
 import { JSX } from 'preact';
 
+import Combobox from './(_islands)/ui-library-demo/combobox.tsx';
 import Listbox from './(_islands)/ui-library-demo/listbox.tsx';
 import Menu from './(_islands)/ui-library-demo/menu.tsx';
 import Popover from './(_islands)/ui-library-demo/popover.tsx';
+import Switch from './(_islands)/ui-library-demo/switch.tsx';
 
 export default function UiDemo(): JSX.Element {
     return (
@@ -16,6 +18,12 @@ export default function UiDemo(): JSX.Element {
                 </div>
                 <div>
                     <Listbox />
+                </div>
+                <div>
+                    <Combobox />
+                </div>
+                <div>
+                    <Switch />
                 </div>
             </div>
         </div>

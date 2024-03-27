@@ -18,9 +18,11 @@ import * as $_islands_cross_reference_link from './routes/(_islands)/cross-refer
 import * as $_islands_cross_reference_window from './routes/(_islands)/cross-reference-window.tsx';
 import * as $_islands_dark_mode_toggle from './routes/(_islands)/dark-mode-toggle.tsx';
 import * as $_islands_reference_links from './routes/(_islands)/reference-links.tsx';
+import * as $_islands_ui_library_demo_combobox from './routes/(_islands)/ui-library-demo/combobox.tsx';
 import * as $_islands_ui_library_demo_listbox from './routes/(_islands)/ui-library-demo/listbox.tsx';
 import * as $_islands_ui_library_demo_menu from './routes/(_islands)/ui-library-demo/menu.tsx';
 import * as $_islands_ui_library_demo_popover from './routes/(_islands)/ui-library-demo/popover.tsx';
+import * as $_islands_ui_library_demo_switch from './routes/(_islands)/ui-library-demo/switch.tsx';
 import { type Manifest } from '$fresh/server.ts';
 
 const manifest = {
@@ -44,9 +46,11 @@ const manifest = {
         './routes/(_islands)/cross-reference-window.tsx': $_islands_cross_reference_window,
         './routes/(_islands)/dark-mode-toggle.tsx': $_islands_dark_mode_toggle,
         './routes/(_islands)/reference-links.tsx': $_islands_reference_links,
+        './routes/(_islands)/ui-library-demo/combobox.tsx': $_islands_ui_library_demo_combobox,
         './routes/(_islands)/ui-library-demo/listbox.tsx': $_islands_ui_library_demo_listbox,
         './routes/(_islands)/ui-library-demo/menu.tsx': $_islands_ui_library_demo_menu,
         './routes/(_islands)/ui-library-demo/popover.tsx': $_islands_ui_library_demo_popover,
+        './routes/(_islands)/ui-library-demo/switch.tsx': $_islands_ui_library_demo_switch,
     },
     baseUrl: import.meta.url,
 } satisfies Manifest;
