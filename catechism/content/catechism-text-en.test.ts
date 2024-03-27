@@ -1,11 +1,10 @@
-// import Catechism from './catechism-en.json' with { type: 'json' };
+import Catechism from './catechism-en.json' with { type: 'json' };
 
 import { assertNotMatch, assertStrictEquals, assertStringIncludes } from '$deno/assert/mod.ts';
 
 import { errorMessage, getText, testCharacters, testLines } from './test-utils.ts';
 import { CatechismStructure, Language, PathID } from '../source/types/types.ts';
 
-const Catechism = {};
 const catechismText = getText(Catechism as CatechismStructure);
 
 const expectedCharacters = 'abcdefghijklmnopqrstuvwxyz' +

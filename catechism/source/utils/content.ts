@@ -16,8 +16,7 @@ import {
 
 export async function getCatechism(language: Language): Promise<CatechismStructure> {
     const file = `catechism-${language}.json`;
-    const catechism = { default: {} };
-    // const catechism = await import(`../../content/${file}`, { with: { type: 'json' } });
+    const catechism = await import(`../../content/${file}`, { with: { type: 'json' } });
     return catechism.default as CatechismStructure;
 }
 
