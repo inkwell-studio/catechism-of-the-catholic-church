@@ -6,7 +6,6 @@ import { NavigationButton } from './navigation-button.tsx';
 import { PartialEnum } from './partial-enum.ts';
 
 import DarkModeToggle from '../(_islands)/dark-mode-toggle.tsx';
-import MyPopover from '../(_islands)/my-popover.tsx';
 
 import { Selectors } from '../../logic/shared/state.ts';
 import { Language } from '../../../catechism/source/types/types.ts';
@@ -61,12 +60,9 @@ function Settings(): JSX.Element {
     // <IconLanguage insideLink={true} class={classes.icons} />
 
     return (
-        <>
-            <MyPopover />
-            {/* TODO: Replace this with a button for the Settings island */}
-            <a f-client-nav href='/' class={classes.links}>
-                <Icon icon={HeroIcon.COG} insideLink={true} class={classes.icons} />
-            </a>
-        </>
+        // TODO: Replace this with a button for the Settings island
+        <a f-client-nav href='/' class={classes.links}>
+            <Icon icon={HeroIcon.COG} insideLink={true} class={classes.icons} />
+        </a>
     );
 }

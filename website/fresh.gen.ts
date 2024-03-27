@@ -10,14 +10,15 @@ import * as $_middleware from './routes/_middleware.ts';
 import * as $api_language_paragraph_paragraph_number_range_ from './routes/api/[language]/paragraph/[paragraph_number_range].ts';
 import * as $index from './routes/index.tsx';
 import * as $select_language from './routes/select-language.tsx';
+import * as $ui_demo from './routes/ui-demo.tsx';
 import * as $_islands_auto_scroller from './routes/(_islands)/auto-scroller.tsx';
 import * as $_islands_changelog_trigger from './routes/(_islands)/changelog-trigger.tsx';
 import * as $_islands_changelog from './routes/(_islands)/changelog.tsx';
 import * as $_islands_cross_reference_link from './routes/(_islands)/cross-reference-link.tsx';
 import * as $_islands_cross_reference_window from './routes/(_islands)/cross-reference-window.tsx';
 import * as $_islands_dark_mode_toggle from './routes/(_islands)/dark-mode-toggle.tsx';
-import * as $_islands_my_popover from './routes/(_islands)/my-popover.tsx';
 import * as $_islands_reference_links from './routes/(_islands)/reference-links.tsx';
+import * as $_islands_ui_library_demo_popover from './routes/(_islands)/ui-library-demo/popover.tsx';
 import { type Manifest } from '$fresh/server.ts';
 
 const manifest = {
@@ -31,6 +32,7 @@ const manifest = {
             $api_language_paragraph_paragraph_number_range_,
         './routes/index.tsx': $index,
         './routes/select-language.tsx': $select_language,
+        './routes/ui-demo.tsx': $ui_demo,
     },
     islands: {
         './routes/(_islands)/auto-scroller.tsx': $_islands_auto_scroller,
@@ -39,8 +41,8 @@ const manifest = {
         './routes/(_islands)/cross-reference-link.tsx': $_islands_cross_reference_link,
         './routes/(_islands)/cross-reference-window.tsx': $_islands_cross_reference_window,
         './routes/(_islands)/dark-mode-toggle.tsx': $_islands_dark_mode_toggle,
-        './routes/(_islands)/my-popover.tsx': $_islands_my_popover,
         './routes/(_islands)/reference-links.tsx': $_islands_reference_links,
+        './routes/(_islands)/ui-library-demo/popover.tsx': $_islands_ui_library_demo_popover,
     },
     baseUrl: import.meta.url,
 } satisfies Manifest;

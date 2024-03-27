@@ -1,4 +1,4 @@
-import { Popover, Transition } from '@headlessui/react';
+import { Popover as HeadlessUiPopover, Transition } from '@headlessui/react';
 // import { ChevronDownIcon } from '@heroicons/react/20/solid'
 import { Fragment } from 'react';
 
@@ -23,13 +23,13 @@ const solutions = [
     },
 ];
 
-export default function MyPopover() {
+export default function Popover() {
     return (
-        <div className='fixed top-16 w-full max-w-sm px-4'>
-            <Popover className='relative'>
+        <div className='max-w-sm px-4'>
+            <HeadlessUiPopover className='relative'>
                 {({ open }) => (
                     <>
-                        <Popover.Button
+                        <HeadlessUiPopover.Button
                             className={`
                 ${open ? 'text-white' : 'text-white/90'}
                 group inline-flex items-center rounded-md bg-green-700 px-3 py-2 text-base font-medium hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-white/75`}
@@ -42,7 +42,7 @@ export default function MyPopover() {
                 aria-hidden="true"
               /> */
                             }
-                        </Popover.Button>
+                        </HeadlessUiPopover.Button>
                         <Transition
                             as={Fragment}
                             enter='transition ease-out duration-200'
@@ -52,7 +52,7 @@ export default function MyPopover() {
                             leaveFrom='opacity-100 translate-y-0'
                             leaveTo='opacity-0 translate-y-1'
                         >
-                            <Popover.Panel className='absolute left-1/2 z-10 mt-3 w-screen max-w-sm -translate-x-1/2 transform px-4 sm:px-0 lg:max-w-3xl'>
+                            <HeadlessUiPopover.Panel className='absolute left-1/2 z-10 mt-3 w-screen max-w-sm -translate-x-1/2 transform px-4 sm:px-0 lg:max-w-3xl'>
                                 <div className='overflow-hidden rounded-lg shadow-lg ring-1 ring-black/5'>
                                     <div className='relative grid gap-8 bg-white p-7 lg:grid-cols-2'>
                                         {solutions.map((item) => (
@@ -91,11 +91,11 @@ export default function MyPopover() {
                                         </a>
                                     </div>
                                 </div>
-                            </Popover.Panel>
+                            </HeadlessUiPopover.Panel>
                         </Transition>
                     </>
                 )}
-            </Popover>
+            </HeadlessUiPopover>
         </div>
     );
 }
