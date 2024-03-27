@@ -1,5 +1,6 @@
 import { Popover as HeadlessUiPopover, Transition } from '@headlessui/react';
 // import { ChevronDownIcon } from '@heroicons/react/20/solid'
+import { JSX } from 'preact';
 import { Fragment } from 'react';
 
 const solutions = [
@@ -23,21 +24,21 @@ const solutions = [
     },
 ];
 
-export default function Popover() {
+export default function Popover(): JSX.Element {
     return (
-        <div className='max-w-sm px-4'>
-            <HeadlessUiPopover className='relative'>
+        <div class='max-w-sm px-4'>
+            <HeadlessUiPopover class='relative'>
                 {({ open }) => (
                     <>
                         <HeadlessUiPopover.Button
-                            className={`
+                            class={`
                 ${open ? 'text-white' : 'text-white/90'}
                 group inline-flex items-center rounded-md bg-green-700 px-3 py-2 text-base font-medium hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-white/75`}
                         >
                             <span>Solutions</span>
                             {
                                 /* <ChevronDownIcon
-                className={`${open ? 'text-green-300' : 'text-green-300/70'}
+                class={`${open ? 'text-green-300' : 'text-green-300/70'}
                   ml-2 h-5 w-5 transition duration-150 ease-in-out group-hover:text-green-300/80`}
                 aria-hidden="true"
               /> */
@@ -52,40 +53,40 @@ export default function Popover() {
                             leaveFrom='opacity-100 translate-y-0'
                             leaveTo='opacity-0 translate-y-1'
                         >
-                            <HeadlessUiPopover.Panel className='absolute left-1/2 z-10 mt-3 w-screen max-w-sm -translate-x-1/2 transform px-4 sm:px-0 lg:max-w-3xl'>
-                                <div className='overflow-hidden rounded-lg shadow-lg ring-1 ring-black/5'>
-                                    <div className='relative grid gap-8 bg-white p-7 lg:grid-cols-2'>
+                            <HeadlessUiPopover.Panel class='absolute left-1/2 z-10 mt-3 w-screen max-w-sm -translate-x-1/2 transform px-4 sm:px-0 lg:max-w-3xl'>
+                                <div class='overflow-hidden rounded-lg shadow-lg ring-1 ring-black/5'>
+                                    <div class='relative grid gap-8 bg-white p-7 lg:grid-cols-2'>
                                         {solutions.map((item) => (
                                             <a
                                                 key={item.name}
                                                 href={item.href}
-                                                className='-m-3 flex items-center rounded-lg p-2 transition duration-150 ease-in-out hover:bg-gray-50 focus:outline-none focus-visible:ring focus-visible:ring-green-500/50'
+                                                class='-m-3 flex items-center rounded-lg p-2 transition duration-150 ease-in-out hover:bg-gray-50 focus:outline-none focus-visible:ring focus-visible:ring-green-500/50'
                                             >
-                                                <div className='flex h-10 w-10 shrink-0 items-center justify-center text-white sm:h-12 sm:w-12'>
+                                                <div class='flex h-10 w-10 shrink-0 items-center justify-center text-white sm:h-12 sm:w-12'>
                                                     {/* <item.icon aria-hidden="true" /> */}
                                                 </div>
-                                                <div className='ml-4'>
-                                                    <p className='text-sm font-medium text-gray-900'>
+                                                <div class='ml-4'>
+                                                    <p class='text-sm font-medium text-gray-900'>
                                                         {item.name}
                                                     </p>
-                                                    <p className='text-sm text-gray-500'>
+                                                    <p class='text-sm text-gray-500'>
                                                         {item.description}
                                                     </p>
                                                 </div>
                                             </a>
                                         ))}
                                     </div>
-                                    <div className='bg-gray-50 p-4'>
+                                    <div class='bg-gray-50 p-4'>
                                         <a
                                             href='##'
-                                            className='flow-root rounded-md px-2 py-2 transition duration-150 ease-in-out hover:bg-gray-100 focus:outline-none focus-visible:ring focus-visible:ring-green-500/50'
+                                            class='flow-root rounded-md px-2 py-2 transition duration-150 ease-in-out hover:bg-gray-100 focus:outline-none focus-visible:ring focus-visible:ring-green-500/50'
                                         >
-                                            <span className='flex items-center'>
-                                                <span className='text-sm font-medium text-gray-900'>
+                                            <span class='flex items-center'>
+                                                <span class='text-sm font-medium text-gray-900'>
                                                     Documentation
                                                 </span>
                                             </span>
-                                            <span className='block text-sm text-gray-500'>
+                                            <span class='block text-sm text-gray-500'>
                                                 Start integrating products and tools
                                             </span>
                                         </a>
