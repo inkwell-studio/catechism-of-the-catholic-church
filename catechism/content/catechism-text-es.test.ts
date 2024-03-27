@@ -1,10 +1,11 @@
-import Catechism from './catechism-es.json' assert { type: 'json' };
+// import Catechism from './catechism-es.json' with { type: 'json' };
 
 import { assertStrictEquals } from '$deno/assert/mod.ts';
 
 import { CatechismStructure, Language } from '../source/types/types.ts';
 
 console.log('\nSpanish text fragments ...');
+const Catechism = {};
 
 Deno.test('the correct Catechism is loaded', () => {
     const actual = (Catechism as CatechismStructure).language;

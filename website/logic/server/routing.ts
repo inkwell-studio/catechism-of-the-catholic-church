@@ -1,12 +1,18 @@
-import PathMapEnglish from '../../../catechism/artifacts/semantic-path_to_renderable-path-id-en.json' assert {
+/*
+import PathMapEnglish from '../../../catechism/artifacts/semantic-path_to_renderable-path-id-en.json' with {
     type: 'json',
 };
-import PathMapLatin from '../../../catechism/artifacts/semantic-path_to_renderable-path-id-la.json' assert {
+import PathMapLatin from '../../../catechism/artifacts/semantic-path_to_renderable-path-id-la.json' with {
     type: 'json',
 };
-import PathMapSpanish from '../../../catechism/artifacts/semantic-path_to_renderable-path-id-es.json' assert {
+import PathMapSpanish from '../../../catechism/artifacts/semantic-path_to_renderable-path-id-es.json' with {
     type: 'json',
 };
+*/
+
+const PathMapEnglish = {};
+const PathMapLatin = {};
+const PathMapSpanish = {};
 
 import { getUrlFragment } from '../shared/routing.ts';
 import { Language, PathID, SemanticPath, SemanticPathPathIdMap } from '../../../catechism/source/types/types.ts';
