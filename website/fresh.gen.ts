@@ -17,6 +17,7 @@ import * as $_islands_cross_reference_link from './routes/(_islands)/cross-refer
 import * as $_islands_cross_reference_window from './routes/(_islands)/cross-reference-window.tsx';
 import * as $_islands_dark_mode_toggle from './routes/(_islands)/dark-mode-toggle.tsx';
 import * as $_islands_reference_links from './routes/(_islands)/reference-links.tsx';
+import * as $_islands_settings_menu from './routes/(_islands)/settings-menu.tsx';
 import { type Manifest } from '$fresh/server.ts';
 
 const manifest = {
@@ -39,6 +40,7 @@ const manifest = {
         './routes/(_islands)/cross-reference-window.tsx': $_islands_cross_reference_window,
         './routes/(_islands)/dark-mode-toggle.tsx': $_islands_dark_mode_toggle,
         './routes/(_islands)/reference-links.tsx': $_islands_reference_links,
+        './routes/(_islands)/settings-menu.tsx': $_islands_settings_menu,
     },
     baseUrl: import.meta.url,
 } satisfies Manifest;

@@ -16,10 +16,10 @@
       - [ ] Citation Index
     - [ ] Search
     - [ ] Settings
-      - [ ] UI: light/dark/system
-      - [ ] text size
-      - [ ] "About" (general info)
       - [ ] language switcher
+      - [ ] UI: light/dark/system
+      - [ ] "About" (general info)
+      - [ ] text size
     - [ ] consider using a component library for buttons and other like elements
       - https://headlessui.com/
       - https://mantine.dev/

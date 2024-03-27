@@ -4,6 +4,7 @@ import { JSX } from 'preact';
 
 import { getLanguageTag } from '../logic/server/language-tag.ts';
 import { Selectors } from '../logic/shared/state.ts';
+import SettingsMenu from './(_islands)/settings-menu.tsx';
 
 export default function App({ Component }: PageProps): JSX.Element {
     return (
@@ -14,6 +15,8 @@ export default function App({ Component }: PageProps): JSX.Element {
                 <link rel='stylesheet' href='/styles.css' />
             </Head>
             <body>
+                <SettingsMenu />
+
                 <Component />
             </body>
         </html>
