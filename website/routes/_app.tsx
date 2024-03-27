@@ -4,6 +4,7 @@ import { JSX } from 'preact';
 
 import { getLanguageTag } from '../logic/server/language-tag.ts';
 import { Selectors } from '../logic/shared/state.ts';
+import MyPopover from './(_islands)/my-popover.tsx';
 
 export default function App({ Component }: PageProps): JSX.Element {
     return (

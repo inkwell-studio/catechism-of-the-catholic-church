@@ -9,6 +9,7 @@ import DarkModeToggle from '../(_islands)/dark-mode-toggle.tsx';
 
 import { Selectors } from '../../logic/shared/state.ts';
 import { Language } from '../../../catechism/source/types/types.ts';
+import MyPopover from '../(_islands)/my-popover.tsx';
 
 const classes = {
     icons: 'w-6 h-6 stroke-current stroke-2',
@@ -60,9 +61,12 @@ function Settings(): JSX.Element {
     // <IconLanguage insideLink={true} class={classes.icons} />
 
     return (
-        // TODO: Replace this with a button for the Settings island
-        <a f-client-nav href='/' class={classes.links}>
-            <Icon icon={HeroIcon.COG} insideLink={true} class={classes.icons} />
-        </a>
+        <>
+            <MyPopover />
+            {/* TODO: Replace this with a button for the Settings island */}
+            <a f-client-nav href='/' class={classes.links}>
+                <Icon icon={HeroIcon.COG} insideLink={true} class={classes.icons} />
+            </a>
+        </>
     );
 }

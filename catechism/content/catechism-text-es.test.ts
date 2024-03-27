@@ -1,4 +1,4 @@
-import Catechism from './catechism-es.json' with { type: 'json' };
+import Catechism from './catechism-es.json' assert { type: 'json' };
 
 import { assertStrictEquals } from '$deno/assert/mod.ts';
 

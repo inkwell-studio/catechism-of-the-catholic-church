@@ -16,6 +16,7 @@ import * as $_islands_changelog from './routes/(_islands)/changelog.tsx';
 import * as $_islands_cross_reference_link from './routes/(_islands)/cross-reference-link.tsx';
 import * as $_islands_cross_reference_window from './routes/(_islands)/cross-reference-window.tsx';
 import * as $_islands_dark_mode_toggle from './routes/(_islands)/dark-mode-toggle.tsx';
+import * as $_islands_my_popover from './routes/(_islands)/my-popover.tsx';
 import * as $_islands_reference_links from './routes/(_islands)/reference-links.tsx';
 import { type Manifest } from '$fresh/server.ts';
 
@@ -38,6 +39,7 @@ const manifest = {
         './routes/(_islands)/cross-reference-link.tsx': $_islands_cross_reference_link,
         './routes/(_islands)/cross-reference-window.tsx': $_islands_cross_reference_window,
         './routes/(_islands)/dark-mode-toggle.tsx': $_islands_dark_mode_toggle,
+        './routes/(_islands)/my-popover.tsx': $_islands_my_popover,
         './routes/(_islands)/reference-links.tsx': $_islands_reference_links,
     },
     baseUrl: import.meta.url,

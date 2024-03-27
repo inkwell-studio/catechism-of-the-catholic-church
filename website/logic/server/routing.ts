@@ -1,10 +1,10 @@
-import PathMapEnglish from '../../../catechism/artifacts/semantic-path_to_renderable-path-id-en.json' with {
+import PathMapEnglish from '../../../catechism/artifacts/semantic-path_to_renderable-path-id-en.json' assert {
     type: 'json',
 };
-import PathMapLatin from '../../../catechism/artifacts/semantic-path_to_renderable-path-id-la.json' with {
+import PathMapLatin from '../../../catechism/artifacts/semantic-path_to_renderable-path-id-la.json' assert {
     type: 'json',
 };
-import PathMapSpanish from '../../../catechism/artifacts/semantic-path_to_renderable-path-id-es.json' with {
+import PathMapSpanish from '../../../catechism/artifacts/semantic-path_to_renderable-path-id-es.json' assert {
     type: 'json',
 };
 
