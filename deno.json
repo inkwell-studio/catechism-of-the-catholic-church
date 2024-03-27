@@ -33,7 +33,15 @@
         "@preact/signals-core": "https://esm.sh/*@preact/signals-core@1.5.1",
         "tailwindcss": "npm:tailwindcss@3.3.5",
         "tailwindcss/": "npm:/tailwindcss@3.3.5/",
-        "tailwindcss/plugin": "npm:/tailwindcss@3.3.5/plugin.js"
+        "tailwindcss/plugin": "npm:/tailwindcss@3.3.5/plugin.js",
+
+        "@headlessui/react": "https://esm.sh/@headlessui/react@1.7.18?external=react,react-dom&alias=@types/react:preact/compat",
+        "@headlessui/tailwindcss": "https://esm.sh/@headlessui/tailwindcss@0.2.0",
+        "react": "https://esm.sh/preact@10.19.3/compat",
+        "react-dom": "https://esm.sh/preact@10.19.3/compat",
+        "client-only": "https://esm.sh/preact@10.19.3/compat",
+
+        "tabler_icons_tsx/": "https://deno.land/x/tabler_icons_tsx@0.0.5/tsx/"
     },
     "exclude": ["**/_fresh/*"]
 }
