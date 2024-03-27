@@ -1,5 +1,6 @@
 import { JSX } from 'preact';
 
+import Listbox from './(_islands)/ui-library-demo/listbox.tsx';
 import Menu from './(_islands)/ui-library-demo/menu.tsx';
 import Popover from './(_islands)/ui-library-demo/popover.tsx';
 
@@ -12,6 +13,9 @@ export default function UiDemo(): JSX.Element {
                 </div>
                 <div>
                     <Menu />
+                </div>
+                <div>
+                    <Listbox />
                 </div>
             </div>
         </div>
