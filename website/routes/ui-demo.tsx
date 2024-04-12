@@ -6,7 +6,9 @@ import Disclosure from './(_islands)/ui-library-demo/disclosure.tsx';
 import Listbox from './(_islands)/ui-library-demo/listbox.tsx';
 import Menu from './(_islands)/ui-library-demo/menu.tsx';
 import Popover from './(_islands)/ui-library-demo/popover.tsx';
+import RadioGroup from './(_islands)/ui-library-demo/radio-group.tsx';
 import Switch from './(_islands)/ui-library-demo/switch.tsx';
+import Tabs from './(_islands)/ui-library-demo/tabs.tsx';
 
 export default function UiDemo(): JSX.Element {
     return (
@@ -31,7 +33,15 @@ export default function UiDemo(): JSX.Element {
                     <Disclosure />
                 </div>
                 <div>
-                    <Dialog />
+                    {/* THIS IS BROKEN IN SOME WAY */}
+                    {/* <Dialog /> */}
+                </div>
+                <div>
+                    {/* THIS IS BROKEN IN SOME WAY */}
+                    {/* <RadioGroup /> */}
+                </div>
+                <div>
+                    <Tabs />
                 </div>
             </div>
         </div>
