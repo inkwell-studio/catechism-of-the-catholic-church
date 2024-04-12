@@ -19,6 +19,7 @@ import * as $_islands_cross_reference_window from './routes/(_islands)/cross-ref
 import * as $_islands_dark_mode_toggle from './routes/(_islands)/dark-mode-toggle.tsx';
 import * as $_islands_reference_links from './routes/(_islands)/reference-links.tsx';
 import * as $_islands_ui_library_demo_combobox from './routes/(_islands)/ui-library-demo/combobox.tsx';
+import * as $_islands_ui_library_demo_dialog from './routes/(_islands)/ui-library-demo/dialog.tsx';
 import * as $_islands_ui_library_demo_disclosure from './routes/(_islands)/ui-library-demo/disclosure.tsx';
 import * as $_islands_ui_library_demo_listbox from './routes/(_islands)/ui-library-demo/listbox.tsx';
 import * as $_islands_ui_library_demo_menu from './routes/(_islands)/ui-library-demo/menu.tsx';
@@ -48,6 +49,7 @@ const manifest = {
         './routes/(_islands)/dark-mode-toggle.tsx': $_islands_dark_mode_toggle,
         './routes/(_islands)/reference-links.tsx': $_islands_reference_links,
         './routes/(_islands)/ui-library-demo/combobox.tsx': $_islands_ui_library_demo_combobox,
+        './routes/(_islands)/ui-library-demo/dialog.tsx': $_islands_ui_library_demo_dialog,
         './routes/(_islands)/ui-library-demo/disclosure.tsx': $_islands_ui_library_demo_disclosure,
         './routes/(_islands)/ui-library-demo/listbox.tsx': $_islands_ui_library_demo_listbox,
         './routes/(_islands)/ui-library-demo/menu.tsx': $_islands_ui_library_demo_menu,

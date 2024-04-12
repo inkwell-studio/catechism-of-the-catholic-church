@@ -1,6 +1,7 @@
 import { JSX } from 'preact';
 
 import Combobox from './(_islands)/ui-library-demo/combobox.tsx';
+import Dialog from './(_islands)/ui-library-demo/dialog.tsx';
 import Disclosure from './(_islands)/ui-library-demo/disclosure.tsx';
 import Listbox from './(_islands)/ui-library-demo/listbox.tsx';
 import Menu from './(_islands)/ui-library-demo/menu.tsx';
@@ -28,6 +29,9 @@ export default function UiDemo(): JSX.Element {
                 </div>
                 <div>
                     <Disclosure />
+                </div>
+                <div>
+                    <Dialog />
                 </div>
             </div>
         </div>
