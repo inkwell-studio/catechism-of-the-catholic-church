@@ -9,6 +9,7 @@ import Popover from './(_islands)/ui-library-demo/popover.tsx';
 import RadioGroup from './(_islands)/ui-library-demo/radio-group.tsx';
 import Switch from './(_islands)/ui-library-demo/switch.tsx';
 import Tabs from './(_islands)/ui-library-demo/tabs.tsx';
+import Transition from './(_islands)/ui-library-demo/transition.tsx';
 
 export default function UiDemo(): JSX.Element {
     return (
@@ -42,6 +43,10 @@ export default function UiDemo(): JSX.Element {
                 </div>
                 <div>
                     <Tabs />
+                </div>
+                <div>
+                    {/* THIS WAS NOT FULLY FIGURED OUT */}
+                    {/* <Transition /> */}
                 </div>
             </div>
         </div>

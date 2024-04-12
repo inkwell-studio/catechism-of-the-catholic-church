@@ -27,6 +27,7 @@ import * as $_islands_ui_library_demo_popover from './routes/(_islands)/ui-libra
 import * as $_islands_ui_library_demo_radio_group from './routes/(_islands)/ui-library-demo/radio-group.tsx';
 import * as $_islands_ui_library_demo_switch from './routes/(_islands)/ui-library-demo/switch.tsx';
 import * as $_islands_ui_library_demo_tabs from './routes/(_islands)/ui-library-demo/tabs.tsx';
+import * as $_islands_ui_library_demo_transition from './routes/(_islands)/ui-library-demo/transition.tsx';
 import { type Manifest } from '$fresh/server.ts';
 
 const manifest = {
@@ -59,6 +60,7 @@ const manifest = {
         './routes/(_islands)/ui-library-demo/radio-group.tsx': $_islands_ui_library_demo_radio_group,
         './routes/(_islands)/ui-library-demo/switch.tsx': $_islands_ui_library_demo_switch,
         './routes/(_islands)/ui-library-demo/tabs.tsx': $_islands_ui_library_demo_tabs,
+        './routes/(_islands)/ui-library-demo/transition.tsx': $_islands_ui_library_demo_transition,
     },
     baseUrl: import.meta.url,
 } satisfies Manifest;
