@@ -1,32 +1,37 @@
-import { Partial } from '$fresh/runtime.ts';
+import { Popover } from '@headlessui/react';
 import { JSX } from 'preact';
 
-import { HeroIcon, Icon } from './icon.tsx';
-import { NavigationButton } from './navigation-button.tsx';
-import { PartialEnum } from './partial-enum.ts';
+import { HeroIcon, Icon } from '../(_components)/icon.tsx';
+import { NavigationButton } from '../(_components)/navigation-button.tsx';
 
-import DarkModeToggle from '../(_islands)/dark-mode-toggle.tsx';
+import DarkModeToggle from './dark-mode-toggle.tsx';
 
 import { Selectors } from '../../logic/shared/state.ts';
 import { Language } from '../../../catechism/source/types/types.ts';
 
 const classes = {
     icons: 'w-6 h-6 stroke-current stroke-2',
+    // TODO: Rename (as `buttons`?)
     links: 'p-4 rounded hover:bg-gray-200 transition-colors',
 } as const;
 
-export function ActionBar(): JSX.Element {
+export default function ActionBar(): JSX.Element {
     const language = Selectors.language.value;
 
     return (
         <div class='flex flex-col gap-1 p-1 bg-gray-100 border-t border-t-gray-300'>
             <div class='grid grid-cols-2 gap-x-1 justify-items-stretch'>
+                {
+                    /*
+                TODO: Move these into the main content
                 <Partial name={PartialEnum.NAVIGATION_BUTTON_PREVIOUS}>
                     <NavigationButton direction='previous' />
                 </Partial>
                 <Partial name={PartialEnum.NAVIGATION_BUTTON_NEXT}>
                     <NavigationButton direction='next' />
                 </Partial>
+                */
+                }
             </div>
             <div class='relative flex justify-center gap-1'>
                 <Navigation language={language} />
@@ -55,7 +60,9 @@ function Search(): JSX.Element {
 }
 
 function Settings(): JSX.Element {
-    // TODO: Add these to the settings island (along with other things)
+    /*
+
+        // TODO: Add these to the settings island (along with other things)
     // <DarkModeToggle />
     // <IconLanguage insideLink={true} class={classes.icons} />
 
@@ -64,5 +71,33 @@ function Settings(): JSX.Element {
         <a f-client-nav href='/' class={classes.links}>
             <Icon icon={HeroIcon.COG} insideLink={true} class={classes.icons} />
         </a>
+    );
+
+    */
+
+    const options = [
+        'Light / Dark / System',
+        'Text Size',
+        'Language Switcher',
+        'About',
+    ];
+
+    return (
+        <Popover class='relative'>
+            {({ open }) => (
+                <>
+                    <Popover.Button class={classes.links}>
+                        <Icon icon={HeroIcon.COG} insideLink={true} class={classes.icons} />
+                    </Popover.Button>
+                    <Popover.Panel class='absolute bottom-20 left-0 z-10 flex flex-col gap-2 p-2 bg-[#f2f2f2] rounded-md'>
+                        {options.map((option) => (
+                            <div class='bg-[#eee] hover:bg-[#ccc] p-4 rounded cursor-pointer'>
+                                {option}
+                            </div>
+                        ))}
+                    </Popover.Panel>
+                </>
+            )}
+        </Popover>
     );
 }

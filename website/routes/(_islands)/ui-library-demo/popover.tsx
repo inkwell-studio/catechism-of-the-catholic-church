@@ -36,13 +36,6 @@ export default function Popover(): JSX.Element {
                 group inline-flex items-center rounded-md bg-green-700 px-3 py-2 text-base font-medium hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-white/75`}
                         >
                             <span>Solutions</span>
-                            {
-                                /* <ChevronDownIcon
-                className={`${open ? 'text-green-300' : 'text-green-300/70'}
-                  ml-2 h-5 w-5 transition duration-150 ease-in-out group-hover:text-green-300/80`}
-                aria-hidden="true"
-              /> */
-                            }
                         </HeadlessUiPopover.Button>
                         <Transition
                             as={Fragment}

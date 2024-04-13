@@ -1,9 +1,10 @@
 import { Head, Partial } from '$fresh/runtime.ts';
 import { ComponentChildren, JSX } from 'preact';
 
-import { ActionBar } from './action-bar.tsx';
 import { ContentStart } from './content-start.tsx';
 import { PartialEnum } from './partial-enum.ts';
+
+import ActionBar from '../(_islands)/action-bar.tsx';
 import CrossReferenceWindow from '../(_islands)/cross-reference-window.tsx';
 
 import { Selectors } from '../../logic/shared/state.ts';
@@ -22,9 +23,9 @@ export function App(props: { children: ComponentChildren }): JSX.Element {
                     {props.children}
                 </Partial>
             </div>
-            <CrossReferenceWindow></CrossReferenceWindow>
+            <CrossReferenceWindow />
             <div class='fixed bottom-0 inset-x-0'>
-                <ActionBar></ActionBar>
+                <ActionBar />
             </div>
         </>
     );
