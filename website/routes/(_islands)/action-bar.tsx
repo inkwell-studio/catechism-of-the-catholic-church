@@ -84,10 +84,18 @@ function Settings(): JSX.Element {
 
     // TODO: Determine if this can be simplified after all types of interaction have been implemented
     return (
-        <Popover class='relative'>
-            {() => (
+        <Popover class='relative z-20'>
+            {({ open }) => (
                 <>
-                    <Popover.Button class={classes.links}>
+                    {
+                        /*
+                        This div is necessary to make the popover close when the user clicks anywhere on the screen.
+                        Without it, the popeover will only close when the user clicks on the actino bar.
+                     */
+                    }
+                    <div class={`${!open && 'hidden'} z-10 fixed inset-0`}></div>
+
+                    <Popover.Button class={`${classes.links} z-20`}>
                         <Icon icon={HeroIcon.COG} insideLink={true} class={classes.icons} />
                     </Popover.Button>
                     <Popover.Panel class='absolute bottom-20 left-0 z-10 flex flex-col gap-2 p-2 bg-[#f2f2f2] rounded-md'>
