@@ -82,9 +82,10 @@ function Settings(): JSX.Element {
         'About',
     ];
 
+    // TODO: Determine if this can be simplified after all types of interaction have been implemented
     return (
         <Popover class='relative'>
-            {({ open }) => (
+            {() => (
                 <>
                     <Popover.Button class={classes.links}>
                         <Icon icon={HeroIcon.COG} insideLink={true} class={classes.icons} />
