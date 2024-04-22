@@ -30,6 +30,7 @@ function autoScrollOnUrlChange(): void {
         }
 
         if (hash) {
+            // TODO: This is causing problems with the Popover in the Action Bar. Can it be removed?
             document.getElementById(hash.slice(1))?.scrollIntoView();
         }
     });
