@@ -1,8 +1,6 @@
 # Tasks to complete now
 
 - [ ] update UI
-  - [ ] consider using https://github.com/tailwindlabs/headlessui/tree/main/packages/%40headlessui-tailwindcss (with the
-        Headless UI components)
   - [ ] implement Action Bar menus
     - [ ] Table of Contents
       - [ ] "Home" (to a new "Dashboard" page (at `/en`): TOC with a link to the current "intro" page)
@@ -27,6 +25,8 @@
       - https://mantine.dev/
       - https://www.radix-ui.com/primitives
       - https://chakra-ui.com/
+  - [ ] consider using https://github.com/tailwindlabs/headlessui/tree/main/packages/%40headlessui-tailwindcss (with the
+        Headless UI components)
   - [ ] consider implementing necessary back-end changes
     - [ ] implement page-preserved "translation" linking
       - [ ] mock-data Catechism translations: use the same structure for all

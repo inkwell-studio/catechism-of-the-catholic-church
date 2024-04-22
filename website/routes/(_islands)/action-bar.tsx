@@ -19,7 +19,7 @@ export default function ActionBar(): JSX.Element {
     const language = Selectors.language.value;
 
     return (
-        <div class='flex flex-col gap-1 p-1 bg-gray-100 border-t border-t-gray-300'>
+        <div class='flex flex-col gap-x-1 p-1 bg-gray-100 border-t border-t-gray-300'>
             <div class='grid grid-cols-2 gap-x-1 justify-items-stretch'>
                 {
                     /*
@@ -84,21 +84,21 @@ function Settings(): JSX.Element {
 
     // TODO: Determine if this can be simplified after all types of interaction have been implemented
     return (
-        <Popover class='relative z-20'>
+        <Popover class='relative'>
             {({ open }) => (
                 <>
                     {
-                        /*
+                    /*
                         This div is necessary to make the popover close when the user clicks anywhere on the screen.
-                        Without it, the popeover will only close when the user clicks on the actino bar.
+                        Without it, the popeover will only close when the user clicks on the action bar.
                      */
                     }
-                    <div class={`${!open && 'hidden'} z-10 fixed inset-0`}></div>
+                    <div class={`${!open && 'hidden'} fixed -z-10 inset-0`}></div>
 
-                    <Popover.Button class={`${classes.links} z-20`}>
+                    <Popover.Button class={classes.links}>
                         <Icon icon={HeroIcon.COG} insideLink={true} class={classes.icons} />
                     </Popover.Button>
-                    <Popover.Panel class='absolute bottom-20 left-0 z-10 flex flex-col gap-2 p-2 bg-[#f2f2f2] rounded-md'>
+                    <Popover.Panel class='absolute bottom-20 left-0 flex flex-col gap-2 p-2 bg-[#f2f2f2] rounded-md'>
                         {options.map((option) => (
                             <div class='bg-[#eee] hover:bg-[#ccc] p-4 rounded cursor-pointer'>
                                 {option}

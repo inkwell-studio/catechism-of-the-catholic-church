@@ -30,11 +30,11 @@ export default function Popover(): JSX.Element {
             <HeadlessUiPopover className='relative'>
                 {({ open }) => (
                     <>
-                        <HeadlessUiPopover.Button
+                        <HeadlessUiPopover.Button class='text-white rounded-md bg-green-700 px-3 py-2 text-base font-medium hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-white/75' /*
                             className={`
-                ${open ? 'text-white' : 'text-white/90'}
-                group inline-flex items-center rounded-md bg-green-700 px-3 py-2 text-base font-medium hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-white/75`}
-                        >
+                            ${open ? 'text-white' : 'text-white/90'}
+                            group inline-flex items-center rounded-md bg-green-700 px-3 py-2 text-base font-medium hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-white/75`}
+                            */>
                             <span>Solutions</span>
                         </HeadlessUiPopover.Button>
                         <Transition
