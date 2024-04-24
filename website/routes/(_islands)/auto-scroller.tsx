@@ -30,7 +30,9 @@ function autoScrollOnUrlChange(): void {
         }
 
         if (hash) {
-            // TODO: This is causing problems with the Popover in the Action Bar. Can it be removed?
+            /* TODO: This is causing problems with the Popover in the Action Bar. Can it be removed?
+                The problem appears to be caused by the changes made to `website/routes/(_components)/app.tsx` between the `master` and `ui` branches.
+            */
             document.getElementById(hash.slice(1))?.scrollIntoView();
         }
     });
