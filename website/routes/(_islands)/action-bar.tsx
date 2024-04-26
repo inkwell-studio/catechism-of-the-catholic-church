@@ -88,7 +88,7 @@ function Settings(): JSX.Element {
             {({ open }) => (
                 <>
                     {
-                    /*
+                        /*
                         This div is necessary to make the popover close when the user clicks anywhere on the screen.
                         Without it, the popeover will only close when the user clicks on the action bar.
                      */
