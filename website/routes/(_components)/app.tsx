@@ -16,10 +16,9 @@ export function App(props: { children: ComponentChildren }): JSX.Element {
             <Head>
                 <title>{translate('Catechism of the Catholic Church', Selectors.language.value)}</title>
             </Head>
-            {/* TODO: Finalize this height (it should be equal to the action bar and any additional desired spacing) */}
+            {/* TODO: Finalize this height (it should be equal to the action bar and any additional desired spacing) (add the value to the Tailwind configuration) */}
             <div class='mb-36'>
                 <Partial name={PartialEnum.CONTENT_MAIN}>
-                    <ContentStart />
                     {props.children}
                 </Partial>
             </div>
