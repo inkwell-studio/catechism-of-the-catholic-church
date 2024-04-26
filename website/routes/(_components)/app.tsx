@@ -17,21 +17,27 @@ export function App(props: { children: ComponentChildren }): JSX.Element {
                 <title>{translate('Catechism of the Catholic Church', Selectors.language.value)}</title>
             </Head>
 
-            {/* <Test1>
+            {
+                /* <Test1>
                 {props.children}
-            </Test1> */}
+            </Test1> */
+            }
 
             <UiHeadlessMod1>
                 {props.children}
             </UiHeadlessMod1>
 
-            {/* <MasterVersion>
+            {
+                /* <MasterVersion>
                 {props.children}
-            </MasterVersion> */}
+            </MasterVersion> */
+            }
 
-            {/* <UiHeadless>
+            {
+                /* <UiHeadless>
                 {props.children}
-            </UiHeadless> */}
+            </UiHeadless> */
+            }
         </>
     );
 }
@@ -98,7 +104,7 @@ function UiHeadless(props: { children: ComponentChildren }) {
 
 function UiHeadlessMod1(props: { children: ComponentChildren }) {
     return (
-        <div class="grid grid-rows-2 h-screen">
+        <div class='grid grid-rows-2 h-screen'>
             {/* TODO: Finalize this height (it should be equal to the action bar and any additional desired spacing) */}
             <div class='mb-36 overflow-y-auto'>
                 <div>
@@ -110,7 +116,7 @@ function UiHeadlessMod1(props: { children: ComponentChildren }) {
                 <CrossReferenceWindow />
             </div>
             <div>
-            {/* <div class='fixed bottom-0 inset-x-0'> */}
+                {/* <div class='fixed bottom-0 inset-x-0'> */}
                 <ActionBar />
             </div>
         </div>
