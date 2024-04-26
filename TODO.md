@@ -25,6 +25,7 @@
       - https://mantine.dev/
       - https://www.radix-ui.com/primitives
       - https://chakra-ui.com/
+  - [ ] consider using `Partial`s with the `CrossReferenceWindow` component
   - [ ] consider using https://github.com/tailwindlabs/headlessui/tree/main/packages/%40headlessui-tailwindcss (with the
         Headless UI components)
   - [ ] consider implementing necessary back-end changes
