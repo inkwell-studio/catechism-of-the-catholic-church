@@ -9,7 +9,7 @@ export default function Home(): JSX.Element {
     return (
         <>
             <Changelog></Changelog>
-            <div class='bg-tan-100 flex flex-col items-center'>
+            <div class='flex flex-col items-center'>
                 <div class='w-full h-8 opacity-70'>&nbsp;</div>
 
                 <div class='h-[80vh] flex flex-col justify-center items-center px-8'>
@@ -28,7 +28,7 @@ export default function Home(): JSX.Element {
                 </div>
 
                 <div class='max-w-xl md:max-w-2xl px-6 sm:px-8'>
-                    <div class='bg-red-900 h-px -mb-2 w-screen hidden xs:block relative xs:static xs:w-full xs:left-0 xs:right-0 lg:relative lg:-left-8 lg:-right-8 lg:w-[110%]'>
+                    <div class='h-px -mb-2 w-screen hidden xs:block relative xs:static xs:w-full xs:left-0 xs:right-0 lg:relative lg:-left-8 lg:-right-8 lg:w-[110%]'>
                         &nbsp;
                     </div>
                     <Title highlight={true}>What This Is</Title>
@@ -198,7 +198,7 @@ export default function Home(): JSX.Element {
                         </div>
                     </Paragraph>
                 </div>
-                <div class='bg-red-900 w-full h-6 md:h-8 opacity-70 mt-8 md:mt-16 md:opacity-80'>&nbsp;</div>
+                <div class='w-full h-6 md:h-8 opacity-70 mt-8 md:mt-16 md:opacity-80'>&nbsp;</div>
             </div>
         </>
     );
@@ -207,7 +207,7 @@ export default function Home(): JSX.Element {
 function Title(props: { children: JSX.Element | string; highlight?: boolean }): JSX.Element {
     return (
         <span class='relative'>
-            {props.highlight ? <span class='block absolute -inset-1 rounded-sm bg-tan-50 opacity-30'></span> : ''}
+            {props.highlight ? <span class='block absolute -inset-1 rounded-sm opacity-30'></span> : ''}
             <h3 class={(props.highlight ? 'mt-8' : 'mt-6') + ' relative font-serif font-bold italic text-xl p-1 mb-4'}>
                 {props.children}
             </h3>
@@ -226,7 +226,7 @@ function ButtonLink(props: { children?: JSX.Element; href: string; text: string;
         <a
             href={props.href}
             target={target}
-            class='flex-grow inline-block font-sans text-center border border-2 rounded bg-tan-50/20 hover:bg-tan-50 transition-bg p-3'
+            class='flex-grow inline-block font-sans text-center border border-2 rounded transition-bg p-3'
         >
             {props.text}
         </a>

@@ -9,10 +9,9 @@ export default function ErrorPage404(props: PageProps): JSX.Element {
     const title = translate('Page not found.', Selectors.language.value);
 
     return (
-        <Error title={title} titleClass='font-serif'>
+        <Error title={title}>
             <div>
-                {translate('Unknown page:', Selectors.language.value)}{' '}
-                <span class='font-mono'>{props.url.pathname}</span>
+                {translate('Unknown page:', Selectors.language.value)} {props.url.pathname}
             </div>
         </Error>
     );

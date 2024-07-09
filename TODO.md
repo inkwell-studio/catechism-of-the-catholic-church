@@ -1,6 +1,40 @@
 # Tasks to complete now
 
 - [ ] update UI
+  - [ ] implement Action Bar menus
+    - [ ] Table of Contents
+      - [ ] "Home" (to a new "Dashboard" page (at `/en`): TOC with a link to the current "intro" page)
+        - [ ] introductory paragraphs, e.g.:
+          - [ ] what the CCC is
+          - [ ] how the Search may be used (e.g. keywords, phrases, content titles, paragraph numbers)
+          - [ ] how the JSON API may be used
+      - [ ] introductory Apostolic Letter
+      - [ ] Prologue
+      - [ ] Parts 1-X
+      - [ ] Glossary
+      - [ ] Topical Index
+      - [ ] Citation Index
+    - [ ] Search
+    - [ ] Settings
+      - [ ] UI: light/dark/system
+      - [ ] text size
+      - [ ] "About" (general info)
+      - [ ] language switcher
+    - [ ] consider using a component library for buttons and other like elements
+      - https://headlessui.com/
+      - https://mantine.dev/
+      - https://www.radix-ui.com/primitives
+      - https://chakra-ui.com/
+  - [ ] consider using `Partial`s with the `CrossReferenceWindow` component
+  - [ ] consider using https://github.com/tailwindlabs/headlessui/tree/main/packages/%40headlessui-tailwindcss (with the
+        Headless UI components)
+  - [ ] consider implementing necessary back-end changes
+    - [ ] implement page-preserved "translation" linking
+      - [ ] mock-data Catechism translations: use the same structure for all
+  - [ ] watch design videos
+  - [ ] determine if Tailwind themes can be reasonably implemented
+  - [ ] diagnose build errors (from `esbuild`)
+  - [ ] consider building some sort of style guide/library
   - [ ] handle RTL languages
   - [ ] fonts to consider
     - [ ] Bookman
@@ -9,6 +43,8 @@
   - [ ] dark mode: try to avoid the "window blending" problem (cannot tell where the browser window starts and another
         application window begins)
   - [ ] consider all notes about colors found elsewhere in this file
+  - [ ] update text on intro page
+  - merge
 
 - [ ] update the intro page if appropriate
 - merge
@@ -17,43 +53,15 @@
 - merge
 
 - [ ] translations: always use a server-side component so data isn't sent up to the client unnecessarily
-- [ ] implement Action bar
-  - Table of Contents
-    - "Home" (to a new "Dashboard" page (at `/en`): TOC with a link to the current "intro" page)
-      - introductory paragraphs, e.g.:
-        - what the CCC is
-        - how the Search may be used (e.g. keywords, phrases, content titles, paragraph numbers)
-        - how the JSON API may be used
-    - introductory Apostolic Letter
-    - Prologue
-    - Parts 1-X
-    - Glossary
-    - Topical Index
-    - Citation Index
-  - Search
-  - Settings
-    - UI: light/dark/system
-    - text size
-    - "About" (general info)
-    - language switcher
-  - Glossary
-  - Index
-    - mock data: use the same high-level structure for all languages
 - merge
 
 - [ ] implement hierarchical navigation
 - merge
 
-- [ ] look into "ahead-of-time" builds: https://fresh.deno.dev/docs/concepts/ahead-of-time-builds
 - [ ] research artifact caching methods
 
 ## Unprioritized
 
-- [ ] consider using a component library for buttons and other like elements
-  - https://mantine.dev/
-  - https://www.radix-ui.com/primitives
-  - https://chakra-ui.com/
-  - https://headlessui.com/
 - [ ] determine the proper status code to use for the paragraph-number redirects
 - [ ] add helpful information and links to the 404 page
 - [ ] look into using Astral for e2e testing: https://astral.deno.dev/

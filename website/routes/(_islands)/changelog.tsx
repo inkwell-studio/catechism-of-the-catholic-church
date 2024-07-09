@@ -10,14 +10,14 @@ export default function Changelog(): JSX.Element {
                 Selectors.changelog.show.value ? 'flex' : 'hidden'
             } fixed inset-0 z-50 justify-center items-stretch sm:items-center`}
         >
-            <div class='relative max-h-[80vh] overflow-y-scroll bg-tan-50 flex flex-col gap-8 items-start rounded-md shadow-2xl w-full sm:w-auto p-4 xs:p-6 sm:p-10'>
+            <div class='relative max-h-[80vh] overflow-y-scroll flex flex-col gap-8 items-start rounded-md shadow-2xl w-full sm:w-auto p-4 xs:p-6 sm:p-10'>
                 <button
                     onClick={Actions.changelog.close}
-                    class='absolute top-2 right-2 rounded-md p-1 hover:bg-red-900/10'
+                    class='absolute top-2 right-2 rounded-md p-1'
                 >
                     Close
                 </button>
-                <strong class='text-xl font-bold'>Notable updates</strong>
+                <strong>Notable updates</strong>
                 <ol class='space-y-6'>
                     {changelog.map((changes) => <Fragment key={changes.commits[0].hash}>{Changes(changes)}</Fragment>)}
                 </ol>

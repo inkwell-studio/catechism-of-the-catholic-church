@@ -9,17 +9,16 @@ export function UnsupportedLanguage(props: { languageCode: string }): JSX.Elemen
     return (
         <div class='p-12'>
             <div>
-                {translate('Unsupported language', Selectors.language.value)}:{' '}
-                <span class='font-mono'>{props.languageCode}</span>
+                {translate('Unsupported language', Selectors.language.value)}: <span>{props.languageCode}</span>
             </div>
             <div class='mt-4'>
-                <strong class='font-bold'>
+                <strong>
                     {translate('Available languages', Selectors.language.value)}:
                 </strong>
-                <ul class='list-disc mt-2'>
+                <ul>
                     {getAllLanguages().map(([code, _language]) => (
                         <li>
-                            {getNativeLanguageText(code)}: <span class='font-mono'>{code}</span>
+                            {getNativeLanguageText(code)}: <span>{code}</span>
                         </li>
                     ))}
                 </ul>

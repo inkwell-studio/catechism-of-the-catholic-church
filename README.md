@@ -1,3 +1,8 @@
+# DEVELOPMENT STATUS:
+
+This branch has some changes that should be pulled into `master`, and some that shouldn't. The appropriate changes
+haven't been pulled into `master` merely on account of time.
+
 # Catechism of the Catholic Church
 
 ## _A proof-of-concept for a better online version of the Catechism_

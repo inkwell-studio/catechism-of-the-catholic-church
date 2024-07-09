@@ -30,13 +30,13 @@ export default function ReferenceLinks(
 
     const fullDisplay = isOpen.value
         ? (
-            <div class='absolute z-10 bottom-6 -left-8 w-max text-sm font-sans p-2 bg-white border'>
+            <div class='absolute z-10 bottom-6 -left-8 w-max'>
                 {props.referenceCollection.references.map((ref, i, refs) => {
                     const divider = i > 0 && i < refs.length ? '; ' : '';
 
                     return <>{divider}{ReferenceContent(ref, props.language)}</>;
                 })}
-                <button onClick={() => isOpen.value = false} class='font-mono ml-2'>
+                <button onClick={() => isOpen.value = false}>
                     <sup>X</sup>
                 </button>
             </div>

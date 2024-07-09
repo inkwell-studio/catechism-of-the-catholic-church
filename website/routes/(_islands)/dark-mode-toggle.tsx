@@ -10,7 +10,7 @@ export default function DarkModeToggle(): JSX.Element {
     }
 
     return (
-        <button type='button' onClick={toggle} class='flex items-center py-4 px-8 hover:bg-tan-50 transition-colors'>
+        <button type='button' onClick={toggle} class='flex items-center py-4 px-8 transition-colors'>
             <span class='hidden dark:inline'>
                 <Moon />
             </span>
@@ -38,6 +38,7 @@ function getNextTheme(): ThemeEnum {
 }
 
 function Moon(): JSX.Element {
+    {/* Extract this into the new `icons` folder */}
     return (
         // Source: https://heroicons.com/ ('moon')
         <svg
@@ -58,6 +59,7 @@ function Moon(): JSX.Element {
 }
 
 function Sun(): JSX.Element {
+    {/* Extract this into the new `icons` folder */}
     return (
         // Source: https://heroicons.com/ ('sun')
         <svg

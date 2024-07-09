@@ -10,6 +10,7 @@ import * as $_middleware from './routes/_middleware.ts';
 import * as $api_language_paragraph_paragraph_number_range_ from './routes/api/[language]/paragraph/[paragraph_number_range].ts';
 import * as $index from './routes/index.tsx';
 import * as $select_language from './routes/select-language.tsx';
+import * as $_islands_action_bar from './routes/(_islands)/action-bar.tsx';
 import * as $_islands_auto_scroller from './routes/(_islands)/auto-scroller.tsx';
 import * as $_islands_changelog_trigger from './routes/(_islands)/changelog-trigger.tsx';
 import * as $_islands_changelog from './routes/(_islands)/changelog.tsx';
@@ -32,6 +33,7 @@ const manifest = {
         './routes/select-language.tsx': $select_language,
     },
     islands: {
+        './routes/(_islands)/action-bar.tsx': $_islands_action_bar,
         './routes/(_islands)/auto-scroller.tsx': $_islands_auto_scroller,
         './routes/(_islands)/changelog-trigger.tsx': $_islands_changelog_trigger,
         './routes/(_islands)/changelog.tsx': $_islands_changelog,

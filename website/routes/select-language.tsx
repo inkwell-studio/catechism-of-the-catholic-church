@@ -5,19 +5,20 @@ import { getNativeLanguageText, getSupportedLanguages } from '../../catechism/so
 
 export default function SelectLanguage(): JSX.Element {
     return (
-        <div class='min-h-screen bg-white flex flex-col items-center'>
-            <h1 class='mt-[15vh] font-serif text-3xl text-center'>Select your language:</h1>
+        <div class='min-h-screen flex flex-col items-center'>
+            <h1 class='mt-[15vh] text-center'>Select your language:</h1>
             <div class='flex flex-col gap-8 items-center mt-16'>
                 {getLanguages().map((languageData) => (
                     <a
                         href={`/${languageData.language}`}
-                        class='w-48 bg-tan-50 text-lg font-bold text-center py-8 shadow-lg hover:shadow-xl'
+                        class='w-48 text-center'
                     >
                         {languageData.text}
                     </a>
                 ))}
             </div>
-            <a href='/' class='flex items-center gap-2 mt-16 mb-8 text-lg hover:underline'>
+            <a href='/' class='flex items-center'>
+                {/* Extract this into the new `icons` folder */}
                 <svg
                     xmlns='http://www.w3.org/2000/svg'
                     fill='none'

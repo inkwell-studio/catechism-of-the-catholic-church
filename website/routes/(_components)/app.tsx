@@ -1,12 +1,14 @@
 import { Head, Partial } from '$fresh/runtime.ts';
 import { ComponentChildren, JSX } from 'preact';
 
-import { ActionBar } from './action-bar.tsx';
+import { ContentStart } from './content-start.tsx';
 import { PartialEnum } from './partial-enum.ts';
+
+import ActionBar from '../(_islands)/action-bar.tsx';
 import CrossReferenceWindow from '../(_islands)/cross-reference-window.tsx';
 
-import { translate } from '../../logic/shared/translation.ts';
 import { Selectors } from '../../logic/shared/state.ts';
+import { translate } from '../../logic/shared/translation.ts';
 
 export function App(props: { children: ComponentChildren }): JSX.Element {
     return (
@@ -14,20 +16,15 @@ export function App(props: { children: ComponentChildren }): JSX.Element {
             <Head>
                 <title>{translate('Catechism of the Catholic Church', Selectors.language.value)}</title>
             </Head>
-            <div class='grid grid-rows-content-with-permanent-footer h-screen bg-tan-100'>
-                <div class='relative overflow-y-auto'>
-                    <div class='grid grid-rows-content-with-permanent-footer h-full'>
-                        <div class='flex justify-center overflow-y-auto'>
-                            <Partial name={PartialEnum.CONTENT_MAIN}>
-                                {props.children}
-                            </Partial>
-                        </div>
-                    </div>
-                    <CrossReferenceWindow></CrossReferenceWindow>
-                </div>
-                <div>
-                    <ActionBar></ActionBar>
-                </div>
+            {/* TODO: Finalize this height (it should be equal to the action bar and any additional desired spacing) (add the value to the Tailwind configuration) */}
+            <div class='mb-36'>
+                <Partial name={PartialEnum.CONTENT_MAIN}>
+                    {props.children}
+                </Partial>
+            </div>
+            <CrossReferenceWindow />
+            <div class='fixed bottom-0 inset-x-0'>
+                <ActionBar />
             </div>
         </>
     );

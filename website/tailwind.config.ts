@@ -7,27 +7,11 @@ export default {
     ],
     darkMode: 'class',
     theme: {
-        colors: {
-            black: '#000',
-            purple: {
-                '900': '#0f1f6b',
-            },
-            red: {
-                '50': 'hsl(24, 45%, 20%, 15%)',
-                '900': 'hsl(24, 45%, 20%)',
-            },
-            tan: {
-                '50': 'hsl(36, 71%, 94%)',
-                '100': 'hsl(36, 29%, 83%)',
-            },
-            white: '#fff',
-        },
         fontFamily: {
             // See `styles.css` for the `@font-face` definitions
-            sans: ['PTSans', ...defaultTheme.fontFamily.sans],
-            'sans-caption': ['PTSansCaption', ...defaultTheme.fontFamily.sans],
-            serif: ['PTSerif', ...defaultTheme.fontFamily.serif],
-            mono: ['Courier New', 'monospace'],
+            sans: [...defaultTheme.fontFamily.sans],
+            serif: [...defaultTheme.fontFamily.serif],
+            mono: [...defaultTheme.fontFamily.mono],
         },
         extend: {
             aria: {
@@ -35,11 +19,22 @@ export default {
                 'current-true': 'current="true"', // ancestor pages
                 'current-page': 'current="page"', // current page
             },
-            gridTemplateRows: {
-                'content-with-permanent-footer': '1fr max-content',
+            fill: {
+                // TODO: Remove these notes if `theme.colors` is not overwritten
+                // This value is available by default, but becomes lost if the colors are overwritten above (that is, if `theme.colors` is specified)
+                current: 'currentColor',
+            },
+            maxWidth: {
+                '22': '5.5rem',
             },
             screens: {
+                // TODO: Re-implement this (overwriting all the default values) on an as-needed basis, and only after all major UI functionality has been implemented
                 xs: '320px',
+            },
+            stroke: {
+                // TODO: Remove these notes if `theme.colors` is not overwritten
+                // This value is available by default, but becomes lost if the colors are overwritten above (that is, if `theme.colors` is specified)
+                current: 'currentColor',
             },
         },
     },

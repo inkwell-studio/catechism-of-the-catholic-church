@@ -15,9 +15,14 @@ import {
 } from '../types/types.ts';
 
 export async function getCatechism(language: Language): Promise<CatechismStructure> {
-    const file = `catechism-${language}.json`;
-    const catechism = await import(`../../content/${file}`, { with: { type: 'json' } });
-    return catechism.default;
+    /*
+        A more idiomatic approach would be to use a dynamic JSON import, but this causes problems with Fresh 1.6.5+
+        e.g.
+            const catechism = await import('./catechism-${language}.json`, { with: { type: 'json' } });
+    */
+    const filepath = `./catechism/content/catechism-${language}.json`;
+    const catechism = await Deno.readTextFile(filepath);
+    return JSON.parse(catechism);
 }
 
 export function hasFinalContent(content: ContentBase): boolean {

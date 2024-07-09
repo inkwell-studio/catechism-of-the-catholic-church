@@ -15,17 +15,17 @@ export default function CrossReferenceWindow(): JSX.Element {
 
     if (content.length > 0) {
         return (
-            <div class='absolute z-20 bottom-0 inset-x-0 max-h-[50vh] overflow-y-auto bg-white pb-8 px-4 sm:px-12 border-t border-black'>
+            <div class='absolute z-20 bottom-0 inset-x-0 max-h-[50vh] overflow-y-auto pb-8 px-4'>
                 <div class='absolute top-4 right-4'>
                     <Controls paragraphUrl={content[0].url} language={language} />
                 </div>
-                <div class='w-full md:max-w-2xl lg:max-w-3xl mx-auto mt-2'>
+                <div class='w-full max-w-prose mx-auto mt-2'>
                     {showTrail && (
-                        <div class='flex gap-2 py-2 border-b'>
+                        <div class='flex gap-2'>
                             {Trail(selectionHistory)}
                         </div>
                     )}
-                    <div class={showTrail ? 'mt-2' : 'mt-4'}>
+                    <div>
                         {Content(content, language)}
                     </div>
                 </div>
@@ -56,7 +56,7 @@ function Trail(refs: Array<NumberOrNumberRange>): Array<JSX.Element> {
 
 function Controls(props: { paragraphUrl: string; language: Language }): JSX.Element {
     return (
-        <div class='flex gap-2 text-lg font-mono'>
+        <div>
             <a f-client-nav onClick={() => Actions.crossReference.navigateTo()} href={props.paragraphUrl}>
                 {translate('Open', props.language)}
             </a>

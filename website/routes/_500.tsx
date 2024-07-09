@@ -13,8 +13,8 @@ export default function ErrorPage500(props: PageProps): JSX.Element {
     const title = translate('Server Error', Selectors.language.value);
 
     return (
-        <Error title={title} titleClass='font-mono'>
-            <div class='space-y-2'>
+        <Error title={title}>
+            <div>
                 <div>{translate('Error:', Selectors.language.value)}</div>
                 <pre>
                     {(props.error as Error).message}

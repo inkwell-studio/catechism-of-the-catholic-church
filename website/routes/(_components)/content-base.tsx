@@ -105,7 +105,7 @@ function ArticleContent(article: Article, language: Language): JSX.Element {
 
     return (
         <>
-            <h4 id={getUrlFragment(article.semanticPath, false, language).fragment} class='text-3xl'>
+            <h4 id={getUrlFragment(article.semanticPath, false, language).fragment}>
                 {article.title}
             </h4>
             {ContentBaseArray(nonFinalChildContent, language)}
@@ -117,7 +117,7 @@ function ArticleContent(article: Article, language: Language): JSX.Element {
 function ArticleParagraphContent(articleParagraph: ArticleParagraph, language: Language): JSX.Element {
     return (
         <>
-            <h5 id={getUrlFragment(articleParagraph.semanticPath, false, language).fragment} class='text-2xl'>
+            <h5 id={getUrlFragment(articleParagraph.semanticPath, false, language).fragment}>
                 {articleParagraph.title}
             </h5>
             {ContentBaseArray(getAllChildContent(articleParagraph), language)}
@@ -136,7 +136,7 @@ function BlockQuoteContent(blockQuote: BlockQuote, language: Language): JSX.Elem
 function ChapterContent(chapter: Chapter, language: Language): JSX.Element {
     return (
         <>
-            <h3 id={getUrlFragment(chapter.semanticPath, false, language).fragment} class='text-4xl'>
+            <h3 id={getUrlFragment(chapter.semanticPath, false, language).fragment}>
                 {chapter.title}
             </h3>
             {ContentBaseArray(getAllChildContent(chapter), language)}
@@ -148,12 +148,11 @@ function InBriefContent(inBrief: InBrief, language: Language): JSX.Element {
     return (
         <div
             id={getUrlFragment(inBrief.semanticPath, false, language).fragment}
-            class='bg-white bg-opacity-20 border border-red-900/15 border-2 rounded p-3 my-4'
         >
-            <strong class='font-sans text-lg text-purple-900 block mb-1'>{translate('In Brief', language)}</strong>
+            <strong class='block'>{translate('In Brief', language)}</strong>
             <ol>
                 {getAllChildContent(inBrief).map((c) => (
-                    <li key={getUniqueKey(c)} class='mb-2'>
+                    <li key={getUniqueKey(c)}>
                         <ContentBase content={c} language={language}></ContentBase>
                     </li>
                 ))}
@@ -165,7 +164,7 @@ function InBriefContent(inBrief: InBrief, language: Language): JSX.Element {
 function ParagraphContent(paragraph: Paragraph, language: Language): JSX.Element {
     return (
         <div id={getUrlFragment(paragraph.semanticPath, false, language).fragment}>
-            <div class='text-sm align-text-bottom font-bold inline mr-1 sm:mr-2 sm:text-lg sm:align-baseline'>
+            <div class='inline'>
                 {paragraph.paragraphNumber}
             </div>
             <div class='inline'>
@@ -178,7 +177,7 @@ function ParagraphContent(paragraph: Paragraph, language: Language): JSX.Element
 function ParagraphGroupContent(paragraphGroup: ParagraphGroup, language: Language): JSX.Element {
     return (
         <>
-            <h6 id={getUrlFragment(paragraphGroup.semanticPath, false, language).fragment} class='text-lg'>
+            <h6 id={getUrlFragment(paragraphGroup.semanticPath, false, language).fragment}>
                 {paragraphGroup.title}
             </h6>
             {ContentBaseArray(getAllChildContent(paragraphGroup), language)}
@@ -209,7 +208,7 @@ function ParagraphSubitemContent(paragraphSubitem: ParagraphSubitem, language: L
 function PartContent(part: Part, language: Language): JSX.Element {
     return (
         <>
-            <h1 class='text-6xl'>{part.title}</h1>
+            <h1>{part.title}</h1>
             {ContentBaseArray(getAllChildContent(part), language)}
         </>
     );
@@ -218,7 +217,7 @@ function PartContent(part: Part, language: Language): JSX.Element {
 function PrologueContent(prologue: Prologue, language: Language): JSX.Element {
     return (
         <>
-            <h1 class='text-6xl'>{prologue.title}</h1>
+            <h1>{prologue.title}</h1>
             {ContentBaseArray(getAllChildContent(prologue), language)}
         </>
     );
@@ -227,7 +226,7 @@ function PrologueContent(prologue: Prologue, language: Language): JSX.Element {
 function SectionContent(section: Section, language: Language): JSX.Element {
     return (
         <>
-            <h2 id={getUrlFragment(section.semanticPath, false, language).fragment} class='text-5xl'>
+            <h2 id={getUrlFragment(section.semanticPath, false, language).fragment}>
                 {section.title}
             </h2>
             {ContentBaseArray(getAllChildContent(section), language)}
@@ -238,7 +237,7 @@ function SectionContent(section: Section, language: Language): JSX.Element {
 function SubarticleContent(subarticle: Subarticle, language: Language): JSX.Element {
     return (
         <>
-            <h6 id={getUrlFragment(subarticle.semanticPath, false, language).fragment} class='text-xl'>
+            <h6 id={getUrlFragment(subarticle.semanticPath, false, language).fragment}>
                 {subarticle.title}
             </h6>
             {ContentBaseArray(getAllChildContent(subarticle), language)}
@@ -286,7 +285,7 @@ function TextWrapperContent(textWrapper: TextWrapper, language: Language): JSX.E
 
     return (
         <span>
-            <span class='absolute right-0 font-sans-caption text-xs text-left pt-1 w-6 sm:w-14 md:w-12 lg:w-20 xl:w-24'>
+            <span class='absolute right-0 text-left'>
                 {textWrapper.paragraphReferences
                     .map((reference, index, allReferences) => {
                         const separator = index < allReferences.length - 1 ? ', ' : '';

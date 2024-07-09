@@ -10,10 +10,10 @@ export function TableOfContents(props: { tableOfContents: TableOfContentsType; l
         <main f-client-nav>
             {Title(props.language)}
             <div class='flex flex-col gap-12 my-12'>
-                <h2 class='text-3xl text-center'>
+                <h2 class='text-center'>
                     {translate('Table of Contents', props.language)}
                 </h2>
-                <div class='w-48 mx-auto border border-red-900/50 rounded'></div>
+                <div class='w-48 mx-auto'></div>
                 <nav class='mx-auto'>
                     <ol class='space-y-6'>
                         <li>
@@ -52,10 +52,10 @@ function Title(language: Language): JSX.Element {
     }
 
     return (
-        <h1 class='font-serif font-bold text-5xl text-center mt-16'>
+        <h1 class='text-center'>
             <span class='inline-block'>{line1}</span>
             <br />
-            <span class='inline-block mt-1 md:mt-2 lg:mt-3'>{line2}</span>
+            <span class='inline-block'>{line2}</span>
         </h1>
     );
 }
@@ -64,10 +64,10 @@ function EntryContainer(language: Language, entry: TableOfContentsEntry): JSX.El
     return (
         <div>
             <a href={entry.url} class='inline-block'>
-                <h3 class='text-3xl'>{entry.title}</h3>
+                <h3>{entry.title}</h3>
             </a>
-            {ParagraphNumbers(language, entry, null, 'opacity-40 font-sans text-xl ml-2')}
-            <ol class='border rounded bg-tan-50 py-4 px-10 mt-2'>
+            {ParagraphNumbers(language, entry, null, '')}
+            <ol>
                 {entry.children.map((child) => ChildEntry(language, child, entry, 0))}
             </ol>
         </div>
@@ -80,14 +80,14 @@ function ChildEntry(
     parent: TableOfContentsEntry,
     indentationLevel: number,
 ): JSX.Element {
-    const classes = entry.children.length === 0 ? 'list-disc list-inside marker:text-black/30' : '';
+    const classes = entry.children.length === 0 ? 'list-disc list-inside' : '';
 
     return (
         <li class={classes + ' ml-4'}>
             <a href={entry.url} class={titleClasses(entry.contentType)}>
                 {entry.title}
             </a>
-            {ParagraphNumbers(language, entry, parent, 'opacity-40 font-sans text-xs ml-1')}
+            {ParagraphNumbers(language, entry, parent, '')}
             {Children(language, entry.children, entry, indentationLevel + 1)}
         </li>
     );
@@ -99,33 +99,35 @@ function ParagraphNumbers(
     parentEntry: TableOfContentsEntry | null,
     classes: string,
 ): JSX.Element {
+    // TODO: Only add the `class` attribute if the `classes` argument has a value
     return shouldRenderParagraphNumbers(language, entry, parentEntry)
         ? <span class={classes}>{entry.firstParagraphNumber + '–' + entry.lastParagraphNumber}</span>
         : <></>;
 }
 
 function titleClasses(contentType: Content): string {
-    const common = ' font-sans ';
+    // TODO: Add something like `font-sans`
+    const common = ' ';
 
     switch (contentType) {
         case Content.SECTION:
-            return common + 'text-2xl font-bold';
+            return common;
         case Content.CHAPTER:
-            return common + 'text-lg font-semibold';
+            return common;
         case Content.ARTICLE:
-            return common + 'font-bold uppercase';
+            return common;
         case Content.ARTICLE_PARAGRAPH:
-            return common + 'text-sm font-bold';
+            return common;
         case Content.SUB_ARTICLE:
-            return common + '';
+            return common;
         case Content.PARAGRAPH_GROUP:
-            return common + '';
+            return common;
         case Content.TEXT:
-            return common + '';
+            return common;
         case Content.TEXT_HEADING:
-            return common + '';
+            return common;
         default:
-            return common + '';
+            return common;
     }
 }
 
