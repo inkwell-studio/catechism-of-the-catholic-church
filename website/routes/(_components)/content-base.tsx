@@ -254,7 +254,7 @@ function TextBlockContent(textBlock: TextBlock, language: Language): JSX.Element
 }
 
 function TextHeadingContent(textHeading: TextHeading): JSX.Element {
-    return <>textHeading.content</>;
+    return <>{textHeading.content}</>;
 }
 
 function TextWrapperArray(array: Array<ContentBaseType | TextWrapper>, language: Language): Array<JSX.Element> {
