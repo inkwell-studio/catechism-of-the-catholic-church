@@ -1,11 +1,12 @@
-import { getLimits } from '../../config/limits.ts';
-import { Probability } from '../../config/probability.ts';
+import { Content, Paragraph, ParagraphGroup, Part, Section } from '@catechism-types';
+
 import { getTitleText } from './general.ts';
+import { buildParagraph } from './paragraph.ts';
 import { buildParagraphGroup } from './paragraph-group.ts';
 import { buildSection } from './section.ts';
+import { getLimits } from '../../config/limits.ts';
+import { Probability } from '../../config/probability.ts';
 import { chance, intArrayOfRandomLength, randomBoolean } from '../../utils.ts';
-import { Content, Paragraph, ParagraphGroup, Part, Section } from '../../../source/types/types.ts';
-import { buildParagraph } from './paragraph.ts';
 
 export function buildPart(partNumber: number): Part {
     const openingContent = buildOpeningContent();

@@ -1,5 +1,5 @@
 ---
-import { DEFAULT_LANGUAGE, Language } from '@catechism/source/types/language';
+import { DEFAULT_LANGUAGE, Language } from '@catechism-types';
 
 import PartialLink from '@components/partial-link.astro';
 import { path } from '@logic/navigation-utils';
@@ -13,7 +13,7 @@ interface Props {
 
 const { url, direction, language } = Astro.props;
 
-// prettier-ignore
+// deno-fmt-ignore
 const clientUrl = DEFAULT_LANGUAGE === language
     ? path(url)
     : path('/', language, url);
@@ -23,8 +23,7 @@ const contentUrl = path('/partials', clientUrl);
 
 <PartialLink
     target={ElementID.CONTENT_WRAPPER_SELECTOR}
-    clientUrl={clientUrl}
-    contentUrl={contentUrl}
+    {clientUrl}
+    {contentUrl}
     class="block text-center text-3xl font-mono p-2 border border-stone-400 dark:border-slate-500 rounded-sm hover:bg-white/30 dark:hover:bg-white/5"
-    >{direction === 'next' ? '>' : '<'}</PartialLink
->
+>{direction === 'next' ? '>' : '<'}</PartialLink>

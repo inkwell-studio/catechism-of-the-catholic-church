@@ -1,3 +1,5 @@
+import { join, resolve } from '@std/path';
+
 import { baseUrl } from '../config.ts';
 
 createRobotsTxt();
@@ -10,5 +12,6 @@ Disallow: /
 Sitemap: ${baseUrl}/sitemap-index.xml
 `;
 
-    await Deno.writeTextFile('website/dist/client/robots.txt', text);
+    const filepath = resolve(join('dist', 'client', 'robots.txt'));
+    await Deno.writeTextFile(filepath, text);
 }

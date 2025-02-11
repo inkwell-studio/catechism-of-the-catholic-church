@@ -1,8 +1,9 @@
+import { Content, Text, TextWrapper } from '@catechism-types';
+
 import { buildReferenceCollection } from './general.ts';
 import { buildText } from './text.ts';
 import { getLimits } from '../../config/limits.ts';
 import { intArrayOfRandomLength } from '../../utils.ts';
-import { Content, Text, TextWrapper } from '../../../source/types/types.ts';
 
 export function buildTextWrapper(): TextWrapper {
     return {

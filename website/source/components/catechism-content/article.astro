@@ -1,6 +1,6 @@
 ---
-import { Article, Language } from '@catechism/source/types/types';
-import { getFinalContent, getInBrief, getMainContent, getOpeningContent } from '@catechism/source/utils/content';
+import { Article as ArticleType, Language } from '@catechism-types';
+import { getFinalContent, getInBrief, getMainContent, getOpeningContent } from '@catechism-utils/content';
 
 import { getUrlFragment } from '@logic/routing';
 import { translate } from '@logic/translation';
@@ -8,7 +8,7 @@ import { translate } from '@logic/translation';
 import ContentBaseArray from './content-base-array.astro';
 
 interface Props {
-    article: Article;
+    article: ArticleType;
     language: Language;
 }
 
@@ -28,11 +28,11 @@ const finalContent = getFinalContent(article);
     <h4 id={getUrlFragment(article.semanticPath, false, language).fragment}>
         {article.title}
     </h4>
-    <ContentBaseArray content={nonFinalChildContent} language={language} ) />
+    <ContentBaseArray content={nonFinalChildContent} {language} ) />
     {
         finalContent.length > 0 && (
             <div id={translate('final-content', language)}>
-                <ContentBaseArray content={finalContent} language={language} />
+                <ContentBaseArray content={finalContent} {language} />
             </div>
         )
     }

@@ -1,11 +1,11 @@
+import { Content, ContentBase, PathID, Prologue, Subarticle, TextContent } from '@catechism-types';
+
+import { getTitleText } from './general.ts';
 import { buildSubarticle } from './subarticle.ts';
 import { buildTextBlock } from './text-block.ts';
 
-import { getTitleText } from './general.ts';
-
 import { getLimits } from '../../config/limits.ts';
 import { getContentCounts, intArrayOfRandomLength } from '../../utils.ts';
-import { Content, ContentBase, PathID, Prologue, Subarticle, TextContent } from '../../../source/types/types.ts';
 
 export function buildPrologue(pathID: PathID): Prologue {
     const openingContent = buildOpeningContent();

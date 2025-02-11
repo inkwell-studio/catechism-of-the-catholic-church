@@ -1,4 +1,6 @@
-import { assert, assertEquals, assertStrictEquals, assertThrows } from '$std/assert';
+import { assert, assertEquals, assertStrictEquals, assertThrows } from '@std/assert';
+
+import { Container, PathID } from '@catechism-types';
 
 import {
     getContainerDesignator,
@@ -11,7 +13,6 @@ import {
     isPrologueContent,
     isValid,
 } from './path-id.ts';
-import { Container, PathID } from '../types/types.ts';
 
 console.log('\nPathID logic ...');
 Deno.test('isValid(): invalid PathIDs', () => {

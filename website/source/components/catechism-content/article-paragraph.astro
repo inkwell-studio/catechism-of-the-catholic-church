@@ -1,13 +1,13 @@
 ---
-import { ArticleParagraph, Language } from '@catechism/source/types/types';
-import { getAllChildContent } from '@catechism/source/utils/content';
+import { ArticleParagraph as ArticleParagraphType, Language } from '@catechism-types';
+import { getAllChildContent } from '@catechism-utils/content';
 
 import { getUrlFragment } from '@logic/routing';
 
 import ContentBaseArray from './content-base-array.astro';
 
 interface Props {
-    articleParagraph: ArticleParagraph;
+    articleParagraph: ArticleParagraphType;
     language: Language;
 }
 
@@ -16,7 +16,7 @@ const { articleParagraph, language } = Astro.props;
 const id = getUrlFragment(articleParagraph.semanticPath, false, language).fragment;
 ---
 
-<h5 id={id}>
+<h5 {id}>
     {articleParagraph.title}
 </h5>
-<ContentBaseArray content={getAllChildContent(articleParagraph)} language={language} />
+<ContentBaseArray content={getAllChildContent(articleParagraph)} {language} />

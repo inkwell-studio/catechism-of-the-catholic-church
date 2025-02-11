@@ -1,6 +1,7 @@
+import { Content, InBrief, Paragraph } from '@catechism-types';
+
 import { buildParagraph } from './paragraph.ts';
 import { intArrayOfRandomLength } from '../../utils.ts';
-import { Content, InBrief, Paragraph } from '../../../source/types/types.ts';
 import { getLimits } from '../../config/limits.ts';
 
 export function buildInBrief(): InBrief {

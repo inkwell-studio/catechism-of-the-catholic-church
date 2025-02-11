@@ -1,0 +1,11 @@
+# Astro
+# ------------------------------
+# generated types
+.astro/
+
+# Astro build output
+dist/
+
+# dependencies
+node_modules/
+# ------------------------------

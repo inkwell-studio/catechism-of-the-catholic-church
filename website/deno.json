@@ -1,0 +1,61 @@
+{
+    "tasks": {
+        "disable-telemetry": "astro telemetry disable",
+
+        "lint": "deno lint",
+        "format": "deno fmt",
+        "check-ts": {
+            "dependencies": [
+                "lint",
+                "format"
+            ],
+            "command": "deno check ./"
+        },
+        "check-code": "deno task check-ts && astro check",
+
+        "pre-commit": "deno task check-code && deno task test-source",
+
+        "dev": "astro dev",
+        "build": "deno task pre-commit && astro build && deno run -RW source/robots.txt.ts",
+        "serve": "deno run -RNE dist/server/entry.mjs",
+
+        "test-source": "deno test source",
+        "test-e2e": "deno test -N e2e-tests"
+    },
+    "nodeModulesDir": "auto",
+    "compilerOptions": {
+        "jsx": "react-jsx",
+        "lib": [
+            "deno.ns",
+            "DOM"
+        ]
+    },
+    "exclude": [
+        ".astro/",
+        "dist/",
+        "node_modules/",
+        "public/"
+    ],
+    "fmt": {
+        "indentWidth": 4,
+        "lineWidth": 140,
+        "singleQuote": true,
+        "exclude": [
+            "source/components/catechism-content/content-base.astro"
+        ]
+    },
+    "unstable": ["fmt-component"],
+    "imports": {
+        "@artifacts/": "../catechism/artifacts/",
+        "@catechism-types": "../catechism/source/types/types.ts",
+        "@catechism-utils/": "../catechism/source/utils/",
+        "@graphics/": "./source/graphics/",
+        "@components/": "./source/components/",
+        "@layouts/": "./source/layouts/",
+        "@logic/": "./source/logic/",
+        "@pages/": "./source/pages/",
+
+        "@std/assert": "jsr:@std/assert@1.0.11",
+        "@std/path": "jsr:@std/path@1.0.8"
+    }
+}

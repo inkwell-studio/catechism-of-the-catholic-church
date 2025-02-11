@@ -1,4 +1,4 @@
-import { SemanticPathPathIdMap, TableOfContentsEntry, TableOfContentsType } from '../../../source/types/types.ts';
+import { SemanticPathPathIdMap, TableOfContentsEntry, TableOfContentsType } from '@catechism-types';
 
 export function build(tableOfContents: TableOfContentsType): SemanticPathPathIdMap {
     const pathMaps = [

@@ -1,3 +1,9 @@
+/*
+    Path aliases cannot be used in this file as long as it imported by `website/astro.config.ts`,
+    as the Astro config file does not support path aliases (either in itself or its dependencies).
+    For more info: https://github.com/withastro/astro/issues/9782
+*/
+
 import { Language } from '../types/types.ts';
 
 export function getLanguage(language: string): Language | null {
@@ -24,8 +30,9 @@ export function getNativeLanguageText(language: Language): string {
             return 'Latinus';
         case Language.SPANISH:
             return 'Español';
+
             /*
-        TODO: Implement when necessary
+        TODO: Implement when necessary (and check if the Catechism has been translated into any other languages)
 
         case 'ar':
             return 'عربي';

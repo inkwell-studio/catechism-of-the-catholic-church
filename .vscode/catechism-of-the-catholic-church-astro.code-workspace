@@ -7,17 +7,10 @@
     "settings": {
         "deno.enable": true,
         "deno.lint": true,
-        "deno.unstable": [],
-        "editor.defaultFormatter": "denoland.vscode-deno",
         "editor.formatOnSave": true,
+        "editor.defaultFormatter": "denoland.vscode-deno",
         "files.associations": {
             "*.css": "tailwindcss"
-        },
-        "[astro]": {
-            "editor.defaultFormatter": "astro-build.astro-vscode"
-        },
-        "[javascript]": {
-            "editor.defaultFormatter": "denoland.vscode-deno"
         }
     }
 }

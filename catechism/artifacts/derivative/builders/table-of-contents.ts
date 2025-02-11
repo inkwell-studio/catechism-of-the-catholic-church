@@ -1,4 +1,3 @@
-import { getContentTitle } from './utils.ts';
 import {
     CatechismStructure,
     Content,
@@ -8,10 +7,12 @@ import {
     SemanticPathSource,
     TableOfContentsEntry,
     TableOfContentsType,
-} from '../../../source/types/types.ts';
-import { getFinalContent, getInBrief, getMainContent, getParagraphs } from '../../../source/utils/content.ts';
-import { buildSemanticPath, getSemanticPathSource } from '../../../source/utils/semantic-path.ts';
-import { getUrl } from '../../../../website/source/logic/routing.ts';
+} from '@catechism-types';
+import { getFinalContent, getInBrief, getMainContent, getParagraphs } from '@utils/content.ts';
+import { buildSemanticPath, getSemanticPathSource } from '@utils/semantic-path.ts';
+import { getUrl } from '@website/source/logic/routing.ts';
+
+import { getContentTitle } from './utils.ts';
 
 //#region builders
 export function build(catechism: CatechismStructure): TableOfContentsType {

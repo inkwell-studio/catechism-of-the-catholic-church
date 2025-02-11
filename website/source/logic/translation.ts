@@ -1,11 +1,7 @@
-import { BibleBook, Content, Language } from '@catechism/source/types/types.ts';
+import { BibleBook, Content, Language } from '@catechism-types';
 
 export function translate(englishText: string, language: Language): string {
-    try {
-        return Language.ENGLISH === language ? englishText : translationMap[englishText][language];
-    } catch (error) {
-        throw new Error(`Failed translation into [${language}]: ${englishText}`, error);
-    }
+    return Language.ENGLISH === language ? englishText : translationMap[englishText][language];
 }
 
 const translationMap: Record<string, Record<Exclude<Language, Language.ENGLISH>, string>> = {

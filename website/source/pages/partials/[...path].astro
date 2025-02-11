@@ -1,5 +1,5 @@
 ---
-import { DEFAULT_LANGUAGE } from '@catechism/source/types/language';
+import { DEFAULT_LANGUAGE } from '@catechism-types';
 
 import ApostolicConstitution from '@components/apostolic-constitution/apostolic-constitution.astro';
 import ApostolicLetter from '@components/apostolic-letter/apostolic-letter.astro';
@@ -7,23 +7,23 @@ import CatechismContent from '@components/catechism-content/catechism-content.as
 import Glossary from '@components/glossary.astro';
 import IndexCitations from '@components/index-citations.astro';
 import IndexTopics from '@components/index-topics.astro';
+import LanguageSwitcher from '@components/language-switcher.astro';
 import Replacement from '@components/replacement.astro';
 
-import { getSemanticPathPathIdMapSync } from '@logic/artifacts';
+import { getSemanticPathPathIdMap } from '@logic/artifacts';
 import { getLanguageTag, removeLanguageTag } from '@logic/routing';
 import { ElementID } from '@logic/ui';
 import { BasicPath, ContentRoute, getBasicRoutes, getTableOfContentsRoutes } from '@pages/_routes';
-import LanguageSwitcher from '../../components/language-switcher.astro';
 
 export const partial = true;
 
-export function getStaticPaths(): Array<ContentRoute> {
-    return [...getBasicRoutes(), ...getTableOfContentsRoutes()];
+export async function getStaticPaths(): Promise<Array<ContentRoute>> {
+    return [...getBasicRoutes(), ...(await getTableOfContentsRoutes())];
 }
 
 const language = getLanguageTag(Astro.params.path) ?? DEFAULT_LANGUAGE;
 const path = removeLanguageTag(Astro.params.path, language);
-const pathID = getSemanticPathPathIdMapSync(language)[path] ?? null;
+const pathID = (await getSemanticPathPathIdMap(language))[path] ?? null;
 
 const isGlossary = BasicPath.GLOSSARY === path;
 const isIndexTopics = BasicPath.INDEX_TOPICS === path;
@@ -34,17 +34,17 @@ const isApostolicConstitution = BasicPath.APOSTOLIC_CONSTITUTION === path;
 const isCatechismContent = !!pathID;
 ---
 
-{isGlossary && <Glossary language={language} />}
+{isGlossary && <Glossary {language} />}
 
-{isIndexTopics && <IndexTopics language={language} />}
+{isIndexTopics && <IndexTopics {language} />}
 
-{isIndexCitations && <IndexCitations language={language} />}
+{isIndexCitations && <IndexCitations {language} />}
 
-{isApostolicLetter && <ApostolicLetter language={language} />}
+{isApostolicLetter && <ApostolicLetter {language} />}
 
-{isApostolicConstitution && <ApostolicConstitution language={language} />}
+{isApostolicConstitution && <ApostolicConstitution {language} />}
 
-{isCatechismContent && <CatechismContent pathID={pathID} language={language} />}
+{isCatechismContent && <CatechismContent {pathID} {language} />}
 
 <Replacement target={ElementID.LANGUAGE_SWITCHER_WRAPPER}>
     <LanguageSwitcher currentLanguage={language} />

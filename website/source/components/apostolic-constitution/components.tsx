@@ -1,4 +1,7 @@
-import { Language } from '@catechism/source/types/types.ts';
+// @ts-types="npm:@types/react@~19.0.0"
+import { ReactElement } from 'react';
+
+import { Language } from '@catechism-types';
 
 export interface ApostolicConstitution {
     title: string;
@@ -7,15 +10,15 @@ export interface ApostolicConstitution {
     intro: string;
 }
 
-export function Title(props: { text: string }): JSX.Element {
+export function Title(props: { text: string }): ReactElement {
     return <h1>{props.text}</h1>;
 }
 
-export function Subtitle(props: { text: string }): JSX.Element {
+export function Subtitle(props: { text: string }): ReactElement {
     return <h2>{props.text}</h2>;
 }
 
-export function AuthorText(props: { lines: Array<string> }): JSX.Element {
+export function AuthorText(props: { lines: Array<string> }): ReactElement {
     return (
         <div className='flex flex-col items-center'>
             {props.lines.map((text, i) => <span key={i}>{text}</span>)}
@@ -23,7 +26,7 @@ export function AuthorText(props: { lines: Array<string> }): JSX.Element {
     );
 }
 
-export function Intro(props: { text: string }): JSX.Element {
+export function Intro(props: { text: string }): ReactElement {
     return <em>{props.text}</em>;
 }
 
@@ -54,7 +57,7 @@ export function getConstitution(language: Language): ApostolicConstitution {
 }
 
 //#region main content
-export function Body(props: { language: Language }): JSX.Element {
+export function Body(props: { language: Language }): ReactElement {
     switch (props.language) {
         case Language.ENGLISH:
             return bodyEnglish();
@@ -65,15 +68,15 @@ export function Body(props: { language: Language }): JSX.Element {
     }
 }
 
-function bodyEnglish(): JSX.Element {
+function bodyEnglish(): ReactElement {
     return <div>( body text : English )</div>;
 }
 
-function bodyLatin(): JSX.Element {
+function bodyLatin(): ReactElement {
     return <div>( body text : Latin )</div>;
 }
 
-function bodySpanish(): JSX.Element {
+function bodySpanish(): ReactElement {
     return <div>( body text : Spanish )</div>;
 }
 //#endregion

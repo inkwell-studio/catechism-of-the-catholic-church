@@ -1,5 +1,5 @@
 ---
-import { DEFAULT_LANGUAGE } from '@catechism/source/types/types';
+import { DEFAULT_LANGUAGE } from '@catechism-types';
 
 import ApostolicConstitution from '@components/apostolic-constitution/apostolic-constitution.astro';
 import ApostolicLetter from '@components/apostolic-letter/apostolic-letter.astro';
@@ -10,16 +10,22 @@ import IndexTopics from '@components/index-topics.astro';
 
 import ContentLayout from '@layouts/content-layout.astro';
 
-import { getAllParagraphNumbersSync, getParagraphPathIdMapSync, getSemanticPathPathIdMapSync } from '@logic/artifacts';
+import { getAllParagraphNumbers, getParagraphPathIdMap, getSemanticPathPathIdMap } from '@logic/artifacts';
 import { getLanguageTag, getParagraphNumber, removeLanguageTag } from '@logic/routing';
-import { BasicPath, basicPaths, ContentRoute, getBasicRoutes, getParagraphNumberRoutes, getTableOfContentsRoutes } from '@pages/_routes';
+import {
+    BasicPath,
+    basicPaths,
+    ContentRoute,
+    getBasicRoutes,
+    getParagraphNumberRoutes,
+    getTableOfContentsRoutes,
+} from '@pages/_routes';
 
-export function getStaticPaths(): Array<ContentRoute> {
-    // prettier-ignore
+export async function getStaticPaths(): Promise<Array<ContentRoute>> {
     return [
         ...getBasicRoutes(),
-        ...getParagraphNumberRoutes(),
-        ...getTableOfContentsRoutes()
+        ...(await getParagraphNumberRoutes()),
+        ...(await getTableOfContentsRoutes()),
     ];
 }
 
@@ -36,14 +42,16 @@ let pathID = null;
 
 const isPotentialContentPath = path && !basicPaths.includes(path as BasicPath);
 if (isPotentialContentPath) {
-    pathID = getSemanticPathPathIdMapSync(language)[path] ?? null;
+    const semanticPathMap = await getSemanticPathPathIdMap(language);
+    pathID = semanticPathMap[path] ?? null;
 
     if (!pathID) {
         const paragraphNumber = getParagraphNumber(path);
         if (paragraphNumber) {
-            const paragraphNumbers = getAllParagraphNumbersSync(language);
+            const paragraphNumbers = await getAllParagraphNumbers(language);
             if (paragraphNumbers.includes(paragraphNumber)) {
-                pathID = getParagraphPathIdMapSync(language)[paragraphNumber] ?? null;
+                const paragraphMap = await getParagraphPathIdMap(language);
+                pathID = paragraphMap[paragraphNumber] ?? null;
             }
         }
     }
@@ -52,16 +60,16 @@ if (isPotentialContentPath) {
 const isCatechismContent = !!pathID;
 ---
 
-<ContentLayout language={language}>
-    {isGlossary && <Glossary language={language} />}
+<ContentLayout {language}>
+    {isGlossary && <Glossary {language} />}
 
-    {isIndexTopics && <IndexTopics language={language} />}
+    {isIndexTopics && <IndexTopics {language} />}
 
-    {isIndexCitations && <IndexCitations language={language} />}
+    {isIndexCitations && <IndexCitations {language} />}
 
-    {isApostolicLetter && <ApostolicLetter language={language} />}
+    {isApostolicLetter && <ApostolicLetter {language} />}
 
-    {isApostolicConstitution && <ApostolicConstitution language={language} />}
+    {isApostolicConstitution && <ApostolicConstitution {language} />}
 
-    {isCatechismContent && <CatechismContent pathID={pathID} language={language} />}
+    {isCatechismContent && <CatechismContent {pathID} {language} />}
 </ContentLayout>

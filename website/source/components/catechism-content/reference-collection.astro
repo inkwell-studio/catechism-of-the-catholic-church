@@ -1,10 +1,10 @@
 ---
-import { Language, ReferenceCollection } from '@catechism/source/types/types';
+import { Language, ReferenceCollection as ReferenceCollectionType } from '@catechism-types';
 
 import Reference from './reference.astro';
 
 interface Props {
-    referenceCollection: ReferenceCollection | null;
+    referenceCollection: ReferenceCollectionType | null;
     language: Language;
 }
 
@@ -41,11 +41,10 @@ const { referenceCollection, language } = Astro.props;
                 referenceCollection.references.map((reference, i, allRefs) => {
                     const divider = i > 0 && i < allRefs.length ? '| ' : '';
                     return (
-                        <>
-                            {divider}
-                            <Reference reference={reference} language={language} />
-                        </>
-                    );
+                    <>
+                        {divider} <Reference {reference} {language} />
+                    </>
+                );
                 })
             }
 

@@ -8,7 +8,8 @@ import {
     Language,
     Mutable,
     PathID,
-} from '@catechism/source/types/types.ts';
+} from '@catechism-types';
+
 import {
     hasInBrief,
     isArticle,
@@ -18,7 +19,8 @@ import {
     isPart,
     isPrologue,
     isSection,
-} from '@catechism/source/utils/content.ts';
+} from '@catechism-utils/content.ts';
+
 import {
     getContainerInfo,
     getPartialDescendentPathID,
@@ -26,17 +28,13 @@ import {
     getTopNumber,
     hasChildren,
     isPrologueContent,
-} from '@catechism/source/utils/path-id.ts';
+} from '@catechism-utils/path-id.ts';
 
-import { getContentMapSync } from './artifacts.ts';
+import { getContentMap } from './artifacts.ts';
 
-export function loadContent(language: Language, pathID: PathID): ContentContainer {
-    try {
-        const contentMap = getContentMapSync(language);
-        return contentMap[pathID];
-    } catch (error) {
-        throw new Error(`Failed to load content (${language}: ${pathID})`, error);
-    }
+export async function loadContent(language: Language, pathID: PathID): Promise<ContentContainer> {
+    const contentMap = await getContentMap(language);
+    return contentMap[pathID];
 }
 
 export function getContentForRendering(pathID: PathID, catechism: CatechismStructure): ContentContainer {

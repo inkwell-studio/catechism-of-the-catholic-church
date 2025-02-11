@@ -31,7 +31,7 @@ import {
     TextBlock,
     TextHeading,
     TextWrapper,
-} from '../types/types.ts';
+} from '@catechism-types';
 
 //#region Content retrieval
 /**

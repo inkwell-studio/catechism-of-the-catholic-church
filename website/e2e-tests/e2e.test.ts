@@ -1,13 +1,13 @@
-import { assert, assertStrictEquals } from '$std/assert';
+import { assert, assertStrictEquals } from '@std/assert';
 
-import crossReferenceMap from '@catechism/artifacts/derivative/paragraph-cross-reference_to_content-en.json' with { type: 'json' };
+import crossReferenceMap from '@artifacts/derivative/paragraph-cross-reference_to_content-en.json' with { type: 'json' };
 
-import { DEFAULT_LANGUAGE, Language } from '@catechism/source/types/types.ts';
-import { getLanguages } from '@catechism/source/utils/language.ts';
+import { DEFAULT_LANGUAGE, Language } from '@catechism-types';
+import { getLanguages } from '@catechism-utils/language.ts';
 
-import { path as joinPaths } from '../source/logic/navigation-utils.ts';
-import { translate } from '../source/logic/translation.ts';
-import { basicPaths } from '../source/pages/_routes.ts';
+import { path as joinPaths } from '@logic/navigation-utils.ts';
+import { translate } from '@logic/translation.ts';
+import { basicPaths } from '@pages/_routes.ts';
 
 const baseUrl = 'http://localhost:8085';
 const languages = getLanguages();

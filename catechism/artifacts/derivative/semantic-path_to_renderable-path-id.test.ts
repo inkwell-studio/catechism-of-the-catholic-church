@@ -1,7 +1,8 @@
-import { assertStrictEquals } from '$std/assert';
-import { SemanticPathPathIdMap } from '../../source/types/semantic-path-path-id-map.ts';
-import { getRenderablePathMap } from '../../source/utils/artifacts.ts';
-import { getLanguages } from '../../source/utils/language.ts';
+import { assertStrictEquals } from '@std/assert';
+
+import { SemanticPathPathIdMap } from '@catechism-types';
+import { getRenderablePathMap } from '@utils/artifacts.ts';
+import { getLanguages } from '@utils/language.ts';
 
 console.log('\nSemanticPath to renderable PathID map ...');
 for await (const [key, language] of getLanguages()) {

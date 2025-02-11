@@ -1,5 +1,5 @@
-import { assertStrictEquals } from '$std/assert';
-import { Artifact, BibleBook, Container, Content, Language, OtherSourceEnum, ReferenceEnum } from './types.ts';
+import { assertStrictEquals } from '@std/assert';
+import { Artifact, BibleBook, Container, Content, Language, OtherSourceEnum, ReferenceEnum } from '@catechism-types';
 
 console.log('\nEnums ...');
 Deno.test('have unique values', () => {

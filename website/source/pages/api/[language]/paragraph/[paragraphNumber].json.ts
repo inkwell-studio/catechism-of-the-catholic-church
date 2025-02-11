@@ -1,9 +1,9 @@
 import { APIRoute } from 'astro';
 
-import { getLanguages } from '@catechism/source/utils/language.ts';
-import { Language } from '@catechism/source/types/types.ts';
+import { getLanguages } from '@catechism-utils/language.ts';
+import { Language } from '@catechism-types';
 
-import { getAllParagraphNumbersSync, getParagraphContentMapSync } from '../../../../logic/artifacts.ts';
+import { getAllParagraphNumbers, getParagraphContentMap } from '@logic/artifacts.ts';
 
 interface Route {
     params: {
@@ -12,15 +12,26 @@ interface Route {
     };
 }
 
-export function getStaticPaths(): Array<Route> {
-    return getLanguages().flatMap(([_languageKey, language]) =>
-        getAllParagraphNumbersSync(language)
-            .map((paragraphNumber) => ({ params: { language, paragraphNumber } }))
+export async function getStaticPaths(): Promise<Array<Route>> {
+    const languagesAndParagraphNumbers = await Promise.all(
+        getLanguages().map(async ([_languageKey, language]) => ({
+            language,
+            paragraphNumbers: await getAllParagraphNumbers(language),
+        })),
+    );
+
+    return languagesAndParagraphNumbers.flatMap((t) =>
+        t.paragraphNumbers.map((paragraphNumber) => ({
+            params: {
+                language: t.language,
+                paragraphNumber,
+            },
+        }))
     );
 }
 
-export const GET: APIRoute = ({ params }) => {
-    const paragraphMap = getParagraphContentMapSync(params.language as Language);
+export const GET: APIRoute = async ({ params }) => {
+    const paragraphMap = await getParagraphContentMap(params.language as Language);
     const paragraph = paragraphMap[Number(params.paragraphNumber)];
 
     return new Response(JSON.stringify(paragraph));

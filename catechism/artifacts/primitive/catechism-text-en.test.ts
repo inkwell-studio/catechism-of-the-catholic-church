@@ -1,9 +1,8 @@
-import Catechism from './catechism-en.json' with { type: 'json' };
+import { assertNotMatch, assertStrictEquals, assertStringIncludes } from '@std/assert';
 
-import { assertNotMatch, assertStrictEquals, assertStringIncludes } from '$std/assert';
-
-import { errorMessage, getText, testCharacters, testLines } from './test-utils.ts';
-import { CatechismStructure, Language, PathID } from '../../source/types/types.ts';
+import Catechism from '@artifacts/primitive/catechism-en.json' with { type: 'json' };
+import { errorMessage, getText, testCharacters, testLines } from '@artifacts/primitive/test-utils.ts';
+import { CatechismStructure, Language, PathID } from '@catechism-types';
 
 const catechismText = getText(Catechism as CatechismStructure);
 

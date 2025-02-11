@@ -1,10 +1,9 @@
 ---
-import { DEFAULT_LANGUAGE } from '@catechism/source/types/types';
+import { DEFAULT_LANGUAGE } from '@catechism-types';
 import ContentLayout from '@layouts/content-layout.astro';
 
 export const prerender = false;
 
-// prettier-ignore
 const redirectUrl = `/${DEFAULT_LANGUAGE}` === Astro.url.pathname
     ? Astro.url.href.replace(`/${DEFAULT_LANGUAGE}`, '/')
     : Astro.url.href.replace(`/${DEFAULT_LANGUAGE}/`, '/');

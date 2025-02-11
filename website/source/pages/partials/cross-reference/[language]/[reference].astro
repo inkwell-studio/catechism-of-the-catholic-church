@@ -1,18 +1,18 @@
 ---
-import { DEFAULT_LANGUAGE, NumberOrNumberRange } from '@catechism/source/types/types';
+import { DEFAULT_LANGUAGE, NumberOrNumberRange } from '@catechism-types';
 
 import ContentBaseArray from '@components/catechism-content/content-base-array.astro';
 import PartialLink from '@components/partial-link.astro';
 import Replacement from '@components/replacement.astro';
 
-import { getParagraphCrossReferenceContentMapSync, getParagraphNumberUrlMapSync } from '@logic/artifacts';
+import { getParagraphCrossReferenceContentMap, getParagraphNumberUrlMap } from '@logic/artifacts';
 import { path } from '@logic/navigation-utils';
 import { ElementID } from '@logic/ui';
 import { CrossReferenceRoute, getCrossReferencePartialRoutes } from '@pages/_routes';
 
 export const partial = true;
 
-export function getStaticPaths(): Array<CrossReferenceRoute> {
+export function getStaticPaths(): Promise<Array<CrossReferenceRoute>> {
     return getCrossReferencePartialRoutes();
 }
 
@@ -24,13 +24,14 @@ const reference = Astro.params.reference
     // Replace a hyphen with an en dash
     .replace('-', '–') as NumberOrNumberRange;
 
-const contentMap = getParagraphCrossReferenceContentMapSync(language);
+const contentMap = await getParagraphCrossReferenceContentMap(language);
 const paragraphs = contentMap[reference];
 
+const paragraphUrlMap = await getParagraphNumberUrlMap(language);
 const firstParagraphNumber = paragraphs[0].paragraphNumber;
-const url = getParagraphNumberUrlMapSync(language)[firstParagraphNumber];
+const url = paragraphUrlMap[firstParagraphNumber];
 
-// prettier-ignore
+// deno-fmt-ignore
 const clientUrl = DEFAULT_LANGUAGE === language
     ? path(url)
     : path('/', language, url);
@@ -44,7 +45,7 @@ const contentUrl = path('/partials', clientUrl).replace(/#.*/, '');
 ---
 
 <Replacement target={ElementID.CROSS_REFERENCE_NAVIGATE_TO}>
-    <PartialLink clientUrl={clientUrl} contentUrl={contentUrl} target={ElementID.CONTENT_WRAPPER_SELECTOR}>
+    <PartialLink {clientUrl} {contentUrl} target={ElementID.CONTENT_WRAPPER_SELECTOR}>
         navigate-to: {reference}
     </PartialLink>
 </Replacement>
@@ -55,6 +56,6 @@ const contentUrl = path('/partials', clientUrl).replace(/#.*/, '');
     </div>
 
     <div>
-        {paragraphs && <ContentBaseArray content={paragraphs} language={language} />}
+        {paragraphs && <ContentBaseArray content={paragraphs} {language} />}
     </div>
 </Replacement>

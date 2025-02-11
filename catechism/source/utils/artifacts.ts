@@ -1,3 +1,5 @@
+import { join, resolve } from '@std/path';
+
 import {
     Artifact,
     Glossary,
@@ -11,7 +13,7 @@ import {
     RenderableNodeMap,
     SemanticPathPathIdMap,
     TableOfContentsType,
-} from '../../source/types/types.ts';
+} from '@catechism-types';
 
 export function getContentMap(language: Language): Promise<PathIdContentMap> {
     return getArtifact(Artifact.RENDERABLE_PATH_ID_TO_CONTENT, language);
@@ -55,37 +57,19 @@ export function getTableOfContents(language: Language): Promise<TableOfContentsT
 
 // deno-lint-ignore no-explicit-any
 async function getArtifact(artifact: Artifact, language?: Language): Promise<any> {
-    if (Artifact.GLOSSARY === artifact) {
-        return await getPrimitiveArtifact(artifact, language);
-    } else {
-        return await getDerivativeArtifact(artifact, language);
-    }
-}
+    // deno-fmt-ignore
+    const kind = Artifact.GLOSSARY === artifact
+        ? 'primitive'
+        : 'derivative';
 
-// deno-lint-ignore no-explicit-any
-async function getPrimitiveArtifact(artifact: Artifact, language?: Language): Promise<any> {
     const filepath = language
-        ? `${Deno.cwd()}/catechism/artifacts/primitive/${artifact}-${language}.json`
-        : `${Deno.cwd()}/catechism/artifacts/primitive/${artifact}.json`;
+        ? resolve(join('artifacts', kind, `${artifact}-${language}.json`))
+        : resolve(join('artifacts', kind, `${artifact}.json`));
 
     return await readFile(filepath);
 }
 
-// deno-lint-ignore no-explicit-any
-async function getDerivativeArtifact(artifact: Artifact, language?: Language): Promise<any> {
-    const filepath = language
-        ? `${Deno.cwd()}/catechism/artifacts/derivative/${artifact}-${language}.json`
-        : `${Deno.cwd()}/catechism/artifacts/derivative/${artifact}.json`;
-
-    return await readFile(filepath);
-}
-
-// deno-lint-ignore no-explicit-any
-async function readFile(filepath: string): Promise<any> {
-    try {
-        const json = await import(filepath, { with: { type: 'json' } });
-        return json.default;
-    } catch (error) {
-        throw new Error(`Failed to load artifact: ${filepath}`, error);
-    }
+async function readFile(filepath: string): Promise<JSON> {
+    const json = await import(filepath, { with: { type: 'json' } });
+    return json.default;
 }

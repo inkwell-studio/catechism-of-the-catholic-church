@@ -1,8 +1,8 @@
 import { atom } from 'nanostores';
 
-import { DARK_MODE_MEDIA_QUERY, LOCAL_STORAGE_KEY_THEME, onThemeSelection, Theme, updateTailwindClass } from '../theme.ts';
+import { DARK_MODE_MEDIA_QUERY, LOCAL_STORAGE_KEY_THEME, onThemeSelection, Theme, updateDarkModeClass } from '../theme.ts';
 
-export const $theme = atom(getThemeValue());
+const $theme = atom(getThemeValue());
 
 export function watchForThemeChanges(): void {
     // Respond to changes triggered by UI interactions
@@ -12,7 +12,7 @@ export function watchForThemeChanges(): void {
     const mediaQueryList = globalThis.matchMedia(DARK_MODE_MEDIA_QUERY);
     mediaQueryList.onchange = (event) => {
         if (Theme.SYSTEM === $theme.get()) {
-            updateTailwindClass(event.matches);
+            updateDarkModeClass(event.matches);
         }
     };
 }

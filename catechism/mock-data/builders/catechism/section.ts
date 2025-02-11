@@ -1,3 +1,5 @@
+import { Article, Chapter, Content, ContentBase, InBrief, Paragraph, ParagraphGroup, Section } from '@catechism-types';
+
 import { buildArticle } from './article.ts';
 import { buildChapter } from './chapter.ts';
 import { getTitleText } from './general.ts';
@@ -7,7 +9,6 @@ import { buildParagraphGroup } from './paragraph-group.ts';
 import { getLimits } from '../../config/limits.ts';
 import { Probability } from '../../config/probability.ts';
 import { chance, getContentCounts, intArrayOfRandomLength, randomBoolean } from '../../utils.ts';
-import { Article, Chapter, Content, ContentBase, InBrief, Paragraph, ParagraphGroup, Section } from '../../../source/types/types.ts';
 
 export function buildSection(sectionNumber: number): Section {
     const inBrief = buildInBriefHelper();

@@ -1,5 +1,5 @@
+import { Content, ContentBase } from '@catechism-types';
 import { Limit } from './config/limits.ts';
-import { Content, ContentBase } from '../source/types/types.ts';
 
 export type ContentCounts = Map<Content, number>;
 

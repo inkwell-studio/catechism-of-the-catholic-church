@@ -1,4 +1,4 @@
-import fs from 'node:fs';
+import { join, resolve } from '@std/path';
 
 import {
     Artifact,
@@ -13,87 +13,77 @@ import {
     RenderableNodeMap,
     SemanticPathPathIdMap,
     TableOfContentsType,
-} from '@catechism/source/types/types.ts';
+} from '@catechism-types';
 
-export function getContentMapSync(language: Language): PathIdContentMap {
-    return getArtifactSync(Artifact.RENDERABLE_PATH_ID_TO_CONTENT, language);
+export function getContentMap(language: Language): Promise<PathIdContentMap> {
+    return getArtifact(Artifact.RENDERABLE_PATH_ID_TO_CONTENT, language);
 }
 
-export function getRenderableNodeMapSync(language: Language): RenderableNodeMap {
-    return getArtifactSync(Artifact.PATH_ID_TO_RENDERABLE_NODES, language);
+export function getRenderableNodeMap(language: Language): Promise<RenderableNodeMap> {
+    return getArtifact(Artifact.PATH_ID_TO_RENDERABLE_NODES, language);
 }
 
-export function getParagraphCrossReferenceContentMapSync(language: Language): ParagraphCrossReferenceContentMap {
-    return getArtifactSync(Artifact.PARAGRAPH_CROSS_REFERENCE_TO_CONTENT, language);
+export function getParagraphCrossReferenceContentMap(language: Language): Promise<ParagraphCrossReferenceContentMap> {
+    return getArtifact(Artifact.PARAGRAPH_CROSS_REFERENCE_TO_CONTENT, language);
 }
 
-export function getParagraphNumberUrlMapSync(language: Language): ParagraphNumberUrlMap {
-    return getArtifactSync(Artifact.PARAGRAPH_NUMBER_TO_URL, language);
+export function getParagraphNumberUrlMap(language: Language): Promise<ParagraphNumberUrlMap> {
+    return getArtifact(Artifact.PARAGRAPH_NUMBER_TO_URL, language);
 }
 
-export function getParagraphContentMapSync(language: Language): ParagraphNumberContentMap {
-    return getArtifactSync(Artifact.PARAGRAPH_NUMBER_TO_CONTENT, language);
+export function getParagraphContentMap(language: Language): Promise<ParagraphNumberContentMap> {
+    return getArtifact(Artifact.PARAGRAPH_NUMBER_TO_CONTENT, language);
 }
 
-export function getParagraphPathIdMapSync(language: Language): ParagraphNumberPathIdMap {
-    return getArtifactSync(Artifact.PARAGRAPH_NUMBER_TO_RENDERABLE_PATH_ID, language);
+export function getParagraphPathIdMap(language: Language): Promise<ParagraphNumberPathIdMap> {
+    return getArtifact(Artifact.PARAGRAPH_NUMBER_TO_RENDERABLE_PATH_ID, language);
 }
 
-export function getPathIdLanguageUrlMapSync(): PathIdLanguageUrlMap {
-    return getArtifactSync(Artifact.PATH_ID_TO_LANGUAGE_TO_URL);
+export function getPathIdLanguageUrlMap(): Promise<PathIdLanguageUrlMap> {
+    return getArtifact(Artifact.PATH_ID_TO_LANGUAGE_TO_URL);
 }
 
-export function getSemanticPathPathIdMapSync(language: Language): SemanticPathPathIdMap {
-    return getArtifactSync(Artifact.SEMANTIC_PATH_TO_RENDERABLE_PATH_ID, language);
+export function getSemanticPathPathIdMap(language: Language): Promise<SemanticPathPathIdMap> {
+    return getArtifact(Artifact.SEMANTIC_PATH_TO_RENDERABLE_PATH_ID, language);
 }
 
-export function getAllCrossReferencesSync(language: Language): Array<NumberOrNumberRange> {
-    const map = getArtifactSync(Artifact.PARAGRAPH_CROSS_REFERENCE_TO_CONTENT, language);
+export async function getAllCrossReferences(language: Language): Promise<Array<NumberOrNumberRange>> {
+    const map = await getArtifact(Artifact.PARAGRAPH_CROSS_REFERENCE_TO_CONTENT, language);
     return Object.keys(map) as Array<NumberOrNumberRange>;
 }
 
-export function getAllParagraphNumbersSync(language: Language): Array<number> {
-    const map = getArtifactSync(Artifact.PARAGRAPH_NUMBER_TO_URL, language);
+export async function getAllParagraphNumbers(language: Language): Promise<Array<number>> {
+    const map = await getArtifact(Artifact.PARAGRAPH_NUMBER_TO_URL, language);
     return Object.keys(map).map((n) => Number(n));
 }
 
-export function getTableOfContentsSync(language: Language): TableOfContentsType {
-    return getArtifactSync(Artifact.TABLE_OF_CONTENTS, language);
+export function getTableOfContents(language: Language): Promise<TableOfContentsType> {
+    return getArtifact(Artifact.TABLE_OF_CONTENTS, language);
 }
 
 // deno-lint-ignore no-explicit-any
-function getArtifactSync(artifact: Artifact, language?: Language): any {
-    if (Artifact.GLOSSARY === artifact) {
-        return getPrimitiveArtifactSync(artifact, language);
-    } else {
-        return getDerivativeArtifactSync(artifact, language);
-    }
-}
+async function getArtifact(artifact: Artifact, language?: Language): Promise<any> {
+    // deno-fmt-ignore
+    const kind = Artifact.GLOSSARY === artifact
+        ? 'primitive'
+        : 'derivative';
 
-// deno-lint-ignore no-explicit-any
-function getPrimitiveArtifactSync(artifact: Artifact, language?: Language): any {
     const filepath = language
-        ? `../catechism/artifacts/primitive/${artifact}-${language}.json`
-        : `../catechism/artifacts/primitive/${artifact}.json`;
+        ? resolve(join('..', 'catechism', 'artifacts', kind, `${artifact}-${language}.json`))
+        : resolve(join('..', 'catechism', 'artifacts', kind, `${artifact}.json`));
 
-    return readFileSync(filepath);
+    return await readFile(filepath);
 }
 
-// deno-lint-ignore no-explicit-any
-function getDerivativeArtifactSync(artifact: Artifact, language?: Language): any {
-    const filepath = language
-        ? `../catechism/artifacts/derivative/${artifact}-${language}.json`
-        : `../catechism/artifacts/derivative/${artifact}.json`;
-
-    return readFileSync(filepath);
-}
-
-// deno-lint-ignore no-explicit-any
-function readFileSync(filepath: string): any {
-    try {
-        // TODO: Can `import.meta.<X>` be used in the `.astro` components instead of this?
-        return JSON.parse(fs.readFileSync(filepath, { encoding: 'utf8' }));
-    } catch (error) {
-        throw new Error(`Failed to load artifact: ${filepath}`, error);
-    }
+async function readFile(filepath: string): Promise<JSON> {
+    /*
+        While it would be more idiomatic to use the `import` function for loading JSON files, i.e.
+            ```
+            const json = await import(filepath, { with: { type: 'json' } })
+            ```
+        such code results in an intractable error during the Astro build process.
+        Hence, the JSON files are read as text instead, and then parsed.
+    */
+    const text = await Deno.readTextFile(filepath);
+    return JSON.parse(text);
 }

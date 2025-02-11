@@ -1,4 +1,4 @@
-import { Content, Language } from '../../../source/types/types.ts';
+import { Content, Language } from '@catechism-types';
 
 export function getContentTitle(language: Language, contentType: Content): string | null {
     const title = contentTitles[language][contentType];

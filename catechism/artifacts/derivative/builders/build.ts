@@ -1,12 +1,4 @@
-import { build as buildCrossReferenceParagraphMap } from './paragraph-cross-reference-to-content-map.ts';
-import { build as buildParagraphContentMap } from './paragraph-number-to-content-map.ts';
-import { build as buildParagraphUrlMap } from './paragraph-number-to-url-map.ts';
-import { build as buildRenderableNodeMap } from './path-id-to-renderable-nodes.ts';
-import { build as buildContentMap } from './path-id-to-content-map.ts';
-import { build as buildParagraphNumberRenderablePathIdMap } from './paragraph-number-to-renderable-path-id-map.ts';
-import { build as buildPathIdLanguageUrlMap } from './path-id-to-language-to-url-map.ts';
-import { build as buildSemanticMap } from './semantic-path-to-renderable-path-id-map.ts';
-import { build as buildTableOfContents } from './table-of-contents.ts';
+import { join } from '@std/path';
 
 import {
     Artifact,
@@ -21,10 +13,20 @@ import {
     RenderableNodeMap,
     SemanticPathPathIdMap,
     TableOfContentsType,
-} from '../../../source/types/types.ts';
+} from '@catechism-types';
 
-import { getCatechisms } from '../../../source/utils/catechism.ts';
-import { getLanguages } from '../../../source/utils/language.ts';
+import { getCatechisms } from '@utils/catechism.ts';
+import { getLanguages } from '@utils/language.ts';
+
+import { build as buildCrossReferenceParagraphMap } from './paragraph-cross-reference-to-content-map.ts';
+import { build as buildParagraphContentMap } from './paragraph-number-to-content-map.ts';
+import { build as buildParagraphUrlMap } from './paragraph-number-to-url-map.ts';
+import { build as buildRenderableNodeMap } from './path-id-to-renderable-nodes.ts';
+import { build as buildContentMap } from './path-id-to-content-map.ts';
+import { build as buildParagraphNumberRenderablePathIdMap } from './paragraph-number-to-renderable-path-id-map.ts';
+import { build as buildPathIdLanguageUrlMap } from './path-id-to-language-to-url-map.ts';
+import { build as buildSemanticMap } from './semantic-path-to-renderable-path-id-map.ts';
+import { build as buildTableOfContents } from './table-of-contents.ts';
 
 build();
 
@@ -100,8 +102,8 @@ function writeJson(
     language?: Language,
 ): void {
     const filepath = language
-        ? `catechism/artifacts/derivative/${filename}-${language}.json`
-        : `catechism/artifacts/derivative/${filename}.json`;
+        ? join('artifacts', 'derivative', `${filename}-${language}.json`)
+        : join('artifacts', 'derivative', `${filename}.json`);
 
     Deno.writeTextFileSync(
         filepath,

@@ -23,7 +23,7 @@ import {
     Section,
     Subarticle,
     Text,
-} from '../../source/types/types.ts';
+} from '@catechism-types';
 import {
     getAllContent,
     isArticle as isArticleOriginal,
@@ -38,7 +38,7 @@ import {
     isSection as isSectionOriginal,
     isSubarticle as isSubarticleOriginal,
     isText as isTextOriginal,
-} from '../../source/utils/content.ts';
+} from '@utils/content.ts';
 
 export function translateCatechism(catechism: Mutable<CatechismStructure>, language: Language): CatechismStructure {
     catechism = structuredClone(catechism);

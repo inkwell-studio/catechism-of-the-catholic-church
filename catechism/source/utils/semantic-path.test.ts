@@ -1,7 +1,8 @@
-import { assertStrictEquals } from '$std/assert';
+import { assertStrictEquals } from '@std/assert';
+
+import { Article, Chapter, Content, ContentBase, Language, ParagraphGroup, Part, Prologue, Section } from '@catechism-types';
 
 import { buildSemanticPath, getSemanticPathSource } from './semantic-path.ts';
-import { Article, Chapter, Content, ContentBase, Language, ParagraphGroup, Part, Prologue, Section } from '../types/types.ts';
 
 //#region tests
 console.log('\nsemantic paths ...');

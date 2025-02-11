@@ -1,9 +1,9 @@
-import { DEFAULT_LANGUAGE, Language } from '@catechism/source/types/types.ts';
-import { getLanguages } from '@catechism/source/utils/language.ts';
-import { getTopLevelUrls } from '@catechism/source/utils/table-of-contents.ts';
+import { DEFAULT_LANGUAGE, Language } from '@catechism-types';
+import { getLanguages } from '@catechism-utils/language.ts';
+import { getTopLevelUrls } from '@catechism-utils/table-of-contents.ts';
 
-import { getAllCrossReferencesSync, getAllParagraphNumbersSync, getTableOfContentsSync } from '../logic/artifacts.ts';
-import { path as joinPaths } from '../logic/navigation-utils.ts';
+import { getAllCrossReferences, getAllParagraphNumbers, getTableOfContents } from '@logic/artifacts.ts';
+import { path as joinPaths } from '@logic/navigation-utils.ts';
 
 const languages = getLanguages().map(([_languageKey, language]) => language);
 
@@ -41,13 +41,20 @@ export function getBasicRoutes(): Array<ContentRoute> {
     );
 }
 
-export function getCrossReferencePartialRoutes(): Array<CrossReferenceRoute> {
-    return languages.flatMap((language) =>
-        getAllCrossReferencesSync(language).flatMap((reference) => {
+export async function getCrossReferencePartialRoutes(): Promise<Array<CrossReferenceRoute>> {
+    const languagesAndCrossReferences = await Promise.all(
+        languages.map(async (language) => ({
+            language,
+            crossReferences: await getAllCrossReferences(language),
+        })),
+    );
+
+    return languagesAndCrossReferences.flatMap(({ language, crossReferences }) =>
+        crossReferences.flatMap((reference) => {
             /*
                 For robustness, build an endpoint for each cross-reference specifying
                 multiple paragraphs with an en dash and a hyphen (e.g. `/101–105` and `/101-105`)
-                */
+            */
 
             const withEnDash = reference.toString();
             const withHyphen = reference.toString().replace('–', '-');
@@ -66,9 +73,18 @@ export function getHomePageRoutes(): Array<ContentRoute> {
         .flatMap((language) => ({ params: { language, path: `/${language}` } }));
 }
 
-export function getParagraphNumberRoutes(): Array<ContentRoute> {
-    return languages.flatMap((language) =>
-        getAllParagraphNumbersSync(language)
+export async function getParagraphNumberRoutes(): Promise<Array<ContentRoute>> {
+    const languagesAndParagraphNumbers = await Promise.all(
+        languages.map(async (language) => (
+            {
+                language,
+                paragraphNumbers: await getAllParagraphNumbers(language),
+            }
+        )),
+    );
+
+    return languagesAndParagraphNumbers.flatMap(({ language, paragraphNumbers }) =>
+        paragraphNumbers
             .map((n) =>
                 // deno-fmt-ignore
                 DEFAULT_LANGUAGE === language
@@ -79,16 +95,19 @@ export function getParagraphNumberRoutes(): Array<ContentRoute> {
     );
 }
 
-export function getTableOfContentsRoutes(): Array<ContentRoute> {
-    return languages.flatMap((language) => {
-        const table = getTableOfContentsSync(language);
-        return getTopLevelUrls(table)
+export async function getTableOfContentsRoutes(): Promise<Array<ContentRoute>> {
+    const tables = await Promise.all(
+        languages.map((language) => getTableOfContents(language)),
+    );
+
+    return tables.flatMap((table) =>
+        getTopLevelUrls(table)
             .map((path) =>
                 // deno-fmt-ignore
-                DEFAULT_LANGUAGE === language
+                DEFAULT_LANGUAGE === table.language
                     ? joinPaths('/', path)
-                    : joinPaths('/', language, path)
+                    : joinPaths('/', table.language, path)
             )
-            .map((path) => ({ params: { language, path } }));
-    });
+            .map((path) => ({ params: { language: table.language, path } }))
+    );
 }

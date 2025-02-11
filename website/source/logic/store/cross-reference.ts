@@ -1,6 +1,6 @@
 import { atom, computed } from 'nanostores';
 
-import { NumberOrNumberRange } from '@catechism/source/types/types.ts';
+import { NumberOrNumberRange } from '@catechism-types';
 
 export const $crossReferenceHistory = atom<Array<NumberOrNumberRange>>([]);
 

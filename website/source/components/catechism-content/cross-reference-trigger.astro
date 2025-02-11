@@ -1,9 +1,9 @@
 ---
-import { Language, NumberOrNumberRange } from '@catechism/source/types/types';
-
-import PartialTrigger from '../partial-trigger.astro';
+import { Language, NumberOrNumberRange } from '@catechism-types';
 
 import { path } from '@logic/navigation-utils';
+
+import PartialTrigger from '../partial-trigger.astro';
 
 interface Props {
     reference: NumberOrNumberRange;
@@ -17,7 +17,7 @@ const contentUrl = path('/partials/cross-reference', language, referenceForUrl);
 ---
 
 <script>
-    import { NumberOrNumberRange } from '@catechism/source/types/number-or-number-range';
+    import { NumberOrNumberRange } from '@catechism-types';
     import { onClick } from '@logic/dom-utils';
     import { select } from '@logic/store/cross-reference';
 
@@ -35,7 +35,7 @@ const contentUrl = path('/partials/cross-reference', language, referenceForUrl);
 </script>
 
 <cross-reference-trigger data-reference={reference}>
-    <PartialTrigger contentUrl={contentUrl} class="trigger">
+    <PartialTrigger {contentUrl} class="trigger">
         {reference.toString()}
     </PartialTrigger>
 </cross-reference-trigger>

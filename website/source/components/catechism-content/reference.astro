@@ -1,6 +1,6 @@
 ---
-import { Language, ReferenceBase } from '@catechism/source/types/types';
-import { isBibleReference as isBibleReferenceUtil, isOtherReference as isOtherReferenceUtil } from '@catechism/source/utils/content';
+import { Language, ReferenceBase } from '@catechism-types';
+import { isBibleReference as isBibleReferenceUtil, isOtherReference as isOtherReferenceUtil } from '@catechism-utils/content';
 
 import ReferenceToBible from './reference-to-bible.astro';
 import ReferenceToOther from './reference-to-other.astro';
@@ -20,5 +20,5 @@ if (!isBibleReference && !isOtherReference) {
 }
 ---
 
-{isBibleReference && <ReferenceToBible reference={reference} language={language} />}
-{isOtherReference && <ReferenceToOther reference={reference} language={language} />}
+{isBibleReference && <ReferenceToBible {reference} {language} />}
+{isOtherReference && <ReferenceToOther {reference} {language} />}

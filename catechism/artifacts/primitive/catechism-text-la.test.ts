@@ -1,8 +1,7 @@
-import Catechism from './catechism-la.json' with { type: 'json' };
+import { assertStrictEquals } from '@std/assert';
 
-import { assertStrictEquals } from '$std/assert';
-
-import { CatechismStructure, Language } from '../../source/types/types.ts';
+import Catechism from '@artifacts/primitive/catechism-la.json' with { type: 'json' };
+import { CatechismStructure, Language } from '@catechism-types';
 
 console.log('\nLatin text fragments ...');
 

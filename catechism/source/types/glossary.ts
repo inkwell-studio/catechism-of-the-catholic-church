@@ -1,4 +1,4 @@
-import { ReferenceBase } from '@catechism/source/types/reference-base.ts';
+import { ReferenceBase } from './reference-base.ts';
 import { TextSimple } from './text-simple.ts';
 
 export type Glossary = Array<GlossaryEntry>;

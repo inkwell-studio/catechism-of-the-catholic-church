@@ -1,5 +1,5 @@
 ---
-import { Text } from '@catechism/source/types/types';
+import { Text } from '@catechism-types';
 
 interface Props {
     text: Text;
@@ -29,8 +29,7 @@ const regular = !strong && !emphasis;
 {
     strong && (
         <>
-            <strong class:list={classes}>{text.content}</strong>
-            {spacer}
+            <strong class:list={classes}>{text.content}</strong> {spacer}
         </>
     )
 }
@@ -38,8 +37,7 @@ const regular = !strong && !emphasis;
 {
     emphasis && (
         <>
-            <em class:list={classes}>{text.content}</em>
-            {spacer}
+            <em class:list={classes}>{text.content}</em> {spacer}
         </>
     )
 }
@@ -47,8 +45,7 @@ const regular = !strong && !emphasis;
 {
     regular && (
         <>
-            <span class:list={classes}>{text.content}</span>
-            {spacer}
+            <span class:list={classes}>{text.content}</span> {spacer}
         </>
     )
 }

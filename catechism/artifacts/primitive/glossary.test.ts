@@ -1,10 +1,10 @@
-import { assertStrictEquals } from '$std/assert';
+import { assertStrictEquals } from '@std/assert';
 
-import { CatechismStructure, Glossary } from '../../source/types/types.ts';
-import { getGlossary } from '../../source/utils/artifacts.ts';
-import { getCatechism } from '../../source/utils/catechism.ts';
-import { getAllParagraphs, isParagraphReference, isReference } from '../../source/utils/content.ts';
-import { getLanguages } from '../../source/utils/language.ts';
+import { CatechismStructure, Glossary } from '@catechism-types';
+import { getGlossary } from '@utils/artifacts.ts';
+import { getCatechism } from '@utils/catechism.ts';
+import { getAllParagraphs, isParagraphReference, isReference } from '@utils/content.ts';
+import { getLanguages } from '@utils/language.ts';
 
 console.log('\nGlossary ...');
 for await (const [key, language] of getLanguages()) {

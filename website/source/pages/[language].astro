@@ -10,4 +10,4 @@ export function getStaticPaths(): Array<ContentRoute> {
 const language = Astro.params.language;
 ---
 
-<HomeLayout language={language} />
+<HomeLayout {language} />

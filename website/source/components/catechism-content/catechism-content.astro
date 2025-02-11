@@ -1,10 +1,10 @@
 ---
-import { Language, PathID } from '@catechism/source/types/types';
+import { Language, PathID } from '@catechism-types';
 
 import ContentBase from '@components/catechism-content/content-base.astro';
 import NavigationButton from '@components/navigation-button.astro';
 
-import { getRenderableNodeMapSync } from '@logic/artifacts';
+import { getRenderableNodeMap } from '@logic/artifacts';
 import { loadContent } from '@logic/rendering';
 
 interface Props {
@@ -14,9 +14,10 @@ interface Props {
 
 const { pathID, language } = Astro.props;
 
-const content = loadContent(language, pathID);
+const content = await loadContent(language, pathID);
 
-const renderableNodes = getRenderableNodeMapSync(language)[pathID] ?? null;
+const nodeMap = await getRenderableNodeMap(language);
+const renderableNodes = nodeMap[pathID] ?? null;
 const nextUrl = renderableNodes?.next?.url;
 const previousUrl = renderableNodes?.previous?.url;
 ---
@@ -30,12 +31,12 @@ const previousUrl = renderableNodes?.previous?.url;
 <!-- Finalize the height when the UI is finalized (ensure it handles the case of the screen being taller than the content) -->
 <div class="min-h-[calc(100vh_-_4rem)] grid grid-rows-[1fr_auto] border border-white/20 relative">
     <div class="max-w-prose mx-auto pt-8 pb-32 break-all">
-        {content && <ContentBase content={content} language={language} />}
+        {content && <ContentBase {content} {language} />}
     </div>
 </div>
 
 <!-- TODO: Finalize the `bottom` positioning when the height of the action bar is finalized (the construction paradigm may need to be improved) -->
 <div class="sticky bottom-[7.5rem] inset-x-0 grid grid-cols-2 gap-4 p-4 mt-4 bg-slate-600 border-t border-slate-900">
-    {previousUrl ? <NavigationButton url={previousUrl} direction="previous" language={language} /> : <div />}
-    {nextUrl ? <NavigationButton url={nextUrl} direction="next" language={language} /> : <div />}
+    {previousUrl ? <NavigationButton url={previousUrl} direction="previous" {language} /> : <div />}
+    {nextUrl ? <NavigationButton url={nextUrl} direction="next" {language} /> : <div />}
 </div>

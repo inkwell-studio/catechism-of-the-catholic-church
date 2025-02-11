@@ -1,12 +1,12 @@
 import { APIRoute } from 'astro';
 
-import { Language, NumberOrNumberRange, ParagraphNumberContentMap } from '@catechism/source/types/types.ts';
-import { getParagraphNumbers } from '@catechism/source/utils/content.ts';
-import { getLanguages } from '@catechism/source/utils/language.ts';
+import { Language, NumberOrNumberRange, ParagraphNumberContentMap } from '@catechism-types';
+import { getParagraphNumbers } from '@catechism-utils/content.ts';
+import { getLanguages } from '@catechism-utils/language.ts';
 
-const map_en = (await import('@catechism/artifacts/derivative/paragraph-number_to_content-en.json', { with: { type: 'json' } })).default;
-const map_es = (await import('@catechism/artifacts/derivative/paragraph-number_to_content-es.json', { with: { type: 'json' } })).default;
-const map_la = (await import('@catechism/artifacts/derivative/paragraph-number_to_content-la.json', { with: { type: 'json' } })).default;
+import map_en from '@artifacts/derivative/paragraph-number_to_content-en.json' with { type: 'json' };
+import map_es from '@artifacts/derivative/paragraph-number_to_content-es.json' with { type: 'json' };
+import map_la from '@artifacts/derivative/paragraph-number_to_content-la.json' with { type: 'json' };
 
 const contentMaps: Record<Language, object> = {
     [Language.ENGLISH]: map_en,

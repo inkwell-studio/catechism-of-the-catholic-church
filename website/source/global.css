@@ -1,0 +1,54 @@
+@import 'tailwindcss';
+
+/* The class referenced here must match that specified by the `DARK_MODE_CLASS` constant in `theme.ts` */
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+    --tailwind-default-font-sans:
+        ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+    --tailwind-default-font-serif: ui-serif, Georgia, Cambria, 'Times New Roman', Times, serif;
+    --tailwind-default-font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
+
+    --font-sans: PTSans, var(--tailwind-default-font-sans);
+    --font-mono: 'JetBrains Mono', var(--tailwind-default-font-mono);
+}
+
+:root {
+    scroll-behavior: smooth;
+}
+
+@font-face {
+    font-family: 'PTSans';
+    font-weight: 400;
+    src:
+        local('PT Sans'),
+        url(/fonts/PTSans-Regular.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'PTSans';
+    font-weight: 700;
+    src:
+        local('PT Sans Bold'),
+        url(/fonts/PTSans-Bold.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'JetBrains Mono';
+    font-weight: 600;
+    src:
+        local('JetBrains Mono Regular'),
+        url(/fonts/JetBrainsMono-Regular.woff2) format('woff2');
+}
+
+h1 {
+    @apply text-3xl;
+    @apply font-bold;
+    @apply mb-8;
+}
+
+h2 {
+    @apply text-2xl;
+    @apply font-bold;
+    @apply mb-4;
+}

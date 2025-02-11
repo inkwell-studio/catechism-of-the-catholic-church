@@ -1,5 +1,5 @@
 ---
-import { Language } from '@catechism/source/types/language';
+import { Language } from '@catechism-types';
 
 import ActionBar from '@components/action-bar.astro';
 import CrossReferenceWindow from '@components/catechism-content/cross-reference-window.astro';
@@ -9,7 +9,7 @@ import BaseLayout from '@layouts/base-layout.astro';
 
 import { ElementID } from '@logic/ui';
 
-import '../styles.css';
+import '@globalCss';
 
 interface Props {
     language: Language;
@@ -17,7 +17,7 @@ interface Props {
 const { language } = Astro.props;
 ---
 
-<BaseLayout language={language}>
+<BaseLayout {language}>
     {/* Content is inserted here */}
     <div id={ElementID.CONTENT_WRAPPER} class="max-w-5xl mx-auto px-8">
         <slot />
@@ -25,8 +25,8 @@ const { language } = Astro.props;
 
     <div class="fixed bottom-0 inset-x-0">
         <CrossReferenceWindow />
-        <ActionBar language={language} />
+        <ActionBar {language} />
     </div>
 
-    <DevelopmentHelper language={language} usePartialLinks={true} />
+    <DevelopmentHelper {language} usePartialLinks={true} />
 </BaseLayout>

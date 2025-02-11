@@ -1,11 +1,11 @@
-import { assert, assertExists, assertStrictEquals } from '$std/assert';
+import { assert, assertExists, assertStrictEquals } from '@std/assert';
 
-import { CatechismStructure, TableOfContentsEntry, TableOfContentsType } from '../../source/types/types.ts';
-import { getTableOfContents } from '../../source/utils/artifacts.ts';
-import { getCatechism } from '../../source/utils/catechism.ts';
-import { getAllParagraphs } from '../../source/utils/content.ts';
-import { getLanguages } from '../../source/utils/language.ts';
-import { getAllEntries } from '../../source/utils/table-of-contents.ts';
+import { CatechismStructure, TableOfContentsEntry, TableOfContentsType } from '@catechism-types';
+import { getTableOfContents } from '@utils/artifacts.ts';
+import { getCatechism } from '@utils/catechism.ts';
+import { getAllParagraphs } from '@utils/content.ts';
+import { getLanguages } from '@utils/language.ts';
+import { getAllEntries } from '@utils/table-of-contents.ts';
 
 //#region tests
 console.log('\nTable of Contents ...');

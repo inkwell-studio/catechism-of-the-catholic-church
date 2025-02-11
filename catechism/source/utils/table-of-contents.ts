@@ -1,4 +1,4 @@
-import { TableOfContentsEntry, TableOfContentsType } from '../types/types.ts';
+import { TableOfContentsEntry, TableOfContentsType } from '@catechism-types';
 
 export function getTopLevelEntries(tableOfContents: TableOfContentsType): Array<TableOfContentsEntry> {
     return getAllEntries(tableOfContents).filter((entry) => !entry.url.includes('#'));

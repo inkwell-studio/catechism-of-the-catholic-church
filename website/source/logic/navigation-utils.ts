@@ -25,7 +25,7 @@ export function respondToNavigationEvent(): void {
     Scroll to the paragraph number at the end of the URL when the page
     is initially loaded (not on a refresh or back/forward navigation event)
     */
-    const event = window.performance.getEntriesByType('navigation')[0] as PerformanceNavigationTiming;
+    const event = globalThis.performance.getEntriesByType('navigation')[0] as PerformanceNavigationTiming;
     const initialLoad = 'navigate' === event?.type;
     if (initialLoad) {
         const paragraphNumber = getParagraphNumber(document.location.href);

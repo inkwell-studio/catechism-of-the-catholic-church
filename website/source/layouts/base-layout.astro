@@ -1,9 +1,9 @@
 ---
-import { Language } from '@catechism/source/types/language';
+import { Language } from '@catechism-types';
 
 import { translate as t } from '@logic/translation';
 
-import '../styles.css';
+import '@globalCss';
 
 interface Props {
     language: Language;
@@ -50,7 +50,10 @@ const canonicalUrl = new URL(Astro.url.pathname, Astro.site).href;
         <script is:inline>
             (() => {
                 const theme = globalThis.localStorage.getItem('theme');
-                if ('DARK' === theme || ('SYSTEM' === theme && globalThis.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                if (
+                    'DARK' === theme ||
+                    ('SYSTEM' === theme && globalThis.matchMedia('(prefers-color-scheme: dark)').matches)
+                ) {
                     document.documentElement.classList.add('dark');
                 }
             })();
@@ -66,6 +69,7 @@ const canonicalUrl = new URL(Astro.url.pathname, Astro.site).href;
         <script src="/htmx.min.js" is:inline></script>
     </head>
     <body class="bg-stone-200 text-stone-900 dark:bg-slate-800 dark:text-slate-200">
+        <!-- deno-fmt-ignore -->
         {/* Child elements are inserted here */}
         <slot />
     </body>

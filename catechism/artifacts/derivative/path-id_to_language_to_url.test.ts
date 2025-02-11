@@ -1,9 +1,9 @@
-import { assertEquals, assertStrictEquals } from '$std/assert';
+import { assertEquals, assertStrictEquals } from '@std/assert';
 
-import { DEFAULT_LANGUAGE } from '../../source/types/types.ts';
-import { getPathIdLanguageUrlMap, getTableOfContents } from '../../source/utils/artifacts.ts';
-import { getLanguages } from '../../source/utils/language.ts';
-import { getAllEntries } from '../../source/utils/table-of-contents.ts';
+import { DEFAULT_LANGUAGE } from '@catechism-types';
+import { getPathIdLanguageUrlMap, getTableOfContents } from '@utils/artifacts.ts';
+import { getLanguages } from '@utils/language.ts';
+import { getAllEntries } from '@utils/table-of-contents.ts';
 
 console.log('\nPathID to Language to URL map ...');
 const urlMap = await getPathIdLanguageUrlMap();

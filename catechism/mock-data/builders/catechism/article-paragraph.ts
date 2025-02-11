@@ -1,9 +1,10 @@
+import { ArticleParagraph, Content, Subarticle } from '@catechism-types';
+
 import { getTitleText } from './general.ts';
 import { buildInBrief } from './in-brief.ts';
 import { buildSubarticle } from './subarticle.ts';
 import { getLimits } from '../../config/limits.ts';
 import { intArrayOfRandomLength } from '../../utils.ts';
-import { ArticleParagraph, Content, Subarticle } from '../../../source/types/types.ts';
 
 export function buildArticleParagraph(articleParagraphNumber: number): ArticleParagraph {
     return {

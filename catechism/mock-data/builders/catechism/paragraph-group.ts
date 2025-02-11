@@ -1,8 +1,9 @@
+import { Content, Paragraph, ParagraphGroup } from '@catechism-types';
+
 import { getTitleText } from './general.ts';
 import { buildParagraph } from './paragraph.ts';
 import { getLimits } from '../../config/limits.ts';
 import { intArrayOfRandomLength } from '../../utils.ts';
-import { Content, Paragraph, ParagraphGroup } from '../../../source/types/types.ts';
 
 export function buildParagraphGroup(paragraphGroupNumber: number): ParagraphGroup {
     return {

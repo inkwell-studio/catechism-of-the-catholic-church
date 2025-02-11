@@ -1,4 +1,4 @@
-import { assertStrictEquals } from '$std/assert';
+import { assertStrictEquals } from '@std/assert';
 
 import { path } from './navigation-utils.ts';
 

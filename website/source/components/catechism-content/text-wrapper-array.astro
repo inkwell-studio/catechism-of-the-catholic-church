@@ -1,6 +1,6 @@
 ---
-import { ContentBase as ContentBaseType, Language, TextWrapper as TextWrapperType } from '@catechism/source/types/types';
-import { isTextWrapper } from '@catechism/source/utils/content';
+import { ContentBase as ContentBaseType, Language, TextWrapper as TextWrapperType } from '@catechism-types';
+import { isTextWrapper } from '@catechism-utils/content';
 
 import ContentBase from './content-base.astro';
 import TextWrapper from './text-wrapper.astro';
@@ -20,13 +20,12 @@ const { content, language } = Astro.props;
             const spacer = precedingContentWasTextWrapper ? ' ' : '';
 
             return (
-                <>
-                    {spacer}
-                    <TextWrapper textWrapper={c} language={language} />
-                </>
-            );
+        <>
+            {spacer} <TextWrapper textWrapper={c} {language} />
+        </>
+    );
         } else {
-            return <ContentBase content={c} language={language} />;
+            return <ContentBase content={c} {language} />;
         }
     })
 }

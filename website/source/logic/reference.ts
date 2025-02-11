@@ -1,4 +1,4 @@
-import { BibleBook, BibleReference, Language, OtherReference, OtherSourceEnum } from '@catechism/source/types/types.ts';
+import { BibleBook, BibleReference, Language, OtherReference, OtherSourceEnum } from '@catechism-types';
 
 export function getBibleReferenceUrl(reference: BibleReference, language: Language): string {
     const book = getBibleReferenceUrlBook(reference.book);
@@ -17,30 +17,6 @@ export function getBibleReferenceUrl(reference: BibleReference, language: Langua
     }
 
     return `https://www.bible.com/bible/${bibleNumber}/${book}.${reference.chapter}.${languageTag}`;
-}
-
-export function getBibleReferenceUrlBook(book: BibleBook): string {
-    // TODO: Add cases for the remaining books when the destination URL has been finalized
-    switch (book) {
-        case BibleBook.GENESIS:
-            return 'GEN';
-        case BibleBook.PSALMS:
-            return 'PSA';
-        case BibleBook.MICAH:
-            return 'MIC';
-        case BibleBook.JOHN:
-            return 'JHN';
-        case BibleBook.ACTS_OF_THE_APOSTLES:
-            return 'ACT';
-        case BibleBook.EPHESIANS:
-            return 'EPH';
-        case BibleBook.HEBREWS:
-            return 'HEB';
-        default: {
-            console.warn(`Unknown Bible book encountered: ${book}`);
-            return '';
-        }
-    }
 }
 
 export function getOtherReferenceUrl(reference: OtherReference, language: Language): string {
@@ -63,5 +39,29 @@ export function getOtherReferenceUrl(reference: OtherReference, language: Langua
         }
         case OtherSourceEnum.HUMANAE_VITAE:
             return `https://www.vatican.va/content/paul-vi/${language}/encyclicals/documents/hf_p-vi_enc_25071968_humanae-vitae.html`;
+    }
+}
+
+function getBibleReferenceUrlBook(book: BibleBook): string {
+    // TODO: Add cases for the remaining books when the destination URL has been finalized
+    switch (book) {
+        case BibleBook.GENESIS:
+            return 'GEN';
+        case BibleBook.PSALMS:
+            return 'PSA';
+        case BibleBook.MICAH:
+            return 'MIC';
+        case BibleBook.JOHN:
+            return 'JHN';
+        case BibleBook.ACTS_OF_THE_APOSTLES:
+            return 'ACT';
+        case BibleBook.EPHESIANS:
+            return 'EPH';
+        case BibleBook.HEBREWS:
+            return 'HEB';
+        default: {
+            console.warn(`Unknown Bible book encountered: ${book}`);
+            return '';
+        }
     }
 }

@@ -1,16 +1,2 @@
-# TODO: The file may be able to removed in a future update of Astro: https://github.com/withastro/astro/pull/11859
-website/source/env.d.ts
-
-# generated types
-website/.astro/
-
-# Astro build output
-website/dist/
-
-# dependencies
-website/node_modules/
-
 # macOS-specific files
 .DS_Store
-
-scratch.ts

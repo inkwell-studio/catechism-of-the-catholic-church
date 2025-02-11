@@ -1,10 +1,10 @@
-import { assertExists, assertStrictEquals } from '$std/assert';
+import { assertExists, assertStrictEquals } from '@std/assert';
 
-import { CatechismStructure, ParagraphNumberUrlMap } from '../../source/types/types.ts';
-import { getParagraphNumberUrlMap } from '../../source/utils/artifacts.ts';
-import { getCatechism } from '../../source/utils/catechism.ts';
-import { getAllParagraphs } from '../../source/utils/content.ts';
-import { getLanguages } from '../../source/utils/language.ts';
+import { CatechismStructure, ParagraphNumberUrlMap } from '@catechism-types';
+import { getParagraphNumberUrlMap } from '@utils/artifacts.ts';
+import { getCatechism } from '@utils/catechism.ts';
+import { getAllParagraphs } from '@utils/content.ts';
+import { getLanguages } from '@utils/language.ts';
 
 console.log('\nParagraph number to URL map ...');
 for await (const [key, language] of getLanguages()) {

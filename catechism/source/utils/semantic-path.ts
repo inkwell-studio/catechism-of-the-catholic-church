@@ -1,5 +1,4 @@
-import { getLeafPathIdNumber } from './path-id.ts';
-import { Content, ContentBase, Language, SemanticPath, SemanticPathSource } from '../types/types.ts';
+import { Content, ContentBase, Language, SemanticPath, SemanticPathSource } from '@catechism-types';
 import {
     isArticle,
     isArticleParagraph,
@@ -10,8 +9,10 @@ import {
     isPrologue,
     isSection,
     isSubarticle,
-} from '../utils/content.ts';
-import { translate } from '../../../website/source/logic/translation.ts';
+} from '@utils/content.ts';
+import { translate } from '@website/source/logic/translation.ts';
+
+import { getLeafPathIdNumber } from './path-id.ts';
 
 /**
  * @param ancestors a list of ancestors of `child`, in descending order (i.e. `ancestors[i]` is the parent of `ancestors[i+1]`)

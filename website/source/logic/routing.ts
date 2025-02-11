@@ -1,14 +1,7 @@
-import { Language, SemanticPath } from '@catechism/source/types/types.ts';
-import { getLanguage, getLanguages } from '@catechism/source/utils/language.ts';
+import { Language, SemanticPath } from '@catechism-types';
+import { getLanguage, getLanguages } from '@catechism-utils/language.ts';
 
 import { translate } from './translation.ts';
-
-export enum Element {
-    TABLE_OF_CONTENTS = 'TABLE_OF_CONTENTS',
-    CONTENT = 'CONTENT',
-    GLOSSARY = 'GLOSSARY',
-    INDEX = 'INDEX',
-}
 
 /**
  * @returns the URL for viewing the content at the given path

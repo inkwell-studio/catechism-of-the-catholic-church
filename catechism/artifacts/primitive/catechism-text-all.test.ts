@@ -1,10 +1,9 @@
-import { assertNotMatch, assertNotStrictEquals, assertStrictEquals, fail } from '$std/assert';
+import { assertNotMatch, assertNotStrictEquals, assertStrictEquals, fail } from '@std/assert';
 
-import { CatechismText, getText } from './test-utils.ts';
-import { PathID } from '../../source/types/types.ts';
-import { Language } from '../../source/types/language.ts';
-import { getLanguages } from '../../source/utils/language.ts';
-import { getCatechism } from '../../source/utils/catechism.ts';
+import { CatechismText, getText } from '@artifacts/primitive/test-utils.ts';
+import { Language, PathID } from '@catechism-types';
+import { getLanguages } from '@utils/language.ts';
+import { getCatechism } from '@utils/catechism.ts';
 
 //#region tests
 console.log(`\nAll text fragments ...`);

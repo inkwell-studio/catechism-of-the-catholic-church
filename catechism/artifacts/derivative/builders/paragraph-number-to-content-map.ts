@@ -1,5 +1,5 @@
-import { CatechismStructure, ParagraphNumberContentMap } from '../../../source/types/types.ts';
-import { getAllParagraphs } from '../../../source/utils/content.ts';
+import { CatechismStructure, ParagraphNumberContentMap } from '@catechism-types';
+import { getAllParagraphs } from '@utils/content.ts';
 
 export function build(catechism: CatechismStructure): ParagraphNumberContentMap {
     const contentMap: ParagraphNumberContentMap = {};

@@ -1,6 +1,7 @@
+import { BlockQuote, Content, TextBlock } from '@catechism-types';
+
 import { buildTextBlock } from './text-block.ts';
 import { intArrayOfRandomLength } from '../../utils.ts';
-import { BlockQuote, Content, TextBlock } from '../../../source/types/types.ts';
 import { getLimits } from '../../config/limits.ts';
 
 export function buildBlockQuote(): BlockQuote {

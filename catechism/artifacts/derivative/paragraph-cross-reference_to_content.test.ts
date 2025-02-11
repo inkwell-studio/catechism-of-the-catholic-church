@@ -1,10 +1,10 @@
-import { assertEquals, assertExists, assertStrictEquals } from '$std/assert';
+import { assertEquals, assertExists, assertStrictEquals } from '@std/assert';
 
-import { CatechismStructure, NumberOrNumberRange, ParagraphCrossReferenceContentMap } from '../../source/types/types.ts';
-import { getCatechism } from '../../source/utils/catechism.ts';
-import { getAllCrossReferences, getParagraphNumbers } from '../../source/utils/content.ts';
-import { getParagraphCrossReferenceContentMap } from '../../source/utils/artifacts.ts';
-import { getLanguages } from '../../source/utils/language.ts';
+import { CatechismStructure, NumberOrNumberRange, ParagraphCrossReferenceContentMap } from '@catechism-types';
+import { getCatechism } from '@utils/catechism.ts';
+import { getAllCrossReferences, getParagraphNumbers } from '@utils/content.ts';
+import { getParagraphCrossReferenceContentMap } from '@utils/artifacts.ts';
+import { getLanguages } from '@utils/language.ts';
 
 console.log('\nParagraph cross-reference to content map ...');
 for await (const [key, language] of getLanguages()) {

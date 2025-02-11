@@ -1,5 +1,5 @@
-import { CatechismStructure, ParagraphCrossReferenceContentMap, ParagraphNumberContentMap } from '../../../source/types/types.ts';
-import { getAllCrossReferences, getParagraphNumbers } from '../../../source/utils/content.ts';
+import { CatechismStructure, ParagraphCrossReferenceContentMap, ParagraphNumberContentMap } from '@catechism-types';
+import { getAllCrossReferences, getParagraphNumbers } from '@utils/content.ts';
 
 export function build(catechism: CatechismStructure, paragraphMap: ParagraphNumberContentMap): ParagraphCrossReferenceContentMap {
     const contentMap: ParagraphCrossReferenceContentMap = {};

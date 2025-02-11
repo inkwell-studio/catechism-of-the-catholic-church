@@ -1,5 +1,5 @@
-import { ParagraphNumberPathIdMap, TableOfContentsType } from '../../../source/types/types.ts';
-import { getTopLevelEntries } from '../../../source/utils/table-of-contents.ts';
+import { ParagraphNumberPathIdMap, TableOfContentsType } from '@catechism-types';
+import { getTopLevelEntries } from '@utils/table-of-contents.ts';
 
 export function build(tableOfContents: TableOfContentsType): ParagraphNumberPathIdMap {
     const map: ParagraphNumberPathIdMap = {};

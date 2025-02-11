@@ -16,7 +16,7 @@ import {
     PathID,
     SemanticPathSource,
     TextWrapper,
-} from '../../../source/types/types.ts';
+} from '@catechism-types';
 
 import {
     getAllChildContent,

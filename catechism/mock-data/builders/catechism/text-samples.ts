@@ -1,5 +1,6 @@
+import { Language } from '@catechism-types';
+
 import { getLanguage } from '../../language/language-state.ts';
-import { Language } from '../../../source/types/types.ts';
 
 //#region exported functions
 const sampleIndices = new Map<Language, number>();

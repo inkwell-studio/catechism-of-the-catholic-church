@@ -1,11 +1,11 @@
 ---
-import { DEFAULT_LANGUAGE, Language } from '@catechism/source/types/types';
+import { DEFAULT_LANGUAGE, Language } from '@catechism-types';
 
 import PartialLink from '@components/partial-link.astro';
-import { getTableOfContentsSync } from '@logic/artifacts';
+import { getTableOfContents } from '@logic/artifacts';
 import { path } from '@logic/navigation-utils';
 import { ElementID } from '@logic/ui';
-import { BasicPath } from '../pages/_routes';
+import { BasicPath } from '@pages/_routes';
 
 interface Props {
     language: Language;
@@ -26,7 +26,7 @@ const basicPathLinks = [
     ['Index | C', BasicPath.INDEX_CITATIONS],
     ['Index | T', BasicPath.INDEX_TOPICS],
 ].map(([label, segment]) => {
-    // prettier-ignore
+    // deno-fmt-ignore
     const clientUrl = DEFAULT_LANGUAGE === language
         ? path(segment)
         : path('/', language, segment);
@@ -40,9 +40,9 @@ const basicPathLinks = [
     };
 });
 
-const tableOfContents = getTableOfContentsSync(language);
+const tableOfContents = await getTableOfContents(language);
 const tocEntries = [tableOfContents.prologue, ...tableOfContents.parts].map((entry) => {
-    // prettier-ignore
+    // deno-fmt-ignore
     const clientUrl = DEFAULT_LANGUAGE === language
         ? path(entry.url)
         : path('/', language, entry.url);
@@ -66,41 +66,37 @@ const tocEntries = [tableOfContents.prologue, ...tableOfContents.parts].map((ent
 
             <div class="h-px border-t border-dashed border-white/40"></div>
             {
-                tocEntries.map((entry) =>
-                    usePartialLinks ? (
-                        <PartialLink
-                            target={ElementID.CONTENT_WRAPPER_SELECTOR}
-                            clientUrl={entry.clientUrl}
-                            contentUrl={entry.contentUrl}
-                            class={linkClasses}
-                        >
-                            {entry.label}
-                        </PartialLink>
-                    ) : (
-                        <a href={entry.clientUrl} class={linkClasses}>
-                            {entry.label}
-                        </a>
-                    ),
-                )
+                tocEntries.map((entry) => usePartialLinks ? (
+                    <PartialLink
+                        target={ElementID.CONTENT_WRAPPER_SELECTOR}
+                        clientUrl={entry.clientUrl}
+                        contentUrl={entry.contentUrl}
+                        class={linkClasses}
+                    >
+                        {entry.label}
+                    </PartialLink>
+                ) : (
+                    <a href={entry.clientUrl} class={linkClasses}>
+                        {entry.label}
+                    </a>
+                ))
             }
             <div class="h-px border-t border-dashed border-white/40"></div>
             {
-                basicPathLinks.map((entry) =>
-                    usePartialLinks ? (
-                        <PartialLink
-                            target={ElementID.CONTENT_WRAPPER_SELECTOR}
-                            clientUrl={entry.clientUrl}
-                            contentUrl={entry.contentUrl}
-                            class={linkClasses}
-                        >
-                            {entry.label}
-                        </PartialLink>
-                    ) : (
-                        <a href={entry.clientUrl} class={linkClasses}>
-                            {entry.label}
-                        </a>
-                    ),
-                )
+                basicPathLinks.map((entry) => usePartialLinks ? (
+                    <PartialLink
+                        target={ElementID.CONTENT_WRAPPER_SELECTOR}
+                        clientUrl={entry.clientUrl}
+                        contentUrl={entry.contentUrl}
+                        class={linkClasses}
+                    >
+                        {entry.label}
+                    </PartialLink>
+                ) : (
+                    <a href={entry.clientUrl} class={linkClasses}>
+                        {entry.label}
+                    </a>
+                ))
             }
 
             <div class="h-px border-t border-dashed border-white/40"></div>

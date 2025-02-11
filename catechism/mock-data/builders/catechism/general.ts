@@ -1,8 +1,9 @@
+import { getContentTitle } from '@artifacts/derivative/builders/utils.ts';
+
 import { getLimits } from '../../config/limits.ts';
 import { Probability } from '../../config/probability.ts';
 import { chance, indexLimits, randomBoolean, randomInt } from '../../utils.ts';
 import { getLanguage } from '../../language/language-state.ts';
-import { getContentTitle } from '../../../artifacts/derivative/builders/utils.ts';
 import {
     BibleBook,
     BibleReference,
@@ -14,7 +15,7 @@ import {
     Reference,
     ReferenceCollection,
     ReferenceEnum,
-} from '../../../source/types/types.ts';
+} from '@catechism-types';
 
 export function getTitleText(contentType: Content, num: number): string {
     const language = getLanguage();

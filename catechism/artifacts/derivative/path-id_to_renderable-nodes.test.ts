@@ -1,8 +1,8 @@
-import { assert, assertStrictEquals } from '$std/assert';
-import { RenderableNode } from '../../source/types/renderable-node.ts';
-import { RenderableNodeMap } from '../../source/types/types.ts';
-import { getRenderableNodeMap } from '../../source/utils/artifacts.ts';
-import { getLanguages } from '../../source/utils/language.ts';
+import { assert, assertStrictEquals } from '@std/assert';
+
+import { RenderableNode, RenderableNodeMap } from '@catechism-types';
+import { getRenderableNodeMap } from '@utils/artifacts.ts';
+import { getLanguages } from '@utils/language.ts';
 
 type MapEntry = {
     here: RenderableNode;

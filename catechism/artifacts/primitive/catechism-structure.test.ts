@@ -1,4 +1,4 @@
-import { assert, assertEquals, assertNotMatch, assertStrictEquals } from '$std/assert';
+import { assert, assertEquals, assertNotMatch, assertStrictEquals } from '@std/assert';
 
 import {
     BibleReference,
@@ -14,9 +14,9 @@ import {
     Section,
     SemanticPath,
     TextWrapper,
-} from '../../source/types/types.ts';
+} from '@catechism-types';
 
-import { getCatechism } from '../../source/utils/catechism.ts';
+import { getCatechism } from '@utils/catechism.ts';
 
 import {
     getAll,
@@ -30,9 +30,9 @@ import {
     getMainContent,
     getOpeningContent,
     getReferences,
-} from '../../source/utils/content.ts';
-import { getLanguages } from '../../source/utils/language.ts';
-import { getContainerDesignator, isValid } from '../../source/utils/path-id.ts';
+} from '@utils/content.ts';
+import { getLanguages } from '@utils/language.ts';
+import { getContainerDesignator, isValid } from '@utils/path-id.ts';
 
 //#region tests
 console.log('\nCatechism data ...');
@@ -190,15 +190,17 @@ async function runTests(
         );
     });
 
-    Deno.test(`[${languageKey}] Bible references do not contain hyphens`, () => {
+    Deno.test(`[${languageKey}] Bible references do not contain hyphens or em dashes`, () => {
         const bibleReferences = getReferences(catechism).filter((ref) => ReferenceEnum.BIBLE === ref.referenceType) as Array<
             BibleReference
         >;
-        const referencesWithHyphens = bibleReferences.filter((ref) => 'number' !== typeof ref.verses && ref.verses.includes('-'));
+        const invalidReferences = bibleReferences.filter((ref) =>
+            'number' !== typeof ref.verses && (ref.verses.includes('-') || ref.verses.includes('—'))
+        );
 
         assert(
-            referencesWithHyphens.length === 0,
-            `${referencesWithHyphens.length} Bible references with hypens were found`,
+            invalidReferences.length === 0,
+            `${invalidReferences.length} Bible references with hypens were found`,
         );
     });
 

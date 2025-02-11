@@ -1,7 +1,8 @@
+import { Content, Text } from '@catechism-types';
+
 import { getText } from './text-samples.ts';
 import { Probability } from '../../config/probability.ts';
 import { chance } from '../../utils.ts';
-import { Content, Text } from '../../../source/types/types.ts';
 
 export function buildText(): Text {
     return {

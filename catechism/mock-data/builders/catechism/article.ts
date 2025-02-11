@@ -1,3 +1,5 @@
+import { Article, ArticleParagraph, Content, ContentBase, Paragraph, ParagraphGroup, Subarticle, TextContent } from '@catechism-types';
+
 import { buildArticleParagraph } from './article-paragraph.ts';
 import { getTitleText } from './general.ts';
 import { buildInBrief } from './in-brief.ts';
@@ -8,16 +10,6 @@ import { buildTextContent } from './text-content.ts';
 import { getLimits } from '../../config/limits.ts';
 import { Probability } from '../../config/probability.ts';
 import { chance, getContentCounts, intArrayOfRandomLength } from '../../utils.ts';
-import {
-    Article,
-    ArticleParagraph,
-    Content,
-    ContentBase,
-    Paragraph,
-    ParagraphGroup,
-    Subarticle,
-    TextContent,
-} from '../../../source/types/types.ts';
 
 export function buildArticle(articleNumber: number): Article {
     const useArticleParagraphs = chance(Probability.article.useArticleParagraphs);

@@ -1,11 +1,11 @@
 ---
-import { Language, Part } from '@catechism/source/types/types';
-import { getAllChildContent } from '@catechism/source/utils/content';
+import { Language, Part as PartType } from '@catechism-types';
+import { getAllChildContent } from '@catechism-utils/content';
 
 import ContentBaseArray from './content-base-array.astro';
 
 interface Props {
-    part: Part;
+    part: PartType;
     language: Language;
 }
 
@@ -15,4 +15,4 @@ const childContent = getAllChildContent(part);
 ---
 
 <h1>{part.title}</h1>
-<ContentBaseArray content={childContent} language={language} />
+<ContentBaseArray content={childContent} {language} />

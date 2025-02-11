@@ -1,4 +1,4 @@
-import { Container, PathID } from '../types/types.ts';
+import { Container, PathID } from '@catechism-types';
 
 // See the declaration of the `PathID` type for the definitive definition of the format of valid `PathID` values
 export function isValid(pathID: PathID): boolean {

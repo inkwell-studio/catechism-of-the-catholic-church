@@ -1,4 +1,4 @@
-import { DEFAULT_LANGUAGE, Language } from '../../source/types/types.ts';
+import { DEFAULT_LANGUAGE, Language } from '@catechism-types';
 
 let languageState = DEFAULT_LANGUAGE;
 

@@ -1,6 +1,6 @@
-import { assertStrictEquals } from '$std/assert';
-import { DEFAULT_LANGUAGE, Language, SemanticPath } from '@catechism/source/types/types.ts';
-import { getLanguages } from '@catechism/source/utils/language.ts';
+import { assertStrictEquals } from '@std/assert';
+import { DEFAULT_LANGUAGE, Language, SemanticPath } from '@catechism-types';
+import { getLanguages } from '@catechism-utils/language.ts';
 
 import { getLanguageFromPathname, getLanguageTag, getParagraphNumber, getUrl, removeLanguageTag } from './routing.ts';
 

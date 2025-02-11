@@ -1,8 +1,8 @@
 ---
-import { DEFAULT_LANGUAGE, Language } from '@catechism/source/types/types';
-import { getLanguages } from '@catechism/source/utils/language';
+import { DEFAULT_LANGUAGE, Language } from '@catechism-types';
+import { getLanguages } from '@catechism-utils/language';
 
-import { getPathIdLanguageUrlMapSync, getSemanticPathPathIdMapSync } from '@logic/artifacts';
+import { getPathIdLanguageUrlMap, getSemanticPathPathIdMap } from '@logic/artifacts';
 import { path as joinPaths } from '@logic/navigation-utils';
 import { getParagraphNumber, removeLanguageTag } from '@logic/routing';
 import { BasicPath, basicPaths } from '@pages/_routes';
@@ -13,8 +13,8 @@ interface Props {
 
 const { currentLanguage } = Astro.props;
 
-const semanticPathPathIdMap = getSemanticPathPathIdMapSync(currentLanguage);
-const pathIdLanguageUrlMap = getPathIdLanguageUrlMapSync();
+const semanticPathPathIdMap = await getSemanticPathPathIdMap(currentLanguage);
+const pathIdLanguageUrlMap = await getPathIdLanguageUrlMap();
 
 const path = removeLanguageTag(Astro.params.path, currentLanguage);
 const pathID = semanticPathPathIdMap[path] ?? null;
@@ -35,17 +35,20 @@ const languagesAndUrls = getLanguages().map(([languageKey, language]) => {
         segment = paragraphNumber + '';
     } else {
         segment = languageUrlMap[language];
+
         if (!segment) {
-            throw new Error(`A language-switching URL could not be determined (path: ${path}, pathID: ${pathID}, language: ${language})`);
+            throw new Error(
+                `A language-switching URL could not be determined (path: ${path}, pathID: ${pathID}, language: ${language})`,
+            );
         }
     }
 
-    // prettier-ignore
+    // deno-fmt-ignore
     const languagePrefix = DEFAULT_LANGUAGE === language
         ? ''
         : language;
 
-    // prettier-ignore
+    // deno-fmt-ignore
     const url = !languagePrefix && !segment
         ? '/'
         : joinPaths('/', languagePrefix, segment);
@@ -58,11 +61,11 @@ const languagesAndUrls = getLanguages().map(([languageKey, language]) => {
     {
         languagesAndUrls.map(({ languageKey, language, url }) => {
             return (
-                <li>
-                    {language === currentLanguage && <div class="opacity-50">{languageKey}</div>}
-                    {language !== currentLanguage && <a href={url}>{languageKey}</a>}
-                </li>
-            );
+            <li>
+                {language === currentLanguage && <div class="opacity-50">{languageKey}</div>}
+                {language !== currentLanguage && <a href={url}>{languageKey}</a>}
+            </li>
+        );
         })
     }
 </ol>

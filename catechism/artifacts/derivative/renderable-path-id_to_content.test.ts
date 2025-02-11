@@ -1,10 +1,10 @@
-import { assertStrictEquals, fail } from '$std/assert';
+import { assertStrictEquals, fail } from '@std/assert';
 
-import { CatechismStructure, PathID, PathIdContentMap, SemanticPathPathIdMap } from '../../source/types/types.ts';
-import { getCatechism } from '../../source/utils/catechism.ts';
-import { getAllOfProperty, getAllPathIDs } from '../../source/utils/content.ts';
-import { getContentMap, getRenderablePathMap } from '../../source/utils/artifacts.ts';
-import { getLanguages } from '../../source/utils/language.ts';
+import { CatechismStructure, PathID, PathIdContentMap, SemanticPathPathIdMap } from '@catechism-types';
+import { getCatechism } from '@utils/catechism.ts';
+import { getAllOfProperty, getAllPathIDs } from '@utils/content.ts';
+import { getContentMap, getRenderablePathMap } from '@utils/artifacts.ts';
+import { getLanguages } from '@utils/language.ts';
 
 console.log('\nPathID to content map ...');
 for await (const [key, language] of getLanguages()) {

@@ -1,7 +1,8 @@
+import { Content, ParagraphSubitem, ParagraphSubitemContainer } from '@catechism-types';
+
 import { buildParagraphSubitem } from './paragraph-subitem.ts';
 import { getLimits } from '../../config/limits.ts';
 import { intArrayOfRandomLength, randomBoolean } from '../../utils.ts';
-import { Content, ParagraphSubitem, ParagraphSubitemContainer } from '../../../source/types/types.ts';
 
 export function buildParagraphSubitemContainer(): ParagraphSubitemContainer {
     return {

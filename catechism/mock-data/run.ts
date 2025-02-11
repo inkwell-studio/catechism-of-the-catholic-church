@@ -1,11 +1,13 @@
+import { join } from '@std/path';
+
+import { CatechismStructure, DEFAULT_LANGUAGE, Glossary } from '@catechism-types';
+import { getLanguages } from '@utils/language.ts';
+
 import { buildCatechism } from './builders/catechism/catechism.ts';
 import { build as buildMockGlossary } from './builders/glossary.ts';
 import { LimitsSize, setLimits } from './config/limits.ts';
 import { setLanguage } from './language/language-state.ts';
 import { translateCatechism } from './language/translate.ts';
-
-import { CatechismStructure, DEFAULT_LANGUAGE, Glossary } from '../source/types/types.ts';
-import { getLanguages } from '../source/utils/language.ts';
 
 run();
 
@@ -40,13 +42,15 @@ function buildPrimitiveArtifacts(catechisms: Array<CatechismStructure>): Array<{
         const glossary = buildMockGlossary(c);
 
         return [
-            { artifact: glossary, filepath: `catechism/artifacts/primitive/glossary-${c.language}.json` },
+            { artifact: glossary, filepath: join('catechism', 'artifacts', 'primitive', `glossary-${c.language}.json`) },
         ];
     });
 }
 
 function writeCatechismsToDisk(catechisms: Array<CatechismStructure>): void {
-    catechisms.forEach((catechism) => writeToDisk(catechism, `catechism/artifacts/primitive/catechism-${catechism.language}.json`));
+    catechisms.forEach((catechism) =>
+        writeToDisk(catechism, join('catechism', 'artifacts', 'primitive', `catechism-${catechism.language}.json`))
+    );
 }
 
 function writeArtifactsToDisk(artifactsData: ReturnType<typeof buildPrimitiveArtifacts>): void {

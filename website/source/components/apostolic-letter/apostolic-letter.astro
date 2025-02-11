@@ -1,7 +1,7 @@
 ---
-import { Language } from '@catechism/source/types/types';
+import { Language } from '@catechism-types';
 
-import { AuthorText, Body, Intro, Title, Subtitle, getLetter } from './components';
+import { AuthorText, Body, getLetter, Intro, Subtitle, Title } from './components';
 
 interface Props {
     language: Language;
@@ -17,5 +17,5 @@ const letter = getLetter(language);
     <Subtitle text={letter.subtitle} />
     <AuthorText lines={letter.authorText} />
     <Intro text={letter.intro} />
-    <Body language={language} />
+    <Body {language} />
 </div>

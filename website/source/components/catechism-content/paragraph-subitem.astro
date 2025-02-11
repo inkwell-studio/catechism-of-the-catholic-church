@@ -1,11 +1,11 @@
 ---
-import { Language, ParagraphSubitem } from '@catechism/source/types/types';
-import { getAllChildContent } from '@catechism/source/utils/content';
+import { Language, ParagraphSubitem as ParagraphSubitemType } from '@catechism-types';
+import { getAllChildContent } from '@catechism-utils/content';
 
 import ContentBaseArray from './content-base-array.astro';
 
 interface Props {
-    paragraphSubitem: ParagraphSubitem;
+    paragraphSubitem: ParagraphSubitemType;
     language: Language;
 }
 
@@ -15,5 +15,5 @@ const childContent = getAllChildContent(paragraphSubitem);
 ---
 
 <li>
-    <ContentBaseArray content={childContent} language={language} />
+    <ContentBaseArray content={childContent} {language} />
 </li>

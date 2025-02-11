@@ -1,3 +1,5 @@
+import { Article, Chapter, Content, ContentBase, InBrief, Subarticle, TextContent } from '@catechism-types';
+
 import { buildArticle } from './article.ts';
 import { getTitleText } from './general.ts';
 import { buildInBrief } from './in-brief.ts';
@@ -6,7 +8,6 @@ import { buildTextContent } from './text-content.ts';
 import { getLimits } from '../../config/limits.ts';
 import { Probability } from '../../config/probability.ts';
 import { chance, getContentCounts, intArrayOfRandomLength, randomBoolean } from '../../utils.ts';
-import { Article, Chapter, Content, ContentBase, InBrief, Subarticle, TextContent } from '../../../source/types/types.ts';
 
 export function buildChapter(chapterNumber: number): Chapter {
     const inBrief = buildInBriefHelper();

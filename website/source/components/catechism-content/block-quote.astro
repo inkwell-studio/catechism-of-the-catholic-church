@@ -1,11 +1,11 @@
 ---
-import { BlockQuote, Language } from '@catechism/source/types/types';
-import { getAllChildContent } from '@catechism/source/utils/content';
+import { BlockQuote as BlockQuoteType, Language } from '@catechism-types';
+import { getAllChildContent } from '@catechism-utils/content';
 
 import ContentBaseArray from './content-base-array.astro';
 
 interface Props {
-    blockQuote: BlockQuote;
+    blockQuote: BlockQuoteType;
     language: Language;
 }
 
@@ -14,5 +14,5 @@ const childContent = getAllChildContent(blockQuote);
 ---
 
 <blockquote class="px-8 mb-4">
-    <ContentBaseArray content={childContent} language={language} />
+    <ContentBaseArray content={childContent} {language} />
 </blockquote>

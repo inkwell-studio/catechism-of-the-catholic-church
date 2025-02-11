@@ -1,5 +1,5 @@
 ---
-import { Language } from '@catechism/source/types/types';
+import { Language } from '@catechism-types';
 
 import DevelopmentHelper from '@components/development-helper.astro';
 import ProloguePartBlock from '@components/home/prologue-part-block.astro';
@@ -15,7 +15,7 @@ interface Props {
 const { language } = Astro.props;
 ---
 
-<BaseLayout language={language}>
+<BaseLayout {language}>
     <div class="h-[calc(100vh_-_3rem)] flex justify-center items-center bg-black/30">
         <h1 class="text-center">{t('Catechism of the Catholic Church', language)}</h1>
     </div>
@@ -24,7 +24,9 @@ const { language } = Astro.props;
             <p>About the Catechism ...</p>
             <p>TODO</p>
             <p>The <em>Catechism of the Catholic Church</em> is ...</p>
-            <p>It consists of a <em>Prologue</em> and four <em>Parts</em>.</p>
+            <p>
+                It consists of a <em>Prologue</em> and four <em>Parts</em>.
+            </p>
             {/* Check if "apostolic letter/document" should be capitalized */}
             <p>Related to it are the apostolic documents regarding its approval, promulgation, and publication:</p>
         </div>
@@ -43,5 +45,5 @@ const { language } = Astro.props;
         </div>
     </main>
 
-    <DevelopmentHelper language={language} usePartialLinks={false} />
+    <DevelopmentHelper {language} usePartialLinks={false} />
 </BaseLayout>

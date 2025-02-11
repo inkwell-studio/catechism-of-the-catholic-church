@@ -1,5 +1,5 @@
 ---
-import { Language, ParagraphSubitemContainer as ParagraphSubitemContainerType } from '@catechism/source/types/types';
+import { Language, ParagraphSubitemContainer as ParagraphSubitemContainerType } from '@catechism-types';
 
 import ParagraphSubitem from './paragraph-subitem.astro';
 
@@ -12,5 +12,5 @@ const { paragraphSubitemContainer, language } = Astro.props;
 ---
 
 <ol>
-    {paragraphSubitemContainer.mainContent.map((subitem) => <ParagraphSubitem paragraphSubitem={subitem} language={language} />)}
+    {paragraphSubitemContainer.mainContent.map((subitem) => <ParagraphSubitem paragraphSubitem={subitem} {language} />)}
 </ol>

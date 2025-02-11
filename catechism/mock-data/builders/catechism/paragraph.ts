@@ -1,7 +1,8 @@
+import { Content, Paragraph, ParagraphSubitemContainer, TextBlock } from '@catechism-types';
+
 import { buildTextBlock } from './text-block.ts';
 import { getLimits } from '../../config/limits.ts';
 import { intArrayOfRandomLength } from '../../utils.ts';
-import { Content, Paragraph, ParagraphSubitemContainer, TextBlock } from '../../../source/types/types.ts';
 
 export function buildParagraph(): Paragraph {
     return {

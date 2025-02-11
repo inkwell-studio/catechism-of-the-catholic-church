@@ -1,5 +1,5 @@
-import { CatechismStructure, Content, ContentBase, PathID, Text } from '../../source/types/types.ts';
-import { getAllChildContent, getAllContent } from '../../source/utils/content.ts';
+import { CatechismStructure, Content, ContentBase, PathID, Text } from '@catechism-types';
+import { getAllChildContent, getAllContent } from '@utils/content.ts';
 
 type TextTuple = {
     pathID: PathID;

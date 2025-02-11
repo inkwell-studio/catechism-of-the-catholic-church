@@ -1,8 +1,3 @@
-import { getLimits } from '../config/limits.ts';
-import { Probability } from '../config/probability.ts';
-import { getText, getUniqueWords } from './catechism/text-samples.ts';
-import { chance, indexLimits, intArrayOfRandomLength, randomInt } from '../utils.ts';
-
 import {
     CatechismStructure,
     Glossary,
@@ -13,8 +8,13 @@ import {
     ReferenceBase,
     ReferenceEnum,
     TextSimple,
-} from '../../source/types/types.ts';
-import { getAllParagraphs } from '@catechism/source/utils/content.ts';
+} from '@catechism-types';
+import { getAllParagraphs } from '@utils/content.ts';
+
+import { getText, getUniqueWords } from './catechism/text-samples.ts';
+import { getLimits } from '../config/limits.ts';
+import { Probability } from '../config/probability.ts';
+import { chance, indexLimits, intArrayOfRandomLength, randomInt } from '../utils.ts';
 
 export function build(catechism: CatechismStructure): Glossary {
     const paragraphNumbers = getAllParagraphs(catechism).map((p) => p.paragraphNumber);

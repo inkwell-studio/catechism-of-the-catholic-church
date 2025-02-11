@@ -1,10 +1,11 @@
+import { Content, Paragraph, ParagraphGroup, Subarticle } from '@catechism-types';
+
 import { getTitleText } from './general.ts';
 import { buildParagraph } from './paragraph.ts';
 import { buildParagraphGroup } from './paragraph-group.ts';
 import { getLimits } from '../../config/limits.ts';
 import { Probability } from '../../config/probability.ts';
 import { chance, getContentCounts, intArrayOfRandomLength, randomInt } from '../../utils.ts';
-import { Content, Paragraph, ParagraphGroup, Subarticle } from '../../../source/types/types.ts';
 
 export function buildSubarticle(subarticleNumber: number): Subarticle {
     return {

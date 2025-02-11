@@ -1,8 +1,9 @@
+import { Content, TextBlock, TextWrapper } from '@catechism-types';
+
 import { buildTextWrapper } from './text-wrapper.ts';
 import { getLimits } from '../../config/limits.ts';
 import { Probability } from '../../config/probability.ts';
 import { chance, intArrayOfRandomLength } from '../../utils.ts';
-import { Content, TextBlock, TextWrapper } from '../../../source/types/types.ts';
 
 export function buildTextBlock(): TextBlock {
     const supplementary = chance(Probability.textBlock.supplementary);
