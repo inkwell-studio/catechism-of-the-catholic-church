@@ -2,6 +2,10 @@
 
 # Tasks to complete now
 
+- [ ] UI drafting and research
+- [ ] consider repo management (this and the original
+      `catechism-of-of-the-catholic-church` repo)
+
 - [ ] implement UI proofs of concept (e.g. React UI interactivity — especially
       with HTMX and Astro components)
   - [ ] implement Action Bar menus
