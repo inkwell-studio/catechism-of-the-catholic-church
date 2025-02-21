@@ -2,10 +2,13 @@
 
 # Tasks to complete now
 
+- [ ] determine if [`fixi.js`](https://github.com/bigskysoftware/fixi) can and
+      should be used intead of HTMX
 - [ ] implement infinite-scrolling
 - [ ] UI drafting and research
 - [ ] consider repo management (this and the original
       `catechism-of-of-the-catholic-church` repo)
+- [ ] consider "vendoring" dependencies
 
 - [ ] implement UI proofs of concept (e.g. React UI interactivity — especially
       with HTMX and Astro components)
