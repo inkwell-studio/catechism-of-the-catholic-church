@@ -1,5 +1,3 @@
-# References
-
 # Tasks to complete now
 
 - [ ] determine if [`fixi.js`](https://github.com/bigskysoftware/fixi) can and
