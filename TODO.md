@@ -2,6 +2,7 @@
 
 # Tasks to complete now
 
+- [ ] implement infinite-scrolling
 - [ ] UI drafting and research
 - [ ] consider repo management (this and the original
       `catechism-of-of-the-catholic-church` repo)
