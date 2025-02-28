@@ -44,18 +44,12 @@ IDs that start with numbers are valid according to HTML5, but invalid according 
 const contentUrl = path('/partials', clientUrl).replace(/#.*/, '');
 ---
 
-<Replacement target={ElementID.CROSS_REFERENCE_NAVIGATE_TO}>
+<Replacement target={ElementID.CROSS_REFERENCE_NAVIGATE_TO_WRAPPER}>
     <PartialLink {clientUrl} {contentUrl} target={ElementID.CONTENT_WRAPPER_SELECTOR}>
         navigate-to: {reference}
     </PartialLink>
 </Replacement>
 
-<Replacement target={ElementID.CROSS_REFERENCE_CONTENT}>
-    <div class="text-3xl font-bold">
-        {reference}
-    </div>
-
-    <div>
-        {paragraphs && <ContentBaseArray content={paragraphs} {language} />}
-    </div>
+<Replacement target={ElementID.CROSS_REFERENCE_CONTENT_WRAPPER}>
+    {paragraphs && <ContentBaseArray content={paragraphs} {language} />}
 </Replacement>

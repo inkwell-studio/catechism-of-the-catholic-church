@@ -1,13 +1,7 @@
 ---
 import { DEFAULT_LANGUAGE } from '@catechism-types';
 
-import ApostolicConstitution from '@components/apostolic-constitution/apostolic-constitution.astro';
-import ApostolicLetter from '@components/apostolic-letter/apostolic-letter.astro';
-import CatechismContent from '@components/catechism-content/catechism-content.astro';
-import Glossary from '@components/glossary.astro';
-import IndexCitations from '@components/index-citations.astro';
-import IndexTopics from '@components/index-topics.astro';
-
+import GeneralContent from '@components/general-content.astro';
 import ContentLayout from '@layouts/content-layout.astro';
 
 import { getAllParagraphNumbers, getParagraphPathIdMap, getSemanticPathPathIdMap } from '@logic/artifacts';
@@ -32,12 +26,6 @@ export async function getStaticPaths(): Promise<Array<ContentRoute>> {
 const language = getLanguageTag(Astro.params.path) ?? DEFAULT_LANGUAGE;
 const path = removeLanguageTag(Astro.params.path, language);
 
-const isGlossary = BasicPath.GLOSSARY === path;
-const isIndexTopics = BasicPath.INDEX_TOPICS === path;
-const isIndexCitations = BasicPath.INDEX_CITATIONS === path;
-const isApostolicLetter = BasicPath.APOSTOLIC_LETTER === path;
-const isApostolicConstitution = BasicPath.APOSTOLIC_CONSTITUTION === path;
-
 let pathID = null;
 
 const isPotentialContentPath = path && !basicPaths.includes(path as BasicPath);
@@ -56,20 +44,8 @@ if (isPotentialContentPath) {
         }
     }
 }
-
-const isCatechismContent = !!pathID;
 ---
 
 <ContentLayout {language}>
-    {isGlossary && <Glossary {language} />}
-
-    {isIndexTopics && <IndexTopics {language} />}
-
-    {isIndexCitations && <IndexCitations {language} />}
-
-    {isApostolicLetter && <ApostolicLetter {language} />}
-
-    {isApostolicConstitution && <ApostolicConstitution {language} />}
-
-    {isCatechismContent && <CatechismContent {pathID} {language} />}
+    <GeneralContent {path} {pathID} {language} />
 </ContentLayout>

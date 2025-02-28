@@ -1,0 +1,34 @@
+---
+import { Language } from '@catechism-types';
+
+import PreviousContentLink from '@components/previous-content-link.astro';
+
+import { getRenderableNodeMap, getSemanticPathPathIdMap } from '@logic/artifacts';
+import { removeLanguageTag } from '@logic/routing';
+import { ElementID } from '@logic/ui';
+
+interface Props {
+    language: Language;
+}
+
+const { language } = Astro.props;
+
+const path = removeLanguageTag(Astro.params.path, language);
+const pathID = (await getSemanticPathPathIdMap(language))[path] ?? null;
+
+const nodeMap = await getRenderableNodeMap(language);
+const renderableNodes = nodeMap[pathID] ?? null;
+const previousUrl = renderableNodes?.previous?.url;
+---
+
+<div class="flex">
+    <div class="h-10 bg-blue-700 flex items-center gap-2 pl-2 pr-2">
+        <div>navigation</div>
+        <div id={ElementID.CATECHISM_CONTENT_PREVIOUS_LINK_WRAPPER}>
+            <PreviousContentLink url={previousUrl} {language} />
+        </div>
+    </div>
+    <div class="relative -z-10 -left-10 px-3 overflow-hidden">
+        <div class="bg-blue-700 rotate-45 w-10 h-10"></div>
+    </div>
+</div>

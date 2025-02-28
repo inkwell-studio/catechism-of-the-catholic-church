@@ -59,11 +59,11 @@ const canonicalUrl = new URL(Astro.url.pathname, Astro.site).href;
             })();
         </script>
         <script>
-            import { respondToNavigationEvent, watchForDomChanges } from '@logic/navigation-utils';
+            import { respondToHtmx, respondToNavigationEvent } from '@logic/navigation-utils';
             import { watchForThemeChanges } from '@logic/store/theme';
 
+            respondToHtmx();
             respondToNavigationEvent();
-            watchForDomChanges();
             watchForThemeChanges();
         </script>
         <script src="/htmx.min.js" is:inline></script>

@@ -13,7 +13,7 @@ run();
 
 function run(): void {
     console.log('\nBuilding mock data...');
-    setLimits(LimitsSize.TINY);
+    setLimits(LimitsSize.SMALL);
 
     const catechism = buildCatechism();
     const translatedCatechisms = getTranslatedCatechisms(catechism);

@@ -2,40 +2,47 @@
 import { Language, NumberOrNumberRange } from '@catechism-types';
 
 import { path } from '@logic/navigation-utils';
+import { ElementClass } from '@logic/ui';
 
 import PartialTrigger from '../partial-trigger.astro';
 
 interface Props {
     reference: NumberOrNumberRange;
     language: Language;
+    hasProceedingTrigger: boolean;
 }
 
-const { reference, language } = Astro.props;
+const { reference, language, hasProceedingTrigger } = Astro.props;
 
 const referenceForUrl = reference.toString().replace('–', '-');
 const contentUrl = path('/partials/cross-reference', language, referenceForUrl);
+
+const separator = hasProceedingTrigger ? ', ' : '';
 ---
 
 <script>
     import { NumberOrNumberRange } from '@catechism-types';
     import { onClick } from '@logic/dom-utils';
     import { select } from '@logic/store/cross-reference';
+    import { defineElement } from '@logic/custom-elements';
+    import { ElementClass } from '@logic/ui';
 
     class CrossReferenceTrigger extends HTMLElement {
-        trigger = this.querySelector('.trigger');
-
         constructor() {
             super();
+        }
 
-            onClick(this.trigger, () => select(this.dataset.reference as NumberOrNumberRange));
+        connectedCallback() {
+            const trigger = this.querySelector(ElementClass.CROSS_REFERENCE_TRIGGER_SELECTOR);
+            onClick(trigger, () => select(this.dataset.reference as NumberOrNumberRange));
         }
     }
 
-    customElements.define('cross-reference-trigger', CrossReferenceTrigger);
+    defineElement('cross-reference-trigger', CrossReferenceTrigger);
 </script>
 
 <cross-reference-trigger data-reference={reference}>
-    <PartialTrigger {contentUrl} class="trigger">
-        {reference.toString()}
+    <PartialTrigger {contentUrl} class:list={[ElementClass.CROSS_REFERENCE_TRIGGER, 'cursor-pointer']}>
+        {reference.toString()}{separator}
     </PartialTrigger>
 </cross-reference-trigger>

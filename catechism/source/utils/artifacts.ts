@@ -23,14 +23,6 @@ export function getGlossary(language: Language): Promise<Glossary> {
     return getArtifact(Artifact.GLOSSARY, language);
 }
 
-export function getRenderableNodeMap(language: Language): Promise<RenderableNodeMap> {
-    return getArtifact(Artifact.PATH_ID_TO_RENDERABLE_NODES, language);
-}
-
-export function getRenderablePathMap(language: Language): Promise<SemanticPathPathIdMap> {
-    return getArtifact(Artifact.SEMANTIC_PATH_TO_RENDERABLE_PATH_ID, language);
-}
-
 export function getParagraphCrossReferenceContentMap(language: Language): Promise<ParagraphCrossReferenceContentMap> {
     return getArtifact(Artifact.PARAGRAPH_CROSS_REFERENCE_TO_CONTENT, language);
 }
@@ -49,6 +41,14 @@ export function getParagraphNumberUrlMap(language: Language): Promise<ParagraphN
 
 export function getPathIdLanguageUrlMap(): Promise<PathIdLanguageUrlMap> {
     return getArtifact(Artifact.PATH_ID_TO_LANGUAGE_TO_URL);
+}
+
+export function getRenderableNodeMap(language: Language): Promise<RenderableNodeMap> {
+    return getArtifact(Artifact.PATH_ID_TO_RENDERABLE_NODES, language);
+}
+
+export function getRenderablePathMap(language: Language): Promise<SemanticPathPathIdMap> {
+    return getArtifact(Artifact.SEMANTIC_PATH_TO_RENDERABLE_PATH_ID, language);
 }
 
 export function getTableOfContents(language: Language): Promise<TableOfContentsType> {

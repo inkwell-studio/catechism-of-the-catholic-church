@@ -1,7 +1,29 @@
-import { Language, SemanticPath } from '@catechism-types';
+import { DEFAULT_LANGUAGE, Language, PathID, RenderableNodesForNavigation, SemanticPath } from '@catechism-types';
 import { getLanguage, getLanguages } from '@catechism-utils/language.ts';
 
+import { getRenderableNodeMap, getSemanticPathPathIdMap } from './artifacts.ts';
 import { translate } from './translation.ts';
+
+export async function getNavigationValues(originalPath: string): Promise<{
+    path: string;
+    pathID: PathID;
+    language: Language;
+    renderableNodes: RenderableNodesForNavigation | null;
+}> {
+    const language = getLanguageTag(originalPath) ?? DEFAULT_LANGUAGE;
+    const path = removeLanguageTag(originalPath, language);
+    const pathID = (await getSemanticPathPathIdMap(language))[path] ?? null;
+
+    const nodeMap = await getRenderableNodeMap(language);
+    const renderableNodes = nodeMap[pathID] ?? null;
+
+    return {
+        path,
+        pathID,
+        language,
+        renderableNodes,
+    };
+}
 
 /**
  * @returns the URL for viewing the content at the given path

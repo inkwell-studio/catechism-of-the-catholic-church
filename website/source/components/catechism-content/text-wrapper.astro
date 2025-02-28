@@ -14,19 +14,22 @@ const { textWrapper, language } = Astro.props;
 ---
 
 <span>
-    <span class="absolute right-8 text-left">
+    <!-- cross-references -->
+    <span class="absolute right-2 text-right text-xs max-w-[8ch]">
         {
             textWrapper.paragraphReferences.map((reference, index, allReferences) => {
-                const separator = index < allReferences.length - 1 ? ', ' : '';
+                const hasProceedingTrigger = index < allReferences.length - 1;
 
                 return (
                 <>
-                    <CrossReferenceTrigger {reference} {language} /> {separator}
+                    <CrossReferenceTrigger {reference} {language} {hasProceedingTrigger} />
                 </>
             );
             })
         }
     </span>
+
+    <!-- main content -->
     <span>
         {textWrapper.mainContent.map((text, index) => <PlainText {text} lastFragment={index === textWrapper.mainContent.length - 1} />)}
         {

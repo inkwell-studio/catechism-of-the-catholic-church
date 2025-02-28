@@ -6,13 +6,13 @@ For helpful extensions Visual Studio Code extensions, see `.vscode/extensions.js
 
 Install packages:
 
-```
+```shell
 deno install --allow-scripts=npm:sharp
 ```
 
 Disable Astro telemetry:
 
-```
+```shell
 deno task disable-telemetry
 ```
 
@@ -20,13 +20,18 @@ deno task disable-telemetry
 
 To serve a development version of the site:
 
-```
+```shell
 deno task dev
+
+# if desired, disable the Astro dev toolbar
+deno task astro-dev-toolbar-disable
+# or re-enable it
+deno task astro-dev-toolbar-enable
 ```
 
 To build and serve a production version of the site:
 
-```
+```shell
 deno task build
 deno task serve
 ```

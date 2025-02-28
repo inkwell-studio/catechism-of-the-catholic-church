@@ -1,8 +1,12 @@
 # Tasks to complete now
 
-- [ ] determine if [`fixi.js`](https://github.com/bigskysoftware/fixi) can and
-      should be used intead of HTMX
-- [ ] implement infinite-scrolling
+- [ ] upgrade to Deno 2.2.x
+  - [ ] make note in `README.md`
+  - [ ] add task in `deno.json` for `deno install --allow-scripts=npm:sharp`
+    - [ ] update `DEVELOPMENT.md`
+- [ ] implement proper content layout (see notes in `content-layout.astro`)
+  - [ ] close the cross-reference window when navigating to a non-main-content
+        URL
 - [ ] UI drafting and research
 - [ ] consider repo management (this and the original
       `catechism-of-of-the-catholic-church` repo)

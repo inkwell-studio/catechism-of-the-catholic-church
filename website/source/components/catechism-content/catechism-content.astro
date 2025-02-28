@@ -1,11 +1,14 @@
 ---
 import { Language, PathID } from '@catechism-types';
+import { getAllChildContent, getParagraphs } from '@catechism-utils/content';
 
-import ContentBase from '@components/catechism-content/content-base.astro';
-import NavigationButton from '@components/navigation-button.astro';
+import ContentBase from './content-base.astro';
+import InfiniteScrollTrigger from './infinite-scroll-trigger.astro';
+import IntersectionUrlUpdater from './intersection-url-updater.astro';
 
 import { getRenderableNodeMap } from '@logic/artifacts';
 import { loadContent } from '@logic/rendering';
+import { ElementClass } from '@logic/ui';
 
 interface Props {
     pathID: PathID;
@@ -18,25 +21,36 @@ const content = await loadContent(language, pathID);
 
 const nodeMap = await getRenderableNodeMap(language);
 const renderableNodes = nodeMap[pathID] ?? null;
+const thisUrl = renderableNodes?.here.url;
 const nextUrl = renderableNodes?.next?.url;
-const previousUrl = renderableNodes?.previous?.url;
+
+const paragraphs = getParagraphs(getAllChildContent(content));
+const firstParagraphNumber = paragraphs.at(0).paragraphNumber;
+const lastParagraphNumber = paragraphs.at(-1).paragraphNumber;
+
+if (!firstParagraphNumber || !lastParagraphNumber) {
+    console.error(`Terminal paragraph numbers could not be determined for pathID ${pathID}`);
+}
 ---
 
 {
     /* TODO:
-        - Remove `break-all` when finalizing the appearance
         - Finalize the bottom padding when the position and height of the navigation buttons container is finalized
     */
 }
-<!-- Finalize the height when the UI is finalized (ensure it handles the case of the screen being taller than the content) -->
-<div class="min-h-[calc(100vh_-_4rem)] grid grid-rows-[1fr_auto] border border-white/20 relative">
-    <div class="max-w-prose mx-auto pt-8 pb-32 break-all">
+<div class:list={[ElementClass.CATECHISM_CONTENT_BLOCK, 'relative pl-8 pr-16 margin-8 border-bottom-4 border-bottom-white']}>
+    <div class="max-w-prose mx-auto break-words">
         {content && <ContentBase {content} {language} />}
     </div>
-</div>
 
-<!-- TODO: Finalize the `bottom` positioning when the height of the action bar is finalized (the construction paradigm may need to be improved) -->
-<div class="sticky bottom-[7.5rem] inset-x-0 grid grid-cols-2 gap-4 p-4 mt-4 bg-slate-600 border-t border-slate-900">
-    {previousUrl ? <NavigationButton url={previousUrl} direction="previous" {language} /> : <div />}
-    {nextUrl ? <NavigationButton url={nextUrl} direction="next" {language} /> : <div />}
+    {nextUrl && <InfiniteScrollTrigger url={nextUrl} {language} class="absolute bottom-[min(100%,_80vh)] invisible" />}
+
+    <!--
+        Keeping these each at least 51vh from the respective edges ensures that
+        intersection updaters from multiple `CATECHISM_CONTENT_BLOCK`s won't be simultaneously visible.
+    -->
+    <!-- deno-fmt-ignore -->
+    <IntersectionUrlUpdater url={thisUrl} {language} {firstParagraphNumber} {lastParagraphNumber} class="absolute top-[min(100%,_51vh)] invisible"/>
+    <!-- deno-fmt-ignore -->
+    <IntersectionUrlUpdater url={thisUrl} {language} {firstParagraphNumber} {lastParagraphNumber} class="absolute bottom-[min(100%,_51vh)] invisible"/>
 </div>

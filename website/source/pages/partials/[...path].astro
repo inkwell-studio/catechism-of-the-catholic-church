@@ -1,19 +1,10 @@
 ---
-import { DEFAULT_LANGUAGE } from '@catechism-types';
+import GeneralContent from '@components/general-content.astro';
 
-import ApostolicConstitution from '@components/apostolic-constitution/apostolic-constitution.astro';
-import ApostolicLetter from '@components/apostolic-letter/apostolic-letter.astro';
-import CatechismContent from '@components/catechism-content/catechism-content.astro';
-import Glossary from '@components/glossary.astro';
-import IndexCitations from '@components/index-citations.astro';
-import IndexTopics from '@components/index-topics.astro';
-import LanguageSwitcher from '@components/language-switcher.astro';
-import Replacement from '@components/replacement.astro';
+import { getNavigationValues } from '@logic/routing';
+import { ContentRoute, getBasicRoutes, getTableOfContentsRoutes } from '@pages/_routes';
 
-import { getSemanticPathPathIdMap } from '@logic/artifacts';
-import { getLanguageTag, removeLanguageTag } from '@logic/routing';
-import { ElementID } from '@logic/ui';
-import { BasicPath, ContentRoute, getBasicRoutes, getTableOfContentsRoutes } from '@pages/_routes';
+import NavigationUpdates from '@pages/partials/_navigation-updates.astro';
 
 export const partial = true;
 
@@ -21,31 +12,9 @@ export async function getStaticPaths(): Promise<Array<ContentRoute>> {
     return [...getBasicRoutes(), ...(await getTableOfContentsRoutes())];
 }
 
-const language = getLanguageTag(Astro.params.path) ?? DEFAULT_LANGUAGE;
-const path = removeLanguageTag(Astro.params.path, language);
-const pathID = (await getSemanticPathPathIdMap(language))[path] ?? null;
-
-const isGlossary = BasicPath.GLOSSARY === path;
-const isIndexTopics = BasicPath.INDEX_TOPICS === path;
-const isIndexCitations = BasicPath.INDEX_CITATIONS === path;
-const isApostolicLetter = BasicPath.APOSTOLIC_LETTER === path;
-const isApostolicConstitution = BasicPath.APOSTOLIC_CONSTITUTION === path;
-
-const isCatechismContent = !!pathID;
+const { path, pathID, language, renderableNodes } = await getNavigationValues(Astro.params.path);
+const previousUrl = renderableNodes?.previous?.url;
 ---
 
-{isGlossary && <Glossary {language} />}
-
-{isIndexTopics && <IndexTopics {language} />}
-
-{isIndexCitations && <IndexCitations {language} />}
-
-{isApostolicLetter && <ApostolicLetter {language} />}
-
-{isApostolicConstitution && <ApostolicConstitution {language} />}
-
-{isCatechismContent && <CatechismContent {pathID} {language} />}
-
-<Replacement target={ElementID.LANGUAGE_SWITCHER_WRAPPER}>
-    <LanguageSwitcher currentLanguage={language} />
-</Replacement>
+<GeneralContent {path} {pathID} {language} />
+<NavigationUpdates {language} {previousUrl} />

@@ -1,0 +1,42 @@
+---
+import { DEFAULT_LANGUAGE, Language } from '@catechism-types';
+
+import { path } from '@logic/navigation-utils';
+import { ElementClass } from '@logic/ui';
+
+interface Props {
+    url: string;
+    language: Language;
+    class?: string;
+}
+
+/*
+    `...rest` is needed in order for the classes from the parent to be properly scoped for the styling specified within by parent
+    (see https://docs.astro.build/en/guides/styling/#passing-a-class-to-a-child-component)
+*/
+const { url, language, class: classes, ...rest } = Astro.props;
+
+// deno-fmt-ignore
+const clientUrl = url
+    ? DEFAULT_LANGUAGE === language
+        ? path(url)
+        : path(language, url)
+    : null;
+
+// deno-fmt-ignore
+const contentUrl = clientUrl
+    ? path('/partials/infinite-scroll', clientUrl)
+    : null;
+---
+
+<!-- When this element enters the viewport, it loads the next block of content in order to create an infinite-scroll effect -->
+<div
+    class:list={[classes]}
+    hx-trigger="intersect once"
+    hx-get={contentUrl}
+    hx-swap="afterend"
+    hx-target={`closest ${ElementClass.CATECHISM_CONTENT_BLOCK_SELECTOR}`}
+    hx-select={ElementClass.CATECHISM_CONTENT_BLOCK_SELECTOR}
+    {...rest}
+>
+</div>

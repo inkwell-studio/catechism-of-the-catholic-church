@@ -225,6 +225,28 @@ Deno.test('website: partials', async (test) => {
         }
     });
 
+    await test.step('infinite-scroll content', async (t) => {
+        const routes = getAllTranslatableRoutes('/prologue', true).map((route) => joinPaths('partials/infinite-scroll', route));
+
+        for (const route of routes) {
+            await t.step(route, async () => {
+                const r = await get(route);
+                assertStrictEquals(r.status, 200);
+            });
+        }
+    });
+
+    await test.step('update-navigation content', async (t) => {
+        const routes = getAllTranslatableRoutes('/prologue', true).map((route) => joinPaths('partials/update-navigation', route));
+
+        for (const route of routes) {
+            await t.step(route, async () => {
+                const r = await get(route);
+                assertStrictEquals(r.status, 200);
+            });
+        }
+    });
+
     await test.step('close all responses', async () => {
         await close(responses);
     });

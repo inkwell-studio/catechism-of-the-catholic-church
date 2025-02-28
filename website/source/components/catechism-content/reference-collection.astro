@@ -12,22 +12,25 @@ const { referenceCollection, language } = Astro.props;
 ---
 
 <script>
+    import { defineElement } from '@logic/custom-elements';
     import { hide, onClick, toggle } from '@logic/dom-utils';
 
     class ReferenceCollection extends HTMLElement {
-        closeButton = this.querySelector('.closeButton');
-        toggleButton = this.querySelector('.toggleButton');
-        expandedView = this.querySelector('.expandedView');
-
         constructor() {
             super();
+        }
 
-            onClick(this.closeButton, () => hide(this.expandedView));
-            onClick(this.toggleButton, () => toggle(this.expandedView));
+        connectedCallback() {
+            const closeButton = this.querySelector('.closeButton');
+            const toggleButton = this.querySelector('.toggleButton');
+            const expandedView = this.querySelector('.expandedView');
+
+            onClick(closeButton, () => hide(expandedView));
+            onClick(toggleButton, () => toggle(expandedView));
         }
     }
 
-    customElements.define('reference-collection', ReferenceCollection);
+    defineElement('reference-collection', ReferenceCollection);
 </script>
 
 <reference-collection>

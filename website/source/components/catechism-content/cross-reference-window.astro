@@ -3,18 +3,22 @@ import { ElementID } from '@logic/ui';
 ---
 
 <script>
+    import { defineElement } from '@logic/custom-elements';
     import { hide, onClick, show } from '@logic/dom-utils';
     import { $selectedCrossReference, clear } from '@logic/store/cross-reference';
+    import { ElementID } from '@logic/ui';
 
     class CrossReferenceWindow extends HTMLElement {
-        closeButton = document.getElementById('cross-reference-close');
-        navigateTo = document.getElementById('cross-reference-navigate-to');
-
         constructor() {
             super();
+        }
 
-            onClick(this.closeButton, () => clear());
-            onClick(this.navigateTo, () => clear());
+        connectedCallback() {
+            const closeButton = document.getElementById(ElementID.CROSS_REFERENCE_CLOSE);
+            const navigateTo = document.getElementById(ElementID.CROSS_REFERENCE_NAVIGATE_TO_WRAPPER);
+
+            onClick(closeButton, () => clear());
+            onClick(navigateTo, () => clear());
 
             $selectedCrossReference.subscribe((selection) => {
                 if (selection) {
@@ -26,14 +30,14 @@ import { ElementID } from '@logic/ui';
         }
     }
 
-    customElements.define('cross-reference-window', CrossReferenceWindow);
+    defineElement('cross-reference-window', CrossReferenceWindow);
 </script>
 
 <cross-reference-window class="hidden">
-    <div class="bg-slate-500 flex flex-col justify-center items-center gap-4 p-24">
+    <div class="max-h-[30vh] bg-slate-500">
         <button type="button" id={ElementID.CROSS_REFERENCE_CLOSE}>[ close ]</button>
 
-        <div id={ElementID.CROSS_REFERENCE_NAVIGATE_TO}></div>
-        <div id={ElementID.CROSS_REFERENCE_CONTENT} class="flex flex-col gap-4"></div>
+        <div id={ElementID.CROSS_REFERENCE_NAVIGATE_TO_WRAPPER}></div>
+        <div id={ElementID.CROSS_REFERENCE_CONTENT_WRAPPER} class="overflow-y-scroll"></div>
     </div>
 </cross-reference-window>

@@ -1,0 +1,16 @@
+---
+import GeneralContent from '@components/general-content.astro';
+
+import { getNavigationValues } from '@logic/routing';
+import { ContentRoute, getBasicRoutes, getTableOfContentsRoutes } from '@pages/_routes';
+
+export const partial = true;
+
+export async function getStaticPaths(): Promise<Array<ContentRoute>> {
+    return [...getBasicRoutes(), ...(await getTableOfContentsRoutes())];
+}
+
+const { path, pathID, language } = await getNavigationValues(Astro.params.path);
+---
+
+<GeneralContent {path} {pathID} {language} />

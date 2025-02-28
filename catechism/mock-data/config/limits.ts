@@ -11,6 +11,9 @@ export function getLimits(): Limits {
         case LimitsSize.TINY:
             return limitsTiny;
 
+        case LimitsSize.SMALL:
+            return limitsSmall;
+
         case LimitsSize.MEDIUM:
             return limitsMedium;
     }
@@ -19,6 +22,7 @@ export function getLimits(): Limits {
 export enum LimitsSize {
     MINIMAL = 'minimal',
     TINY = 'tiny',
+    SMALL = 'small',
     MEDIUM = 'medium',
 }
 
@@ -266,6 +270,85 @@ const limitsTiny: Limits = {
     },
     textBlock: {
         textWrapper: { min: 1, max: 1 },
+    },
+    textWrapper: {
+        part: { min: 1, max: 1 },
+    },
+};
+
+const limitsSmall: Limits = {
+    article: {
+        articleParagraph: { min: 1, max: 3 },
+        paragraph: { min: 1, max: 5 },
+        paragraphGroup: { min: 1, max: 2 },
+        subarticle: { min: 1, max: 2 },
+        textContent: { min: 1, max: 2 },
+    },
+    articleParagraph: {
+        subarticle: { min: 1, max: 3 },
+    },
+    bibleReference: {
+        chapter: { min: 1, max: 1 },
+        verses: { min: 1, max: 1 },
+        verseRangeSize: { min: 1, max: 1 },
+    },
+    blockQuote: {
+        text: { min: 1, max: 1 },
+    },
+    chapter: {
+        article: { min: 1, max: 3 },
+        subarticle: { min: 1, max: 3 },
+        openingContent: {
+            subarticle: { min: 1, max: 1 },
+            textContent: { min: 1, max: 1 },
+        },
+    },
+    glossary: {
+        entries: { min: 400, max: 400 },
+        entry: {
+            paragraphReferences: { min: 1, max: 3 },
+            seeAlso: { min: 1, max: 3 },
+        },
+    },
+    inBrief: {
+        paragraph: { min: 1, max: 1 },
+    },
+    paragraph: {
+        crossReference: {
+            count: { min: 1, max: 2 },
+            range: { min: 1, max: 3 },
+        },
+        textBlock: { min: 1, max: 3 },
+    },
+    paragraphGroup: {
+        text: { min: 1, max: 1 },
+    },
+    paragraphSubitem: {
+        textBlock: { min: 1, max: 3 },
+    },
+    paragraphSubitemContainer: {
+        subitem: { min: 1, max: 1 },
+    },
+    part: {
+        openingContent: { min: 1, max: 1 },
+        multipleSections: { min: 1, max: 3 },
+    },
+    prologue: {
+        text: { min: 1, max: 1 },
+        subarticle: { min: 1, max: 3 },
+    },
+    section: {
+        article: { min: 1, max: 3 },
+        paragraphGroup: { min: 1, max: 3 },
+        multipleChapter: { min: 1, max: 3 },
+        openingContent: { min: 1, max: 1 },
+    },
+    subarticle: {
+        contentItem: { min: 1, max: 3 },
+        textContent: { min: 1, max: 3 },
+    },
+    textBlock: {
+        textWrapper: { min: 1, max: 3 },
     },
     textWrapper: {
         part: { min: 1, max: 1 },

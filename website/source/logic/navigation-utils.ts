@@ -1,5 +1,10 @@
 import { getParagraphNumber } from './routing.ts';
-import { ElementID } from './ui.ts';
+import { ElementClass, ElementID } from './ui.ts';
+
+type HtmxEvent = Event & {
+    // deno-lint-ignore no-explicit-any
+    detail?: any;
+};
 
 /**
  * @returns a new path constructed constructed from the segments.
@@ -18,11 +23,43 @@ export function path(...segments: Array<string | number>): string {
         .replace(/\/+$/, '');
 }
 
-export function respondToNavigationEvent(): void {
-    updateLanguageSwitcher();
+export function respondToHtmx(): void {
+    document.addEventListener('htmx:replacedInHistory', () => {
+        /*
+        Remove any hash values from the `hx-replace-url` attributes of intersection-url-updaters for a better user experience:
+        Without this logic, hash values would be re-added to the URL when a user returns to a section by scrolling.
 
+        For example:
+            - The user navigates to `/part-1#123`
+            - The user scrolls down to Part 2, so the URL is updated from `/part-1#123` to `/part-2`
+            - The user scrolls back up to Part 1
+                - Without this logic, the URL would be updated to the original value of `/part-1#123`, instead of just `/part-1`
+        */
+
+        const attributeName = 'hx-replace-url';
+        document.querySelectorAll(`${ElementClass.INTERSECTION_URL_UPDATER_SELECTOR}[${attributeName}*="#"]`)
+            .forEach((element) =>
+                element.setAttribute(
+                    attributeName,
+                    element.getAttribute(attributeName)?.replaceAll(/#.*/g, '') ?? '',
+                )
+            );
+    });
+
+    document.addEventListener('htmx:afterSwap', (e: HtmxEvent) => {
+        /*
+        Auto-scroll only when content has been swapped into the main content area,
+        as these are occasions that will have the appearance of navigation events
+        */
+        if (ElementID.CONTENT_WRAPPER === e?.detail?.target?.id) {
+            autoScroll();
+        }
+    });
+}
+
+export function respondToNavigationEvent(): void {
     /*
-    Scroll to the paragraph number at the end of the URL when the page
+    Scroll to the paragraph number at the end of the URL only when the page
     is initially loaded (not on a refresh or back/forward navigation event)
     */
     const event = globalThis.performance.getEntriesByType('navigation')[0] as PerformanceNavigationTiming;
@@ -36,43 +73,17 @@ export function respondToNavigationEvent(): void {
 }
 
 /**
- * This responds to DOM changes, including those made by HTMX,
- * which users may find indistinguishable from actual navigation changes
+ * Auto-scroll to the anchor tag specified by the URL hash,
+ * or if there is no URL hash, auto-scroll to the top of the page.
  */
-export function watchForDomChanges(): void {
-    const body = document.querySelector('body');
-
-    if (body) {
-        const observer = createDomChangeObserver();
-        observer.observe(body, { childList: true, subtree: true });
+function autoScroll(): void {
+    const hash = document.location.hash;
+    if (hash) {
+        document.getElementById(hash.slice(1))?.scrollIntoView();
+        updateLanguageSwitcher(hash);
+    } else {
+        globalThis.scrollTo({ top: 0 });
     }
-}
-
-function createDomChangeObserver(): MutationObserver {
-    let previousHref = document.location.href;
-
-    return new MutationObserver(() => {
-        const urlChanged = document.location.href !== previousHref;
-        const hash = document.location.hash;
-
-        /*
-            During a URL change from an HTMX invocation, auto-scroll to the anchor tag specified
-            by the URL hash, or the start of the page's content, if there is no URL hash
-        */
-        if (urlChanged) {
-            if (hash) {
-                document.getElementById(hash.slice(1))?.scrollIntoView();
-            } else {
-                document.getElementById(ElementID.CONTENT_WRAPPER)?.scrollIntoView();
-            }
-        }
-
-        if (hash) {
-            updateLanguageSwitcher(hash);
-        }
-
-        previousHref = document.location.href;
-    });
 }
 
 /**

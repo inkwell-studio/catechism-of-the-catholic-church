@@ -6,22 +6,28 @@ interface Props {
     class?: string;
 }
 
-// `...rest` is needed in order for the classes from the parent to be properly scoped for the styling specified within by parent
+/*
+    `...rest` is needed in order for the classes from the parent to be properly scoped for the styling specified within by parent
+    (see https://docs.astro.build/en/guides/styling/#passing-a-class-to-a-child-component)
+*/
 const { clientUrl, contentUrl, target, class: classes, ...rest } = Astro.props;
 ---
 
 <script>
     import { prefetch } from 'astro:prefetch';
+    import { defineElement } from '@logic/custom-elements';
 
     class AstroPartialLink extends HTMLElement {
         constructor() {
             super();
+        }
 
+        connectedCallback() {
             this.addEventListener('mouseover', () => prefetch(this.dataset.contentUrl));
         }
     }
 
-    customElements.define('astro-partial-link', AstroPartialLink);
+    defineElement('astro-partial-link', AstroPartialLink);
 </script>
 
 <astro-partial-link data-content-url={contentUrl}>
@@ -31,7 +37,7 @@ const { clientUrl, contentUrl, target, class: classes, ...rest } = Astro.props;
         hx-trigger="click"
         hx-swap="innerHTML"
         hx-target={target}
-        class={`${classes ?? ''} cursor-pointer`}
+        class:list={[classes, 'cursor-pointer']}
         {...rest}
     >
         <slot />

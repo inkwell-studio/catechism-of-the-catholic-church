@@ -1,0 +1,39 @@
+---
+import { Language, PathID } from '@catechism-types';
+
+import ApostolicConstitution from '@components/apostolic-constitution/apostolic-constitution.astro';
+import ApostolicLetter from '@components/apostolic-letter/apostolic-letter.astro';
+import CatechismContent from '@components/catechism-content/catechism-content.astro';
+import Glossary from '@components/glossary.astro';
+import IndexCitations from '@components/index-citations.astro';
+import IndexTopics from '@components/index-topics.astro';
+
+import { BasicPath } from '@pages/_routes';
+
+interface Props {
+    language: Language;
+    path: string;
+    pathID: PathID;
+}
+
+const { language, path, pathID } = Astro.props;
+
+const isGlossary = BasicPath.GLOSSARY === path;
+const isIndexTopics = BasicPath.INDEX_TOPICS === path;
+const isIndexCitations = BasicPath.INDEX_CITATIONS === path;
+const isApostolicLetter = BasicPath.APOSTOLIC_LETTER === path;
+const isApostolicConstitution = BasicPath.APOSTOLIC_CONSTITUTION === path;
+
+const isCatechismContent = !!pathID;
+---
+{isGlossary && <Glossary {language} />}
+
+{isIndexTopics && <IndexTopics {language} />}
+
+{isIndexCitations && <IndexCitations {language} />}
+
+{isApostolicLetter && <ApostolicLetter {language} />}
+
+{isApostolicConstitution && <ApostolicConstitution {language} />}
+
+{isCatechismContent && <CatechismContent {pathID} {language} />}

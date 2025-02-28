@@ -1,6 +1,8 @@
 {
     "tasks": {
         "disable-telemetry": "astro telemetry disable",
+        "astro-dev-toolbar-disable": "astro preferences disable devToolbar",
+        "astro-dev-toolbar-enable": "astro preferences enable devToolbar",
 
         "lint": "deno lint",
         "format": "deno fmt",
@@ -13,10 +15,15 @@
         },
         "check-code": "deno task check-ts && astro check",
 
-        "pre-commit": "deno task check-code && deno task test-source",
-
         "dev": "astro dev",
-        "build": "deno task pre-commit && astro build && deno run -RW source/robots.txt.ts",
+        "build-no-checks": "astro build && deno run -RW source/robots.txt.ts",
+        "build": {
+            "dependencies": [
+                "check-code",
+                "test-source",
+                "build-no-checks"
+            ]
+        },
         "serve": "deno run -RNE dist/server/entry.mjs",
 
         "test-source": "deno test source",

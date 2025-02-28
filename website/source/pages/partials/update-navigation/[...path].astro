@@ -1,0 +1,17 @@
+---
+import { getNavigationValues } from '@logic/routing';
+import { ContentRoute, getBasicRoutes, getTableOfContentsRoutes } from '@pages/_routes';
+
+import NavigationUpdates from '@pages/partials/_navigation-updates.astro';
+
+export const partial = true;
+
+export async function getStaticPaths(): Promise<Array<ContentRoute>> {
+    return [...getBasicRoutes(), ...(await getTableOfContentsRoutes())];
+}
+
+const { language, renderableNodes } = await getNavigationValues(Astro.params.path);
+const previousUrl = renderableNodes?.previous?.url;
+---
+
+<NavigationUpdates {language} {previousUrl} />

@@ -1,0 +1,86 @@
+---
+import { DEFAULT_LANGUAGE, Language } from '@catechism-types';
+
+import { path } from '@logic/navigation-utils';
+import { ElementClass } from '@logic/ui';
+
+interface Props {
+    url: string;
+    language: Language;
+    firstParagraphNumber: number;
+    lastParagraphNumber: number;
+    class?: string;
+}
+
+/*
+    `...rest` is needed in order for the classes from the parent to be properly scoped for the styling specified within by parent
+    (see https://docs.astro.build/en/guides/styling/#passing-a-class-to-a-child-component)
+*/
+const { url, language, firstParagraphNumber, lastParagraphNumber, class: classes, ...rest } = Astro.props;
+
+// deno-fmt-ignore
+const replacementUrl = DEFAULT_LANGUAGE === language
+    ? path(url)
+    : path('/', language, url)
+
+const contentUrl = path('/partials/update-navigation', replacementUrl);
+---
+
+<script>
+    import { defineElement } from '@logic/custom-elements';
+
+    class IntersectionUrlUpdater extends HTMLElement {
+        constructor() {
+            super();
+        }
+
+        connectedCallback() {
+            const component = this;
+            preserveParagraphNumberHash();
+
+            function preserveParagraphNumberHash(): void {
+                const paragraphNumber = getParagraphNumberFromHash();
+                if (
+                    paragraphNumber &&
+                    paragraphNumber >= Number(component.dataset.firstParagraphNumber) &&
+                    paragraphNumber <= Number(component.dataset.lastParagraphNumber)
+                ) {
+                    addHashToReplacementUrl();
+                }
+            }
+
+            function getParagraphNumberFromHash(): number | null {
+                const potentialNumber = Number(document.location.hash.slice(1));
+                // deno-fmt-ignore
+                return !isNaN(potentialNumber) && potentialNumber > 0
+                        ? potentialNumber
+                        : null;
+            }
+
+            function addHashToReplacementUrl(): void {
+                component.setAttribute('hx-replace-url', component.getAttribute('hx-replace-url') + document.location.hash);
+            }
+        }
+    }
+
+    defineElement('intersection-url-updater', IntersectionUrlUpdater);
+</script>
+
+{
+    /*
+    The `hx-target` value has no effect, since `hx-swap` is set to `none`, but using `this` as the value ensures that an error will never be thrown by HTMX for a missing target.
+    Including `hx-get` results in an unused request being issued whenever this element enters the viewport, but there no way to otherwise fire the `hx-replace-url` event.
+    */
+}
+<intersection-url-updater
+    data-first-paragraph-number={firstParagraphNumber}
+    data-last-paragraph-number={lastParagraphNumber}
+    class:list={[ElementClass.INTERSECTION_URL_UPDATER, classes]}
+    hx-trigger="intersect"
+    hx-replace-url={replacementUrl}
+    hx-get={contentUrl ?? ''}
+    hx-target="this"
+    hx-swap="none"
+    {...rest}
+>
+</intersection-url-updater>
