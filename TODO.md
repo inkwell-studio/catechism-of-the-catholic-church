@@ -1,9 +1,5 @@
 # Tasks to complete now
 
-- [ ] upgrade to Deno 2.2.x
-  - [ ] make note in `README.md`
-  - [ ] add task in `deno.json` for `deno install --allow-scripts=npm:sharp`
-    - [ ] update `DEVELOPMENT.md`
 - [ ] implement proper content layout (see notes in `content-layout.astro`)
   - [ ] close the cross-reference window when navigating to a non-main-content
         URL
