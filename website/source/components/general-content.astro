@@ -36,4 +36,4 @@ const isCatechismContent = !!pathID;
 
 {isApostolicConstitution && <ApostolicConstitution {language} />}
 
-{isCatechismContent && <CatechismContent {pathID} {language} />}
+{isCatechismContent && <CatechismContent {pathID} {language} firstContent={true} />}

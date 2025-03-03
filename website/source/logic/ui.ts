@@ -19,7 +19,4 @@ export enum ElementClass {
 
     CROSS_REFERENCE_TRIGGER = 'cross-reference-trigger',
     CROSS_REFERENCE_TRIGGER_SELECTOR = '.cross-reference-trigger',
-
-    INTERSECTION_URL_UPDATER = 'intersection-url-updater',
-    INTERSECTION_URL_UPDATER_SELECTOR = '.intersection-url-updater',
 }

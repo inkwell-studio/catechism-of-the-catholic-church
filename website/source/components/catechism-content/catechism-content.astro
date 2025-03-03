@@ -1,6 +1,5 @@
 ---
 import { Language, PathID } from '@catechism-types';
-import { getAllChildContent, getParagraphs } from '@catechism-utils/content';
 
 import ContentBase from './content-base.astro';
 import InfiniteScrollTrigger from './infinite-scroll-trigger.astro';
@@ -13,9 +12,10 @@ import { ElementClass } from '@logic/ui';
 interface Props {
     pathID: PathID;
     language: Language;
+    firstContent: boolean;
 }
 
-const { pathID, language } = Astro.props;
+const { pathID, language, firstContent } = Astro.props;
 
 const content = await loadContent(language, pathID);
 
@@ -23,14 +23,7 @@ const nodeMap = await getRenderableNodeMap(language);
 const renderableNodes = nodeMap[pathID] ?? null;
 const thisUrl = renderableNodes?.here.url;
 const nextUrl = renderableNodes?.next?.url;
-
-const paragraphs = getParagraphs(getAllChildContent(content));
-const firstParagraphNumber = paragraphs.at(0).paragraphNumber;
-const lastParagraphNumber = paragraphs.at(-1).paragraphNumber;
-
-if (!firstParagraphNumber || !lastParagraphNumber) {
-    console.error(`Terminal paragraph numbers could not be determined for pathID ${pathID}`);
-}
+const previousUrl = renderableNodes?.previous?.url;
 ---
 
 {
@@ -46,11 +39,13 @@ if (!firstParagraphNumber || !lastParagraphNumber) {
     {nextUrl && <InfiniteScrollTrigger url={nextUrl} {language} class="absolute bottom-[min(100%,_80vh)] invisible" />}
 
     <!--
-        Keeping these each at least 51vh from the respective edges ensures that
-        intersection updaters from multiple `CATECHISM_CONTENT_BLOCK`s won't be simultaneously visible.
+        Keeping these each over 100vh from each other ensures that intersection updaters from multiple
+        `CATECHISM_CONTENT_BLOCK`s won't besimultaneously visible (assuming that each content block is at least 100vh tall).
     -->
-    <!-- deno-fmt-ignore -->
-    <IntersectionUrlUpdater url={thisUrl} {language} {firstParagraphNumber} {lastParagraphNumber} class="absolute top-[min(100%,_51vh)] invisible"/>
-    <!-- deno-fmt-ignore -->
-    <IntersectionUrlUpdater url={thisUrl} {language} {firstParagraphNumber} {lastParagraphNumber} class="absolute bottom-[min(100%,_51vh)] invisible"/>
+    {
+        !firstContent && previousUrl && (
+            <IntersectionUrlUpdater url={previousUrl} {language} class="invisible absolute -top-[min(100%,_32vh)]" />
+        )
+    }
+    {!firstContent && <IntersectionUrlUpdater url={thisUrl} {language} class="invisible absolute top-[min(100%,_70vh)]" />}
 </div>

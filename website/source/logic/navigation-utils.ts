@@ -1,5 +1,5 @@
 import { getParagraphNumber } from './routing.ts';
-import { ElementClass, ElementID } from './ui.ts';
+import { ElementID } from './ui.ts';
 
 type HtmxEvent = Event & {
     // deno-lint-ignore no-explicit-any
@@ -24,28 +24,6 @@ export function path(...segments: Array<string | number>): string {
 }
 
 export function respondToHtmx(): void {
-    document.addEventListener('htmx:replacedInHistory', () => {
-        /*
-        Remove any hash values from the `hx-replace-url` attributes of intersection-url-updaters for a better user experience:
-        Without this logic, hash values would be re-added to the URL when a user returns to a section by scrolling.
-
-        For example:
-            - The user navigates to `/part-1#123`
-            - The user scrolls down to Part 2, so the URL is updated from `/part-1#123` to `/part-2`
-            - The user scrolls back up to Part 1
-                - Without this logic, the URL would be updated to the original value of `/part-1#123`, instead of just `/part-1`
-        */
-
-        const attributeName = 'hx-replace-url';
-        document.querySelectorAll(`${ElementClass.INTERSECTION_URL_UPDATER_SELECTOR}[${attributeName}*="#"]`)
-            .forEach((element) =>
-                element.setAttribute(
-                    attributeName,
-                    element.getAttribute(attributeName)?.replaceAll(/#.*/g, '') ?? '',
-                )
-            );
-    });
-
     document.addEventListener('htmx:afterSwap', (e: HtmxEvent) => {
         /*
         Auto-scroll only when content has been swapped into the main content area,
