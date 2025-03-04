@@ -1,5 +1,7 @@
 # Tasks to complete now
 
+- [ ] move some top-level component files and folders into
+      `source/components/auxillary-content`
 - [ ] implement proper content layout (see notes in `content-layout.astro`)
   - [ ] close the cross-reference window when navigating to a non-main-content
         URL
