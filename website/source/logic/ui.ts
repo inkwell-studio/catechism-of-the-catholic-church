@@ -5,10 +5,8 @@ export enum ElementID {
     CONTENT_WRAPPER_SELECTOR = '#content-wrapper',
 
     CROSS_REFERENCE_CONTENT_WRAPPER = 'cross-reference-content-wrapper',
-
-    CROSS_REFERENCE_CLOSE = 'cross-reference-close',
-
-    CROSS_REFERENCE_NAVIGATE_TO_WRAPPER = 'cross-reference-navigate-to-wrapper',
+    CROSS_REFERENCE_WINDOW_CLOSE = 'cross-reference-window-close',
+    CROSS_REFERENCE_WINDOW_WRAPPER = 'cross-reference-window-wrapper',
 
     LANGUAGE_SWITCHER_WRAPPER = 'language-switcher-wrapper',
 }
@@ -16,7 +14,4 @@ export enum ElementID {
 export enum ElementClass {
     CATECHISM_CONTENT_BLOCK = 'catechism-content-block',
     CATECHISM_CONTENT_BLOCK_SELECTOR = '.catechism-content-block',
-
-    CROSS_REFERENCE_TRIGGER = 'cross-reference-trigger',
-    CROSS_REFERENCE_TRIGGER_SELECTOR = '.cross-reference-trigger',
 }

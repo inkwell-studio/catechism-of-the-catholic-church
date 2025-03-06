@@ -1,11 +1,18 @@
 # Tasks to complete now
 
-- [ ] move some top-level component files and folders into
-      `source/components/auxillary-content`
-- [ ] implement proper content layout (see notes in `content-layout.astro`)
-  - [ ] close the cross-reference window when navigating to a non-main-content
-        URL
-- [ ] UI drafting and research
+- [ ] homepage
+  - [ ] Vatican "keys" icon
+  - [ ] table of contents
+- [ ] merge
+- [ ] make paragraph numbers in-line with the text
+- [ ] navigation bar
+  - [ ] "progress bar" functionality, as thought of by William
+- [ ] rework the "action bar" as a "menu"/"action" icon slide-up menu - [ ]
+      rename files appropriately
+  - [ ] for mobile devices only, with a different menu paradigm for larger
+        screen?
+- [ ] dark mode
+- [ ] implement proper content lay
 - [ ] consider repo management (this and the original
       `catechism-of-of-the-catholic-church` repo)
 - [ ] consider "vendoring" dependencies

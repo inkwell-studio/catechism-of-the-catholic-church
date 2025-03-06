@@ -1,0 +1,23 @@
+---
+import { Language, ParagraphGroup as ParagraphGroupType } from '@catechism-types';
+import { getAllChildContent } from '@catechism-utils/content';
+
+import { getUrlFragment } from '@logic/routing';
+
+import ContentBaseArray from './content-base-array.astro';
+
+interface Props {
+    paragraphGroup: ParagraphGroupType;
+    language: Language;
+}
+
+const { paragraphGroup, language } = Astro.props;
+
+const id = getUrlFragment(paragraphGroup.semanticPath, false, language).fragment;
+const childContent = getAllChildContent(paragraphGroup);
+---
+
+<h6 {id} class="text mt-4 mb-2">
+    {paragraphGroup.title}
+</h6>
+<ContentBaseArray content={childContent} {language} />

@@ -10,12 +10,27 @@
     --tailwind-default-font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
 
     --font-sans: PTSans, var(--tailwind-default-font-sans);
-    --font-mono: 'JetBrains Mono', var(--tailwind-default-font-mono);
+    --font-serif: 'Crimson Pro', var(--tailwind-default-font-serif);
+    --font-title: 'Aleo', var(--tailwind-default-font-serif);
 }
 
 @layer base {
     :root {
         scroll-behavior: instant;
+    }
+
+    @font-face {
+        font-family: 'Aleo';
+        src:
+            local('Aleo'),
+            url(/fonts/Aleo-VariableFont_wght.ttf) format('truetype');
+    }
+
+    @font-face {
+        font-family: 'Crimson Pro';
+        src:
+            local('Aleo'),
+            url(/fonts/CrimsonPro-VariableFont_wght.ttf) format('truetype');
     }
 
     @font-face {
@@ -32,25 +47,5 @@
         src:
             local('PT Sans Bold'),
             url(/fonts/PTSans-Bold.ttf) format('truetype');
-    }
-
-    @font-face {
-        font-family: 'JetBrains Mono';
-        font-weight: 600;
-        src:
-            local('JetBrains Mono Regular'),
-            url(/fonts/JetBrainsMono-Regular.woff2) format('woff2');
-    }
-
-    h1 {
-        @apply text-3xl;
-        @apply font-bold;
-        @apply mb-8;
-    }
-
-    h2 {
-        @apply text-2xl;
-        @apply font-bold;
-        @apply mb-4;
     }
 }

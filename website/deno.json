@@ -31,7 +31,6 @@
     },
     "nodeModulesDir": "auto",
     "compilerOptions": {
-        "jsx": "react-jsx",
         "lib": [
             "deno.ns",
             "DOM"
@@ -46,10 +45,7 @@
     "fmt": {
         "indentWidth": 4,
         "lineWidth": 140,
-        "singleQuote": true,
-        "exclude": [
-            "source/components/catechism-content/content-base.astro"
-        ]
+        "singleQuote": true
     },
     "unstable": ["fmt-component"],
     "imports": {

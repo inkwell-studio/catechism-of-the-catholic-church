@@ -6,11 +6,13 @@ interface Props {
 }
 ---
 
-<!--
-With the `innerHTML` swap strategy:
+{
+    /*
+    With the `innerHTML` swap strategy:
     - the outer div below is not inserted into the DOM, but only the `<slot />` contents are
     - only the contents of the target element are replaced, not the target element itself
--->
+    */
+}
 <div id={Astro.props.target} hx-swap-oob="innerHTML">
     <slot />
 </div>

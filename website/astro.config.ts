@@ -1,6 +1,5 @@
 import { defineConfig, passthroughImageService } from 'astro/config';
 import deno from '@deno/astro-adapter';
-import react from '@astrojs/react';
 import sitemap from '@astrojs/sitemap';
 import tailwindcss from '@tailwindcss/vite';
 
@@ -16,7 +15,6 @@ export default defineConfig({
 
     adapter: deno(),
     integrations: [
-        react(),
         sitemap(buildSitemapConfig()),
     ],
 

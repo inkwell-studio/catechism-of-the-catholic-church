@@ -176,7 +176,7 @@ function getMockTitle(contentType: Content, num: number): string {
         [Content.CHAPTER]: [
             `Letters From Cousins`,
             `Magazines Can Have Beautiful Covers`,
-            `Some Books Are Worth Keeping on a Good Shelf by Your Front Door so You May Easily Share Them With Others`,
+            `Some Books Are Worth Keeping on a Good Shelf by Your Front Door So You May Easily Share Them With Others`,
             `Portable Stamp Collections`,
             `Mysterious Photo Albums`,
             `Heavy Collections of Newspaper Clippings`,

@@ -1,0 +1,81 @@
+---
+import { Content as ContentEnum, ContentBase as ContentBaseObject, Language } from '@catechism-types';
+import {
+    isArticle,
+    isArticleParagraph,
+    isBlockQuote,
+    isChapter,
+    isInBrief,
+    isParagraph,
+    isParagraphGroup,
+    isParagraphSubitem,
+    isParagraphSubitemContainer,
+    isPart,
+    isPrologue,
+    isSection,
+    isSubarticle,
+    isTextBlock,
+    isTextHeading,
+    isTextWrapper,
+} from '@catechism-utils/content';
+
+import ArticleParagraph from './article-paragraph.astro';
+import Article from './article.astro';
+import BlockQuote from './block-quote.astro';
+import Chapter from './chapter.astro';
+import InBrief from './in-brief.astro';
+import ParagraphGroup from './paragraph-group.astro';
+import ParagraphSubitemContainer from './paragraph-subitem-container.astro';
+import ParagraphSubitem from './paragraph-subitem.astro';
+import Paragraph from './paragraph.astro';
+import Part from './part.astro';
+import Prologue from './prologue.astro';
+import Section from './section.astro';
+import Subarticle from './subarticle.astro';
+import TextBlock from './text-block.astro';
+import TextHeading from './text-heading.astro';
+import TextWrapper from './text-wrapper.astro';
+import UnknownContent from './unknown-content.astro';
+
+interface Props {
+    content: ContentBaseObject;
+    language: Language;
+}
+
+const { content, language } = Astro.props;
+const isUnknownContent = !Object.values(ContentEnum).includes(content.contentType);
+---
+
+{isUnknownContent && <UnknownContent {content} />}
+
+{isArticle(content) && <Article article={content} {language} />}
+
+{isArticleParagraph(content) && <ArticleParagraph articleParagraph={content} {language} />}
+
+{isBlockQuote(content) && <BlockQuote blockQuote={content} {language} />}
+
+{isChapter(content) && <Chapter chapter={content} {language} />}
+
+{isInBrief(content) && <InBrief inBrief={content} {language} />}
+
+{isParagraph(content) && <Paragraph paragraph={content} {language} />}
+
+{isParagraphGroup(content) && <ParagraphGroup paragraphGroup={content} {language} />}
+
+{isParagraphSubitemContainer(content) && <ParagraphSubitemContainer paragraphSubitemContainer={content} {language} />}
+
+{isParagraphSubitem(content) && <ParagraphSubitem paragraphSubitem={content} {language} />}
+
+{isPart(content) && <Part part={content} {language} />}
+
+{isPrologue(content) && <Prologue prologue={content} {language} />}
+
+{isSection(content) && <Section section={content} {language} />}
+
+{isSubarticle(content) && <Subarticle subarticle={content} {language} />}
+
+{isTextBlock(content) && <TextBlock textBlock={content} {language} />}
+
+{isTextHeading(content) && <TextHeading textHeading={content} />}
+
+{isTextWrapper(content) && <TextWrapper textWrapper={content} {language} />}

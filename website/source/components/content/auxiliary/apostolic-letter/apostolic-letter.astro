@@ -1,0 +1,62 @@
+---
+import { Language } from '@catechism-types';
+
+export interface ApostolicLetterInterface {
+    title: string;
+    subtitle: string;
+    authorText: Array<string>;
+    intro: string;
+}
+
+interface Props {
+    language: Language;
+}
+
+const { language } = Astro.props;
+
+const letter = getLetter(language);
+
+function getLetter(language: Language): ApostolicLetterInterface {
+    switch (language) {
+        case Language.ENGLISH:
+            return {
+                title: 'Apostolic Letter',
+                subtitle: 'Subtitle Text',
+                authorText: ['line 1', 'line 2', 'line 3'],
+                intro: 'Intro text goes here.',
+            };
+        case Language.LATIN:
+            return {
+                title: 'Apostolic Letter',
+                subtitle: 'Subtitle Text',
+                authorText: ['line 1', 'line 2', 'line 3'],
+                intro: 'Intro text goes here.',
+            };
+        case Language.SPANISH:
+            return {
+                title: 'Apostolic Letter',
+                subtitle: 'Subtitle Text',
+                authorText: ['line 1', 'line 2', 'line 3'],
+                intro: 'Intro text goes here.',
+            };
+    }
+}
+---
+
+<div class="max-w-[40rem] mx-auto px-12">
+    <h1>{letter.title}</h1>
+    <h2>{letter.subtitle}</h2>
+
+    <div class="flex flex-col items-center">
+        {letter.authorText.map((text: string) => <span>{text}</span>)}
+    </div>
+
+    <em>{letter.intro}</em>
+
+    <div class="mt-8">
+        <!-- deno-fmt-ignore -->
+        {language === Language.ENGLISH && '(English text)'}
+        {language === Language.LATIN && '(Latin text)'}
+        {language === Language.SPANISH && '(Spanish text)'}
+    </div>
+</div>

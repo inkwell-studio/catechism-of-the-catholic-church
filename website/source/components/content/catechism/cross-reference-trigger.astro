@@ -1,0 +1,47 @@
+---
+import { Language, NumberOrNumberRange } from '@catechism-types';
+
+import PartialTrigger from '@components/partial-trigger.astro';
+
+import { path } from '@logic/navigation-utils';
+
+interface Props {
+    reference: NumberOrNumberRange;
+    language: Language;
+    hasProceedingTrigger: boolean;
+}
+
+const { reference, language, hasProceedingTrigger } = Astro.props;
+
+const referenceForUrl = reference.toString().replace('–', '-');
+const contentUrl = path('/partials/cross-reference', language, referenceForUrl);
+
+const separator = hasProceedingTrigger ? ', ' : '';
+---
+
+<script>
+    import { defineElement } from '@logic/custom-elements';
+    import { onClick, show } from '@logic/dom-utils';
+    import { ElementID } from '@logic/ui';
+
+    class CrossReferenceTrigger extends HTMLElement {
+        constructor() {
+            super();
+        }
+
+        connectedCallback() {
+            onClick(
+                this,
+                () => show(document.getElementById(ElementID.CROSS_REFERENCE_WINDOW_WRAPPER)),
+            );
+        }
+    }
+
+    defineElement('cross-reference-trigger', CrossReferenceTrigger);
+</script>
+
+<cross-reference-trigger>
+    <PartialTrigger {contentUrl} class="cursor-pointer text">
+        {reference.toString()}{separator}
+    </PartialTrigger>
+</cross-reference-trigger>

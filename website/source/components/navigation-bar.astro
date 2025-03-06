@@ -22,13 +22,12 @@ const previousUrl = renderableNodes?.previous?.url;
 ---
 
 <div class="flex">
-    <div class="h-10 bg-blue-700 flex items-center gap-2 pl-2 pr-2">
-        <div>navigation</div>
+    <div class="bg-stone-300 flex items-center gap-2 rounded-r-xl">
         <div id={ElementID.CATECHISM_CONTENT_PREVIOUS_LINK_WRAPPER}>
             <PreviousContentLink url={previousUrl} {language} />
         </div>
     </div>
-    <div class="relative -z-10 -left-10 px-3 overflow-hidden">
-        <div class="bg-blue-700 rotate-45 w-10 h-10"></div>
+    <div class="relative -z-10 -left-11 px-3 overflow-hidden">
+        <div class="bg-stone-300 rotate-45 w-10 h-10 rounded"></div>
     </div>
 </div>

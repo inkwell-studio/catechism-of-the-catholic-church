@@ -1,0 +1,39 @@
+---
+import { DEFAULT_LANGUAGE, Language, NumberOrNumberRange, Paragraph } from '@catechism-types';
+
+import PartialLink from '@components/partial-link.astro';
+
+import { ElementID } from '@logic/ui';
+import { path } from '@logic/navigation-utils';
+
+import ContentBaseArray from './content-base-array.astro';
+
+interface Props {
+    reference: NumberOrNumberRange;
+    paragraphs: Array<Paragraph>;
+    url: string;
+    language: Language;
+}
+
+const { reference, paragraphs, url, language } = Astro.props;
+
+// deno-fmt-ignore
+const clientUrl = DEFAULT_LANGUAGE === language
+    ? path(url)
+    : path('/', language, url);
+
+/* Remove the hash of the URL, as including it causes a bug when interacting with HTMX,
+as HTMX will use it the hash and fragment value in `document.querySelector()`, which
+considers ID selectors that start with numbers as invalid (e.g. `#123`).
+
+IDs that start with numbers are valid according to HTML5, but invalid according to HTML4. */
+const contentUrl = path('/partials', clientUrl).replace(/#.*/, '');
+---
+
+<PartialLink {clientUrl} {contentUrl} target={ElementID.CONTENT_WRAPPER_SELECTOR}>
+    navigate-to: {reference}
+</PartialLink>
+
+<div class="overflow-y-scroll">
+    {paragraphs && <ContentBaseArray content={paragraphs} {language} />}
+</div>

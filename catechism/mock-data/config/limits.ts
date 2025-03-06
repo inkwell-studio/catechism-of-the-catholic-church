@@ -311,7 +311,7 @@ const limitsSmall: Limits = {
         },
     },
     inBrief: {
-        paragraph: { min: 1, max: 1 },
+        paragraph: { min: 1, max: 4 },
     },
     paragraph: {
         crossReference: {

@@ -1,7 +1,23 @@
 import { BibleBook, Content, Language } from '@catechism-types';
 
+import { CATECHISM_OF_THE_CATHOLIC_CHURCH } from '@logic/strings.ts';
+
 export function translate(englishText: string, language: Language): string {
-    return Language.ENGLISH === language ? englishText : translationMap[englishText][language];
+    // deno-fmt-ignore
+    const result = Language.ENGLISH === language
+        ? englishText
+        : translationMap[englishText]?.[language];
+
+    if (result) {
+        return result;
+    } else {
+        if (typeof result === 'string') {
+            console.warn(`Translation warning [${language}] empty string: "${englishText}"`);
+            return '';
+        } else {
+            throw new Error(`Translation error [${language}]: "${englishText}"`);
+        }
+    }
 }
 
 const translationMap: Record<string, Record<Exclude<Language, Language.ENGLISH>, string>> = {
@@ -277,9 +293,9 @@ const translationMap: Record<string, Record<Exclude<Language, Language.ENGLISH>,
         [Language.LATIN]: 'Cf. ',
         [Language.SPANISH]: 'Cf. ',
     },
-    'Catechism of the Catholic Church': {
-        [Language.LATIN]: 'Catechismus Catholicae Ecclesiae',
-        [Language.SPANISH]: 'Catecismo de la Iglesia Católica',
+    [CATECHISM_OF_THE_CATHOLIC_CHURCH]: {
+        [Language.LATIN]: 'Catechismus Catholicae Ecclesiae',
+        [Language.SPANISH]: 'Catecismo de la Iglesia Católica',
     },
     'Table of Contents': {
         [Language.LATIN]: 'Index Generalis',

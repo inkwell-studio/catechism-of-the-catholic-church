@@ -6,6 +6,7 @@ import ProloguePartBlock from '@components/home/prologue-part-block.astro';
 
 import BaseLayout from '@layouts/base-layout.astro';
 
+import { CATECHISM_OF_THE_CATHOLIC_CHURCH } from '@logic/strings';
 import { translate as t } from '@logic/translation';
 
 interface Props {
@@ -16,14 +17,14 @@ const { language } = Astro.props;
 ---
 
 <BaseLayout {language}>
-    <div class="h-[calc(100vh_-_3rem)] flex justify-center items-center bg-black/30">
-        <h1 class="text-center">{t('Catechism of the Catholic Church', language)}</h1>
+    <div class="h-[calc(100vh_-_3rem)] flex justify-center items-center">
+        <h1 class="font-title font-medium text-4xl text-center">{t(CATECHISM_OF_THE_CATHOLIC_CHURCH, language)}</h1>
     </div>
     <main class="max-w-6xl mx-auto px-8">
         <div>
             <p>About the Catechism ...</p>
             <p>TODO</p>
-            <p>The <em>Catechism of the Catholic Church</em> is ...</p>
+            <p>The <em>{CATECHISM_OF_THE_CATHOLIC_CHURCH}</em> is ...</p>
             <p>
                 It consists of a <em>Prologue</em> and four <em>Parts</em>.
             </p>

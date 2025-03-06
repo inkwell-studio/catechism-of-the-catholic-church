@@ -1,7 +1,9 @@
 ---
 import GeneralContent from '@components/general-content.astro';
+import Replacement from '@components/replacement.astro';
 
 import { getNavigationValues } from '@logic/routing';
+import { ElementID } from '@logic/ui';
 import { ContentRoute, getBasicRoutes, getTableOfContentsRoutes } from '@pages/_routes';
 
 import NavigationUpdates from '@pages/partials/_navigation-updates.astro';
@@ -18,3 +20,5 @@ const previousUrl = renderableNodes?.previous?.url;
 
 <GeneralContent {path} {pathID} {language} />
 <NavigationUpdates {language} {previousUrl} />
+
+<Replacement target={ElementID.CROSS_REFERENCE_CONTENT_WRAPPER} />

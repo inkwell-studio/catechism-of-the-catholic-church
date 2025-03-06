@@ -1,0 +1,46 @@
+---
+import { Article as ArticleType, Language } from '@catechism-types';
+import { getFinalContent, getInBrief, getMainContent, getOpeningContent } from '@catechism-utils/content';
+
+import { getRomanNumeral } from '@components/utils.ts';
+import { getUrlFragment } from '@logic/routing';
+import { translate } from '@logic/translation';
+
+import ContentBaseArray from './content-base-array.astro';
+
+interface Props {
+    article: ArticleType;
+    language: Language;
+}
+
+const { article, language } = Astro.props;
+
+const nonFinalChildContent = [...getOpeningContent(article), ...getMainContent(article)];
+
+const inBrief = getInBrief(article);
+if (inBrief) {
+    nonFinalChildContent.push(inBrief);
+}
+
+const finalContent = getFinalContent(article);
+---
+
+<>
+    <div class="font-sans font-bold text-stone-600 text-sm text-center tracking-wider uppercase mb-1">
+        Article {getRomanNumeral(article.articleNumber)}
+    </div>
+    <h4
+        id={getUrlFragment(article.semanticPath, false, language).fragment}
+        class="font-title font-medium text-2xl text-center text-stone-700 tracking-wide mb-6"
+    >
+        {article.title}
+    </h4>
+    <ContentBaseArray content={nonFinalChildContent} {language} ) />
+    {
+        finalContent.length > 0 && (
+            <div id={translate('final-content', language)}>
+                <ContentBaseArray content={finalContent} {language} />
+            </div>
+        )
+    }
+</>

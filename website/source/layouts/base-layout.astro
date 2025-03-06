@@ -1,6 +1,7 @@
 ---
 import { Language } from '@catechism-types';
 
+import { CATECHISM_OF_THE_CATHOLIC_CHURCH } from '@logic/strings';
 import { translate as t } from '@logic/translation';
 
 import '@globalCss';
@@ -23,10 +24,10 @@ const canonicalUrl = new URL(Astro.url.pathname, Astro.site).href;
         <meta name="theme-color" content="#1F293B" />
         <meta name="color-scheme" content="light dark" />
 
-        <title>{t('Catechism of the Catholic Church', language)}</title>
+        <title>{t(CATECHISM_OF_THE_CATHOLIC_CHURCH, language)}</title>
         <meta
             name="description"
-            content="A web app of the Catechism of the Catholic Church, an official doctrinal reference of the Catholic Church, first published in 1992."
+            content={`A web app of the ${CATECHISM_OF_THE_CATHOLIC_CHURCH}, an official doctrinal reference of the Catholic Church, first published in 1992.`}
         />
 
         <link rel="canonical" href={canonicalUrl} />
@@ -68,7 +69,7 @@ const canonicalUrl = new URL(Astro.url.pathname, Astro.site).href;
         </script>
         <script src="/htmx.min.js" is:inline></script>
     </head>
-    <body class="bg-stone-200 text-stone-900 dark:bg-slate-800 dark:text-slate-200">
+    <body class="bg-stone-50 font-serif font-light text-lg text-stone-950 leading-6">
         <!-- deno-fmt-ignore -->
         {/* Child elements are inserted here */}
         <slot />

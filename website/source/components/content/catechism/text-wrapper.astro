@@ -1,0 +1,41 @@
+---
+import { Language, TextWrapper as TextWrapperType } from '@catechism-types';
+
+import CrossReferenceTrigger from './cross-reference-trigger.astro';
+import PlainText from './plain-text.astro';
+import ReferenceCollection from './reference-collection.astro';
+
+interface Props {
+    textWrapper: TextWrapperType;
+    language: Language;
+}
+
+const { textWrapper, language } = Astro.props;
+---
+
+<span>
+    <!-- cross-references -->
+    <span class="absolute right-2 font-medium text-sm text-stone-500 text-right tracking-wide max-w-[8ch]">
+        {
+            textWrapper.paragraphReferences.map((reference, index, allReferences) => {
+                const hasProceedingTrigger = index < allReferences.length - 1;
+
+                return (
+                <>
+                    <CrossReferenceTrigger {reference} {language} {hasProceedingTrigger} />
+                </>
+            );
+            })
+        }
+    </span>
+
+    <!-- main content -->
+    <span>
+        {textWrapper.mainContent.map((text, index) => <PlainText {text} lastFragment={index === textWrapper.mainContent.length - 1} />)}
+        {
+            textWrapper.referenceCollection?.references.length > 0 && (
+                <ReferenceCollection {language} referenceCollection={textWrapper.referenceCollection} />
+            )
+        }
+    </span>
+</span>

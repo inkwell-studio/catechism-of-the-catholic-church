@@ -1,0 +1,11 @@
+---
+import { TextHeading as TextHeadingType } from '@catechism-types';
+
+interface Props {
+    textHeading: TextHeadingType;
+}
+
+const { textHeading } = Astro.props;
+---
+
+{textHeading.content}

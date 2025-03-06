@@ -1,0 +1,23 @@
+---
+import { Language, Paragraph as ParagraphType } from '@catechism-types';
+import { getAllChildContent } from '@catechism-utils/content';
+
+import { getUrlFragment } from '@logic/routing';
+
+import ContentBaseArray from './content-base-array.astro';
+
+interface Props {
+    paragraph: ParagraphType;
+    language: Language;
+}
+
+const { paragraph, language } = Astro.props;
+
+const id = getUrlFragment(paragraph.semanticPath, false, language).fragment;
+const childContent = getAllChildContent(paragraph);
+---
+
+<div {id} class="space-y-2">
+    <span class="relative font-sans font-bold text-stone-500">{paragraph.paragraphNumber}</span>
+    <ContentBaseArray content={childContent} {language} />
+</div>

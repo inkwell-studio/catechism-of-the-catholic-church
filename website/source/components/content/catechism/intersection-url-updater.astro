@@ -1,0 +1,41 @@
+---
+import { DEFAULT_LANGUAGE, Language } from '@catechism-types';
+
+import { path } from '@logic/navigation-utils';
+
+interface Props {
+    url: string;
+    language: Language;
+    class?: string;
+}
+
+/*
+    `...rest` is needed in order for the classes from the parent to be properly scoped for the styling specified within by parent
+    (see https://docs.astro.build/en/guides/styling/#passing-a-class-to-a-child-component)
+*/
+const { url, language, class: classes, ...rest } = Astro.props;
+
+// deno-fmt-ignore
+const replacementUrl = DEFAULT_LANGUAGE === language
+    ? path(url)
+    : path('/', language, url)
+
+const contentUrl = path('/partials/update-navigation', replacementUrl);
+---
+
+{
+    /*
+    The `hx-target` value has no effect, since `hx-swap` is set to `none`, but using `this` as the value ensures that an error will never be thrown by HTMX for a missing target.
+    Including `hx-get` results in an unused request being issued whenever this element enters the viewport, but there no way to otherwise fire the `hx-replace-url` event.
+    */
+}
+<div
+    class={classes}
+    hx-trigger="intersect"
+    hx-replace-url={replacementUrl}
+    hx-get={contentUrl ?? ''}
+    hx-target="this"
+    hx-swap="none"
+    {...rest}
+>
+</div>
