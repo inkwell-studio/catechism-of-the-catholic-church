@@ -1,5 +1,6 @@
 # Tasks to complete now
 
+- [ ] implement full navigation mechanism
 - [ ] homepage
   - [ ] Vatican "keys" icon
   - [ ] table of contents
@@ -12,7 +13,7 @@
   - [ ] for mobile devices only, with a different menu paradigm for larger
         screen?
 - [ ] dark mode
-- [ ] implement proper content lay
+- [ ] implement proper content layout
 - [ ] consider repo management (this and the original
       `catechism-of-of-the-catholic-church` repo)
 - [ ] consider "vendoring" dependencies
