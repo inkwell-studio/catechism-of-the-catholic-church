@@ -8,11 +8,14 @@
             "@catechism-types": ["../catechism/source/types/types.ts"],
             "@catechism-utils/*": ["../catechism/source/utils/*"],
             "@components/*": ["./source/components/*"],
-            "@globalCss": ["./source/global.css"],
+            "@css/*": ["./source/css/*"],
             "@layouts/*": ["./source/layouts/*"],
             "@logic/*": ["./source/logic/*"],
             "@pages/*": ["./source/pages/*"],
 
+            "@shoelace/*": ["node_modules/@shoelace-style/shoelace/dist/components/*"],
+            "@shoelace-themes/*": ["node_modules/@shoelace-style/shoelace/dist/themes/*"],
+            "@shoelace-types": ["node_modules/@shoelace-style/shoelace"],
             "@std/*": ["node_modules/@std/*/mod.ts"]
         }
     },

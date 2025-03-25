@@ -19,6 +19,12 @@
         scroll-behavior: instant;
     }
 
+    /* This hides custom elements until they are defined
+    (this is used to hide Shoelace components until they finish loading: https://shoelace.style/getting-started/usage#waiting-for-components-to-load) */
+    :not(:defined) {
+        visibility: hidden;
+    }
+
     @font-face {
         font-family: 'Aleo';
         src:

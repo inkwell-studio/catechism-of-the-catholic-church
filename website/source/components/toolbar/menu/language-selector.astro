@@ -1,6 +1,6 @@
 ---
 import { DEFAULT_LANGUAGE, Language } from '@catechism-types';
-import { getLanguages } from '@catechism-utils/language';
+import { getLanguages, getNativeLanguageText } from '@catechism-utils/language';
 
 import { getPathIdLanguageUrlMap, getSemanticPathPathIdMap } from '@logic/artifacts';
 import { path as joinPaths } from '@logic/navigation-utils';
@@ -57,15 +57,14 @@ const languagesAndUrls = getLanguages().map(([languageKey, language]) => {
 });
 ---
 
-<ol class="flex gap-4 p-4 border border-slate-400 rounded-sm">
+<ul class="flex flex-col">
     {
-        languagesAndUrls.map(({ languageKey, language, url }) => {
-            return (
-            <li>
-                {language === currentLanguage && <div class="opacity-50">{languageKey}</div>}
-                {language !== currentLanguage && <a href={url}>{languageKey}</a>}
+        languagesAndUrls.map(({ language, url }) => (
+            language !== currentLanguage && (
+            <li class="p-2">
+                <a href={url}>{getNativeLanguageText(language)}</a>
             </li>
-        );
-        })
+        )
+        ))
     }
-</ol>
+</ul>

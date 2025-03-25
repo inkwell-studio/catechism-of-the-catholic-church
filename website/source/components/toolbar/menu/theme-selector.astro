@@ -1,0 +1,29 @@
+---
+// This component is intended to be placed on the UI only once
+
+import { Theme } from '@logic/theme';
+import { ElementID } from '@logic/ui';
+---
+
+<script>
+    import type { SlRadioGroup } from '@shoelace-types';
+    import '@shoelace/radio-button/radio-button.js';
+    import '@shoelace/radio-group/radio-group.js';
+
+    import { $theme } from '@logic/state/theme';
+    import { Theme as ThemeType } from '@logic/theme';
+    import { ElementID } from '@logic/ui';
+
+    const radioGroup: SlRadioGroup | null = document.querySelector(ElementID.THEME_SELECTOR_SELECTOR);
+    radioGroup.value = $theme.get();
+
+    radioGroup?.addEventListener('sl-change', () => {
+        $theme.set(radioGroup.value as ThemeType);
+    });
+</script>
+
+<sl-radio-group id={ElementID.THEME_SELECTOR} name="theme" value={Theme.LIGHT} size="large">
+    <sl-radio-button value={Theme.LIGHT}>Light </sl-radio-button>
+    <sl-radio-button value={Theme.DARK}>Dark</sl-radio-button>
+    <sl-radio-button value={Theme.SYSTEM}>Auto</sl-radio-button>
+</sl-radio-group>

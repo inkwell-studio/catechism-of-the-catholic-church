@@ -1,3 +1,5 @@
+import type { SlDrawer } from '@shoelace-types';
+
 import { getParagraphNumber } from './routing.ts';
 import { ElementID } from './ui.ts';
 
@@ -26,11 +28,12 @@ export function path(...segments: Array<string | number>): string {
 export function respondToHtmx(): void {
     document.addEventListener('htmx:afterSwap', (e: HtmxEvent) => {
         /*
-        Auto-scroll only when content has been swapped into the main content area,
-        as these are occasions that will have the appearance of navigation events
+        Perform some automated UI actions only when content has been swapped into the main content area,
+        as these are occasions that will have the appearance of navigation events.
         */
         if (ElementID.CONTENT_WRAPPER === e?.detail?.target?.id) {
             autoScroll();
+            closeCrossReferenceDrawer();
         }
     });
 }
@@ -62,6 +65,11 @@ function autoScroll(): void {
     } else {
         globalThis.scrollTo({ top: 0 });
     }
+}
+
+function closeCrossReferenceDrawer(): void {
+    const drawer: SlDrawer | null = document.querySelector(ElementID.CROSS_REFERENCE_DRAWER_SELECTOR);
+    drawer?.hide();
 }
 
 /**

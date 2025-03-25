@@ -1,0 +1,27 @@
+/*
+    This overrides the Shoelace `light` theme.
+    https://shoelace.style/getting-started/themes#customizing-a-built-in-theme
+*/
+
+@import './global.css';
+
+:root,
+:host,
+.sl-theme-light {
+    --sl-font-sans: var(--font-sans);
+
+    /* The "neutral" colors are used for typography */
+    --sl-color-neutral-0: var(--color-white);
+    --sl-color-neutral-50: var(--color-stone-50);
+    --sl-color-neutral-100: var(--color-stone-100);
+    --sl-color-neutral-200: var(--color-stone-200);
+    --sl-color-neutral-300: var(--color-stone-300);
+    --sl-color-neutral-400: var(--color-stone-400);
+    --sl-color-neutral-500: var(--color-stone-500);
+    --sl-color-neutral-600: var(--color-stone-600);
+    --sl-color-neutral-700: var(--color-stone-700);
+    --sl-color-neutral-800: var(--color-stone-800);
+    --sl-color-neutral-900: var(--color-stone-900);
+    --sl-color-neutral-950: var(--color-stone-950);
+    --sl-color-neutral-1000: var(--color-black);
+}

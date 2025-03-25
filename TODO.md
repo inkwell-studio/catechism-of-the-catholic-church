@@ -1,11 +1,42 @@
 # Tasks to complete now
 
+- [ ] implement proper dark-mode functionality with Shoelace components
+- [ ] merge
+
+- [ ] read or discard:
+  - https://shoelace.style/components/drawer
+  - https://github.com/shoelace-style/shoelace/blob/next/src/components/button/button.component.ts
+  - https://shoelace.style/getting-started/installation
+  - https://shoelace.style/tutorials/integrating-with-astro
+  - https://github.com/b-d-m-p/astro-shoelace-starter-kit-blog/tree/main
+  - https://jsr.io/@matthiesenxyz/astrolace@0.1.8
+  - https://github.com/MatthiesenXYZ/Astrolace?tab=readme-ov-file
+
+- [ ] change the cross-reference drawer to be "contained":
+      https://shoelace.style/components/drawer#contained-to-an-element
+- [ ] merge
+
 - [ ] implement full navigation mechanism
+  - [ ] add table-of-contents menu
+  - [ ] remove `development-helper.astro`
+- [ ] implement "previous section" navigation with reverse infinite-scrolling
+- [ ] merge
+
+- [ ] make the UX demo-worthy
+- [ ] merge
+
+- [ ] consider if advanced e2e testing is necessary - potentially helpful tools:
+  - Astral: https://astral.deno.dev/
+  - Puppeteer: https://github.com/puppeteer/puppeteer
+
 - [ ] homepage
   - [ ] Vatican "keys" icon
   - [ ] table of contents
 - [ ] merge
+
 - [ ] make paragraph numbers in-line with the text
+- [ ] merge
+
 - [ ] navigation bar
   - [ ] "progress bar" functionality, as thought of by William
 - [ ] rework the "action bar" as a "menu"/"action" icon slide-up menu - [ ]
@@ -18,6 +49,9 @@
       `catechism-of-of-the-catholic-church` repo)
 - [ ] consider "vendoring" dependencies
 
+- [ ] consider adding logic around hiding Shoelace components before they are
+      loaded:
+      https://shoelace.style/getting-started/usage#waiting-for-components-to-load
 - [ ] implement UI proofs of concept (e.g. React UI interactivity — especially
       with HTMX and Astro components)
   - [ ] implement Action Bar menus
@@ -118,9 +152,6 @@
 - [ ] simplify the favicon fileset:
       https://evilmartians.com/chronicles/how-to-favicon-in-2021-six-files-that-fit-most-needs
 - [ ] add helpful information and links to the 404 page
-- [ ] consider if advanced e2e testing is necessary - potentially helpful tools:
-  - Astral: https://astral.deno.dev/
-  - Puppeteer: https://github.com/puppeteer/puppeteer
 - [ ] consider improving artifact management
   - should artifacts not be commited, and instead be built during deployment?
 - [ ] UI: style for LTR and RTL text

@@ -2,7 +2,7 @@
 
 import { addClass, removeClass } from './dom-utils.ts';
 
-// This value must match the class used in the selector for `@custom-variant dark` in `global.css`
+// This value must match the class used in the selector for `@custom-variant dark` in `css/global.css`
 export const DARK_MODE_CLASS = 'dark';
 export const DARK_MODE_MEDIA_QUERY = '(prefers-color-scheme: dark)';
 export const LOCAL_STORAGE_KEY_THEME = 'theme';

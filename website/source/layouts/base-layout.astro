@@ -1,10 +1,14 @@
 ---
 import { Language } from '@catechism-types';
 
+import Toolbar from '@components/toolbar/toolbar.astro';
+
 import { CATECHISM_OF_THE_CATHOLIC_CHURCH } from '@logic/strings';
 import { translate as t } from '@logic/translation';
 
-import '@globalCss';
+import '@shoelace-themes/light.css';
+import '@css/global.css';
+import '@css/shoelace-light.css';
 
 interface Props {
     language: Language;
@@ -61,7 +65,7 @@ const canonicalUrl = new URL(Astro.url.pathname, Astro.site).href;
         </script>
         <script>
             import { respondToHtmx, respondToNavigationEvent } from '@logic/navigation-utils';
-            import { watchForThemeChanges } from '@logic/store/theme';
+            import { watchForThemeChanges } from '@logic/state/theme';
 
             respondToHtmx();
             respondToNavigationEvent();
@@ -70,8 +74,11 @@ const canonicalUrl = new URL(Astro.url.pathname, Astro.site).href;
         <script src="/htmx.min.js" is:inline></script>
     </head>
     <body class="bg-stone-50 font-serif font-light text-lg text-stone-950 leading-6">
-        <!-- deno-fmt-ignore -->
         {/* Child elements are inserted here */}
         <slot />
+
+        <div class="fixed bottom-0 inset-x-6 flex justify-center">
+            <Toolbar {language} />
+        </div>
     </body>
 </html>

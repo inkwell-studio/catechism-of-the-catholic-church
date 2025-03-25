@@ -1,9 +1,7 @@
 ---
 import { Language } from '@catechism-types';
 
-import ActionBar from '@components/action-bar.astro';
-import CrossReferenceWindow from '@components/content/catechism/cross-reference-window.astro';
-import DevelopmentHelper from '@components/development-helper.astro';
+import CrossReferenceDrawer from '@components/content/catechism/cross-reference-drawer.astro';
 import NavigationBar from '@components/navigation-bar.astro';
 
 import BaseLayout from '@layouts/base-layout.astro';
@@ -22,7 +20,7 @@ const { language } = Astro.props;
         The `minimum-height` and vertical margin values must ensure that the content-wrapper element is taller than the user's screen,
         as this will allow the UI bars in mobile browsers to collapse when the user scrolls down.
     -->
-    <div id={ElementID.CONTENT_WRAPPER} class="min-h-screen mt-16 mb-28 max-w-5xl mx-auto border-4 border-white/10">
+    <div id={ElementID.CONTENT_WRAPPER} class="min-h-screen mt-16 max-w-5xl mx-auto border-4 border-white/10">
         {/* Content is inserted here */} <slot />
     </div>
 
@@ -30,14 +28,5 @@ const { language } = Astro.props;
         <NavigationBar {language} />
     </div>
 
-    <!-- TODO: This may need to be pulled out and use `absolute` positioning in order to prevent the scroll-capturing problems -->
-    <div id={ElementID.CROSS_REFERENCE_WINDOW_WRAPPER} class="hidden fixed bottom-0 inset-x-0 bg-stone-50 border-t border-t-stone-300">
-        <CrossReferenceWindow />
-    </div>
-
-    <div class="fixed bottom-0 inset-x-0 bg-stone-100 border-t border-t-stone-300">
-        <ActionBar {language} />
-    </div>
-
-    <DevelopmentHelper {language} usePartialLinks={true} />
+    <CrossReferenceDrawer />
 </BaseLayout>

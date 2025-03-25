@@ -1,0 +1,25 @@
+---
+// This component is intended to be placed on the UI only once
+
+import { ElementID } from '@logic/ui';
+---
+
+<script>
+    import '@shoelace/button/button.js';
+    import '@shoelace/drawer/drawer.js';
+    import type { SlDrawer } from '@shoelace-types';
+
+    import { onClick } from '@logic/dom-utils';
+    import { closeCrossReferenceDrawer } from '@logic/state/cross-reference-drawer';
+    import { ElementID } from '@logic/ui';
+
+    const drawer: SlDrawer | null = document.querySelector(ElementID.CROSS_REFERENCE_DRAWER_SELECTOR);
+    const closeButton = drawer?.querySelector(ElementID.CROSS_REFERENCE_DRAWER_CLOSE_BUTTON_SELECTOR);
+
+    onClick(closeButton, () => closeCrossReferenceDrawer());
+</script>
+
+<sl-drawer id={ElementID.CROSS_REFERENCE_DRAWER} placement="bottom" no-header="true">
+    <div id={ElementID.CROSS_REFERENCE_DRAWER_CONTENT_WRAPPER}></div>
+    <sl-button id={ElementID.CROSS_REFERENCE_DRAWER_CLOSE_BUTTON} slot="footer" variant="primary">Close</sl-button>
+</sl-drawer>

@@ -28,10 +28,10 @@ const previousUrl = renderableNodes?.previous?.url;
 
 {
     /* TODO:
-        - Finalize the bottom padding when the position and height of the navigation buttons container is finalized
+        - Finalize heights and vertical paddings
     */
 }
-<div class:list={[ElementClass.CATECHISM_CONTENT_BLOCK, 'relative pl-8 pr-16 pb-16 border-bottom-4 border-bottom-white']}>
+<div class:list={[ElementClass.CATECHISM_CONTENT_BLOCK, 'relative pl-8 pr-16 border-bottom-4 border-bottom-white']}>
     <div class="max-w-prose mx-auto break-words">
         {content && <ContentBase {content} {language} />}
     </div>

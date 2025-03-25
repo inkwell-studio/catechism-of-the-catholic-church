@@ -58,6 +58,7 @@
         "@logic/": "./source/logic/",
         "@pages/": "./source/pages/",
 
+        "@shoelace-types": "npm:/@shoelace-style/shoelace",
         "@std/assert": "jsr:@std/assert@1.0.11",
         "@std/path": "jsr:@std/path@1.0.8"
     }

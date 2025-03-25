@@ -4,6 +4,7 @@
         "@astrojs/check": "0.9.4",
         "@astrojs/sitemap": "3.2.1",
         "@deno/astro-adapter": "0.2.0",
+        "@shoelace-style/shoelace": "^2.20.1",
         "@std/path": "npm:@jsr/std__path@1.0.8",
         "@tailwindcss/vite": "4.0.4",
         "astro": "5.2.5",
