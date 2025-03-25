@@ -1,14 +1,5 @@
 # Tasks to complete now
 
-- [ ] read or discard:
-  - https://shoelace.style/components/drawer
-  - https://github.com/shoelace-style/shoelace/blob/next/src/components/button/button.component.ts
-  - https://shoelace.style/getting-started/installation
-  - https://shoelace.style/tutorials/integrating-with-astro
-  - https://github.com/b-d-m-p/astro-shoelace-starter-kit-blog/tree/main
-  - https://jsr.io/@matthiesenxyz/astrolace@0.1.8
-  - https://github.com/MatthiesenXYZ/Astrolace?tab=readme-ov-file
-
 - [ ] change the cross-reference drawer to be "contained":
       https://shoelace.style/components/drawer#contained-to-an-element
 - [ ] merge
