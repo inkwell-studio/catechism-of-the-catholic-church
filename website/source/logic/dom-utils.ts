@@ -30,19 +30,20 @@ export function toggleClass(e: Element, cssClass: string): void {
     }
 }
 
-export function addClass(e: Element, cssClass: string): void {
-    e.classList.add(cssClass);
+export function addClass(e: Element, ...classes: Array<string>): void {
+    e.classList.add(...classes);
 }
 
-export function removeClass(e: Element, cssClass: string): void {
-    e.classList.remove(cssClass);
+export function removeClass(e: Element, ...classes: Array<string>): void {
+    e.classList.remove(...classes);
 
     /*
-    Remove the `class` attribute if it is empty to prevent the `class` attribute
-    being present without a value, which is invalid HTML (i.e. `<html class>`)
+        Remove the `class` attribute if it is empty to prevent the `class` attribute
+        being present without a value, which is invalid HTML (i.e. `<html class>`)
     */
     if (e.classList.length === 0) {
         e.removeAttribute('class');
     }
 }
+
 //#endregion

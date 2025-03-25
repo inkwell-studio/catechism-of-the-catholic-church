@@ -3,7 +3,10 @@
 import { addClass, removeClass } from './dom-utils.ts';
 
 // This value must match the class used in the selector for `@custom-variant dark` in `css/global.css`
-export const DARK_MODE_CLASS = 'dark';
+const DARK_MODE_CLASS_TAILWIND = 'dark';
+const DARK_MODE_CLASS_SHOELACE = 'sl-theme-dark';
+const DARK_MODE_CLASSES = [DARK_MODE_CLASS_TAILWIND, DARK_MODE_CLASS_SHOELACE];
+
 export const DARK_MODE_MEDIA_QUERY = '(prefers-color-scheme: dark)';
 export const LOCAL_STORAGE_KEY_THEME = 'theme';
 
@@ -24,9 +27,9 @@ export function updateDarkModeClass(darkModeEnabled: boolean): void {
     const e = document.documentElement;
 
     if (darkModeEnabled) {
-        addClass(e, DARK_MODE_CLASS);
+        addClass(e, ...DARK_MODE_CLASSES);
     } else {
-        removeClass(e, DARK_MODE_CLASS);
+        removeClass(e, ...DARK_MODE_CLASSES);
     }
 }
 

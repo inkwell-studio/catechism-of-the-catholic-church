@@ -9,6 +9,7 @@ import { translate as t } from '@logic/translation';
 import '@shoelace-themes/light.css';
 import '@css/global.css';
 import '@css/shoelace-light.css';
+import '@css/shoelace-dark.css';
 
 interface Props {
     language: Language;
@@ -59,7 +60,7 @@ const canonicalUrl = new URL(Astro.url.pathname, Astro.site).href;
                     'DARK' === theme ||
                     ('SYSTEM' === theme && globalThis.matchMedia('(prefers-color-scheme: dark)').matches)
                 ) {
-                    document.documentElement.classList.add('dark');
+                    document.documentElement.classList.add('dark', 'sl-theme-dark');
                 }
             })();
         </script>

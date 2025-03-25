@@ -1,8 +1,5 @@
 # Tasks to complete now
 
-- [ ] implement proper dark-mode functionality with Shoelace components
-- [ ] merge
-
 - [ ] read or discard:
   - https://shoelace.style/components/drawer
   - https://github.com/shoelace-style/shoelace/blob/next/src/components/button/button.component.ts

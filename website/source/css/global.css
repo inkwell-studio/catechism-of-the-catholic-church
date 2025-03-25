@@ -1,6 +1,6 @@
 @import 'tailwindcss';
 
-/* The class referenced here must match that specified by the `DARK_MODE_CLASS` constant in `theme.ts` */
+/* The class referenced here must match that specified by the `DARK_MODE_CLASS_TAILWIND` constant in `theme.ts` */
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
