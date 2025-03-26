@@ -22,7 +22,7 @@ const separator = hasProceedingTrigger ? ', ' : '';
 <script>
     import { defineElement } from '@logic/custom-elements';
     import { onClick } from '@logic/dom-utils';
-    import { $crossReferenceDrawerIsOpen } from '@logic/state/cross-reference-drawer';
+    import { $showCrossReferencePanel } from '@logic/state/cross-reference-panel';
 
     class CrossReferenceTrigger extends HTMLElement {
         constructor() {
@@ -30,7 +30,7 @@ const separator = hasProceedingTrigger ? ', ' : '';
         }
 
         connectedCallback() {
-            onClick(this, () => $crossReferenceDrawerIsOpen.set(true));
+            onClick(this, () => $showCrossReferencePanel.set(true));
         }
     }
 

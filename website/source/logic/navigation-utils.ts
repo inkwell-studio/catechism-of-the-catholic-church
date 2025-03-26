@@ -1,5 +1,5 @@
 import { getParagraphNumber } from './routing.ts';
-import { $crossReferenceDrawerIsOpen } from './state/cross-reference-drawer.ts';
+import { $showCrossReferencePanel } from './state/cross-reference-panel.ts';
 import { ElementID } from './ui.ts';
 
 type HtmxEvent = Event & {
@@ -32,7 +32,7 @@ export function respondToHtmx(): void {
         */
         if (ElementID.CONTENT_WRAPPER === e?.detail?.target?.id) {
             autoScroll();
-            $crossReferenceDrawerIsOpen.set(false);
+            $showCrossReferencePanel.set(false);
         }
     });
 }

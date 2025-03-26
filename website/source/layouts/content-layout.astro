@@ -1,7 +1,7 @@
 ---
 import { Language } from '@catechism-types';
 
-import CrossReferenceDrawer from '@components/content/catechism/cross-reference-drawer.astro';
+import CrossReferencePanel from '@components/content/catechism/cross-reference-panel.astro';
 import NavigationBar from '@components/navigation-bar.astro';
 
 import BaseLayout from '@layouts/base-layout.astro';
@@ -24,8 +24,8 @@ const { language } = Astro.props;
         {/* Content is inserted here */} <slot />
     </div>
 
-    <div id={ElementID.CROSS_REFERENCE_DRAWER_WRAPPER} class="fixed bottom-0 inset-x-0 translate-y-full transition-transform">
-        <CrossReferenceDrawer />
+    <div id={ElementID.CROSS_REFERENCE_PANEL_WRAPPER} class="fixed bottom-0 inset-x-0 translate-y-full transition-transform">
+        <CrossReferencePanel />
     </div>
 
     <div class="fixed top-0 left-0">
