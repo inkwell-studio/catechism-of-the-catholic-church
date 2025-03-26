@@ -1,9 +1,5 @@
 # Tasks to complete now
 
-- [ ] change the cross-reference drawer to be "contained":
-      https://shoelace.style/components/drawer#contained-to-an-element
-- [ ] merge
-
 - [ ] implement full navigation mechanism
   - [ ] add table-of-contents menu
   - [ ] remove `development-helper.astro`

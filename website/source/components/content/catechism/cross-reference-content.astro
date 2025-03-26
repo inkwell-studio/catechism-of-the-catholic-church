@@ -34,6 +34,6 @@ const contentUrl = path('/partials', clientUrl).replace(/#.*/, '');
     navigate-to: {reference}
 </PartialLink>
 
-<div class="overflow-y-scroll">
+<div>
     {paragraphs && <ContentBaseArray content={paragraphs} {language} />}
 </div>

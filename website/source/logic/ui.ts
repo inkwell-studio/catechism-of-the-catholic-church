@@ -4,10 +4,8 @@ export enum ElementID {
     CONTENT_WRAPPER = 'content-wrapper',
     CONTENT_WRAPPER_SELECTOR = '#content-wrapper',
 
-    CROSS_REFERENCE_DRAWER = 'cross-reference-drawer',
-    CROSS_REFERENCE_DRAWER_SELECTOR = '#cross-reference-drawer',
+    CROSS_REFERENCE_DRAWER_WRAPPER = 'cross-reference-drawer-wrapper',
     CROSS_REFERENCE_DRAWER_CLOSE_BUTTON = 'cross-reference-drawer-close-button',
-    CROSS_REFERENCE_DRAWER_CLOSE_BUTTON_SELECTOR = '#cross-reference-drawer-close-button',
     CROSS_REFERENCE_DRAWER_CONTENT_WRAPPER = 'cross-reference-drawer-content-wrapper',
 
     LANGUAGE_SWITCHER_WRAPPER = 'language-switcher-wrapper',

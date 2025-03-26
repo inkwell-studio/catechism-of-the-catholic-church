@@ -1,6 +1,5 @@
-import type { SlDrawer } from '@shoelace-types';
-
 import { getParagraphNumber } from './routing.ts';
+import { $crossReferenceDrawerIsOpen } from './state/cross-reference-drawer.ts';
 import { ElementID } from './ui.ts';
 
 type HtmxEvent = Event & {
@@ -33,7 +32,7 @@ export function respondToHtmx(): void {
         */
         if (ElementID.CONTENT_WRAPPER === e?.detail?.target?.id) {
             autoScroll();
-            closeCrossReferenceDrawer();
+            $crossReferenceDrawerIsOpen.set(false);
         }
     });
 }
@@ -65,11 +64,6 @@ function autoScroll(): void {
     } else {
         globalThis.scrollTo({ top: 0 });
     }
-}
-
-function closeCrossReferenceDrawer(): void {
-    const drawer: SlDrawer | null = document.querySelector(ElementID.CROSS_REFERENCE_DRAWER_SELECTOR);
-    drawer?.hide();
 }
 
 /**

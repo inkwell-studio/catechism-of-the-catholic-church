@@ -1,18 +1,23 @@
-import type { SlDrawer } from '@shoelace-types';
 import { atom } from 'nanostores';
 
+import { addClass, removeClass } from '@logic/dom-utils.ts';
 import { ElementID } from '@logic/ui.ts';
 
-const $crossReferenceDrawerOpen = atom(false);
+export const $crossReferenceDrawerIsOpen = atom(false);
 
-const drawer: SlDrawer | null = document.querySelector(ElementID.CROSS_REFERENCE_DRAWER_SELECTOR);
-drawer?.addEventListener('sl-show', () => $crossReferenceDrawerOpen.set(true));
-drawer?.addEventListener('sl-hide', () => $crossReferenceDrawerOpen.set(false));
+$crossReferenceDrawerIsOpen.listen((open) =>
+    // deno-fmt-ignore
+    open
+        ? openCrossReferenceDrawer()
+        : closeCrossReferenceDrawer()
+);
 
-export function openCrossReferenceDrawer(): void {
-    drawer?.show();
+function openCrossReferenceDrawer(): void {
+    const drawer = document.getElementById(ElementID.CROSS_REFERENCE_DRAWER_WRAPPER);
+    removeClass(drawer, 'translate-y-full');
 }
 
-export function closeCrossReferenceDrawer(): void {
-    drawer?.hide();
+function closeCrossReferenceDrawer(): void {
+    const drawer = document.getElementById(ElementID.CROSS_REFERENCE_DRAWER_WRAPPER);
+    addClass(drawer, 'translate-y-full');
 }

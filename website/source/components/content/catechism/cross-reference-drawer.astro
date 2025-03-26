@@ -5,21 +5,21 @@ import { ElementID } from '@logic/ui';
 ---
 
 <script>
-    import '@shoelace/button/button.js';
-    import '@shoelace/drawer/drawer.js';
-    import type { SlDrawer } from '@shoelace-types';
-
     import { onClick } from '@logic/dom-utils';
-    import { closeCrossReferenceDrawer } from '@logic/state/cross-reference-drawer';
+    import { $crossReferenceDrawerIsOpen } from '@logic/state/cross-reference-drawer';
     import { ElementID } from '@logic/ui';
 
-    const drawer: SlDrawer | null = document.querySelector(ElementID.CROSS_REFERENCE_DRAWER_SELECTOR);
-    const closeButton = drawer?.querySelector(ElementID.CROSS_REFERENCE_DRAWER_CLOSE_BUTTON_SELECTOR);
-
-    onClick(closeButton, () => closeCrossReferenceDrawer());
+    const closeButton = document.getElementById(ElementID.CROSS_REFERENCE_DRAWER_CLOSE_BUTTON);
+    onClick(closeButton, () => $crossReferenceDrawerIsOpen.set(false));
 </script>
 
-<sl-drawer id={ElementID.CROSS_REFERENCE_DRAWER} placement="bottom" no-header="true">
-    <div id={ElementID.CROSS_REFERENCE_DRAWER_CONTENT_WRAPPER}></div>
-    <sl-button id={ElementID.CROSS_REFERENCE_DRAWER_CLOSE_BUTTON} slot="footer" variant="primary">Close</sl-button>
-</sl-drawer>
+<div class="relative max-h-[50vh] flex bg-white border-t">
+    <div class="absolute top-0 right-0">
+        <button type="button" id={ElementID.CROSS_REFERENCE_DRAWER_CLOSE_BUTTON} class="p-4 mt-4 border">Close</button>
+    </div>
+
+    <div class="w-full overflow-y-auto">
+        <!-- The bottom padding accounts for the height of the toolbar -->
+        <div id={ElementID.CROSS_REFERENCE_DRAWER_CONTENT_WRAPPER} class="h-fit max-w-prose mx-auto pb-14"></div>
+    </div>
+</div>
