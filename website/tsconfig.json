@@ -1,7 +1,6 @@
 {
     "compilerOptions": {
         "baseUrl": ".",
-        "allowImportingTsExtensions": true,
         "allowSyntheticDefaultImports": true,
         "paths": {
             "@artifacts/*": ["../catechism/artifacts/*"],
