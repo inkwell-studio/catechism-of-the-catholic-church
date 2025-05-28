@@ -11,6 +11,10 @@ export function buildParagraphSubitemContainer(): ParagraphSubitemContainer {
         pathID: '0',
         // This will be set later, after all content is created
         semanticPath: '',
+        // This will be set later, after all content is created
+        naturalLanguagePath: [],
+        // This will be set later, after all content is created
+        rank: 0,
         ordered: randomBoolean(),
         openingContent: [],
         mainContent: buildContent(),

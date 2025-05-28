@@ -1,0 +1,21 @@
+---
+import Home from '@components/home/home.astro';
+import NavigationUpdates from '@pages/partials/_navigation-updates.astro';
+import Replacement from '@components/replacement.astro';
+
+import { ElementID } from '@logic/ui';
+import { ContentRoute, getHomePageRoutes } from '@pages/_routes';
+
+export const partial = true;
+
+export function getStaticPaths(): Array<ContentRoute> {
+    return getHomePageRoutes();
+}
+
+const language = Astro.params.language;
+---
+
+<Home {language} />
+<NavigationUpdates {language} />
+
+<Replacement target={ElementID.CROSS_REFERENCE_PANEL_CONTENT_WRAPPER} />

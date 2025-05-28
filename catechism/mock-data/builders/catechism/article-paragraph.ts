@@ -13,6 +13,10 @@ export function buildArticleParagraph(articleParagraphNumber: number): ArticlePa
         pathID: '0',
         // This will be set later, after all content is created
         semanticPath: '',
+        // This will be set later, after all content is created
+        naturalLanguagePath: [],
+        // This will be set later, after all content is created
+        rank: 0,
         articleParagraphNumber,
         title: getTitleText(Content.ARTICLE_PARAGRAPH, articleParagraphNumber),
         openingContent: [],

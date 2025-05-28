@@ -1,7 +1,10 @@
 ---
 import { DEFAULT_LANGUAGE } from '@catechism-types';
 
-import HomeLayout from '@layouts/home-layout.astro';
+import Home from '@components/home/home.astro';
+import ContentLayout from '@layouts/content-layout.astro';
 ---
 
-<HomeLayout language={DEFAULT_LANGUAGE} />
+<ContentLayout language={DEFAULT_LANGUAGE}>
+    <Home language={DEFAULT_LANGUAGE} />
+</ContentLayout>

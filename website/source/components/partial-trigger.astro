@@ -14,6 +14,7 @@ const { contentUrl, class: classes, ...rest } = Astro.props;
 <script>
     import { prefetch } from 'astro:prefetch';
     import { defineElement } from '@logic/custom-elements';
+    import { onMouseover } from '@logic/dom-utils';
 
     class AstroPartialTrigger extends HTMLElement {
         constructor() {
@@ -21,7 +22,7 @@ const { contentUrl, class: classes, ...rest } = Astro.props;
         }
 
         connectedCallback() {
-            this.addEventListener('mouseover', () => prefetch(this.dataset.contentUrl));
+            onMouseover(this, () => prefetch(this.dataset.contentUrl));
         }
     }
 

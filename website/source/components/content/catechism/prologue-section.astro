@@ -1,0 +1,22 @@
+---
+import { Language, PrologueSection as PrologueSectionType } from '@catechism-types';
+import { getAllChildContent } from '@catechism-utils/content';
+
+import ContentBaseArray from './content-base-array.astro';
+
+import { getUrlFragment } from '@logic/routing';
+
+interface Props {
+    prologueSection: PrologueSectionType;
+    language: Language;
+}
+
+const { prologueSection, language } = Astro.props;
+
+const childContent = getAllChildContent(prologueSection);
+---
+
+<h2 id={getUrlFragment(prologueSection.semanticPath, false, language).fragment} class="text-lg font-sans font-bold mt-4 mb-2">
+    {prologueSection.title}
+</h2>
+<ContentBaseArray content={childContent} {language} />

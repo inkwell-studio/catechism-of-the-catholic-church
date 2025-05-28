@@ -11,9 +11,11 @@ export function buildParagraph(): Paragraph {
         mainContent: buildContent(),
         finalContent: [],
 
-        // These will be set later, after all content is created
+        // Each of these will be set later, after all content is created
         pathID: '0',
         semanticPath: '',
+        naturalLanguagePath: [],
+        rank: 0,
         paragraphNumber: 1,
     };
 }

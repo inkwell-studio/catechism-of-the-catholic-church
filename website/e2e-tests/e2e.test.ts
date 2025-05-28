@@ -67,6 +67,11 @@ Deno.test('website: rendered content', async (test) => {
         assertStrictEquals(lang, DEFAULT_LANGUAGE);
     });
 
+    await test.step('the project page is accessible', async () => {
+        const r = await get('/project');
+        assertStrictEquals(r.status, 200);
+    });
+
     await test.step('paths with the default language code are redirected to the same subpath without the language code', async (t) => {
         const testCases = [
             DEFAULT_LANGUAGE,
@@ -90,7 +95,7 @@ Deno.test('website: rendered content', async (test) => {
         }
     });
 
-    await test.step('the `lang` attribute is correct for the landing page of each supported language', async (t) => {
+    await test.step('the `lang` attribute is correct for the landing page (home page) of each supported language', async (t) => {
         for (const [_languageKey, language] of languages) {
             const url = language;
 
@@ -140,7 +145,7 @@ Deno.test('website: rendered content', async (test) => {
     });
 
     await test.step('can navigate by paragraph number', async (t) => {
-        const paragraphRoute = `/2/`;
+        const paragraphRoute = `2`;
 
         await t.step(paragraphRoute, async () => {
             const r = await get(paragraphRoute);
@@ -148,7 +153,7 @@ Deno.test('website: rendered content', async (test) => {
         });
 
         for (const [_languageKey, language] of languages) {
-            const route = `/${language}${paragraphRoute}`;
+            const route = joinPaths(language, paragraphRoute);
             await t.step(`${route}`, async () => {
                 const r = await get(route);
                 assertStrictEquals(r.status, 200);
@@ -225,8 +230,34 @@ Deno.test('website: partials', async (test) => {
         }
     });
 
-    await test.step('infinite-scroll content', async (t) => {
-        const routes = getAllTranslatableRoutes('/prologue', true).map((route) => joinPaths('partials/infinite-scroll', route));
+    await test.step('infinite-scroll content (forward)', async (t) => {
+        const routes = getAllTranslatableRoutes('/prologue', true).map((route) => joinPaths('partials/infinite-scroll/forward', route));
+
+        for (const route of routes) {
+            await t.step(route, async () => {
+                const r = await get(route);
+                assertStrictEquals(r.status, 200);
+            });
+        }
+    });
+
+    await test.step('infinite-scroll content (backward, initial)', async (t) => {
+        const routes = getAllTranslatableRoutes('/part-1', true).map((route) =>
+            joinPaths('partials/infinite-scroll/backward/initial', route)
+        );
+
+        for (const route of routes) {
+            await t.step(route, async () => {
+                const r = await get(route);
+                assertStrictEquals(r.status, 200);
+            });
+        }
+    });
+
+    await test.step('infinite-scroll content (backward, subsequent)', async (t) => {
+        const routes = getAllTranslatableRoutes('/part-1', true).map((route) =>
+            joinPaths('partials/infinite-scroll/backward/subsequent', route)
+        );
 
         for (const route of routes) {
             await t.step(route, async () => {
@@ -413,14 +444,27 @@ function getAllTranslatableRoutes(subpath: string, omitDefaultLanguageTag = fals
     ];
 
     for (const [_languageKey, language] of languages) {
-        // deno-fmt-ignore
         // This is a simple path translation function, and only needs to be robust enough for the corresponding e2e tests to pass
         const translatedSubpath = subpath
             .split('/')
-            .map((part) => part && DEFAULT_LANGUAGE !== language
-                ? translate(part, language)
-                : part
-            )
+            .map((part) => {
+                try {
+                    // deno-fmt-ignore
+                    return part && DEFAULT_LANGUAGE !== language
+                        ? translate(part, language)
+                        : part
+                } catch {
+                    if (part === 'part-1') {
+                        if (Language.LATIN === language) {
+                            return 'pars-1';
+                        } else if (Language.SPANISH === language) {
+                            return 'parte-1';
+                        }
+                    } else {
+                        throw new Error(`Untranslatable path part: ${part}`);
+                    }
+                }
+            })
             .join('/');
 
         // It is assumed that `translatedSubpath` includes a preceding slash

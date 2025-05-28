@@ -66,6 +66,11 @@ To format all code, and to lint and typecheck all `*.astro`, `*.ts` and `*.tsx` 
 - The `package.json` file is used to manage npm dependencies, as managing these with `deno.json` results in Vite errors during Astro's
   bundling process.
 
+### Using Shoelace components
+
+[Shoelace components](https://shoelace.style/) are used in this project. Any time a new Shoelace component is added, the
+`shoelaceInitialized()` function in `website/source/logic/custom-elements.ts` must be updated.
+
 ## Debugging
 
 The code may be debugged with Visual Studio Code via the `.vscode/launch.json` configurations:

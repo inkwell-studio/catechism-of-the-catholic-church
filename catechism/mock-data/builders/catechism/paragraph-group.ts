@@ -12,6 +12,10 @@ export function buildParagraphGroup(paragraphGroupNumber: number): ParagraphGrou
         pathID: '0',
         // This will be set later, after all content is created
         semanticPath: '',
+        // This will be set later, after all content is created
+        naturalLanguagePath: [],
+        // This will be set later, after all content is created
+        rank: 0,
         paragraphGroupNumber,
         title: getTitleText(Content.PARAGRAPH_GROUP, paragraphGroupNumber),
         openingContent: [],

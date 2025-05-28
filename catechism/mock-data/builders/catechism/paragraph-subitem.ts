@@ -11,6 +11,10 @@ export function buildParagraphSubitem(): ParagraphSubitem {
         pathID: '0',
         // This will be set later, after all content is created
         semanticPath: '',
+        // This will be set later, after all content is created
+        naturalLanguagePath: [],
+        // This will be set later, after all content is created
+        rank: 0,
         openingContent: [],
         mainContent: buildContent(),
         finalContent: [],

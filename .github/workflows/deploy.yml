@@ -32,7 +32,7 @@ jobs:
         run: "cd website && deno task disable-telemetry"
 
       - name: Build step
-        run: "cd website && deno task build"
+        run: "cd website && deno task build-on-deployment-platform"
 
       - name: Upload to Deno Deploy
         uses: denoland/deployctl@v1

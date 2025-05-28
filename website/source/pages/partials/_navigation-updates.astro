@@ -2,23 +2,17 @@
 import { Language } from '@catechism-types';
 
 import LanguageSelector from '@components/toolbar/menu/language-selector.astro';
-import PreviousContentLink from '@components/previous-content-link.astro';
 import Replacement from '@components/replacement.astro';
 
 import { ElementID } from '@logic/ui';
 
 interface Props {
     language: Language;
-    previousUrl?: string;
 }
 
-const { language, previousUrl } = Astro.props;
+const { language } = Astro.props;
 ---
 
 <Replacement target={ElementID.LANGUAGE_SWITCHER_WRAPPER}>
     <LanguageSelector currentLanguage={language} />
-</Replacement>
-
-<Replacement target={ElementID.CATECHISM_CONTENT_PREVIOUS_LINK_WRAPPER}>
-    <PreviousContentLink url={previousUrl} {language} />
 </Replacement>

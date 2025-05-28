@@ -24,6 +24,7 @@ import {
     getAllContent,
     getAllParagraphs,
     getAllPathIDs,
+    getAllRanks,
     getAllSemanticPaths,
     getFinalContent,
     getInBrief,
@@ -167,6 +168,30 @@ async function runTests(
             assertNotMatch(path, endingZero, failureMessage + path + '\n');
             assertNotMatch(path, nonEndingZero, failureMessage + path + '\n');
         });
+    });
+
+    Deno.test(`[${languageKey}] the prologue has a rank of 1`, () => {
+        assertStrictEquals(catechism.prologue.rank, 1);
+    });
+
+    Deno.test(`[${languageKey}] all ranks are valid`, () => {
+        const ranks = getAllRanks(catechism);
+        ranks.forEach((rank) => {
+            assertStrictEquals(typeof rank, 'number');
+            assert(rank > 0);
+        });
+    });
+
+    Deno.test(`[${languageKey}] all ranks are unique`, () => {
+        const ranks = getAllRanks(catechism);
+        const numUniqueRanks = new Set(ranks).size;
+
+        const numRanks = ranks.length;
+        assertStrictEquals(
+            numRanks,
+            numUniqueRanks,
+            `${numRanks - numUniqueRanks} duplicate rank values exist`,
+        );
     });
 
     // ensure that there are no missing paragraphs between #1 and the greatest number

@@ -1,0 +1,11 @@
+---
+interface Props {
+    paragraphNumber: number;
+}
+
+const { paragraphNumber } = Astro.props;
+---
+
+<span class="relative font-sans font-bold text-xl text-stone-500 mr-0.5 space-y-2">
+    {paragraphNumber}
+</span>

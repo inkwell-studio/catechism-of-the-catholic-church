@@ -1,0 +1,30 @@
+---
+import { Language } from '@catechism-types';
+
+interface Props {
+    language: Language;
+}
+
+const { language } = Astro.props;
+
+const smallTextClasses = 'text-5xl';
+---
+
+<h1 class="flex flex-col font-title font-medium text-8xl text-center">
+    {
+        Language.ENGLISH === language &&
+            (
+            <span>Catechism</span>
+            <span class:list={[smallTextClasses, 'my-2']}>of the</span>
+            <span>Catholic Church</span>
+        )
+    }
+    {Language.LATIN === language && 'Catechismus Catholicae Ecclesiae'}
+    {
+        Language.SPANISH === language && (
+            <span>Catecismo</span>
+            <span class:list={[smallTextClasses, 'my-2']}>de la</span>
+            <span>Iglesia Católica</span>
+        )
+    }
+</h1>

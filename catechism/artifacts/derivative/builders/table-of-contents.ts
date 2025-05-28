@@ -8,17 +8,17 @@ import {
     TableOfContentsEntry,
     TableOfContentsType,
 } from '@catechism-types';
-import { getFinalContent, getInBrief, getMainContent, getParagraphs } from '@utils/content.ts';
+import { getFinalContent, getInBrief, getMainContent, getParagraphs, isInBrief } from '@utils/content.ts';
 import { buildSemanticPath, getSemanticPathSource } from '@utils/semantic-path.ts';
-import { getUrl } from '@website/source/logic/routing.ts';
+import { getContentTypeTitle } from '@utils/title.ts';
 
-import { getContentTitle } from './utils.ts';
+import { getUrl } from '@website/source/logic/routing.ts';
 
 //#region builders
 export function build(catechism: CatechismStructure): TableOfContentsType {
     return {
         language: catechism.language,
-        prologue: buildEntry(catechism.language, catechism.prologue, [], { forceIncludeChildren: true }),
+        prologue: buildEntry(catechism.language, catechism.prologue, []),
         parts: catechism.parts.map((part) => buildEntry(catechism.language, part, [])),
     };
 }
@@ -29,22 +29,27 @@ function buildEntry(
     ancestors: Array<SemanticPathSource>,
     flags?: {
         finalContent?: boolean;
-        forceIncludeChildren?: boolean;
     },
 ): TableOfContentsEntry {
+    const title = getTitle(language, content);
+    const contentTypeTitle = getContentTypeTitle(language, content);
+
+    if (!contentTypeTitle) {
+        throw new Error(`Failed to generate a content-type title for a table-of-contents entry. PathID ${content.pathID}`);
+    }
+
     const { firstParagraphNumber, lastParagraphNumber } = getTerminalParagraphNumbers(content);
 
     const isFinalContent = !!flags?.finalContent;
-
     const semanticPathSource = getSemanticPathSource(content, isFinalContent);
     const semanticPath = buildSemanticPath(language, semanticPathSource, ancestors);
-    const children = isFinalContent
-        ? []
-        : buildChildEntries(language, content, [...ancestors, semanticPathSource], !!flags?.forceIncludeChildren);
+
+    const children = isFinalContent ? [] : buildChildEntries(language, content, [...ancestors, semanticPathSource]);
 
     return {
         contentType: content.contentType,
-        title: getTitle(language, content, isFinalContent),
+        title,
+        contentTypeTitle,
         pathID: content.pathID,
         semanticPath,
         url: getUrl(language, semanticPath),
@@ -58,10 +63,9 @@ function buildChildEntries(
     language: Language,
     parent: ContentBase | ContentContainer,
     ancestors: Array<SemanticPathSource>,
-    forceIncludeChildren: boolean,
 ): Array<TableOfContentsEntry> {
     const childEntries = getMainContent(parent)
-        .filter((child) => forceIncludeChildren || shouldGenerateChildEntry(parent, child))
+        .filter((child) => shouldGenerateChildEntry(parent, child))
         .map((child) => buildEntry(language, child, ancestors));
 
     const inBrief = getInBrief(parent);
@@ -85,6 +89,7 @@ function buildChildEntries(
 function shouldGenerateChildEntry(parent: ContentBase, child: ContentBase): boolean {
     // A list of [parent, child] pairings that will trigger the generation of a table-of-contents entry for the child
     return [
+        [Content.PROLOGUE, Content.PROLOGUE_SECTION],
         [Content.PART, Content.SECTION],
         [Content.SECTION, Content.CHAPTER],
         [Content.SECTION, Content.ARTICLE],
@@ -93,18 +98,6 @@ function shouldGenerateChildEntry(parent: ContentBase, child: ContentBase): bool
         [Content.ARTICLE, Content.ARTICLE_PARAGRAPH],
         [Content.ARTICLE, Content.SUB_ARTICLE],
     ].some((validPairing) => parent.contentType === validPairing[0] && child.contentType === validPairing[1]);
-}
-
-function getTitle(language: Language, content: ContentBase, isFinalContent: boolean): string {
-    const number = getSemanticPathSource(content, isFinalContent).number;
-    const numberSuffix = number ? ` ${number}` : '';
-
-    const contentTitle = getContentTitle(language, content.contentType);
-    if (!contentTitle) {
-        throw new Error(`Unprepared to generate a title: ${language}, ${content.contentType}`);
-    }
-
-    return contentTitle + numberSuffix;
 }
 
 /**
@@ -125,5 +118,22 @@ function getTerminalParagraphNumbers(
     }
 
     return { firstParagraphNumber, lastParagraphNumber };
+}
+
+function getTitle(language: Language, content: ContentBase): string {
+    let title = null;
+
+    if (isInBrief(content)) {
+        title = getContentTypeTitle(language, content);
+    } else {
+        // deno-lint-ignore no-explicit-any
+        title = (content as any).title;
+    }
+
+    if (!title) {
+        throw new Error(`Unable to find a title: ${content.contentType} ${content.pathID}`);
+    }
+
+    return title;
 }
 //#endregion

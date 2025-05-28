@@ -24,6 +24,7 @@
                 "build-no-checks"
             ]
         },
+        "build-on-deployment-platform": "deno task check-code && deno task test-source -E=NODE_ENV && deno task build-no-checks",
         "serve": "deno run -RNE dist/server/entry.mjs",
 
         "test-source": "deno test source",

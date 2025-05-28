@@ -7,6 +7,7 @@ import { ElementClass } from '@logic/ui';
 interface Props {
     url: string;
     language: Language;
+    direction: 'forward' | 'backward';
     class?: string;
 }
 
@@ -14,7 +15,7 @@ interface Props {
     `...rest` is needed in order for the classes from the parent to be properly scoped for the styling specified within by parent
     (see https://docs.astro.build/en/guides/styling/#passing-a-class-to-a-child-component)
 */
-const { url, language, class: classes, ...rest } = Astro.props;
+const { url, language, direction, class: classes, ...rest } = Astro.props;
 
 // deno-fmt-ignore
 const clientUrl = url
@@ -24,17 +25,27 @@ const clientUrl = url
     : null;
 
 // deno-fmt-ignore
+const urlDirection = 'forward' === direction
+    ? 'forward'
+    : 'backward/subsequent'
+
+// deno-fmt-ignore
 const contentUrl = clientUrl
-    ? path('/partials/infinite-scroll', clientUrl)
+    ? path(`/partials/infinite-scroll/${urlDirection}`, clientUrl)
     : null;
+
+// deno-fmt-ignore
+const swapMethod = 'forward' === direction
+    ? 'afterend'
+    : 'beforebegin';
 ---
 
-<!-- When this element enters the viewport, it loads the next block of content in order to create an infinite-scroll effect -->
+<!-- When this element enters the viewport, it loads the next or previous block of content in order to create an infinite-scroll effect -->
 <div
     class:list={[classes]}
     hx-trigger="intersect once"
     hx-get={contentUrl}
-    hx-swap="afterend"
+    hx-swap={swapMethod}
     hx-target={`closest ${ElementClass.CATECHISM_CONTENT_BLOCK_SELECTOR}`}
     hx-select={ElementClass.CATECHISM_CONTENT_BLOCK_SELECTOR}
     {...rest}

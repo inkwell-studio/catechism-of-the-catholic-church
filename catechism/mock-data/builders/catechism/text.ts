@@ -11,6 +11,10 @@ export function buildText(): Text {
         pathID: '0',
         // This will be set later, after all content is created
         semanticPath: '',
+        // This will be set later, after all content is created
+        naturalLanguagePath: [],
+        // This will be set later, after all content is created
+        rank: 0,
         content: getText(),
         strong: chance(Probability.text.strong),
         emphasis: chance(Probability.text.emphasis),

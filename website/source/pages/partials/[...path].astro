@@ -14,11 +14,10 @@ export async function getStaticPaths(): Promise<Array<ContentRoute>> {
     return [...getBasicRoutes(), ...(await getTableOfContentsRoutes())];
 }
 
-const { path, pathID, language, renderableNodes } = await getNavigationValues(Astro.params.path);
-const previousUrl = renderableNodes?.previous?.url;
+const { path, pathID, language } = await getNavigationValues(Astro.params.path);
 ---
 
 <GeneralContent {path} {pathID} {language} />
-<NavigationUpdates {language} {previousUrl} />
+<NavigationUpdates {language} />
 
 <Replacement target={ElementID.CROSS_REFERENCE_PANEL_CONTENT_WRAPPER} />

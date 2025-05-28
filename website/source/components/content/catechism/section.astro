@@ -5,6 +5,7 @@ import { getAllChildContent } from '@catechism-utils/content';
 import { getUrlFragment } from '@logic/routing';
 
 import ContentBaseArray from './content-base-array.astro';
+import ReadingAreaIntersectable from './reading-area-intersectable.astro';
 
 interface Props {
     section: SectionType;
@@ -17,8 +18,10 @@ const id = getUrlFragment(section.semanticPath, false, language).fragment;
 const childContent = getAllChildContent(section);
 ---
 
-<div class="font-sans font-bold text-stone-600 text-center tracking-wider uppercase mb-4">Section {section.sectionNumber}</div>
-<h2 {id} class="font-title font-medium text-4xl text-stone-700 text-center mb-16">
-    {section.title}
-</h2>
-<ContentBaseArray content={childContent} {language} />
+<ReadingAreaIntersectable content={section} {language}>
+    <div class="font-sans font-bold text-stone-600 text-center tracking-wider uppercase mb-4">Section {section.sectionNumber}</div>
+    <h2 {id} class="font-title font-medium text-4xl text-stone-700 text-center mb-16">
+        {section.title}
+    </h2>
+    <ContentBaseArray content={childContent} {language} />
+</ReadingAreaIntersectable>

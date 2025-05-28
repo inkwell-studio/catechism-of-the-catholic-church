@@ -7,8 +7,8 @@ import { getLanguageFromPathname, getLanguageTag, getParagraphNumber, getUrl, re
 console.log('\nrouting utils (server) ...');
 
 //#region getUrl()
-function urlTest(semanticPath: SemanticPath, expectedUrl: string): void {
-    const url = getUrl(Language.ENGLISH, semanticPath);
+function urlTest(semanticPath: SemanticPath, expectedUrl: string, includeFragment = true): void {
+    const url = getUrl(Language.ENGLISH, semanticPath, includeFragment);
     assertStrictEquals(url, expectedUrl);
 }
 
@@ -49,6 +49,10 @@ Deno.test('getUrl(): the subsequent Article Paragraphs', () => {
         'part-1/section-3/chapter-2/article-4/article-paragraph-7',
         '/part-1/section-3/chapter-2/article-4/article-paragraph-7',
     );
+});
+
+Deno.test('getUrl(): low-level content within the Prologue', () => {
+    urlTest('prologue/prologue-section-1', '/prologue#prologue-section-1');
 });
 
 Deno.test('getUrl(): low-level content within a Chapter', () => {
@@ -234,6 +238,10 @@ Deno.test('getUrl(): low-level content within a subsequent ArticleParagraph', ()
             '/part-1/section-3/chapter-2/article-4/article-paragraph-7#702',
         ],
     ].forEach((testCase) => urlTest(testCase[0], testCase[1]));
+});
+
+Deno.test('getUrl(): low-level content with fragment omitted', () => {
+    urlTest('part-1/section-3/chapter-2/in-brief', '/part-1/section-3/chapter-2', false);
 });
 //#endregion
 

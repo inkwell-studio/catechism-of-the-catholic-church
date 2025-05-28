@@ -1,18 +1,7 @@
 import { Content, ContentBase, Language, SemanticPath, SemanticPathSource } from '@catechism-types';
-import {
-    isArticle,
-    isArticleParagraph,
-    isChapter,
-    isParagraph,
-    isParagraphGroup,
-    isPart,
-    isPrologue,
-    isSection,
-    isSubarticle,
-} from '@utils/content.ts';
-import { translate } from '@website/source/logic/translation.ts';
+import { getContentNumber } from '@utils/title.ts';
 
-import { getLeafPathIdNumber } from './path-id.ts';
+import { translate } from '@website/source/logic/translation.ts';
 
 /**
  * @param ancestors a list of ancestors of `child`, in descending order (i.e. `ancestors[i]` is the parent of `ancestors[i+1]`)
@@ -35,49 +24,6 @@ export function getSemanticPathSource(content: ContentBase, isFinalContent: bool
     };
 }
 
-function getContentNumber(content: ContentBase): number | null {
-    // deno-fmt-ignore
-    if (isPrologue(content)) {
-        return null;
-
-    } else if (isPart(content)) {
-        return content.partNumber;
-
-    } else if (isSection(content)) {
-        return content.sectionNumber;
-
-    } else if (isChapter(content)) {
-        return content.chapterNumber;
-
-    } else if (isArticle(content)) {
-        return content.articleNumber;
-
-    } else if (isArticleParagraph(content)) {
-        return content.articleParagraphNumber;
-
-    } else if (isSubarticle(content)) {
-        return content.subarticleNumber;
-
-    } else if (isParagraphGroup(content)) {
-        return content.paragraphGroupNumber;
-
-    } else if (isParagraph(content)) {
-        return content.paragraphNumber;
-
-    } else {
-        const leafPathIdNumber = getLeafPathIdNumber(content.pathID);
-        if ('i' === leafPathIdNumber) {
-            return null;
-        } else if (isNaN(leafPathIdNumber)) {
-            throw new Error(
-                `A SemanticPath.number value could not be determined for ${content.contentType} ${content.pathID}`,
-            );
-        } else {
-            return leafPathIdNumber + 1;
-        }
-    }
-}
-
 function getSegmentString(language: Language, segment: SemanticPathSource): string {
     if (segment.isFinalContent) {
         return translate('final-content', language);
@@ -96,6 +42,9 @@ function getSegmentContentString(language: Language, contentType: Content): stri
     switch (contentType) {
         case Content.PROLOGUE:
             return translate('prologue', language);
+
+        case Content.PROLOGUE_SECTION:
+            return translate('prologue-section', language);
 
         case Content.PART:
             return translate('part', language);

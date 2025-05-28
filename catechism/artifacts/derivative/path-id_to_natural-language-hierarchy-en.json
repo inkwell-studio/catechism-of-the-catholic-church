@@ -1,0 +1,68 @@
+{
+  "0": [
+    "Prologue"
+  ],
+  "1": [
+    "Part 1"
+  ],
+  "2": [
+    "Part 2"
+  ],
+  "3": [
+    "Part 3"
+  ],
+  "4": [
+    "Part 4"
+  ],
+  "1__m.0__m.1": [
+    "Part 1",
+    "Section 1",
+    "Chapter 2"
+  ],
+  "1__m.0__m.1__m.1": [
+    "Part 1",
+    "Section 1",
+    "Chapter 2",
+    "Article 2"
+  ],
+  "1__m.0__m.1__m.2": [
+    "Part 1",
+    "Section 1",
+    "Chapter 2",
+    "Article 3"
+  ],
+  "1__m.0__m.2": [
+    "Part 1",
+    "Section 1",
+    "Chapter 3"
+  ],
+  "1__m.0__m.2__m.1": [
+    "Part 1",
+    "Section 1",
+    "Chapter 3",
+    "Article 2"
+  ],
+  "1__m.0__m.2__m.1__m.1": [
+    "Part 1",
+    "Section 1",
+    "Chapter 3",
+    "Article 2",
+    "Article Paragraph 2"
+  ],
+  "1__m.0__m.2__m.2": [
+    "Part 1",
+    "Section 1",
+    "Chapter 3",
+    "Article 3"
+  ],
+  "2__m.1": [
+    "Part 2",
+    "Section 2"
+  ],
+  "2__m.1__m.0__m.1": [
+    "Part 2",
+    "Section 2",
+    "Chapter 1",
+    "Article 2"
+  ]
+}

@@ -2,21 +2,67 @@
   "language": "la",
   "prologue": {
     "contentType": "PROLOGUE",
-    "title": "Prooemium",
+    "title": "Prologue (la)",
+    "contentTypeTitle": "Prooemium",
     "pathID": "0",
     "semanticPath": "prooemium",
     "url": "/prooemium",
     "firstParagraphNumber": 1,
-    "lastParagraphNumber": 3,
+    "lastParagraphNumber": 10,
     "children": [
       {
-        "contentType": "SUB_ARTICLE",
-        "title": "Subarticulus 1",
+        "contentType": "PROLOGUE_SECTION",
+        "title": "Desert (la)",
+        "contentTypeTitle": "Prooemium Sectio 1",
         "pathID": "0__m.0",
-        "semanticPath": "prooemium/subarticulus-1",
-        "url": "/prooemium#subarticulus-1",
+        "semanticPath": "prooemium/prooemium-sectio-1",
+        "url": "/prooemium#prooemium-sectio-1",
         "firstParagraphNumber": 1,
-        "lastParagraphNumber": 3,
+        "lastParagraphNumber": 1,
+        "children": []
+      },
+      {
+        "contentType": "PROLOGUE_SECTION",
+        "title": "Forest (la)",
+        "contentTypeTitle": "Prooemium Sectio 2",
+        "pathID": "0__m.1",
+        "semanticPath": "prooemium/prooemium-sectio-2",
+        "url": "/prooemium#prooemium-sectio-2",
+        "firstParagraphNumber": 2,
+        "lastParagraphNumber": 4,
+        "children": []
+      },
+      {
+        "contentType": "PROLOGUE_SECTION",
+        "title": "Prairie Grass (la)",
+        "contentTypeTitle": "Prooemium Sectio 3",
+        "pathID": "0__m.2",
+        "semanticPath": "prooemium/prooemium-sectio-3",
+        "url": "/prooemium#prooemium-sectio-3",
+        "firstParagraphNumber": 5,
+        "lastParagraphNumber": 5,
+        "children": []
+      },
+      {
+        "contentType": "PROLOGUE_SECTION",
+        "title": "Tropic (la)",
+        "contentTypeTitle": "Prooemium Sectio 4",
+        "pathID": "0__m.3",
+        "semanticPath": "prooemium/prooemium-sectio-4",
+        "url": "/prooemium#prooemium-sectio-4",
+        "firstParagraphNumber": 6,
+        "lastParagraphNumber": 7,
+        "children": []
+      },
+      {
+        "contentType": "PROLOGUE_SECTION",
+        "title": "Ocean (la)",
+        "contentTypeTitle": "Prooemium Sectio 5",
+        "pathID": "0__m.4",
+        "semanticPath": "prooemium/prooemium-sectio-5",
+        "url": "/prooemium#prooemium-sectio-5",
+        "firstParagraphNumber": 8,
+        "lastParagraphNumber": 10,
         "children": []
       }
     ]
@@ -24,252 +70,221 @@
   "parts": [
     {
       "contentType": "PART",
-      "title": "Pars 1",
+      "title": "Winter and Summer (la)",
+      "contentTypeTitle": "Pars 1",
       "pathID": "1",
       "semanticPath": "pars-1",
       "url": "/pars-1",
-      "firstParagraphNumber": 4,
-      "lastParagraphNumber": 65,
+      "firstParagraphNumber": 11,
+      "lastParagraphNumber": 47,
       "children": [
         {
           "contentType": "SECTION",
-          "title": "Sectio 1",
+          "title": "All the Ways That Spelunking Can Improve Your Life (la)",
+          "contentTypeTitle": "Sectio 1",
           "pathID": "1__m.0",
           "semanticPath": "pars-1/sectio-1",
           "url": "/pars-1#sectio-1",
-          "firstParagraphNumber": 4,
-          "lastParagraphNumber": 19,
+          "firstParagraphNumber": 11,
+          "lastParagraphNumber": 47,
           "children": [
             {
               "contentType": "CHAPTER",
-              "title": "Caput 1",
+              "title": "Letters From Cousins (la)",
+              "contentTypeTitle": "Caput 1",
               "pathID": "1__m.0__m.0",
               "semanticPath": "pars-1/sectio-1/caput-1",
               "url": "/pars-1#sectio-1/caput-1",
-              "firstParagraphNumber": 5,
-              "lastParagraphNumber": 6,
-              "children": [
-                {
-                  "contentType": "SUB_ARTICLE",
-                  "title": "Subarticulus 1",
-                  "pathID": "1__m.0__m.0__m.0",
-                  "semanticPath": "pars-1/sectio-1/caput-1/subarticulus-1",
-                  "url": "/pars-1#sectio-1/caput-1/subarticulus-1",
-                  "firstParagraphNumber": 5,
-                  "lastParagraphNumber": 6,
-                  "children": []
-                }
-              ]
-            },
-            {
-              "contentType": "CHAPTER",
-              "title": "Caput 2",
-              "pathID": "1__m.0__m.1",
-              "semanticPath": "pars-1/sectio-1/caput-2",
-              "url": "/pars-1/sectio-1/caput-2",
-              "firstParagraphNumber": 7,
-              "lastParagraphNumber": 10,
-              "children": [
-                {
-                  "contentType": "SUB_ARTICLE",
-                  "title": "Subarticulus 1",
-                  "pathID": "1__m.0__m.1__m.0",
-                  "semanticPath": "pars-1/sectio-1/caput-2/subarticulus-1",
-                  "url": "/pars-1/sectio-1/caput-2#subarticulus-1",
-                  "firstParagraphNumber": 7,
-                  "lastParagraphNumber": 9,
-                  "children": []
-                },
-                {
-                  "contentType": "SUB_ARTICLE",
-                  "title": "Subarticulus 2",
-                  "pathID": "1__m.0__m.1__m.1",
-                  "semanticPath": "pars-1/sectio-1/caput-2/subarticulus-2",
-                  "url": "/pars-1/sectio-1/caput-2#subarticulus-2",
-                  "firstParagraphNumber": 10,
-                  "lastParagraphNumber": 10,
-                  "children": []
-                }
-              ]
-            },
-            {
-              "contentType": "CHAPTER",
-              "title": "Caput 3",
-              "pathID": "1__m.0__m.2",
-              "semanticPath": "pars-1/sectio-1/caput-3",
-              "url": "/pars-1/sectio-1/caput-3",
               "firstParagraphNumber": 11,
-              "lastParagraphNumber": 19,
-              "children": [
-                {
-                  "contentType": "SUB_ARTICLE",
-                  "title": "Subarticulus 1",
-                  "pathID": "1__m.0__m.2__m.0",
-                  "semanticPath": "pars-1/sectio-1/caput-3/subarticulus-1",
-                  "url": "/pars-1/sectio-1/caput-3#subarticulus-1",
-                  "firstParagraphNumber": 11,
-                  "lastParagraphNumber": 12,
-                  "children": []
-                },
-                {
-                  "contentType": "SUB_ARTICLE",
-                  "title": "Subarticulus 2",
-                  "pathID": "1__m.0__m.2__m.1",
-                  "semanticPath": "pars-1/sectio-1/caput-3/subarticulus-2",
-                  "url": "/pars-1/sectio-1/caput-3#subarticulus-2",
-                  "firstParagraphNumber": 13,
-                  "lastParagraphNumber": 16,
-                  "children": []
-                },
-                {
-                  "contentType": "SUB_ARTICLE",
-                  "title": "Subarticulus 3",
-                  "pathID": "1__m.0__m.2__m.2",
-                  "semanticPath": "pars-1/sectio-1/caput-3/subarticulus-3",
-                  "url": "/pars-1/sectio-1/caput-3#subarticulus-3",
-                  "firstParagraphNumber": 17,
-                  "lastParagraphNumber": 19,
-                  "children": []
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "contentType": "SECTION",
-          "title": "Sectio 2",
-          "pathID": "1__m.1",
-          "semanticPath": "pars-1/sectio-2",
-          "url": "/pars-1/sectio-2",
-          "firstParagraphNumber": 20,
-          "lastParagraphNumber": 52,
-          "children": [
-            {
-              "contentType": "CHAPTER",
-              "title": "Caput 1",
-              "pathID": "1__m.1__m.0",
-              "semanticPath": "pars-1/sectio-2/caput-1",
-              "url": "/pars-1/sectio-2#caput-1",
-              "firstParagraphNumber": 21,
-              "lastParagraphNumber": 42,
+              "lastParagraphNumber": 30,
               "children": [
                 {
                   "contentType": "ARTICLE",
-                  "title": "Articulus 1",
-                  "pathID": "1__m.1__m.0__m.0",
-                  "semanticPath": "pars-1/sectio-2/caput-1/articulus-1",
-                  "url": "/pars-1/sectio-2#caput-1/articulus-1",
-                  "firstParagraphNumber": 21,
-                  "lastParagraphNumber": 30,
+                  "title": "Red Dwarves (la)",
+                  "contentTypeTitle": "Articulus 1",
+                  "pathID": "1__m.0__m.0__m.0",
+                  "semanticPath": "pars-1/sectio-1/caput-1/articulus-1",
+                  "url": "/pars-1#sectio-1/caput-1/articulus-1",
+                  "firstParagraphNumber": 11,
+                  "lastParagraphNumber": 16,
                   "children": [
                     {
                       "contentType": "SUB_ARTICLE",
-                      "title": "Subarticulus 1",
-                      "pathID": "1__m.1__m.0__m.0__m.0",
-                      "semanticPath": "pars-1/sectio-2/caput-1/articulus-1/subarticulus-1",
-                      "url": "/pars-1/sectio-2#caput-1/articulus-1/subarticulus-1",
-                      "firstParagraphNumber": 21,
-                      "lastParagraphNumber": 23,
-                      "children": []
-                    },
-                    {
-                      "contentType": "SUB_ARTICLE",
-                      "title": "Subarticulus 2",
-                      "pathID": "1__m.1__m.0__m.0__m.1",
-                      "semanticPath": "pars-1/sectio-2/caput-1/articulus-1/subarticulus-2",
-                      "url": "/pars-1/sectio-2#caput-1/articulus-1/subarticulus-2",
-                      "firstParagraphNumber": 24,
-                      "lastParagraphNumber": 25,
+                      "title": "Hydrogen (la)",
+                      "contentTypeTitle": "Subarticulus 1",
+                      "pathID": "1__m.0__m.0__m.0__m.0",
+                      "semanticPath": "pars-1/sectio-1/caput-1/articulus-1/subarticulus-1",
+                      "url": "/pars-1#sectio-1/caput-1/articulus-1/subarticulus-1",
+                      "firstParagraphNumber": 11,
+                      "lastParagraphNumber": 12,
                       "children": []
                     },
                     {
                       "contentType": "IN_BRIEF",
                       "title": "Compendium",
-                      "pathID": "1__m.1__m.0__m.0__i",
-                      "semanticPath": "pars-1/sectio-2/caput-1/articulus-1/compendium",
-                      "url": "/pars-1/sectio-2#caput-1/articulus-1/compendium",
-                      "firstParagraphNumber": 26,
-                      "lastParagraphNumber": 29,
-                      "children": []
-                    },
-                    {
-                      "contentType": "PARAGRAPH_GROUP",
-                      "title": "Paragraphus Classis 1",
-                      "pathID": "1__m.1__m.0__m.0__f.0",
-                      "semanticPath": "pars-1/sectio-2/caput-1/articulus-1/finalis-contentus",
-                      "url": "/pars-1/sectio-2#caput-1/articulus-1/finalis-contentus",
-                      "firstParagraphNumber": 30,
-                      "lastParagraphNumber": 30,
+                      "contentTypeTitle": "Compendium",
+                      "pathID": "1__m.0__m.0__m.0__i",
+                      "semanticPath": "pars-1/sectio-1/caput-1/articulus-1/compendium",
+                      "url": "/pars-1#sectio-1/caput-1/articulus-1/compendium",
+                      "firstParagraphNumber": 13,
+                      "lastParagraphNumber": 16,
                       "children": []
                     }
                   ]
                 },
                 {
                   "contentType": "ARTICLE",
-                  "title": "Articulus 2",
-                  "pathID": "1__m.1__m.0__m.1",
-                  "semanticPath": "pars-1/sectio-2/caput-1/articulus-2",
-                  "url": "/pars-1/sectio-2/caput-1/articulus-2",
-                  "firstParagraphNumber": 31,
-                  "lastParagraphNumber": 34,
+                  "title": "Constellations To Be (la)",
+                  "contentTypeTitle": "Articulus 2",
+                  "pathID": "1__m.0__m.0__m.1",
+                  "semanticPath": "pars-1/sectio-1/caput-1/articulus-2",
+                  "url": "/pars-1/sectio-1/caput-1/articulus-2",
+                  "firstParagraphNumber": 17,
+                  "lastParagraphNumber": 24,
+                  "children": [
+                    {
+                      "contentType": "IN_BRIEF",
+                      "title": "Compendium",
+                      "contentTypeTitle": "Compendium",
+                      "pathID": "1__m.0__m.0__m.1__i",
+                      "semanticPath": "pars-1/sectio-1/caput-1/articulus-2/compendium",
+                      "url": "/pars-1/sectio-1/caput-1/articulus-2#compendium",
+                      "firstParagraphNumber": 24,
+                      "lastParagraphNumber": 24,
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "contentType": "ARTICLE",
+                  "title": "The First Month of Studying the Heavens (la)",
+                  "contentTypeTitle": "Articulus 3",
+                  "pathID": "1__m.0__m.0__m.2",
+                  "semanticPath": "pars-1/sectio-1/caput-1/articulus-3",
+                  "url": "/pars-1/sectio-1/caput-1/articulus-3",
+                  "firstParagraphNumber": 25,
+                  "lastParagraphNumber": 30,
                   "children": [
                     {
                       "contentType": "SUB_ARTICLE",
-                      "title": "Subarticulus 1",
-                      "pathID": "1__m.1__m.0__m.1__m.0",
-                      "semanticPath": "pars-1/sectio-2/caput-1/articulus-2/subarticulus-1",
-                      "url": "/pars-1/sectio-2/caput-1/articulus-2#subarticulus-1",
+                      "title": "Hydrogen (la)",
+                      "contentTypeTitle": "Subarticulus 1",
+                      "pathID": "1__m.0__m.0__m.2__m.0",
+                      "semanticPath": "pars-1/sectio-1/caput-1/articulus-3/subarticulus-1",
+                      "url": "/pars-1/sectio-1/caput-1/articulus-3#subarticulus-1",
+                      "firstParagraphNumber": 25,
+                      "lastParagraphNumber": 25,
+                      "children": []
+                    },
+                    {
+                      "contentType": "SUB_ARTICLE",
+                      "title": "Helium (la)",
+                      "contentTypeTitle": "Subarticulus 2",
+                      "pathID": "1__m.0__m.0__m.2__m.1",
+                      "semanticPath": "pars-1/sectio-1/caput-1/articulus-3/subarticulus-2",
+                      "url": "/pars-1/sectio-1/caput-1/articulus-3#subarticulus-2",
+                      "firstParagraphNumber": 26,
+                      "lastParagraphNumber": 28,
+                      "children": []
+                    },
+                    {
+                      "contentType": "IN_BRIEF",
+                      "title": "Compendium",
+                      "contentTypeTitle": "Compendium",
+                      "pathID": "1__m.0__m.0__m.2__i",
+                      "semanticPath": "pars-1/sectio-1/caput-1/articulus-3/compendium",
+                      "url": "/pars-1/sectio-1/caput-1/articulus-3#compendium",
+                      "firstParagraphNumber": 29,
+                      "lastParagraphNumber": 30,
+                      "children": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "contentType": "CHAPTER",
+              "title": "Magazines Can Have Beautiful Covers (la)",
+              "contentTypeTitle": "Caput 2",
+              "pathID": "1__m.0__m.1",
+              "semanticPath": "pars-1/sectio-1/caput-2",
+              "url": "/pars-1/sectio-1/caput-2",
+              "firstParagraphNumber": 31,
+              "lastParagraphNumber": 42,
+              "children": [
+                {
+                  "contentType": "ARTICLE",
+                  "title": "Red Dwarves (la)",
+                  "contentTypeTitle": "Articulus 1",
+                  "pathID": "1__m.0__m.1__m.0",
+                  "semanticPath": "pars-1/sectio-1/caput-2/articulus-1",
+                  "url": "/pars-1/sectio-1/caput-2#articulus-1",
+                  "firstParagraphNumber": 31,
+                  "lastParagraphNumber": 38,
+                  "children": [
+                    {
+                      "contentType": "SUB_ARTICLE",
+                      "title": "Hydrogen (la)",
+                      "contentTypeTitle": "Subarticulus 1",
+                      "pathID": "1__m.0__m.1__m.0__m.0",
+                      "semanticPath": "pars-1/sectio-1/caput-2/articulus-1/subarticulus-1",
+                      "url": "/pars-1/sectio-1/caput-2#articulus-1/subarticulus-1",
                       "firstParagraphNumber": 31,
                       "lastParagraphNumber": 31,
                       "children": []
                     },
                     {
+                      "contentType": "SUB_ARTICLE",
+                      "title": "Helium (la)",
+                      "contentTypeTitle": "Subarticulus 2",
+                      "pathID": "1__m.0__m.1__m.0__m.1",
+                      "semanticPath": "pars-1/sectio-1/caput-2/articulus-1/subarticulus-2",
+                      "url": "/pars-1/sectio-1/caput-2#articulus-1/subarticulus-2",
+                      "firstParagraphNumber": 32,
+                      "lastParagraphNumber": 36,
+                      "children": []
+                    },
+                    {
                       "contentType": "IN_BRIEF",
                       "title": "Compendium",
-                      "pathID": "1__m.1__m.0__m.1__i",
-                      "semanticPath": "pars-1/sectio-2/caput-1/articulus-2/compendium",
-                      "url": "/pars-1/sectio-2/caput-1/articulus-2#compendium",
-                      "firstParagraphNumber": 32,
-                      "lastParagraphNumber": 34,
+                      "contentTypeTitle": "Compendium",
+                      "pathID": "1__m.0__m.1__m.0__i",
+                      "semanticPath": "pars-1/sectio-1/caput-2/articulus-1/compendium",
+                      "url": "/pars-1/sectio-1/caput-2#articulus-1/compendium",
+                      "firstParagraphNumber": 37,
+                      "lastParagraphNumber": 38,
                       "children": []
                     }
                   ]
                 },
                 {
                   "contentType": "ARTICLE",
-                  "title": "Articulus 3",
-                  "pathID": "1__m.1__m.0__m.2",
-                  "semanticPath": "pars-1/sectio-2/caput-1/articulus-3",
-                  "url": "/pars-1/sectio-2/caput-1/articulus-3",
-                  "firstParagraphNumber": 35,
+                  "title": "Constellations To Be (la)",
+                  "contentTypeTitle": "Articulus 2",
+                  "pathID": "1__m.0__m.1__m.1",
+                  "semanticPath": "pars-1/sectio-1/caput-2/articulus-2",
+                  "url": "/pars-1/sectio-1/caput-2/articulus-2",
+                  "firstParagraphNumber": 39,
                   "lastParagraphNumber": 42,
                   "children": [
                     {
                       "contentType": "SUB_ARTICLE",
-                      "title": "Subarticulus 1",
-                      "pathID": "1__m.1__m.0__m.2__m.0",
-                      "semanticPath": "pars-1/sectio-2/caput-1/articulus-3/subarticulus-1",
-                      "url": "/pars-1/sectio-2/caput-1/articulus-3#subarticulus-1",
-                      "firstParagraphNumber": 35,
-                      "lastParagraphNumber": 37,
-                      "children": []
-                    },
-                    {
-                      "contentType": "SUB_ARTICLE",
-                      "title": "Subarticulus 2",
-                      "pathID": "1__m.1__m.0__m.2__m.1",
-                      "semanticPath": "pars-1/sectio-2/caput-1/articulus-3/subarticulus-2",
-                      "url": "/pars-1/sectio-2/caput-1/articulus-3#subarticulus-2",
-                      "firstParagraphNumber": 38,
+                      "title": "Hydrogen (la)",
+                      "contentTypeTitle": "Subarticulus 1",
+                      "pathID": "1__m.0__m.1__m.1__m.0",
+                      "semanticPath": "pars-1/sectio-1/caput-2/articulus-2/subarticulus-1",
+                      "url": "/pars-1/sectio-1/caput-2/articulus-2#subarticulus-1",
+                      "firstParagraphNumber": 39,
                       "lastParagraphNumber": 41,
                       "children": []
                     },
                     {
                       "contentType": "IN_BRIEF",
                       "title": "Compendium",
-                      "pathID": "1__m.1__m.0__m.2__i",
-                      "semanticPath": "pars-1/sectio-2/caput-1/articulus-3/compendium",
-                      "url": "/pars-1/sectio-2/caput-1/articulus-3#compendium",
+                      "contentTypeTitle": "Compendium",
+                      "pathID": "1__m.0__m.1__m.1__i",
+                      "semanticPath": "pars-1/sectio-1/caput-2/articulus-2/compendium",
+                      "url": "/pars-1/sectio-1/caput-2/articulus-2#compendium",
                       "firstParagraphNumber": 42,
                       "lastParagraphNumber": 42,
                       "children": []
@@ -280,96 +295,47 @@
             },
             {
               "contentType": "CHAPTER",
-              "title": "Caput 2",
-              "pathID": "1__m.1__m.1",
-              "semanticPath": "pars-1/sectio-2/caput-2",
-              "url": "/pars-1/sectio-2/caput-2",
+              "title": "Some Books Are Worth Keeping on a Good Shelf by Your Front Door So You May Easily Share Them With Others (la)",
+              "contentTypeTitle": "Caput 3",
+              "pathID": "1__m.0__m.2",
+              "semanticPath": "pars-1/sectio-1/caput-3",
+              "url": "/pars-1/sectio-1/caput-3",
               "firstParagraphNumber": 43,
-              "lastParagraphNumber": 52,
+              "lastParagraphNumber": 47,
               "children": [
                 {
                   "contentType": "ARTICLE",
-                  "title": "Articulus 1",
-                  "pathID": "1__m.1__m.1__m.0",
-                  "semanticPath": "pars-1/sectio-2/caput-2/articulus-1",
-                  "url": "/pars-1/sectio-2/caput-2#articulus-1",
+                  "title": "Red Dwarves (la)",
+                  "contentTypeTitle": "Articulus 1",
+                  "pathID": "1__m.0__m.2__m.0",
+                  "semanticPath": "pars-1/sectio-1/caput-3/articulus-1",
+                  "url": "/pars-1/sectio-1/caput-3#articulus-1",
                   "firstParagraphNumber": 43,
-                  "lastParagraphNumber": 52,
+                  "lastParagraphNumber": 47,
                   "children": [
+                    {
+                      "contentType": "SUB_ARTICLE",
+                      "title": "Hydrogen (la)",
+                      "contentTypeTitle": "Subarticulus 1",
+                      "pathID": "1__m.0__m.2__m.0__m.0",
+                      "semanticPath": "pars-1/sectio-1/caput-3/articulus-1/subarticulus-1",
+                      "url": "/pars-1/sectio-1/caput-3#articulus-1/subarticulus-1",
+                      "firstParagraphNumber": 43,
+                      "lastParagraphNumber": 46,
+                      "children": []
+                    },
                     {
                       "contentType": "IN_BRIEF",
                       "title": "Compendium",
-                      "pathID": "1__m.1__m.1__m.0__i",
-                      "semanticPath": "pars-1/sectio-2/caput-2/articulus-1/compendium",
-                      "url": "/pars-1/sectio-2/caput-2#articulus-1/compendium",
-                      "firstParagraphNumber": 50,
-                      "lastParagraphNumber": 52,
+                      "contentTypeTitle": "Compendium",
+                      "pathID": "1__m.0__m.2__m.0__i",
+                      "semanticPath": "pars-1/sectio-1/caput-3/articulus-1/compendium",
+                      "url": "/pars-1/sectio-1/caput-3#articulus-1/compendium",
+                      "firstParagraphNumber": 47,
+                      "lastParagraphNumber": 47,
                       "children": []
                     }
                   ]
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "contentType": "SECTION",
-          "title": "Sectio 3",
-          "pathID": "1__m.2",
-          "semanticPath": "pars-1/sectio-3",
-          "url": "/pars-1/sectio-3",
-          "firstParagraphNumber": 53,
-          "lastParagraphNumber": 65,
-          "children": [
-            {
-              "contentType": "ARTICLE",
-              "title": "Articulus 1",
-              "pathID": "1__m.2__m.0",
-              "semanticPath": "pars-1/sectio-3/articulus-1",
-              "url": "/pars-1/sectio-3#articulus-1",
-              "firstParagraphNumber": 54,
-              "lastParagraphNumber": 58,
-              "children": [
-                {
-                  "contentType": "IN_BRIEF",
-                  "title": "Compendium",
-                  "pathID": "1__m.2__m.0__i",
-                  "semanticPath": "pars-1/sectio-3/articulus-1/compendium",
-                  "url": "/pars-1/sectio-3#articulus-1/compendium",
-                  "firstParagraphNumber": 56,
-                  "lastParagraphNumber": 58,
-                  "children": []
-                }
-              ]
-            },
-            {
-              "contentType": "ARTICLE",
-              "title": "Articulus 2",
-              "pathID": "1__m.2__m.1",
-              "semanticPath": "pars-1/sectio-3/articulus-2",
-              "url": "/pars-1/sectio-3/articulus-2",
-              "firstParagraphNumber": 59,
-              "lastParagraphNumber": 65,
-              "children": [
-                {
-                  "contentType": "SUB_ARTICLE",
-                  "title": "Subarticulus 1",
-                  "pathID": "1__m.2__m.1__m.0",
-                  "semanticPath": "pars-1/sectio-3/articulus-2/subarticulus-1",
-                  "url": "/pars-1/sectio-3/articulus-2#subarticulus-1",
-                  "firstParagraphNumber": 59,
-                  "lastParagraphNumber": 63,
-                  "children": []
-                },
-                {
-                  "contentType": "IN_BRIEF",
-                  "title": "Compendium",
-                  "pathID": "1__m.2__m.1__i",
-                  "semanticPath": "pars-1/sectio-3/articulus-2/compendium",
-                  "url": "/pars-1/sectio-3/articulus-2#compendium",
-                  "firstParagraphNumber": 64,
-                  "lastParagraphNumber": 65,
-                  "children": []
                 }
               ]
             }
@@ -379,48 +345,109 @@
     },
     {
       "contentType": "PART",
-      "title": "Pars 2",
+      "title": "A Warm Day in Spring (la)",
+      "contentTypeTitle": "Pars 2",
       "pathID": "2",
       "semanticPath": "pars-2",
       "url": "/pars-2",
-      "firstParagraphNumber": 66,
-      "lastParagraphNumber": 89,
+      "firstParagraphNumber": 48,
+      "lastParagraphNumber": 84,
       "children": [
         {
           "contentType": "SECTION",
-          "title": "Sectio 1",
+          "title": "All the Ways That Spelunking Can Improve Your Life (la)",
+          "contentTypeTitle": "Sectio 1",
           "pathID": "2__m.0",
           "semanticPath": "pars-2/sectio-1",
           "url": "/pars-2#sectio-1",
-          "firstParagraphNumber": 66,
-          "lastParagraphNumber": 79,
+          "firstParagraphNumber": 48,
+          "lastParagraphNumber": 84,
           "children": [
             {
               "contentType": "CHAPTER",
-              "title": "Caput 1",
+              "title": "Letters From Cousins (la)",
+              "contentTypeTitle": "Caput 1",
               "pathID": "2__m.0__m.0",
               "semanticPath": "pars-2/sectio-1/caput-1",
               "url": "/pars-2#sectio-1/caput-1",
-              "firstParagraphNumber": 66,
-              "lastParagraphNumber": 69,
+              "firstParagraphNumber": 49,
+              "lastParagraphNumber": 59,
               "children": [
                 {
                   "contentType": "ARTICLE",
-                  "title": "Articulus 1",
+                  "title": "Red Dwarves (la)",
+                  "contentTypeTitle": "Articulus 1",
                   "pathID": "2__m.0__m.0__m.0",
                   "semanticPath": "pars-2/sectio-1/caput-1/articulus-1",
                   "url": "/pars-2#sectio-1/caput-1/articulus-1",
-                  "firstParagraphNumber": 66,
-                  "lastParagraphNumber": 69,
+                  "firstParagraphNumber": 49,
+                  "lastParagraphNumber": 54,
                   "children": [
+                    {
+                      "contentType": "SUB_ARTICLE",
+                      "title": "Hydrogen (la)",
+                      "contentTypeTitle": "Subarticulus 1",
+                      "pathID": "2__m.0__m.0__m.0__m.0",
+                      "semanticPath": "pars-2/sectio-1/caput-1/articulus-1/subarticulus-1",
+                      "url": "/pars-2#sectio-1/caput-1/articulus-1/subarticulus-1",
+                      "firstParagraphNumber": 49,
+                      "lastParagraphNumber": 52,
+                      "children": []
+                    },
+                    {
+                      "contentType": "SUB_ARTICLE",
+                      "title": "Helium (la)",
+                      "contentTypeTitle": "Subarticulus 2",
+                      "pathID": "2__m.0__m.0__m.0__m.1",
+                      "semanticPath": "pars-2/sectio-1/caput-1/articulus-1/subarticulus-2",
+                      "url": "/pars-2#sectio-1/caput-1/articulus-1/subarticulus-2",
+                      "firstParagraphNumber": 53,
+                      "lastParagraphNumber": 53,
+                      "children": []
+                    },
                     {
                       "contentType": "IN_BRIEF",
                       "title": "Compendium",
+                      "contentTypeTitle": "Compendium",
                       "pathID": "2__m.0__m.0__m.0__i",
                       "semanticPath": "pars-2/sectio-1/caput-1/articulus-1/compendium",
                       "url": "/pars-2#sectio-1/caput-1/articulus-1/compendium",
-                      "firstParagraphNumber": 69,
-                      "lastParagraphNumber": 69,
+                      "firstParagraphNumber": 54,
+                      "lastParagraphNumber": 54,
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "contentType": "ARTICLE",
+                  "title": "Constellations To Be (la)",
+                  "contentTypeTitle": "Articulus 2",
+                  "pathID": "2__m.0__m.0__m.1",
+                  "semanticPath": "pars-2/sectio-1/caput-1/articulus-2",
+                  "url": "/pars-2/sectio-1/caput-1/articulus-2",
+                  "firstParagraphNumber": 55,
+                  "lastParagraphNumber": 59,
+                  "children": [
+                    {
+                      "contentType": "SUB_ARTICLE",
+                      "title": "Hydrogen (la)",
+                      "contentTypeTitle": "Subarticulus 1",
+                      "pathID": "2__m.0__m.0__m.1__m.0",
+                      "semanticPath": "pars-2/sectio-1/caput-1/articulus-2/subarticulus-1",
+                      "url": "/pars-2/sectio-1/caput-1/articulus-2#subarticulus-1",
+                      "firstParagraphNumber": 55,
+                      "lastParagraphNumber": 56,
+                      "children": []
+                    },
+                    {
+                      "contentType": "IN_BRIEF",
+                      "title": "Compendium",
+                      "contentTypeTitle": "Compendium",
+                      "pathID": "2__m.0__m.0__m.1__i",
+                      "semanticPath": "pars-2/sectio-1/caput-1/articulus-2/compendium",
+                      "url": "/pars-2/sectio-1/caput-1/articulus-2#compendium",
+                      "firstParagraphNumber": 57,
+                      "lastParagraphNumber": 59,
                       "children": []
                     }
                   ]
@@ -429,104 +456,182 @@
             },
             {
               "contentType": "CHAPTER",
-              "title": "Caput 2",
+              "title": "Magazines Can Have Beautiful Covers (la)",
+              "contentTypeTitle": "Caput 2",
               "pathID": "2__m.0__m.1",
               "semanticPath": "pars-2/sectio-1/caput-2",
               "url": "/pars-2/sectio-1/caput-2",
-              "firstParagraphNumber": 70,
-              "lastParagraphNumber": 79,
+              "firstParagraphNumber": 60,
+              "lastParagraphNumber": 70,
               "children": [
                 {
-                  "contentType": "SUB_ARTICLE",
-                  "title": "Subarticulus 1",
+                  "contentType": "ARTICLE",
+                  "title": "Red Dwarves (la)",
+                  "contentTypeTitle": "Articulus 1",
                   "pathID": "2__m.0__m.1__m.0",
-                  "semanticPath": "pars-2/sectio-1/caput-2/subarticulus-1",
-                  "url": "/pars-2/sectio-1/caput-2#subarticulus-1",
-                  "firstParagraphNumber": 70,
-                  "lastParagraphNumber": 71,
-                  "children": []
-                },
-                {
-                  "contentType": "SUB_ARTICLE",
-                  "title": "Subarticulus 2",
-                  "pathID": "2__m.0__m.1__m.1",
-                  "semanticPath": "pars-2/sectio-1/caput-2/subarticulus-2",
-                  "url": "/pars-2/sectio-1/caput-2#subarticulus-2",
-                  "firstParagraphNumber": 72,
-                  "lastParagraphNumber": 76,
-                  "children": []
-                },
-                {
-                  "contentType": "SUB_ARTICLE",
-                  "title": "Subarticulus 3",
-                  "pathID": "2__m.0__m.1__m.2",
-                  "semanticPath": "pars-2/sectio-1/caput-2/subarticulus-3",
-                  "url": "/pars-2/sectio-1/caput-2#subarticulus-3",
-                  "firstParagraphNumber": 77,
-                  "lastParagraphNumber": 79,
-                  "children": []
+                  "semanticPath": "pars-2/sectio-1/caput-2/articulus-1",
+                  "url": "/pars-2/sectio-1/caput-2#articulus-1",
+                  "firstParagraphNumber": 60,
+                  "lastParagraphNumber": 70,
+                  "children": [
+                    {
+                      "contentType": "SUB_ARTICLE",
+                      "title": "Hydrogen (la)",
+                      "contentTypeTitle": "Subarticulus 1",
+                      "pathID": "2__m.0__m.1__m.0__m.0",
+                      "semanticPath": "pars-2/sectio-1/caput-2/articulus-1/subarticulus-1",
+                      "url": "/pars-2/sectio-1/caput-2#articulus-1/subarticulus-1",
+                      "firstParagraphNumber": 60,
+                      "lastParagraphNumber": 64,
+                      "children": []
+                    },
+                    {
+                      "contentType": "SUB_ARTICLE",
+                      "title": "Helium (la)",
+                      "contentTypeTitle": "Subarticulus 2",
+                      "pathID": "2__m.0__m.1__m.0__m.1",
+                      "semanticPath": "pars-2/sectio-1/caput-2/articulus-1/subarticulus-2",
+                      "url": "/pars-2/sectio-1/caput-2#articulus-1/subarticulus-2",
+                      "firstParagraphNumber": 65,
+                      "lastParagraphNumber": 65,
+                      "children": []
+                    },
+                    {
+                      "contentType": "IN_BRIEF",
+                      "title": "Compendium",
+                      "contentTypeTitle": "Compendium",
+                      "pathID": "2__m.0__m.1__m.0__i",
+                      "semanticPath": "pars-2/sectio-1/caput-2/articulus-1/compendium",
+                      "url": "/pars-2/sectio-1/caput-2#articulus-1/compendium",
+                      "firstParagraphNumber": 66,
+                      "lastParagraphNumber": 69,
+                      "children": []
+                    },
+                    {
+                      "contentType": "PARAGRAPH_GROUP",
+                      "title": "Afghanistan (la)",
+                      "contentTypeTitle": "Paragraphus Classis 1",
+                      "pathID": "2__m.0__m.1__m.0__f.0",
+                      "semanticPath": "pars-2/sectio-1/caput-2/articulus-1/finalis-contentus",
+                      "url": "/pars-2/sectio-1/caput-2#articulus-1/finalis-contentus",
+                      "firstParagraphNumber": 70,
+                      "lastParagraphNumber": 70,
+                      "children": []
+                    }
+                  ]
                 }
               ]
-            }
-          ]
-        },
-        {
-          "contentType": "SECTION",
-          "title": "Sectio 2",
-          "pathID": "2__m.1",
-          "semanticPath": "pars-2/sectio-2",
-          "url": "/pars-2/sectio-2",
-          "firstParagraphNumber": 80,
-          "lastParagraphNumber": 89,
-          "children": [
+            },
             {
               "contentType": "CHAPTER",
-              "title": "Caput 1",
-              "pathID": "2__m.1__m.0",
-              "semanticPath": "pars-2/sectio-2/caput-1",
-              "url": "/pars-2/sectio-2#caput-1",
-              "firstParagraphNumber": 81,
-              "lastParagraphNumber": 89,
+              "title": "Some Books Are Worth Keeping on a Good Shelf by Your Front Door So You May Easily Share Them With Others (la)",
+              "contentTypeTitle": "Caput 3",
+              "pathID": "2__m.0__m.2",
+              "semanticPath": "pars-2/sectio-1/caput-3",
+              "url": "/pars-2/sectio-1/caput-3",
+              "firstParagraphNumber": 71,
+              "lastParagraphNumber": 84,
               "children": [
                 {
-                  "contentType": "SUB_ARTICLE",
-                  "title": "Subarticulus 1",
-                  "pathID": "2__m.1__m.0__m.0",
-                  "semanticPath": "pars-2/sectio-2/caput-1/subarticulus-1",
-                  "url": "/pars-2/sectio-2#caput-1/subarticulus-1",
-                  "firstParagraphNumber": 81,
-                  "lastParagraphNumber": 82,
-                  "children": []
+                  "contentType": "ARTICLE",
+                  "title": "Red Dwarves (la)",
+                  "contentTypeTitle": "Articulus 1",
+                  "pathID": "2__m.0__m.2__m.0",
+                  "semanticPath": "pars-2/sectio-1/caput-3/articulus-1",
+                  "url": "/pars-2/sectio-1/caput-3#articulus-1",
+                  "firstParagraphNumber": 71,
+                  "lastParagraphNumber": 76,
+                  "children": [
+                    {
+                      "contentType": "SUB_ARTICLE",
+                      "title": "Hydrogen (la)",
+                      "contentTypeTitle": "Subarticulus 1",
+                      "pathID": "2__m.0__m.2__m.0__m.0",
+                      "semanticPath": "pars-2/sectio-1/caput-3/articulus-1/subarticulus-1",
+                      "url": "/pars-2/sectio-1/caput-3#articulus-1/subarticulus-1",
+                      "firstParagraphNumber": 71,
+                      "lastParagraphNumber": 71,
+                      "children": []
+                    },
+                    {
+                      "contentType": "SUB_ARTICLE",
+                      "title": "Helium (la)",
+                      "contentTypeTitle": "Subarticulus 2",
+                      "pathID": "2__m.0__m.2__m.0__m.1",
+                      "semanticPath": "pars-2/sectio-1/caput-3/articulus-1/subarticulus-2",
+                      "url": "/pars-2/sectio-1/caput-3#articulus-1/subarticulus-2",
+                      "firstParagraphNumber": 72,
+                      "lastParagraphNumber": 73,
+                      "children": []
+                    },
+                    {
+                      "contentType": "IN_BRIEF",
+                      "title": "Compendium",
+                      "contentTypeTitle": "Compendium",
+                      "pathID": "2__m.0__m.2__m.0__i",
+                      "semanticPath": "pars-2/sectio-1/caput-3/articulus-1/compendium",
+                      "url": "/pars-2/sectio-1/caput-3#articulus-1/compendium",
+                      "firstParagraphNumber": 74,
+                      "lastParagraphNumber": 76,
+                      "children": []
+                    }
+                  ]
                 },
                 {
-                  "contentType": "SUB_ARTICLE",
-                  "title": "Subarticulus 2",
-                  "pathID": "2__m.1__m.0__m.1",
-                  "semanticPath": "pars-2/sectio-2/caput-1/subarticulus-2",
-                  "url": "/pars-2/sectio-2#caput-1/subarticulus-2",
-                  "firstParagraphNumber": 83,
-                  "lastParagraphNumber": 83,
-                  "children": []
-                },
-                {
-                  "contentType": "SUB_ARTICLE",
-                  "title": "Subarticulus 3",
-                  "pathID": "2__m.1__m.0__m.2",
-                  "semanticPath": "pars-2/sectio-2/caput-1/subarticulus-3",
-                  "url": "/pars-2/sectio-2#caput-1/subarticulus-3",
-                  "firstParagraphNumber": 84,
-                  "lastParagraphNumber": 86,
-                  "children": []
-                },
-                {
-                  "contentType": "IN_BRIEF",
-                  "title": "Compendium",
-                  "pathID": "2__m.1__m.0__i",
-                  "semanticPath": "pars-2/sectio-2/caput-1/compendium",
-                  "url": "/pars-2/sectio-2#caput-1/compendium",
-                  "firstParagraphNumber": 87,
-                  "lastParagraphNumber": 89,
-                  "children": []
+                  "contentType": "ARTICLE",
+                  "title": "Constellations To Be (la)",
+                  "contentTypeTitle": "Articulus 2",
+                  "pathID": "2__m.0__m.2__m.1",
+                  "semanticPath": "pars-2/sectio-1/caput-3/articulus-2",
+                  "url": "/pars-2/sectio-1/caput-3/articulus-2",
+                  "firstParagraphNumber": 77,
+                  "lastParagraphNumber": 84,
+                  "children": [
+                    {
+                      "contentType": "SUB_ARTICLE",
+                      "title": "Hydrogen (la)",
+                      "contentTypeTitle": "Subarticulus 1",
+                      "pathID": "2__m.0__m.2__m.1__m.0",
+                      "semanticPath": "pars-2/sectio-1/caput-3/articulus-2/subarticulus-1",
+                      "url": "/pars-2/sectio-1/caput-3/articulus-2#subarticulus-1",
+                      "firstParagraphNumber": 77,
+                      "lastParagraphNumber": 77,
+                      "children": []
+                    },
+                    {
+                      "contentType": "SUB_ARTICLE",
+                      "title": "Helium (la)",
+                      "contentTypeTitle": "Subarticulus 2",
+                      "pathID": "2__m.0__m.2__m.1__m.1",
+                      "semanticPath": "pars-2/sectio-1/caput-3/articulus-2/subarticulus-2",
+                      "url": "/pars-2/sectio-1/caput-3/articulus-2#subarticulus-2",
+                      "firstParagraphNumber": 78,
+                      "lastParagraphNumber": 79,
+                      "children": []
+                    },
+                    {
+                      "contentType": "IN_BRIEF",
+                      "title": "Compendium",
+                      "contentTypeTitle": "Compendium",
+                      "pathID": "2__m.0__m.2__m.1__i",
+                      "semanticPath": "pars-2/sectio-1/caput-3/articulus-2/compendium",
+                      "url": "/pars-2/sectio-1/caput-3/articulus-2#compendium",
+                      "firstParagraphNumber": 80,
+                      "lastParagraphNumber": 83,
+                      "children": []
+                    },
+                    {
+                      "contentType": "PARAGRAPH_GROUP",
+                      "title": "Afghanistan (la)",
+                      "contentTypeTitle": "Paragraphus Classis 1",
+                      "pathID": "2__m.0__m.2__m.1__f.0",
+                      "semanticPath": "pars-2/sectio-1/caput-3/articulus-2/finalis-contentus",
+                      "url": "/pars-2/sectio-1/caput-3/articulus-2#finalis-contentus",
+                      "firstParagraphNumber": 84,
+                      "lastParagraphNumber": 84,
+                      "children": []
+                    }
+                  ]
                 }
               ]
             }
@@ -536,142 +641,178 @@
     },
     {
       "contentType": "PART",
-      "title": "Pars 3",
+      "title": "The Calm Light of an Autumn Evening (la)",
+      "contentTypeTitle": "Pars 3",
       "pathID": "3",
       "semanticPath": "pars-3",
       "url": "/pars-3",
-      "firstParagraphNumber": 90,
-      "lastParagraphNumber": 113,
+      "firstParagraphNumber": 85,
+      "lastParagraphNumber": 114,
       "children": [
         {
           "contentType": "SECTION",
-          "title": "Sectio 1",
+          "title": "All the Ways That Spelunking Can Improve Your Life (la)",
+          "contentTypeTitle": "Sectio 1",
           "pathID": "3__m.0",
           "semanticPath": "pars-3/sectio-1",
           "url": "/pars-3#sectio-1",
-          "firstParagraphNumber": 91,
-          "lastParagraphNumber": 113,
+          "firstParagraphNumber": 86,
+          "lastParagraphNumber": 95,
           "children": [
             {
               "contentType": "CHAPTER",
-              "title": "Caput 1",
+              "title": "Letters From Cousins (la)",
+              "contentTypeTitle": "Caput 1",
               "pathID": "3__m.0__m.0",
               "semanticPath": "pars-3/sectio-1/caput-1",
               "url": "/pars-3#sectio-1/caput-1",
-              "firstParagraphNumber": 91,
-              "lastParagraphNumber": 113,
+              "firstParagraphNumber": 87,
+              "lastParagraphNumber": 95,
               "children": [
                 {
                   "contentType": "ARTICLE",
-                  "title": "Articulus 1",
+                  "title": "Red Dwarves (la)",
+                  "contentTypeTitle": "Articulus 1",
                   "pathID": "3__m.0__m.0__m.0",
                   "semanticPath": "pars-3/sectio-1/caput-1/articulus-1",
                   "url": "/pars-3#sectio-1/caput-1/articulus-1",
-                  "firstParagraphNumber": 91,
-                  "lastParagraphNumber": 106,
-                  "children": [
-                    {
-                      "contentType": "ARTICLE_PARAGRAPH",
-                      "title": "Articulus Paragraphus 1",
-                      "pathID": "3__m.0__m.0__m.0__m.0",
-                      "semanticPath": "pars-3/sectio-1/caput-1/articulus-1/articulus-paragraphus-1",
-                      "url": "/pars-3#sectio-1/caput-1/articulus-1/articulus-paragraphus-1",
-                      "firstParagraphNumber": 91,
-                      "lastParagraphNumber": 98,
-                      "children": [
-                        {
-                          "contentType": "IN_BRIEF",
-                          "title": "Compendium",
-                          "pathID": "3__m.0__m.0__m.0__m.0__i",
-                          "semanticPath": "pars-3/sectio-1/caput-1/articulus-1/articulus-paragraphus-1/compendium",
-                          "url": "/pars-3#sectio-1/caput-1/articulus-1/articulus-paragraphus-1/compendium",
-                          "firstParagraphNumber": 95,
-                          "lastParagraphNumber": 98,
-                          "children": []
-                        }
-                      ]
-                    },
-                    {
-                      "contentType": "ARTICLE_PARAGRAPH",
-                      "title": "Articulus Paragraphus 2",
-                      "pathID": "3__m.0__m.0__m.0__m.1",
-                      "semanticPath": "pars-3/sectio-1/caput-1/articulus-1/articulus-paragraphus-2",
-                      "url": "/pars-3/sectio-1/caput-1/articulus-1/articulus-paragraphus-2",
-                      "firstParagraphNumber": 99,
-                      "lastParagraphNumber": 106,
-                      "children": [
-                        {
-                          "contentType": "IN_BRIEF",
-                          "title": "Compendium",
-                          "pathID": "3__m.0__m.0__m.0__m.1__i",
-                          "semanticPath": "pars-3/sectio-1/caput-1/articulus-1/articulus-paragraphus-2/compendium",
-                          "url": "/pars-3/sectio-1/caput-1/articulus-1/articulus-paragraphus-2#compendium",
-                          "firstParagraphNumber": 104,
-                          "lastParagraphNumber": 106,
-                          "children": []
-                        }
-                      ]
-                    }
-                  ]
-                },
-                {
-                  "contentType": "ARTICLE",
-                  "title": "Articulus 2",
-                  "pathID": "3__m.0__m.0__m.1",
-                  "semanticPath": "pars-3/sectio-1/caput-1/articulus-2",
-                  "url": "/pars-3/sectio-1/caput-1/articulus-2",
-                  "firstParagraphNumber": 107,
-                  "lastParagraphNumber": 109,
+                  "firstParagraphNumber": 87,
+                  "lastParagraphNumber": 95,
                   "children": [
                     {
                       "contentType": "SUB_ARTICLE",
-                      "title": "Subarticulus 1",
-                      "pathID": "3__m.0__m.0__m.1__m.0",
-                      "semanticPath": "pars-3/sectio-1/caput-1/articulus-2/subarticulus-1",
-                      "url": "/pars-3/sectio-1/caput-1/articulus-2#subarticulus-1",
-                      "firstParagraphNumber": 107,
-                      "lastParagraphNumber": 107,
+                      "title": "Hydrogen (la)",
+                      "contentTypeTitle": "Subarticulus 1",
+                      "pathID": "3__m.0__m.0__m.0__m.0",
+                      "semanticPath": "pars-3/sectio-1/caput-1/articulus-1/subarticulus-1",
+                      "url": "/pars-3#sectio-1/caput-1/articulus-1/subarticulus-1",
+                      "firstParagraphNumber": 87,
+                      "lastParagraphNumber": 91,
                       "children": []
                     },
                     {
                       "contentType": "IN_BRIEF",
                       "title": "Compendium",
-                      "pathID": "3__m.0__m.0__m.1__i",
-                      "semanticPath": "pars-3/sectio-1/caput-1/articulus-2/compendium",
-                      "url": "/pars-3/sectio-1/caput-1/articulus-2#compendium",
-                      "firstParagraphNumber": 108,
-                      "lastParagraphNumber": 109,
+                      "contentTypeTitle": "Compendium",
+                      "pathID": "3__m.0__m.0__m.0__i",
+                      "semanticPath": "pars-3/sectio-1/caput-1/articulus-1/compendium",
+                      "url": "/pars-3#sectio-1/caput-1/articulus-1/compendium",
+                      "firstParagraphNumber": 92,
+                      "lastParagraphNumber": 95,
+                      "children": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "contentType": "SECTION",
+          "title": "Risky Kayaking (la)",
+          "contentTypeTitle": "Sectio 2",
+          "pathID": "3__m.1",
+          "semanticPath": "pars-3/sectio-2",
+          "url": "/pars-3/sectio-2",
+          "firstParagraphNumber": 96,
+          "lastParagraphNumber": 114,
+          "children": [
+            {
+              "contentType": "CHAPTER",
+              "title": "Letters From Cousins (la)",
+              "contentTypeTitle": "Caput 1",
+              "pathID": "3__m.1__m.0",
+              "semanticPath": "pars-3/sectio-2/caput-1",
+              "url": "/pars-3/sectio-2#caput-1",
+              "firstParagraphNumber": 97,
+              "lastParagraphNumber": 114,
+              "children": [
+                {
+                  "contentType": "ARTICLE",
+                  "title": "Red Dwarves (la)",
+                  "contentTypeTitle": "Articulus 1",
+                  "pathID": "3__m.1__m.0__m.0",
+                  "semanticPath": "pars-3/sectio-2/caput-1/articulus-1",
+                  "url": "/pars-3/sectio-2#caput-1/articulus-1",
+                  "firstParagraphNumber": 97,
+                  "lastParagraphNumber": 107,
+                  "children": [
+                    {
+                      "contentType": "SUB_ARTICLE",
+                      "title": "Hydrogen (la)",
+                      "contentTypeTitle": "Subarticulus 1",
+                      "pathID": "3__m.1__m.0__m.0__m.0",
+                      "semanticPath": "pars-3/sectio-2/caput-1/articulus-1/subarticulus-1",
+                      "url": "/pars-3/sectio-2#caput-1/articulus-1/subarticulus-1",
+                      "firstParagraphNumber": 97,
+                      "lastParagraphNumber": 99,
+                      "children": []
+                    },
+                    {
+                      "contentType": "SUB_ARTICLE",
+                      "title": "Helium (la)",
+                      "contentTypeTitle": "Subarticulus 2",
+                      "pathID": "3__m.1__m.0__m.0__m.1",
+                      "semanticPath": "pars-3/sectio-2/caput-1/articulus-1/subarticulus-2",
+                      "url": "/pars-3/sectio-2#caput-1/articulus-1/subarticulus-2",
+                      "firstParagraphNumber": 100,
+                      "lastParagraphNumber": 102,
+                      "children": []
+                    },
+                    {
+                      "contentType": "IN_BRIEF",
+                      "title": "Compendium",
+                      "contentTypeTitle": "Compendium",
+                      "pathID": "3__m.1__m.0__m.0__i",
+                      "semanticPath": "pars-3/sectio-2/caput-1/articulus-1/compendium",
+                      "url": "/pars-3/sectio-2#caput-1/articulus-1/compendium",
+                      "firstParagraphNumber": 103,
+                      "lastParagraphNumber": 106,
+                      "children": []
+                    },
+                    {
+                      "contentType": "PARAGRAPH_GROUP",
+                      "title": "Afghanistan (la)",
+                      "contentTypeTitle": "Paragraphus Classis 1",
+                      "pathID": "3__m.1__m.0__m.0__f.0",
+                      "semanticPath": "pars-3/sectio-2/caput-1/articulus-1/finalis-contentus",
+                      "url": "/pars-3/sectio-2#caput-1/articulus-1/finalis-contentus",
+                      "firstParagraphNumber": 107,
+                      "lastParagraphNumber": 107,
                       "children": []
                     }
                   ]
                 },
                 {
                   "contentType": "ARTICLE",
-                  "title": "Articulus 3",
-                  "pathID": "3__m.0__m.0__m.2",
-                  "semanticPath": "pars-3/sectio-1/caput-1/articulus-3",
-                  "url": "/pars-3/sectio-1/caput-1/articulus-3",
-                  "firstParagraphNumber": 110,
-                  "lastParagraphNumber": 113,
+                  "title": "Constellations To Be (la)",
+                  "contentTypeTitle": "Articulus 2",
+                  "pathID": "3__m.1__m.0__m.1",
+                  "semanticPath": "pars-3/sectio-2/caput-1/articulus-2",
+                  "url": "/pars-3/sectio-2/caput-1/articulus-2",
+                  "firstParagraphNumber": 108,
+                  "lastParagraphNumber": 114,
                   "children": [
                     {
                       "contentType": "SUB_ARTICLE",
-                      "title": "Subarticulus 1",
-                      "pathID": "3__m.0__m.0__m.2__m.0",
-                      "semanticPath": "pars-3/sectio-1/caput-1/articulus-3/subarticulus-1",
-                      "url": "/pars-3/sectio-1/caput-1/articulus-3#subarticulus-1",
-                      "firstParagraphNumber": 110,
+                      "title": "Hydrogen (la)",
+                      "contentTypeTitle": "Subarticulus 1",
+                      "pathID": "3__m.1__m.0__m.1__m.0",
+                      "semanticPath": "pars-3/sectio-2/caput-1/articulus-2/subarticulus-1",
+                      "url": "/pars-3/sectio-2/caput-1/articulus-2#subarticulus-1",
+                      "firstParagraphNumber": 108,
                       "lastParagraphNumber": 110,
                       "children": []
                     },
                     {
                       "contentType": "IN_BRIEF",
                       "title": "Compendium",
-                      "pathID": "3__m.0__m.0__m.2__i",
-                      "semanticPath": "pars-3/sectio-1/caput-1/articulus-3/compendium",
-                      "url": "/pars-3/sectio-1/caput-1/articulus-3#compendium",
+                      "contentTypeTitle": "Compendium",
+                      "pathID": "3__m.1__m.0__m.1__i",
+                      "semanticPath": "pars-3/sectio-2/caput-1/articulus-2/compendium",
+                      "url": "/pars-3/sectio-2/caput-1/articulus-2#compendium",
                       "firstParagraphNumber": 111,
-                      "lastParagraphNumber": 113,
+                      "lastParagraphNumber": 114,
                       "children": []
                     }
                   ]
@@ -684,90 +825,373 @@
     },
     {
       "contentType": "PART",
-      "title": "Pars 4",
+      "title": "Summer Without End (la)",
+      "contentTypeTitle": "Pars 4",
       "pathID": "4",
       "semanticPath": "pars-4",
       "url": "/pars-4",
-      "firstParagraphNumber": 114,
-      "lastParagraphNumber": 122,
+      "firstParagraphNumber": 115,
+      "lastParagraphNumber": 164,
       "children": [
         {
           "contentType": "SECTION",
-          "title": "Sectio 1",
+          "title": "All the Ways That Spelunking Can Improve Your Life (la)",
+          "contentTypeTitle": "Sectio 1",
           "pathID": "4__m.0",
           "semanticPath": "pars-4/sectio-1",
           "url": "/pars-4#sectio-1",
-          "firstParagraphNumber": 114,
-          "lastParagraphNumber": 122,
+          "firstParagraphNumber": 115,
+          "lastParagraphNumber": 142,
           "children": [
             {
               "contentType": "CHAPTER",
-              "title": "Caput 1",
+              "title": "Letters From Cousins (la)",
+              "contentTypeTitle": "Caput 1",
               "pathID": "4__m.0__m.0",
               "semanticPath": "pars-4/sectio-1/caput-1",
               "url": "/pars-4#sectio-1/caput-1",
               "firstParagraphNumber": 115,
-              "lastParagraphNumber": 117,
+              "lastParagraphNumber": 133,
+              "children": [
+                {
+                  "contentType": "ARTICLE",
+                  "title": "Red Dwarves (la)",
+                  "contentTypeTitle": "Articulus 1",
+                  "pathID": "4__m.0__m.0__m.0",
+                  "semanticPath": "pars-4/sectio-1/caput-1/articulus-1",
+                  "url": "/pars-4#sectio-1/caput-1/articulus-1",
+                  "firstParagraphNumber": 115,
+                  "lastParagraphNumber": 124,
+                  "children": [
+                    {
+                      "contentType": "IN_BRIEF",
+                      "title": "Compendium",
+                      "contentTypeTitle": "Compendium",
+                      "pathID": "4__m.0__m.0__m.0__i",
+                      "semanticPath": "pars-4/sectio-1/caput-1/articulus-1/compendium",
+                      "url": "/pars-4#sectio-1/caput-1/articulus-1/compendium",
+                      "firstParagraphNumber": 122,
+                      "lastParagraphNumber": 124,
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "contentType": "ARTICLE",
+                  "title": "Constellations To Be (la)",
+                  "contentTypeTitle": "Articulus 2",
+                  "pathID": "4__m.0__m.0__m.1",
+                  "semanticPath": "pars-4/sectio-1/caput-1/articulus-2",
+                  "url": "/pars-4/sectio-1/caput-1/articulus-2",
+                  "firstParagraphNumber": 125,
+                  "lastParagraphNumber": 129,
+                  "children": [
+                    {
+                      "contentType": "IN_BRIEF",
+                      "title": "Compendium",
+                      "contentTypeTitle": "Compendium",
+                      "pathID": "4__m.0__m.0__m.1__i",
+                      "semanticPath": "pars-4/sectio-1/caput-1/articulus-2/compendium",
+                      "url": "/pars-4/sectio-1/caput-1/articulus-2#compendium",
+                      "firstParagraphNumber": 129,
+                      "lastParagraphNumber": 129,
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "contentType": "ARTICLE",
+                  "title": "The First Month of Studying the Heavens (la)",
+                  "contentTypeTitle": "Articulus 3",
+                  "pathID": "4__m.0__m.0__m.2",
+                  "semanticPath": "pars-4/sectio-1/caput-1/articulus-3",
+                  "url": "/pars-4/sectio-1/caput-1/articulus-3",
+                  "firstParagraphNumber": 130,
+                  "lastParagraphNumber": 133,
+                  "children": [
+                    {
+                      "contentType": "SUB_ARTICLE",
+                      "title": "Hydrogen (la)",
+                      "contentTypeTitle": "Subarticulus 1",
+                      "pathID": "4__m.0__m.0__m.2__m.0",
+                      "semanticPath": "pars-4/sectio-1/caput-1/articulus-3/subarticulus-1",
+                      "url": "/pars-4/sectio-1/caput-1/articulus-3#subarticulus-1",
+                      "firstParagraphNumber": 130,
+                      "lastParagraphNumber": 130,
+                      "children": []
+                    },
+                    {
+                      "contentType": "SUB_ARTICLE",
+                      "title": "Helium (la)",
+                      "contentTypeTitle": "Subarticulus 2",
+                      "pathID": "4__m.0__m.0__m.2__m.1",
+                      "semanticPath": "pars-4/sectio-1/caput-1/articulus-3/subarticulus-2",
+                      "url": "/pars-4/sectio-1/caput-1/articulus-3#subarticulus-2",
+                      "firstParagraphNumber": 131,
+                      "lastParagraphNumber": 131,
+                      "children": []
+                    },
+                    {
+                      "contentType": "IN_BRIEF",
+                      "title": "Compendium",
+                      "contentTypeTitle": "Compendium",
+                      "pathID": "4__m.0__m.0__m.2__i",
+                      "semanticPath": "pars-4/sectio-1/caput-1/articulus-3/compendium",
+                      "url": "/pars-4/sectio-1/caput-1/articulus-3#compendium",
+                      "firstParagraphNumber": 132,
+                      "lastParagraphNumber": 132,
+                      "children": []
+                    },
+                    {
+                      "contentType": "PARAGRAPH_GROUP",
+                      "title": "Afghanistan (la)",
+                      "contentTypeTitle": "Paragraphus Classis 1",
+                      "pathID": "4__m.0__m.0__m.2__f.0",
+                      "semanticPath": "pars-4/sectio-1/caput-1/articulus-3/finalis-contentus",
+                      "url": "/pars-4/sectio-1/caput-1/articulus-3#finalis-contentus",
+                      "firstParagraphNumber": 133,
+                      "lastParagraphNumber": 133,
+                      "children": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "contentType": "CHAPTER",
+              "title": "Magazines Can Have Beautiful Covers (la)",
+              "contentTypeTitle": "Caput 2",
+              "pathID": "4__m.0__m.1",
+              "semanticPath": "pars-4/sectio-1/caput-2",
+              "url": "/pars-4/sectio-1/caput-2",
+              "firstParagraphNumber": 134,
+              "lastParagraphNumber": 142,
+              "children": [
+                {
+                  "contentType": "ARTICLE",
+                  "title": "Red Dwarves (la)",
+                  "contentTypeTitle": "Articulus 1",
+                  "pathID": "4__m.0__m.1__m.0",
+                  "semanticPath": "pars-4/sectio-1/caput-2/articulus-1",
+                  "url": "/pars-4/sectio-1/caput-2#articulus-1",
+                  "firstParagraphNumber": 134,
+                  "lastParagraphNumber": 137,
+                  "children": [
+                    {
+                      "contentType": "SUB_ARTICLE",
+                      "title": "Hydrogen (la)",
+                      "contentTypeTitle": "Subarticulus 1",
+                      "pathID": "4__m.0__m.1__m.0__m.0",
+                      "semanticPath": "pars-4/sectio-1/caput-2/articulus-1/subarticulus-1",
+                      "url": "/pars-4/sectio-1/caput-2#articulus-1/subarticulus-1",
+                      "firstParagraphNumber": 134,
+                      "lastParagraphNumber": 135,
+                      "children": []
+                    },
+                    {
+                      "contentType": "IN_BRIEF",
+                      "title": "Compendium",
+                      "contentTypeTitle": "Compendium",
+                      "pathID": "4__m.0__m.1__m.0__i",
+                      "semanticPath": "pars-4/sectio-1/caput-2/articulus-1/compendium",
+                      "url": "/pars-4/sectio-1/caput-2#articulus-1/compendium",
+                      "firstParagraphNumber": 136,
+                      "lastParagraphNumber": 136,
+                      "children": []
+                    },
+                    {
+                      "contentType": "PARAGRAPH_GROUP",
+                      "title": "Afghanistan (la)",
+                      "contentTypeTitle": "Paragraphus Classis 1",
+                      "pathID": "4__m.0__m.1__m.0__f.0",
+                      "semanticPath": "pars-4/sectio-1/caput-2/articulus-1/finalis-contentus",
+                      "url": "/pars-4/sectio-1/caput-2#articulus-1/finalis-contentus",
+                      "firstParagraphNumber": 137,
+                      "lastParagraphNumber": 137,
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "contentType": "ARTICLE",
+                  "title": "Constellations To Be (la)",
+                  "contentTypeTitle": "Articulus 2",
+                  "pathID": "4__m.0__m.1__m.1",
+                  "semanticPath": "pars-4/sectio-1/caput-2/articulus-2",
+                  "url": "/pars-4/sectio-1/caput-2/articulus-2",
+                  "firstParagraphNumber": 138,
+                  "lastParagraphNumber": 142,
+                  "children": [
+                    {
+                      "contentType": "ARTICLE_PARAGRAPH",
+                      "title": "How Bicycles are Made (la)",
+                      "contentTypeTitle": "Articulus Paragraphus 1",
+                      "pathID": "4__m.0__m.1__m.1__m.0",
+                      "semanticPath": "pars-4/sectio-1/caput-2/articulus-2/articulus-paragraphus-1",
+                      "url": "/pars-4/sectio-1/caput-2/articulus-2#articulus-paragraphus-1",
+                      "firstParagraphNumber": 138,
+                      "lastParagraphNumber": 142,
+                      "children": [
+                        {
+                          "contentType": "IN_BRIEF",
+                          "title": "Compendium",
+                          "contentTypeTitle": "Compendium",
+                          "pathID": "4__m.0__m.1__m.1__m.0__i",
+                          "semanticPath": "pars-4/sectio-1/caput-2/articulus-2/articulus-paragraphus-1/compendium",
+                          "url": "/pars-4/sectio-1/caput-2/articulus-2#articulus-paragraphus-1/compendium",
+                          "firstParagraphNumber": 141,
+                          "lastParagraphNumber": 142,
+                          "children": []
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "contentType": "SECTION",
+          "title": "Risky Kayaking (la)",
+          "contentTypeTitle": "Sectio 2",
+          "pathID": "4__m.1",
+          "semanticPath": "pars-4/sectio-2",
+          "url": "/pars-4/sectio-2",
+          "firstParagraphNumber": 143,
+          "lastParagraphNumber": 164,
+          "children": [
+            {
+              "contentType": "CHAPTER",
+              "title": "Letters From Cousins (la)",
+              "contentTypeTitle": "Caput 1",
+              "pathID": "4__m.1__m.0",
+              "semanticPath": "pars-4/sectio-2/caput-1",
+              "url": "/pars-4/sectio-2#caput-1",
+              "firstParagraphNumber": 144,
+              "lastParagraphNumber": 149,
               "children": [
                 {
                   "contentType": "SUB_ARTICLE",
-                  "title": "Subarticulus 1",
-                  "pathID": "4__m.0__m.0__m.0",
-                  "semanticPath": "pars-4/sectio-1/caput-1/subarticulus-1",
-                  "url": "/pars-4#sectio-1/caput-1/subarticulus-1",
-                  "firstParagraphNumber": 115,
-                  "lastParagraphNumber": 115,
+                  "title": "Hydrogen (la)",
+                  "contentTypeTitle": "Subarticulus 1",
+                  "pathID": "4__m.1__m.0__m.0",
+                  "semanticPath": "pars-4/sectio-2/caput-1/subarticulus-1",
+                  "url": "/pars-4/sectio-2#caput-1/subarticulus-1",
+                  "firstParagraphNumber": 144,
+                  "lastParagraphNumber": 145,
                   "children": []
                 },
                 {
                   "contentType": "SUB_ARTICLE",
-                  "title": "Subarticulus 2",
-                  "pathID": "4__m.0__m.0__m.1",
-                  "semanticPath": "pars-4/sectio-1/caput-1/subarticulus-2",
-                  "url": "/pars-4#sectio-1/caput-1/subarticulus-2",
-                  "firstParagraphNumber": 116,
-                  "lastParagraphNumber": 117,
+                  "title": "Helium (la)",
+                  "contentTypeTitle": "Subarticulus 2",
+                  "pathID": "4__m.1__m.0__m.1",
+                  "semanticPath": "pars-4/sectio-2/caput-1/subarticulus-2",
+                  "url": "/pars-4/sectio-2#caput-1/subarticulus-2",
+                  "firstParagraphNumber": 146,
+                  "lastParagraphNumber": 146,
+                  "children": []
+                },
+                {
+                  "contentType": "SUB_ARTICLE",
+                  "title": "Lithium (la)",
+                  "contentTypeTitle": "Subarticulus 3",
+                  "pathID": "4__m.1__m.0__m.2",
+                  "semanticPath": "pars-4/sectio-2/caput-1/subarticulus-3",
+                  "url": "/pars-4/sectio-2#caput-1/subarticulus-3",
+                  "firstParagraphNumber": 147,
+                  "lastParagraphNumber": 149,
                   "children": []
                 }
               ]
             },
             {
               "contentType": "CHAPTER",
-              "title": "Caput 2",
-              "pathID": "4__m.0__m.1",
-              "semanticPath": "pars-4/sectio-1/caput-2",
-              "url": "/pars-4/sectio-1/caput-2",
-              "firstParagraphNumber": 118,
-              "lastParagraphNumber": 122,
+              "title": "Magazines Can Have Beautiful Covers (la)",
+              "contentTypeTitle": "Caput 2",
+              "pathID": "4__m.1__m.1",
+              "semanticPath": "pars-4/sectio-2/caput-2",
+              "url": "/pars-4/sectio-2/caput-2",
+              "firstParagraphNumber": 150,
+              "lastParagraphNumber": 160,
               "children": [
                 {
                   "contentType": "SUB_ARTICLE",
-                  "title": "Subarticulus 1",
-                  "pathID": "4__m.0__m.1__m.0",
-                  "semanticPath": "pars-4/sectio-1/caput-2/subarticulus-1",
-                  "url": "/pars-4/sectio-1/caput-2#subarticulus-1",
-                  "firstParagraphNumber": 118,
-                  "lastParagraphNumber": 118,
+                  "title": "Hydrogen (la)",
+                  "contentTypeTitle": "Subarticulus 1",
+                  "pathID": "4__m.1__m.1__m.0",
+                  "semanticPath": "pars-4/sectio-2/caput-2/subarticulus-1",
+                  "url": "/pars-4/sectio-2/caput-2#subarticulus-1",
+                  "firstParagraphNumber": 150,
+                  "lastParagraphNumber": 151,
                   "children": []
                 },
                 {
                   "contentType": "SUB_ARTICLE",
-                  "title": "Subarticulus 2",
-                  "pathID": "4__m.0__m.1__m.1",
-                  "semanticPath": "pars-4/sectio-1/caput-2/subarticulus-2",
-                  "url": "/pars-4/sectio-1/caput-2#subarticulus-2",
-                  "firstParagraphNumber": 119,
-                  "lastParagraphNumber": 121,
+                  "title": "Helium (la)",
+                  "contentTypeTitle": "Subarticulus 2",
+                  "pathID": "4__m.1__m.1__m.1",
+                  "semanticPath": "pars-4/sectio-2/caput-2/subarticulus-2",
+                  "url": "/pars-4/sectio-2/caput-2#subarticulus-2",
+                  "firstParagraphNumber": 152,
+                  "lastParagraphNumber": 153,
+                  "children": []
+                },
+                {
+                  "contentType": "SUB_ARTICLE",
+                  "title": "Lithium (la)",
+                  "contentTypeTitle": "Subarticulus 3",
+                  "pathID": "4__m.1__m.1__m.2",
+                  "semanticPath": "pars-4/sectio-2/caput-2/subarticulus-3",
+                  "url": "/pars-4/sectio-2/caput-2#subarticulus-3",
+                  "firstParagraphNumber": 154,
+                  "lastParagraphNumber": 157,
                   "children": []
                 },
                 {
                   "contentType": "IN_BRIEF",
                   "title": "Compendium",
-                  "pathID": "4__m.0__m.1__i",
-                  "semanticPath": "pars-4/sectio-1/caput-2/compendium",
-                  "url": "/pars-4/sectio-1/caput-2#compendium",
-                  "firstParagraphNumber": 122,
-                  "lastParagraphNumber": 122,
+                  "contentTypeTitle": "Compendium",
+                  "pathID": "4__m.1__m.1__i",
+                  "semanticPath": "pars-4/sectio-2/caput-2/compendium",
+                  "url": "/pars-4/sectio-2/caput-2#compendium",
+                  "firstParagraphNumber": 158,
+                  "lastParagraphNumber": 160,
+                  "children": []
+                }
+              ]
+            },
+            {
+              "contentType": "CHAPTER",
+              "title": "Some Books Are Worth Keeping on a Good Shelf by Your Front Door So You May Easily Share Them With Others (la)",
+              "contentTypeTitle": "Caput 3",
+              "pathID": "4__m.1__m.2",
+              "semanticPath": "pars-4/sectio-2/caput-3",
+              "url": "/pars-4/sectio-2/caput-3",
+              "firstParagraphNumber": 161,
+              "lastParagraphNumber": 164,
+              "children": [
+                {
+                  "contentType": "SUB_ARTICLE",
+                  "title": "Hydrogen (la)",
+                  "contentTypeTitle": "Subarticulus 1",
+                  "pathID": "4__m.1__m.2__m.0",
+                  "semanticPath": "pars-4/sectio-2/caput-3/subarticulus-1",
+                  "url": "/pars-4/sectio-2/caput-3#subarticulus-1",
+                  "firstParagraphNumber": 161,
+                  "lastParagraphNumber": 161,
+                  "children": []
+                },
+                {
+                  "contentType": "SUB_ARTICLE",
+                  "title": "Helium (la)",
+                  "contentTypeTitle": "Subarticulus 2",
+                  "pathID": "4__m.1__m.2__m.1",
+                  "semanticPath": "pars-4/sectio-2/caput-3/subarticulus-2",
+                  "url": "/pars-4/sectio-2/caput-3#subarticulus-2",
+                  "firstParagraphNumber": 162,
+                  "lastParagraphNumber": 164,
                   "children": []
                 }
               ]

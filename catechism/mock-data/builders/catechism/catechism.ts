@@ -12,6 +12,7 @@ import {
     Content,
     ContentBase,
     Language,
+    Mutable,
     NumberOrNumberRange,
     PathID,
     SemanticPathSource,
@@ -21,6 +22,7 @@ import {
 import {
     getAllChildContent,
     getAllContent,
+    getAllContentBaseItems,
     getAllCrossReferences,
     getAllParagraphs,
     getParagraphNumbers,
@@ -30,6 +32,7 @@ import {
     hasOpeningContent,
 } from '../../../source/utils/content.ts';
 
+import { getContentTypeTitle } from '../../../source/utils/title.ts';
 import { getContainerDesignator } from '../../../source/utils/path-id.ts';
 import { buildSemanticPath, getSemanticPathSource } from '../../../source/utils/semantic-path.ts';
 
@@ -49,10 +52,12 @@ export function buildCatechism(): CatechismStructure {
     };
 
     catechism = setPathIDs(catechism);
+    catechism = setRanks(catechism);
     catechism = setParagraphNumbers(catechism);
     catechism = setReferenceNumbers(catechism);
     catechism = setSemanticPaths(catechism);
     catechism = setParagraphUrls(catechism);
+    catechism = setNaturalLanguagePaths(catechism);
 
     const results = buildParagraphCrossReferences(catechism);
     catechism = results.catechism;
@@ -102,6 +107,16 @@ function setPathIDs(catechism: CatechismStructure): CatechismStructure {
         (part as any).mainContent = setPathIDsHelper(Container.MAIN, part.mainContent, pathID);
         (part as any).finalContent = setPathIDsHelper(Container.FINAL, part.finalContent, pathID);
     });
+
+    return catechism;
+}
+
+function setRanks(catechism: CatechismStructure): CatechismStructure {
+    catechism = structuredClone(catechism);
+
+    let rank = 1;
+    const items = getAllContentBaseItems(catechism);
+    items.forEach((item) => (item as Mutable<ContentBase>)['rank'] = rank++);
 
     return catechism;
 }
@@ -325,6 +340,30 @@ function setParagraphUrlHelper(content: Array<ContentBase>, language: Language):
             setParagraphUrlHelper(childContent, language);
         }
     });
+}
+
+function setNaturalLanguagePaths(catechism: CatechismStructure): CatechismStructure {
+    catechism = structuredClone(catechism);
+
+    const allContent = getAllContent(catechism);
+    allContent.forEach((content) => {
+        setNaturalLanguagePathsHelper(content, [], catechism.language);
+    });
+
+    return catechism;
+}
+
+function setNaturalLanguagePathsHelper(content: ContentBase, ancestralPath: Array<string>, language: Language): void {
+    const title = getContentTypeTitle(language, content);
+    // deno-fmt-ignore
+    const naturalLanguagePath = title
+        ? [...ancestralPath, title]
+        : ancestralPath;
+
+    (content as Mutable<ContentBase>).naturalLanguagePath = naturalLanguagePath;
+
+    const children = getAllChildContent(content);
+    children.forEach((child) => setNaturalLanguagePathsHelper(child, content.naturalLanguagePath, language));
 }
 
 function validateCatechism(catechism: CatechismStructure): boolean {

@@ -1,6 +1,6 @@
 import { BibleBook, Content, Language } from '@catechism-types';
 
-import { CATECHISM_OF_THE_CATHOLIC_CHURCH } from '@logic/strings.ts';
+import { CATECHISM_OF_THE_CATHOLIC_CHURCH } from './strings.ts';
 
 export function translate(englishText: string, language: Language): string {
     // deno-fmt-ignore
@@ -22,9 +22,29 @@ export function translate(englishText: string, language: Language): string {
 
 const translationMap: Record<string, Record<Exclude<Language, Language.ENGLISH>, string>> = {
     //#region UI messages and labels
+    'Preface': {
+        [Language.LATIN]: 'Praefatio',
+        [Language.SPANISH]: 'Prefacio',
+    },
+    'Content': {
+        [Language.LATIN]: 'Content',
+        [Language.SPANISH]: 'Contenido',
+    },
+    'Glossary': {
+        [Language.LATIN]: 'Glossarium',
+        [Language.SPANISH]: 'Glosario',
+    },
+    'Index': {
+        [Language.LATIN]: 'Index',
+        [Language.SPANISH]: 'Índice',
+    },
     'Page not found.': {
         [Language.LATIN]: 'Pagina non inveni.',
         [Language.SPANISH]: 'Página no encontrada.',
+    },
+    'Home': {
+        [Language.LATIN]: 'Initium',
+        [Language.SPANISH]: 'Empezar',
     },
     'Go Home': {
         [Language.LATIN]: 'Redira ad Initium',
@@ -305,9 +325,21 @@ const translationMap: Record<string, Record<Exclude<Language, Language.ENGLISH>,
         [Language.LATIN]: 'prooemium',
         [Language.SPANISH]: 'prologo',
     },
+    'Prologue': {
+        [Language.LATIN]: 'Prooemium',
+        [Language.SPANISH]: 'Prologo',
+    },
+    'prologue-section': {
+        [Language.LATIN]: 'prooemium-sectio',
+        [Language.SPANISH]: 'prologo-seccion',
+    },
     'part': {
         [Language.LATIN]: 'pars',
         [Language.SPANISH]: 'parte',
+    },
+    'Part': {
+        [Language.LATIN]: 'Pars',
+        [Language.SPANISH]: 'Parte',
     },
     'section': {
         [Language.LATIN]: 'sectio',

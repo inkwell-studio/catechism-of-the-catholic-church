@@ -1,0 +1,62 @@
+---
+import { Content, Language, PathID, TableOfContentsEntry } from '@catechism-types';
+
+import PartialContentLink from '@components/partial-content-link.astro';
+
+interface Props {
+    entry: TableOfContentsEntry;
+    level: number;
+    language: Language;
+}
+
+const { entry, level, language } = Astro.props;
+
+const { titleClasses, listClasses } = getClasses(entry.contentType, entry.pathID);
+
+function getClasses(contentType: Content, pathID: PathID): {
+    titleClasses: Array<string>;
+    listClasses: string;
+} {
+    const titleClassList = [];
+    let listClassString = '';
+
+    if (Content.SECTION === contentType) {
+        titleClassList.push('font-title font-bold text-lg mb-2');
+        listClassString = 'space-y-4';
+    } else if (Content.CHAPTER === contentType) {
+        titleClassList.push('text-stone-700 font-title font-medium uppercase');
+    } else if (Content.CHAPTER_SECTION === contentType) {
+        // TODO: Implement
+    } else if (Content.ARTICLE === contentType) {
+        // TODO: Implement
+    } else if (Content.ARTICLE_PARAGRAPH === contentType) {
+        // TODO: Implement
+    } else if (Content.SUB_ARTICLE === contentType) {
+        // TODO: Implement
+    } else if (Content.PARAGRAPH_GROUP === contentType) {
+        // TODO: Implement
+    } else if (Content.IN_BRIEF === contentType) {
+        // TODO: Implement
+    } else {
+        throw new Error(
+            `Unexpected content type encountered while rendering the table of contents: ${contentType}, pathID ${pathID}`,
+        );
+    }
+
+    return { titleClasses: titleClassList, listClasses: listClassString };
+}
+---
+
+<li>
+    <PartialContentLink url={entry.url} {language} class:list={titleClasses}>
+        {entry.contentTypeTitle} | {entry.title}
+    </PartialContentLink>
+    {
+        entry.children.length > 0 &&
+            (
+            <ol class={listClasses}>
+                {entry.children.map((e) => <Astro.self entry={e} level={level + 1} {language} />)}
+            </ol>
+        )
+    }
+</li>

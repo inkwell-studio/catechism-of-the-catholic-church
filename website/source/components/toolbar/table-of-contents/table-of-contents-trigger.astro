@@ -1,0 +1,40 @@
+---
+import { Language } from '@catechism-types';
+
+import TableOfContents from './table-of-contents.astro';
+
+import { ElementID } from '@logic/ui';
+
+interface Props {
+    language: Language;
+    class?: string;
+}
+
+/*
+    `...rest` is needed in order for the classes from the parent to be properly scoped for the styling specified within by parent
+    (see https://docs.astro.build/en/guides/styling/#passing-a-class-to-a-child-component)
+*/
+const { language, class: classes, ...rest } = Astro.props;
+---
+
+<script>
+    import '@shoelace/dropdown/dropdown.js';
+</script>
+
+<!-- table of contents -->
+<sl-dropdown id={ElementID.TOOLBAR_TABLE_OF_CONTENTS} placement="top-start" distance="12" class={classes} {...rest}>
+    <button slot="trigger" type="button" class="w-full flex items-center gap-4 cursor-pointer">
+        <!-- from https://heroicons.com/ : book-open -->
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+            <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M12 6.042A8.967 8.967 0 0 0 6 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 0 1 6 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 0 1 6-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0 0 18 18a8.967 8.967 0 0 0-6 2.292m0-14.25v14.25"
+            />
+        </svg>
+
+        <div id={ElementID.TOOLBAR_NATURAL_LANGUAGE_PATH} class="grow text-sm text-stone-100"></div>
+    </button>
+
+    <TableOfContents {language} />
+</sl-dropdown>

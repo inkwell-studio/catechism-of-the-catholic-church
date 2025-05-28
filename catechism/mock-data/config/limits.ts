@@ -94,7 +94,9 @@ interface Limits {
     };
     prologue: {
         text: Limit;
-        subarticle: Limit;
+    };
+    prologueSection: {
+        paragraph: Limit;
     };
     section: {
         article: Limit;
@@ -177,7 +179,9 @@ const limitsMinimal: Limits = {
     },
     prologue: {
         text: { min: 1, max: 1 },
-        subarticle: { min: 1, max: 1 },
+    },
+    prologueSection: {
+        paragraph: { min: 1, max: 1 },
     },
     section: {
         article: { min: 1, max: 1 },
@@ -256,7 +260,9 @@ const limitsTiny: Limits = {
     },
     prologue: {
         text: { min: 1, max: 1 },
-        subarticle: { min: 1, max: 3 },
+    },
+    prologueSection: {
+        paragraph: { min: 1, max: 3 },
     },
     section: {
         article: { min: 1, max: 3 },
@@ -335,7 +341,9 @@ const limitsSmall: Limits = {
     },
     prologue: {
         text: { min: 1, max: 1 },
-        subarticle: { min: 1, max: 3 },
+    },
+    prologueSection: {
+        paragraph: { min: 1, max: 3 },
     },
     section: {
         article: { min: 1, max: 3 },
@@ -414,7 +422,9 @@ const limitsMedium: Limits = {
     },
     prologue: {
         text: { min: 3, max: 3 },
-        subarticle: { min: 3, max: 3 },
+    },
+    prologueSection: {
+        paragraph: { min: 1, max: 5 },
     },
     section: {
         article: { min: 2, max: 3 },

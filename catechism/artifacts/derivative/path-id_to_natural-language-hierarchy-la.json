@@ -1,0 +1,68 @@
+{
+  "0": [
+    "Prooemium"
+  ],
+  "1": [
+    "Pars 1"
+  ],
+  "2": [
+    "Pars 2"
+  ],
+  "3": [
+    "Pars 3"
+  ],
+  "4": [
+    "Pars 4"
+  ],
+  "1__m.0__m.1": [
+    "Pars 1",
+    "Sectio 1",
+    "Caput 2"
+  ],
+  "1__m.0__m.1__m.1": [
+    "Pars 1",
+    "Sectio 1",
+    "Caput 2",
+    "Articulus 2"
+  ],
+  "1__m.0__m.1__m.2": [
+    "Pars 1",
+    "Sectio 1",
+    "Caput 2",
+    "Articulus 3"
+  ],
+  "1__m.0__m.2": [
+    "Pars 1",
+    "Sectio 1",
+    "Caput 3"
+  ],
+  "1__m.0__m.2__m.1": [
+    "Pars 1",
+    "Sectio 1",
+    "Caput 3",
+    "Articulus 2"
+  ],
+  "1__m.0__m.2__m.1__m.1": [
+    "Pars 1",
+    "Sectio 1",
+    "Caput 3",
+    "Articulus 2",
+    "Articulus Paragraphus 2"
+  ],
+  "1__m.0__m.2__m.2": [
+    "Pars 1",
+    "Sectio 1",
+    "Caput 3",
+    "Articulus 3"
+  ],
+  "2__m.1": [
+    "Pars 2",
+    "Sectio 2"
+  ],
+  "2__m.1__m.0__m.1": [
+    "Pars 2",
+    "Sectio 2",
+    "Caput 1",
+    "Articulus 2"
+  ]
+}

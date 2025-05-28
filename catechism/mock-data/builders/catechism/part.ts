@@ -14,9 +14,14 @@ export function buildPart(partNumber: number): Part {
 
     return {
         contentType: Content.PART,
-        pathID: `${partNumber}`,
+        // This will be set later, after all content is created
+        pathID: '0',
         // This will be set later, after all content is created
         semanticPath: '',
+        // This will be set later, after all content is created
+        naturalLanguagePath: [],
+        // This will be set later, after all content is created
+        rank: 0,
         partNumber,
         title: getTitleText(Content.PART, partNumber),
         openingContent,

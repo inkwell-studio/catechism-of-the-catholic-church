@@ -4,7 +4,7 @@ import { DARK_MODE_MEDIA_QUERY, LOCAL_STORAGE_KEY_THEME, onThemeSelection, Theme
 
 export const $theme = atom(getThemeValue());
 
-export function watchForThemeChanges(): void {
+export function respondToThemeChanges(): void {
     // Respond to changes triggered by UI interactions
     $theme.subscribe((themeValue) => onThemeSelection(themeValue));
 

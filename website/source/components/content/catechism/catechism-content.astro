@@ -2,51 +2,75 @@
 import { Language, PathID } from '@catechism-types';
 
 import ContentBase from './content-base.astro';
-import InfiniteScrollTrigger from './infinite-scroll-trigger.astro';
-import IntersectionUrlUpdater from './intersection-url-updater.astro';
+import InfiniteScrollBackwardActivator from './infinite-scroll-backward-activator.astro';
+import InfiniteScrollTriggerForward from './infinite-scroll-trigger-forward.astro';
+import InfiniteScrollTriggerBackward from './infinite-scroll-trigger-backward.astro';
 
 import { getRenderableNodeMap } from '@logic/artifacts';
 import { loadContent } from '@logic/rendering';
-import { ElementClass } from '@logic/ui';
+import { ElementClass, ElementID } from '@logic/ui';
 
 interface Props {
     pathID: PathID;
     language: Language;
     firstContent: boolean;
+    infiniteScrollDirection: 'forward' | 'backward' | null;
 }
 
-const { pathID, language, firstContent } = Astro.props;
+const { pathID, language, firstContent, infiniteScrollDirection } = Astro.props;
 
 const content = await loadContent(language, pathID);
 
 const nodeMap = await getRenderableNodeMap(language);
 const renderableNodes = nodeMap[pathID] ?? null;
-const thisUrl = renderableNodes?.here.url;
 const nextUrl = renderableNodes?.next?.url;
 const previousUrl = renderableNodes?.previous?.url;
+
+const includeInfiniteScrollForwardTrigger = 'backward' !== infiniteScrollDirection && nextUrl;
+const includeInfiniteScrollBackwardTrigger = 'backward' === infiniteScrollDirection && previousUrl;
+const includeInfiniteScrollBackwardActivator = firstContent && previousUrl;
+
+const isFirstInfiniteScrollBackwardContent = firstContent && 'backward' === infiniteScrollDirection;
 ---
 
-{
-    /* TODO:
-        - Finalize heights and vertical paddings
-    */
-}
-<div class:list={[ElementClass.CATECHISM_CONTENT_BLOCK, 'relative pl-8 pr-16 border-bottom-4 border-bottom-white']}>
+<div id={ElementID.INFINITE_SCROLL_BACKWARD_INITIAL_TARGET}></div>
+
+<!--
+The `margin-top` value of the this element must be kept in sync with the value of
+`topMarginOfCatechismContentBlock` in `navigation-utils.ts::handleFirstInfiniteScrollBackward()`
+-->
+<div
+    class:list={[
+        ElementClass.CATECHISM_CONTENT_BLOCK,
+        { [ElementClass.HIDDEN]: isFirstInfiniteScrollBackwardContent },
+        { [ElementClass.INFINITE_SCROLL_BACKWARD_INITIAL_CONTENT]: isFirstInfiniteScrollBackwardContent },
+        '[--content-margin-top:--spacing(24)] relative pl-8 pr-16 mt-(--content-margin-top)',
+    ]}
+>
+    {
+        includeInfiniteScrollBackwardActivator &&
+            (
+            <div
+                id={ElementID.INFINITE_SCROLL_BACKWARD_ACTIVATOR_CONTAINER}
+                class="absolute z-10 right-16 -top-[calc((var(--content-margin-top))+(--spacing(3)))]"
+            >
+                <InfiniteScrollBackwardActivator url={previousUrl} {language} />
+            </div>
+        )
+    }
+
     <div class="max-w-prose mx-auto break-words">
         {content && <ContentBase {content} {language} />}
     </div>
 
-    {nextUrl && <InfiniteScrollTrigger url={nextUrl} {language} class="absolute bottom-[min(100%,_80vh)] invisible" />}
-
     {
-        /* Keeping these each over 100vh from each other ensures that intersection updaters from multiple
-           `CATECHISM_CONTENT_BLOCK`s won't be simultaneously visible (assuming that each content block is at least 100vh tall).
-        */
-    }
-    {
-        !firstContent && previousUrl && (
-            <IntersectionUrlUpdater url={previousUrl} {language} class="invisible absolute -top-[min(100%,_32vh)]" />
+        includeInfiniteScrollForwardTrigger && (
+            <InfiniteScrollTriggerForward url={nextUrl} {language} class="invisible absolute bottom-[min(100%,_80vh)]" />
         )
     }
-    {!firstContent && <IntersectionUrlUpdater url={thisUrl} {language} class="invisible absolute top-[min(100%,_70vh)]" />}
+    {
+        includeInfiniteScrollBackwardTrigger && (
+            <InfiniteScrollTriggerBackward url={previousUrl} {language} class="invisible absolute top-[min(100%,_80vh)]" />
+        )
+    }
 </div>

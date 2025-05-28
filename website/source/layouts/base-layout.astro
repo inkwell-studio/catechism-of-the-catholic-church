@@ -3,6 +3,7 @@ import { Language } from '@catechism-types';
 
 import Toolbar from '@components/toolbar/toolbar.astro';
 
+import { removeLanguageTag } from '@logic/routing';
 import { CATECHISM_OF_THE_CATHOLIC_CHURCH } from '@logic/strings';
 import { translate as t } from '@logic/translation';
 
@@ -20,6 +21,8 @@ const secondsPerWeek = 604800;
 Astro.response.headers.set('Cache-Control', `max-age=${secondsPerWeek}`);
 
 const canonicalUrl = new URL(Astro.url.pathname, Astro.site).href;
+
+const isHomePage = '/' === removeLanguageTag(Astro.url.pathname, language);
 ---
 
 <html lang={language}>
@@ -65,12 +68,17 @@ const canonicalUrl = new URL(Astro.url.pathname, Astro.site).href;
             })();
         </script>
         <script>
-            import { respondToHtmx, respondToNavigationEvent } from '@logic/navigation-utils';
-            import { watchForThemeChanges } from '@logic/state/theme';
+            import {
+                respondToHtmxEvents,
+                respondToNavigationEvents,
+                updateReadingAreaIntersectionObservers,
+            } from '@logic/navigation-utils';
+            import { respondToThemeChanges } from '@logic/state/theme';
 
-            respondToHtmx();
-            respondToNavigationEvent();
-            watchForThemeChanges();
+            updateReadingAreaIntersectionObservers();
+            respondToNavigationEvents();
+            respondToHtmxEvents();
+            respondToThemeChanges();
         </script>
         <script src="/htmx.min.js" is:inline></script>
     </head>
@@ -78,8 +86,12 @@ const canonicalUrl = new URL(Astro.url.pathname, Astro.site).href;
         {/* Child elements are inserted here */}
         <slot />
 
-        <div class="fixed bottom-0 inset-x-6 flex justify-center">
-            <Toolbar {language} />
-        </div>
+        {
+            !isHomePage && (
+                <div class="flex justify-center fixed bottom-0 inset-x-6">
+                    <Toolbar {language} />
+                </div>
+            )
+        }
     </body>
 </html>

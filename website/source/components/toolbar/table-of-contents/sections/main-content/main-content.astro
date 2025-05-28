@@ -1,0 +1,73 @@
+---
+import { Language } from '@catechism-types';
+
+import PartialContentLink from '@components/partial-content-link.astro';
+import MainContentEntry from './main-content-entry.astro';
+
+import { getRomanNumeral } from '@components/utils';
+import { getTableOfContents } from '@logic/artifacts';
+import { translate as t } from '@logic/translation';
+
+interface Props {
+    language: Language;
+}
+
+const { language } = Astro.props;
+
+const tableOfContents = await getTableOfContents(language);
+
+const Tabs = {
+    PROLOGUE: 'progloue',
+};
+
+tableOfContents.parts.forEach((_part, i) => Tabs[getPartTabName(i)] = getPartTabName(i));
+
+function getPartTabName(partIndex: number): string {
+    return `part-${partIndex + 1}`;
+}
+---
+<script>
+    import '@shoelace/tab/tab.js';
+    import '@shoelace/tab-group/tab-group.js';
+    import '@shoelace/tab-panel/tab-panel.js';
+</script>
+
+<sl-tab-group>
+    <sl-tab slot="nav" panel={Tabs.PROLOGUE}>{t('Prologue', language)}</sl-tab>
+
+    {tableOfContents.parts.map((_part, i) => <sl-tab slot="nav" panel={getPartTabName(i)}>{getRomanNumeral(i + 1)}</sl-tab>)}
+
+    <sl-tab-panel name={Tabs.PROLOGUE}>
+        <h1 class="text-sm font-title font-bold tracking-widest uppercase">
+            <PartialContentLink url={tableOfContents.prologue.url} {language}>
+                {t('Prologue', language)}
+            </PartialContentLink>
+        </h1>
+        <ol>
+            {
+                tableOfContents.prologue.children.map((entry) => (
+                    <li>
+                        <PartialContentLink url={entry.url} {language}>
+                            {entry.title}
+                        </PartialContentLink>
+                    </li>
+                ))
+            }
+        </ol>
+    </sl-tab-panel>
+
+    {
+        tableOfContents.parts.map((part, i) => (
+            <sl-tab-panel name={getPartTabName(i)}>
+                <PartialContentLink url={part.url} {language}>
+                    <h1 class="text-sm font-title font-bold tracking-widest uppercase mb-3">
+                        {part.title}
+                    </h1>
+                </PartialContentLink>
+                <ol class="space-y-2">
+                    {part.children.map((entry) => <MainContentEntry {entry} level={0} {language} />)}
+                </ol>
+            </sl-tab-panel>
+        ))
+    }
+</sl-tab-group>

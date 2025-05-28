@@ -3,7 +3,9 @@ import { Language, Part as PartType } from '@catechism-types';
 import { getAllChildContent } from '@catechism-utils/content';
 
 import { getRomanNumeral } from '@components/utils';
+
 import ContentBaseArray from './content-base-array.astro';
+import ReadingAreaIntersectable from './reading-area-intersectable.astro';
 
 interface Props {
     part: PartType;
@@ -15,6 +17,8 @@ const { part, language } = Astro.props;
 const childContent = getAllChildContent(part);
 ---
 
-<div class="font-sans font-bold text-stone-600 text-center tracking-wider uppercase mb-6">Part {getRomanNumeral(part.partNumber)}</div>
-<h1 class="font-title text-6xl text-center mb-24">{part.title}</h1>
-<ContentBaseArray content={childContent} {language} />
+<ReadingAreaIntersectable content={part} {language}>
+    <div class="font-sans font-bold text-stone-600 text-center tracking-wider uppercase mb-6">Part {getRomanNumeral(part.partNumber)}</div>
+    <h1 class="font-title text-6xl text-center mb-32">{part.title}</h1>
+    <ContentBaseArray content={childContent} {language} />
+</ReadingAreaIntersectable>

@@ -1,0 +1,17 @@
+---
+import { DEFAULT_LANGUAGE } from '@catechism-types';
+
+import Home from '@components/home/home.astro';
+import Replacement from '@components/replacement.astro';
+
+import NavigationUpdates from '@pages/partials/_navigation-updates.astro';
+
+import { ElementID } from '@logic/ui';
+
+export const partial = true;
+---
+
+<Home language={DEFAULT_LANGUAGE} />
+<NavigationUpdates language={DEFAULT_LANGUAGE} />
+
+<Replacement target={ElementID.CROSS_REFERENCE_PANEL_CONTENT_WRAPPER} />

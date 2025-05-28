@@ -21,6 +21,10 @@ export function buildChapter(chapterNumber: number): Chapter {
         pathID: '0',
         // This will be set later, after all content is created
         semanticPath: '',
+        // This will be set later, after all content is created
+        naturalLanguagePath: [],
+        // This will be set later, after all content is created
+        rank: 0,
         chapterNumber,
         title: getTitleText(Content.CHAPTER, chapterNumber),
         openingContent,

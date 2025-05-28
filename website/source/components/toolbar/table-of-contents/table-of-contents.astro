@@ -1,0 +1,80 @@
+---
+import Glossary from './sections/glossary.astro';
+import Index from './sections/index.astro';
+import MainContent from './sections/main-content/main-content.astro';
+import Preface from './sections/preface.astro';
+
+import { DEFAULT_LANGUAGE, Language } from '@catechism-types';
+
+import { translate as t } from '@logic/translation';
+import { ElementID } from '@logic/ui';
+
+interface Props {
+    language: Language;
+}
+
+const { language } = Astro.props;
+
+// deno-fmt-ignore
+const homeUrl = DEFAULT_LANGUAGE === language
+    ? '/'
+    : `/${language}`
+
+enum Tabs {
+    PREFACE = 'preface',
+    MAIN_CONTENT = 'main-content',
+    GLOSSARY = 'glossary',
+    INDEX = 'index',
+}
+---
+
+<script>
+    import type { SlTabGroup } from '@shoelace-types';
+    import '@shoelace/tab/tab.js';
+    import '@shoelace/tab-group/tab-group.js';
+    import '@shoelace/tab-panel/tab-panel.js';
+
+    import { ElementID } from '@logic/ui';
+
+    // Select the "Content" tab by default
+    await Promise.all(
+        [
+            customElements.whenDefined('sl-tab-group'),
+            customElements.whenDefined('sl-tab-panel'),
+            customElements.whenDefined('sl-tab'),
+        ],
+    );
+    const tabPanel: SlTabGroup | null = document.querySelector(ElementID.TABLE_OF_CONTENTS_TOP_TAB_GROUP_SELECTOR);
+    // This must match the value of `Tabs.MAIN_CONTENT` above
+    tabPanel?.show('main-content');
+</script>
+
+<nav class="bg-white text-stone-950 rounded-xl shadow-xl border-b border-stone-200">
+    <div>
+        <a href={homeUrl}>{t('Home', language)}</a>
+    </div>
+    <div class="flex">
+        <sl-tab-group id={ElementID.TABLE_OF_CONTENTS_TOP_TAB_GROUP} placement="start">
+            <sl-tab slot="nav" panel={Tabs.PREFACE}>{t('Preface', language)}</sl-tab>
+            <sl-tab slot="nav" panel={Tabs.MAIN_CONTENT}>{t('Content', language)}</sl-tab>
+            <sl-tab slot="nav" panel={Tabs.GLOSSARY}>{t('Glossary', language)}</sl-tab>
+            <sl-tab slot="nav" panel={Tabs.INDEX}>{t('Index', language)}</sl-tab>
+
+            <sl-tab-panel name={Tabs.PREFACE}>
+                <Preface />
+            </sl-tab-panel>
+
+            <sl-tab-panel name={Tabs.MAIN_CONTENT}>
+                <MainContent {language} />
+            </sl-tab-panel>
+
+            <sl-tab-panel name={Tabs.GLOSSARY}>
+                <Glossary />
+            </sl-tab-panel>
+
+            <sl-tab-panel name={Tabs.INDEX}>
+                <Index />
+            </sl-tab-panel>
+        </sl-tab-group>
+    </div>
+</nav>

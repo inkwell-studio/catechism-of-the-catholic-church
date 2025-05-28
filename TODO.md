@@ -1,25 +1,73 @@
 # Tasks to complete now
 
-- [ ] implement full navigation mechanism
-  - [ ] add table-of-contents menu
-  - [ ] remove `development-helper.astro`
-- [ ] implement "previous section" navigation with reverse infinite-scrolling
+- [ ] make the UX demo-worthy
+  - [ ] (if quickly attainable) have the toolbar table-of-contents menu update
+        as the user scrolls (i.e. where the menu is open to when it opens)
+  - [ ] (if quickly attainable) add a loading indicator to the bottom of the
+        infinite-scroll content
+  - [ ] implement the homepage
+  - [ ] add a "project introduction" page
+  - [ ] add an "about/legal" page
+  - [ ] determine what should be done with the search functionality (POC or
+        remove?)
+  - [ ] add a "demo/introduction" page
+  - [ ] implement the homepage: UI
+    - consider https://eryri.gov.wales/visit/
+    - [ ] background
+      - [ ] consider:
+        - https://unsplash.com/photos/the-ceiling-of-a-large-building-with-a-dome-XQUQ8PR5pFc
+        - https://unsplash.com/photos/the-ceiling-of-a-building-with-a-clock-on-it-zNtmXuF9hLg
+        - https://unsplash.com/photos/the-ceiling-of-a-large-building-with-a-dome-Ad1uzr4cD4I
+        - https://unsplash.com/photos/gray-concrete-church-interior-GZVCCkoLtig
+        - https://unsplash.com/photos/gold-and-white-cathedral-interior-1TLdxVTeO_0
+  - [ ] determine if `content-layout.astro` is still properly set up for
+        browser-chrome-collapsing on mobile browsers
+  - [ ] make everything work on mobile browsers
+  - [ ] finalize element sizes and arrangment
+    - [ ] update text sizes so `text-base` is the current `text-lg` value
+  - [ ] finalize colors
+    - [ ] light (default) mode
+    - [ ] dark mode
+- [ ] make licensing info explicit
+- [ ] clean up `website/source/graphics/home-page/`
+  - [ ] remove unused files
+  - [ ] simplify used files
+  - [ ] ensure SVG files are valid
+
 - [ ] merge
 
-- [ ] make the UX demo-worthy
+- [ ] consider improving English mock text
+  - John Henry Cardinal Newman sermons
+- [ ] merge
+
+- [ ] consider repo management (this and the original
+      `catechism-of-of-the-catholic-church` repo)
+
+- [ ] add these to the list of online versions of the Catechism:
+  - https://canonicaleye.org/Catechism/
+  - https://www.catholicdoors.com/catechis/index.htm
+  - the "non-archive" Vatican site
+
+- [ ] reach out to connections
+
+- [ ] determine if a cross-references property needs to be added to the
+      `Paragraph` interface
+
+- [ ] upgrade to Astro 5.7
+  - [ ] add the `experimental: preserveScriptOrder` flag (with a value of
+        `true`), and make any necessary changes
+    - see https://astro.build/blog/astro-550/#type-safe-experimental-sessions
+      (Experimental: preserve order of style and script tags)
+  - [ ] use the `astro:config` virtual module (e.g.
+        `import { trailingSlash, base } from 'astro:config/client';`):
+    - [ ] use this instead of the `website/config.ts` import in `robots.txt.ts`
+    - [ ] remove `website/config.ts`
+    - see https://astro.build/blog/astro-570/ (Config Imports)
 - [ ] merge
 
 - [ ] consider if advanced e2e testing is necessary - potentially helpful tools:
   - Astral: https://astral.deno.dev/
   - Puppeteer: https://github.com/puppeteer/puppeteer
-
-- [ ] homepage
-  - [ ] Vatican "keys" icon
-  - [ ] table of contents
-- [ ] merge
-
-- [ ] make paragraph numbers in-line with the text
-- [ ] merge
 
 - [ ] navigation bar
   - [ ] "progress bar" functionality, as thought of by William
@@ -27,10 +75,7 @@
       rename files appropriately
   - [ ] for mobile devices only, with a different menu paradigm for larger
         screen?
-- [ ] dark mode
-- [ ] implement proper content layout
-- [ ] consider repo management (this and the original
-      `catechism-of-of-the-catholic-church` repo)
+
 - [ ] consider "vendoring" dependencies
 
 - [ ] consider adding logic around hiding Shoelace components before they are

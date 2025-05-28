@@ -1,0 +1,19 @@
+---
+import InfiniteScrollTrigger from './infinite-scroll-trigger.astro';
+
+import { Language } from '@catechism-types';
+
+interface Props {
+    url: string;
+    language: Language;
+    class?: string;
+}
+
+/*
+    `...rest` is needed in order for the classes from the parent to be properly scoped for the styling specified within by parent
+    (see https://docs.astro.build/en/guides/styling/#passing-a-class-to-a-child-component)
+*/
+const { url, language, class: classes, ...rest } = Astro.props;
+---
+
+<InfiniteScrollTrigger {url} {language} direction="backward" class:list={[classes]} {...rest} />

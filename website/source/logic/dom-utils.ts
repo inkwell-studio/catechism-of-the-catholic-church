@@ -1,27 +1,32 @@
+import { ElementClass } from './ui.ts';
+
 //#region Event handlers
 // deno-lint-ignore ban-types
 export function onClick(e: Element, f: Function): void {
     e.addEventListener('click', () => f());
 }
+
+// deno-lint-ignore ban-types
+export function onMouseover(e: Element, f: Function): void {
+    e.addEventListener('mouseover', () => f());
+}
 //#endregion
 
 //#region Showing and hiding elements
 export function toggle(e: Element): void {
-    toggleClass(e, hidingClass);
+    toggleClass(e, ElementClass.HIDDEN);
 }
 
 export function show(e: Element): void {
-    removeClass(e, hidingClass);
+    removeClass(e, ElementClass.HIDDEN);
 }
 
 export function hide(e: Element): void {
-    addClass(e, hidingClass);
+    addClass(e, ElementClass.HIDDEN);
 }
 //#endregion
 
 //#region Class utils
-const hidingClass = 'hidden';
-
 export function toggleClass(e: Element, cssClass: string): void {
     if (e.classList.contains(cssClass)) {
         removeClass(e, cssClass);

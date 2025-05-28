@@ -16,7 +16,7 @@
 
 @layer base {
     :root {
-        scroll-behavior: instant;
+        scroll-behavior: auto;
     }
 
     /* This hides custom elements until they are defined

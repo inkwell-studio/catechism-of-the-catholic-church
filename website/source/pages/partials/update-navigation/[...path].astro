@@ -10,8 +10,7 @@ export async function getStaticPaths(): Promise<Array<ContentRoute>> {
     return [...getBasicRoutes(), ...(await getTableOfContentsRoutes())];
 }
 
-const { language, renderableNodes } = await getNavigationValues(Astro.params.path);
-const previousUrl = renderableNodes?.previous?.url;
+const { language } = await getNavigationValues(Astro.params.path);
 ---
 
-<NavigationUpdates {language} {previousUrl} />
+<NavigationUpdates {language} />

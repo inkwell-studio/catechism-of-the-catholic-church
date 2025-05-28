@@ -1,0 +1,32 @@
+---
+import { ContentBase, Language } from '@catechism-types';
+
+import { getNaturalLanguagePathText } from '@components/utils';
+import { getUrl } from '@logic/routing';
+import { ElementClass } from '@logic/ui';
+
+interface Props {
+    content: ContentBase;
+    language: Language;
+    class?: string;
+}
+
+/*
+    `...rest` is needed in order for the classes from the parent to be properly scoped for the styling specified within by parent
+    (see https://docs.astro.build/en/guides/styling/#passing-a-class-to-a-child-component)
+*/
+const { content, language, class: classes, ...rest } = Astro.props;
+
+const url = getUrl(language, content.semanticPath, false);
+const naturalLanguagePath = getNaturalLanguagePathText(content.naturalLanguagePath);
+---
+
+<div
+    class:list={[ElementClass.READING_AREA_INTERSECTABLE, classes]}
+    data-url={url}
+    data-rank={content.rank}
+    data-natural-language-path={naturalLanguagePath}
+    {...rest}
+>
+    <slot />
+</div>

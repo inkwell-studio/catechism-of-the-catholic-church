@@ -2,18 +2,20 @@
 import { Language, TextBlock as TextBlockType } from '@catechism-types';
 import { getAllChildContent } from '@catechism-utils/content';
 
+import ParagraphNumber from './paragraph-number.astro';
 import TextWrapperArray from './text-wrapper-array.astro';
 
 interface Props {
     textBlock: TextBlockType;
     language: Language;
+    paragraphNumber?: number;
 }
 
-const { textBlock, language } = Astro.props;
+const { textBlock, language, paragraphNumber } = Astro.props;
 
 const childContent = getAllChildContent(textBlock);
 ---
 
-<div class="text-justify">
-    <TextWrapperArray content={childContent} {language} />
+<div class="text-justify mb-4">
+    {paragraphNumber && <ParagraphNumber {paragraphNumber} />} <TextWrapperArray content={childContent} {language} />
 </div>

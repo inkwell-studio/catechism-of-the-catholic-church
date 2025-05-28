@@ -4,6 +4,7 @@ import { SemanticPath } from './semantic-path.ts';
 
 export interface TableOfContentsEntry {
     readonly contentType: Content;
+    readonly contentTypeTitle: string;
     readonly title: string;
     readonly pathID: PathID;
     readonly semanticPath: SemanticPath;

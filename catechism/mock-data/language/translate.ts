@@ -20,6 +20,7 @@ import {
     ParagraphGroup,
     Part,
     Prologue,
+    PrologueSection,
     Section,
     Subarticle,
     Text,
@@ -28,16 +29,21 @@ import {
     getAllContent,
     isArticle as isArticleOriginal,
     isArticleParagraph as isArticleParagraphOriginal,
+    isBlockQuote,
     isChapter as isChapterOriginal,
     isChapterSection as isChapterSectionOriginal,
     isContentContainer as isContentContainerOriginal,
     isInBriefContainer as isInBriefContainerOriginal,
+    isParagraph,
     isParagraphGroup as isParagraphGroupOriginal,
     isPart as isPartOriginal,
     isPrologue as isPrologueOriginal,
+    isPrologueSection as isPrologueSectionOriginal,
     isSection as isSectionOriginal,
     isSubarticle as isSubarticleOriginal,
     isText as isTextOriginal,
+    isTextBlock,
+    isTextWrapper,
 } from '@utils/content.ts';
 
 export function translateCatechism(catechism: Mutable<CatechismStructure>, language: Language): CatechismStructure {
@@ -82,6 +88,9 @@ function translateContentBase(c: Mutable<ContentBase>): ContentBase {
     if (isPrologue(c)) {
         c.title = getTitleText(Content.PROLOGUE, 1);
 
+    } else if (isPrologueSection(c)) {
+        c.title = getTitleText(Content.PROLOGUE_SECTION, c.prologueSectionNumber)
+
     } else if (isPart(c)) {
         c.title = getTitleText(Content.PART, c.partNumber)
 
@@ -108,6 +117,9 @@ function translateContentBase(c: Mutable<ContentBase>): ContentBase {
 
     } else if (isText(c)) {
         c.content = getText();
+
+    } else if (!isBlockQuote(c) && !isParagraph(c) && !isTextBlock(c) && !isTextWrapper(c)) {
+        console.warn(`Unexpected content type encountered and not translated: ${c.contentType}`)
     }
 
     return c;
@@ -120,6 +132,10 @@ function isInBriefContainer(c: ContentBase): c is Mutable<InBriefContainer> {
 
 function isPrologue(c: ContentBase): c is Mutable<Prologue> {
     return isPrologueOriginal(c);
+}
+
+function isPrologueSection(c: ContentBase): c is Mutable<PrologueSection> {
+    return isPrologueSectionOriginal(c);
 }
 
 function isPart(c: ContentBase): c is Mutable<Part> {

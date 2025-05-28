@@ -8,7 +8,7 @@ import { Paragraph } from './paragraph.ts';
  */
 export interface GenericContentContainer extends ContentContainer {
     readonly contentType: Content.GENERIC_CONTENT_CONTAINER;
-    // The entries for the the `tier` discriminated union is meant to be added to as necessary
+    // The entries for the the `tier` discriminated union are meant to be added to as necessary
     readonly tier: Content.ARTICLE;
     readonly title: string;
     readonly openingContent: Array<never>;

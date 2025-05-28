@@ -1,10 +1,15 @@
 ---
 import { Language, Paragraph as ParagraphType } from '@catechism-types';
-import { getAllChildContent } from '@catechism-utils/content';
+import { getAllChildContent, isBlockQuote, isParagraphSubitemContainer, isTextBlock, isTextHeading } from '@catechism-utils/content';
 
 import { getUrlFragment } from '@logic/routing';
 
-import ContentBaseArray from './content-base-array.astro';
+import UnknownContent from './unknown-content.astro';
+import ParagraphNumber from './paragraph-number.astro';
+import ParagraphSubitemContainer from './paragraph-subitem-container.astro';
+import TextBlock from './text-block.astro';
+import TextHeading from './text-heading.astro';
+import BlockQuote from './block-quote.astro';
 
 interface Props {
     paragraph: ParagraphType;
@@ -15,9 +20,34 @@ const { paragraph, language } = Astro.props;
 
 const id = getUrlFragment(paragraph.semanticPath, false, language).fragment;
 const childContent = getAllChildContent(paragraph);
+
+const firstChildIsTextBlock = isTextBlock(childContent[0]);
 ---
 
-<div {id} class="space-y-2">
-    <span class="relative font-sans font-bold text-stone-500">{paragraph.paragraphNumber}</span>
-    <ContentBaseArray content={childContent} {language} />
+<div {id} class="mb-4">
+    {!firstChildIsTextBlock && <ParagraphNumber paragraphNumber={paragraph.paragraphNumber} />}
+
+    {
+        childContent.map((c, index) => {
+            if (isParagraphSubitemContainer(c)) {
+                return (
+            <ParagraphSubitemContainer paragraphSubitemContainer={c} {language} />
+        );
+            } else if (isTextHeading(c)) {
+                return (
+            <TextHeading textHeading={c} />
+        );
+            } else if (isTextBlock(c)) {
+                return (
+            <TextBlock textBlock={c} {language} paragraphNumber={index === 0 ? paragraph.paragraphNumber : undefined} />
+        );
+            } else if (isBlockQuote(c)) {
+                return (
+            <BlockQuote blockQuote={c} {language} />
+        );
+            }
+
+            return <UnknownContent content={c} />;
+        })
+    }
 </div>

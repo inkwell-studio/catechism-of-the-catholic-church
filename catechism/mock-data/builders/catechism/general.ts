@@ -1,5 +1,3 @@
-import { getContentTitle } from '@artifacts/derivative/builders/utils.ts';
-
 import { getLimits } from '../../config/limits.ts';
 import { Probability } from '../../config/probability.ts';
 import { chance, indexLimits, randomBoolean, randomInt } from '../../utils.ts';
@@ -8,6 +6,7 @@ import {
     BibleBook,
     BibleReference,
     Content,
+    DEFAULT_LANGUAGE,
     Language,
     NumberOrNumberRange,
     OtherReference,
@@ -19,10 +18,10 @@ import {
 
 export function getTitleText(contentType: Content, num: number): string {
     const language = getLanguage();
-    if (Language.ENGLISH === language) {
+    if (DEFAULT_LANGUAGE === language) {
         return getMockTitle(contentType, num);
     } else {
-        return getContentTitle(language, contentType) + ' ' + num;
+        return getMockTitle(contentType, num) + ` (${language})`;
     }
 }
 
@@ -153,6 +152,13 @@ function getPointersSpanish(): Array<string | null> {
 function getMockTitle(contentType: Content, num: number): string {
     const allTitles: Record<Content, Array<string>> = {
         [Content.PROLOGUE]: ['Prologue'],
+        [Content.PROLOGUE_SECTION]: [
+            'Desert',
+            'Forest',
+            'Prairie Grass',
+            'Tropic',
+            'Ocean',
+        ],
         [Content.PART]: [
             'Winter and Summer',
             'A Warm Day in Spring',

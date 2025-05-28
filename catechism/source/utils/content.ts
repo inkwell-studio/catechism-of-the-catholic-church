@@ -21,6 +21,7 @@ import {
     Part,
     PathID,
     Prologue,
+    PrologueSection,
     Reference,
     ReferenceBase,
     ReferenceEnum,
@@ -129,6 +130,11 @@ export function getAllSemanticPaths(catechism: CatechismStructure): Array<Semant
     const content = getAllContent(catechism);
     return getAllOfProperty<SemanticPath>('semanticPath', content);
 }
+
+export function getAllRanks(catechism: CatechismStructure): Array<number> {
+    const content = getAllContent(catechism);
+    return getAllOfProperty<number>('rank', content);
+}
 //#endregion
 
 //#region General retrieval helpers
@@ -179,17 +185,34 @@ export function getAll<T extends ContentBase>(allContent: Array<ContentBase>, co
 }
 
 export function getAllOfProperty<T>(propertyName: keyof ContentBase, allContent: Array<ContentBase>): Array<T> {
+    return getAllContentBaseItemsFromList(allContent).map((c) => c[propertyName] as T);
+}
+
+/**
+ * @returns an ordered list of all `ContentBase` items within `catechism`.
+ * Items are according to a depth-first traversal of `catechism`,
+ * which results in the following for the returned list of content:
+ * - parents precede their children
+ * - children precede siblings
+ * - siblings appear in-order
+ */
+export function getAllContentBaseItems(catechism: CatechismStructure): Array<ContentBase> {
+    const allContent = getAllContent(catechism);
+    return getAllContentBaseItemsFromList(allContent);
+}
+
+export function getAllContentBaseItemsFromList(allContent: Array<ContentBase>): Array<ContentBase> {
     return allContent.flatMap((content) => helper(content));
 
-    function helper(content: ContentBase): Array<T> {
+    function helper(content: ContentBase): Array<ContentBase> {
         if (hasMainContent(content)) {
             const children = getAllChildContent(content);
             return [
-                content[propertyName] as T,
+                content,
                 ...children.flatMap((child) => helper(child)),
             ];
         } else {
-            return [content[propertyName] as T];
+            return [content];
         }
     }
 }
@@ -263,6 +286,10 @@ export function isPart(c: ContentBase): c is Part {
 }
 export function isPrologue(c: ContentBase): c is Prologue {
     return Content.PROLOGUE === c.contentType;
+}
+
+export function isPrologueSection(c: ContentBase): c is PrologueSection {
+    return Content.PROLOGUE_SECTION === c.contentType;
 }
 
 // deno-lint-ignore no-explicit-any

@@ -18,9 +18,14 @@ export function buildSection(sectionNumber: number): Section {
 
     return {
         contentType: Content.SECTION,
-        pathID: `${sectionNumber}`,
+        // This will be set later, after all content is created
+        pathID: '0',
         // This will be set later, after all content is created
         semanticPath: '',
+        // This will be set later, after all content is created
+        naturalLanguagePath: [],
+        // This will be set later, after all content is created
+        rank: 0,
         sectionNumber,
         title: getTitleText(Content.SECTION, sectionNumber),
         openingContent,

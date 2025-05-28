@@ -1,0 +1,71 @@
+---
+import { DEFAULT_LANGUAGE, Language } from '@catechism-types';
+
+import { path } from '@logic/navigation-utils';
+import { ElementClass, ElementID } from '@logic/ui';
+
+interface Props {
+    url: string;
+    language: Language;
+}
+
+const { url, language } = Astro.props;
+
+// deno-fmt-ignore
+const clientUrl = url
+    ? DEFAULT_LANGUAGE === language
+        ? path(url)
+        : path(language, url)
+    : null;
+
+// deno-fmt-ignore
+const contentUrl = clientUrl
+    ? path('/partials/infinite-scroll/backward/initial', clientUrl)
+    : null;
+---
+
+<script>
+    import { prefetch } from 'astro:prefetch';
+    import { defineElement } from '@logic/custom-elements';
+    import { onMouseover } from '@logic/dom-utils';
+
+    class InfiniteScrollBackwardActivator extends HTMLElement {
+        constructor() {
+            super();
+        }
+
+        connectedCallback() {
+            onMouseover(this, () => prefetch(this.dataset.contentUrl));
+        }
+    }
+
+    defineElement('infinite-scroll-backward-activator', InfiniteScrollBackwardActivator);
+</script>
+
+{
+    contentUrl && (
+        <infinite-scroll-backward-activator data-content-url={contentUrl}>
+            <button
+                type="button"
+                class="flex bg-sky-700 text-white p-4 pt-6 rounded-lg cursor-pointer"
+                hx-trigger="click"
+                hx-get={contentUrl}
+                hx-swap="outerHTML"
+                hx-target={ElementID.INFINITE_SCROLL_BACKWARD_INITIAL_TARGET_SELECTOR}
+                hx-select={ElementClass.CATECHISM_CONTENT_BLOCK_SELECTOR}
+            >
+                {/* from https://heroicons.com/ : chevron-up */}
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="2.5"
+                    stroke="currentColor"
+                    class="size-6"
+                >
+                    <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 15.75 7.5-7.5 7.5 7.5" />
+                </svg>
+            </button>
+        </infinite-scroll-backward-activator>
+    )
+}

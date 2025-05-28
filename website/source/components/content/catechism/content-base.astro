@@ -12,6 +12,7 @@ import {
     isParagraphSubitemContainer,
     isPart,
     isPrologue,
+    isPrologueSection,
     isSection,
     isSubarticle,
     isTextBlock,
@@ -30,6 +31,7 @@ import ParagraphSubitem from './paragraph-subitem.astro';
 import Paragraph from './paragraph.astro';
 import Part from './part.astro';
 import Prologue from './prologue.astro';
+import PrologueSection from './prologue-section.astro';
 import Section from './section.astro';
 import Subarticle from './subarticle.astro';
 import TextBlock from './text-block.astro';
@@ -69,6 +71,8 @@ const isUnknownContent = !Object.values(ContentEnum).includes(content.contentTyp
 {isPart(content) && <Part part={content} {language} />}
 
 {isPrologue(content) && <Prologue prologue={content} {language} />}
+
+{isPrologueSection(content) && <PrologueSection prologueSection={content} {language} />}
 
 {isSection(content) && <Section section={content} {language} />}
 

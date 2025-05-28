@@ -1,0 +1,16 @@
+---
+import CatechismContent from '@components/content/catechism/catechism-content.astro';
+
+import { getNavigationValues } from '@logic/routing';
+import { ContentRoute, getTableOfContentsRoutes } from '@pages/_routes';
+
+export const partial = true;
+
+export function getStaticPaths(): Promise<Array<ContentRoute>> {
+    return getTableOfContentsRoutes();
+}
+
+const { pathID, language } = await getNavigationValues(Astro.params.path);
+---
+
+<CatechismContent {pathID} {language} firstContent={false} infiniteScrollDirection="forward" />
