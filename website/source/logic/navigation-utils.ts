@@ -3,7 +3,11 @@ import type { SlDropdown } from '@shoelace-types';
 import { show } from './dom-utils.ts';
 import { getParagraphNumber } from './routing.ts';
 import { $showCrossReferencePanel } from './state/cross-reference-panel.ts';
-import { updateReadingAreaIntersectionObservers, validateElementsInReadingArea } from './state/reading-area.ts';
+import {
+    disableHistoryUpdates as disableReadingAreaIntersectableHistoryUpdates,
+    updateReadingAreaIntersectionObservers,
+    validateElementsInReadingArea,
+} from './state/reading-area.ts';
 import { ElementClass, ElementID } from './ui.ts';
 
 type HtmxEvent = Event & {
@@ -73,6 +77,11 @@ export function respondToFirstPageLoad(): void {
  * or if there is no URL hash, auto-scroll to the top of the page.
  */
 function autoScroll(): void {
+    /* Prevent the reading-area intersection observers from updating the browser's history and
+    URL while automatically scrolling on the page, as allowing it results in buggy behavior.
+    1000 milliseconds is merely a best-guess value. */
+    disableReadingAreaIntersectableHistoryUpdates(1000);
+
     const hash = document.location.hash;
     if (hash) {
         document.getElementById(hash.slice(1))?.scrollIntoView();

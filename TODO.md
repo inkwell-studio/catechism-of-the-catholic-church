@@ -1,7 +1,6 @@
 # Tasks to complete now
 
 - [ ] make the UX demo-worthy
-  - [ ] fix auto-scroll/URL-update bug
   - [ ] add some kind of throttle/debounce logic to the URL-updating-observable
         (and/or use `requestAnimationFrame` appropriately)
   - [ ] (if quickly attainable) add a loading indicator to the bottom of the

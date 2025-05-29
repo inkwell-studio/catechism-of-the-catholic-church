@@ -7,6 +7,8 @@ import { ElementClass, ElementID, TableOfContentsTabs } from '@logic/ui.ts';
 import { getPart, isPrologueContent } from '@catechism-utils/path-id.ts';
 
 //#region constants
+let allowHistoryUpdates = true;
+
 let readingAreaIntersectionObservers: Array<IntersectionObserver> = [];
 
 type ContentMetadata = {
@@ -69,13 +71,6 @@ export function watchForReadingAreaLastContentChanges(): void {
     });
 }
 
-export function respondToReadingAreaLastContentChange(contentMetadata: ContentMetadata): void {
-    updateToolbarNaturalLanguagePath(contentMetadata.naturalLanguagePath);
-    updateTableOfContentsView(contentMetadata.pathID);
-
-    globalThis.history.replaceState(null, '', contentMetadata.url);
-}
-
 /**
  * This removes any elements from `$elementsInReadingArea` that are no longer present on the DOM
  */
@@ -86,6 +81,11 @@ export function validateElementsInReadingArea(): void {
     if (presentElements.length !== trackedElements.length) {
         $elementsInReadingArea.set(presentElements);
     }
+}
+
+export function disableHistoryUpdates(duration: number): void {
+    allowHistoryUpdates = false;
+    setTimeout(() => allowHistoryUpdates = true, duration);
 }
 //#endregion
 
@@ -156,6 +156,15 @@ function removeElementsFromReadingArea(elementsToRemove: Array<ContentMetadata>)
 
     if (elementsToKeep.length !== currentElements.length) {
         $elementsInReadingArea.set(elementsToKeep);
+    }
+}
+
+function respondToReadingAreaLastContentChange(contentMetadata: ContentMetadata): void {
+    updateToolbarNaturalLanguagePath(contentMetadata.naturalLanguagePath);
+    updateTableOfContentsView(contentMetadata.pathID);
+
+    if (allowHistoryUpdates) {
+        globalThis.history.replaceState(null, '', contentMetadata.url);
     }
 }
 
