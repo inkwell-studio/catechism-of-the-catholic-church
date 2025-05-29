@@ -3,15 +3,13 @@ import type { SlDropdown } from '@shoelace-types';
 import { show } from './dom-utils.ts';
 import { getParagraphNumber } from './routing.ts';
 import { $showCrossReferencePanel } from './state/cross-reference-panel.ts';
-import { respondToReadingAreaIntersectionEvent } from './state/reading-area.ts';
+import { updateReadingAreaIntersectionObservers, validateElementsInReadingArea } from './state/reading-area.ts';
 import { ElementClass, ElementID } from './ui.ts';
 
 type HtmxEvent = Event & {
     // deno-lint-ignore no-explicit-any
     detail?: any;
 };
-
-let readingAreaIntersectionObservers: Array<IntersectionObserver> = [];
 
 /**
  * @returns a new path constructed constructed from the segments.
@@ -36,17 +34,15 @@ export function path(...segments: Array<string | number>): string {
         .replace(/(?<=.+)\/+$/, '');
 }
 
-export function respondToHtmxEvents(): void {
+export function watchForHtmxEvents(): void {
     document.addEventListener('htmx:afterSwap', (e: HtmxEvent) => {
         if (e?.detail?.successful) {
+            validateElementsInReadingArea();
+            updateReadingAreaIntersectionObservers();
+
             const targetID = e?.detail?.target?.id;
-
-            readingAreaIntersectionObservers = updateReadingAreaIntersectionObservers();
-
-            /*
-            Perform some automated UI actions only when content has been swapped into the main content area,
-            as these are occasions that will have the appearance of navigation events.
-            */
+            /* Perform some automated UI actions only when content has been swapped into the main content area,
+            as these are occasions that will have the appearance of navigation events. */
             if (ElementID.CONTENT_WRAPPER === targetID) {
                 autoScroll();
                 hideNavigationMenu();
@@ -60,7 +56,7 @@ export function respondToHtmxEvents(): void {
     });
 }
 
-export function respondToNavigationEvents(): void {
+export function respondToFirstPageLoad(): void {
     /*
     Scroll to the paragraph number at the end of the URL only when the page
     is initially loaded (not on a refresh or back/forward navigation event)
@@ -70,30 +66,6 @@ export function respondToNavigationEvents(): void {
     if (initialLoad) {
         scrollToParagraphNumberFromUrl();
     }
-}
-
-/**
- * This disconnects all intersection observers for the reading area, then creates, initializes, and returns a new list of new observers.
- * This must be invoked whenever new content that is meant to be observed for intersections is added to the DOM (including the initial page load).
- */
-export function updateReadingAreaIntersectionObservers(): Array<IntersectionObserver> {
-    readingAreaIntersectionObservers.forEach((o) => o.disconnect());
-    const newObservers: Array<IntersectionObserver> = [];
-
-    const observerOptions = {
-        root: null,
-        rootMargin: '0px 0px -40% 0px',
-        threshold: 0,
-    };
-
-    const triggers = document.querySelectorAll(ElementClass.READING_AREA_INTERSECTABLE_SELECTOR);
-    triggers.forEach((trigger) => {
-        const observer = new IntersectionObserver(respondToReadingAreaIntersectionEvent, observerOptions);
-        observer.observe(trigger);
-        newObservers.push(observer);
-    });
-
-    return newObservers;
 }
 
 /**

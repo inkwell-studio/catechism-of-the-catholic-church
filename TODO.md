@@ -1,7 +1,6 @@
 # Tasks to complete now
 
 - [ ] make the UX demo-worthy
-  - [ ] fix navigate-by-cross-reference/URL-no-update bug
   - [ ] fix auto-scroll/URL-update bug
   - [ ] add some kind of throttle/debounce logic to the URL-updating-observable
         (and/or use `requestAnimationFrame` appropriately)
@@ -27,6 +26,9 @@
         browser-chrome-collapsing on mobile browsers
   - [ ] make everything work on mobile browsers
   - [ ] finalize element sizes and arrangment
+    - [ ] fix the toolbar styling so that no parts of it are an "empty" element
+          that takes up space and prevents the mouse "click-throughs" to
+          elements "underneath" it
     - [ ] update text sizes so `text-base` is the current `text-lg` value
   - [ ] finalize colors
     - [ ] light (default) mode

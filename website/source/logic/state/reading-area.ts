@@ -3,10 +3,12 @@ import { atom, computed } from 'nanostores';
 
 import { PathID } from '@catechism-types';
 
-import { ElementID, TableOfContentsTabs } from '@logic/ui.ts';
+import { ElementClass, ElementID, TableOfContentsTabs } from '@logic/ui.ts';
 import { getPart, isPrologueContent } from '@catechism-utils/path-id.ts';
 
 //#region constants
+let readingAreaIntersectionObservers: Array<IntersectionObserver> = [];
+
 type ContentMetadata = {
     naturalLanguagePath: string;
     pathID: PathID;
@@ -34,21 +36,64 @@ const $readingAreaLastContent = computed($elementsInReadingArea, (elements) => {
 //#endregion
 
 //#region functions
-export function respondToReadingAreaLastContentChanges(): void {
+//#region public
+/**
+ * This disconnects all intersection observers for the reading area, then creates, initializes, and returns a new list of new observers.
+ * This must be invoked whenever new content that is meant to be observed for intersections is added to the DOM (including the initial page load).
+ */
+export function updateReadingAreaIntersectionObservers(): void {
+    readingAreaIntersectionObservers.forEach((o) => o.disconnect());
+    const newObservers: Array<IntersectionObserver> = [];
+
+    const observerOptions = {
+        root: null,
+        rootMargin: '0px 0px -40% 0px',
+        threshold: 0,
+    };
+
+    const triggers = document.querySelectorAll(ElementClass.READING_AREA_INTERSECTABLE_SELECTOR);
+    triggers.forEach((trigger) => {
+        const observer = new IntersectionObserver(respondToReadingAreaIntersectionEvent, observerOptions);
+        observer.observe(trigger);
+        newObservers.push(observer);
+    });
+
+    readingAreaIntersectionObservers = newObservers;
+}
+
+export function watchForReadingAreaLastContentChanges(): void {
     $readingAreaLastContent.subscribe((contentMetadata) => {
         if (contentMetadata) {
-            updateToolbarNaturalLanguagePath(contentMetadata.naturalLanguagePath);
-            updateTableOfContentsView(contentMetadata.pathID);
-
-            globalThis.history.replaceState(null, '', contentMetadata.url);
+            respondToReadingAreaLastContentChange(contentMetadata);
         }
     });
 }
 
-export function respondToReadingAreaIntersectionEvent(entries: Array<IntersectionObserverEntry>, _observer: IntersectionObserver): void {
+export function respondToReadingAreaLastContentChange(contentMetadata: ContentMetadata): void {
+    updateToolbarNaturalLanguagePath(contentMetadata.naturalLanguagePath);
+    updateTableOfContentsView(contentMetadata.pathID);
+
+    globalThis.history.replaceState(null, '', contentMetadata.url);
+}
+
+/**
+ * This removes any elements from `$elementsInReadingArea` that are no longer present on the DOM
+ */
+export function validateElementsInReadingArea(): void {
+    const trackedElements = $elementsInReadingArea.get();
+    const presentElements = trackedElements.filter((e) => !!document.querySelector(`[data-path-id="${e.pathID}"]`));
+
+    if (presentElements.length !== trackedElements.length) {
+        $elementsInReadingArea.set(presentElements);
+    }
+}
+//#endregion
+
+//#region private
+function respondToReadingAreaIntersectionEvent(entries: Array<IntersectionObserverEntry>, _observer: IntersectionObserver): void {
     const contentInside = entries
         .filter((e) => e.isIntersecting)
-        .map(getContentMetadata)
+        .map(getMetadata)
         .filter((value) => !!value);
 
     if (contentInside.length > 0) {
@@ -57,14 +102,14 @@ export function respondToReadingAreaIntersectionEvent(entries: Array<Intersectio
 
     const contentOutside = entries
         .filter((e) => !e.isIntersecting)
-        .map(getContentMetadata)
+        .map(getMetadata)
         .filter((value) => !!value);
 
     if (contentOutside.length > 0) {
         removeElementsFromReadingArea(contentOutside);
     }
 
-    function getContentMetadata(entry: IntersectionObserverEntry): ContentMetadata | null {
+    function getMetadata(entry: IntersectionObserverEntry): ContentMetadata | null {
         const naturalLanguagePath = entry.target.attributes.getNamedItem('data-natural-language-path')?.value ?? null;
         const pathID = entry.target.attributes.getNamedItem('data-path-id')?.value ?? null;
         const url = entry.target.attributes.getNamedItem('data-url')?.value ?? null;
@@ -98,7 +143,7 @@ function removeElementsFromReadingArea(elementsToRemove: Array<ContentMetadata>)
     const currentElements = $elementsInReadingArea.get();
 
     const elementsToKeep = currentElements.filter((currentElement) =>
-        !elementsToRemove.map((etr) => etr.rank).includes(currentElement.rank)
+        !elementsToRemove.map((etr) => etr.pathID).includes(currentElement.pathID)
     );
 
     if (elementsToKeep.length === 0) {
@@ -150,4 +195,5 @@ function updateToolbarNaturalLanguagePath(text?: string): void {
         }
     }
 }
+//#endregion
 //#endregion
