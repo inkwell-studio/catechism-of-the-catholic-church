@@ -23,9 +23,10 @@ const naturalLanguagePath = getNaturalLanguagePathText(content.naturalLanguagePa
 
 <div
     class:list={[ElementClass.READING_AREA_INTERSECTABLE, classes]}
-    data-url={url}
-    data-rank={content.rank}
     data-natural-language-path={naturalLanguagePath}
+    data-path-id={content.pathID}
+    data-rank={content.rank}
+    data-url={url}
     {...rest}
 >
     <slot />

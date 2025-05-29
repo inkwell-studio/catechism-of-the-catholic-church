@@ -7,6 +7,7 @@ import MainContentEntry from './main-content-entry.astro';
 import { getRomanNumeral } from '@components/utils';
 import { getTableOfContents } from '@logic/artifacts';
 import { translate as t } from '@logic/translation';
+import { ElementID, TableOfContentsTabs as Tabs } from '@logic/ui';
 
 interface Props {
     language: Language;
@@ -14,17 +15,14 @@ interface Props {
 
 const { language } = Astro.props;
 
+const PartPanels = [
+    Tabs.MAIN_CONTENT_PART_1,
+    Tabs.MAIN_CONTENT_PART_2,
+    Tabs.MAIN_CONTENT_PART_3,
+    Tabs.MAIN_CONTENT_PART_4,
+];
+
 const tableOfContents = await getTableOfContents(language);
-
-const Tabs = {
-    PROLOGUE: 'progloue',
-};
-
-tableOfContents.parts.forEach((_part, i) => Tabs[getPartTabName(i)] = getPartTabName(i));
-
-function getPartTabName(partIndex: number): string {
-    return `part-${partIndex + 1}`;
-}
 ---
 <script>
     import '@shoelace/tab/tab.js';
@@ -32,12 +30,11 @@ function getPartTabName(partIndex: number): string {
     import '@shoelace/tab-panel/tab-panel.js';
 </script>
 
-<sl-tab-group>
-    <sl-tab slot="nav" panel={Tabs.PROLOGUE}>{t('Prologue', language)}</sl-tab>
+<sl-tab-group id={ElementID.TABLE_OF_CONTENTS_MAIN_CONTENT_TAB_GROUP}>
+    <sl-tab slot="nav" panel={Tabs.MAIN_CONTENT_PROLOGUE}>{t('Prologue', language)}</sl-tab>
+    {PartPanels.map((partPanel, i) => <sl-tab slot="nav" panel={partPanel}>{getRomanNumeral(i + 1)}</sl-tab>)}
 
-    {tableOfContents.parts.map((_part, i) => <sl-tab slot="nav" panel={getPartTabName(i)}>{getRomanNumeral(i + 1)}</sl-tab>)}
-
-    <sl-tab-panel name={Tabs.PROLOGUE}>
+    <sl-tab-panel name={Tabs.MAIN_CONTENT_PROLOGUE}>
         <h1 class="text-sm font-title font-bold tracking-widest uppercase">
             <PartialContentLink url={tableOfContents.prologue.url} {language}>
                 {t('Prologue', language)}
@@ -58,7 +55,7 @@ function getPartTabName(partIndex: number): string {
 
     {
         tableOfContents.parts.map((part, i) => (
-            <sl-tab-panel name={getPartTabName(i)}>
+            <sl-tab-panel name={PartPanels[i]}>
                 <PartialContentLink url={part.url} {language}>
                     <h1 class="text-sm font-title font-bold tracking-widest uppercase mb-3">
                         {part.title}

@@ -22,6 +22,14 @@ export function isPrologueContent(pathID: PathID): boolean {
     return pathID[0] === '0';
 }
 
+/**
+ * @returns the number of the Part that `pathID` specifies, or `null` if it specifies content outside of a Part
+ */
+export function getPart(pathID: PathID): number | null {
+    const topNumber = getTopNumber(pathID);
+    return topNumber > 0 ? topNumber : null;
+}
+
 export function hasChildren(pathID: PathID): boolean {
     return pathID.includes('__');
 }

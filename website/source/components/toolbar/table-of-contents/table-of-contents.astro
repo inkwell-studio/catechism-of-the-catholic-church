@@ -7,7 +7,7 @@ import Preface from './sections/preface.astro';
 import { DEFAULT_LANGUAGE, Language } from '@catechism-types';
 
 import { translate as t } from '@logic/translation';
-import { ElementID } from '@logic/ui';
+import { ElementID, TableOfContentsTabs as Tabs } from '@logic/ui';
 
 interface Props {
     language: Language;
@@ -19,13 +19,6 @@ const { language } = Astro.props;
 const homeUrl = DEFAULT_LANGUAGE === language
     ? '/'
     : `/${language}`
-
-enum Tabs {
-    PREFACE = 'preface',
-    MAIN_CONTENT = 'main-content',
-    GLOSSARY = 'glossary',
-    INDEX = 'index',
-}
 ---
 
 <script>
@@ -34,19 +27,14 @@ enum Tabs {
     import '@shoelace/tab-group/tab-group.js';
     import '@shoelace/tab-panel/tab-panel.js';
 
-    import { ElementID } from '@logic/ui';
+    import { shoelaceInitialized } from '@logic/custom-elements';
+    import { ElementID, TableOfContentsTabs as Tabs } from '@logic/ui';
+
+    await shoelaceInitialized();
 
     // Select the "Content" tab by default
-    await Promise.all(
-        [
-            customElements.whenDefined('sl-tab-group'),
-            customElements.whenDefined('sl-tab-panel'),
-            customElements.whenDefined('sl-tab'),
-        ],
-    );
     const tabPanel: SlTabGroup | null = document.querySelector(ElementID.TABLE_OF_CONTENTS_TOP_TAB_GROUP_SELECTOR);
-    // This must match the value of `Tabs.MAIN_CONTENT` above
-    tabPanel?.show('main-content');
+    tabPanel?.show(Tabs.MAIN_CONTENT);
 </script>
 
 <nav class="bg-white text-stone-950 rounded-xl shadow-xl border-b border-stone-200">

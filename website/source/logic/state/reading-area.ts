@@ -1,16 +1,22 @@
+import type { SlTabGroup } from '@shoelace-types';
 import { atom, computed } from 'nanostores';
-import { ElementID } from '@logic/ui.ts';
+
+import { PathID } from '@catechism-types';
+
+import { ElementID, TableOfContentsTabs } from '@logic/ui.ts';
+import { getPart, isPrologueContent } from '@catechism-utils/path-id.ts';
 
 //#region constants
 type ContentMetadata = {
     naturalLanguagePath: string;
-    url: string;
+    pathID: PathID;
     rank: number;
+    url: string;
 };
 
 const $elementsInReadingArea = atom<Array<ContentMetadata>>([]);
 
-const $lastReadingAreaContent = computed($elementsInReadingArea, (elements) => {
+const $readingAreaLastContent = computed($elementsInReadingArea, (elements) => {
     if (elements.length === 0) {
         return null;
     }
@@ -25,16 +31,20 @@ const $lastReadingAreaContent = computed($elementsInReadingArea, (elements) => {
                 : 0;
     })[0];
 });
-
-$lastReadingAreaContent.subscribe((contentMetadata) => {
-    if (contentMetadata) {
-        updateToolbarNaturalLanguagePath(contentMetadata.naturalLanguagePath);
-        globalThis.history.replaceState(null, '', contentMetadata.url);
-    }
-});
 //#endregion
 
 //#region functions
+export function respondToReadingAreaLastContentChanges(): void {
+    $readingAreaLastContent.subscribe((contentMetadata) => {
+        if (contentMetadata) {
+            updateToolbarNaturalLanguagePath(contentMetadata.naturalLanguagePath);
+            updateTableOfContentsView(contentMetadata.pathID);
+
+            globalThis.history.replaceState(null, '', contentMetadata.url);
+        }
+    });
+}
+
 export function respondToReadingAreaIntersectionEvent(entries: Array<IntersectionObserverEntry>, _observer: IntersectionObserver): void {
     const contentInside = entries
         .filter((e) => e.isIntersecting)
@@ -56,16 +66,18 @@ export function respondToReadingAreaIntersectionEvent(entries: Array<Intersectio
 
     function getContentMetadata(entry: IntersectionObserverEntry): ContentMetadata | null {
         const naturalLanguagePath = entry.target.attributes.getNamedItem('data-natural-language-path')?.value ?? null;
+        const pathID = entry.target.attributes.getNamedItem('data-path-id')?.value ?? null;
         const url = entry.target.attributes.getNamedItem('data-url')?.value ?? null;
 
         const rankRaw = entry.target.attributes.getNamedItem('data-rank')?.value ?? null;
         const rank = rankRaw ? Number(rankRaw) : null;
 
-        if (naturalLanguagePath && url && rank) {
+        if (naturalLanguagePath && pathID && url && rank) {
             return {
                 naturalLanguagePath,
-                url,
+                pathID,
                 rank,
+                url,
             };
         } else {
             return null;
@@ -100,6 +112,34 @@ function removeElementsFromReadingArea(elementsToRemove: Array<ContentMetadata>)
     if (elementsToKeep.length !== currentElements.length) {
         $elementsInReadingArea.set(elementsToKeep);
     }
+}
+
+function updateTableOfContentsView(pathID: PathID): void {
+    const topTabPanel: SlTabGroup | null = document.querySelector(ElementID.TABLE_OF_CONTENTS_TOP_TAB_GROUP_SELECTOR);
+    if (!topTabPanel) return;
+    topTabPanel.show(TableOfContentsTabs.MAIN_CONTENT);
+
+    const childTabPanel: SlTabGroup | null = document.querySelector(ElementID.TABLE_OF_CONTENTS_MAIN_CONTENT_TAB_GROUP_SELECTOR);
+    if (!childTabPanel) return;
+
+    let panel: TableOfContentsTabs | null = null;
+    if (isPrologueContent(pathID)) {
+        panel = TableOfContentsTabs.MAIN_CONTENT_PROLOGUE;
+    } else {
+        const part = getPart(pathID);
+        if (1 === part) {
+            panel = TableOfContentsTabs.MAIN_CONTENT_PART_1;
+        } else if (2 === part) {
+            panel = TableOfContentsTabs.MAIN_CONTENT_PART_2;
+        } else if (3 === part) {
+            panel = TableOfContentsTabs.MAIN_CONTENT_PART_3;
+        } else if (4 === part) {
+            panel = TableOfContentsTabs.MAIN_CONTENT_PART_4;
+        }
+    }
+
+    if (!panel) return;
+    childTabPanel.show(panel);
 }
 
 function updateToolbarNaturalLanguagePath(text?: string): void {

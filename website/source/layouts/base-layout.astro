@@ -73,12 +73,14 @@ const isHomePage = '/' === removeLanguageTag(Astro.url.pathname, language);
                 respondToNavigationEvents,
                 updateReadingAreaIntersectionObservers,
             } from '@logic/navigation-utils';
+            import { respondToReadingAreaLastContentChanges } from '@logic/state/reading-area';
             import { respondToThemeChanges } from '@logic/state/theme';
 
             updateReadingAreaIntersectionObservers();
             respondToNavigationEvents();
             respondToHtmxEvents();
             respondToThemeChanges();
+            respondToReadingAreaLastContentChanges();
         </script>
         <script src="/htmx.min.js" is:inline></script>
     </head>

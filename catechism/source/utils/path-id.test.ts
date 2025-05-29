@@ -6,6 +6,7 @@ import {
     getContainerDesignator,
     getContainerInfo,
     getLeafPathIdNumber,
+    getPart,
     getPartialDescendentPathID,
     getRoot,
     getTopNumber,
@@ -72,6 +73,18 @@ Deno.test('isPrologueContent(): Prologue content', () => {
 Deno.test('isPrologueContent(): non-Prologue content', () => {
     const tests = ['1', '1__o.0', '2__o.3', '3__m.0', '4__m.3'];
     tests.forEach((pathID) => assert(!isPrologueContent(pathID), `PathID ${pathID} should not be considered as Prologue content`));
+});
+
+Deno.test('getPart(): Part content', () => {
+    const tests = ['2', '2__o.0', '2__o.3', '2__m.0', '2__m.3'];
+    tests.forEach((pathID) => assertStrictEquals(getPart(pathID), 2, `PathID ${pathID} should be considered as being within Part 2`));
+});
+
+Deno.test('getPart(): non-Part content', () => {
+    const tests = ['0', '0__o.0', '0__o.3', '0__m.0', '0__m.3'];
+    tests.forEach((pathID) =>
+        assertStrictEquals(getPart(pathID), null, `PathID ${pathID} should be not be considered as being within a Part`)
+    );
 });
 
 Deno.test('hasChildren(): has children', () => {

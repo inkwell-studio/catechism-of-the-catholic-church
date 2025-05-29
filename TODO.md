@@ -1,10 +1,13 @@
 # Tasks to complete now
 
 - [ ] make the UX demo-worthy
-  - [ ] (if quickly attainable) have the toolbar table-of-contents menu update
-        as the user scrolls (i.e. where the menu is open to when it opens)
+  - [ ] fix navigate-by-cross-reference/URL-no-update bug
+  - [ ] fix auto-scroll/URL-update bug
+  - [ ] add some kind of throttle/debounce logic to the URL-updating-observable
+        (and/or use `requestAnimationFrame` appropriately)
   - [ ] (if quickly attainable) add a loading indicator to the bottom of the
         infinite-scroll content
+  - [ ] fix natural-language-path toolbar text updates on non-main-content pages
   - [ ] implement the homepage
   - [ ] add a "project introduction" page
   - [ ] add an "about/legal" page
