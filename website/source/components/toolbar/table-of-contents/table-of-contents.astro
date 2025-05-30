@@ -1,13 +1,13 @@
 ---
-import Glossary from './sections/glossary.astro';
-import Index from './sections/index.astro';
-import MainContent from './sections/main-content/main-content.astro';
-import Preface from './sections/preface.astro';
+import Auxiliary from './section/auxiliary.astro';
+import MainContent from './section/main-content.astro';
+import Panel from './section/panel.astro';
 
 import { DEFAULT_LANGUAGE, Language } from '@catechism-types';
 
+import { getTableOfContents } from '@logic/artifacts';
 import { translate as t } from '@logic/translation';
-import { ElementID, TableOfContentsTabs as Tabs } from '@logic/ui';
+import { ElementID, TableOfContentsSection } from '@logic/ui';
 
 interface Props {
     language: Language;
@@ -19,50 +19,95 @@ const { language } = Astro.props;
 const homeUrl = DEFAULT_LANGUAGE === language
     ? '/'
     : `/${language}`
----
 
+const tabs = [
+    [TableOfContentsSection.PROLOGUE, 'Prologue'],
+    [TableOfContentsSection.PART_1, 'I'],
+    [TableOfContentsSection.PART_2, 'II'],
+    [TableOfContentsSection.PART_3, 'III'],
+    [TableOfContentsSection.PART_4, 'IV'],
+    [TableOfContentsSection.AUXILIARY, 'More'],
+];
+
+const tableOfContents = await getTableOfContents(language);
+---
 <script>
-    import type { SlTabGroup } from '@shoelace-types';
     import '@shoelace/tab/tab.js';
     import '@shoelace/tab-group/tab-group.js';
-    import '@shoelace/tab-panel/tab-panel.js';
-
-    import { shoelaceInitialized } from '@logic/custom-elements';
-    import { ElementID, TableOfContentsTabs as Tabs } from '@logic/ui';
-
-    await shoelaceInitialized();
-
-    // Select the "Content" tab by default
-    const tabPanel: SlTabGroup | null = document.querySelector(ElementID.TABLE_OF_CONTENTS_TOP_TAB_GROUP_SELECTOR);
-    tabPanel?.show(Tabs.MAIN_CONTENT);
 </script>
 
-<nav class="bg-white text-stone-950 rounded-xl shadow-xl border-b border-stone-200">
-    <div>
-        <a href={homeUrl}>{t('Home', language)}</a>
+<style>
+    sl-tab-group {
+        --indicator-color: var(--color-sky-600);
+        --track-color: var(--color-stone-100);
+        --track-width: 0.25rem;
+    }
+
+    sl-tab-group::part(nav) {
+        background-color: var(--color-stone-100);
+        border-top: solid 1px var(--color-stone-200);
+    }
+
+    sl-tab-group::part(tabs) {
+        max-width: fit-content;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    sl-tab::part(base) {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+</style>
+
+<nav class="bg-white text-stone-950 rounded-md shadow-2xl border-b border-stone-200">
+    <div class="flex bg-sky-700 text-stone-50 rounded-t-md">
+        <a href={homeUrl} class="flex items-center gap-2 py-3 px-2">
+            <!-- from https://heroicons.com/ : language -->
+            <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="2"
+                stroke="currentColor"
+                class="size-5"
+            >
+                <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="m2.25 12 8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25"
+                />
+            </svg>
+            <span class="text-sm">
+                {t('Home', language)}
+            </span>
+        </a>
     </div>
-    <div class="flex">
-        <sl-tab-group id={ElementID.TABLE_OF_CONTENTS_TOP_TAB_GROUP} placement="start">
-            <sl-tab slot="nav" panel={Tabs.PREFACE}>{t('Preface', language)}</sl-tab>
-            <sl-tab slot="nav" panel={Tabs.MAIN_CONTENT}>{t('Content', language)}</sl-tab>
-            <sl-tab slot="nav" panel={Tabs.GLOSSARY}>{t('Glossary', language)}</sl-tab>
-            <sl-tab slot="nav" panel={Tabs.INDEX}>{t('Index', language)}</sl-tab>
 
-            <sl-tab-panel name={Tabs.PREFACE}>
-                <Preface />
-            </sl-tab-panel>
+    <sl-tab-group id={ElementID.TABLE_OF_CONTENTS_TAB_GROUP} placement="bottom">
+        <!-- tabs -->
+        {tabs.map(([section, label]) => <sl-tab slot="nav" panel={section} class="text-center">{label}</sl-tab>)}
 
-            <sl-tab-panel name={Tabs.MAIN_CONTENT}>
-                <MainContent {language} />
-            </sl-tab-panel>
+        <!-- panels -->
+        <Panel section={TableOfContentsSection.PROLOGUE}>
+            <MainContent content={tableOfContents.prologue} {language} />
+        </Panel>
 
-            <sl-tab-panel name={Tabs.GLOSSARY}>
-                <Glossary />
-            </sl-tab-panel>
+        {
+            [
+                TableOfContentsSection.PART_1,
+                TableOfContentsSection.PART_2,
+                TableOfContentsSection.PART_3,
+                TableOfContentsSection.PART_4,
+            ].map((section, i) => (
+                <Panel {section}>
+                    <MainContent content={tableOfContents.parts[i]} {language} />
+                </Panel>
+            ))
+        }
 
-            <sl-tab-panel name={Tabs.INDEX}>
-                <Index />
-            </sl-tab-panel>
-        </sl-tab-group>
-    </div>
+        <Panel section={TableOfContentsSection.AUXILIARY}>
+            <Auxiliary />
+        </Panel>
+    </sl-tab-group>
 </nav>

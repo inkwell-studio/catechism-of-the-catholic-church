@@ -21,8 +21,17 @@ const { language, class: classes, ...rest } = Astro.props;
     import '@shoelace/dropdown/dropdown.js';
 </script>
 
+<style>
+    sl-dropdown::part(base__popup) {
+        --margin-x: 1.5rem;
+        width: calc(100vw - var(--margin-x));
+        margin-left: calc(0.5 * var(--margin-x));
+        margin-right: calc(0.5 * var(--margin-x));
+    }
+</style>
+
 <!-- table of contents -->
-<sl-dropdown id={ElementID.TOOLBAR_TABLE_OF_CONTENTS} placement="top-start" distance="12" class={classes} {...rest}>
+<sl-dropdown id={ElementID.TOOLBAR_TABLE_OF_CONTENTS} placement="top" distance="8" class={classes} {...rest}>
     <button slot="trigger" type="button" class="w-full flex items-center gap-4 cursor-pointer">
         <!-- from https://heroicons.com/ : book-open -->
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">

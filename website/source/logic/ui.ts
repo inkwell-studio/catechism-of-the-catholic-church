@@ -13,11 +13,8 @@ export enum ElementID {
 
     LANGUAGE_SWITCHER_WRAPPER = 'language-switcher-wrapper',
 
-    TABLE_OF_CONTENTS_TOP_TAB_GROUP = 'table-of-contents-top-tab-group',
-    TABLE_OF_CONTENTS_TOP_TAB_GROUP_SELECTOR = '#table-of-contents-top-tab-group',
-
-    TABLE_OF_CONTENTS_MAIN_CONTENT_TAB_GROUP = 'table-of-contents-main-content-tab-group',
-    TABLE_OF_CONTENTS_MAIN_CONTENT_TAB_GROUP_SELECTOR = '#table-of-contents-main-content-tab-group',
+    TABLE_OF_CONTENTS_TAB_GROUP = 'table-of-contents-tab-group',
+    TABLE_OF_CONTENTS_TAB_GROUP_SELECTOR = '#table-of-contents-tab-group',
 
     THEME_SELECTOR = 'theme-selector',
     THEME_SELECTOR_SELECTOR = '#theme-selector',
@@ -60,17 +57,11 @@ export enum ElementClass {
     TOOLBAR_TRANSLATE_OFFSCREEN = 'translate-y-full',
 }
 
-export enum TableOfContentsTabs {
-    PREFACE = 'preface',
-
-    MAIN_CONTENT = 'main-content',
-
-    MAIN_CONTENT_PROLOGUE = 'main-content-prologue',
-    MAIN_CONTENT_PART_1 = 'main-content-part-1',
-    MAIN_CONTENT_PART_2 = 'main-content-part-2',
-    MAIN_CONTENT_PART_3 = 'main-content-part-3',
-    MAIN_CONTENT_PART_4 = 'main-content-part-4',
-
-    GLOSSARY = 'glossary',
-    INDEX = 'index',
+export enum TableOfContentsSection {
+    PROLOGUE = 'prologue',
+    PART_1 = 'part-1',
+    PART_2 = 'part-2',
+    PART_3 = 'part-3',
+    PART_4 = 'part-4',
+    AUXILIARY = 'auxiliary',
 }

@@ -1,0 +1,24 @@
+---
+interface Props {
+    section: string;
+}
+
+const { section } = Astro.props;
+---
+
+<script>
+    import '@shoelace/tab-panel/tab-panel.js';
+</script>
+
+<style>
+    sl-tab-panel {
+        --padding: 0;
+    }
+</style>
+
+<sl-tab-panel
+    name={section}
+    class="[--other-elements-total-height:146px] [--desired-gap-top:0.75rem] max-h-[400px] h-[calc(100vh_-_(var(--other-elements-total-height)_+_var(--desired-gap-top)))] px-8"
+>
+    <slot />
+</sl-tab-panel>

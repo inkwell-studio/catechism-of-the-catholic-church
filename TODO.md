@@ -1,10 +1,6 @@
 # Tasks to complete now
 
 - [ ] make the UX demo-worthy
-  - [ ] add some kind of throttle/debounce logic to the URL-updating-observable
-        (and/or use `requestAnimationFrame` appropriately)
-  - [ ] (if quickly attainable) add a loading indicator to the bottom of the
-        infinite-scroll content
   - [ ] fix natural-language-path toolbar text updates on non-main-content pages
   - [ ] implement the homepage
   - [ ] add a "project introduction" page
@@ -32,6 +28,8 @@
   - [ ] finalize colors
     - [ ] light (default) mode
     - [ ] dark mode
+  - [ ] (if quickly attainable) add a loading indicator to the bottom of the
+        infinite-scroll content
 - [ ] make licensing info explicit
 - [ ] clean up `website/source/graphics/home-page/`
   - [ ] remove unused files

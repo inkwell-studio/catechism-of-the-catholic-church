@@ -3,7 +3,7 @@ import { atom, computed } from 'nanostores';
 
 import { PathID } from '@catechism-types';
 
-import { ElementClass, ElementID, TableOfContentsTabs } from '@logic/ui.ts';
+import { ElementClass, ElementID, TableOfContentsSection } from '@logic/ui.ts';
 import { getPart, isPrologueContent } from '@catechism-utils/path-id.ts';
 
 //#region constants
@@ -169,31 +169,23 @@ function respondToReadingAreaLastContentChange(contentMetadata: ContentMetadata)
 }
 
 function updateTableOfContentsView(pathID: PathID): void {
-    const topTabPanel: SlTabGroup | null = document.querySelector(ElementID.TABLE_OF_CONTENTS_TOP_TAB_GROUP_SELECTOR);
-    if (!topTabPanel) return;
-    topTabPanel.show(TableOfContentsTabs.MAIN_CONTENT);
+    const tabGroup: SlTabGroup | null = document.querySelector(ElementID.TABLE_OF_CONTENTS_TAB_GROUP_SELECTOR);
+    if (!tabGroup) return;
 
-    const childTabPanel: SlTabGroup | null = document.querySelector(ElementID.TABLE_OF_CONTENTS_MAIN_CONTENT_TAB_GROUP_SELECTOR);
-    if (!childTabPanel) return;
-
-    let panel: TableOfContentsTabs | null = null;
     if (isPrologueContent(pathID)) {
-        panel = TableOfContentsTabs.MAIN_CONTENT_PROLOGUE;
+        tabGroup.show(TableOfContentsSection.PROLOGUE);
     } else {
         const part = getPart(pathID);
         if (1 === part) {
-            panel = TableOfContentsTabs.MAIN_CONTENT_PART_1;
+            tabGroup.show(TableOfContentsSection.PART_1);
         } else if (2 === part) {
-            panel = TableOfContentsTabs.MAIN_CONTENT_PART_2;
+            tabGroup.show(TableOfContentsSection.PART_2);
         } else if (3 === part) {
-            panel = TableOfContentsTabs.MAIN_CONTENT_PART_3;
+            tabGroup.show(TableOfContentsSection.PART_3);
         } else if (4 === part) {
-            panel = TableOfContentsTabs.MAIN_CONTENT_PART_4;
+            tabGroup.show(TableOfContentsSection.PART_4);
         }
     }
-
-    if (!panel) return;
-    childTabPanel.show(panel);
 }
 
 function updateToolbarNaturalLanguagePath(text?: string): void {
