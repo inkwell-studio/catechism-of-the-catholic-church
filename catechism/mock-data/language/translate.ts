@@ -1,6 +1,6 @@
 import { setLanguage } from './language-state.ts';
 
-import { setSemanticPaths } from '../builders/catechism/catechism.ts';
+import { setNaturalLanguagePaths, setSemanticPaths } from '../builders/catechism/catechism.ts';
 import { getTitleText } from '../builders/catechism/general.ts';
 import { getText } from '../builders/catechism/text-samples.ts';
 
@@ -53,6 +53,7 @@ export function translateCatechism(catechism: Mutable<CatechismStructure>, langu
 
     catechism.language = language;
     catechism = setSemanticPaths(catechism);
+    catechism = setNaturalLanguagePaths(catechism);
 
     getAllContent(catechism).forEach((c: Mutable<ContentContainer>) => {
         c = translateContentBase(c) as Mutable<ContentContainer>;

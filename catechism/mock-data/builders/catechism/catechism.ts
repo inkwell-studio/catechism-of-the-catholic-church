@@ -342,7 +342,7 @@ function setParagraphUrlHelper(content: Array<ContentBase>, language: Language):
     });
 }
 
-function setNaturalLanguagePaths(catechism: CatechismStructure): CatechismStructure {
+export function setNaturalLanguagePaths(catechism: CatechismStructure): CatechismStructure {
     catechism = structuredClone(catechism);
 
     const allContent = getAllContent(catechism);

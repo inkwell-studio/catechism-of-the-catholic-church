@@ -1,8 +1,6 @@
 # Tasks to complete now
 
 - [ ] make the UX demo-worthy
-  - [ ] update the natural-language-path value according to the selected
-        language
   - [ ] update the language-switcher navigation values as the URL is updated
         while scrolling
     - will probably have to be done "manually", without HTMX (or can
