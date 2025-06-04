@@ -3,9 +3,8 @@ import { Language } from '@catechism-types';
 
 import PartialContentLink from '@components/partial-content-link.astro';
 
-import { AuxiliaryRouteKeysByLanguageAndRoute, AuxiliaryRouteLabels } from '@logic/constants';
+import { getAuxiliaryRouteLabel } from '@logic/constants';
 import { removeLanguageTag } from '@logic/routing';
-import { translate } from '@logic/translation';
 
 import { getAuxiliaryRoutes } from '@pages/_routes';
 
@@ -20,11 +19,8 @@ const routes = getAuxiliaryRoutes()
     .map((route) => {
         let { language, path } = route.params;
 
-        path = path.replace('/', '');
         path = removeLanguageTag(path, language);
-        const routeKey = AuxiliaryRouteKeysByLanguageAndRoute[language][path];
-
-        const label = translate(AuxiliaryRouteLabels[routeKey], language);
+        const label = getAuxiliaryRouteLabel(path, language);
 
         return { path, label };
     });

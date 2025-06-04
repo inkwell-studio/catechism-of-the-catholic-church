@@ -1,6 +1,6 @@
 import { BibleBook, Content, Language } from '@catechism-types';
 
-import { AuxiliaryRouteKey, AuxiliaryRouteLabels, CATECHISM_OF_THE_CATHOLIC_CHURCH } from './constants.ts';
+import { CATECHISM_OF_THE_CATHOLIC_CHURCH } from './constants.ts';
 
 export function translate(englishText: string, language: Language): string {
     // deno-fmt-ignore
@@ -301,26 +301,6 @@ const translationMap: Record<string, Record<Exclude<Language, Language.ENGLISH>,
     //#endregion
 
     //#region Content
-    [AuxiliaryRouteLabels[AuxiliaryRouteKey.GLOSSARY]]: {
-        [Language.LATIN]: 'Glossarium',
-        [Language.SPANISH]: 'Glosario',
-    },
-    [AuxiliaryRouteLabels[AuxiliaryRouteKey.INDEX_TOPICS]]: {
-        [Language.LATIN]: 'Index: Topics (Latin)',
-        [Language.SPANISH]: 'Indice: Temas',
-    },
-    [AuxiliaryRouteLabels[AuxiliaryRouteKey.INDEX_CITATIONS]]: {
-        [Language.LATIN]: 'Index: Citationes',
-        [Language.SPANISH]: 'Indice: Cita',
-    },
-    [AuxiliaryRouteLabels[AuxiliaryRouteKey.APOSTOLIC_LETTER]]: {
-        [Language.LATIN]: 'Apostolica',
-        [Language.SPANISH]: 'Carta Apostolica',
-    },
-    [AuxiliaryRouteLabels[AuxiliaryRouteKey.APOSTOLIC_CONSTITUTION]]: {
-        [Language.LATIN]: 'Proponde',
-        [Language.SPANISH]: 'Constitucion Apostolica',
-    },
     [CATECHISM_OF_THE_CATHOLIC_CHURCH]: {
         [Language.LATIN]: 'Catechismus Catholicae Ecclesiae',
         [Language.SPANISH]: 'Catecismo de la Iglesia Católica',

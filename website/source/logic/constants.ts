@@ -1,5 +1,7 @@
 import { Language } from '@catechism-types';
 
+import { removeLanguageTag } from './routing.ts';
+
 export const CATECHISM_OF_THE_CATHOLIC_CHURCH = 'Catechism of the Catholic Church';
 
 export enum AuxiliaryRouteKey {
@@ -30,12 +32,32 @@ enum AuxiliaryRouteValue {
     APOSTOLIC_CONSTITUTION__ES = 'constitucion-apostolica',
 }
 
-export const AuxiliaryRouteLabels: Record<AuxiliaryRouteKey, string> = {
-    [AuxiliaryRouteKey.GLOSSARY]: 'Glossary',
-    [AuxiliaryRouteKey.INDEX_TOPICS]: 'Index: Topics',
-    [AuxiliaryRouteKey.INDEX_CITATIONS]: 'Index: Citations',
-    [AuxiliaryRouteKey.APOSTOLIC_LETTER]: 'Apostolic Letter',
-    [AuxiliaryRouteKey.APOSTOLIC_CONSTITUTION]: 'Apostolic Constitution',
+export const AuxiliaryRouteLabels: Record<AuxiliaryRouteKey, Record<Language, string>> = {
+    [AuxiliaryRouteKey.GLOSSARY]: {
+        [Language.ENGLISH]: 'Glossary',
+        [Language.LATIN]: 'Glossarium',
+        [Language.SPANISH]: 'Glosario',
+    },
+    [AuxiliaryRouteKey.INDEX_TOPICS]: {
+        [Language.ENGLISH]: 'Index: Topics',
+        [Language.LATIN]: 'Index: Topics (Latin)',
+        [Language.SPANISH]: 'Indice: Temas',
+    },
+    [AuxiliaryRouteKey.INDEX_CITATIONS]: {
+        [Language.ENGLISH]: 'Index: Citations',
+        [Language.LATIN]: 'Index: Citationes',
+        [Language.SPANISH]: 'Indice: Cita',
+    },
+    [AuxiliaryRouteKey.APOSTOLIC_LETTER]: {
+        [Language.ENGLISH]: 'Apostolic Letter',
+        [Language.LATIN]: 'Apostolica',
+        [Language.SPANISH]: 'Carta Apostolica',
+    },
+    [AuxiliaryRouteKey.APOSTOLIC_CONSTITUTION]: {
+        [Language.ENGLISH]: 'Apostolic Constitution',
+        [Language.LATIN]: 'Proponde',
+        [Language.SPANISH]: 'Constitucion Apostolica',
+    },
 } as const;
 
 export const AuxiliaryRoutesByKeyAndLanguage: Record<AuxiliaryRouteKey, Record<Language, string>> = {
@@ -97,3 +119,10 @@ export const AuxiliaryRouteKeysByLanguageAndRoute: Record<Language, Record<strin
         [AuxiliaryRouteValue.APOSTOLIC_CONSTITUTION__ES]: AuxiliaryRouteKey.APOSTOLIC_CONSTITUTION,
     },
 };
+
+export function getAuxiliaryRouteLabel(path: string, language: Language): string {
+    path = path.replace('/', '');
+    path = removeLanguageTag(path, language);
+    const key = AuxiliaryRouteKeysByLanguageAndRoute[language][path];
+    return AuxiliaryRouteLabels[key][language];
+}

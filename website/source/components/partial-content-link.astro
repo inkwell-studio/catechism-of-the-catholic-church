@@ -18,7 +18,7 @@ const { language, url, class: classes, ...rest } = Astro.props;
 
 // deno-fmt-ignore
 const clientUrl = DEFAULT_LANGUAGE === language
-    ? path(url)
+    ? path('/', url)
     : path('/', language, url);
 
 /* Remove the hash of the URL, as including it causes a bug when interacting with HTMX,

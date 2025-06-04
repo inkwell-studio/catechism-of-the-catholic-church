@@ -3,6 +3,7 @@ import type { SlTabGroup } from '@shoelace-types';
 import { DEFAULT_LANGUAGE, PathID } from '@catechism-types';
 import { getPart, isPrologueContent } from '@catechism-utils/path-id.ts';
 
+import { getAuxiliaryRouteLabel } from '@logic/constants.ts';
 import { getLanguageFromPathname, isAuxiliaryRoute, removeLanguageTag } from '@logic/routing.ts';
 import { ElementID, TableOfContentsSection } from '@logic/ui.ts';
 
@@ -23,20 +24,23 @@ export function updateTableOfContentsViewByPathID(pathID: PathID): void {
     }
 }
 
-export function updateTableOfContentsViewForAuxiliaryRoute(pathname: string): void {
-    const language = getLanguageFromPathname(pathname) ?? DEFAULT_LANGUAGE;
-    const path = removeLanguageTag(pathname, language).replace('/', '');
-    if (isAuxiliaryRoute(path, language)) {
-        showTableOfContentsSection(TableOfContentsSection.AUXILIARY);
-    }
-}
-
-export function updateToolbarNaturalLanguagePath(text?: string): void {
+export function updateToolbarNavigationText(text?: string): void {
     if (text) {
-        const element = document.getElementById(ElementID.TOOLBAR_NATURAL_LANGUAGE_PATH);
+        const element = document.getElementById(ElementID.TOOLBAR_NAVIGATION_TEXT);
         if (element) {
             element.innerText = text;
         }
+    }
+}
+
+export function updateToolbarForAuxiliaryRoute(pathname: string): void {
+    const language = getLanguageFromPathname(pathname) ?? DEFAULT_LANGUAGE;
+    const path = removeLanguageTag(pathname, language).replace('/', '');
+
+    if (isAuxiliaryRoute(path, language)) {
+        const label = getAuxiliaryRouteLabel(pathname, language);
+        updateToolbarNavigationText(label);
+        showTableOfContentsSection(TableOfContentsSection.AUXILIARY);
     }
 }
 

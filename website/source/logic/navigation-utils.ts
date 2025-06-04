@@ -8,7 +8,7 @@ import {
     updateReadingAreaIntersectionObservers,
     validateElementsInReadingArea,
 } from './state/reading-area.ts';
-import { updateTableOfContentsViewForAuxiliaryRoute } from './toolbar.ts';
+import { updateToolbarForAuxiliaryRoute } from './toolbar.ts';
 import { ElementClass, ElementID } from './ui.ts';
 
 type HtmxEvent = Event & {
@@ -44,6 +44,7 @@ export function watchForHtmxEvents(): void {
         if (e?.detail?.successful) {
             validateElementsInReadingArea();
             updateReadingAreaIntersectionObservers();
+            updateToolbarForAuxiliaryRoute(document.location.pathname);
 
             const targetID = e?.detail?.target?.id;
             /* Perform some automated UI actions only when content has been swapped into the main content area,
@@ -72,7 +73,7 @@ export function respondToFirstPageLoad(): void {
         scrollToParagraphNumberFromUrl();
     }
 
-    updateTableOfContentsViewForAuxiliaryRoute(document.location.pathname);
+    updateToolbarForAuxiliaryRoute(document.location.pathname);
 }
 
 /**

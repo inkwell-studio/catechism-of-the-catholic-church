@@ -1,7 +1,7 @@
 # Tasks to complete now
 
 - [ ] make the UX demo-worthy
-  - [ ] fix natural-language-path toolbar text updates on non-main-content pages
+  - [ ] translate the text on the table-of-contents menu
     - [ ] merge
 
   - [ ] add a navigate-by-paragraph-number feature to the toolbar's

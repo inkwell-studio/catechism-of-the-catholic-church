@@ -4,7 +4,7 @@ import { PathID } from '@catechism-types';
 
 import { path as joinPaths } from '@logic/navigation-utils.ts';
 import { getLanguageFromPathname } from '@logic/routing.ts';
-import { updateTableOfContentsViewByPathID, updateToolbarNaturalLanguagePath } from '@logic/toolbar.ts';
+import { updateTableOfContentsViewByPathID, updateToolbarNavigationText } from '@logic/toolbar.ts';
 import { ElementClass } from '@logic/ui.ts';
 
 //#region constants
@@ -179,7 +179,7 @@ function removeElementsFromReadingArea(elementsToRemove: Array<ContentMetadata>)
 }
 
 function respondToReadingAreaLastContentChange(metadata: ContentMetadata): void {
-    updateToolbarNaturalLanguagePath(metadata.naturalLanguagePath);
+    updateToolbarNavigationText(metadata.naturalLanguagePath);
     updateTableOfContentsViewByPathID(metadata.pathID);
     updateLanguageSelector(metadata.rank);
 

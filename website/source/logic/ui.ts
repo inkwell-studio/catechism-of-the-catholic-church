@@ -36,7 +36,7 @@ export enum ElementID {
     TOOLBAR_MENU_SLIDING_CONTENT_CONTAINER = 'toolbar-menu-sliding-content-container',
     TOOLBAR_MENU_SLIDING_CONTENT_CONTAINER_SELECTOR = '#toolbar-menu-sliding-content-container',
 
-    TOOLBAR_NATURAL_LANGUAGE_PATH = 'toolbar-natural-language-path',
+    TOOLBAR_NAVIGATION_TEXT = 'toolbar-navigation-text',
 
     TOOLBAR_TABLE_OF_CONTENTS = 'toolbar-table-of-contents',
     TOOLBAR_TABLE_OF_CONTENTS_SELECTOR = '#toolbar-table-of-contents',
