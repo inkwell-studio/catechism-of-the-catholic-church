@@ -88,7 +88,6 @@ function autoScroll(): void {
     const hash = document.location.hash;
     if (hash) {
         document.getElementById(hash.slice(1))?.scrollIntoView();
-        updateLanguageSwitcher(hash);
     } else {
         globalThis.scrollTo({ top: 0 });
     }
@@ -104,26 +103,6 @@ function scrollToParagraphNumberFromUrl(): void {
 function hideNavigationMenu(): void {
     const dropdown: SlDropdown | null = document.querySelector(ElementID.TOOLBAR_TABLE_OF_CONTENTS_SELECTOR);
     dropdown?.hide();
-}
-
-/**
- * The language switcher's navigation links are statically generated, and thus don't have access to the
- * current URL's `hash` value, so this function dynamically adds the hash value to the links' `href` value.
- */
-function updateLanguageSwitcher(hash?: string): void {
-    hash = hash || document.location.hash;
-
-    if (hash) {
-        const languageSwitcher = document.getElementById(ElementID.LANGUAGE_SWITCHER_WRAPPER);
-        if (languageSwitcher) {
-            const languageSwitcherLinks = languageSwitcher.getElementsByTagName('a');
-            const links = Array.from(languageSwitcherLinks);
-
-            for (const link of links) {
-                link.setAttribute('href', link.getAttribute('href') + hash);
-            }
-        }
-    }
 }
 
 /**
