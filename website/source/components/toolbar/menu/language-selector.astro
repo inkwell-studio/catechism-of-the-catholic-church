@@ -18,7 +18,6 @@ const pathIdLanguageUrlMap = await getPathIdLanguageUrlMap();
 const path = removeLanguageTag(Astro.params.path, currentLanguage);
 
 const pathID = semanticPathPathIdMap[path] ?? null;
-
 const paragraphNumber = getParagraphNumber(path);
 const languageUrlMap = pathID ? pathIdLanguageUrlMap[pathID] : [];
 

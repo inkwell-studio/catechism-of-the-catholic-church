@@ -263,8 +263,8 @@ Deno.test('website: partials', async (test) => {
         }
     });
 
-    await test.step('update-navigation content', async (t) => {
-        const routes = getAllTranslatableRoutes('/prologue', true).map((route) => joinPaths('partials/update-navigation', route));
+    await test.step('update-language-selector content', async (t) => {
+        const routes = getAllTranslatableRoutes('/prologue', true).map((route) => joinPaths('partials/update-language-selector', route));
 
         for (const route of routes) {
             await t.step(route, async () => {

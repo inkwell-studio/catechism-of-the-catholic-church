@@ -2,7 +2,10 @@
 import { getNavigationValues } from '@logic/routing';
 import { ContentRoute, getAuxiliaryRoutes, getTableOfContentsRoutes } from '@pages/_routes';
 
-import NavigationUpdates from '@pages/partials/_navigation-updates.astro';
+import LanguageSelector from '@components/toolbar/menu/language-selector.astro';
+import Replacement from '@components/replacement.astro';
+
+import { ElementID } from '@logic/ui';
 
 export const partial = true;
 
@@ -13,4 +16,6 @@ export async function getStaticPaths(): Promise<Array<ContentRoute>> {
 const { language } = await getNavigationValues(Astro.params.path);
 ---
 
-<NavigationUpdates {language} />
+<Replacement target={ElementID.LANGUAGE_SWITCHER_WRAPPER}>
+    <LanguageSelector currentLanguage={language} />
+</Replacement>

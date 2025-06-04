@@ -1,12 +1,11 @@
 ---
 import GeneralContent from '@components/general-content.astro';
+import LanguageSelector from '@components/toolbar/menu/language-selector.astro';
 import Replacement from '@components/replacement.astro';
 
 import { getNavigationValues } from '@logic/routing';
 import { ElementID } from '@logic/ui';
 import { ContentRoute, getAuxiliaryRoutes, getTableOfContentsRoutes } from '@pages/_routes';
-
-import NavigationUpdates from '@pages/partials/_navigation-updates.astro';
 
 export const partial = true;
 
@@ -18,6 +17,9 @@ const { path, pathID, language } = await getNavigationValues(Astro.params.path);
 ---
 
 <GeneralContent {path} {pathID} {language} />
-<NavigationUpdates {language} />
+
+<Replacement target={ElementID.LANGUAGE_SWITCHER_WRAPPER}>
+    <LanguageSelector currentLanguage={language} />
+</Replacement>
 
 <Replacement target={ElementID.CROSS_REFERENCE_PANEL_CONTENT_WRAPPER} />

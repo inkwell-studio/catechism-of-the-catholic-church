@@ -190,12 +190,24 @@ async function runTests(
         assertStrictEquals(
             numRanks,
             numUniqueRanks,
-            `${numRanks - numUniqueRanks} duplicate rank values exist`,
+            `${numRanks - numUniqueRanks} duplicate ranks exist`,
+        );
+    });
+
+    Deno.test(`[${languageKey}] the ranks are contiguous`, () => {
+        const ranks = getAllRanks(catechism);
+
+        ranks.forEach((rank, index) =>
+            assertStrictEquals(
+                rank,
+                index + 1,
+                `rank ${index + 1} should follow rank ${index} (encountered ${rank} instead)`,
+            )
         );
     });
 
     // ensure that there are no missing paragraphs between #1 and the greatest number
-    Deno.test(`[${languageKey}] the paragraph range is continuous`, () => {
+    Deno.test(`[${languageKey}] the paragraph numbers are contiguous`, () => {
         const paragraphNumbers = paragraphs.map((p) => p.paragraphNumber);
 
         assertStrictEquals(paragraphNumbers[0], 1, 'paragraph #1 is missing');
@@ -241,7 +253,7 @@ async function runTests(
         );
     });
 
-    Deno.test(`[${languageKey}] the reference numbers for each Section and Chapter start at 1, and are continuous after that`, () => {
+    Deno.test(`[${languageKey}] the reference numbers for each Section and Chapter start at 1, and are contiguous after that`, () => {
         const content = getAllContent(catechism);
         const sections = getAll<Section>(content, Content.SECTION);
         const chapters = getAll<Chapter>(content, Content.CHAPTER);

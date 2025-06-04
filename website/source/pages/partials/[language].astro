@@ -1,6 +1,6 @@
 ---
 import Home from '@components/home/home.astro';
-import NavigationUpdates from '@pages/partials/_navigation-updates.astro';
+import LanguageSelector from '@components/toolbar/menu/language-selector.astro';
 import Replacement from '@components/replacement.astro';
 
 import { ElementID } from '@logic/ui';
@@ -16,6 +16,9 @@ const language = Astro.params.language;
 ---
 
 <Home {language} />
-<NavigationUpdates {language} />
+
+<Replacement target={ElementID.LANGUAGE_SWITCHER_WRAPPER}>
+    <LanguageSelector currentLanguage={language} />
+</Replacement>
 
 <Replacement target={ElementID.CROSS_REFERENCE_PANEL_CONTENT_WRAPPER} />

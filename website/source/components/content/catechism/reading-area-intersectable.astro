@@ -1,8 +1,10 @@
 ---
-import { ContentBase, Language } from '@catechism-types';
+import { ContentBase, DEFAULT_LANGUAGE, Language } from '@catechism-types';
 
 import { getNaturalLanguagePathText } from '@components/utils';
+import { path } from '@logic/navigation-utils';
 import { getUrl } from '@logic/routing';
+import { getUpdateLanguageSelectorEventName } from '@logic/state/reading-area';
 import { ElementClass } from '@logic/ui';
 
 interface Props {
@@ -19,6 +21,10 @@ const { content, language, class: classes, ...rest } = Astro.props;
 
 const url = getUrl(language, content.semanticPath, false);
 const naturalLanguagePath = getNaturalLanguagePathText(content.naturalLanguagePath);
+
+const languagePrefix = DEFAULT_LANGUAGE === language ? '' : language;
+const updateLanguageSelectorUrl = path('/partials/update-language-selector', languagePrefix, url);
+const updateLanguageSelectorEventName = getUpdateLanguageSelectorEventName(content.rank);
 ---
 
 <div
@@ -29,5 +35,6 @@ const naturalLanguagePath = getNaturalLanguagePathText(content.naturalLanguagePa
     data-url={url}
     {...rest}
 >
+    <div hx-get={updateLanguageSelectorUrl} hx-trigger={`${updateLanguageSelectorEventName} from:document`} class="hidden" />
     <slot />
 </div>

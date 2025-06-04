@@ -88,6 +88,14 @@ export function disableHistoryUpdates(duration: number): void {
     allowHistoryUpdates = false;
     setTimeout(() => allowHistoryUpdates = true, duration);
 }
+
+/**
+ * @returns the name of the event used to trigger a language-selector update, and the ID of the element it should be dispatched from.
+ * It would be more idiomatic to use a PathID as an identifier, but the `rank` value is safer, as it contains only numbers, and no periods.
+ */
+export function getUpdateLanguageSelectorEventName(rank: number): string {
+    return `trigger-language-selector-update-${rank}`;
+}
 //#endregion
 
 //#region private
@@ -170,13 +178,19 @@ function removeElementsFromReadingArea(elementsToRemove: Array<ContentMetadata>)
     }
 }
 
-function respondToReadingAreaLastContentChange(contentMetadata: ContentMetadata): void {
-    updateToolbarNaturalLanguagePath(contentMetadata.naturalLanguagePath);
-    updateTableOfContentsViewByPathID(contentMetadata.pathID);
+function respondToReadingAreaLastContentChange(metadata: ContentMetadata): void {
+    updateToolbarNaturalLanguagePath(metadata.naturalLanguagePath);
+    updateTableOfContentsViewByPathID(metadata.pathID);
+    updateLanguageSelector(metadata.rank);
 
     if (allowHistoryUpdates) {
-        globalThis.history.replaceState(null, '', contentMetadata.url);
+        globalThis.history.replaceState(null, '', metadata.url);
     }
+}
+
+function updateLanguageSelector(rank: number): void {
+    const eventName = getUpdateLanguageSelectorEventName(rank);
+    document.dispatchEvent(new Event(eventName));
 }
 //#endregion
 //#endregion

@@ -64,8 +64,8 @@ function runTests(
         );
     });
 
-    Deno.test(`[${languageKey}] paragraphs should be covered continuously by the top-level entries`, () => {
-        testSiblingContinuity([tableOfContents.prologue, ...tableOfContents.parts]);
+    Deno.test(`[${languageKey}] paragraphs should be covered contiguously by the top-level entries`, () => {
+        testSiblingContiguity([tableOfContents.prologue, ...tableOfContents.parts]);
     });
 
     Deno.test(`[${languageKey}] the terminal paragraph numbers of an entry should not exceed those of its parent`, () => {
@@ -103,7 +103,7 @@ function runTests(
 //#endregion
 
 //#region helpers
-function testSiblingContinuity(siblings: Array<TableOfContentsEntry>): void {
+function testSiblingContiguity(siblings: Array<TableOfContentsEntry>): void {
     const firstChild = siblings[0];
     let latestParagraphNumber = firstChild.lastParagraphNumber;
 

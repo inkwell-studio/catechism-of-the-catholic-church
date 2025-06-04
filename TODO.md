@@ -1,12 +1,6 @@
 # Tasks to complete now
 
 - [ ] make the UX demo-worthy
-  - [ ] update the language-switcher navigation values as the URL is updated
-        while scrolling
-    - will probably have to be done "manually", without HTMX (or can
-      `htmx.trigger()` be used?)
-    - [ ] merge
-
   - [ ] fix natural-language-path toolbar text updates on non-main-content pages
     - [ ] merge
 

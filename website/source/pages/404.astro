@@ -9,7 +9,7 @@ import { translate as t } from '@logic/translation';
 export const prerender = false;
 
 const language = getLanguageFromPathname(Astro.url.pathname) ?? DEFAULT_LANGUAGE;
-const homeUrl = language === DEFAULT_LANGUAGE ? '/' : `/${language}`;
+const homeUrl = DEFAULT_LANGUAGE === language ? '/' : `/${language}`;
 ---
 
 <ContentLayout {language}>
