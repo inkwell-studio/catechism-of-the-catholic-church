@@ -5,19 +5,12 @@ import GeneralContent from '@components/general-content.astro';
 import ContentLayout from '@layouts/content-layout.astro';
 
 import { getAllParagraphNumbers, getParagraphPathIdMap, getSemanticPathPathIdMap } from '@logic/artifacts';
-import { getLanguageTag, getParagraphNumber, removeLanguageTag } from '@logic/routing';
-import {
-    BasicPath,
-    basicPaths,
-    ContentRoute,
-    getBasicRoutes,
-    getParagraphNumberRoutes,
-    getTableOfContentsRoutes,
-} from '@pages/_routes';
+import { getLanguageTag, getParagraphNumber, isAuxiliaryRoute, removeLanguageTag } from '@logic/routing';
+import { ContentRoute, getAuxiliaryRoutes, getParagraphNumberRoutes, getTableOfContentsRoutes } from '@pages/_routes';
 
 export async function getStaticPaths(): Promise<Array<ContentRoute>> {
     return [
-        ...getBasicRoutes(),
+        ...getAuxiliaryRoutes(),
         ...(await getParagraphNumberRoutes()),
         ...(await getTableOfContentsRoutes()),
     ];
@@ -28,7 +21,7 @@ const path = removeLanguageTag(Astro.params.path, language);
 
 let pathID = null;
 
-const isPotentialContentPath = path && !basicPaths.includes(path as BasicPath);
+const isPotentialContentPath = path && !isAuxiliaryRoute(path, language);
 if (isPotentialContentPath) {
     const semanticPathMap = await getSemanticPathPathIdMap(language);
     pathID = semanticPathMap[path] ?? null;

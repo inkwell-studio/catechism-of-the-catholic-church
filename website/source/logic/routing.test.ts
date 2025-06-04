@@ -4,7 +4,7 @@ import { getLanguages } from '@catechism-utils/language.ts';
 
 import { getLanguageFromPathname, getLanguageTag, getParagraphNumber, getUrl, removeLanguageTag } from './routing.ts';
 
-console.log('\nrouting utils (server) ...');
+console.log('\nrouting utils ...');
 
 //#region getUrl()
 function urlTest(semanticPath: SemanticPath, expectedUrl: string, includeFragment = true): void {

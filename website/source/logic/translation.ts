@@ -1,6 +1,6 @@
 import { BibleBook, Content, Language } from '@catechism-types';
 
-import { CATECHISM_OF_THE_CATHOLIC_CHURCH } from './strings.ts';
+import { AuxiliaryRouteKey, AuxiliaryRouteLabels, CATECHISM_OF_THE_CATHOLIC_CHURCH } from './constants.ts';
 
 export function translate(englishText: string, language: Language): string {
     // deno-fmt-ignore
@@ -22,21 +22,9 @@ export function translate(englishText: string, language: Language): string {
 
 const translationMap: Record<string, Record<Exclude<Language, Language.ENGLISH>, string>> = {
     //#region UI messages and labels
-    'Preface': {
-        [Language.LATIN]: 'Praefatio',
-        [Language.SPANISH]: 'Prefacio',
-    },
     'Content': {
         [Language.LATIN]: 'Content',
         [Language.SPANISH]: 'Contenido',
-    },
-    'Glossary': {
-        [Language.LATIN]: 'Glossarium',
-        [Language.SPANISH]: 'Glosario',
-    },
-    'Index': {
-        [Language.LATIN]: 'Index',
-        [Language.SPANISH]: 'Índice',
     },
     'Page not found.': {
         [Language.LATIN]: 'Pagina non inveni.',
@@ -49,6 +37,14 @@ const translationMap: Record<string, Record<Exclude<Language, Language.ENGLISH>,
     'Go Home': {
         [Language.LATIN]: 'Redira ad Initium',
         [Language.SPANISH]: 'Volver a Empezar',
+    },
+    'Vulgate': {
+        [Language.LATIN]: 'Vulgata',
+        [Language.SPANISH]: 'Vulgata',
+    },
+    'Cf. ': {
+        [Language.LATIN]: 'Cf. ',
+        [Language.SPANISH]: 'Cf. ',
     },
     //#endregion
 
@@ -305,13 +301,25 @@ const translationMap: Record<string, Record<Exclude<Language, Language.ENGLISH>,
     //#endregion
 
     //#region Content
-    'Vulgate': {
-        [Language.LATIN]: 'Vulgata',
-        [Language.SPANISH]: 'Vulgata',
+    [AuxiliaryRouteLabels[AuxiliaryRouteKey.GLOSSARY]]: {
+        [Language.LATIN]: 'Glossarium',
+        [Language.SPANISH]: 'Glosario',
     },
-    'Cf. ': {
-        [Language.LATIN]: 'Cf. ',
-        [Language.SPANISH]: 'Cf. ',
+    [AuxiliaryRouteLabels[AuxiliaryRouteKey.INDEX_TOPICS]]: {
+        [Language.LATIN]: 'Index: Topics (Latin)',
+        [Language.SPANISH]: 'Indice: Temas',
+    },
+    [AuxiliaryRouteLabels[AuxiliaryRouteKey.INDEX_CITATIONS]]: {
+        [Language.LATIN]: 'Index: Citationes',
+        [Language.SPANISH]: 'Indice: Cita',
+    },
+    [AuxiliaryRouteLabels[AuxiliaryRouteKey.APOSTOLIC_LETTER]]: {
+        [Language.LATIN]: 'Apostolica',
+        [Language.SPANISH]: 'Carta Apostolica',
+    },
+    [AuxiliaryRouteLabels[AuxiliaryRouteKey.APOSTOLIC_CONSTITUTION]]: {
+        [Language.LATIN]: 'Proponde',
+        [Language.SPANISH]: 'Constitucion Apostolica',
     },
     [CATECHISM_OF_THE_CATHOLIC_CHURCH]: {
         [Language.LATIN]: 'Catechismus Catholicae Ecclesiae',
@@ -320,6 +328,22 @@ const translationMap: Record<string, Record<Exclude<Language, Language.ENGLISH>,
     'Table of Contents': {
         [Language.LATIN]: 'Index Generalis',
         [Language.SPANISH]: 'Índice General',
+    },
+    [Content.CREED]: {
+        [Language.LATIN]: 'SYMBOLUM',
+        [Language.SPANISH]: 'CREDO',
+    },
+    [Content.TEN_COMMANDMENTS]: {
+        [Language.LATIN]: 'DECALOGUS',
+        [Language.SPANISH]: 'DIEZ_MANDAMIENTOS',
+    },
+    'creed': {
+        [Language.LATIN]: 'creed',
+        [Language.SPANISH]: 'creed',
+    },
+    'ten-commandments': {
+        [Language.LATIN]: 'ten-commandments',
+        [Language.SPANISH]: 'ten-commandments',
     },
     'prologue': {
         [Language.LATIN]: 'prooemium',
@@ -438,7 +462,7 @@ const translationMap: Record<string, Record<Exclude<Language, Language.ENGLISH>,
         [Language.LATIN]: 'paragraphus',
         [Language.SPANISH]: 'parrafo',
     },
-    // During development, it is acceptable to use English for the following `Content` values
+    // It is acceptable to use English for the following values
     [Content.GENERIC_CONTENT_CONTAINER]: {
         [Language.LATIN]: Content.GENERIC_CONTENT_CONTAINER,
         [Language.SPANISH]: Content.GENERIC_CONTENT_CONTAINER,
@@ -470,14 +494,6 @@ const translationMap: Record<string, Record<Exclude<Language, Language.ENGLISH>,
     [Content.TEXT]: {
         [Language.LATIN]: Content.TEXT,
         [Language.SPANISH]: Content.TEXT,
-    },
-    [Content.CREED]: {
-        [Language.LATIN]: Content.CREED,
-        [Language.SPANISH]: Content.CREED,
-    },
-    [Content.TEN_COMMANDMENTS]: {
-        [Language.LATIN]: Content.TEN_COMMANDMENTS,
-        [Language.SPANISH]: Content.TEN_COMMANDMENTS,
     },
     'generic-content-container': {
         [Language.LATIN]: 'generic-content-container',
@@ -511,14 +527,6 @@ const translationMap: Record<string, Record<Exclude<Language, Language.ENGLISH>,
         [Language.LATIN]: 'text',
         [Language.SPANISH]: 'text',
     },
-    'creed': {
-        [Language.LATIN]: 'creed',
-        [Language.SPANISH]: 'creed',
-    },
-    'ten-commandments': {
-        [Language.LATIN]: 'ten-commandments',
-        [Language.SPANISH]: 'ten-commandments',
-    },
-    // (end of section where English use is acceptable during development)
+    // (end of section where English use is acceptable)
     //#endregion
 };

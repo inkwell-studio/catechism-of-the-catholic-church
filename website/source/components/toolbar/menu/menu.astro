@@ -21,8 +21,11 @@ const { language } = Astro.props;
     import '@shoelace/menu/menu.js';
     import '@shoelace/menu-item/menu-item.js';
 
+    import { shoelaceInitialized } from '@logic/custom-elements';
     import { addClass, onClick, removeClass } from '@logic/dom-utils';
     import { ElementID } from '@logic/ui';
+
+    await shoelaceInitialized();
 
     const dropdown: SlDropdown | null = document.querySelector(ElementID.TOOLBAR_MENU_SELECTOR);
     const closeButton: HTMLElement = dropdown?.querySelector(ElementID.TOOLBAR_MENU_CLOSE_BUTTON_SELECTOR);

@@ -13,7 +13,7 @@ import {
 import { getLeafPathIdNumber } from '@utils/path-id.ts';
 
 export function getContentTypeTitle(language: Language, content: ContentBase): string | null {
-    const contentTitle = contentTypeTitles[language][content.contentType];
+    const contentTitle = ContentTypeTitles[language][content.contentType];
     if (contentTitle) {
         const number = getContentNumber(content);
         const numberSuffix = number ? ` ${number}` : '';
@@ -66,7 +66,7 @@ export function getContentNumber(content: ContentBase): number | null {
     }
 }
 
-const contentTypeTitles: Record<Language, Record<Content, string>> = {
+const ContentTypeTitles: Record<Language, Record<Content, string>> = {
     [Language.ENGLISH]: {
         [Content.PROLOGUE]: 'Prologue',
         [Content.PROLOGUE_SECTION]: 'Prologue Section',

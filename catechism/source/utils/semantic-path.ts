@@ -1,7 +1,6 @@
 import { Content, ContentBase, Language, SemanticPath, SemanticPathSource } from '@catechism-types';
 import { getContentNumber } from '@utils/title.ts';
-
-import { translate } from '@website/source/logic/translation.ts';
+import { translate } from '@utils/translation.ts';
 
 /**
  * @param ancestors a list of ancestors of `child`, in descending order (i.e. `ancestors[i]` is the parent of `ancestors[i+1]`)

@@ -7,10 +7,12 @@ import { getLanguages } from '@catechism-utils/language.ts';
 
 import { path as joinPaths } from '@logic/navigation-utils.ts';
 import { translate } from '@logic/translation.ts';
-import { basicPaths } from '@pages/_routes.ts';
+import { getAuxiliaryRoutes } from '@pages/_routes.ts';
 
 const baseUrl = 'http://localhost:8085';
+
 const languages = getLanguages();
+const auxiliaryRoutes = getAuxiliaryRoutes();
 
 //#region tests: static files
 Deno.test('website: static files', async (test) => {
@@ -116,20 +118,18 @@ Deno.test('website: rendered content', async (test) => {
         }
     });
 
-    await test.step('can navigate to all the basic pages', async (t) => {
-        for (const basicPath of basicPaths) {
-            const routes = getRoutesForAllLanguages(basicPath);
+    await test.step('can navigate to all the auxiliary pages', async (t) => {
+        for (const route of auxiliaryRoutes) {
+            const { path, language } = route.params;
 
-            for (const { route, language } of routes) {
-                await t.step(route, async () => {
-                    const r = await get(route);
-                    assertStrictEquals(r.status, 200);
+            await t.step(path, async () => {
+                const r = await get(path);
+                assertStrictEquals(r.status, 200);
 
-                    const html = await r.text();
-                    const lang = getLangAttribute(html);
-                    assertStrictEquals(lang, language);
-                });
-            }
+                const html = await r.text();
+                const lang = getLangAttribute(html);
+                assertStrictEquals(lang, language);
+            });
         }
     });
 
@@ -180,18 +180,14 @@ Deno.test('website: partials', async (test) => {
         return response;
     }
 
-    await test.step('basic pages', async (t) => {
-        for (const basicPath of basicPaths) {
-            const routes = getRoutesForAllLanguages(basicPath);
+    await test.step('auxiliary pages', async (t) => {
+        for (const route of auxiliaryRoutes) {
+            const path = joinPaths('partials', route.params.path);
 
-            for (let { route, language: _language } of routes) {
-                route = joinPaths('partials', route);
-
-                await t.step(route, async () => {
-                    const r = await get(route);
-                    assertStrictEquals(r.status, 200);
-                });
-            }
+            await t.step(path, async () => {
+                const r = await get(path);
+                assertStrictEquals(r.status, 200);
+            });
         }
     });
 
@@ -426,15 +422,6 @@ function getLangAttribute(html: string): string | null {
     // Look for: `<html lang="en"`
     const regex = /(<html lang=")([a-z,A-Z]*)(")/;
     return regex.exec(html)?.[2] ?? null;
-}
-
-function getRoutesForAllLanguages(path: string): Array<{ route: string; language: Language }> {
-    return languages.map(([_languageKey, language]) =>
-        // deno-fmt-ignore
-        DEFAULT_LANGUAGE === language
-            ? { route: path, language }
-            : { route: joinPaths(language, path), language }
-    );
 }
 
 function getAllTranslatableRoutes(subpath: string, omitDefaultLanguageTag = false): Array<string> {

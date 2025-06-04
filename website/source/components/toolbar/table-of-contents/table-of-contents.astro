@@ -107,7 +107,7 @@ const tableOfContents = await getTableOfContents(language);
         }
 
         <Panel section={TableOfContentsSection.AUXILIARY}>
-            <Auxiliary />
+            <Auxiliary {language} />
         </Panel>
     </sl-tab-group>
 </nav>

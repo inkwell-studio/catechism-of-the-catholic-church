@@ -8,7 +8,7 @@ import IndexCitations from '@components/content/auxiliary/index-citations.astro'
 import IndexTopics from '@components/content/auxiliary/index-topics.astro';
 import CatechismContent from '@components/content/catechism/catechism-content.astro';
 
-import { BasicPath } from '@pages/_routes';
+import { isApostolicConstitution, isApostolicLetter, isGlossary, isIndexCitations, isIndexTopics } from '@logic/routing';
 
 interface Props {
     language: Language;
@@ -18,22 +18,22 @@ interface Props {
 
 const { language, path, pathID } = Astro.props;
 
-const isGlossary = BasicPath.GLOSSARY === path;
-const isIndexTopics = BasicPath.INDEX_TOPICS === path;
-const isIndexCitations = BasicPath.INDEX_CITATIONS === path;
-const isApostolicLetter = BasicPath.APOSTOLIC_LETTER === path;
-const isApostolicConstitution = BasicPath.APOSTOLIC_CONSTITUTION === path;
+const isGlossaryPath = isGlossary(path, language);
+const isIndexTopicsPath = isIndexTopics(path, language);
+const isIndexCitationsPath = isIndexCitations(path, language);
+const isApostolicLetterPath = isApostolicLetter(path, language);
+const isApostolicConstitutionPath = isApostolicConstitution(path, language);
 
 const isCatechismContent = !!pathID;
 ---
-{isGlossary && <Glossary {language} />}
+{isGlossaryPath && <Glossary {language} />}
 
-{isIndexTopics && <IndexTopics {language} />}
+{isIndexTopicsPath && <IndexTopics {language} />}
 
-{isIndexCitations && <IndexCitations {language} />}
+{isIndexCitationsPath && <IndexCitations {language} />}
 
-{isApostolicLetter && <ApostolicLetter {language} />}
+{isApostolicLetterPath && <ApostolicLetter {language} />}
 
-{isApostolicConstitution && <ApostolicConstitution {language} />}
+{isApostolicConstitutionPath && <ApostolicConstitution {language} />}
 
 {isCatechismContent && <CatechismContent {pathID} {language} firstContent={true} infiniteScrollDirection={null} />}

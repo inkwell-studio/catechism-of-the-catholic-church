@@ -8,6 +8,7 @@ import {
     updateReadingAreaIntersectionObservers,
     validateElementsInReadingArea,
 } from './state/reading-area.ts';
+import { updateTableOfContentsViewForAuxiliaryRoute } from './toolbar.ts';
 import { ElementClass, ElementID } from './ui.ts';
 
 type HtmxEvent = Event & {
@@ -70,6 +71,8 @@ export function respondToFirstPageLoad(): void {
     if (initialLoad) {
         scrollToParagraphNumberFromUrl();
     }
+
+    updateTableOfContentsViewForAuxiliaryRoute(document.location.pathname);
 }
 
 /**

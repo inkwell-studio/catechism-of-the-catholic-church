@@ -1,7 +1,21 @@
 # Tasks to complete now
 
 - [ ] make the UX demo-worthy
+  - [ ] update the natural-language-path value according to the selected
+        language
+  - [ ] update the language-switcher navigation values as the URL is updated
+        while scrolling
+    - will probably have to be done "manually", without HTMX (or can
+      `htmx.trigger()` be used?)
+    - [ ] merge
+
   - [ ] fix natural-language-path toolbar text updates on non-main-content pages
+    - [ ] merge
+
+  - [ ] add a navigate-by-paragraph-number feature to the toolbar's
+        table-of-contents menu
+    - [ ] merge
+
   - [ ] implement the homepage
   - [ ] add a "project introduction" page
   - [ ] add an "about/legal" page
@@ -30,6 +44,7 @@
     - [ ] dark mode
   - [ ] (if quickly attainable) add a loading indicator to the bottom of the
         infinite-scroll content
+  - [ ] make the 404 page more helpful
 - [ ] make licensing info explicit
 - [ ] clean up `website/source/graphics/home-page/`
   - [ ] remove unused files
@@ -54,6 +69,9 @@
 
 - [ ] determine if a cross-references property needs to be added to the
       `Paragraph` interface
+
+- [ ] move all artifact builders that are associated with the website code from
+      `catechism/artifacts/derivative/etc` to a new location in `website/`.
 
 - [ ] upgrade to Astro 5.7
   - [ ] add the `experimental: preserveScriptOrder` flag (with a value of
@@ -206,8 +224,8 @@
 
 # Tasks to complete once it has been decided to release a production-ready version
 
-- [ ] verify the translations in `catechism/artifact-builders/utils.ts` and
-      `catechism/source/utils/semantic-path.ts` are correct
+- [ ] verify the translations in `website/source/logic/translation.ts` are
+      correct
 
 # Possible features
 

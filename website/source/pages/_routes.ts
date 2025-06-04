@@ -3,6 +3,7 @@ import { getLanguages } from '@catechism-utils/language.ts';
 import { getTopLevelUrls } from '@catechism-utils/table-of-contents.ts';
 
 import { getAllCrossReferences, getAllParagraphNumbers, getTableOfContents } from '@logic/artifacts.ts';
+import { AuxiliaryRoutesByKeyAndLanguage } from '@logic/constants.ts';
 import { path as joinPaths } from '@logic/navigation-utils.ts';
 
 const languages = getLanguages().map(([_languageKey, language]) => language);
@@ -19,26 +20,6 @@ export interface CrossReferenceRoute {
         language: Language;
         reference: string;
     };
-}
-
-export enum BasicPath {
-    GLOSSARY = 'glossary',
-    INDEX_TOPICS = 'index-topics',
-    INDEX_CITATIONS = 'index-citations',
-    APOSTOLIC_LETTER = 'apostolic-letter',
-    APOSTOLIC_CONSTITUTION = 'apostolic-constitution',
-}
-
-export const basicPaths = Object.values(BasicPath);
-
-export function getBasicRoutes(): Array<ContentRoute> {
-    return basicPaths.flatMap((basicPath) =>
-        languages.map((language) => {
-            const prefix = DEFAULT_LANGUAGE === language ? '' : language;
-            const path = joinPaths('/', prefix, basicPath);
-            return { params: { language, path } };
-        })
-    );
 }
 
 export async function getCrossReferencePartialRoutes(): Promise<Array<CrossReferenceRoute>> {
@@ -110,4 +91,19 @@ export async function getTableOfContentsRoutes(): Promise<Array<ContentRoute>> {
             )
             .map((path) => ({ params: { language: table.language, path } }))
     );
+}
+
+export function getAuxiliaryRoutes(): Array<ContentRoute> {
+    return Object.values(AuxiliaryRoutesByKeyAndLanguage).flatMap((auxRouteSet) => {
+        return Object.entries(auxRouteSet).map(([language, route]) => {
+            const prefix = DEFAULT_LANGUAGE === language ? '' : language;
+            const path = joinPaths('/', prefix, route);
+            return {
+                params: {
+                    language: language as Language,
+                    path,
+                },
+            };
+        });
+    });
 }

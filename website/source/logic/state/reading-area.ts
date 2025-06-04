@@ -1,10 +1,11 @@
-import type { SlTabGroup } from '@shoelace-types';
 import { atom, computed } from 'nanostores';
 
 import { PathID } from '@catechism-types';
 
-import { ElementClass, ElementID, TableOfContentsSection } from '@logic/ui.ts';
-import { getPart, isPrologueContent } from '@catechism-utils/path-id.ts';
+import { path as joinPaths } from '@logic/navigation-utils.ts';
+import { getLanguageFromPathname } from '@logic/routing.ts';
+import { updateTableOfContentsViewByPathID, updateToolbarNaturalLanguagePath } from '@logic/toolbar.ts';
+import { ElementClass } from '@logic/ui.ts';
 
 //#region constants
 let allowHistoryUpdates = true;
@@ -122,12 +123,22 @@ function respondToReadingAreaIntersectionEvent(entries: Array<IntersectionObserv
                 naturalLanguagePath,
                 pathID,
                 rank,
-                url,
+                url: addLanguagePrefix(url),
             };
         } else {
             return null;
         }
     }
+}
+
+function addLanguagePrefix(url: string): string {
+    const pathname = document.location.pathname;
+    const language = getLanguageFromPathname(pathname);
+
+    // deno-fmt-ignore
+    return language
+        ? joinPaths('/', language, url)
+        : url
 }
 
 function addElementsToReadingArea(elementsToAdd: Array<ContentMetadata>): void {
@@ -161,39 +172,10 @@ function removeElementsFromReadingArea(elementsToRemove: Array<ContentMetadata>)
 
 function respondToReadingAreaLastContentChange(contentMetadata: ContentMetadata): void {
     updateToolbarNaturalLanguagePath(contentMetadata.naturalLanguagePath);
-    updateTableOfContentsView(contentMetadata.pathID);
+    updateTableOfContentsViewByPathID(contentMetadata.pathID);
 
     if (allowHistoryUpdates) {
         globalThis.history.replaceState(null, '', contentMetadata.url);
-    }
-}
-
-function updateTableOfContentsView(pathID: PathID): void {
-    const tabGroup: SlTabGroup | null = document.querySelector(ElementID.TABLE_OF_CONTENTS_TAB_GROUP_SELECTOR);
-    if (!tabGroup) return;
-
-    if (isPrologueContent(pathID)) {
-        tabGroup.show(TableOfContentsSection.PROLOGUE);
-    } else {
-        const part = getPart(pathID);
-        if (1 === part) {
-            tabGroup.show(TableOfContentsSection.PART_1);
-        } else if (2 === part) {
-            tabGroup.show(TableOfContentsSection.PART_2);
-        } else if (3 === part) {
-            tabGroup.show(TableOfContentsSection.PART_3);
-        } else if (4 === part) {
-            tabGroup.show(TableOfContentsSection.PART_4);
-        }
-    }
-}
-
-function updateToolbarNaturalLanguagePath(text?: string): void {
-    if (text) {
-        const element = document.getElementById(ElementID.TOOLBAR_NATURAL_LANGUAGE_PATH);
-        if (element) {
-            element.innerText = text;
-        }
     }
 }
 //#endregion

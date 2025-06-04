@@ -4,8 +4,7 @@ import { getLanguages, getNativeLanguageText } from '@catechism-utils/language';
 
 import { getPathIdLanguageUrlMap, getSemanticPathPathIdMap } from '@logic/artifacts';
 import { path as joinPaths } from '@logic/navigation-utils';
-import { getParagraphNumber, removeLanguageTag } from '@logic/routing';
-import { BasicPath, basicPaths } from '@pages/_routes';
+import { getParagraphNumber, isAuxiliaryRoute, removeLanguageTag, translateAuxiliaryPath } from '@logic/routing';
 
 interface Props {
     currentLanguage: Language;
@@ -17,54 +16,55 @@ const semanticPathPathIdMap = await getSemanticPathPathIdMap(currentLanguage);
 const pathIdLanguageUrlMap = await getPathIdLanguageUrlMap();
 
 const path = removeLanguageTag(Astro.params.path, currentLanguage);
-const pathID = semanticPathPathIdMap[path] ?? null;
 
-const isBasicPath = basicPaths.includes(path as BasicPath);
+const pathID = semanticPathPathIdMap[path] ?? null;
 
 const paragraphNumber = getParagraphNumber(path);
 const languageUrlMap = pathID ? pathIdLanguageUrlMap[pathID] : [];
 
-const languagesAndUrls = getLanguages().map(([languageKey, language]) => {
-    let segment = '';
+const languagesAndUrls = getLanguages()
+    .filter(([_languageKey, language]) => language !== currentLanguage)
+    .map(([_languageKey, language]) => {
+        let segment = '';
 
-    if (!path) {
-        segment = '';
-    } else if (isBasicPath) {
-        segment = path;
-    } else if (paragraphNumber) {
-        segment = paragraphNumber + '';
-    } else {
-        segment = languageUrlMap[language];
+        if (!path) {
+            segment = '';
+        } else if (isAuxiliaryRoute(path, currentLanguage)) {
+            segment = translateAuxiliaryPath(path, currentLanguage, language);
+        } else if (paragraphNumber) {
+            segment = paragraphNumber + '';
+        } else {
+            if (!segment) {
+                segment = languageUrlMap[language];
 
-        if (!segment) {
-            throw new Error(
-                `A language-switching URL could not be determined (path: ${path}, pathID: ${pathID}, language: ${language})`,
-            );
+                if (!segment) {
+                    throw new Error(
+                        `A language-switching URL could not be determined (path: ${path}, pathID: ${pathID}, language: ${language})`,
+                    );
+                }
+            }
         }
-    }
 
-    // deno-fmt-ignore
-    const languagePrefix = DEFAULT_LANGUAGE === language
-        ? ''
-        : language;
+        // deno-fmt-ignore
+        const languagePrefix = DEFAULT_LANGUAGE === language
+            ? ''
+            : language;
 
-    // deno-fmt-ignore
-    const url = !languagePrefix && !segment
-        ? '/'
-        : joinPaths('/', languagePrefix, segment);
+        // deno-fmt-ignore
+        const url = !languagePrefix && !segment
+            ? '/'
+            : joinPaths('/', languagePrefix, segment);
 
-    return { languageKey, language, url };
-});
+        return { language, url };
+    });
 ---
 
 <ul class="flex flex-col">
     {
         languagesAndUrls.map(({ language, url }) => (
-            language !== currentLanguage && (
             <li class="p-2">
                 <a href={url}>{getNativeLanguageText(language)}</a>
             </li>
-        )
         ))
     }
 </ul>

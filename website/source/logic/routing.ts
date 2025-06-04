@@ -2,6 +2,7 @@ import { DEFAULT_LANGUAGE, Language, PathID, SemanticPath } from '@catechism-typ
 import { getLanguage, getLanguages } from '@catechism-utils/language.ts';
 
 import { getSemanticPathPathIdMap } from './artifacts.ts';
+import { AuxiliaryRouteKey, AuxiliaryRouteKeysByLanguageAndRoute, AuxiliaryRoutesByKeyAndLanguage } from './constants.ts';
 import { translate } from './translation.ts';
 
 export async function getNavigationValues(originalPath: string): Promise<{
@@ -110,7 +111,7 @@ export function removeLanguageTag(path: string | undefined, language: Language):
 }
 
 export function getLanguageFromPathname(pathname: string): Language | null {
-    // Look for `/en/`, where the slashes are optional
+    // Look for `/es/`, where the slashes are optional
     const firstSegment = /(^|\/)([a-z]+)(\/?)/.exec(pathname)?.[2] ?? '';
     return getLanguage(firstSegment);
 }
@@ -124,6 +125,37 @@ export function getParagraphNumber(urlPathname: string): number | null {
     const potentialNumber = regex.exec(urlPathname)?.[2];
     const numberValue = Number(potentialNumber);
     return !isNaN(numberValue) && numberValue > 0 ? numberValue : null;
+}
+
+export function isAuxiliaryRoute(route: string, language: Language): boolean {
+    return !!AuxiliaryRouteKeysByLanguageAndRoute[language][route];
+}
+
+export function isGlossary(path: string, language: Language): boolean {
+    return path === AuxiliaryRoutesByKeyAndLanguage[AuxiliaryRouteKey.GLOSSARY][language];
+}
+
+export function isIndexTopics(path: string, language: Language): boolean {
+    return path === AuxiliaryRoutesByKeyAndLanguage[AuxiliaryRouteKey.INDEX_TOPICS][language];
+}
+
+export function isIndexCitations(path: string, language: Language): boolean {
+    return path === AuxiliaryRoutesByKeyAndLanguage[AuxiliaryRouteKey.INDEX_CITATIONS][language];
+}
+
+export function isApostolicLetter(path: string, language: Language): boolean {
+    return path === AuxiliaryRoutesByKeyAndLanguage[AuxiliaryRouteKey.APOSTOLIC_LETTER][language];
+}
+
+export function isApostolicConstitution(path: string, language: Language): boolean {
+    return path === AuxiliaryRoutesByKeyAndLanguage[AuxiliaryRouteKey.APOSTOLIC_CONSTITUTION][language];
+}
+
+export function translateAuxiliaryPath(path: string, languageFrom: Language, languageTo: Language): string | null {
+    const key = AuxiliaryRouteKeysByLanguageAndRoute[languageFrom][path];
+    if (!key) return null;
+
+    return AuxiliaryRoutesByKeyAndLanguage[key][languageTo] ?? null;
 }
 
 function getHighLevelUrlFragment(semanticPath: SemanticPath, language: Language): string | undefined {

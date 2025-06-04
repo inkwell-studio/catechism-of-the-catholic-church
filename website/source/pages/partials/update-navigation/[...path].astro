@@ -1,13 +1,13 @@
 ---
 import { getNavigationValues } from '@logic/routing';
-import { ContentRoute, getBasicRoutes, getTableOfContentsRoutes } from '@pages/_routes';
+import { ContentRoute, getAuxiliaryRoutes, getTableOfContentsRoutes } from '@pages/_routes';
 
 import NavigationUpdates from '@pages/partials/_navigation-updates.astro';
 
 export const partial = true;
 
 export async function getStaticPaths(): Promise<Array<ContentRoute>> {
-    return [...getBasicRoutes(), ...(await getTableOfContentsRoutes())];
+    return [...getAuxiliaryRoutes(), ...(await getTableOfContentsRoutes())];
 }
 
 const { language } = await getNavigationValues(Astro.params.path);

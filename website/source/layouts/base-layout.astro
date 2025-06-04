@@ -3,8 +3,8 @@ import { Language } from '@catechism-types';
 
 import Toolbar from '@components/toolbar/toolbar.astro';
 
+import { CATECHISM_OF_THE_CATHOLIC_CHURCH } from '@logic/constants';
 import { removeLanguageTag } from '@logic/routing';
-import { CATECHISM_OF_THE_CATHOLIC_CHURCH } from '@logic/strings';
 import { translate as t } from '@logic/translation';
 
 import '@shoelace-themes/light.css';
@@ -68,6 +68,7 @@ const isHomePage = '/' === removeLanguageTag(Astro.url.pathname, language);
             })();
         </script>
         <script>
+            import { shoelaceInitialized } from '@logic/custom-elements';
             import { respondToFirstPageLoad, watchForHtmxEvents } from '@logic/navigation-utils';
             import {
                 updateReadingAreaIntersectionObservers,
@@ -76,6 +77,9 @@ const isHomePage = '/' === removeLanguageTag(Astro.url.pathname, language);
             import { watchForThemeChanges } from '@logic/state/theme';
 
             watchForThemeChanges();
+
+            await shoelaceInitialized();
+
             updateReadingAreaIntersectionObservers();
             respondToFirstPageLoad();
             watchForHtmxEvents();

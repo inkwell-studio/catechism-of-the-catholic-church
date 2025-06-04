@@ -30,13 +30,13 @@ import {
     hasInBrief,
     hasMainContent,
     hasOpeningContent,
-} from '../../../source/utils/content.ts';
+} from '@utils/content.ts';
 
-import { getContentTypeTitle } from '../../../source/utils/title.ts';
-import { getContainerDesignator } from '../../../source/utils/path-id.ts';
-import { buildSemanticPath, getSemanticPathSource } from '../../../source/utils/semantic-path.ts';
+import { getContentTypeTitle } from '@utils/title.ts';
+import { getContainerDesignator } from '@utils/path-id.ts';
+import { buildSemanticPath, getSemanticPathSource } from '@utils/semantic-path.ts';
 
-import { getUrl } from '../../../../website/source/logic/routing.ts';
+import { getUrl } from '@website/source/logic/routing.ts';
 
 //#region top-level functions
 export function buildCatechism(): CatechismStructure {
