@@ -21,12 +21,12 @@ const homeUrl = DEFAULT_LANGUAGE === language
     : `/${language}`
 
 const tabs = [
-    [TableOfContentsSection.PROLOGUE, 'Prologue'],
+    [TableOfContentsSection.PROLOGUE, t('Prologue', language)],
     [TableOfContentsSection.PART_1, 'I'],
     [TableOfContentsSection.PART_2, 'II'],
     [TableOfContentsSection.PART_3, 'III'],
     [TableOfContentsSection.PART_4, 'IV'],
-    [TableOfContentsSection.AUXILIARY, 'More'],
+    [TableOfContentsSection.AUXILIARY, t('Resources', language)],
 ];
 
 const tableOfContents = await getTableOfContents(language);

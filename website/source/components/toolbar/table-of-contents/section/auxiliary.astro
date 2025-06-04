@@ -5,6 +5,7 @@ import PartialContentLink from '@components/partial-content-link.astro';
 
 import { getAuxiliaryRouteLabel } from '@logic/constants';
 import { removeLanguageTag } from '@logic/routing';
+import { translate as t } from '@logic/translation';
 
 import { getAuxiliaryRoutes } from '@pages/_routes';
 
@@ -28,7 +29,7 @@ const routes = getAuxiliaryRoutes()
 
 <h1 class="sticky top-0 bg-white pt-13 pb-2 mb-2 shadow-sm shadow-white">
     <span class="font-title text-3xl text-stone-800">
-        Resources
+        {t('Resources', language)}
     </span>
 </h1>
 

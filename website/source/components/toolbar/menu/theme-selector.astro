@@ -1,8 +1,16 @@
 ---
 // This component is intended to be placed on the UI only once
+import { Language } from '@catechism-types';
 
 import { Theme } from '@logic/theme';
+import { translate as t } from '@logic/translation';
 import { ElementID } from '@logic/ui';
+
+interface Props {
+    language: Language;
+}
+
+const { language } = Astro.props;
 ---
 
 <script>
@@ -23,7 +31,7 @@ import { ElementID } from '@logic/ui';
 </script>
 
 <sl-radio-group id={ElementID.THEME_SELECTOR} name="theme" value={Theme.LIGHT} size="large">
-    <sl-radio-button value={Theme.LIGHT}>Light </sl-radio-button>
-    <sl-radio-button value={Theme.DARK}>Dark</sl-radio-button>
-    <sl-radio-button value={Theme.SYSTEM}>Auto</sl-radio-button>
+    <sl-radio-button value={Theme.LIGHT}>{t('Light', language)}</sl-radio-button>
+    <sl-radio-button value={Theme.DARK}>{t('Dark', language)}</sl-radio-button>
+    <sl-radio-button value={Theme.SYSTEM}>{t('Auto', language)}</sl-radio-button>
 </sl-radio-group>

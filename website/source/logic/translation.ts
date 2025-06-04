@@ -38,6 +38,10 @@ const translationMap: Record<string, Record<Exclude<Language, Language.ENGLISH>,
         [Language.LATIN]: 'Redira ad Initium',
         [Language.SPANISH]: 'Volver a Empezar',
     },
+    'Resources': {
+        [Language.LATIN]: 'Opibus',
+        [Language.SPANISH]: 'Recursos',
+    },
     'Vulgate': {
         [Language.LATIN]: 'Vulgata',
         [Language.SPANISH]: 'Vulgata',
@@ -46,6 +50,19 @@ const translationMap: Record<string, Record<Exclude<Language, Language.ENGLISH>,
         [Language.LATIN]: 'Cf. ',
         [Language.SPANISH]: 'Cf. ',
     },
+    'Light': {
+        [Language.LATIN]: 'Lux',
+        [Language.SPANISH]: 'Ligero',
+    },
+    'Dark': {
+        [Language.LATIN]: 'Tenebrosus',
+        [Language.SPANISH]: 'Oscuro',
+    },
+    'Auto': {
+        [Language.LATIN]: 'Latibulum',
+        [Language.SPANISH]: 'Automático',
+    },
+
     //#endregion
 
     //#region Bible books

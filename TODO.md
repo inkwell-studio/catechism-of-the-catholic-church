@@ -1,9 +1,6 @@
 # Tasks to complete now
 
 - [ ] make the UX demo-worthy
-  - [ ] translate the text on the table-of-contents menu
-    - [ ] merge
-
   - [ ] add a navigate-by-paragraph-number feature to the toolbar's
         table-of-contents menu
     - [ ] merge
