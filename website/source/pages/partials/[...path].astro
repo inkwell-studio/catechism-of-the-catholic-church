@@ -5,12 +5,16 @@ import Replacement from '@components/replacement.astro';
 
 import { getNavigationValues } from '@logic/routing';
 import { ElementID } from '@logic/ui';
-import { ContentRoute, getAuxiliaryRoutes, getTableOfContentsRoutes } from '@pages/_routes';
+import { ContentRoute, getAuxiliaryRoutes, getParagraphNumberRoutes, getTableOfContentsRoutes } from '@pages/_routes';
 
 export const partial = true;
 
 export async function getStaticPaths(): Promise<Array<ContentRoute>> {
-    return [...getAuxiliaryRoutes(), ...(await getTableOfContentsRoutes())];
+    return [
+        ...getAuxiliaryRoutes(),
+        ...(await getParagraphNumberRoutes()),
+        ...(await getTableOfContentsRoutes()),
+    ];
 }
 
 const { path, pathID, language } = await getNavigationValues(Astro.params.path);

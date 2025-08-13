@@ -1,0 +1,31 @@
+---
+import { Language, NumberOrNumberRange, Paragraph } from '@catechism-types';
+
+import Icon from '@components/icon.astro';
+import PartialContentLink from '@components/partial-content-link.astro';
+
+import { IconEnum } from '@components/icon-enum';
+import { getNaturalLanguagePathText } from '@components/utils';
+
+interface Props {
+    reference: NumberOrNumberRange;
+    paragraphs: Array<Paragraph>;
+    url: string;
+    language: Language;
+}
+
+const { reference, paragraphs, url, language } = Astro.props;
+---
+
+<PartialContentLink
+    {url}
+    {language}
+    innerClass="group flex flex-col justify-center gap-1 min-h-12 py-1 px-4 -mx-2 rounded-md transition-colors hover:bg-stone-100 active:bg-stone-150 dark:hover:bg-zinc-700 dark:active:bg-zinc-750"
+>
+    <div class="flex items-center gap-1.5 text-stone-500 group-hover:text-stone-600 dark:text-stone-350 dark:group-hover:text-stone-300">
+        Open {reference} <Icon icon={IconEnum.ARROW_RIGHT_END_ON_RECTANGLE} class="relative -top-0.25 size-5" />
+    </div>
+    <span class="text-sm text-stone-400 dark:text-stone-400 group-hover:text-stone-450 dark:group-hover:text-stone-350">
+        {getNaturalLanguagePathText(paragraphs[0].naturalLanguagePath)}
+    </span>
+</PartialContentLink>

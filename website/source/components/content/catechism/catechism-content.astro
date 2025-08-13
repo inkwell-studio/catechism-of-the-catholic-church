@@ -6,6 +6,8 @@ import InfiniteScrollBackwardActivator from './infinite-scroll-backward-activato
 import InfiniteScrollTriggerForward from './infinite-scroll-trigger-forward.astro';
 import InfiniteScrollTriggerBackward from './infinite-scroll-trigger-backward.astro';
 
+import { getNaturalLanguagePathText } from '../../utils';
+
 import { getRenderableNodeMap } from '@logic/artifacts';
 import { loadContent } from '@logic/rendering';
 import { ElementClass, ElementID } from '@logic/ui';
@@ -15,9 +17,10 @@ interface Props {
     language: Language;
     firstContent: boolean;
     infiniteScrollDirection: 'forward' | 'backward' | null;
+    firstInfiniteScrollBackwardContent: boolean;
 }
 
-const { pathID, language, firstContent, infiniteScrollDirection } = Astro.props;
+const { pathID, language, firstContent, infiniteScrollDirection, firstInfiniteScrollBackwardContent } = Astro.props;
 
 const content = await loadContent(language, pathID);
 
@@ -28,39 +31,48 @@ const previousUrl = renderableNodes?.previous?.url;
 
 const includeInfiniteScrollForwardTrigger = 'backward' !== infiniteScrollDirection && nextUrl;
 const includeInfiniteScrollBackwardTrigger = 'backward' === infiniteScrollDirection && previousUrl;
-const includeInfiniteScrollBackwardActivator = firstContent && previousUrl;
+const includeInfiniteScrollBackwardActivator = firstContent && !!previousUrl;
 
-const isFirstInfiniteScrollBackwardContent = firstContent && 'backward' === infiniteScrollDirection;
+const pagefindTitle = getNaturalLanguagePathText(content.naturalLanguagePath);
 ---
 
 <div id={ElementID.INFINITE_SCROLL_BACKWARD_INITIAL_TARGET}></div>
 
-<!--
-The `margin-top` value of the this element must be kept in sync with the value of
-`topMarginOfCatechismContentBlock` in `navigation-utils.ts::handleFirstInfiniteScrollBackward()`
--->
 <div
     class:list={[
         ElementClass.CATECHISM_CONTENT_BLOCK,
-        { [ElementClass.HIDDEN]: isFirstInfiniteScrollBackwardContent },
-        { [ElementClass.INFINITE_SCROLL_BACKWARD_INITIAL_CONTENT]: isFirstInfiniteScrollBackwardContent },
-        '[--content-margin-top:--spacing(24)] relative pl-8 pr-16 mt-(--content-margin-top)',
+        { [ElementClass.HIDDEN]: firstInfiniteScrollBackwardContent },
+        { [ElementClass.INFINITE_SCROLL_BACKWARD_INITIAL_CONTENT]: firstInfiniteScrollBackwardContent },
+        'relative',
+        '[--content-margin-top:--spacing(12)] mt-(--content-margin-top)',
+        'mb-[min(10rem,_40vh)] md:mb-48',
     ]}
 >
+    {/* For Pagefind indexing */}
+    {
+        firstContent && (
+            <meta
+                itemprop="pagefind-title"
+                data-pagefind-meta="title[data-title]"
+                data-title={pagefindTitle}
+            />
+        )
+    }
+
     {
         includeInfiniteScrollBackwardActivator &&
             (
             <div
                 id={ElementID.INFINITE_SCROLL_BACKWARD_ACTIVATOR_CONTAINER}
-                class="absolute z-10 right-16 -top-[calc((var(--content-margin-top))+(--spacing(3)))]"
+                class="absolute z-10 right-4 -top-[calc((var(--content-margin-top))+(--spacing(3)))]"
             >
                 <InfiniteScrollBackwardActivator url={previousUrl} {language} />
             </div>
         )
     }
 
-    <div class="max-w-prose mx-auto break-words">
-        {content && <ContentBase {content} {language} />}
+    <div class="max-w-reading-with-padding mx-auto break-words">
+        {content && <ContentBase {content} {language} firstContentOnPageLoad={includeInfiniteScrollBackwardActivator} />}
     </div>
 
     {

@@ -16,7 +16,11 @@
         "check-code": "deno task check-ts && astro check",
 
         "dev": "astro dev",
-        "build-no-checks": "astro build && deno run -RW source/robots.txt.ts",
+
+        "build-mock-data": "deno run -RW source/mock-data/run.ts && deno task build-artifacts && deno task test-artifacts",
+        "build-artifacts": "deno run -RW source/artifacts/builders/build.ts",
+        "build-search-index": "deno run -ERW --allow-run source/search-index.ts",
+        "build-no-checks": "deno task build-artifacts && astro build && deno run -RW source/robots.txt.ts && deno task build-search-index",
         "build": {
             "dependencies": [
                 "check-code",
@@ -27,7 +31,8 @@
         "build-on-deployment-platform": "deno task check-code && deno task test-source -E=NODE_ENV && deno task build-no-checks",
         "serve": "deno run -RNE dist/server/entry.mjs",
 
-        "test-source": "deno test source",
+        "test-source": "deno test -R source",
+        "test-artifacts": "deno test -R source/artifacts",
         "test-e2e": "deno test -N e2e-tests"
     },
     "nodeModulesDir": "auto",
@@ -41,7 +46,8 @@
         ".astro/",
         "dist/",
         "node_modules/",
-        "public/"
+        "public/",
+        "source/artifacts/**/*.json"
     ],
     "fmt": {
         "indentWidth": 4,
@@ -50,7 +56,8 @@
     },
     "unstable": ["fmt-component"],
     "imports": {
-        "@artifacts/": "../catechism/artifacts/",
+        "@artifacts/": "./source/artifacts/",
+        "@artifacts-types": "./source/artifacts/types/types.ts",
         "@catechism-types": "../catechism/source/types/types.ts",
         "@catechism-utils/": "../catechism/source/utils/",
         "@graphics/": "./source/graphics/",

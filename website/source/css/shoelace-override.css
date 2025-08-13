@@ -1,0 +1,81 @@
+/*
+    This overrides the Shoelace `light` theme.
+    https://shoelace.style/getting-started/themes#customizing-a-built-in-theme
+*/
+
+@reference './base.css';
+
+:root,
+:host,
+.sl-theme-light {
+    --sl-font-sans: var(--font-sans);
+
+    --sl-font-weight-light: revert;
+    --sl-font-weight-normal: revert;
+    --sl-font-weight-semibold: revert;
+
+    --sl-color-neutral-0: revert;
+    --sl-color-neutral-50: revert;
+    --sl-color-neutral-100: revert;
+    --sl-color-neutral-200: revert;
+    --sl-color-neutral-300: revert;
+    --sl-color-neutral-400: revert;
+    --sl-color-neutral-500: revert;
+    --sl-color-neutral-600: revert;
+    --sl-color-neutral-700: revert;
+    --sl-color-neutral-800: revert;
+    --sl-color-neutral-900: revert;
+    --sl-color-neutral-950: revert;
+    --sl-color-neutral-1000: revert;
+
+    --sl-color-primary-0: revert;
+    --sl-color-primary-50: revert;
+    --sl-color-primary-100: revert;
+    --sl-color-primary-200: revert;
+    --sl-color-primary-300: revert;
+    --sl-color-primary-400: revert;
+    --sl-color-primary-500: revert;
+    --sl-color-primary-600: revert;
+    --sl-color-primary-700: revert;
+    --sl-color-primary-800: revert;
+    --sl-color-primary-900: revert;
+    --sl-color-primary-950: revert;
+    --sl-color-primary-1000: revert;
+
+    sl-radio-button::part(button) {
+        padding: 0;
+    }
+}
+
+sl-switch::part(control) {
+    @apply bg-gray-400;
+}
+
+sl-switch::part(thumb) {
+    @apply bg-white;
+    @apply border-2;
+    @apply border-gray-400;
+}
+
+sl-switch[checked]::part(control) {
+    @apply bg-sky-600;
+}
+
+sl-switch[checked]::part(thumb) {
+    @apply border-sky-600;
+}
+
+@variant dark {
+    sl-switch::part(control) {
+        @apply bg-zinc-500;
+    }
+
+    sl-switch::part(thumb) {
+        @apply bg-zinc-100;
+        @apply border-none;
+    }
+
+    sl-switch[checked]::part(control) {
+        @apply bg-arctic-500;
+    }
+}

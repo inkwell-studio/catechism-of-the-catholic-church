@@ -1,0 +1,16 @@
+---
+interface Props {
+    isPrologue?: boolean;
+}
+
+const { isPrologue } = Astro.props;
+
+// deno-fmt-ignore
+const sizes = isPrologue
+    ? 'text-5xl sm:text-6xl'
+    : 'text-4xl/12 sm:text-5xl/16';
+---
+
+<h1 class:list={[sizes, 'font-title text-center text-stone-950 px-text dark:text-stone-150']}><slot /></h1>
+
+<div class="h-px bg-stone-200 w-3/4 my-12 mx-auto dark:bg-zinc-600"></div>

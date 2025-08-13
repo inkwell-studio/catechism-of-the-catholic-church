@@ -1,11 +1,23 @@
 ---
 import { Language } from '@catechism-types';
 
-import Section from '@components/home/section.astro';
-import TableOfContents from '@components/home/table-of-contents.astro';
-import Title from '@components/home/title.astro';
+import Code from './code.astro';
+import FeaturesBlock from './features-block.astro';
+import FeaturesList from './features-list.astro';
+import LinkButton from './link-button.astro';
+import Tag from './tag.astro';
+import Thread from './thread.astro';
+import Title from './title.astro';
 
-import { CATECHISM_OF_THE_CATHOLIC_CHURCH } from '@logic/constants';
+import BlockLink from './navigation/block-link.astro';
+import ContentSection from './navigation/content-section.astro';
+import TableOfContents from './navigation/table-of-contents.astro';
+
+import Icon from '@components/icon.astro';
+import { IconEnum } from '@components/icon-enum';
+
+import { AuxiliaryRouteKey, AuxiliaryRoutesByKeyAndLanguage } from '@logic/constants';
+import { ElementID } from '@logic/ui';
 
 interface Props {
     language: Language;
@@ -14,46 +26,256 @@ interface Props {
 const { language } = Astro.props;
 ---
 
-<div class="relative h-[70vh] flex justify-center pt-[30vh] drop-shadow-lg drop-shadow-stone-700">
-    <Title {language} />
-</div>
+<style>
+    @reference '@css/base.css';
 
-<main class="relative flex flex-col items-stretch gap-20 max-w-6xl mx-auto pb-16 px-8">
-    <a
-        href="/project"
-        class="self-center flex justify-center bg-white/40 text-stone-800 font-sans font-bold tracking-[0.3rem] uppercase p-6 border-4 border-white rounded-xl shadow-xl shadow-white/50"
-    >
-        About the project
-    </a>
+    :root {
+        --container-background: --alpha(var(--color-slate-100) / 70%);
+        --container-background-dark: --alpha(var(--color-arctic-900) / 60%);
 
-    <Section title="About">
-        To do ...
-    </Section>
+        @apply scroll-smooth;
+    }
+</style>
 
-    <Section title="Apostolic Documents">
-        <ul class="mt-4 space-y-8">
+<main
+    class:list={[
+        'pb-8 md:pb-16 lg:pb-28',
+        'bg-gray-50 bg-linear-to-b from-gray-50 to-sky-700/7 from-[20vh] to-[75vh]',
+        'dark:bg-zinc-850 dark:bg-linear-to-b dark:from-zinc-750 dark:to-zinc-850 dark:from-10% dark:to-30% dark:text-zinc-300',
+    ]}
+>
+    <section class="min-h-screen flex flex-col justify-center max-w-max mx-auto">
+        <div class="h-full min-h-min flex flex-col justify-center gap-3 overflow-x-hidden">
+            <Title {language} />
+            <div class="grow"></div>
+            <div class="flex flex-col gap-3 items-center px-text tiny:gap-4">
+                <div
+                    class="font-sans text-base text-center text-slate-700 italic tiny:text-lg dark:text-zinc-300 dark:text-shadow dark:text-shadow-black"
+                >
+                    The Catechism as a modern web app
+                </div>
+                <div class="grid grid-rows-2 gap-8 mb-8 tiny:mb-12">
+                    <LinkButton href={ElementID.HOME_ABOUT_SELECTOR} mode="primary">
+                        About the project
+                    </LinkButton>
+                    <LinkButton href={ElementID.HOME_START_READING_SELECTOR} mode="secondary">
+                        Start reading
+                    </LinkButton>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id={ElementID.HOME_ABOUT} class="max-w-max mx-auto flex flex-col items-center pt-8 px-text sm:pt-16 md:pt-32">
+        <Tag>Why?</Tag>
+        <Thread size="medium" />
+        <div
+            class:list={[
+                'max-w-reading flex flex-col gap-10 bg-(--container-background)',
+                'font-sans text-center text-sky-900 tracking-wide',
+                'py-6 px-4 border-2 border-white rounded-md shadow-xl',
+                'sm:gap-6 sm:p-8',
+                'dark:bg-(--container-background-dark) dark:text-gray-100 dark:border-8 dark:border-arctic-900/80 dark:shadow-zinc-950/50',
+            ]}
+        >
+            <h2 class="font-bold text-xl sm:text-2xl">
+                <span>The Catechism is a</span>
+                great&nbsp;treasure of the Catholic&nbsp;Church — but it lacks a <span
+                    class="underline decoration-8 decoration-amber-300/50 underline-offset-3 dark:decoration-amber-300/90"
+                >modern&nbsp;website</span>,
+            </h2>
+
+            <p class="text-md sm:text-lg">
+                which makes it
+                <span class="relative font-bold">
+                    <span class="absolute -inset-0.5 block -rotate-3 bg-red-400/30 sm:-inset-1 dark:bg-red-400/35"></span>
+                    <span class="relative">unavailable</span></span>
+                in a <span class="font-bold">free,&nbsp;beautiful,</span>&nbsp;and&nbsp;<span class="font-bold"
+                >practical&nbsp;format.</span>
+            </p>
+
+            <p
+                class="font-bold text-2xl underline decoration-14 decoration-amber-400/50 underline-offset-6 mb-6 sm:text-3xl sm:decoration-16 sm:underline-offset-10 dark:decoration-amber-300/90"
+            >
+                This is the solution.
+            </p>
+        </div>
+
+        <Thread size="large" />
+
+        <Tag>Features</Tag>
+        <Thread size="medium" />
+        <div class="max-w-[80rem] flex flex-col items-stretch md:items-stretch md:rounded-lg md:shadow-xl md:overflow-hidden">
+            <FeaturesBlock title="Beautiful UI" video="ui">
+                <Fragment slot="list">
+                    <li>Clean, mobile-friendly design</li>
+                    <li>Infinite scrolling</li>
+                    <li>Dark mode</li>
+                </Fragment>
+            </FeaturesBlock>
+
+            <Thread size="small" class="self-center md:hidden" />
+
+            <FeaturesBlock title="Search" video="search" leadWithText={true}>
+                <Fragment slot="list">
+                    <li>Fuzzy text search</li>
+                    <li>Direct paragraph navigation</li>
+                </Fragment>
+            </FeaturesBlock>
+
+            <Thread size="small" class="self-center md:hidden" />
+
+            <FeaturesBlock title="Multilingual Support" video="language">
+                <Fragment slot="list">
+                    <li>Switch languages in place</li>
+                    <li>
+                        URLs are unique for each language — the English
+                        <Code>/prologue</Code>
+                        becomes
+                        <Code>/prologo</Code>
+                        in Spanish
+                    </li>
+                </Fragment>
+            </FeaturesBlock>
+        </div>
+
+        <Thread size="medium" />
+
+        <div
+            class="bg-(--container-background) border-2 border-white rounded-md shadow-xl overflow-hidden dark:bg-(--container-background-dark) dark:text-gray-100 dark:border-4 dark:border-gray-700 dark:shadow-zinc-950/50"
+        >
+            <h2
+                class="bg-slate-200 font-sans font-bold text-3xl text-center text-sky-900 py-8 lg:text-4xl dark:bg-gray-800 dark:text-gray-50"
+            >
+                Technical Goodies
+            </h2>
+
+            <div class="mt-4 mb-3 mx-8 md:mt-8 md:mb-7 md:mx-16">
+                <FeaturesList alternateColors={true}>
+                    <li>URLs update in the nav bar as you scroll</li>
+                    <li>
+                        Readable URLs, including paragraph numbers:
+                        <ul class="list-disc list-inside py-2 space-y-2 marker:text-sky-800/70">
+                            {
+                                ['/part-3/section-2', '/213'].map((href) => (
+                                    <li>
+                                        <a {href} target="_blank" class="inline-flex items-center gap-1.25">
+                                            <Code>{href}</Code>
+                                            <Icon icon={IconEnum.EXTERNAL_LINK} class="size-4" />
+                                        </a>
+                                    </li>
+                                ))
+                            }
+                        </ul>
+                    </li>
+                    <li>
+                        JSON data API:
+                        <ul class="list-disc list-inside py-2 space-y-2 marker:text-sky-800/70">
+                            {
+                                ['/api/en/paragraph/24', '/api/en/paragraphs/3-5'].map((
+                                    href,
+                                ) => (
+                                    <li>
+                                        <a {href} target="_blank" class="inline-flex items-center gap-1.25">
+                                            <Code>{href}</Code>
+                                            <Icon icon={IconEnum.EXTERNAL_LINK} class="size-4" />
+                                        </a>
+                                    </li>
+                                ))
+                            }
+                        </ul>
+                    </li>
+                </FeaturesList>
+            </div>
+        </div>
+    </section>
+
+    <div class="bg-[oklch(0.92_0.02_248.11_/_1)] font-sans text-center mt-20 mb-14 py-14 md:px-text dark:bg-slate-500 md:my-32">
+        <h2
+            class="font-bold text-2xl/12 text-sky-900 underline decoration-14 decoration-amber-300/70 underline-offset-6 mb-6 px-4 sm:text-3xl/16 sm:decoration-16 sm:underline-offset-10 dark:text-zinc-50 dark:decoration-amber-300/90"
+        >
+            No other version of the Catechism has all these features.
+        </h2>
+
+        <div id={ElementID.HOME_START_READING} class="mt-4 px-text pt-12">
+            <p class="font-bold text-xl text-sky-800 tracking-wide dark:text-zinc-100">
+                As you begin exploring, keep the following in mind:
+            </p>
+            <ul
+                class="w-max mx-auto mt-4 text-sky-900 text-left tracking-wide space-y-1 list-disc list-inside text-wrap dark:text-zinc-100"
+            >
+                <li>The content structure is random.</li>
+                <li>Filler text is used throughout.</li>
+                <li>Translations are not polished.</li>
+            </ul>
+        </div>
+    </div>
+
+    <ContentSection>
+        <Fragment slot="header">Contents</Fragment>
+
+        <TableOfContents {language} class="mt-3 mx-text space-y-6 tiny:mt-6" />
+    </ContentSection>
+
+    <ContentSection class="mt-16">
+        <Fragment slot="header">Resources</Fragment>
+
+        <ul class="font-sans text-base mt-3 mx-text space-y-6 tiny:mt-6">
             <li>
-                <a href="./apostolic-letter">
-                    <h2 class="text-2xl font-bold font-sans mb-0.5">Laetamur magnopere</h2>
-                    <div>
-                        Apostolic Letter on the approval and promulgation of the Latin typical edition of the <em class="italic">{
-                            CATECHISM_OF_THE_CATHOLIC_CHURCH
-                        }</em>.
+                <BlockLink url={AuxiliaryRoutesByKeyAndLanguage[AuxiliaryRouteKey.APOSTOLIC_LETTER][language]} {language}>
+                    <Fragment slot="title">
+                        <span class="font-light">Apostolic letter</span>
+                        <em>Laetamur magnopere</em>
+                    </Fragment>
+                    <div class="text-sky-900/90 mt-2 dark:text-zinc-300">
+                        On the approval and promulgation of the Latin typical edition of the Catechism.
                     </div>
-                </a>
+                </BlockLink>
             </li>
             <li>
-                <a href="./apostolic-constitution">
-                    <h2 class="text-2xl font-bold font-sans mb-0.5">Fidei Depositum</h2>
-                    <div>
-                        Apostolic Constitution on the publication of the <em class="italic">{CATECHISM_OF_THE_CATHOLIC_CHURCH}</em>.
+                <BlockLink url={AuxiliaryRoutesByKeyAndLanguage[AuxiliaryRouteKey.APOSTOLIC_CONSTITUTION][language]} {language}>
+                    <Fragment slot="title">
+                        <span class="font-light">Apostolic Constitution</span>
+                        <em>Fidei Depositum</em>
+                    </Fragment>
+                    <div class="text-sky-900/90 mt-2 dark:text-zinc-300">
+                        On the publication of the Catechism.
                     </div>
-                </a>
+                </BlockLink>
             </li>
         </ul>
-    </Section>
-
-    <Section>
-        <TableOfContents {language} />
-    </Section>
+    </ContentSection>
 </main>
+
+<div class="bg-sky-800 font-sans text-base text-sky-100">
+    <div class="flex justify-center items-center gap-2">
+        {
+            [
+                {
+                    href: 'https://github.com/inkwell-studio/catechism-of-the-catholic-church-astro',
+                    label: 'Source code',
+                    icon: IconEnum.GITHUB,
+                    newTab: true,
+                },
+                {
+                    href: 'mailto:joecode@tuta.io',
+                    label: 'Get in touch',
+                    icon: IconEnum.ENVELOPE,
+                    newTab: false,
+                },
+            ].map((item) => (
+                <a
+                    href={item.href}
+                    target={item.newTab ? '_blank' : null}
+                    class:list={[
+                        'min-h-19 flex justify-center items-center gap-2 px-4 sm:px-7',
+                        'transition-colors duration-200 hover:bg-sky-700 hover:text-sky-50 active:bg-sky-900 active:text-sky-50 ',
+                    ]}
+                >
+                    <Icon icon={item.icon} class="size-6" />
+                    <span>{item.label}</span>
+                </a>
+            ))
+        }
+    </div>
+</div>

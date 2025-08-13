@@ -1,0 +1,37 @@
+---
+import FeaturesList from './features-list.astro';
+
+interface Props {
+    title: string;
+    video: 'ui' | 'search' | 'language';
+    leadWithText?: boolean;
+}
+
+const { title, video, leadWithText } = Astro.props;
+
+let videoSource = '/demo-videos/ui-compressed.mp4';
+if ('search' === video) {
+    videoSource = '/demo-videos/search-compressed.mp4';
+} else if ('language' === video) {
+    videoSource = '/demo-videos/language-compressed.mp4';
+}
+---
+
+<div class="max-md:max-w-180 rounded-lg shadow-xl overflow-hidden md:grid md:grid-cols-2 md:rounded-none md:shadow-none">
+    <div class="flex justify-center items-center">
+        <video src={videoSource} preload="metadata" autoplay muted playsinline loop class="size-full object-cover object-center"></video>
+    </div>
+
+    <div
+        class:list={[
+            { 'md:-order-1': leadWithText },
+            'flex flex-col justify-center items-center gap-4 bg-slate-600 p-12 md:p-20 lg:p-24 xl:p-36 dark:bg-slate-700',
+        ]}
+    >
+        <h2 class="font-sans font-bold text-3xl text-slate-50 pb-1 border-b-10 border-b-sky-200 lg:text-4xl lg:pb-2">{title}</h2>
+
+        <FeaturesList>
+            <slot name="list" />
+        </FeaturesList>
+    </div>
+</div>

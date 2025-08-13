@@ -13,4 +13,4 @@ export function getStaticPaths(): Promise<Array<ContentRoute>> {
 const { pathID, language } = await getNavigationValues(Astro.params.path);
 ---
 
-<CatechismContent {pathID} {language} firstContent={true} infiniteScrollDirection="backward" />
+<CatechismContent {pathID} {language} firstContent={false} infiniteScrollDirection="backward" firstInfiniteScrollBackwardContent={true} />

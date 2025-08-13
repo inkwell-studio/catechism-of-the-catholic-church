@@ -2,6 +2,7 @@
 import { Language } from '@catechism-types';
 
 import Menu from './menu/menu.astro';
+import Search from './search/search.astro';
 import TableOfContentsTrigger from './table-of-contents/table-of-contents-trigger.astro';
 
 import { ElementClass, ElementID } from '@logic/ui';
@@ -12,39 +13,27 @@ interface Props {
 
 const { language } = Astro.props;
 ---
-
 <script>
     import { shoelaceInitialized } from '@logic/custom-elements';
-    import { ElementClass, ElementID } from '@logic/ui';
+    import { setToolbarVisibility } from '@logic/toolbar';
 
     await shoelaceInitialized();
-    showToolbar();
-
-    function showToolbar(): void {
-        document.getElementById(ElementID.TOOLBAR)?.classList.remove(ElementClass.TOOLBAR_TRANSLATE_OFFSCREEN);
-    }
+    setToolbarVisibility();
 </script>
 
+{/* If the height of this toolbar changes, the `--toolbar-height` variable in `source/css/base.css` must be updated */}
 <div
     id={ElementID.TOOLBAR}
     class:list={[
-        'flex items-center gap-4 max-w-sm w-full p-2 bg-stone-900 text-slate-50 font-sans rounded-t-lg transition-transform duration-800',
+        'w-full px-1 bg-stone-100 font-sans text-stone-800 border-t border-t-stone-300 transition-transform duration-800 dark:bg-zinc-925 dark:text-zinc-350 dark:border-t-zinc-700',
         ElementClass.TOOLBAR_TRANSLATE_OFFSCREEN,
     ]}
 >
-    <TableOfContentsTrigger {language} class="grow" />
+    <div class="max-sm:min-h-19 max-w-reading mx-auto flex items-center gap-2">
+        <Search {language} />
 
-    <!-- search -->
-    <div>
-        <!-- from https://heroicons.com/ : magnifying-glass -->
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="size-5">
-            <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z"
-            />
-        </svg>
+        <TableOfContentsTrigger {language} />
+
+        <Menu {language} />
     </div>
-
-    <Menu {language} />
 </div>

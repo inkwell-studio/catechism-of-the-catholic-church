@@ -31,6 +31,10 @@ export default defineConfig({
         // The `tailwindcss` plugin appears to be incorrectly typed, so we assert that it's of the type `any` to avoid typechecking errors.
         // deno-lint-ignore no-explicit-any
         plugins: [tailwindcss() as any],
+        server: {
+            // This allows the localhost site to be accessed from other devices (see `DEVELOPMENT.md`)
+            allowedHosts: ['.lhr.life'],
+        },
     },
 });
 

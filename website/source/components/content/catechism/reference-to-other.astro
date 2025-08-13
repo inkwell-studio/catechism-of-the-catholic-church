@@ -7,9 +7,14 @@ import { translate } from '@logic/translation';
 interface Props {
     reference: OtherReference;
     language: Language;
+    class?: string;
 }
 
-const { reference, language } = Astro.props;
+/*
+    `...rest` is needed in order for the classes from the parent to be properly scoped for the styling specified within by parent
+    (see https://docs.astro.build/en/guides/styling/#passing-a-class-to-a-child-component)
+*/
+const { reference, language, class: classes, ...rest } = Astro.props;
 
 const prefix = reference.direct ? '' : translate('Cf. ', language);
 const source = reference.source;
@@ -19,6 +24,6 @@ const text = `${prefix}${source}${pointer}`;
 const url = getOtherReferenceUrl(reference, language);
 ---
 
-<a href={url} target="_blank">
+<a href={url} target="_blank" class={classes} {...rest}>
     {text}
 </a>

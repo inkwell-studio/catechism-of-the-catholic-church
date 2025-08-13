@@ -2,10 +2,9 @@
 
 import { addClass, removeClass } from './dom-utils.ts';
 
-// This value must match the class used in the selector for `@custom-variant dark` in `css/global.css`
-const DARK_MODE_CLASS_TAILWIND = 'dark';
-const DARK_MODE_CLASS_SHOELACE = 'sl-theme-dark';
-const DARK_MODE_CLASSES = [DARK_MODE_CLASS_TAILWIND, DARK_MODE_CLASS_SHOELACE];
+/* This value must match the class used in the selector for `@custom-variant dark` in `css/base.css`
+   (the class may also be used in other selectors throughout the project) */
+const DARK_MODE_CLASS = 'dark';
 
 export const DARK_MODE_MEDIA_QUERY = '(prefers-color-scheme: dark)';
 export const LOCAL_STORAGE_KEY_THEME = 'theme';
@@ -27,9 +26,9 @@ export function updateDarkModeClass(darkModeEnabled: boolean): void {
     const e = document.documentElement;
 
     if (darkModeEnabled) {
-        addClass(e, ...DARK_MODE_CLASSES);
+        addClass(e, DARK_MODE_CLASS);
     } else {
-        removeClass(e, ...DARK_MODE_CLASSES);
+        removeClass(e, DARK_MODE_CLASS);
     }
 }
 

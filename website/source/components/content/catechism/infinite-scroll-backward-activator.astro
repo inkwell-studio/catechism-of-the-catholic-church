@@ -1,7 +1,11 @@
 ---
 import { DEFAULT_LANGUAGE, Language } from '@catechism-types';
 
-import { path } from '@logic/navigation-utils';
+import Icon from '@components/icon.astro';
+import PrefetchOnMouseover from '@components/prefetch-on-mouseover.astro';
+
+import { IconEnum } from '@components/icon-enum';
+import { joinPaths } from '@logic/routing';
 import { ElementClass, ElementID } from '@logic/ui';
 
 interface Props {
@@ -14,58 +18,30 @@ const { url, language } = Astro.props;
 // deno-fmt-ignore
 const clientUrl = url
     ? DEFAULT_LANGUAGE === language
-        ? path(url)
-        : path(language, url)
+        ? joinPaths(url)
+        : joinPaths(language, url)
     : null;
 
 // deno-fmt-ignore
 const contentUrl = clientUrl
-    ? path('/partials/infinite-scroll/backward/initial', clientUrl)
+    ? joinPaths('/partials/infinite-scroll/backward/initial', clientUrl)
     : null;
 ---
 
-<script>
-    import { prefetch } from 'astro:prefetch';
-    import { defineElement } from '@logic/custom-elements';
-    import { onMouseover } from '@logic/dom-utils';
-
-    class InfiniteScrollBackwardActivator extends HTMLElement {
-        constructor() {
-            super();
-        }
-
-        connectedCallback() {
-            onMouseover(this, () => prefetch(this.dataset.contentUrl));
-        }
-    }
-
-    defineElement('infinite-scroll-backward-activator', InfiniteScrollBackwardActivator);
-</script>
-
 {
     contentUrl && (
-        <infinite-scroll-backward-activator data-content-url={contentUrl}>
+        <PrefetchOnMouseover url={contentUrl}>
             <button
                 type="button"
-                class="flex bg-sky-700 text-white p-4 pt-6 rounded-lg cursor-pointer"
+                class="flex bg-sky-700 text-white p-3 pt-4 rounded-lg cursor-pointer transition-colors hover:bg-sky-600 active:bg-sky-800 dark:bg-arctic-800 dark:hover:bg-arctic-700 dark:active:bg-arctic-900"
                 hx-trigger="click"
                 hx-get={contentUrl}
                 hx-swap="outerHTML"
                 hx-target={ElementID.INFINITE_SCROLL_BACKWARD_INITIAL_TARGET_SELECTOR}
                 hx-select={ElementClass.CATECHISM_CONTENT_BLOCK_SELECTOR}
             >
-                {/* from https://heroicons.com/ : chevron-up */}
-                <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke-width="2.5"
-                    stroke="currentColor"
-                    class="size-6"
-                >
-                    <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 15.75 7.5-7.5 7.5 7.5" />
-                </svg>
+                <Icon icon={IconEnum.CHEVRON_UP} class="size-6" />
             </button>
-        </infinite-scroll-backward-activator>
+        </PrefetchOnMouseover>
     )
 }

@@ -4,6 +4,42 @@ import { removeLanguageTag } from './routing.ts';
 
 export const CATECHISM_OF_THE_CATHOLIC_CHURCH = 'Catechism of the Catholic Church';
 
+export enum MainRouteKey {
+    PROLOGUE = 'prologue',
+    PART_1 = 'part-1',
+    PART_2 = 'part-2',
+    PART_3 = 'part-3',
+    PART_4 = 'part-4',
+}
+
+export const MainRoutesByKeyAndLanguage: Record<MainRouteKey, Record<Language, string>> = {
+    [MainRouteKey.PROLOGUE]: {
+        [Language.ENGLISH]: 'prologue',
+        [Language.LATIN]: 'prooemium',
+        [Language.SPANISH]: 'prologo',
+    },
+    [MainRouteKey.PART_1]: {
+        [Language.ENGLISH]: 'part-1',
+        [Language.LATIN]: 'pars-1',
+        [Language.SPANISH]: 'parte-1',
+    },
+    [MainRouteKey.PART_2]: {
+        [Language.ENGLISH]: 'part-2',
+        [Language.LATIN]: 'pars-2',
+        [Language.SPANISH]: 'parte-2',
+    },
+    [MainRouteKey.PART_3]: {
+        [Language.ENGLISH]: 'part-3',
+        [Language.LATIN]: 'pars-3',
+        [Language.SPANISH]: 'parte-3',
+    },
+    [MainRouteKey.PART_4]: {
+        [Language.ENGLISH]: 'part-4',
+        [Language.LATIN]: 'pars-4',
+        [Language.SPANISH]: 'parte-4',
+    },
+} as const;
+
 export enum AuxiliaryRouteKey {
     GLOSSARY = 'glossary',
     INDEX_TOPICS = 'index-topics',
@@ -39,14 +75,14 @@ export const AuxiliaryRouteLabels: Record<AuxiliaryRouteKey, Record<Language, st
         [Language.SPANISH]: 'Glosario',
     },
     [AuxiliaryRouteKey.INDEX_TOPICS]: {
-        [Language.ENGLISH]: 'Index: Topics',
-        [Language.LATIN]: 'Index: Topics (Latin)',
-        [Language.SPANISH]: 'Indice: Temas',
+        [Language.ENGLISH]: 'Topic Index',
+        [Language.LATIN]: 'Index Argumentorum',
+        [Language.SPANISH]: 'Índice de Temas',
     },
     [AuxiliaryRouteKey.INDEX_CITATIONS]: {
-        [Language.ENGLISH]: 'Index: Citations',
-        [Language.LATIN]: 'Index: Citationes',
-        [Language.SPANISH]: 'Indice: Cita',
+        [Language.ENGLISH]: 'Citation Index',
+        [Language.LATIN]: 'Index Citationum',
+        [Language.SPANISH]: 'Índice de Citas',
     },
     [AuxiliaryRouteKey.APOSTOLIC_LETTER]: {
         [Language.ENGLISH]: 'Apostolic Letter',

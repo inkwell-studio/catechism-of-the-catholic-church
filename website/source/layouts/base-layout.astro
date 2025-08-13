@@ -1,16 +1,17 @@
 ---
 import { Language } from '@catechism-types';
 
+import CustomElementsDefiner from '@components/custom-elements-definer.astro';
 import Toolbar from '@components/toolbar/toolbar.astro';
 
 import { CATECHISM_OF_THE_CATHOLIC_CHURCH } from '@logic/constants';
-import { removeLanguageTag } from '@logic/routing';
+import { isHomePage } from '@logic/routing';
 import { translate as t } from '@logic/translation';
 
 import '@shoelace-themes/light.css';
-import '@css/global.css';
-import '@css/shoelace-light.css';
-import '@css/shoelace-dark.css';
+import '@css/base.css';
+import '@css/components.css';
+import '@css/shoelace-override.css';
 
 interface Props {
     language: Language;
@@ -22,7 +23,7 @@ Astro.response.headers.set('Cache-Control', `max-age=${secondsPerWeek}`);
 
 const canonicalUrl = new URL(Astro.url.pathname, Astro.site).href;
 
-const isHomePage = '/' === removeLanguageTag(Astro.url.pathname, language);
+const homePage = isHomePage(Astro.url.pathname, language);
 ---
 
 <html lang={language}>
@@ -52,18 +53,45 @@ const isHomePage = '/' === removeLanguageTag(Astro.url.pathname, language);
         <meta name="msapplication-TileColor" content="#adcff4" />
         <meta name="theme-color" content="#ffffff" />
 
-        {
-            /* This script is necessary to prevent a flash of the inaccurate theme being applied. It must be included inline within the <head> element to function properly.
-            The logic and constant values here must be kept in sync with those of `source/logic/theme.ts`. */
-        }
+        {}
         <script is:inline>
+            {/* This `pagefind` variable is used by `source/components/toolbar/search/search.astro.ts` */}
+            let pagefind;
+            const pagefindImport = import('/pagefind/pagefind.js');
+            pagefindImport.then((pf) => {
+                pagefind = pf;
+                pagefind.init();
+            });
+
             (() => {
-                const theme = globalThis.localStorage.getItem('theme');
-                if (
-                    'DARK' === theme ||
-                    ('SYSTEM' === theme && globalThis.matchMedia('(prefers-color-scheme: dark)').matches)
-                ) {
-                    document.documentElement.classList.add('dark', 'sl-theme-dark');
+                handleTheme();
+                handleUiToggles();
+
+                function handleTheme() {
+                    {
+                        /* This must be executed to prevent a flash of the inaccurate theme being applied.
+                        It must be included inline within the <head> element to function properly.
+                        The logic and constant values here must be kept in sync with those of `source/logic/theme.ts`. */
+                    }
+                    const theme = globalThis.localStorage.getItem('theme');
+                    if (
+                        'DARK' === theme ||
+                        ('SYSTEM' === theme && globalThis.matchMedia('(prefers-color-scheme: dark)').matches)
+                    ) {
+                        document.documentElement.classList.add('dark');
+                    }
+                }
+
+                function handleUiToggles() {
+                    {/* The logic and constant values here must be kept in sync with those of `source/components/toolbar/menu/toggle-cross-references.astro` and `source/css/base.css` */}
+                    if ('true' === globalThis.localStorage.getItem('hide-cross-references')) {
+                        document.documentElement.classList.add('hide-cross-references');
+                    }
+
+                    {/* The logic and constant values here must be kept in sync with those of `source/components/toolbar/menu/toggle-external-references.astro` and `source/css/base.css` */}
+                    if ('true' === globalThis.localStorage.getItem('hide-external-references')) {
+                        document.documentElement.classList.add('hide-external-references');
+                    }
                 }
             })();
         </script>
@@ -87,16 +115,20 @@ const isHomePage = '/' === removeLanguageTag(Astro.url.pathname, language);
         </script>
         <script src="/htmx.min.js" is:inline></script>
     </head>
-    <body class="bg-stone-50 font-serif font-light text-lg text-stone-950 leading-6">
+
+    <body class="bg-stone-50 font-serif font-light text-lg/6 text-stone-950 dark:bg-zinc-900 dark:text-stone-300">
         {/* Child elements are inserted here */}
         <slot />
 
         {
-            !isHomePage && (
-                <div class="flex justify-center fixed bottom-0 inset-x-6">
+            !homePage &&
+                    (
+                <div class="flex justify-center fixed bottom-0 inset-x-0 z-20">
                     <Toolbar {language} />
                 </div>
             )
         }
+
+        <CustomElementsDefiner />
     </body>
 </html>

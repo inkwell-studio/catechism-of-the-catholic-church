@@ -3,7 +3,6 @@
     as the Astro config file does not support path aliases (either in itself or its dependencies).
     For more info: https://github.com/withastro/astro/issues/9782
 */
-
 import { Language } from '../types/types.ts';
 
 export function getLanguage(language: string): Language | null {

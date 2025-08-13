@@ -2,10 +2,10 @@ import { atom, computed } from 'nanostores';
 
 import { PathID } from '@catechism-types';
 
-import { path as joinPaths } from '@logic/navigation-utils.ts';
-import { getLanguageFromPathname } from '@logic/routing.ts';
+import { getLanguageFromPathname, joinPaths } from '@logic/routing.ts';
 import { updateTableOfContentsViewByPathID, updateToolbarNavigationText } from '@logic/toolbar.ts';
 import { ElementClass } from '@logic/ui.ts';
+import { debounce } from '@logic/utils.ts';
 
 //#region constants
 let allowHistoryUpdates = true;
@@ -65,11 +65,18 @@ export function updateReadingAreaIntersectionObservers(): void {
 }
 
 export function watchForReadingAreaLastContentChanges(): void {
-    $readingAreaLastContent.subscribe((contentMetadata) => {
-        if (contentMetadata) {
-            respondToReadingAreaLastContentChange(contentMetadata);
-        }
-    });
+    type CallbackSignature = (v: Readonly<ContentMetadata> | null) => void;
+
+    $readingAreaLastContent.subscribe(
+        debounce(
+            (contentMetadata: ContentMetadata) => {
+                if (contentMetadata) {
+                    respondToReadingAreaLastContentChange(contentMetadata);
+                }
+            },
+            50,
+        ) as CallbackSignature,
+    );
 }
 
 /**
@@ -140,8 +147,7 @@ function respondToReadingAreaIntersectionEvent(entries: Array<IntersectionObserv
 }
 
 function addLanguagePrefix(url: string): string {
-    const pathname = document.location.pathname;
-    const language = getLanguageFromPathname(pathname);
+    const language = getLanguageFromPathname(globalThis.location.pathname);
 
     // deno-fmt-ignore
     return language

@@ -1,24 +1,21 @@
 ---
 import { Language, NumberOrNumberRange } from '@catechism-types';
 
-import PartialTrigger from '@components/partial-trigger.astro';
+import PrefetchOnMouseover from '@components/prefetch-on-mouseover.astro';
 
-import { path } from '@logic/navigation-utils';
+import { joinPaths } from '@logic/routing';
+import { ElementID } from '@logic/ui';
 
 interface Props {
     reference: NumberOrNumberRange;
     language: Language;
-    hasProceedingTrigger: boolean;
 }
 
-const { reference, language, hasProceedingTrigger } = Astro.props;
+const { reference, language } = Astro.props;
 
 const referenceForUrl = reference.toString().replace('–', '-');
-const contentUrl = path('/partials/cross-reference', language, referenceForUrl);
-
-const separator = hasProceedingTrigger ? ', ' : '';
+const contentUrl = joinPaths('/partials/cross-reference', language, referenceForUrl);
 ---
-
 <script>
     import { defineElement } from '@logic/custom-elements';
     import { onClick } from '@logic/dom-utils';
@@ -38,7 +35,20 @@ const separator = hasProceedingTrigger ? ', ' : '';
 </script>
 
 <cross-reference-trigger>
-    <PartialTrigger {contentUrl} class="cursor-pointer text">
-        {reference.toString()}{separator}
-    </PartialTrigger>
+    <PrefetchOnMouseover url={contentUrl}>
+        {
+            /* The `hx-target` value is not necessary for swapping the content, but setting it allows us to identify the HTMX swap events fired by this interaction.
+            If no target is provided, the default value of 'this' is used in order to prevent HTMX from throwing an error from not being able to find a target.
+            */
+        }
+        <button
+            type="button"
+            hx-get={contentUrl}
+            hx-trigger="click"
+            hx-swap="none"
+            hx-target={ElementID.CROSS_REFERENCE_PANEL_SELECTOR}
+        >
+            <slot />
+        </button>
+    </PrefetchOnMouseover>
 </cross-reference-trigger>

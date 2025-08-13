@@ -24,6 +24,10 @@ export function show(e: Element): void {
 export function hide(e: Element): void {
     addClass(e, ElementClass.HIDDEN);
 }
+
+export function isHidden(e: Element): boolean {
+    return e.classList.contains(ElementClass.HIDDEN);
+}
 //#endregion
 
 //#region Class utils

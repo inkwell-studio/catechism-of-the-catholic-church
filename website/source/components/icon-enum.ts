@@ -1,0 +1,15 @@
+export enum IconEnum {
+    ARROW_RIGHT_END_ON_RECTANGLE = 'arrow-right-end-on-rectangle',
+    BARS_3 = 'bars-3',
+    CHECK = 'check',
+    CHEVRON_UP = 'chevron-up',
+    ENVELOPE = 'envelope',
+    EXTERNAL_LINK = 'external-link',
+    GITHUB = 'github',
+    HOME = 'home',
+    LANGUAGE = 'language',
+    MAGNIFYING_GLASS = 'magnifying-glass',
+    MOON = 'moon',
+    SUN = 'sun',
+    X_MARK = 'x-mark',
+}

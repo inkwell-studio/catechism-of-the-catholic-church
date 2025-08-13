@@ -4,12 +4,12 @@ Copyright 2018 The Aleo Project Authors (https://github.com/AlessioLaiso/aleo)
 
 ------------------------------------------------------------------------------------------------
 
-The following copyright applies to the "Crimson Pro" font:
+The following copyright applies to the "Crimson Pro" fonts:
 
 Copyright 2018 The Crimson Pro Project Authors (https://github.com/Fonthausen/CrimsonPro)
 
 ------------------------------------------------------------------------------------------------
 
-The following copyright applies to the "PT Sans" font:
+The following copyright applies to the "PT Sans" fonts:
 
 Copyright (c) 2010, ParaType Ltd. (http://www.paratype.com/public), with Reserved Font Names "PT Sans" and "ParaType".

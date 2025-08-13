@@ -3,47 +3,123 @@ import { Language } from '@catechism-types';
 
 import TableOfContents from './table-of-contents.astro';
 
-import { ElementID } from '@logic/ui';
+import { translate as t } from '@logic/translation';
+import { ElementClass, ElementID } from '@logic/ui';
 
 interface Props {
     language: Language;
-    class?: string;
 }
 
 /*
     `...rest` is needed in order for the classes from the parent to be properly scoped for the styling specified within by parent
     (see https://docs.astro.build/en/guides/styling/#passing-a-class-to-a-child-component)
 */
-const { language, class: classes, ...rest } = Astro.props;
+const { language } = Astro.props;
 ---
-
 <script>
     import '@shoelace/dropdown/dropdown.js';
+    import { setAnimation } from '@shoelace-animations';
+
+    import { shoelaceInitialized } from '@logic/custom-elements';
+    import { addClass, hide, removeClass, show } from '@logic/dom-utils';
+    import { hideMenuTrigger, hideSearchTrigger, showMenuTrigger, showSearchTrigger } from '@logic/toolbar';
+    import { ElementClass, ElementID } from '@logic/ui';
+
+    await shoelaceInitialized();
+
+    const dropdown = document.getElementById(ElementID.TOOLBAR_TABLE_OF_CONTENTS);
+    const tabGroup = document.getElementById(ElementID.TABLE_OF_CONTENTS_TAB_GROUP);
+
+    const navigationText = document.getElementById(ElementID.TOOLBAR_NAVIGATION_TEXT);
+    const returnText = document.getElementById(ElementID.TOOLBAR_NAVIGATION_RETURN_TEXT);
+
+    setAnimation(dropdown, 'dropdown.show', null);
+    setAnimation(dropdown, 'dropdown.hide', null);
+
+    dropdown.addEventListener('sl-show', () => {
+        globalThis.requestAnimationFrame(() => {
+            disablePageScrolling();
+            hideOtherMenuItems();
+        });
+    });
+
+    dropdown.addEventListener('sl-after-show', () => {
+        setTimeout(() => enableTabGroupAnimations(), 200);
+    });
+
+    dropdown.addEventListener('sl-after-hide', () => {
+        globalThis.requestAnimationFrame(() => {
+            showOtherMenuItems();
+            enablePageScrolling();
+            disableTabGroupAnimations();
+        });
+    });
+
+    function disablePageScrolling(): void {
+        addClass(document.body, 'overflow-hidden');
+    }
+
+    function enablePageScrolling(): void {
+        removeClass(document.body, 'overflow-hidden');
+    }
+
+    function enableTabGroupAnimations(): void {
+        removeClass(tabGroup, ElementClass.DISABLE_ANIMATIONS_FLAG);
+    }
+
+    function disableTabGroupAnimations(): void {
+        addClass(tabGroup, ElementClass.DISABLE_ANIMATIONS_FLAG);
+    }
+
+    function hideOtherMenuItems(): void {
+        hideMenuTrigger();
+        hideSearchTrigger();
+        hide(navigationText);
+        show(returnText);
+    }
+
+    function showOtherMenuItems(): void {
+        showMenuTrigger();
+        showSearchTrigger();
+        show(navigationText);
+        hide(returnText);
+    }
 </script>
 
 <style>
-    sl-dropdown::part(base__popup) {
-        --margin-x: 1.5rem;
-        width: calc(100vw - var(--margin-x));
-        margin-left: calc(0.5 * var(--margin-x));
-        margin-right: calc(0.5 * var(--margin-x));
+    @reference '@css/base.css';
+
+    sl-dropdown::part(trigger) {
+        @apply size-full;
     }
 </style>
 
-<!-- table of contents -->
-<sl-dropdown id={ElementID.TOOLBAR_TABLE_OF_CONTENTS} placement="top" distance="8" class={classes} {...rest}>
-    <button slot="trigger" type="button" class="w-full flex items-center gap-4 cursor-pointer">
-        <!-- from https://heroicons.com/ : book-open -->
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
-            <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                d="M12 6.042A8.967 8.967 0 0 0 6 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 0 1 6 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 0 1 6-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0 0 18 18a8.967 8.967 0 0 0-6 2.292m0-14.25v14.25"
-            />
-        </svg>
+<div class="self-stretch grow py-1">
+    <sl-dropdown id={ElementID.TOOLBAR_TABLE_OF_CONTENTS} placement="top" distance="1" class="size-full">
+        {/* trigger */}
+        <button
+            slot="trigger"
+            type="button"
+            class="relative group flex items-center w-full h-full colors-button-stone-100 rounded cursor-pointer focus:outline-hidden"
+        >
+            <div class="grow text-sm truncate">
+                <span id={ElementID.TOOLBAR_NAVIGATION_TEXT}></span>
+                <span
+                    id={ElementID.TOOLBAR_NAVIGATION_RETURN_TEXT}
+                    class:list={[ElementClass.HIDDEN, 'text-stone-600 dark:text-zinc-400']}
+                >
+                    {t('Return', language)}
+                    <!-- This is a 1px thick line, used as a visual separator between this button and the table-of-contents tab panel -->
+                    <span class="sm:hidden absolute top-2.5 inset-x-0 h-px grid place-items-center">
+                        <span
+                            class="size-full max-w-40 bg-stone-200 transition-opacity group-hover:opacity-0 grop-active:opacity-0 dark:bg-zinc-800"
+                        ></span>
+                    </span>
+                </span>
+            </div>
+        </button>
 
-        <div id={ElementID.TOOLBAR_NAVIGATION_TEXT} class="grow text-sm text-stone-100"></div>
-    </button>
-
-    <TableOfContents {language} />
-</sl-dropdown>
+        {/* content */}
+        <TableOfContents {language} />
+    </sl-dropdown>
+</div>

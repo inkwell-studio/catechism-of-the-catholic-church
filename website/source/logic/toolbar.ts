@@ -4,8 +4,41 @@ import { DEFAULT_LANGUAGE, PathID } from '@catechism-types';
 import { getPart, isPrologueContent } from '@catechism-utils/path-id.ts';
 
 import { getAuxiliaryRouteLabel } from '@logic/constants.ts';
-import { getLanguageFromPathname, isAuxiliaryRoute, removeLanguageTag } from '@logic/routing.ts';
-import { ElementID, TableOfContentsSection } from '@logic/ui.ts';
+import { addClass, removeClass } from '@logic/dom-utils.ts';
+import { getLanguageFromPathname, getLanguageTag, isAuxiliaryRoute, isHomePage, removeLanguageTag } from '@logic/routing.ts';
+import { ElementClass, ElementID, TableOfContentsSection } from '@logic/ui.ts';
+
+export function setToolbarVisibility(): void {
+    const pathname = globalThis.location.pathname;
+    const language = getLanguageTag(pathname) ?? DEFAULT_LANGUAGE;
+    const toolbarShouldBeVisible = !isHomePage(pathname, language);
+
+    if (toolbarShouldBeVisible) {
+        showToolbar();
+    } else {
+        hideToolbar();
+    }
+}
+
+export function showSearchTrigger(): void {
+    const searchTrigger = document.getElementById(ElementID.SEARCH_DIALOG_TRIGGER);
+    removeClass(searchTrigger, ElementClass.INVISIBLE);
+}
+
+export function hideSearchTrigger(): void {
+    const searchTrigger = document.getElementById(ElementID.SEARCH_DIALOG_TRIGGER);
+    addClass(searchTrigger, ElementClass.INVISIBLE);
+}
+
+export function showMenuTrigger(): void {
+    const menuElement = document.getElementById(ElementID.TOOLBAR_MENU);
+    removeClass(menuElement, ElementClass.INVISIBLE);
+}
+
+export function hideMenuTrigger(): void {
+    const menuElement = document.getElementById(ElementID.TOOLBAR_MENU);
+    addClass(menuElement, ElementClass.INVISIBLE);
+}
 
 export function updateTableOfContentsViewByPathID(pathID: PathID): void {
     if (isPrologueContent(pathID)) {
@@ -33,12 +66,12 @@ export function updateToolbarNavigationText(text?: string): void {
     }
 }
 
-export function updateToolbarForAuxiliaryRoute(pathname: string): void {
+export function updateToolbarForNonContentRoute(pathname: string): void {
     const language = getLanguageFromPathname(pathname) ?? DEFAULT_LANGUAGE;
     const path = removeLanguageTag(pathname, language).replace('/', '');
 
     if (isAuxiliaryRoute(path, language)) {
-        const label = getAuxiliaryRouteLabel(pathname, language);
+        const label = getAuxiliaryRouteLabel(path, language);
         updateToolbarNavigationText(label);
         showTableOfContentsSection(TableOfContentsSection.AUXILIARY);
     }
@@ -49,4 +82,14 @@ function showTableOfContentsSection(section: TableOfContentsSection): void {
     if (tabGroup) {
         tabGroup.show(section);
     }
+}
+
+function showToolbar(): void {
+    const toolbar = document.getElementById(ElementID.TOOLBAR);
+    removeClass(toolbar, ElementClass.TOOLBAR_TRANSLATE_OFFSCREEN);
+}
+
+function hideToolbar(): void {
+    const toolbar = document.getElementById(ElementID.TOOLBAR);
+    addClass(toolbar, ElementClass.TOOLBAR_TRANSLATE_OFFSCREEN);
 }

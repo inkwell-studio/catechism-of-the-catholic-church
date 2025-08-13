@@ -1,6 +1,7 @@
 ---
 import { Language, Subarticle as SubarticleType } from '@catechism-types';
 import { getAllChildContent } from '@catechism-utils/content';
+import { getRomanNumeral } from '@catechism-utils/title';
 
 import { getUrlFragment } from '@logic/routing';
 
@@ -17,7 +18,10 @@ const id = getUrlFragment(subarticle.semanticPath, false, language).fragment;
 const childContent = getAllChildContent(subarticle);
 ---
 
-<h6 {id} class="font-title font-bold text mt-6 mb-2">
-    {subarticle.title}
+<h6
+    {id}
+    class="bg-stone-150 font-title font-semibold text-xl text-start text-stone-700 tracking-wider uppercase py-4 px-6 mt-10 mb-6 mx-text rounded-sm sm:mt-14 dark:bg-zinc-800 dark:text-stone-300"
+>
+    {getRomanNumeral(subarticle.subarticleNumber)}. {subarticle.title}
 </h6>
 <ContentBaseArray content={childContent} {language} />

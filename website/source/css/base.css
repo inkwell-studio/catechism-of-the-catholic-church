@@ -1,0 +1,156 @@
+@import 'tailwindcss';
+
+/* The class referenced here must match the value of the `DARK_MODE_CLASS_TAILWIND` constant in `source/logic/theme.ts` */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* The class referenced here must match that specified by the `UiClass.HIDE_CROSS_REFERENCES` value in `source/logic/ui.ts` */
+@custom-variant hide-cross-references (&:where(.hide-cross-references, .hide-cross-references *));
+
+/* The class referenced here must match that specified by the `UiClass.HIDE_EXTERNAL_REFERENCES` value in `source/logic/ui.ts` */
+@custom-variant hide-external-references (&:where(.hide-external-references, .hide-external-references *));
+
+@theme {
+    --breakpoint-tiny: 22.5rem; /* 360 px */
+    --breakpoint-sm: 40rem; /* 640 px */
+    --breakpoint-md: 50rem; /* 800 px */
+    --breakpoint-lg: 64rem; /* 1024 px */
+    --breakpoint-xl: 80rem; /* 1280 px */
+    --breakpoint-2xl: 96rem; /* 1536 px */
+
+    /* This is Tailwind's default `xs` value */
+    --text-2xs: 0.75rem;
+    --text-2xs--line-height: calc(1 / 0.75);
+
+    /* This is a new size, between Tailwind's default `xs` and `sm` values */
+    --text-xs: 0.8125rem;
+    --text-xs--line-height: calc(1 / 0.8125);
+
+    /* Colors: additional shades */
+    --color-arctic-50: oklch(from var(--color-blue-50) l calc(c / 2) h);
+    --color-arctic-100: oklch(from var(--color-blue-100) l calc(c / 2) h);
+    --color-arctic-200: oklch(from var(--color-blue-200) l calc(c / 2) h);
+    --color-arctic-300: oklch(from var(--color-blue-300) l calc(c / 2) h);
+    --color-arctic-400: oklch(from var(--color-blue-400) l calc(c / 2) h);
+    --color-arctic-500: oklch(from var(--color-blue-500) l calc(c / 2) h);
+    --color-arctic-600: oklch(from var(--color-blue-600) l calc(c / 2) h);
+    --color-arctic-700: oklch(from var(--color-blue-700) l calc(c / 2) h);
+    --color-arctic-800: oklch(from var(--color-blue-800) l calc(c / 2) h);
+    --color-arctic-900: oklch(from var(--color-blue-900) l calc(c / 2) h);
+    --color-arctic-950: oklch(from var(--color-blue-950) l calc(c / 2) h);
+
+    --color-gray-550: oklch(47.0% 0.028 260);
+
+    --color-neutral-150: oklch(0.950 0 0);
+    --color-neutral-350: oklch(0.789 0 0);
+    --color-neutral-750: oklch(0.319 0 0);
+
+    --color-stone-150: oklch(95.5% 0.002 50.000);
+    --color-stone-250: oklch(0.895 0.004 54.000);
+    --color-stone-350: oklch(0.789 0.008 56.300);
+    --color-stone-450: oklch(0.627 0.012 57.000);
+    --color-stone-650: oklch(0.409 0.010 70.100);
+    --color-stone-925: oklch(0.185 0.005 52.000);
+
+    --color-zinc-150: oklch(0.945 0.002 286.350);
+    --color-zinc-250: oklch(0.895 0.005 286.30);
+    --color-zinc-350: oklch(0.790 0.010 286.170);
+    --color-zinc-450: oklch(0.630 0.015 286.000);
+    --color-zinc-750: oklch(0.320 0.010 286.000);
+    --color-zinc-850: oklch(0.242 0.006 286.000);
+    --color-zinc-875: oklch(0.226 0.006 285.893);
+    --color-zinc-925: oklch(0.160 0.006 285.850);
+
+    /* Typography */
+    --tailwind-default-font-sans:
+        ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+    --tailwind-default-font-serif: ui-serif, Georgia, Cambria, 'Times New Roman', Times, serif;
+    --tailwind-default-font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
+
+    --font-sans: PTSans, var(--tailwind-default-font-sans);
+    --font-serif: 'Crimson Pro', var(--tailwind-default-font-serif);
+    --font-title: 'Aleo', var(--tailwind-default-font-serif);
+
+    /* The standard amount of horizontal spacing that should exist around text */
+    --spacing-text: 1.75rem;
+
+    /* The standard width for a column of text */
+    --spacing-reading: 38rem;
+    --spacing-reading-with-padding: calc(var(--spacing-reading) + var(--spacing-text));
+
+    --spacing-toolbar-height: var(--toolbar-height);
+}
+
+@layer base {
+    :root {
+        --toolbar-height: calc(4.5rem + 1px);
+        /* This prevents some problematic inconsistent font-weight renderings between
+        browsers (in particular, Safari was rendering `font-weight: 600` too thickly) */
+        font-synthesis: none;
+
+        @variant sm {
+            --toolbar-height: calc(3rem + 1px);
+        }
+    }
+
+    /* This hides custom elements until they are defined
+    (this is used to hide Shoelace components until they finish loading: https://shoelace.style/getting-started/usage#waiting-for-components-to-load) */
+    :not(:defined) {
+        visibility: hidden;
+    }
+
+    @font-face {
+        font-family: 'Aleo';
+        src:
+            local('Aleo'),
+            url(/fonts/Aleo-VariableFont_wght.ttf) format('truetype');
+    }
+
+    @font-face {
+        font-family: 'Crimson Pro';
+        src:
+            local('Crimson Pro'),
+            url(/fonts/CrimsonPro-VariableFont_wght.ttf) format('truetype');
+    }
+
+    @font-face {
+        font-family: 'Crimson Pro';
+        font-style: italic;
+        src:
+            local('Crimson Pro Italic'),
+            url(/fonts/CrimsonPro-Italic-VariableFont_wght.ttf) format('truetype');
+    }
+
+    @font-face {
+        font-family: 'PTSans';
+        font-weight: 400;
+        src:
+            local('PT Sans'),
+            url(/fonts/PTSans-Regular.ttf) format('truetype');
+    }
+
+    @font-face {
+        font-family: 'PTSans';
+        font-weight: 400;
+        font-style: italic;
+        src:
+            local('PT Sans Italic'),
+            url(/fonts/PTSans-Italic.ttf) format('truetype');
+    }
+
+    @font-face {
+        font-family: 'PTSans';
+        font-weight: 700;
+        src:
+            local('PT Sans Bold'),
+            url(/fonts/PTSans-Bold.ttf) format('truetype');
+    }
+
+    @font-face {
+        font-family: 'PTSans';
+        font-weight: 700;
+        font-style: italic;
+        src:
+            local('PT Sans Bold Italic'),
+            url(/fonts/PTSans-BoldItalic.ttf) format('truetype');
+    }
+}

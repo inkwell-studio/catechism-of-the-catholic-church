@@ -3,6 +3,7 @@ import { Language, Section as SectionType } from '@catechism-types';
 import { getAllChildContent } from '@catechism-utils/content';
 
 import { getUrlFragment } from '@logic/routing';
+import { translate as t } from '@logic/translation';
 
 import ContentBaseArray from './content-base-array.astro';
 import ReadingAreaIntersectable from './reading-area-intersectable.astro';
@@ -19,9 +20,14 @@ const childContent = getAllChildContent(section);
 ---
 
 <ReadingAreaIntersectable content={section} {language}>
-    <div class="font-sans font-bold text-stone-600 text-center tracking-wider uppercase mb-4">Section {section.sectionNumber}</div>
-    <h2 {id} class="font-title font-medium text-4xl text-stone-700 text-center mb-16">
+    <div {id} class="font-sans font-bold text-base text-stone-600 text-center tracking-wider uppercase px-text mb-3 dark:text-stone-400">
+        {t('Section', language)} {section.sectionNumber}
+    </div>
+    <h2 class="font-title font-medium text-3xl text-stone-700 px-text text-center dark:text-stone-300">
         {section.title}
     </h2>
+
+    <div class="h-px bg-stone-200 w-1/2 my-8 mx-auto dark:bg-zinc-600"></div>
+
     <ContentBaseArray content={childContent} {language} />
 </ReadingAreaIntersectable>

@@ -1,7 +1,7 @@
 ---
 import { DEFAULT_LANGUAGE, Language } from '@catechism-types';
 
-import { path } from '@logic/navigation-utils';
+import { joinPaths } from '@logic/routing';
 import { ElementClass } from '@logic/ui';
 
 interface Props {
@@ -20,8 +20,8 @@ const { url, language, direction, class: classes, ...rest } = Astro.props;
 // deno-fmt-ignore
 const clientUrl = url
     ? DEFAULT_LANGUAGE === language
-        ? path(url)
-        : path(language, url)
+        ? joinPaths(url)
+        : joinPaths(language, url)
     : null;
 
 // deno-fmt-ignore
@@ -31,7 +31,7 @@ const urlDirection = 'forward' === direction
 
 // deno-fmt-ignore
 const contentUrl = clientUrl
-    ? path(`/partials/infinite-scroll/${urlDirection}`, clientUrl)
+    ? joinPaths(`/partials/infinite-scroll/${urlDirection}`, clientUrl)
     : null;
 
 // deno-fmt-ignore
@@ -40,7 +40,7 @@ const swapMethod = 'forward' === direction
     : 'beforebegin';
 ---
 
-<!-- When this element enters the viewport, it loads the next or previous block of content in order to create an infinite-scroll effect -->
+{/* When this element enters the viewport, it loads the next or previous block of content in order to create an infinite-scroll effect */}
 <div
     class:list={[classes]}
     hx-trigger="intersect once"

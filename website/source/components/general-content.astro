@@ -1,8 +1,8 @@
 ---
 import { Language, PathID } from '@catechism-types';
 
-import ApostolicConstitution from '@components/content/auxiliary/apostolic-constitution/apostolic-constitution.astro';
-import ApostolicLetter from '@components/content/auxiliary/apostolic-letter/apostolic-letter.astro';
+import ApostolicConstitution from '@components/content/auxiliary/apostolic-constitution.astro';
+import ApostolicLetter from '@components/content/auxiliary/apostolic-letter.astro';
 import Glossary from '@components/content/auxiliary/glossary.astro';
 import IndexCitations from '@components/content/auxiliary/index-citations.astro';
 import IndexTopics from '@components/content/auxiliary/index-topics.astro';
@@ -13,7 +13,7 @@ import { isApostolicConstitution, isApostolicLetter, isGlossary, isIndexCitation
 interface Props {
     language: Language;
     path: string;
-    pathID: PathID;
+    pathID?: PathID;
 }
 
 const { language, path, pathID } = Astro.props;
@@ -26,14 +26,26 @@ const isApostolicConstitutionPath = isApostolicConstitution(path, language);
 
 const isCatechismContent = !!pathID;
 ---
-{isGlossaryPath && <Glossary {language} />}
+<div class="max-w-4xl mx-auto">
+    {isGlossaryPath && <Glossary {language} />}
 
-{isIndexTopicsPath && <IndexTopics {language} />}
+    {isIndexTopicsPath && <IndexTopics {language} />}
 
-{isIndexCitationsPath && <IndexCitations {language} />}
+    {isIndexCitationsPath && <IndexCitations {language} />}
 
-{isApostolicLetterPath && <ApostolicLetter {language} />}
+    {isApostolicLetterPath && <ApostolicLetter {language} />}
 
-{isApostolicConstitutionPath && <ApostolicConstitution {language} />}
+    {isApostolicConstitutionPath && <ApostolicConstitution {language} />}
 
-{isCatechismContent && <CatechismContent {pathID} {language} firstContent={true} infiniteScrollDirection={null} />}
+    {
+        isCatechismContent && (
+            <CatechismContent
+                {pathID}
+                {language}
+                firstContent={true}
+                infiniteScrollDirection={null}
+                firstInfiniteScrollBackwardContent={false}
+            />
+        )
+    }
+</div>

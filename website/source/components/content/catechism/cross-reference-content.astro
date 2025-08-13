@@ -1,30 +1,16 @@
 ---
-import { Language, NumberOrNumberRange, Paragraph } from '@catechism-types';
-
-import PartialContentLink from '@components/partial-content-link.astro';
+import { Language, Paragraph } from '@catechism-types';
 
 import ContentBaseArray from './content-base-array.astro';
 
 interface Props {
-    reference: NumberOrNumberRange;
     paragraphs: Array<Paragraph>;
-    url: string;
     language: Language;
 }
 
-const { reference, paragraphs, url, language } = Astro.props;
-
-/* Remove the hash of the URL, as including it causes a bug when interacting with HTMX,
-as HTMX will use it the hash and fragment value in `document.querySelector()`, which
-considers ID selectors that start with numbers as invalid (e.g. `#123`).
-
-IDs that start with numbers are valid according to HTML5, but invalid according to HTML4. */
+const { paragraphs, language } = Astro.props;
 ---
 
-<PartialContentLink {url} {language}>
-    navigate-to: {reference}
-</PartialContentLink>
-
-<div>
+<div class="pb-toolbar-height">
     {paragraphs && <ContentBaseArray content={paragraphs} {language} />}
 </div>

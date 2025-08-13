@@ -1,13 +1,17 @@
 ---
+import Icon from '@components/icon.astro';
+import PrefetchOnMouseover from '@components/prefetch-on-mouseover.astro';
+
 import Auxiliary from './section/auxiliary.astro';
 import MainContent from './section/main-content.astro';
 import Panel from './section/panel.astro';
 
 import { DEFAULT_LANGUAGE, Language } from '@catechism-types';
 
+import { IconEnum } from '@components/icon-enum';
 import { getTableOfContents } from '@logic/artifacts';
 import { translate as t } from '@logic/translation';
-import { ElementID, TableOfContentsSection } from '@logic/ui';
+import { ElementClass, ElementID, TableOfContentsSection } from '@logic/ui';
 
 interface Props {
     language: Language;
@@ -37,58 +41,95 @@ const tableOfContents = await getTableOfContents(language);
 </script>
 
 <style>
+    @reference '@css/base.css';
+
+    :root {
+        --toc-navbar-background-color: var(--color-gray-100);
+        --toc-navbar-indicator-color: var(--color-sky-600);
+        --toc-navbar-border-color: var(--color-gray-200);
+        --toc-navbar-tab-text-color: var(--color-gray-600);
+        --toc-navbar-tab-text-active-color: var(--color-sky-600);
+        --toc-panel-background-color: var(--color-white);
+    }
+
+    /* This `dark` class must match the value of the `DARK_MODE_CLASS_TAILWIND` constant in `source/logic/theme.ts` */
+    :root.dark {
+        --toc-navbar-background-color: var(--color-zinc-925);
+        --toc-navbar-indicator-color: var(--color-arctic-600);
+        --toc-navbar-border-color: var(--color-zinc-750);
+        --toc-navbar-tab-text-color: var(--color-zinc-400);
+        --toc-navbar-tab-text-active-color: var(--color-arctic-400);
+        --toc-panel-background-color: var(--color-zinc-875);
+    }
+
     sl-tab-group {
-        --indicator-color: var(--color-sky-600);
-        --track-color: var(--color-stone-100);
+        --track-color: var(--toc-navbar-background-color);
+        --indicator-color: var(--toc-navbar-indicator-color);
         --track-width: 0.25rem;
     }
 
-    sl-tab-group::part(nav) {
-        background-color: var(--color-stone-100);
-        border-top: solid 1px var(--color-stone-200);
+    sl-tab-group::part(body) {
+        /*
+            height of other elements:
+
+            - top bar: 3rem
+            - tabs container: 3.25rem (content) + 1px (border)
+            - toolbar: `--toolbar-height` variable
+            - toolbar border: 1px (this value is subtracted so that the border is covered)
+        */
+        --cumulative-height-of-other-elements: calc(3rem + 3.25rem + 1px + var(--toolbar-height) - 1px);
+        height: calc(100vh - var(--cumulative-height-of-other-elements));
     }
 
-    sl-tab-group::part(tabs) {
-        max-width: fit-content;
-        margin-left: auto;
-        margin-right: auto;
+    sl-tab-group::part(nav) {
+        @apply flex;
+        @apply justify-center;
+        @apply bg-(--toc-navbar-background-color);
+        @apply border-t;
+        @apply border-t-(--toc-navbar-border-color);
+    }
+
+    /* The `.disable-animations` class here must match the value of `source/logic/ui.ts::ElementClass.DISABLE_ANIMATIONS_FLAG` */
+    sl-tab-group.disable-animations::part(active-tab-indicator) {
+        transition: none;
     }
 
     sl-tab::part(base) {
-        padding-left: 1rem;
-        padding-right: 1rem;
+        @apply flex;
+        @apply justify-center;
+        @apply min-w-12;
+        @apply h-12;
+        @apply p-2;
+        @apply my-0;
+        @apply mx-1;
+        @apply rounded-none;
+        @apply text-(--toc-navbar-tab-text-color);
+    }
+
+    sl-tab[active]::part(base) {
+        @apply text-(--toc-navbar-tab-text-active-color);
     }
 </style>
 
-<nav class="bg-white text-stone-950 rounded-md shadow-2xl border-b border-stone-200">
-    <div class="flex bg-sky-700 text-stone-50 rounded-t-md">
-        <a href={homeUrl} class="flex items-center gap-2 py-3 px-2">
-            <!-- from https://heroicons.com/ : language -->
-            <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke-width="2"
-                stroke="currentColor"
-                class="size-5"
-            >
-                <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="m2.25 12 8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25"
-                />
-            </svg>
-            <span class="text-sm">
-                {t('Home', language)}
-            </span>
-        </a>
+<nav class="fixed top-0 bottom-toolbar-height inset-x-0 flex flex-col font-normal bg-white dark:bg-(--toc-panel-background-color)">
+    <div class="bg-sky-700 text-sky-100 text-sm dark:bg-arctic-800 dark:text-arctic-200">
+        <div
+            class="[--button-padding:--spacing(3)] max-w-reading-with-padding mx-auto px-[calc(var(--spacing-text)-var(--button-padding))]"
+        >
+            <PrefetchOnMouseover url={homeUrl}>
+                <a href={homeUrl} class="max-w-max w-max min-h-12 flex items-center gap-2 px-[var(--button-padding)]">
+                    <Icon icon={IconEnum.HOME} class="size-5" />
+                    <span class="relative top-0.5">{t('Home', language)}</span>
+                </a>
+            </PrefetchOnMouseover>
+        </div>
     </div>
 
-    <sl-tab-group id={ElementID.TABLE_OF_CONTENTS_TAB_GROUP} placement="bottom">
-        <!-- tabs -->
-        {tabs.map(([section, label]) => <sl-tab slot="nav" panel={section} class="text-center">{label}</sl-tab>)}
+    <sl-tab-group id={ElementID.TABLE_OF_CONTENTS_TAB_GROUP} placement="bottom" class={ElementClass.DISABLE_ANIMATIONS_FLAG}>
+        {/* tabs */}
+        {tabs.map(([section, label]) => <sl-tab slot="nav" panel={section}>{label}</sl-tab>)}
 
-        <!-- panels -->
+        {/* panels */}
         <Panel section={TableOfContentsSection.PROLOGUE}>
             <MainContent content={tableOfContents.prologue} {language} />
         </Panel>

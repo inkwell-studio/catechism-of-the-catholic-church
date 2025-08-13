@@ -1,0 +1,14 @@
+---
+interface Props {
+    firstParagraphNumber: number;
+    lastParagraphNumber: number;
+}
+
+const { firstParagraphNumber, lastParagraphNumber } = Astro.props;
+---
+
+<span class="font-sans font-light text-sm tracking-wider ml-1">
+    <span class="text-gray-400/80 dark:text-zinc-400/80">§§</span><span class="text-gray-400 pl-0.25 dark:text-zinc-400">{
+            firstParagraphNumber
+        }–{lastParagraphNumber}</span>
+</span>

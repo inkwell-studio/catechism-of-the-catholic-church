@@ -1,0 +1,29 @@
+---
+// This page is used for creating demo videos (like those used on the homepage)
+
+import '@css/base.css';
+---
+
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="theme-color" content="#1F293B" />
+        <meta name="color-scheme" content="light dark" />
+    </head>
+
+    <body>
+        <div class="min-h-screen w-screen flex justify-center items-center bg-slate-300">
+            <!-- set the recording space to 960px • 540px, with some padding -->
+            <div
+                class="w-[970px] h-[550px] grid place-items-center py-16 px-76 bg-linear-to-tr from-slate-500 to-slate-300 from-15% to-130%"
+            >
+                <div class="size-full rounded-xl shadow-2xl overflow-hidden">
+                    <iframe
+                        src="http://localhost:4321/part-4/section-1/chapter-3/article-2"
+                        class="size-full object-cover object-center"
+                    ></iframe>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

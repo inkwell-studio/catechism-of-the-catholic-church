@@ -1,11 +1,13 @@
 ---
 import { Language, Part as PartType } from '@catechism-types';
 import { getAllChildContent } from '@catechism-utils/content';
-
-import { getRomanNumeral } from '@components/utils';
+import { getRomanNumeral } from '@catechism-utils/title';
 
 import ContentBaseArray from './content-base-array.astro';
 import ReadingAreaIntersectable from './reading-area-intersectable.astro';
+import TopTitle from './top-title.astro';
+
+import { translate as t } from '@logic/translation';
 
 interface Props {
     part: PartType;
@@ -18,7 +20,9 @@ const childContent = getAllChildContent(part);
 ---
 
 <ReadingAreaIntersectable content={part} {language}>
-    <div class="font-sans font-bold text-stone-600 text-center tracking-wider uppercase mb-6">Part {getRomanNumeral(part.partNumber)}</div>
-    <h1 class="font-title text-6xl text-center mb-32">{part.title}</h1>
+    <div class="font-sans font-bold text-stone-600 text-center tracking-wider uppercase px-text mb-4 dark:text-stone-400">
+        {t('Part', language)} {getRomanNumeral(part.partNumber)}
+    </div>
+    <TopTitle>{part.title}</TopTitle>
     <ContentBaseArray content={childContent} {language} />
 </ReadingAreaIntersectable>

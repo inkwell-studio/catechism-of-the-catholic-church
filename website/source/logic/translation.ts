@@ -1,6 +1,8 @@
 import { BibleBook, Content, Language } from '@catechism-types';
 
-import { CATECHISM_OF_THE_CATHOLIC_CHURCH } from './constants.ts';
+/* This must match the value of the `CATECHISM_OF_THE_CATHOLIC_CHURCH` constant in `./constants.ts`.
+The original constant is not imported here in order to avoid creating a circular dependency. */
+const CATECHISM_OF_THE_CATHOLIC_CHURCH = 'Catechism of the Catholic Church';
 
 export function translate(englishText: string, language: Language): string {
     // deno-fmt-ignore
@@ -22,6 +24,10 @@ export function translate(englishText: string, language: Language): string {
 
 const translationMap: Record<string, Record<Exclude<Language, Language.ENGLISH>, string>> = {
     //#region UI messages and labels
+    'About': {
+        [Language.LATIN]: 'Notitia',
+        [Language.SPANISH]: 'Información',
+    },
     'Content': {
         [Language.LATIN]: 'Content',
         [Language.SPANISH]: 'Contenido',
@@ -42,6 +48,14 @@ const translationMap: Record<string, Record<Exclude<Language, Language.ENGLISH>,
         [Language.LATIN]: 'Opibus',
         [Language.SPANISH]: 'Recursos',
     },
+    'Cross References': {
+        [Language.LATIN]: 'Renvii',
+        [Language.SPANISH]: 'Referencias Cruzadas',
+    },
+    'Footnotes': {
+        [Language.LATIN]: 'Notae',
+        [Language.SPANISH]: 'Notas al pie',
+    },
     'Vulgate': {
         [Language.LATIN]: 'Vulgata',
         [Language.SPANISH]: 'Vulgata',
@@ -50,19 +64,26 @@ const translationMap: Record<string, Record<Exclude<Language, Language.ENGLISH>,
         [Language.LATIN]: 'Cf. ',
         [Language.SPANISH]: 'Cf. ',
     },
-    'Light': {
-        [Language.LATIN]: 'Lux',
-        [Language.SPANISH]: 'Ligero',
-    },
-    'Dark': {
-        [Language.LATIN]: 'Tenebrosus',
-        [Language.SPANISH]: 'Oscuro',
-    },
     'Auto': {
         [Language.LATIN]: 'Latibulum',
         [Language.SPANISH]: 'Automático',
     },
-
+    'Search': {
+        [Language.LATIN]: 'Quaerere',
+        [Language.SPANISH]: 'Buscar',
+    },
+    'Show All Results': {
+        [Language.LATIN]: 'Omnia Resultata Ostende',
+        [Language.SPANISH]: 'Mostrar Todos Los Resultados',
+    },
+    'No results': {
+        [Language.LATIN]: 'Nulla Resultata',
+        [Language.SPANISH]: 'Sin Resultados',
+    },
+    'Return': {
+        [Language.LATIN]: 'Redeo',
+        [Language.SPANISH]: 'Volver',
+    },
     //#endregion
 
     //#region Bible books
@@ -366,9 +387,17 @@ const translationMap: Record<string, Record<Exclude<Language, Language.ENGLISH>,
         [Language.LATIN]: 'sectio',
         [Language.SPANISH]: 'seccion',
     },
+    'Section': {
+        [Language.LATIN]: 'Sectio',
+        [Language.SPANISH]: 'Seccion',
+    },
     'chapter': {
         [Language.LATIN]: 'caput',
         [Language.SPANISH]: 'capitulo',
+    },
+    'Chapter': {
+        [Language.LATIN]: 'Caput',
+        [Language.SPANISH]: 'Capitulo',
     },
     'chapter-section': {
         [Language.LATIN]: 'caput-sectio',
@@ -377,6 +406,10 @@ const translationMap: Record<string, Record<Exclude<Language, Language.ENGLISH>,
     'article': {
         [Language.LATIN]: 'articulus',
         [Language.SPANISH]: 'articulo',
+    },
+    'Article': {
+        [Language.LATIN]: 'Articulus',
+        [Language.SPANISH]: 'Articulo',
     },
     'article-paragraph': {
         [Language.LATIN]: 'articulus-paragraphus',
@@ -397,6 +430,10 @@ const translationMap: Record<string, Record<Exclude<Language, Language.ENGLISH>,
     'subarticle-': {
         [Language.LATIN]: 'subarticulus-',
         [Language.SPANISH]: 'subartículo-',
+    },
+    'Paragraph': {
+        [Language.LATIN]: 'Paragraphus',
+        [Language.SPANISH]: 'Parrafo',
     },
     'paragraph': {
         [Language.LATIN]: 'paragraphus',

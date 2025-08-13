@@ -1,0 +1,79 @@
+---
+import PartialContentLink from '@components/partial-content-link.astro';
+
+import { Language } from '@catechism-types';
+import { ElementID } from '@logic/ui';
+
+interface Props {
+    language: Language;
+}
+
+const { language } = Astro.props;
+---
+
+<style>
+    @reference '@css/base.css';
+
+    /* This applies to the `<mark>` elements that Pagefind wraps around search-term matches in the `excerpt`
+        properties of `PagefindSearchResultDataResult` and `PagefindSearchResultDataSubresult` objects */
+    :global(mark) {
+        background: unset;
+
+        @apply font-bold;
+        @apply text-gray-900;
+        @apply underline;
+        @apply underline-offset-4;
+        @apply decoration-2;
+        @apply decoration-sky-900/50;
+    }
+
+    /* This `dark` class must match the value of the `DARK_MODE_CLASS_TAILWIND` constant in `source/logic/theme.ts` */
+    :global(.dark mark) {
+        @apply text-zinc-150;
+        @apply tracking-wider;
+        @apply decoration-3;
+        @apply decoration-arctic-300;
+    }
+</style>
+
+<template id={ElementID.SEARCH_RESULT_TEMPLATE}>
+    <li data-selected="false" class="group">
+        <!-- divider line -->
+        <div class="h-px mx-4 mt-6 mb-4 bg-gray-200 group-first:hidden dark:bg-zinc-600"></div>
+
+        {/* The URL-derived values are set dynamically on the client */}
+        <PartialContentLink
+            {language}
+            innerClass="flex items-center min-h-12 py-2 px-4 rounded-md group-data-[selected=true]:bg-sky-200 active:bg-sky-300 dark:group-data-[selected=true]:bg-arctic-800"
+            url=""
+        />
+    </li>
+</template>
+
+<template id={ElementID.SEARCH_SUBRESULT_TEMPLATE}>
+    <li data-selected="false" class="group flex items-center gap-4 pl-4">
+        <!-- a dot -->
+        <div class="shrink-0 w-2 h-2 rounded-full bg-gray-200 dark:bg-arctic-500/50"></div>
+
+        {/* The URL-derived values are set dynamically on the client */}
+        <PartialContentLink
+            {language}
+            innerClass="grow flex items-center min-h-12 py-2 px-4 rounded-md bg-gray-50 dark:bg-zinc-800 group-data-[selected=true]:bg-sky-200 dark:group-data-[selected=true]:bg-arctic-800"
+            url=""
+        />
+    </li>
+</template>
+
+<template id={ElementID.SEARCH_RESULT_EXCERPT_TEMPLATE}>
+    <div class="flex flex-col gap-1">
+        <div class="title font-bold text-lg text-gray-600 dark:text-arctic-200 dark:font-normal"></div>
+        <div class="excerpt-text text-sm text-gray-800 dark:text-zinc-200"></div>
+    </div>
+</template>
+
+<template id={ElementID.SEARCH_SUBRESULT_EXCERPT_TEMPLATE}>
+    <div class="flex flex-col gap-1">
+        <div class="title font-bold text-base text-gray-700 dark:text-arctic-300 dark:font-normal"></div>
+        <div class="excerpt-text text-sm text-gray-700 dark:text-zinc-150"></div>
+    </div>
+</template>

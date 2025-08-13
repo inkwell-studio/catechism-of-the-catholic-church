@@ -1,0 +1,20 @@
+---
+import { DEFAULT_LANGUAGE } from '@catechism-types';
+
+import CrossReferenceTrigger from '@components/content/catechism/cross-reference-trigger.astro';
+import ReferenceCollection from '@components/content/catechism/reference-collection.astro';
+import PrefetchOnMouseover from '@components/prefetch-on-mouseover.astro';
+---
+
+{
+    /*
+    Placing this component on the page (without being nested inside a Shoelace component or something similar)
+    ensures that all the custom elements below are properly defined, as custom elements may not be defined if
+    they are included on the page only by being nested within a Shoelace component.
+    */
+}
+<div class="hidden">
+    <CrossReferenceTrigger reference={1} language={DEFAULT_LANGUAGE} />
+    <PrefetchOnMouseover url="" />
+    <ReferenceCollection referenceCollection={null} language={DEFAULT_LANGUAGE} />
+</div>

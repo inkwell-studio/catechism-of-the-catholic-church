@@ -4,6 +4,7 @@ import { getAllChildContent } from '@catechism-utils/content';
 
 import ContentBaseArray from './content-base-array.astro';
 import ReadingAreaIntersectable from './reading-area-intersectable.astro';
+import TopTitle from './top-title.astro';
 
 interface Props {
     prologue: PrologueType;
@@ -16,6 +17,6 @@ const childContent = getAllChildContent(prologue);
 ---
 
 <ReadingAreaIntersectable content={prologue} {language}>
-    <h1 class="font-title text-6xl mb-8">{prologue.title}</h1>
+    <TopTitle isPrologue={true}>{prologue.title}</TopTitle>
     <ContentBaseArray content={childContent} {language} />
 </ReadingAreaIntersectable>

@@ -1,0 +1,454 @@
+---
+// This component is intended to be placed on the UI only once
+
+import SearchResultTemplates from './search-result-templates.astro';
+import Icon from '@components/icon.astro';
+
+import { Language } from '@catechism-types';
+
+import { IconEnum } from '@components/icon-enum';
+import { getTableOfContents } from '@logic/artifacts';
+import { translate as t } from '@logic/translation';
+import { ElementID } from '@logic/ui';
+
+interface Props {
+    language: Language;
+}
+
+const { language } = Astro.props;
+
+const tableOfContents = await getTableOfContents(language);
+const firstParagraphNumber = tableOfContents.prologue.firstParagraphNumber;
+const lastParagraphNumber = tableOfContents.parts.at(-1).lastParagraphNumber;
+---
+<script>
+    //#region imports
+    import { prefetch } from 'astro:prefetch';
+
+    import type { SlDialog } from '@shoelace-types';
+    import '@shoelace/dialog/dialog.js';
+
+    import { DEFAULT_LANGUAGE } from '@catechism-types';
+    import { shoelaceInitialized } from '@logic/custom-elements';
+    import { addClass, hide, onClick, onMouseover, removeClass, show } from '@logic/dom-utils';
+    import { HTMX } from '@logic/htmx';
+    import { Pagefind, PagefindSearchOutcome, PagefindSearchResultData } from '@logic/pagefind';
+    import { getLanguageFromPathname, getPartialContentUrls } from '@logic/routing';
+    import { translate as t } from '@logic/translation';
+    import { ElementClass, ElementID } from '@logic/ui';
+    import { debounce } from '@logic/utils';
+    //#endregion
+
+    //#region setup
+    declare const htmx: HTMX;
+    declare const pagefind: Pagefind;
+
+    type EventHandler = (event: Event) => void;
+
+    let searchResults: PagefindSearchOutcome | null;
+    let initialSearchResultsLimit = 7;
+
+    const language = getLanguageFromPathname(globalThis.location.pathname) ?? DEFAULT_LANGUAGE;
+
+    {/* The delay should be short enough that it's not perceptible, and long enough to avoid too many callback invocations */}
+    const debouncedSearchResultMouseoverHandler = debounce((resultNumber: number) => selectResult(resultNumber), 10);
+
+    let selectedResultNumber: number | null = null;
+
+    const dialog: SlDialog | null = document.querySelector(ElementID.SEARCH_DIALOG_SELECTOR);
+
+    const trigger = document.getElementById(ElementID.SEARCH_DIALOG_TRIGGER);
+    const searchForm = document.getElementById(ElementID.SEARCH_FORM);
+    const searchInput = document.getElementById(ElementID.SEARCH_INPUT) as HTMLInputElement;
+    const searchReset = document.getElementById(ElementID.SEARCH_RESET);
+    const searchClose = document.getElementById(ElementID.SEARCH_CLOSE);
+    const showAllResults = document.getElementById(ElementID.SEARCH_SHOW_ALL_RESULTS);
+    const noResults = document.getElementById(ElementID.SEARCH_NO_RESULTS);
+
+    const firstParagraphNumber = parseInt(searchInput.dataset.firstParagraphNumber);
+    const lastParagraphNumber = parseInt(searchInput.dataset.lastParagraphNumber);
+
+    await shoelaceInitialized();
+
+    initializeEventHandlers();
+    initializeDialog();
+
+    function initializeDialog(): void {
+        onClick(trigger, () => dialog?.show());
+        onClick(searchClose, () => dialog?.hide());
+
+        dialog?.addEventListener('sl-after-hide', () => {
+            resetSearch();
+        });
+    }
+    //#endregion
+
+    //#region search logic
+    async function searchHandler(event: InputEvent): Promise<void> {
+        const query = (event.target as any).value;
+        if (query.length > 0) {
+            removeClass(searchReset, 'invisible');
+
+            const n = parseInt(query);
+            const paragraphNumber = !!n && firstParagraphNumber <= n && n <= lastParagraphNumber ? n : null;
+
+            selectedResultNumber = null;
+            const results = await search(query);
+            populateResults(results, { paragraphNumber });
+
+            if (results.length > 0) {
+                hide(noResults);
+                // For convenience, automatically select the first result
+                selectResult(1);
+            } else {
+                show(noResults);
+            }
+        } else {
+            resetSearch();
+        }
+    }
+
+    async function search(query: string): Promise<Array<PagefindSearchResultData>> {
+        searchResults = await pagefind.search(query);
+
+        const firstBatch = searchResults.results.slice(0, initialSearchResultsLimit);
+        if (firstBatch.length < searchResults.results.length) {
+            show(showAllResults);
+        } else {
+            hide(showAllResults);
+        }
+
+        return await Promise.all(firstBatch.map((r) => r.data()));
+    }
+    //#endregion
+
+    //#region UI
+    //#region event handlers
+    function initializeEventHandlers(): void {
+        dialog.addEventListener('keydown', (e) => handleArrowKeys(e));
+
+        searchForm.addEventListener('submit', (event) => {
+            event.preventDefault();
+            if (selectedResultNumber) {
+                {/* Simulate a `click` event on the selected result's anchor element to trigger its HTMX behavior */}
+                const resultID = getResultID(selectedResultNumber);
+                document.getElementById(resultID).querySelector('a').click();
+            }
+        });
+
+        searchInput.addEventListener('input', debounce(searchHandler, 300) as EventHandler);
+
+        onClick(searchReset, () => resetSearch());
+        onClick(showAllResults, () => loadRemainingResults());
+    }
+
+    function handleArrowKeys(e: KeyboardEvent): void {
+        if (!e.altKey && !e.ctrlKey && !e.metaKey && !e.shiftKey) {
+            switch (e.key) {
+                case 'ArrowUp':
+                    selectPreviousResult(e);
+                    break;
+                case 'ArrowDown':
+                    selectNextResult(e);
+                    break;
+            }
+        }
+    }
+
+    function selectNextResult(event: KeyboardEvent): void {
+        event.preventDefault();
+
+        const numResults = getResultElements().length;
+        let nextResultNumber = selectedResultNumber === null ? 1 : selectedResultNumber + 1;
+
+        if (nextResultNumber > numResults) {
+            nextResultNumber = 1;
+        }
+
+        selectResult(nextResultNumber, true);
+    }
+
+    function selectPreviousResult(event: KeyboardEvent): void {
+        event.preventDefault();
+
+        const numResults = getResultElements().length;
+        let nextResultNumber = selectedResultNumber === null ? numResults : selectedResultNumber - 1;
+
+        if (nextResultNumber < 1) {
+            nextResultNumber = numResults;
+        }
+
+        selectResult(nextResultNumber, true);
+    }
+
+    function selectResult(resultNumber: number, scrollIntoView = false): void {
+        selectedResultNumber = resultNumber;
+        const resultID = getResultID(selectedResultNumber);
+        const url = document.getElementById(resultID).querySelector('a').getAttribute('hx-get');
+        prefetch(url);
+
+        globalThis.requestAnimationFrame(() => {
+            const allResults = getResultElements();
+
+            for (const result of allResults) {
+                if (result.id === resultID) {
+                    result.dataset.selected = 'true';
+
+                    if (scrollIntoView) {
+                        const inView = resultInView(result);
+                        if (!inView) {
+                            result.scrollIntoView({ block: 'nearest', behavior: 'instant' });
+                        }
+                    }
+                } else {
+                    result.dataset.selected = 'false';
+                }
+            }
+        });
+    }
+
+    function getResultElements(): HTMLCollectionOf<HTMLElement> {
+        return dialog.getElementsByClassName(ElementClass.SEARCH_RESULT) as HTMLCollectionOf<HTMLElement>;
+    }
+
+    function resultInView(result: HTMLElement): boolean {
+        // This, minus the distance from the edge of the scroll container to the window edge, is equal to the
+        // minimum amount of the result that must be visible before the element is considered to be "in view".
+        const bottomPadding = 80;
+
+        let yMin = 0;
+        let yMax = window.innerHeight - bottomPadding;
+        const y = result.getBoundingClientRect().y;
+
+        return yMin <= y && y <= yMax;
+    }
+
+    async function loadRemainingResults(): Promise<void> {
+        const results = await Promise.all(searchResults.results.slice(initialSearchResultsLimit).map((r) => r.data()));
+
+        const numResults = getResultElements().length;
+        const resultElements = createResultElements(results, { resultCountOffset: numResults });
+
+        const resultsWrapper = document.getElementById(ElementID.SEARCH_RESULTS_WRAPPER);
+        resultsWrapper.append(...resultElements);
+        htmx.process(resultsWrapper);
+
+        hide(showAllResults);
+    }
+
+    function resetSearch(): void {
+        selectedResultNumber = null;
+        searchInput.value = '';
+        addClass(searchReset, 'invisible');
+
+        hide(noResults);
+        hide(showAllResults);
+
+        searchResults = null;
+        populateResults([]);
+
+        searchInput.focus();
+    }
+    //#endregion
+
+    //#region element creation
+    function populateResults(
+        results: Array<PagefindSearchResultData>,
+        options?: { paragraphNumber?: number; resultCountOffset?: number },
+    ): void {
+        const resultElements = createResultElements(results, options);
+
+        const resultsWrapper = document.getElementById(ElementID.SEARCH_RESULTS_WRAPPER);
+        resultsWrapper.replaceChildren(...resultElements);
+        htmx.process(resultsWrapper);
+    }
+
+    function createResultElements(
+        results: Array<PagefindSearchResultData>,
+        options?: { paragraphNumber?: number; resultCountOffset?: number },
+    ): Array<HTMLElement> {
+        const elements = [];
+        const resultTemplate = document.getElementById(ElementID.SEARCH_RESULT_TEMPLATE) as HTMLTemplateElement;
+        const excerptTemplate = document.getElementById(ElementID.SEARCH_RESULT_EXCERPT_TEMPLATE) as HTMLTemplateElement;
+
+        const subresultTemplate = document.getElementById(ElementID.SEARCH_SUBRESULT_TEMPLATE) as HTMLTemplateElement;
+        const subresultExcerptTemplate = document.getElementById(
+            ElementID.SEARCH_SUBRESULT_EXCERPT_TEMPLATE,
+        ) as HTMLTemplateElement;
+
+        let resultNumber = 1 + (options?.resultCountOffset ?? 0);
+        if (options?.paragraphNumber) {
+            const element = createResultElement(
+                resultTemplate,
+                excerptTemplate,
+                resultNumber++,
+                `${t('Paragraph', language)} ${options.paragraphNumber}`,
+                null,
+                options.paragraphNumber + '',
+            );
+
+            elements.push(element);
+        }
+
+        results.forEach((r) => {
+            elements.push(
+                createResultElement(resultTemplate, excerptTemplate, resultNumber++, r.meta.title, r.excerpt, r.url),
+            );
+
+            elements.push(
+                ...r.sub_results.map((sub) =>
+                    createResultElement(
+                        subresultTemplate,
+                        subresultExcerptTemplate,
+                        resultNumber++,
+                        sub.title,
+                        sub.excerpt,
+                        sub.url,
+                    )
+                ),
+            );
+        });
+
+        return elements;
+    }
+
+    function createResultElement(
+        template: HTMLTemplateElement,
+        excerptTemplate: HTMLTemplateElement,
+        resultNumber: number,
+        title: string,
+        excerpt: string | null,
+        url: string,
+    ): HTMLElement {
+        const { clientUrl, contentUrl } = getPartialContentUrls(url);
+
+        const resultID = getResultID(resultNumber);
+
+        const templateContents = cloneTemplate(template);
+        const listItem = templateContents.querySelector('li');
+        listItem.id = resultID;
+        listItem.classList.add(ElementClass.SEARCH_RESULT);
+        onMouseover(listItem, () => debouncedSearchResultMouseoverHandler(resultNumber));
+
+        const anchor = listItem.querySelector('a');
+        anchor.setAttribute('hx-push-url', clientUrl);
+        anchor.setAttribute('hx-get', contentUrl);
+
+        const excerptElement = cloneTemplate(excerptTemplate);
+        excerptElement.querySelector('.title').textContent = title;
+        excerptElement.querySelector('.excerpt-text').innerHTML = excerpt;
+        anchor.append(excerptElement);
+
+        return listItem;
+    }
+
+    function cloneTemplate(template: HTMLTemplateElement): HTMLElement {
+        return template.content.cloneNode(true) as HTMLElement;
+    }
+
+    function getResultID(resultNumber: number): string {
+        return `search-result-${resultNumber}`;
+    }
+    //#endregion
+    //#endregion
+</script>
+
+<style>
+    @reference '@css/base.css';
+
+    sl-dialog::part(panel) {
+        @apply h-full;
+        @apply bg-transparent;
+    }
+
+    sl-dialog::part(body) {
+        @apply p-0;
+    }
+
+    @variant dark {
+        sl-dialog::part(panel) {
+            @apply shadow-none;
+        }
+
+        sl-dialog::part(overlay) {
+            @apply bg-zinc-950/70;
+        }
+    }
+</style>
+
+<button
+    type="button"
+    id={ElementID.SEARCH_DIALOG_TRIGGER}
+    class="relative group size-18 grid place-content-center cursor-pointer focus:outline-hidden sm:size-12"
+>
+    <span class="absolute inset-2.5 rounded-full colors-button-stone-100 sm:inset-1"></span>
+    <Icon icon={IconEnum.MAGNIFYING_GLASS} class="relative size-5" />
+</button>
+
+<sl-dialog id={ElementID.SEARCH_DIALOG} no-header="true">
+    <div class="flex flex-col h-full bg-white rounded-xl dark:bg-zinc-850 dark:border-4 dark:border-zinc-900">
+        <form
+            id={ElementID.SEARCH_FORM}
+            class="flex items-center gap-2 min-h-12 pl-4 text-gray-400 border-b border-b-gray-100 dark:text-zinc-600 dark:border-b-zinc-850"
+        >
+            <label for={ElementID.SEARCH_INPUT}>
+                <Icon icon={IconEnum.MAGNIFYING_GLASS} class="shrink-0 grid place-items-center size-4" />
+            </label>
+
+            <input
+                type="text"
+                id={ElementID.SEARCH_INPUT}
+                class="w-full h-12 text-lg text-gray-900 focus:outline-hidden placeholder:text-gray-400 dark:text-zinc-100 dark:placeholder:text-zinc-400"
+                autofocus
+                placeholder={`${t('Search', language)} | ${t('Paragraph', language)} §`}
+                data-first-paragraph-number={firstParagraphNumber}
+                data-last-paragraph-number={lastParagraphNumber}
+            />
+
+            <button
+                type="button"
+                id={ElementID.SEARCH_RESET}
+                class:list={[
+                    'invisible relative top-0.25 h-12 grid place-items-center',
+                    'text-base cursor-pointer transition-colors ',
+                    'hover:text-gray-500 active:text-gray-550',
+                    'dark:text-zinc-400 dark:hover:text-zinc-300 dark:active:text-zinc-350',
+                ]}
+            >
+                Clear
+            </button>
+
+            <button
+                type="button"
+                id={ElementID.SEARCH_CLOSE}
+                class="relative top-0.25 group min-w-12 h-12 grid place-content-center cursor-pointer"
+            >
+                <span
+                    class:list={[
+                        'absolute inset-2 rounded-full transition-colors',
+                        'group-hover:bg-gray-100 group-hover:text-gray-600',
+                        'group-active:bg-gray-200 group-active:text-gray-600',
+                        'dark:group-hover:bg-zinc-700',
+                        'dark:group-active:bg-zinc-750',
+                    ]}
+                ></span>
+                <Icon icon={IconEnum.X_MARK} class="relative size-5 dark:text-zinc-400 dark:group-hover:text-zinc-300" />
+            </button>
+        </form>
+
+        <div class="flex flex-col overflow-y-auto">
+            <ul id={ElementID.SEARCH_RESULTS_WRAPPER} class="p-4 space-y-4"></ul>
+            <button
+                type="button"
+                id={ElementID.SEARCH_SHOW_ALL_RESULTS}
+                class="hidden min-h-12 text-base text-gray-600 m-4 border border-gray-100 rounded-md cursor-pointer dark:text-zinc-400 dark:border-zinc-850"
+            >
+                {t('Show All Results', language)}
+            </button>
+
+            <div id={ElementID.SEARCH_NO_RESULTS} class="hidden self-center p-4">{t('No results', language)}</div>
+        </div>
+
+        <SearchResultTemplates {language} />
+    </div>
+</sl-dialog>

@@ -18,9 +18,13 @@ const id = getUrlFragment(inBrief.semanticPath, false, language).fragment;
 const childContent = getAllChildContent(inBrief);
 ---
 
-<div {id} class="bg-stone-100 py-4 px-6 my-8 mx-4 rounded-md border-b border-b-stone-200">
-    <strong class="block font-bold font-title text-lg uppercase text-stone-500 tracking-wider mb-1">{t('In Brief', language)}</strong>
-    <ol class="space-y-4">
+<div {id} class="pt-4 mt-8 mb-16">
+    <strong class="block py-1 px-text mb-2 font-title font-semibold text-2xl text-stone-700 tracking-wider dark:text-stone-300">
+        {t('In Brief', language)}
+    </strong>
+    <ol
+        class="bg-white pt-5 pb-2 mx-text leading-7 space-y-6 rounded-sm border-b border-b-stone-200 shadow-sm sm:pt-11 sm:pb-8 sm:px-text sm:space-y-12 dark:bg-zinc-800 dark:text-stone-200 dark:border-b-zinc-700 dark:border-x dark:border-x-zinc-700 dark:shadow-none"
+    >
         {
             childContent.map((c) => (
                 <li>

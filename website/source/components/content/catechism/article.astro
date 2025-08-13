@@ -1,8 +1,8 @@
 ---
 import { Article as ArticleType, Language } from '@catechism-types';
 import { getFinalContent, getInBrief, getMainContent, getOpeningContent } from '@catechism-utils/content';
+import { getRomanNumeral } from '@catechism-utils/title';
 
-import { getRomanNumeral } from '@components/utils';
 import { getUrlFragment } from '@logic/routing';
 import { translate as t } from '@logic/translation';
 
@@ -12,9 +12,10 @@ import ReadingAreaIntersectable from './reading-area-intersectable.astro';
 interface Props {
     article: ArticleType;
     language: Language;
+    firstContentOnPageLoad: boolean;
 }
 
-const { article, language } = Astro.props;
+const { article, language, firstContentOnPageLoad } = Astro.props;
 
 const nonFinalChildContent = [...getOpeningContent(article), ...getMainContent(article)];
 
@@ -26,17 +27,21 @@ if (inBrief) {
 const finalContent = getFinalContent(article);
 ---
 
-<ReadingAreaIntersectable content={article} {language} class="mt-12">
-    <div class="font-sans font-bold text-base text-stone-600 text-center tracking-wider uppercase mb-2">
-        Article {getRomanNumeral(article.articleNumber)}
-    </div>
-    <h4
+<ReadingAreaIntersectable content={article} {language} class:list={[{ 'mt-8': !firstContentOnPageLoad }]}>
+    <div
         id={getUrlFragment(article.semanticPath, false, language).fragment}
-        class="font-title font-medium text-3xl text-center text-stone-700 tracking-wide mb-10"
+        class="bg-neutral-150 py-8 px-4 mb-8 border-b border-b-stone-200 sm:rounded-sm dark:bg-zinc-750 dark:border-none"
     >
-        {article.title}
-    </h4>
+        <div class="font-sans font-bold text-base text-stone-600 text-center tracking-wider uppercase px-text mb-2 dark:text-stone-300">
+            {t('Article', language)} {getRomanNumeral(article.articleNumber)}
+        </div>
+        <h4 class="font-title font-medium text-3xl text-center text-stone-700 tracking-wide px-text dark:text-stone-200">
+            {article.title}
+        </h4>
+    </div>
+
     <ContentBaseArray content={nonFinalChildContent} {language} ) />
+
     {
         finalContent.length > 0 && (
             <div id={t('final-content', language)}>

@@ -2,6 +2,10 @@
 import { Language, ReferenceCollection as ReferenceCollectionType } from '@catechism-types';
 
 import Reference from './reference.astro';
+import Icon from '@components/icon.astro';
+
+import { IconEnum } from '@components/icon-enum';
+import { ElementClass } from '@logic/ui';
 
 interface Props {
     referenceCollection: ReferenceCollectionType | null;
@@ -10,23 +14,98 @@ interface Props {
 
 const { referenceCollection, language } = Astro.props;
 ---
-
 <script>
     import { defineElement } from '@logic/custom-elements';
-    import { hide, onClick, toggle } from '@logic/dom-utils';
+    import { addClass, hide, isHidden, onClick, removeClass, show } from '@logic/dom-utils';
+    import { ElementClass } from '@logic/ui';
 
     class ReferenceCollection extends HTMLElement {
+        private closeButton: HTMLElement | null = null;
+        private toggleButton: HTMLElement | null = null;
+        private expandedView: HTMLElement | null = null;
+
+        private originalRelativePosition = {
+            left: '',
+        };
+
         constructor() {
             super();
         }
 
         connectedCallback() {
-            const closeButton = this.querySelector('.closeButton');
-            const toggleButton = this.querySelector('.toggleButton');
-            const expandedView = this.querySelector('.expandedView');
+            this.closeButton = this.querySelector(ElementClass.REFERENCE_COLLECTION_CLOSE_BUTTON_SELECTOR);
+            this.toggleButton = this.querySelector(ElementClass.REFERENCE_COLLECTION_TOGGLE_BUTTON_SELECTOR);
+            this.expandedView = this.querySelector(ElementClass.REFERENCE_COLLECTION_EXPANDED_VIEW_SELECTOR);
 
-            onClick(closeButton, () => hide(expandedView));
-            onClick(toggleButton, () => toggle(expandedView));
+            onClick(this.closeButton, () => this.hideExpandedView());
+            onClick(this.toggleButton, () => this.toggleExpandedView());
+        }
+
+        private toggleExpandedView(): void {
+            if (isHidden(this.expandedView)) {
+                this.showExpandedView();
+            } else {
+                this.hideExpandedView();
+            }
+        }
+
+        private showExpandedView(): void {
+            globalThis.requestAnimationFrame(() => {
+                addClass(this.expandedView, 'flex');
+                show(this.expandedView);
+                this.ensureExpandedViewIsWithinViewport();
+            });
+        }
+
+        private hideExpandedView(): void {
+            globalThis.requestAnimationFrame(() => {
+                hide(this.expandedView);
+                removeClass(this.expandedView, 'flex');
+                this.resetRelativePositioning();
+            });
+        }
+
+        // If necessary, reposition the element so that it doesn't extend past the right edge of the viewport
+        private ensureExpandedViewIsWithinViewport(): void {
+            this.saveOriginalRelativePositioning();
+
+            const viewportWidth = globalThis.visualViewport.width;
+            // This must be equal, in pixels, to the value of the CSS variable `--reference-viewport-margin` declared in the template below
+            const marginX = 16;
+
+            const elementX = this.expandedView.getBoundingClientRect().x;
+            const elementWidth = this.expandedView.getBoundingClientRect().width;
+
+            const extendsPastViewportsLeftEdge = elementX - marginX < 0;
+            const extendsPastViewportsRightEdge = elementX + elementWidth > viewportWidth - marginX;
+
+            if (extendsPastViewportsLeftEdge || extendsPastViewportsRightEdge) {
+                // The element is positioned relative to its parent, so additional calculations must be made
+                const parent = this.expandedView.parentElement;
+                const parentX = parent.getBoundingClientRect().x;
+
+                if (extendsPastViewportsLeftEdge) {
+                    const xRelativeToViewport = marginX;
+                    const xRelativeToParent = xRelativeToViewport - parentX;
+                    this.setRelativePositioning(`${xRelativeToParent}px`);
+                } else if (extendsPastViewportsRightEdge) {
+                    const xRelativeToViewport = viewportWidth - (elementWidth + marginX);
+                    const xRelativeToParent = xRelativeToViewport - parentX;
+                    this.setRelativePositioning(`${xRelativeToParent}px`);
+                }
+            }
+        }
+
+        private setRelativePositioning(left: string): void {
+            this.expandedView.style.left = left;
+        }
+
+        private saveOriginalRelativePositioning(): void {
+            this.originalRelativePosition.left = this.expandedView.style.left;
+        }
+
+        private resetRelativePositioning(): void {
+            this.expandedView.style.left = this.originalRelativePosition.left;
         }
     }
 
@@ -34,25 +113,71 @@ const { referenceCollection, language } = Astro.props;
 </script>
 
 <reference-collection>
-    <span class="relative">
-        <button type="button" class="toggleButton cursor-pointer text-stone-600">
-            <sup>{referenceCollection.referenceNumber}</sup>
+    <span class="relative hide-external-references:hidden" data-pagefind-ignore="all">
+        <!-- The clickable reference number -->
+        <button
+            type="button"
+            class:list={[
+                ElementClass.REFERENCE_COLLECTION_TOGGLE_BUTTON,
+                'relative z-10 -left-0.5 -mr-0.5',
+                'font-sans text-base cursor-pointer',
+                'text-stone-600 dark:font-bold dark:text-stone-300',
+            ]}
+        >
+            <sup class="relative isolate">
+                {/* This creates a well-sized touch-target for mobile devices without affecting the visual layout */}
+                <span class="absolute inset-0 bg-sky-800 size-0">
+                    <span
+                        class="absolute -inset-6 rounded-full transition-colors hover:bg-stone-400/15 active:bg-stone-400/30 dark:hover:bg-neutral-600/60 dark:active:bg-neutral-700/60"
+                    ></span>
+                </span>
+
+                <span inert class="relative block">
+                    {referenceCollection?.referenceNumber}
+                </span>
+            </sup>
         </button>
 
-        <div class="expandedView absolute hidden z-10 bottom-6 -left-8 w-max py-1 px-2 rounded-sm">
-            {
-                referenceCollection.references.map((reference, i, allRefs) => {
-                    const divider = i > 0 && i < allRefs.length ? '| ' : '';
-                    return (
-                    <>
-                        {divider} <Reference {reference} {language} />
-                    </>
-                );
-                })
-            }
+        <!-- The expanded view -->
+        <div
+            class:list={[
+                ElementClass.REFERENCE_COLLECTION_EXPANDED_VIEW,
+                ElementClass.HIDDEN,
+                '[--reference-viewport-margin:1rem]',
+                'absolute z-10 bottom-6 -left-8',
+                'max-w-[calc(100vw_-_(2_*_var(--reference-viewport-margin))))] w-max shadow dark:shadow-md dark:shadow-zinc-900',
+            ]}
+        >
+            <div
+                class:list={[
+                    'bg-gray-800 text-gray-50 text-base font-sans space-y-2 rounded-l-sm dark:bg-zinc-600 dark:text-white',
+                    { 'py-2': referenceCollection?.references.length > 1 },
+                ]}
+            >
+                {
+                    referenceCollection?.references.map((reference) => (
+                        <Reference
+                            {reference}
+                            {language}
+                            class="block py-3 px-4 rounded-l-sm transition-colors hover:bg-gray-600 dark:hover:bg-zinc-500"
+                        />
+                    ))
+                }
+            </div>
 
-            <button type="button" class="closeButton cursor-pointer">
-                <sup>X</sup>
+            <button
+                type="button"
+                class:list={[
+                    ElementClass.REFERENCE_COLLECTION_CLOSE_BUTTON,
+                    'grid place-content-center min-w-12 m-h-12 px-2',
+                    'rounded-r-sm cursor-pointer transition-colors',
+                    'bg-white text-gray-600 border border-gray-600',
+                    'hover:bg-gray-200',
+                    'dark:bg-zinc-900 dark:border-zinc-600 dark:text-zinc-300',
+                    'dark:hover:bg-zinc-800 dark:hover:text-zinc-200',
+                ]}
+            >
+                <Icon icon={IconEnum.X_MARK} class="size-5" />
             </button>
         </div>
     </span>

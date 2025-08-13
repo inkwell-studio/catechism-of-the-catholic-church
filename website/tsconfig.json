@@ -3,7 +3,8 @@
         "baseUrl": ".",
         "allowSyntheticDefaultImports": true,
         "paths": {
-            "@artifacts/*": ["../catechism/artifacts/*"],
+            "@artifacts/*": ["./source/artifacts/*"],
+            "@artifact-types": ["./source/artifacts/types/types.ts"],
             "@catechism-types": ["../catechism/source/types/types.ts"],
             "@catechism-utils/*": ["../catechism/source/utils/*"],
             "@components/*": ["./source/components/*"],
@@ -13,6 +14,7 @@
             "@pages/*": ["./source/pages/*"],
 
             "@shoelace/*": ["node_modules/@shoelace-style/shoelace/dist/components/*"],
+            "@shoelace-animations": ["node_modules/@shoelace-style/shoelace/dist/utilities/animation-registry.js"],
             "@shoelace-themes/*": ["node_modules/@shoelace-style/shoelace/dist/themes/*"],
             "@shoelace-types": ["node_modules/@shoelace-style/shoelace"],
             "@std/*": ["node_modules/@std/*/mod.ts"]

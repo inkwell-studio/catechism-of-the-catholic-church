@@ -1,62 +1,35 @@
 ---
-import { DEFAULT_LANGUAGE, Language } from '@catechism-types';
+import PrefetchOnMouseover from '@components/prefetch-on-mouseover.astro';
 
-import { path } from '@logic/navigation-utils';
+import { Language } from '@catechism-types';
+
+import { getPartialContentUrls } from '@logic/routing';
 import { ElementID } from '@logic/ui';
 
 interface Props {
     url: string;
     language: Language;
-    class?: string;
+    outerClass?: string;
+    innerClass?: string;
 }
 
 /*
     `...rest` is needed in order for the classes from the parent to be properly scoped for the styling specified within by parent
     (see https://docs.astro.build/en/guides/styling/#passing-a-class-to-a-child-component)
 */
-const { language, url, class: classes, ...rest } = Astro.props;
-
-// deno-fmt-ignore
-const clientUrl = DEFAULT_LANGUAGE === language
-    ? path('/', url)
-    : path('/', language, url);
-
-/* Remove the hash of the URL, as including it causes a bug when interacting with HTMX,
-as HTMX will use it the hash and fragment value in `document.querySelector()`, which
-considers ID selectors that start with numbers as invalid (e.g. `#123`).
-
-IDs that start with numbers are valid according to HTML5, but invalid according to HTML4. */
-const contentUrl = path('/partials', clientUrl).replace(/#.*/, '');
+const { language, url, outerClass, innerClass, ...rest } = Astro.props;
+const { clientUrl, contentUrl } = getPartialContentUrls(url, language);
 ---
 
-<script>
-    import { prefetch } from 'astro:prefetch';
-    import { defineElement } from '@logic/custom-elements';
-    import { onMouseover } from '@logic/dom-utils';
-
-    class AstroPartialLink extends HTMLElement {
-        constructor() {
-            super();
-        }
-
-        connectedCallback() {
-            onMouseover(this, () => prefetch(this.dataset.contentUrl));
-        }
-    }
-
-    defineElement('astro-partial-link', AstroPartialLink);
-</script>
-
-<astro-partial-link data-content-url={contentUrl}>
+<PrefetchOnMouseover url={contentUrl} class={outerClass} {...rest}>
     <a
         hx-push-url={clientUrl}
         hx-get={contentUrl}
         hx-trigger="click"
         hx-swap="innerHTML"
         hx-target={ElementID.CONTENT_WRAPPER_SELECTOR}
-        class:list={[classes, 'cursor-pointer']}
-        {...rest}
+        class:list={['cursor-pointer', innerClass]}
     >
         <slot />
     </a>
-</astro-partial-link>
+</PrefetchOnMouseover>

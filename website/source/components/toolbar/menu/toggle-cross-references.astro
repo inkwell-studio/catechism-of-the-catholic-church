@@ -1,0 +1,43 @@
+---
+import { Language } from '@catechism-types';
+import { translate as t } from '@logic/translation';
+import { ElementID } from '@logic/ui';
+
+interface Props {
+    language: Language;
+}
+
+const { language } = Astro.props;
+---
+<script>
+    import '@shoelace/switch/switch.js';
+    import type { SlSwitch } from '@shoelace-types';
+
+    import { addClass, removeClass } from '@logic/dom-utils';
+    import { ElementID, UiClass } from '@logic/ui';
+
+    const LOCAL_STORAGE_KEY = 'hide-cross-references';
+
+    const e = document.documentElement;
+    const toggle: SlSwitch = document.querySelector(ElementID.TOGGLE_SHOW_CROSS_REFERENCES_SELECTOR);
+
+    toggle.checked = 'true' !== globalThis.localStorage.getItem(LOCAL_STORAGE_KEY);
+
+    toggle.addEventListener('sl-change', () => {
+        if (toggle.checked) {
+            removeClass(e, UiClass.HIDE_CROSS_REFERENCES);
+            globalThis.localStorage.setItem(LOCAL_STORAGE_KEY, 'false');
+        } else {
+            addClass(e, UiClass.HIDE_CROSS_REFERENCES);
+            globalThis.localStorage.setItem(LOCAL_STORAGE_KEY, 'true');
+        }
+    });
+</script>
+
+<div class="px-2">
+    <sl-switch id={ElementID.TOGGLE_SHOW_CROSS_REFERENCES} checked>
+        <div class="min-h-12 flex justify-center items-center">
+            {t('Cross References', language)}
+        </div>
+    </sl-switch>
+</div>

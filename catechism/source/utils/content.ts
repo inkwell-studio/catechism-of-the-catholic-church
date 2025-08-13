@@ -9,6 +9,7 @@ import {
     Content,
     ContentBase,
     ContentContainer,
+    Creed,
     InBrief,
     InBriefContainer,
     NumberOrNumberRange,
@@ -28,6 +29,7 @@ import {
     Section,
     SemanticPath,
     Subarticle,
+    TenCommandments,
     Text,
     TextBlock,
     TextHeading,
@@ -245,6 +247,10 @@ export function isChapterSection(c: ContentBase): c is ChapterSection {
     return Content.CHAPTER_SECTION === c.contentType;
 }
 
+export function isCreed(c: ContentBase): c is Creed {
+    return Content.CREED === c.contentType;
+}
+
 export function isBlockQuote(c: ContentBase): c is BlockQuote {
     return Content.BLOCK_QUOTE === c.contentType;
 }
@@ -306,6 +312,10 @@ export function isSubarticle(c: ContentBase): c is Subarticle {
     return Content.SUB_ARTICLE === c.contentType;
 }
 
+export function isTenCommandments(c: ContentBase): c is TenCommandments {
+    return Content.TEN_COMMANDMENTS === c.contentType;
+}
+
 export function isText(c: ContentBase): c is Text {
     return Content.TEXT === c.contentType;
 }
@@ -338,5 +348,21 @@ export function hasFinalContent(content: ContentBase): boolean {
 
 export function hasInBrief(content: ContentBase): boolean {
     return 'inBrief' in content && !!content.inBrief;
+}
+
+export function isTitleableContent(content: ContentBase): boolean {
+    return isPrologue(content) ||
+        isPrologueSection(content) ||
+        isPart(content) ||
+        isSection(content) ||
+        isChapter(content) ||
+        isChapterSection(content) ||
+        isArticle(content) ||
+        isArticleParagraph(content) ||
+        isSubarticle(content) ||
+        isInBrief(content) ||
+        isParagraphGroup(content) ||
+        isCreed(content) ||
+        isTenCommandments(content);
 }
 //#endregion

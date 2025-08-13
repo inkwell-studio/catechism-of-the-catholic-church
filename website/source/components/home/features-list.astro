@@ -1,0 +1,16 @@
+---
+interface Props {
+    alternateColors?: boolean;
+}
+
+const { alternateColors } = Astro.props;
+
+// deno-fmt-ignore
+const colors = alternateColors
+    ? 'text-sky-900 marker:text-sky-900/70 dark:text-gray-200 dark:marker:text-gray-200/70'
+    : 'text-slate-200 marker:text-slate-200/70'
+---
+
+<ul class:list={[colors, 'list-disc font-sans text-base md:text-lg md:tracking-wide md:space-y-1']}>
+    <slot />
+</ul>

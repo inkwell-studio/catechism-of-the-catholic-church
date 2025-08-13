@@ -1,0 +1,27 @@
+---
+import { Language } from '@catechism-types';
+import { getNativeLanguageText } from '@catechism-utils/language';
+
+interface Props {
+    title: string;
+    language: Language;
+}
+
+const { title, language } = Astro.props;
+const languageText = getNativeLanguageText(language);
+---
+<div class="flex flex-col justify-center items-center gap-4 pt-[25vh]">
+    <h1 class="font-title font-bold text-3xl text-stone-950 dark:text-stone-150">{title}</h1>
+    <h2 class="text-center font-sans font-medium text-xl text-stone-700 dark:text-stone-300">{languageText}</h2>
+    <div class="mt-8">
+        <div
+            class:list={[
+                'bg-sky-100 max-w-max p-4 border-l-6 border-l-sky-400',
+                'font-sans text-base text-stone-950 italic',
+                'dark:bg-arctic-600 dark:border-l-blue-300 dark:text-stone-100',
+            ]}
+        >
+            Not yet implemented
+        </div>
+    </div>
+</div>

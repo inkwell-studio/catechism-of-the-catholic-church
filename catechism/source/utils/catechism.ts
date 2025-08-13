@@ -1,7 +1,7 @@
 import { CatechismStructure, Language } from '@catechism-types';
 
 export async function getCatechism(language: Language): Promise<CatechismStructure> {
-    const catechismJson = await import(`../../artifacts/primitive/catechism-${language}.json`, { with: { type: 'json' } });
+    const catechismJson = await import(`../../artifacts/catechism-${language}.json`, { with: { type: 'json' } });
     return catechismJson.default;
 }
 

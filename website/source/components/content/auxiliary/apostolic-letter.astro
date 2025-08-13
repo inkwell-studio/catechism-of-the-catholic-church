@@ -1,0 +1,13 @@
+---
+import { Language } from '@catechism-types';
+
+import TemporaryNotice from './temporary-notice.astro';
+
+interface Props {
+    language: Language;
+}
+
+const { language } = Astro.props;
+---
+
+<TemporaryNotice title="Apostolic Letter" {language} />

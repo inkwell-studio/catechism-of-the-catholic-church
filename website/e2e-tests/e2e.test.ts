@@ -1,11 +1,11 @@
 import { assert, assertStrictEquals } from '@std/assert';
 
-import crossReferenceMap from '@artifacts/derivative/paragraph-cross-reference_to_content-en.json' with { type: 'json' };
+import crossReferenceMap from '@artifacts/paragraph-cross-reference_to_content-en.json' with { type: 'json' };
 
 import { DEFAULT_LANGUAGE, Language } from '@catechism-types';
 import { getLanguages } from '@catechism-utils/language.ts';
 
-import { path as joinPaths } from '@logic/navigation-utils.ts';
+import { joinPaths } from '@logic/routing.ts';
 import { translate } from '@logic/translation.ts';
 import { getAuxiliaryRoutes } from '@pages/_routes.ts';
 
@@ -67,11 +67,6 @@ Deno.test('website: rendered content', async (test) => {
         const html = await r.text();
         const lang = getLangAttribute(html);
         assertStrictEquals(lang, DEFAULT_LANGUAGE);
-    });
-
-    await test.step('the project page is accessible', async () => {
-        const r = await get('/project');
-        assertStrictEquals(r.status, 200);
     });
 
     await test.step('paths with the default language code are redirected to the same subpath without the language code', async (t) => {
@@ -299,7 +294,7 @@ Deno.test('website: data API', async (test) => {
 
         for (const [_languageKey, language] of languages) {
             await t.step(`[${language}]`, async () => {
-                const r = await get(`${language}/paragraph/${paragraphNumber}.json`);
+                const r = await get(`${language}/paragraph/${paragraphNumber}`);
                 assertStrictEquals(r.status, 200);
 
                 const data = await r.json();
@@ -315,7 +310,7 @@ Deno.test('website: data API', async (test) => {
 
         for (const [_languageKey, language] of languages) {
             await t.step(`[${language}]`, async () => {
-                const r = await get(`${language}/paragraph/${paragraphNumber}.json`);
+                const r = await get(`${language}/paragraph/${paragraphNumber}`);
                 assertStrictEquals(r.status, 404);
             });
         }
@@ -324,7 +319,7 @@ Deno.test('website: data API', async (test) => {
     await test.step('[language]/paragraph/: single paragraph number (invalid language)', async () => {
         const paragraphNumber = 12;
 
-        const r = await get(`zz/paragraph/${paragraphNumber}.json`);
+        const r = await get(`zz/paragraph/${paragraphNumber}`);
         assertStrictEquals(r.status, 404);
     });
 

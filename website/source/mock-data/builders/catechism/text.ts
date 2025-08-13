@@ -1,0 +1,24 @@
+import { Content, Text } from '@catechism-types';
+
+import { getText } from './text-samples.ts';
+
+import { Probability } from '../../config/probability.ts';
+import { chance } from '../../utils.ts';
+
+export function buildText(): Text {
+    return {
+        contentType: Content.TEXT,
+        // This will be set later, after all content is created
+        pathID: '0',
+        // This will be set later, after all content is created
+        semanticPath: '',
+        // This will be set later, after all content is created
+        naturalLanguagePath: [],
+        // This will be set later, after all content is created
+        rank: 0,
+        content: getText(),
+        strong: chance(Probability.text.strong),
+        emphasis: chance(Probability.text.emphasis),
+        smallCaps: chance(Probability.text.smallCaps),
+    };
+}

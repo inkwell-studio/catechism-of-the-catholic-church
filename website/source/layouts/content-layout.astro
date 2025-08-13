@@ -5,20 +5,31 @@ import CrossReferencePanel from '@components/content/catechism/cross-reference-p
 
 import BaseLayout from '@layouts/base-layout.astro';
 
+import { isHomePage } from '@logic/routing';
 import { ElementID } from '@logic/ui';
 
 interface Props {
     language: Language;
 }
 const { language } = Astro.props;
+
+const homePage = isHomePage(Astro.params.path, language);
 ---
 
 <BaseLayout {language}>
-    <div id={ElementID.CONTENT_WRAPPER} class="min-h-screen max-w-5xl mx-auto border-4 border-white/10">
+    <div id={ElementID.CONTENT_WRAPPER} class:list={[{ 'pb-toolbar-height': homePage }, 'min-h-screen']}>
         {/* Content is inserted here */} <slot />
     </div>
 
-    <div id={ElementID.CROSS_REFERENCE_PANEL_WRAPPER} class="fixed bottom-0 inset-x-0 translate-y-full transition-transform">
-        <CrossReferencePanel />
-    </div>
+    {
+        !homePage &&
+            (
+            <div
+                id={ElementID.CROSS_REFERENCE_PANEL_WRAPPER}
+                class="fixed z-10 bottom-0 inset-x-0 translate-y-full transition-transform"
+            >
+                <CrossReferencePanel />
+            </div>
+        )
+    }
 </BaseLayout>

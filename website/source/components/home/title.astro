@@ -6,25 +6,56 @@ interface Props {
 }
 
 const { language } = Astro.props;
-
-const smallTextClasses = 'text-5xl';
 ---
 
-<h1 class="flex flex-col font-title font-medium text-8xl text-center">
+<style>
+    @reference '@css/base.css';
+
+    .primary, .secondary {
+        @apply font-title;
+        @apply font-medium;
+    }
+
+    .primary {
+        @apply text-5xl;
+        @apply tiny:text-6xl/16;
+        @apply sm:text-7xl/22;
+        @apply 2xl:text-8xl/28;
+        @apply text-sky-900;
+        @apply dark:text-zinc-150;
+    }
+
+    .secondary {
+        @apply text-2xl;
+        @apply tiny:text-3xl;
+        @apply sm:text-4xl;
+        @apply 2xl:text-5xl;
+        @apply text-sky-900;
+        @apply dark:text-zinc-200;
+        @apply 2xl:dark:text-zinc-250;
+    }
+</style>
+
+<h1 class="flex flex-col text-center p-text drop-shadow-lg drop-shadow-gray-300/80 dark:drop-shadow-xl dark:drop-shadow-zinc-900">
     {
         Language.ENGLISH === language &&
             (
-            <span>Catechism</span>
-            <span class:list={[smallTextClasses, 'my-2']}>of the</span>
-            <span>Catholic Church</span>
+            <span class="primary">Catechism</span>
+            <span class="secondary">of the</span>
+            <span class="primary">Catholic Church</span>
         )
     }
-    {Language.LATIN === language && 'Catechismus Catholicae Ecclesiae'}
+
+    {
+        Language.LATIN === language &&
+            <span class="primary">Catechismus<br />Catholicae Ecclesiae</span>
+    }
+
     {
         Language.SPANISH === language && (
-            <span>Catecismo</span>
-            <span class:list={[smallTextClasses, 'my-2']}>de la</span>
-            <span>Iglesia Católica</span>
+            <span class="primary">Catecismo</span>
+            <span class="secondary">de la</span>
+            <span class="primary">Iglesia Católica</span>
         )
     }
 </h1>

@@ -1,26 +1,33 @@
-import { Content, ContentBase, Language } from '@catechism-types';
+import { Content, ContentBase, ContentTitleData, Language } from '@catechism-types';
+
 import {
     isArticle,
     isArticleParagraph,
     isChapter,
+    isInBrief,
     isParagraph,
     isParagraphGroup,
     isPart,
     isPrologue,
     isSection,
     isSubarticle,
-} from '@utils/content.ts';
-import { getLeafPathIdNumber } from '@utils/path-id.ts';
+    isTitleableContent,
+} from './content.ts';
 
-export function getContentTypeTitle(language: Language, content: ContentBase): string | null {
-    const contentTitle = ContentTypeTitles[language][content.contentType];
-    if (contentTitle) {
-        const number = getContentNumber(content);
-        const numberSuffix = number ? ` ${number}` : '';
-        return contentTitle + numberSuffix;
-    } else {
-        return null;
-    }
+import { getLeafPathIdNumber } from './path-id.ts';
+
+export function getContentTitleData(language: Language, content: ContentBase): ContentTitleData {
+    const title = getTitle(language, content);
+    const typeLabel = ContentTypeTitles[language][content.contentType] ?? null;
+    const contentNumber = getContentNumber(content);
+    const romanNumeral = contentNumber ? getRomanNumeral(contentNumber) : null;
+
+    return {
+        title,
+        typeLabel,
+        contentNumber,
+        romanNumeral,
+    };
 }
 
 export function getContentNumber(content: ContentBase): number | null {
@@ -64,6 +71,136 @@ export function getContentNumber(content: ContentBase): number | null {
             return leafPathIdNumber + 1;
         }
     }
+}
+
+export function getRomanNumeral(n: number): string {
+    const values = [
+        'I',
+        'II',
+        'III',
+        'IV',
+        'V',
+        'VI',
+        'VII',
+        'VIII',
+        'IX',
+        'X',
+        'XI',
+        'XII',
+        'XIII',
+        'XIV',
+        'XV',
+        'XVI',
+        'XVII',
+        'XVIII',
+        'XIX',
+        'XX',
+        'XXI',
+        'XXII',
+        'XXIII',
+        'XXIV',
+        'XXV',
+        'XXVI',
+        'XXVII',
+        'XXVIII',
+        'XXIX',
+        'XXX',
+        'XXXI',
+        'XXXII',
+        'XXXIII',
+        'XXXIV',
+        'XXXV',
+        'XXXVI',
+        'XXXVII',
+        'XXXVIII',
+        'XXXIX',
+        'XL',
+        'XLI',
+        'XLII',
+        'XLIII',
+        'XLIV',
+        'XLV',
+        'XLVI',
+        'XLVII',
+        'XLVIII',
+        'XLIX',
+        'L',
+        'LI',
+        'LII',
+        'LIII',
+        'LIV',
+        'LV',
+        'LVI',
+        'LVII',
+        'LVIII',
+        'LIX',
+        'LX',
+        'LXI',
+        'LXII',
+        'LXIII',
+        'LXIV',
+        'LXV',
+        'LXVI',
+        'LXVII',
+        'LXVIII',
+        'LXIX',
+        'LXX',
+        'LXXI',
+        'LXXII',
+        'LXXIII',
+        'LXXIV',
+        'LXXV',
+        'LXXVI',
+        'LXXVII',
+        'LXXVIII',
+        'LXXIX',
+        'LXXX',
+        'LXXXI',
+        'LXXXII',
+        'LXXXIII',
+        'LXXXIV',
+        'LXXXV',
+        'LXXXVI',
+        'LXXXVII',
+        'LXXXVIII',
+        'LXXXIX',
+        'XC',
+        'XCI',
+        'XCII',
+        'XCIII',
+        'XCIV',
+        'XCV',
+        'XCVI',
+        'XCVII',
+        'XCVIII',
+        'XCIX',
+        'C',
+    ];
+
+    const value = values[n - 1];
+
+    if (!value) {
+        throw new Error(`A Roman numeral could not be provided for the number ${n}`);
+    }
+
+    return value;
+}
+
+function getTitle(language: Language, content: ContentBase): string {
+    let title = null;
+
+    if (isInBrief(content)) {
+        title = ContentTypeTitles[language][content.contentType] ?? null;
+    } else {
+        // deno-lint-ignore no-explicit-any
+        title = (content as any).title;
+    }
+
+    if (!title && isTitleableContent(content)) {
+        throw new Error(`Unable to find a title: ${content.contentType} ${content.pathID}`);
+    }
+
+    return title;
 }
 
 const ContentTypeTitles: Record<Language, Record<Content, string>> = {

@@ -1,0 +1,37 @@
+@reference '@css/base.css';
+
+.theme-selector {
+    sl-radio-group::part(button-group) {
+        @apply w-full;
+    }
+
+    sl-radio-button {
+        @apply w-full;
+    }
+
+    sl-radio-button::part(button) {
+        @apply min-h-12;
+        @apply min-w-18;
+        @apply bg-gray-100;
+        @apply text-gray-600;
+        @apply tracking-wider;
+        @apply border-none;
+    }
+
+    sl-radio-button::part(button--checked) {
+        @apply bg-gray-200;
+        @apply text-gray-700;
+    }
+
+    @variant dark {
+        sl-radio-button::part(button) {
+            @apply bg-zinc-700;
+            @apply text-zinc-300;
+        }
+
+        sl-radio-button::part(button--checked) {
+            @apply bg-zinc-500;
+            @apply text-zinc-50;
+        }
+    }
+}

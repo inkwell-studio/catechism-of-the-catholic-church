@@ -1,0 +1,21 @@
+---
+interface Props {
+    size: 'small' | 'medium' | 'large';
+    class?: string;
+}
+
+/*
+`...rest` is needed in order for the classes from the parent to be properly scoped for the styling specified within by parent
+(see https://docs.astro.build/en/guides/styling/#passing-a-class-to-a-child-component)
+*/
+const { size, class: classes, ...rest } = Astro.props;
+
+let height = 'h-10 md:h-14 lg:h-18';
+if ('medium' === size) {
+    height = 'h-18 md:h-27 lg:h-36';
+} else if ('large' === size) {
+    height = 'h-27 md:h-40 lg:h-54';
+}
+---
+
+<div class:list={[height, classes, 'w-0.5 bg-white dark:bg-arctic-500/30']} {...rest}></div>

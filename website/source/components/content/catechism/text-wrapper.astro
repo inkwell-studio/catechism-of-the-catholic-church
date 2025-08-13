@@ -14,24 +14,47 @@ const { textWrapper, language } = Astro.props;
 ---
 
 <span>
-    <!-- cross-references -->
-    <span class="absolute right-2 font-medium text-sm text-stone-500 text-right tracking-wide max-w-[8ch]">
+    {/* gutter cross-references */}
+    <span
+        class="hide-cross-references:hidden max-md:hidden absolute right-2 text-end"
+        data-pagefind-ignore="all"
+    >
         {
             textWrapper.paragraphReferences.map((reference, index, allReferences) => {
                 const hasProceedingTrigger = index < allReferences.length - 1;
+                const separator = hasProceedingTrigger ? ', ' : '';
 
                 return (
-                <>
-                    <CrossReferenceTrigger {reference} {language} {hasProceedingTrigger} />
-                </>
+                <CrossReferenceTrigger {reference} {language}>
+                    <span
+                        class="relative isolate font-sans font-medium text-2xs text-stone-500 tracking-wide cursor-pointer transition-colors dark:text-stone-400"
+                    >
+                        <span
+                            class:list={[
+                                'peer absolute -inset-4',
+                                'rounded-full transition-colors',
+                                'hover:bg-stone-150 active:bg-stone-200',
+                                'dark:hover:bg-neutral-700 dark:active:bg-neutral-750',
+                            ]}
+                        ></span>
+                        <span
+                            inert
+                            class="relative z-10 transition-colors dark:peer-hover:text-neutral-300 dark:peer-active:text-neutral-300"
+                        >
+                            {reference.toString()}{separator}
+                        </span>
+                    </span>
+                </CrossReferenceTrigger>
             );
             })
         }
     </span>
 
-    <!-- main content -->
     <span>
+        {/* main content */}
         {textWrapper.mainContent.map((text, index) => <PlainText {text} lastFragment={index === textWrapper.mainContent.length - 1} />)}
+
+        {/* external references */}
         {
             textWrapper.referenceCollection?.references.length > 0 && (
                 <ReferenceCollection {language} referenceCollection={textWrapper.referenceCollection} />

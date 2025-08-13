@@ -1,10 +1,13 @@
 ---
+import Icon from '@components/icon.astro';
+import PrefetchOnMouseover from '@components/prefetch-on-mouseover.astro';
+import { IconEnum } from '@components/icon-enum';
+
 import { DEFAULT_LANGUAGE, Language } from '@catechism-types';
 import { getLanguages, getNativeLanguageText } from '@catechism-utils/language';
 
 import { getPathIdLanguageUrlMap, getSemanticPathPathIdMap } from '@logic/artifacts';
-import { path as joinPaths } from '@logic/navigation-utils';
-import { getParagraphNumber, isAuxiliaryRoute, removeLanguageTag, translateAuxiliaryPath } from '@logic/routing';
+import { getParagraphNumber, isAuxiliaryRoute, joinPaths, removeLanguageTag, translateAuxiliaryPath } from '@logic/routing';
 
 interface Props {
     currentLanguage: Language;
@@ -22,7 +25,6 @@ const paragraphNumber = getParagraphNumber(path);
 const languageUrlMap = pathID ? pathIdLanguageUrlMap[pathID] : [];
 
 const languagesAndUrls = getLanguages()
-    .filter(([_languageKey, language]) => language !== currentLanguage)
     .map(([_languageKey, language]) => {
         let segment = '';
 
@@ -58,11 +60,39 @@ const languagesAndUrls = getLanguages()
     });
 ---
 
-<ul class="flex flex-col">
+<ul
+    class="max-h-[calc(100vh_-_10rem)] flex flex-col bg-white text-stone-800 p-2 border border-gray-300 space-y-2 overflow-y-auto rounded dark:bg-zinc-800 dark:text-zinc-300 dark:border-zinc-500"
+>
     {
         languagesAndUrls.map(({ language, url }) => (
-            <li class="p-2">
-                <a href={url}>{getNativeLanguageText(language)}</a>
+            <li>
+                {
+                    language === currentLanguage &&
+                (
+                        <span
+                            class="flex justify-center items-center gap-2 min-h-12 bg-gray-50 text-stone-500 rounded cursor-default dark:bg-zinc-750 dark:text-zinc-400"
+                        >
+                            <span class="relative">
+                                {/* deno-fmt-ignore */}
+                                {getNativeLanguageText(language)}
+                                <Icon icon={IconEnum.CHECK} class="absolute bottom-1 -left-6 size-4" />
+                            </span>
+                        </span>
+                    )
+                }
+                {
+                    language !== currentLanguage &&
+                (
+                        <PrefetchOnMouseover {url}>
+                            <a
+                                href={url}
+                                class="flex justify-center items-center min-h-12 rounded hover:bg-gray-100 active:bg-gray-200 active:text-stone-900 dark:hover:bg-zinc-700 dark:active:bg-zinc-600 dark:active:text-zinc-200"
+                            >
+                                {getNativeLanguageText(language)}
+                            </a>
+                        </PrefetchOnMouseover>
+                    )
+                }
             </li>
         ))
     }

@@ -13,14 +13,10 @@
         "pre-commit": {
             "dependencies": [
                 "check-code",
-                "test-source",
-                "build-derivative-artifacts"
+                "test-source"
             ],
             "command": "deno task test-artifacts"
         },
-
-        "build-mock-data": "deno run -RW mock-data/run.ts && deno task build-derivative-artifacts && deno task test-artifacts",
-        "build-derivative-artifacts": "deno run -RW artifacts/derivative/builders/build.ts",
 
         "test-source": "deno test source",
         "test-artifacts": "deno test -R artifacts"
@@ -36,9 +32,7 @@
     "imports": {
         "@catechism-types": "./source/types/types.ts",
         "@catechism-utils/": "./source/utils/",
-        "@artifacts/": "./artifacts/",
         "@utils/": "./source/utils/",
-        "@website/": "../website/",
 
         "@std/assert": "jsr:@std/assert@1.0.11",
         "@std/path": "jsr:@std/path@1.0.8"

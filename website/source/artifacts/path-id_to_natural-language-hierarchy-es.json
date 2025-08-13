@@ -1,0 +1,68 @@
+{
+    "0": [
+        "Prologo"
+    ],
+    "1": [
+        "Parte 1"
+    ],
+    "2": [
+        "Parte 2"
+    ],
+    "3": [
+        "Parte 3"
+    ],
+    "4": [
+        "Parte 4"
+    ],
+    "1__m.0__m.1": [
+        "Parte 1",
+        "Seccion 1",
+        "Capitulo 2"
+    ],
+    "1__m.0__m.1__m.1": [
+        "Parte 1",
+        "Seccion 1",
+        "Capitulo 2",
+        "Articulo 2"
+    ],
+    "1__m.0__m.1__m.2": [
+        "Parte 1",
+        "Seccion 1",
+        "Capitulo 2",
+        "Articulo 3"
+    ],
+    "1__m.0__m.2": [
+        "Parte 1",
+        "Seccion 1",
+        "Capitulo 3"
+    ],
+    "1__m.0__m.2__m.1": [
+        "Parte 1",
+        "Seccion 1",
+        "Capitulo 3",
+        "Articulo 2"
+    ],
+    "1__m.0__m.2__m.1__m.1": [
+        "Parte 1",
+        "Seccion 1",
+        "Capitulo 3",
+        "Articulo 2",
+        "Articulo Parrafo 2"
+    ],
+    "1__m.0__m.2__m.2": [
+        "Parte 1",
+        "Seccion 1",
+        "Capitulo 3",
+        "Articulo 3"
+    ],
+    "2__m.1": [
+        "Parte 2",
+        "Seccion 2"
+    ],
+    "2__m.1__m.0__m.1": [
+        "Parte 2",
+        "Seccion 2",
+        "Capitulo 1",
+        "Articulo 2"
+    ]
+}

@@ -1,9 +1,32 @@
 import { DEFAULT_LANGUAGE, Language, PathID, SemanticPath } from '@catechism-types';
 import { getLanguage, getLanguages } from '@catechism-utils/language.ts';
 
-import { getSemanticPathPathIdMap } from './artifacts.ts';
+import { getAllParagraphNumbers, getParagraphPathIdMap, getSemanticPathPathIdMap } from './artifacts.ts';
 import { AuxiliaryRouteKey, AuxiliaryRouteKeysByLanguageAndRoute, AuxiliaryRoutesByKeyAndLanguage } from './constants.ts';
 import { translate } from './translation.ts';
+
+/**
+ * @returns a new path constructed constructed from the segments.
+ * Doubled slashes are de-duplicated, and the returned value never ends with a slash.
+ */
+export function joinPaths(...segments: Array<string | number>): string {
+    // Change all numbers to strings, and remove empty stirngs
+    segments = segments
+        .map((s) => '' + s)
+        .filter((s) => !!s);
+
+    if (0 === segments.length) {
+        return '';
+    }
+
+    return [...segments, '/'].join('/')
+        // De-duplicate slashes
+        .replaceAll(/\/{2,}/g, '/')
+        // Remove any slash that precedes the hash
+        .replace(/\/+#/, '#')
+        // Remove the trailing slash if it's not the root path
+        .replace(/(?<=.+)\/+$/, '');
+}
 
 export async function getNavigationValues(originalPath: string): Promise<{
     path: string;
@@ -12,13 +35,30 @@ export async function getNavigationValues(originalPath: string): Promise<{
 }> {
     const language = getLanguageTag(originalPath) ?? DEFAULT_LANGUAGE;
     const path = removeLanguageTag(originalPath, language);
-    const pathID = (await getSemanticPathPathIdMap(language))[path] ?? null;
+    const pathID = (await getSemanticPathPathIdMap(language))[path] ?? await getPathIdFromParagraphNumberPath(path, language);
+
+    if (!pathID && !isAuxiliaryRoute(path, language)) {
+        throw new Error(`A pathID could not be determined for path ${originalPath}`);
+    }
 
     return {
         path,
         pathID,
         language,
     };
+}
+
+export async function getPathIdFromParagraphNumberPath(path: string, language: Language): Promise<PathID | null> {
+    const paragraphNumber = getParagraphNumber(path);
+    if (paragraphNumber) {
+        const paragraphNumbers = await getAllParagraphNumbers(language);
+        if (paragraphNumbers.includes(paragraphNumber)) {
+            const paragraphMap = await getParagraphPathIdMap(language);
+            return paragraphMap[paragraphNumber] ?? null;
+        }
+    }
+
+    return null;
 }
 
 /**
@@ -70,6 +110,25 @@ export function getUrlFragment(
 }
 
 /**
+ * For use with `partial-content-link.astro`
+ */
+export function getPartialContentUrls(url: string, language?: Language): { clientUrl: string; contentUrl: string } {
+    // deno-fmt-ignore
+    const clientUrl = !language || language === DEFAULT_LANGUAGE
+        ? joinPaths('/', url)
+        : joinPaths('/', language, url);
+
+    /* Remove the hash of the URL, as including it causes a bug when interacting with HTMX,
+    as HTMX will use it the hash and fragment value in `document.querySelector()`, which
+    considers ID selectors that start with numbers as invalid (e.g. `#123`).
+
+    IDs that start with numbers are valid according to HTML5, but invalid according to HTML4. */
+    const contentUrl = joinPaths('/partials', clientUrl).replace(/#.*/, '');
+
+    return { clientUrl, contentUrl };
+}
+
+/**
  * @returns the language tag from the start of the given path, or `null` if no language tag is present at the start
  */
 export function getLanguageTag(path: string | undefined): Language | null {
@@ -117,7 +176,9 @@ export function getLanguageFromPathname(pathname: string): Language | null {
 }
 
 /**
- * @returns the paragraph number from the given URL pathname, or `null` if the given URL pathname contains no paragraph number
+ * @returns the paragraph number from the given URL pathname, or `null` if the given URL pathname contains no paragraph number.
+ *
+ * This does not check if the Catechism actually contains a paragraph with the number.
  */
 export function getParagraphNumber(urlPathname: string): number | null {
     // Look for a series of digits at the end of the string (with an optional slash at the very end) that either begin at the start of the string or follow a slash
@@ -125,6 +186,14 @@ export function getParagraphNumber(urlPathname: string): number | null {
     const potentialNumber = regex.exec(urlPathname)?.[2];
     const numberValue = Number(potentialNumber);
     return !isNaN(numberValue) && numberValue > 0 ? numberValue : null;
+}
+
+export function isHomePage(pathname: string, language: Language): boolean {
+    if (DEFAULT_LANGUAGE === language) {
+        return ['', '/'].includes(pathname);
+    } else {
+        return [language, `/${language}`].includes(pathname);
+    }
 }
 
 export function isAuxiliaryRoute(route: string, language: Language): boolean {

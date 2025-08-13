@@ -1,0 +1,33 @@
+---
+interface Props {
+    url: string;
+    class?: string;
+}
+
+/*
+    `...rest` is needed in order for the classes from the parent to be properly scoped for the styling specified within by parent
+    (see https://docs.astro.build/en/guides/styling/#passing-a-class-to-a-child-component)
+*/
+const { url, class: classes, ...rest } = Astro.props;
+---
+<script>
+    import { prefetch } from 'astro:prefetch';
+    import { defineElement } from '@logic/custom-elements';
+    import { onMouseover } from '@logic/dom-utils';
+
+    class PrefetchOnMouseover extends HTMLElement {
+        constructor() {
+            super();
+        }
+
+        connectedCallback() {
+            onMouseover(this, () => prefetch(this.dataset.url));
+        }
+    }
+
+    defineElement('prefetch-on-mouseover', PrefetchOnMouseover);
+</script>
+
+<prefetch-on-mouseover data-url={url} class={classes} {...rest}>
+    <slot />
+</prefetch-on-mouseover>

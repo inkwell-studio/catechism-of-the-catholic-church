@@ -42,21 +42,22 @@ import UnknownContent from './unknown-content.astro';
 interface Props {
     content: ContentBaseObject;
     language: Language;
+    firstContentOnPageLoad?: boolean;
 }
 
-const { content, language } = Astro.props;
+const { content, language, firstContentOnPageLoad } = Astro.props;
 const isUnknownContent = !Object.values(ContentEnum).includes(content.contentType);
 ---
 
 {isUnknownContent && <UnknownContent {content} />}
 
-{isArticle(content) && <Article article={content} {language} />}
+{isArticle(content) && <Article article={content} {language} {firstContentOnPageLoad} />}
 
 {isArticleParagraph(content) && <ArticleParagraph articleParagraph={content} {language} />}
 
 {isBlockQuote(content) && <BlockQuote blockQuote={content} {language} />}
 
-{isChapter(content) && <Chapter chapter={content} {language} />}
+{isChapter(content) && <Chapter chapter={content} {language} {firstContentOnPageLoad} />}
 
 {isInBrief(content) && <InBrief inBrief={content} {language} />}
 

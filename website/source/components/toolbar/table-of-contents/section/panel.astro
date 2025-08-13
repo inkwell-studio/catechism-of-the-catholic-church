@@ -5,21 +5,18 @@ interface Props {
 
 const { section } = Astro.props;
 ---
-
 <script>
     import '@shoelace/tab-panel/tab-panel.js';
 </script>
 
 <style>
-    sl-tab-panel {
+    sl-tab-panel,
+    sl-tab-panel::part(base) {
         --padding: 0;
+        height: 100%;
     }
 </style>
 
-<!-- TODO: Add an explanation to the classes and variables when the styling is finalized -->
-<sl-tab-panel
-    name={section}
-    class="[--other-elements-total-height:146px] [--desired-gap-top:0.75rem] max-h-[400px] h-[calc(100vh_-_(var(--other-elements-total-height)_+_var(--desired-gap-top)))] px-8"
->
+<sl-tab-panel name={section}>
     <slot />
 </sl-tab-panel>

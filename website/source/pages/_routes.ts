@@ -1,10 +1,10 @@
 import { DEFAULT_LANGUAGE, Language } from '@catechism-types';
 import { getLanguages } from '@catechism-utils/language.ts';
-import { getTopLevelUrls } from '@catechism-utils/table-of-contents.ts';
 
 import { getAllCrossReferences, getAllParagraphNumbers, getTableOfContents } from '@logic/artifacts.ts';
 import { AuxiliaryRoutesByKeyAndLanguage } from '@logic/constants.ts';
-import { path as joinPaths } from '@logic/navigation-utils.ts';
+import { joinPaths } from '@logic/routing.ts';
+import { getTopLevelUrls } from '@logic/table-of-contents.ts';
 
 const languages = getLanguages().map(([_languageKey, language]) => language);
 

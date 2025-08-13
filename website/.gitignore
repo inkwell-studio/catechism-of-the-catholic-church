@@ -1,11 +1,11 @@
-# Astro
-# ------------------------------
-# generated types
-.astro/
-
 # Astro build output
 dist/
 
+# generated types
+.astro/
+
 # dependencies
 node_modules/
-# ------------------------------
+
+# development-only Pagefind files
+public/pagefind/

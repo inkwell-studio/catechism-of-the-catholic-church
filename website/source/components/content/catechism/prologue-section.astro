@@ -16,7 +16,7 @@ const { prologueSection, language } = Astro.props;
 const childContent = getAllChildContent(prologueSection);
 ---
 
-<h2 id={getUrlFragment(prologueSection.semanticPath, false, language).fragment} class="text-lg font-sans font-bold mt-4 mb-2">
+<h2 id={getUrlFragment(prologueSection.semanticPath, false, language).fragment} class="text-lg font-sans font-bold px-text mt-4 mb-2">
     {prologueSection.title}
 </h2>
 <ContentBaseArray content={childContent} {language} />

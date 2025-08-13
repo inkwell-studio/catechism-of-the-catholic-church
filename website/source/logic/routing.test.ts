@@ -2,9 +2,84 @@ import { assertStrictEquals } from '@std/assert';
 import { DEFAULT_LANGUAGE, Language, SemanticPath } from '@catechism-types';
 import { getLanguages } from '@catechism-utils/language.ts';
 
-import { getLanguageFromPathname, getLanguageTag, getParagraphNumber, getUrl, removeLanguageTag } from './routing.ts';
+import {
+    getLanguageFromPathname,
+    getLanguageTag,
+    getParagraphNumber,
+    getPartialContentUrls,
+    getUrl,
+    isHomePage,
+    joinPaths,
+    removeLanguageTag,
+} from './routing.ts';
+import { AuxiliaryRouteKey, AuxiliaryRoutesByKeyAndLanguage } from '@logic/constants.ts';
 
 console.log('\nrouting utils ...');
+
+//#region joinPaths()
+Deno.test('joinPaths()', async (test) => {
+    await test.step('non-root paths never end with a trailing slash,', async (t) => {
+        const testCases = [
+            [[], ''],
+            [[''], ''],
+
+            [['123'], '123'],
+            [['123/'], '123'],
+            [['abc', '123'], 'abc/123'],
+            [['abc/', '123'], 'abc/123'],
+            [['abc', '123/'], 'abc/123'],
+            [['abc/', '123/'], 'abc/123'],
+            [['abc/', '', '123/'], 'abc/123'],
+
+            // with hashes
+            [['#123'], '#123'],
+            [['', '#123'], '#123'],
+            [['/#123'], '#123'],
+            [['/', '#123'], '#123'],
+
+            [['abc#123'], 'abc#123'],
+            [['abc/#123'], 'abc#123'],
+
+            [['abc', '#123'], 'abc#123'],
+            [['abc/', '#123'], 'abc#123'],
+        ] as const;
+
+        for (const [args, expectedResult] of testCases) {
+            const testDescription = getTestDescription(args);
+
+            await t.step(testDescription, () => {
+                const result = joinPaths(...args);
+                assertStrictEquals(result, expectedResult);
+            });
+        }
+    });
+
+    await test.step('the root path is preserved,', async (t) => {
+        const testCases = [
+            [['/'], '/'],
+            [['', '/'], '/'],
+            [['/', ''], '/'],
+            [['/', '/'], '/'],
+        ] as const;
+
+        for (const [args, expectedResult] of testCases) {
+            const testDescription = getTestDescription(args);
+
+            await t.step(testDescription, () => {
+                const result = joinPaths(...args);
+                assertStrictEquals(result, expectedResult);
+            });
+        }
+    });
+
+    function getTestDescription(testArguments: Readonly<Array<string>>): string {
+        // deno-fmt-ignore
+        return testArguments.length === 1
+            ? `'${testArguments[0]}'`
+            : testArguments.map((a) => `'${a}'`).join(' + ');
+    }
+});
+//#endregion
 
 //#region getUrl()
 function urlTest(semanticPath: SemanticPath, expectedUrl: string, includeFragment = true): void {
@@ -245,6 +320,80 @@ Deno.test('getUrl(): low-level content with fragment omitted', () => {
 });
 //#endregion
 
+//#region getPartialContentUrls()
+function getPartialContentUrlsTest(
+    url: string,
+    language: Language | undefined,
+    expectedClientUrl: string,
+    expectedContentUrl: string,
+): void {
+    const { clientUrl, contentUrl } = getPartialContentUrls(url, language);
+    assertStrictEquals(clientUrl, expectedClientUrl);
+    assertStrictEquals(contentUrl, expectedContentUrl);
+}
+
+Deno.test('getPartialContentUrls(): regular content paths', () => {
+    const testCases: Array<[string, Language | undefined, string, string]> = [
+        ['/part-1', undefined, '/part-1', '/partials/part-1'],
+
+        ['/part-1', DEFAULT_LANGUAGE, '/part-1', '/partials/part-1'],
+        ['/part-1', DEFAULT_LANGUAGE, '/part-1', '/partials/part-1'],
+        ['/part-1#section-1', DEFAULT_LANGUAGE, '/part-1#section-1', '/partials/part-1'],
+
+        ['/pars-1', Language.LATIN, '/la/pars-1', '/partials/la/pars-1'],
+        ['/pars-1#section-1', Language.LATIN, '/la/pars-1#section-1', '/partials/la/pars-1'],
+    ];
+
+    testCases.forEach(([url, language, expectedClientUrl, expectedContentUrl]) => {
+        getPartialContentUrlsTest(url, language, expectedClientUrl, expectedContentUrl);
+    });
+});
+
+Deno.test('getPartialContentUrls(): paragraph numbers', () => {
+    const testCases: Array<[string, Language | undefined, string, string]> = [
+        ['/1', undefined, '/1', '/partials/1'],
+
+        ['/1', DEFAULT_LANGUAGE, '/1', '/partials/1'],
+        ['221', DEFAULT_LANGUAGE, '/221', '/partials/221'],
+        ['43#extra/things', DEFAULT_LANGUAGE, '/43#extra/things', '/partials/43'],
+
+        ['/1', Language.LATIN, '/la/1', '/partials/la/1'],
+        ['221', Language.LATIN, '/la/221', '/partials/la/221'],
+        ['43#extra/things', Language.LATIN, '/la/43#extra/things', '/partials/la/43'],
+    ];
+
+    testCases.forEach(([url, language, expectedClientUrl, expectedContentUrl]) => {
+        getPartialContentUrlsTest(url, language as Language, expectedClientUrl, expectedContentUrl);
+    });
+});
+
+Deno.test('getPartialContentUrls(): auxiliary paths', () => {
+    const routeMap = AuxiliaryRoutesByKeyAndLanguage[AuxiliaryRouteKey.INDEX_TOPICS];
+
+    const routeDefaultLanguage = routeMap[DEFAULT_LANGUAGE];
+    const routeLatin = routeMap[Language.LATIN];
+
+    const testCases: Array<[string, Language | undefined, string, string]> = [
+        [routeDefaultLanguage, undefined, `/${routeDefaultLanguage}`, `/partials/${routeDefaultLanguage}`],
+
+        [routeDefaultLanguage, DEFAULT_LANGUAGE, `/${routeDefaultLanguage}`, `/partials/${routeDefaultLanguage}`],
+        [
+            `${routeDefaultLanguage}#something/more`,
+            DEFAULT_LANGUAGE,
+            `/${routeDefaultLanguage}#something/more`,
+            `/partials/${routeDefaultLanguage}`,
+        ],
+
+        [routeLatin, Language.LATIN, `/la/${routeLatin}`, `/partials/la/${routeLatin}`],
+        [routeLatin + '#something/more', Language.LATIN, `/la/${routeLatin}#something/more`, `/partials/la/${routeLatin}`],
+    ];
+
+    testCases.forEach(([url, language, expectedClientUrl, expectedContentUrl]) => {
+        getPartialContentUrlsTest(url, language as Language, expectedClientUrl, expectedContentUrl);
+    });
+});
+//#endregion
+
 //#region getLanguageTag
 Deno.test('getLanguageTag()', async (t) => {
     const testCases = [
@@ -276,6 +425,41 @@ Deno.test('getLanguageTag()', async (t) => {
     for (const [path, expectedResult] of testCases) {
         await t.step(path ?? `(${JSON.stringify(path)})`, () => {
             const result = getLanguageTag(path);
+            assertStrictEquals(result, expectedResult);
+        });
+    }
+});
+//#endregion
+
+//#region isHomePage
+Deno.test('isHomePage()', async (t) => {
+    const testCases: Array<[Language, string, boolean]> = [
+        [DEFAULT_LANGUAGE, '', true],
+        [DEFAULT_LANGUAGE, '/', true],
+        [DEFAULT_LANGUAGE, '1', false],
+        [DEFAULT_LANGUAGE, '/1', false],
+        [DEFAULT_LANGUAGE, 'abc', false],
+        [DEFAULT_LANGUAGE, '/abc', false],
+
+        [Language.LATIN, 'la', true],
+        [Language.LATIN, '/la', true],
+
+        [Language.LATIN, '', false],
+        [Language.LATIN, '/', false],
+        [Language.LATIN, '1', false],
+        [Language.LATIN, '/1', false],
+        [Language.LATIN, 'abc', false],
+        [Language.LATIN, '/abc', false],
+
+        [Language.LATIN, 'la/1', false],
+        [Language.LATIN, '/la/1', false],
+        [Language.LATIN, 'la/abc', false],
+        [Language.LATIN, '/la/abc', false],
+    ];
+
+    for (const [language, path, expectedResult] of testCases) {
+        await t.step(`"${path}", ${language}`, () => {
+            const result = isHomePage(path, language);
             assertStrictEquals(result, expectedResult);
         });
     }

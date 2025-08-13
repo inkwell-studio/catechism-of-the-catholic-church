@@ -1,11 +1,16 @@
 ---
 // This component is intended to be placed on the UI only once
 
-import LanguageSelector from './language-selector.astro';
+import LanguageSelectorTrigger from './language-selector-trigger.astro';
+import ToggleCrossReferences from './toggle-cross-references.astro';
+import ToggleExternalReferences from './toggle-external-references.astro';
 import ThemeSelector from './theme-selector.astro';
+import Icon from '@components/icon.astro';
 
 import { Language } from '@catechism-types';
-import { getNativeLanguageText } from '@catechism-utils/language';
+
+import { IconEnum } from '@components/icon-enum';
+import { translate as t } from '@logic/translation';
 import { ElementID } from '@logic/ui';
 
 interface Props {
@@ -14,122 +19,41 @@ interface Props {
 
 const { language } = Astro.props;
 ---
-
 <script>
-    import type { SlDropdown } from '@shoelace-types';
     import '@shoelace/dropdown/dropdown.js';
-    import '@shoelace/menu/menu.js';
-    import '@shoelace/menu-item/menu-item.js';
-
-    import { shoelaceInitialized } from '@logic/custom-elements';
-    import { addClass, onClick, removeClass } from '@logic/dom-utils';
-    import { ElementID } from '@logic/ui';
-
-    await shoelaceInitialized();
-
-    const dropdown: SlDropdown | null = document.querySelector(ElementID.TOOLBAR_MENU_SELECTOR);
-    const closeButton: HTMLElement = dropdown?.querySelector(ElementID.TOOLBAR_MENU_CLOSE_BUTTON_SELECTOR);
-    const languageTrigger = dropdown?.querySelector(ElementID.TOOLBAR_MENU_LANGUAGE_TRIGGER_SELECTOR);
-    const languageCancel = dropdown?.querySelector(ElementID.TOOLBAR_MENU_LANGUAGE_CANCEL_SELECTOR);
-    const slidingContentContainer = dropdown?.querySelector(ElementID.TOOLBAR_MENU_SLIDING_CONTENT_CONTAINER_SELECTOR);
-
-    const slidingContentTranslationClass = '-translate-x-1/2';
-
-    dropdown.addEventListener('sl-after-hide', () => removeClass(slidingContentContainer, slidingContentTranslationClass));
-    onClick(closeButton, () => {
-        closeButton.blur();
-        dropdown.hide();
-    });
-    onClick(languageTrigger, () => addClass(slidingContentContainer, slidingContentTranslationClass));
-    onClick(languageCancel, () => removeClass(slidingContentContainer, slidingContentTranslationClass));
 </script>
 
-<sl-dropdown id={ElementID.TOOLBAR_MENU} class="menu text-stone-950" distance="10" placement="top-end">
-    <button slot="trigger" type="button" class="block text-white cursor-pointer">
-        <!-- from https://heroicons.com/ : bars-3 -->
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="size-6">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-        </svg>
+<sl-dropdown id={ElementID.TOOLBAR_MENU} placement="top-end" skidding="-12">
+    {/* trigger */}
+    <button
+        slot="trigger"
+        type="button"
+        class="relative group size-18 grid place-content-center cursor-pointer focus:outline-hidden sm:size-12"
+    >
+        <span class="absolute inset-2.5 rounded-full colors-button-stone-100 sm:inset-1"></span>
+        <Icon icon={IconEnum.BARS_3} class="relative size-6" />
     </button>
 
-    <div class="relative bg-white border border-stone-300 rounded-xl shadow-xl overflow-hidden">
-        <button
-            type="button"
-            id={ElementID.TOOLBAR_MENU_CLOSE_BUTTON}
-            class="absolute top-2 right-2 bg-stone-100 p-2 rounded-full cursor-pointer"
-        >
-            <!-- from https://heroicons.com/ : x-mark -->
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
-            </svg>
-        </button>
-
-        <div id={ElementID.TOOLBAR_MENU_SLIDING_CONTENT_CONTAINER} class="grid grid-cols-2 w-[200%] transition-transform duration-750">
-            <!-- Primary menu -->
-            <div class="flex flex-col items-stretch">
-                <!-- Theme selector -->
-                <div class="justify-items-center dark:bg-stone-900 dark:text-stone-50">
-                    <ThemeSelector {language} />
-                </div>
-
-                <!-- Language selection trigger -->
-                <button
-                    type="button"
-                    id={ElementID.TOOLBAR_MENU_LANGUAGE_TRIGGER}
-                    class="flex gap-4 h-12 bg-sky-100 cursor-pointer"
-                >
-                    <!-- from https://heroicons.com/ : language -->
-                    <svg
-                        slot="prefix"
-                        xmlns="http://www.w3.org/2000/svg"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke-width="1.5"
-                        stroke="currentColor"
-                        class="size-6"
-                    >
-                        <path
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            d="m10.5 21 5.25-11.25L21 21m-9-3h7.5M3 5.621a48.474 48.474 0 0 1 6-.371m0 0c1.12 0 2.233.038 3.334.114M9 5.25V3m3.334 2.364C11.176 10.658 7.69 15.08 3 17.502m9.334-12.138c.896.061 1.785.147 2.666.257m-4.589 8.495a18.023 18.023 0 0 1-3.827-5.802"
-                        />
-                    </svg>
-
-                    {getNativeLanguageText(language)}
-
-                    <!-- from https://heroicons.com/ : arrow-right -->
-                    <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke-width="1.5"
-                        stroke="currentColor"
-                        class="size-6"
-                    >
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3" />
-                    </svg>
-                </button>
-            </div>
-
-            <!-- Secondary menu: language selection -->
-            <div class="flex flex-col">
-                <button type="button" id={ElementID.TOOLBAR_MENU_LANGUAGE_CANCEL} class="p-4 cursor-pointer">
-                    <!-- from https://heroicons.com/ : arrow-left -->
-                    <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke-width="1.5"
-                        stroke="currentColor"
-                        class="size-6"
-                    >
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18" />
-                    </svg>
-                </button>
-                <div id={ElementID.LANGUAGE_SWITCHER_WRAPPER} slot="submenu">
-                    <LanguageSelector currentLanguage={language} />
-                </div>
-            </div>
+    {/* content */}
+    <div
+        class="relative flex flex-col items-stretch gap-4 p-8 bg-white border border-gray-300 rounded shadow-xl dark:bg-zinc-850 dark:text-gray-50 dark:border-zinc-700 dark:shadow-2xl dark:shadow-zinc-900"
+    >
+        <ThemeSelector {language} />
+        <div class="py-2 space-y-2">
+            <ToggleCrossReferences {language} />
+            <ToggleExternalReferences {language} />
         </div>
+
+        <div class="self-center w-3/4 h-px bg-gray-200 dark:bg-zinc-600"></div>
+
+        <a
+            href="/"
+            class="flex justify-center items-center gap-2 min-h-12 font-sans text-sm text-gray-700 rounded transition-colors hover:bg-gray-100 hover:text-gray-800 active:bg-gray-200 active:text-gray-800 dark:text-zinc-350 dark:hover:bg-zinc-700 dark:hover:text-zinc-200 dark:active:bg-zinc-600 dark:active:text-zinc-200"
+        >
+            <Icon icon={IconEnum.HOME} class="relative -top-0.5 size-5" />
+            <span class="">{t('Home', language)}</span>
+        </a>
+
+        <LanguageSelectorTrigger {language} />
     </div>
 </sl-dropdown>

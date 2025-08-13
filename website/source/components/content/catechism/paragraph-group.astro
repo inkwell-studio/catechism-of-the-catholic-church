@@ -17,7 +17,7 @@ const id = getUrlFragment(paragraphGroup.semanticPath, false, language).fragment
 const childContent = getAllChildContent(paragraphGroup);
 ---
 
-<h6 {id} class="text mt-4 mb-2">
+<h6 {id} class="text-base font-title font-medium px-text mt-4 mb-2">
     {paragraphGroup.title}
 </h6>
 <ContentBaseArray content={childContent} {language} />

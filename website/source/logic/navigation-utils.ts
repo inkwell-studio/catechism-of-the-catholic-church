@@ -1,4 +1,4 @@
-import type { SlDropdown } from '@shoelace-types';
+import type { SlDialog, SlDropdown } from '@shoelace-types';
 
 import { show } from './dom-utils.ts';
 import { getParagraphNumber } from './routing.ts';
@@ -8,7 +8,7 @@ import {
     updateReadingAreaIntersectionObservers,
     validateElementsInReadingArea,
 } from './state/reading-area.ts';
-import { updateToolbarForAuxiliaryRoute } from './toolbar.ts';
+import { setToolbarVisibility, updateToolbarForNonContentRoute } from './toolbar.ts';
 import { ElementClass, ElementID } from './ui.ts';
 
 type HtmxEvent = Event & {
@@ -16,46 +16,19 @@ type HtmxEvent = Event & {
     detail?: any;
 };
 
-/**
- * @returns a new path constructed constructed from the segments.
- * Doubled slashes are de-duplicated, and the returned value never ends with a slash.
- */
-export function path(...segments: Array<string | number>): string {
-    // Change all numbers to strings, and remove empty stirngs
-    segments = segments
-        .map((s) => '' + s)
-        .filter((s) => !!s);
-
-    if (0 === segments.length) {
-        return '';
-    }
-
-    return [...segments, '/'].join('/')
-        // De-duplicate slashes
-        .replaceAll(/\/{2,}/g, '/')
-        // Remove any slash that precedes the hash
-        .replace(/\/+#/, '#')
-        // Remove the trailing slash if it's not the root path
-        .replace(/(?<=.+)\/+$/, '');
-}
-
 export function watchForHtmxEvents(): void {
     document.addEventListener('htmx:afterSwap', (e: HtmxEvent) => {
         if (e?.detail?.successful) {
             validateElementsInReadingArea();
             updateReadingAreaIntersectionObservers();
-            updateToolbarForAuxiliaryRoute(document.location.pathname);
+            updateToolbarForNonContentRoute(globalThis.location.pathname);
 
             const targetID = e?.detail?.target?.id;
-            /* Perform some automated UI actions only when content has been swapped into the main content area,
-            as these are occasions that will have the appearance of navigation events. */
-            if (ElementID.CONTENT_WRAPPER === targetID) {
-                autoScroll();
-                hideNavigationMenu();
-                $showCrossReferencePanel.set(false);
-            }
-
-            if (ElementID.INFINITE_SCROLL_BACKWARD_INITIAL_TARGET === targetID) {
+            if (targetID === ElementID.CONTENT_WRAPPER) {
+                handleMainContentSwap();
+            } else if (targetID === ElementID.CROSS_REFERENCE_PANEL) {
+                handleCrossReferencePanelSwap();
+            } else if (targetID === ElementID.INFINITE_SCROLL_BACKWARD_INITIAL_TARGET) {
                 handleFirstInfiniteScrollBackward();
             }
         }
@@ -70,10 +43,22 @@ export function respondToFirstPageLoad(): void {
     const event = globalThis.performance.getEntriesByType('navigation')[0] as PerformanceNavigationTiming;
     const initialLoad = 'navigate' === event?.type;
     if (initialLoad) {
-        scrollToParagraphNumberFromUrl();
+        autoScroll();
     }
 
-    updateToolbarForAuxiliaryRoute(document.location.pathname);
+    updateToolbarForNonContentRoute(globalThis.location.pathname);
+}
+
+/**
+ * Perform these actions only when content has been swapped into the
+ * main content area, as this event has the appearance of a navigation event.
+ */
+function handleMainContentSwap(): void {
+    autoScroll();
+    hideSearchMenu();
+    hideNavigationMenu();
+    setToolbarVisibility();
+    $showCrossReferencePanel.set(false);
 }
 
 /**
@@ -83,27 +68,39 @@ export function respondToFirstPageLoad(): void {
 function autoScroll(): void {
     /* Prevent the reading-area intersection observers from updating the browser's history and
     URL while automatically scrolling on the page, as allowing it results in buggy behavior.
-    1000 milliseconds is merely a best-guess value. */
+    1000 milliseconds is merely a best-guess value for the maximum amount of time
+    that auto-scrolling may take (this guess should be as small as is reasonable). */
     disableReadingAreaIntersectableHistoryUpdates(1000);
 
-    const hash = document.location.hash;
+    const hash = globalThis.location.hash;
     if (hash) {
         document.getElementById(hash.slice(1))?.scrollIntoView();
     } else {
-        globalThis.scrollTo({ top: 0 });
-    }
-}
-
-function scrollToParagraphNumberFromUrl(): void {
-    const paragraphNumber = getParagraphNumber(document.location.href);
-    if (paragraphNumber) {
-        document.getElementById(paragraphNumber + '')?.scrollIntoView();
+        const paragraphNumber = getParagraphNumber(globalThis.location.href);
+        if (paragraphNumber) {
+            document.getElementById(paragraphNumber + '')?.scrollIntoView();
+        } else {
+            globalThis.scrollTo({ top: 0 });
+        }
     }
 }
 
 function hideNavigationMenu(): void {
     const dropdown: SlDropdown | null = document.querySelector(ElementID.TOOLBAR_TABLE_OF_CONTENTS_SELECTOR);
     dropdown?.hide();
+}
+
+function hideSearchMenu(): void {
+    const dialog: SlDialog | null = document.querySelector(ElementID.SEARCH_DIALOG_SELECTOR);
+    dialog?.hide();
+}
+
+function handleCrossReferencePanelSwap(): void {
+    // Scroll the cross-reference panel to the top, in case it had been scroll down for previous content
+    const panel = document.getElementById(ElementID.CROSS_REFERENCE_PANEL);
+    if (panel) {
+        panel.scrollTop = 0;
+    }
 }
 
 /**
@@ -114,36 +111,44 @@ function hideNavigationMenu(): void {
 function handleFirstInfiniteScrollBackward(): void {
     globalThis.requestAnimationFrame(() => {
         const newContent = document.querySelector(ElementClass.INFINITE_SCROLL_BACKWARD_INITIAL_CONTENT_SELECTOR);
+
         if (newContent) {
-            const originalScrollY = globalThis.scrollY;
+            const scrollBackwardActivator = document.getElementById(ElementID.INFINITE_SCROLL_BACKWARD_ACTIVATOR_CONTAINER);
 
-            show(newContent);
+            globalThis.requestAnimationFrame(() => {
+                show(newContent);
 
-            // This must equal the top margin, in pixels, of the content blocks (those with the `ElementClass.CATECHISM_CONTENT_BLOCK` class)
-            const topMarginOfCatechismContentBlock = 96;
+                const originalContent = scrollBackwardActivator?.closest(ElementClass.CATECHISM_CONTENT_BLOCK_SELECTOR);
+                if (originalContent) {
+                    originalContent.scrollIntoView({ block: 'start', behavior: 'instant' });
 
-            // This scroll effect keeps the original content in the same location in the viewport after the new content is shown
-            globalThis.scroll({
-                top: originalScrollY + newContent.scrollHeight + topMarginOfCatechismContentBlock,
-                behavior: 'instant',
+                    const marginTopRaw = globalThis.getComputedStyle(originalContent).marginTop;
+                    const marginTopPixels = Number(marginTopRaw.replace('px', ''));
+                    const offset = -1 * (marginTopPixels ? marginTopPixels : 0);
+                    globalThis.scrollBy(0, offset);
+                }
             });
 
-            // Now this scroll effect brings a small amount of the new content into view
-            globalThis.scroll({
-                top: globalThis.scrollY + newContent.getBoundingClientRect().bottom - 150,
-                behavior: 'smooth',
-            });
+            /* It was determined experimentally that `setTimeout()` is necessary to
+            prevent certain mobile browsers from jumping to the top of the new content */
+            setTimeout(() => {
+                // Now this scroll effect brings a small amount of the new content into view
+                globalThis.scroll({
+                    top: globalThis.scrollY + newContent.getBoundingClientRect().bottom - 150,
+                    behavior: 'smooth',
+                });
+            }, 50);
 
             /*
             Fade-out and then remove the backward-scroll activator.
 
-            While it would be more idiomatic to use `getElementById()` or `.querySelector()`,
-            invoking `.classList.add()` with either of those does not work for an unknown reason.
+            `setTimeout()` is used to prevent a flicker of the element — this was
+            determined to work experimentally, whereas `requestAnimationFrame()` did not work.
             */
-            document.querySelectorAll(`#${ElementID.INFINITE_SCROLL_BACKWARD_ACTIVATOR_CONTAINER}`).forEach((e) => {
-                e.classList.add('transition-opacity', 'opacity-0', 'duration-1000');
-                setTimeout(() => e.remove(), 1200);
-            });
+            setTimeout(() => {
+                scrollBackwardActivator?.classList.add('transition-opacity', 'opacity-0', 'duration-1000');
+                setTimeout(() => scrollBackwardActivator?.remove(), 1200);
+            }, 100);
         }
     });
 }

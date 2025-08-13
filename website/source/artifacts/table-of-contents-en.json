@@ -1,0 +1,1550 @@
+{
+  "language": "en",
+  "prologue": {
+    "contentType": "PROLOGUE",
+    "titleData": {
+      "title": "Prologue",
+      "typeLabel": "Prologue",
+      "contentNumber": null,
+      "romanNumeral": null
+    },
+    "pathID": "0",
+    "semanticPath": "prologue",
+    "url": "/prologue",
+    "firstParagraphNumber": 1,
+    "lastParagraphNumber": 11,
+    "children": [
+      {
+        "contentType": "PROLOGUE_SECTION",
+        "titleData": {
+          "title": "How to Find Your Way Out of a Forest",
+          "typeLabel": "Prologue Section",
+          "contentNumber": 1,
+          "romanNumeral": "I"
+        },
+        "pathID": "0__m.0",
+        "semanticPath": "prologue/prologue-section-1",
+        "url": "/prologue#prologue-section-1",
+        "firstParagraphNumber": 1,
+        "lastParagraphNumber": 3,
+        "children": []
+      },
+      {
+        "contentType": "PROLOGUE_SECTION",
+        "titleData": {
+          "title": "A History of Cartography",
+          "typeLabel": "Prologue Section",
+          "contentNumber": 2,
+          "romanNumeral": "II"
+        },
+        "pathID": "0__m.1",
+        "semanticPath": "prologue/prologue-section-2",
+        "url": "/prologue#prologue-section-2",
+        "firstParagraphNumber": 4,
+        "lastParagraphNumber": 4,
+        "children": []
+      },
+      {
+        "contentType": "PROLOGUE_SECTION",
+        "titleData": {
+          "title": "Discerning Edible Fungi",
+          "typeLabel": "Prologue Section",
+          "contentNumber": 3,
+          "romanNumeral": "III"
+        },
+        "pathID": "0__m.2",
+        "semanticPath": "prologue/prologue-section-3",
+        "url": "/prologue#prologue-section-3",
+        "firstParagraphNumber": 5,
+        "lastParagraphNumber": 7,
+        "children": []
+      },
+      {
+        "contentType": "PROLOGUE_SECTION",
+        "titleData": {
+          "title": "The Effects of Prairie Fires",
+          "typeLabel": "Prologue Section",
+          "contentNumber": 4,
+          "romanNumeral": "IV"
+        },
+        "pathID": "0__m.3",
+        "semanticPath": "prologue/prologue-section-4",
+        "url": "/prologue#prologue-section-4",
+        "firstParagraphNumber": 8,
+        "lastParagraphNumber": 8,
+        "children": []
+      },
+      {
+        "contentType": "PROLOGUE_SECTION",
+        "titleData": {
+          "title": "Swallowing the Ocean",
+          "typeLabel": "Prologue Section",
+          "contentNumber": 5,
+          "romanNumeral": "V"
+        },
+        "pathID": "0__m.4",
+        "semanticPath": "prologue/prologue-section-5",
+        "url": "/prologue#prologue-section-5",
+        "firstParagraphNumber": 9,
+        "lastParagraphNumber": 11,
+        "children": []
+      }
+    ]
+  },
+  "parts": [
+    {
+      "contentType": "PART",
+      "titleData": {
+        "title": "Winter and Summer",
+        "typeLabel": "Part",
+        "contentNumber": 1,
+        "romanNumeral": "I"
+      },
+      "pathID": "1",
+      "semanticPath": "part-1",
+      "url": "/part-1",
+      "firstParagraphNumber": 12,
+      "lastParagraphNumber": 65,
+      "children": [
+        {
+          "contentType": "SECTION",
+          "titleData": {
+            "title": "All the Ways That Surfing Can Improve Your Life",
+            "typeLabel": "Section",
+            "contentNumber": 1,
+            "romanNumeral": "I"
+          },
+          "pathID": "1__m.0",
+          "semanticPath": "part-1/section-1",
+          "url": "/part-1#section-1",
+          "firstParagraphNumber": 12,
+          "lastParagraphNumber": 35,
+          "children": [
+            {
+              "contentType": "CHAPTER",
+              "titleData": {
+                "title": "Letters From Cousins",
+                "typeLabel": "Chapter",
+                "contentNumber": 1,
+                "romanNumeral": "I"
+              },
+              "pathID": "1__m.0__m.0",
+              "semanticPath": "part-1/section-1/chapter-1",
+              "url": "/part-1#section-1/chapter-1",
+              "firstParagraphNumber": 12,
+              "lastParagraphNumber": 16,
+              "children": [
+                {
+                  "contentType": "ARTICLE",
+                  "titleData": {
+                    "title": "The Times They Are a-Changin'",
+                    "typeLabel": "Article",
+                    "contentNumber": 1,
+                    "romanNumeral": "I"
+                  },
+                  "pathID": "1__m.0__m.0__m.0",
+                  "semanticPath": "part-1/section-1/chapter-1/article-1",
+                  "url": "/part-1#section-1/chapter-1/article-1",
+                  "firstParagraphNumber": 12,
+                  "lastParagraphNumber": 16,
+                  "children": [
+                    {
+                      "contentType": "ARTICLE_PARAGRAPH",
+                      "titleData": {
+                        "title": "How Bicycles are Made",
+                        "typeLabel": "Article Paragraph",
+                        "contentNumber": 1,
+                        "romanNumeral": "I"
+                      },
+                      "pathID": "1__m.0__m.0__m.0__m.0",
+                      "semanticPath": "part-1/section-1/chapter-1/article-1/article-paragraph-1",
+                      "url": "/part-1#section-1/chapter-1/article-1/article-paragraph-1",
+                      "firstParagraphNumber": 12,
+                      "lastParagraphNumber": 16,
+                      "children": [
+                        {
+                          "contentType": "SUB_ARTICLE",
+                          "titleData": {
+                            "title": "The Wild, The Innocent, & The E Street Shuffle",
+                            "typeLabel": "Subarticle",
+                            "contentNumber": 1,
+                            "romanNumeral": "I"
+                          },
+                          "pathID": "1__m.0__m.0__m.0__m.0__m.0",
+                          "semanticPath": "part-1/section-1/chapter-1/article-1/article-paragraph-1/subarticle-1",
+                          "url": "/part-1#section-1/chapter-1/article-1/article-paragraph-1/subarticle-1",
+                          "firstParagraphNumber": 12,
+                          "lastParagraphNumber": 12,
+                          "children": []
+                        },
+                        {
+                          "contentType": "SUB_ARTICLE",
+                          "titleData": {
+                            "title": "Born to Run",
+                            "typeLabel": "Subarticle",
+                            "contentNumber": 2,
+                            "romanNumeral": "II"
+                          },
+                          "pathID": "1__m.0__m.0__m.0__m.0__m.1",
+                          "semanticPath": "part-1/section-1/chapter-1/article-1/article-paragraph-1/subarticle-2",
+                          "url": "/part-1#section-1/chapter-1/article-1/article-paragraph-1/subarticle-2",
+                          "firstParagraphNumber": 13,
+                          "lastParagraphNumber": 15,
+                          "children": []
+                        },
+                        {
+                          "contentType": "IN_BRIEF",
+                          "titleData": {
+                            "title": "In Brief",
+                            "typeLabel": "In Brief",
+                            "contentNumber": null,
+                            "romanNumeral": null
+                          },
+                          "pathID": "1__m.0__m.0__m.0__m.0__i",
+                          "semanticPath": "part-1/section-1/chapter-1/article-1/article-paragraph-1/in-brief",
+                          "url": "/part-1#section-1/chapter-1/article-1/article-paragraph-1/in-brief",
+                          "firstParagraphNumber": 16,
+                          "lastParagraphNumber": 16,
+                          "children": []
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "contentType": "CHAPTER",
+              "titleData": {
+                "title": "Magazines Can Have Beautiful Covers",
+                "typeLabel": "Chapter",
+                "contentNumber": 2,
+                "romanNumeral": "II"
+              },
+              "pathID": "1__m.0__m.1",
+              "semanticPath": "part-1/section-1/chapter-2",
+              "url": "/part-1/section-1/chapter-2",
+              "firstParagraphNumber": 17,
+              "lastParagraphNumber": 35,
+              "children": [
+                {
+                  "contentType": "ARTICLE",
+                  "titleData": {
+                    "title": "Bringing It All Back Home",
+                    "typeLabel": "Article",
+                    "contentNumber": 1,
+                    "romanNumeral": "I"
+                  },
+                  "pathID": "1__m.0__m.1__m.0",
+                  "semanticPath": "part-1/section-1/chapter-2/article-1",
+                  "url": "/part-1/section-1/chapter-2#article-1",
+                  "firstParagraphNumber": 17,
+                  "lastParagraphNumber": 24,
+                  "children": [
+                    {
+                      "contentType": "IN_BRIEF",
+                      "titleData": {
+                        "title": "In Brief",
+                        "typeLabel": "In Brief",
+                        "contentNumber": null,
+                        "romanNumeral": null
+                      },
+                      "pathID": "1__m.0__m.1__m.0__i",
+                      "semanticPath": "part-1/section-1/chapter-2/article-1/in-brief",
+                      "url": "/part-1/section-1/chapter-2#article-1/in-brief",
+                      "firstParagraphNumber": 22,
+                      "lastParagraphNumber": 24,
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "contentType": "ARTICLE",
+                  "titleData": {
+                    "title": "Highway 61 Revisited",
+                    "typeLabel": "Article",
+                    "contentNumber": 2,
+                    "romanNumeral": "II"
+                  },
+                  "pathID": "1__m.0__m.1__m.1",
+                  "semanticPath": "part-1/section-1/chapter-2/article-2",
+                  "url": "/part-1/section-1/chapter-2/article-2",
+                  "firstParagraphNumber": 25,
+                  "lastParagraphNumber": 35,
+                  "children": [
+                    {
+                      "contentType": "ARTICLE_PARAGRAPH",
+                      "titleData": {
+                        "title": "Automobiles are Painted Red",
+                        "typeLabel": "Article Paragraph",
+                        "contentNumber": 1,
+                        "romanNumeral": "I"
+                      },
+                      "pathID": "1__m.0__m.1__m.1__m.0",
+                      "semanticPath": "part-1/section-1/chapter-2/article-2/article-paragraph-1",
+                      "url": "/part-1/section-1/chapter-2/article-2#article-paragraph-1",
+                      "firstParagraphNumber": 25,
+                      "lastParagraphNumber": 29,
+                      "children": [
+                        {
+                          "contentType": "SUB_ARTICLE",
+                          "titleData": {
+                            "title": "Darkness on the Edge of Town",
+                            "typeLabel": "Subarticle",
+                            "contentNumber": 1,
+                            "romanNumeral": "I"
+                          },
+                          "pathID": "1__m.0__m.1__m.1__m.0__m.0",
+                          "semanticPath": "part-1/section-1/chapter-2/article-2/article-paragraph-1/subarticle-1",
+                          "url": "/part-1/section-1/chapter-2/article-2#article-paragraph-1/subarticle-1",
+                          "firstParagraphNumber": 25,
+                          "lastParagraphNumber": 26,
+                          "children": []
+                        },
+                        {
+                          "contentType": "IN_BRIEF",
+                          "titleData": {
+                            "title": "In Brief",
+                            "typeLabel": "In Brief",
+                            "contentNumber": null,
+                            "romanNumeral": null
+                          },
+                          "pathID": "1__m.0__m.1__m.1__m.0__i",
+                          "semanticPath": "part-1/section-1/chapter-2/article-2/article-paragraph-1/in-brief",
+                          "url": "/part-1/section-1/chapter-2/article-2#article-paragraph-1/in-brief",
+                          "firstParagraphNumber": 27,
+                          "lastParagraphNumber": 29,
+                          "children": []
+                        }
+                      ]
+                    },
+                    {
+                      "contentType": "ARTICLE_PARAGRAPH",
+                      "titleData": {
+                        "title": "Airplanes are Repaired Quickly",
+                        "typeLabel": "Article Paragraph",
+                        "contentNumber": 2,
+                        "romanNumeral": "II"
+                      },
+                      "pathID": "1__m.0__m.1__m.1__m.1",
+                      "semanticPath": "part-1/section-1/chapter-2/article-2/article-paragraph-2",
+                      "url": "/part-1/section-1/chapter-2/article-2/article-paragraph-2",
+                      "firstParagraphNumber": 30,
+                      "lastParagraphNumber": 35,
+                      "children": [
+                        {
+                          "contentType": "SUB_ARTICLE",
+                          "titleData": {
+                            "title": "The River",
+                            "typeLabel": "Subarticle",
+                            "contentNumber": 1,
+                            "romanNumeral": "I"
+                          },
+                          "pathID": "1__m.0__m.1__m.1__m.1__m.0",
+                          "semanticPath": "part-1/section-1/chapter-2/article-2/article-paragraph-2/subarticle-1",
+                          "url": "/part-1/section-1/chapter-2/article-2/article-paragraph-2#subarticle-1",
+                          "firstParagraphNumber": 30,
+                          "lastParagraphNumber": 31,
+                          "children": []
+                        },
+                        {
+                          "contentType": "SUB_ARTICLE",
+                          "titleData": {
+                            "title": "We Shall Overcome",
+                            "typeLabel": "Subarticle",
+                            "contentNumber": 2,
+                            "romanNumeral": "II"
+                          },
+                          "pathID": "1__m.0__m.1__m.1__m.1__m.1",
+                          "semanticPath": "part-1/section-1/chapter-2/article-2/article-paragraph-2/subarticle-2",
+                          "url": "/part-1/section-1/chapter-2/article-2/article-paragraph-2#subarticle-2",
+                          "firstParagraphNumber": 32,
+                          "lastParagraphNumber": 34,
+                          "children": []
+                        },
+                        {
+                          "contentType": "IN_BRIEF",
+                          "titleData": {
+                            "title": "In Brief",
+                            "typeLabel": "In Brief",
+                            "contentNumber": null,
+                            "romanNumeral": null
+                          },
+                          "pathID": "1__m.0__m.1__m.1__m.1__i",
+                          "semanticPath": "part-1/section-1/chapter-2/article-2/article-paragraph-2/in-brief",
+                          "url": "/part-1/section-1/chapter-2/article-2/article-paragraph-2#in-brief",
+                          "firstParagraphNumber": 35,
+                          "lastParagraphNumber": 35,
+                          "children": []
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "contentType": "SECTION",
+          "titleData": {
+            "title": "Horseback Riding: A History Of",
+            "typeLabel": "Section",
+            "contentNumber": 2,
+            "romanNumeral": "II"
+          },
+          "pathID": "1__m.1",
+          "semanticPath": "part-1/section-2",
+          "url": "/part-1/section-2",
+          "firstParagraphNumber": 36,
+          "lastParagraphNumber": 62,
+          "children": [
+            {
+              "contentType": "CHAPTER",
+              "titleData": {
+                "title": "Some Books Are Worth Keeping on a Good Shelf by Your Front Door So You May Easily Share Them With Others",
+                "typeLabel": "Chapter",
+                "contentNumber": 1,
+                "romanNumeral": "I"
+              },
+              "pathID": "1__m.1__m.0",
+              "semanticPath": "part-1/section-2/chapter-1",
+              "url": "/part-1/section-2#chapter-1",
+              "firstParagraphNumber": 36,
+              "lastParagraphNumber": 50,
+              "children": [
+                {
+                  "contentType": "ARTICLE",
+                  "titleData": {
+                    "title": "Blood on the Tracks",
+                    "typeLabel": "Article",
+                    "contentNumber": 1,
+                    "romanNumeral": "I"
+                  },
+                  "pathID": "1__m.1__m.0__m.0",
+                  "semanticPath": "part-1/section-2/chapter-1/article-1",
+                  "url": "/part-1/section-2#chapter-1/article-1",
+                  "firstParagraphNumber": 36,
+                  "lastParagraphNumber": 41,
+                  "children": [
+                    {
+                      "contentType": "IN_BRIEF",
+                      "titleData": {
+                        "title": "In Brief",
+                        "typeLabel": "In Brief",
+                        "contentNumber": null,
+                        "romanNumeral": null
+                      },
+                      "pathID": "1__m.1__m.0__m.0__i",
+                      "semanticPath": "part-1/section-2/chapter-1/article-1/in-brief",
+                      "url": "/part-1/section-2#chapter-1/article-1/in-brief",
+                      "firstParagraphNumber": 38,
+                      "lastParagraphNumber": 41,
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "contentType": "ARTICLE",
+                  "titleData": {
+                    "title": "Love and Theft",
+                    "typeLabel": "Article",
+                    "contentNumber": 2,
+                    "romanNumeral": "II"
+                  },
+                  "pathID": "1__m.1__m.0__m.1",
+                  "semanticPath": "part-1/section-2/chapter-1/article-2",
+                  "url": "/part-1/section-2/chapter-1/article-2",
+                  "firstParagraphNumber": 42,
+                  "lastParagraphNumber": 45,
+                  "children": [
+                    {
+                      "contentType": "SUB_ARTICLE",
+                      "titleData": {
+                        "title": "Madman Drummers, Bummers, and Indians in the Summer",
+                        "typeLabel": "Subarticle",
+                        "contentNumber": 1,
+                        "romanNumeral": "I"
+                      },
+                      "pathID": "1__m.1__m.0__m.1__m.0",
+                      "semanticPath": "part-1/section-2/chapter-1/article-2/subarticle-1",
+                      "url": "/part-1/section-2/chapter-1/article-2#subarticle-1",
+                      "firstParagraphNumber": 42,
+                      "lastParagraphNumber": 42,
+                      "children": []
+                    },
+                    {
+                      "contentType": "SUB_ARTICLE",
+                      "titleData": {
+                        "title": "Wounded Deep in Battle",
+                        "typeLabel": "Subarticle",
+                        "contentNumber": 2,
+                        "romanNumeral": "II"
+                      },
+                      "pathID": "1__m.1__m.0__m.1__m.1",
+                      "semanticPath": "part-1/section-2/chapter-1/article-2/subarticle-2",
+                      "url": "/part-1/section-2/chapter-1/article-2#subarticle-2",
+                      "firstParagraphNumber": 43,
+                      "lastParagraphNumber": 44,
+                      "children": []
+                    },
+                    {
+                      "contentType": "IN_BRIEF",
+                      "titleData": {
+                        "title": "In Brief",
+                        "typeLabel": "In Brief",
+                        "contentNumber": null,
+                        "romanNumeral": null
+                      },
+                      "pathID": "1__m.1__m.0__m.1__i",
+                      "semanticPath": "part-1/section-2/chapter-1/article-2/in-brief",
+                      "url": "/part-1/section-2/chapter-1/article-2#in-brief",
+                      "firstParagraphNumber": 45,
+                      "lastParagraphNumber": 45,
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "contentType": "ARTICLE",
+                  "titleData": {
+                    "title": "Modern Times",
+                    "typeLabel": "Article",
+                    "contentNumber": 3,
+                    "romanNumeral": "III"
+                  },
+                  "pathID": "1__m.1__m.0__m.2",
+                  "semanticPath": "part-1/section-2/chapter-1/article-3",
+                  "url": "/part-1/section-2/chapter-1/article-3",
+                  "firstParagraphNumber": 46,
+                  "lastParagraphNumber": 50,
+                  "children": [
+                    {
+                      "contentType": "IN_BRIEF",
+                      "titleData": {
+                        "title": "In Brief",
+                        "typeLabel": "In Brief",
+                        "contentNumber": null,
+                        "romanNumeral": null
+                      },
+                      "pathID": "1__m.1__m.0__m.2__i",
+                      "semanticPath": "part-1/section-2/chapter-1/article-3/in-brief",
+                      "url": "/part-1/section-2/chapter-1/article-3#in-brief",
+                      "firstParagraphNumber": 49,
+                      "lastParagraphNumber": 50,
+                      "children": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "contentType": "CHAPTER",
+              "titleData": {
+                "title": "Portable Stamp Collections",
+                "typeLabel": "Chapter",
+                "contentNumber": 2,
+                "romanNumeral": "II"
+              },
+              "pathID": "1__m.1__m.1",
+              "semanticPath": "part-1/section-2/chapter-2",
+              "url": "/part-1/section-2/chapter-2",
+              "firstParagraphNumber": 51,
+              "lastParagraphNumber": 62,
+              "children": [
+                {
+                  "contentType": "ARTICLE",
+                  "titleData": {
+                    "title": "All Along the Watchtower",
+                    "typeLabel": "Article",
+                    "contentNumber": 1,
+                    "romanNumeral": "I"
+                  },
+                  "pathID": "1__m.1__m.1__m.0",
+                  "semanticPath": "part-1/section-2/chapter-2/article-1",
+                  "url": "/part-1/section-2/chapter-2#article-1",
+                  "firstParagraphNumber": 51,
+                  "lastParagraphNumber": 58,
+                  "children": [
+                    {
+                      "contentType": "IN_BRIEF",
+                      "titleData": {
+                        "title": "In Brief",
+                        "typeLabel": "In Brief",
+                        "contentNumber": null,
+                        "romanNumeral": null
+                      },
+                      "pathID": "1__m.1__m.1__m.0__i",
+                      "semanticPath": "part-1/section-2/chapter-2/article-1/in-brief",
+                      "url": "/part-1/section-2/chapter-2#article-1/in-brief",
+                      "firstParagraphNumber": 55,
+                      "lastParagraphNumber": 58,
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "contentType": "ARTICLE",
+                  "titleData": {
+                    "title": "Like a Rolling Stone",
+                    "typeLabel": "Article",
+                    "contentNumber": 2,
+                    "romanNumeral": "II"
+                  },
+                  "pathID": "1__m.1__m.1__m.1",
+                  "semanticPath": "part-1/section-2/chapter-2/article-2",
+                  "url": "/part-1/section-2/chapter-2/article-2",
+                  "firstParagraphNumber": 59,
+                  "lastParagraphNumber": 62,
+                  "children": [
+                    {
+                      "contentType": "SUB_ARTICLE",
+                      "titleData": {
+                        "title": "It's Not Your Lungs This Time",
+                        "typeLabel": "Subarticle",
+                        "contentNumber": 1,
+                        "romanNumeral": "I"
+                      },
+                      "pathID": "1__m.1__m.1__m.1__m.0",
+                      "semanticPath": "part-1/section-2/chapter-2/article-2/subarticle-1",
+                      "url": "/part-1/section-2/chapter-2/article-2#subarticle-1",
+                      "firstParagraphNumber": 59,
+                      "lastParagraphNumber": 60,
+                      "children": []
+                    },
+                    {
+                      "contentType": "IN_BRIEF",
+                      "titleData": {
+                        "title": "In Brief",
+                        "typeLabel": "In Brief",
+                        "contentNumber": null,
+                        "romanNumeral": null
+                      },
+                      "pathID": "1__m.1__m.1__m.1__i",
+                      "semanticPath": "part-1/section-2/chapter-2/article-2/in-brief",
+                      "url": "/part-1/section-2/chapter-2/article-2#in-brief",
+                      "firstParagraphNumber": 61,
+                      "lastParagraphNumber": 62,
+                      "children": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "contentType": "SECTION",
+          "titleData": {
+            "title": "The Great American Story of Baseball",
+            "typeLabel": "Section",
+            "contentNumber": 3,
+            "romanNumeral": "III"
+          },
+          "pathID": "1__m.2",
+          "semanticPath": "part-1/section-3",
+          "url": "/part-1/section-3",
+          "firstParagraphNumber": 63,
+          "lastParagraphNumber": 65,
+          "children": [
+            {
+              "contentType": "CHAPTER",
+              "titleData": {
+                "title": "Assorted Papers Found in Your Neighbor's Basement",
+                "typeLabel": "Chapter",
+                "contentNumber": 1,
+                "romanNumeral": "I"
+              },
+              "pathID": "1__m.2__m.0",
+              "semanticPath": "part-1/section-3/chapter-1",
+              "url": "/part-1/section-3#chapter-1",
+              "firstParagraphNumber": 63,
+              "lastParagraphNumber": 65,
+              "children": [
+                {
+                  "contentType": "ARTICLE",
+                  "titleData": {
+                    "title": "Ring Them Bells",
+                    "typeLabel": "Article",
+                    "contentNumber": 1,
+                    "romanNumeral": "I"
+                  },
+                  "pathID": "1__m.2__m.0__m.0",
+                  "semanticPath": "part-1/section-3/chapter-1/article-1",
+                  "url": "/part-1/section-3#chapter-1/article-1",
+                  "firstParagraphNumber": 63,
+                  "lastParagraphNumber": 65,
+                  "children": [
+                    {
+                      "contentType": "SUB_ARTICLE",
+                      "titleData": {
+                        "title": "Local Joker",
+                        "typeLabel": "Subarticle",
+                        "contentNumber": 1,
+                        "romanNumeral": "I"
+                      },
+                      "pathID": "1__m.2__m.0__m.0__m.0",
+                      "semanticPath": "part-1/section-3/chapter-1/article-1/subarticle-1",
+                      "url": "/part-1/section-3#chapter-1/article-1/subarticle-1",
+                      "firstParagraphNumber": 63,
+                      "lastParagraphNumber": 64,
+                      "children": []
+                    },
+                    {
+                      "contentType": "IN_BRIEF",
+                      "titleData": {
+                        "title": "In Brief",
+                        "typeLabel": "In Brief",
+                        "contentNumber": null,
+                        "romanNumeral": null
+                      },
+                      "pathID": "1__m.2__m.0__m.0__i",
+                      "semanticPath": "part-1/section-3/chapter-1/article-1/in-brief",
+                      "url": "/part-1/section-3#chapter-1/article-1/in-brief",
+                      "firstParagraphNumber": 65,
+                      "lastParagraphNumber": 65,
+                      "children": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "contentType": "PART",
+      "titleData": {
+        "title": "A Warm Day in Spring",
+        "typeLabel": "Part",
+        "contentNumber": 2,
+        "romanNumeral": "II"
+      },
+      "pathID": "2",
+      "semanticPath": "part-2",
+      "url": "/part-2",
+      "firstParagraphNumber": 66,
+      "lastParagraphNumber": 79,
+      "children": [
+        {
+          "contentType": "SECTION",
+          "titleData": {
+            "title": "Snowshoeing With Bears",
+            "typeLabel": "Section",
+            "contentNumber": 1,
+            "romanNumeral": "I"
+          },
+          "pathID": "2__m.0",
+          "semanticPath": "part-2/section-1",
+          "url": "/part-2#section-1",
+          "firstParagraphNumber": 67,
+          "lastParagraphNumber": 79,
+          "children": [
+            {
+              "contentType": "ARTICLE",
+              "titleData": {
+                "title": "Tangled Up In Blue",
+                "typeLabel": "Article",
+                "contentNumber": 1,
+                "romanNumeral": "I"
+              },
+              "pathID": "2__m.0__m.0",
+              "semanticPath": "part-2/section-1/article-1",
+              "url": "/part-2#section-1/article-1",
+              "firstParagraphNumber": 67,
+              "lastParagraphNumber": 72,
+              "children": [
+                {
+                  "contentType": "SUB_ARTICLE",
+                  "titleData": {
+                    "title": "The Power of a Locomotive",
+                    "typeLabel": "Subarticle",
+                    "contentNumber": 1,
+                    "romanNumeral": "I"
+                  },
+                  "pathID": "2__m.0__m.0__m.0",
+                  "semanticPath": "part-2/section-1/article-1/subarticle-1",
+                  "url": "/part-2#section-1/article-1/subarticle-1",
+                  "firstParagraphNumber": 67,
+                  "lastParagraphNumber": 67,
+                  "children": []
+                },
+                {
+                  "contentType": "SUB_ARTICLE",
+                  "titleData": {
+                    "title": "Broken on the Beach",
+                    "typeLabel": "Subarticle",
+                    "contentNumber": 2,
+                    "romanNumeral": "II"
+                  },
+                  "pathID": "2__m.0__m.0__m.1",
+                  "semanticPath": "part-2/section-1/article-1/subarticle-2",
+                  "url": "/part-2#section-1/article-1/subarticle-2",
+                  "firstParagraphNumber": 68,
+                  "lastParagraphNumber": 68,
+                  "children": []
+                },
+                {
+                  "contentType": "IN_BRIEF",
+                  "titleData": {
+                    "title": "In Brief",
+                    "typeLabel": "In Brief",
+                    "contentNumber": null,
+                    "romanNumeral": null
+                  },
+                  "pathID": "2__m.0__m.0__i",
+                  "semanticPath": "part-2/section-1/article-1/in-brief",
+                  "url": "/part-2#section-1/article-1/in-brief",
+                  "firstParagraphNumber": 69,
+                  "lastParagraphNumber": 72,
+                  "children": []
+                }
+              ]
+            },
+            {
+              "contentType": "ARTICLE",
+              "titleData": {
+                "title": "Most Likely You'll Go Your Way (And I'll Go Mine)",
+                "typeLabel": "Article",
+                "contentNumber": 2,
+                "romanNumeral": "II"
+              },
+              "pathID": "2__m.0__m.1",
+              "semanticPath": "part-2/section-1/article-2",
+              "url": "/part-2/section-1/article-2",
+              "firstParagraphNumber": 73,
+              "lastParagraphNumber": 76,
+              "children": [
+                {
+                  "contentType": "SUB_ARTICLE",
+                  "titleData": {
+                    "title": "We Were Both Hitchhikers",
+                    "typeLabel": "Subarticle",
+                    "contentNumber": 1,
+                    "romanNumeral": "I"
+                  },
+                  "pathID": "2__m.0__m.1__m.0",
+                  "semanticPath": "part-2/section-1/article-2/subarticle-1",
+                  "url": "/part-2/section-1/article-2#subarticle-1",
+                  "firstParagraphNumber": 73,
+                  "lastParagraphNumber": 75,
+                  "children": []
+                },
+                {
+                  "contentType": "IN_BRIEF",
+                  "titleData": {
+                    "title": "In Brief",
+                    "typeLabel": "In Brief",
+                    "contentNumber": null,
+                    "romanNumeral": null
+                  },
+                  "pathID": "2__m.0__m.1__i",
+                  "semanticPath": "part-2/section-1/article-2/in-brief",
+                  "url": "/part-2/section-1/article-2#in-brief",
+                  "firstParagraphNumber": 76,
+                  "lastParagraphNumber": 76,
+                  "children": []
+                }
+              ]
+            },
+            {
+              "contentType": "ARTICLE",
+              "titleData": {
+                "title": "Stuck Inside of Mobile with the Memphis Blues Again",
+                "typeLabel": "Article",
+                "contentNumber": 3,
+                "romanNumeral": "III"
+              },
+              "pathID": "2__m.0__m.2",
+              "semanticPath": "part-2/section-1/article-3",
+              "url": "/part-2/section-1/article-3",
+              "firstParagraphNumber": 77,
+              "lastParagraphNumber": 79,
+              "children": [
+                {
+                  "contentType": "SUB_ARTICLE",
+                  "titleData": {
+                    "title": "Some Metal-Tempered Engine",
+                    "typeLabel": "Subarticle",
+                    "contentNumber": 1,
+                    "romanNumeral": "I"
+                  },
+                  "pathID": "2__m.0__m.2__m.0",
+                  "semanticPath": "part-2/section-1/article-3/subarticle-1",
+                  "url": "/part-2/section-1/article-3#subarticle-1",
+                  "firstParagraphNumber": 77,
+                  "lastParagraphNumber": 78,
+                  "children": []
+                },
+                {
+                  "contentType": "IN_BRIEF",
+                  "titleData": {
+                    "title": "In Brief",
+                    "typeLabel": "In Brief",
+                    "contentNumber": null,
+                    "romanNumeral": null
+                  },
+                  "pathID": "2__m.0__m.2__i",
+                  "semanticPath": "part-2/section-1/article-3/in-brief",
+                  "url": "/part-2/section-1/article-3#in-brief",
+                  "firstParagraphNumber": 79,
+                  "lastParagraphNumber": 79,
+                  "children": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "contentType": "PART",
+      "titleData": {
+        "title": "The Calm Light of an Autumn Evening",
+        "typeLabel": "Part",
+        "contentNumber": 3,
+        "romanNumeral": "III"
+      },
+      "pathID": "3",
+      "semanticPath": "part-3",
+      "url": "/part-3",
+      "firstParagraphNumber": 80,
+      "lastParagraphNumber": 104,
+      "children": [
+        {
+          "contentType": "SECTION",
+          "titleData": {
+            "title": "Biking in the Rain",
+            "typeLabel": "Section",
+            "contentNumber": 1,
+            "romanNumeral": "I"
+          },
+          "pathID": "3__m.0",
+          "semanticPath": "part-3/section-1",
+          "url": "/part-3#section-1",
+          "firstParagraphNumber": 80,
+          "lastParagraphNumber": 104,
+          "children": [
+            {
+              "contentType": "CHAPTER",
+              "titleData": {
+                "title": "Old School Documents",
+                "typeLabel": "Chapter",
+                "contentNumber": 1,
+                "romanNumeral": "I"
+              },
+              "pathID": "3__m.0__m.0",
+              "semanticPath": "part-3/section-1/chapter-1",
+              "url": "/part-3#section-1/chapter-1",
+              "firstParagraphNumber": 81,
+              "lastParagraphNumber": 104,
+              "children": [
+                {
+                  "contentType": "ARTICLE",
+                  "titleData": {
+                    "title": "One More Cup of Coffee (Valley Below)",
+                    "typeLabel": "Article",
+                    "contentNumber": 1,
+                    "romanNumeral": "I"
+                  },
+                  "pathID": "3__m.0__m.0__m.0",
+                  "semanticPath": "part-3/section-1/chapter-1/article-1",
+                  "url": "/part-3#section-1/chapter-1/article-1",
+                  "firstParagraphNumber": 81,
+                  "lastParagraphNumber": 104,
+                  "children": [
+                    {
+                      "contentType": "ARTICLE_PARAGRAPH",
+                      "titleData": {
+                        "title": "Motorcycles are Packed for Shipping",
+                        "typeLabel": "Article Paragraph",
+                        "contentNumber": 1,
+                        "romanNumeral": "I"
+                      },
+                      "pathID": "3__m.0__m.0__m.0__m.0",
+                      "semanticPath": "part-3/section-1/chapter-1/article-1/article-paragraph-1",
+                      "url": "/part-3#section-1/chapter-1/article-1/article-paragraph-1",
+                      "firstParagraphNumber": 81,
+                      "lastParagraphNumber": 96,
+                      "children": [
+                        {
+                          "contentType": "SUB_ARTICLE",
+                          "titleData": {
+                            "title": "An Alien, Distant Shore",
+                            "typeLabel": "Subarticle",
+                            "contentNumber": 1,
+                            "romanNumeral": "I"
+                          },
+                          "pathID": "3__m.0__m.0__m.0__m.0__m.0",
+                          "semanticPath": "part-3/section-1/chapter-1/article-1/article-paragraph-1/subarticle-1",
+                          "url": "/part-3#section-1/chapter-1/article-1/article-paragraph-1/subarticle-1",
+                          "firstParagraphNumber": 81,
+                          "lastParagraphNumber": 83,
+                          "children": []
+                        },
+                        {
+                          "contentType": "SUB_ARTICLE",
+                          "titleData": {
+                            "title": "I've Broken All Your Windows",
+                            "typeLabel": "Subarticle",
+                            "contentNumber": 2,
+                            "romanNumeral": "II"
+                          },
+                          "pathID": "3__m.0__m.0__m.0__m.0__m.1",
+                          "semanticPath": "part-3/section-1/chapter-1/article-1/article-paragraph-1/subarticle-2",
+                          "url": "/part-3#section-1/chapter-1/article-1/article-paragraph-1/subarticle-2",
+                          "firstParagraphNumber": 84,
+                          "lastParagraphNumber": 87,
+                          "children": []
+                        },
+                        {
+                          "contentType": "SUB_ARTICLE",
+                          "titleData": {
+                            "title": "I've Rammed Through All Your Doors",
+                            "typeLabel": "Subarticle",
+                            "contentNumber": 3,
+                            "romanNumeral": "III"
+                          },
+                          "pathID": "3__m.0__m.0__m.0__m.0__m.2",
+                          "semanticPath": "part-3/section-1/chapter-1/article-1/article-paragraph-1/subarticle-3",
+                          "url": "/part-3#section-1/chapter-1/article-1/article-paragraph-1/subarticle-3",
+                          "firstParagraphNumber": 88,
+                          "lastParagraphNumber": 94,
+                          "children": []
+                        },
+                        {
+                          "contentType": "IN_BRIEF",
+                          "titleData": {
+                            "title": "In Brief",
+                            "typeLabel": "In Brief",
+                            "contentNumber": null,
+                            "romanNumeral": null
+                          },
+                          "pathID": "3__m.0__m.0__m.0__m.0__i",
+                          "semanticPath": "part-3/section-1/chapter-1/article-1/article-paragraph-1/in-brief",
+                          "url": "/part-3#section-1/chapter-1/article-1/article-paragraph-1/in-brief",
+                          "firstParagraphNumber": 95,
+                          "lastParagraphNumber": 96,
+                          "children": []
+                        }
+                      ]
+                    },
+                    {
+                      "contentType": "ARTICLE_PARAGRAPH",
+                      "titleData": {
+                        "title": "Sailboats Named After Pilots",
+                        "typeLabel": "Article Paragraph",
+                        "contentNumber": 2,
+                        "romanNumeral": "II"
+                      },
+                      "pathID": "3__m.0__m.0__m.0__m.1",
+                      "semanticPath": "part-3/section-1/chapter-1/article-1/article-paragraph-2",
+                      "url": "/part-3/section-1/chapter-1/article-1/article-paragraph-2",
+                      "firstParagraphNumber": 97,
+                      "lastParagraphNumber": 104,
+                      "children": [
+                        {
+                          "contentType": "SUB_ARTICLE",
+                          "titleData": {
+                            "title": "I'm Not Sleepy",
+                            "typeLabel": "Subarticle",
+                            "contentNumber": 1,
+                            "romanNumeral": "I"
+                          },
+                          "pathID": "3__m.0__m.0__m.0__m.1__m.0",
+                          "semanticPath": "part-3/section-1/chapter-1/article-1/article-paragraph-2/subarticle-1",
+                          "url": "/part-3/section-1/chapter-1/article-1/article-paragraph-2#subarticle-1",
+                          "firstParagraphNumber": 97,
+                          "lastParagraphNumber": 97,
+                          "children": []
+                        },
+                        {
+                          "contentType": "SUB_ARTICLE",
+                          "titleData": {
+                            "title": "Jingle Jangle Morning",
+                            "typeLabel": "Subarticle",
+                            "contentNumber": 2,
+                            "romanNumeral": "II"
+                          },
+                          "pathID": "3__m.0__m.0__m.0__m.1__m.1",
+                          "semanticPath": "part-3/section-1/chapter-1/article-1/article-paragraph-2/subarticle-2",
+                          "url": "/part-3/section-1/chapter-1/article-1/article-paragraph-2#subarticle-2",
+                          "firstParagraphNumber": 98,
+                          "lastParagraphNumber": 98,
+                          "children": []
+                        },
+                        {
+                          "contentType": "SUB_ARTICLE",
+                          "titleData": {
+                            "title": "Evening's Empire",
+                            "typeLabel": "Subarticle",
+                            "contentNumber": 3,
+                            "romanNumeral": "III"
+                          },
+                          "pathID": "3__m.0__m.0__m.0__m.1__m.2",
+                          "semanticPath": "part-3/section-1/chapter-1/article-1/article-paragraph-2/subarticle-3",
+                          "url": "/part-3/section-1/chapter-1/article-1/article-paragraph-2#subarticle-3",
+                          "firstParagraphNumber": 99,
+                          "lastParagraphNumber": 100,
+                          "children": []
+                        },
+                        {
+                          "contentType": "IN_BRIEF",
+                          "titleData": {
+                            "title": "In Brief",
+                            "typeLabel": "In Brief",
+                            "contentNumber": null,
+                            "romanNumeral": null
+                          },
+                          "pathID": "3__m.0__m.0__m.0__m.1__i",
+                          "semanticPath": "part-3/section-1/chapter-1/article-1/article-paragraph-2/in-brief",
+                          "url": "/part-3/section-1/chapter-1/article-1/article-paragraph-2#in-brief",
+                          "firstParagraphNumber": 101,
+                          "lastParagraphNumber": 104,
+                          "children": []
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "contentType": "PART",
+      "titleData": {
+        "title": "Summer Without End",
+        "typeLabel": "Part",
+        "contentNumber": 4,
+        "romanNumeral": "IV"
+      },
+      "pathID": "4",
+      "semanticPath": "part-4",
+      "url": "/part-4",
+      "firstParagraphNumber": 105,
+      "lastParagraphNumber": 143,
+      "children": [
+        {
+          "contentType": "SECTION",
+          "titleData": {
+            "title": "Exploring Forgotten Places",
+            "typeLabel": "Section",
+            "contentNumber": 1,
+            "romanNumeral": "I"
+          },
+          "pathID": "4__m.0",
+          "semanticPath": "part-4/section-1",
+          "url": "/part-4#section-1",
+          "firstParagraphNumber": 105,
+          "lastParagraphNumber": 143,
+          "children": [
+            {
+              "contentType": "CHAPTER",
+              "titleData": {
+                "title": "Black and White Carnival Photographs",
+                "typeLabel": "Chapter",
+                "contentNumber": 1,
+                "romanNumeral": "I"
+              },
+              "pathID": "4__m.0__m.0",
+              "semanticPath": "part-4/section-1/chapter-1",
+              "url": "/part-4#section-1/chapter-1",
+              "firstParagraphNumber": 105,
+              "lastParagraphNumber": 116,
+              "children": [
+                {
+                  "contentType": "ARTICLE",
+                  "titleData": {
+                    "title": "The Times They Are a-Changin'",
+                    "typeLabel": "Article",
+                    "contentNumber": 1,
+                    "romanNumeral": "I"
+                  },
+                  "pathID": "4__m.0__m.0__m.0",
+                  "semanticPath": "part-4/section-1/chapter-1/article-1",
+                  "url": "/part-4#section-1/chapter-1/article-1",
+                  "firstParagraphNumber": 105,
+                  "lastParagraphNumber": 110,
+                  "children": [
+                    {
+                      "contentType": "ARTICLE_PARAGRAPH",
+                      "titleData": {
+                        "title": "Things Raccoons Will Not Eat",
+                        "typeLabel": "Article Paragraph",
+                        "contentNumber": 1,
+                        "romanNumeral": "I"
+                      },
+                      "pathID": "4__m.0__m.0__m.0__m.0",
+                      "semanticPath": "part-4/section-1/chapter-1/article-1/article-paragraph-1",
+                      "url": "/part-4#section-1/chapter-1/article-1/article-paragraph-1",
+                      "firstParagraphNumber": 105,
+                      "lastParagraphNumber": 110,
+                      "children": [
+                        {
+                          "contentType": "SUB_ARTICLE",
+                          "titleData": {
+                            "title": "Magic Swirlin' Ship",
+                            "typeLabel": "Subarticle",
+                            "contentNumber": 1,
+                            "romanNumeral": "I"
+                          },
+                          "pathID": "4__m.0__m.0__m.0__m.0__m.0",
+                          "semanticPath": "part-4/section-1/chapter-1/article-1/article-paragraph-1/subarticle-1",
+                          "url": "/part-4#section-1/chapter-1/article-1/article-paragraph-1/subarticle-1",
+                          "firstParagraphNumber": 105,
+                          "lastParagraphNumber": 107,
+                          "children": []
+                        },
+                        {
+                          "contentType": "IN_BRIEF",
+                          "titleData": {
+                            "title": "In Brief",
+                            "typeLabel": "In Brief",
+                            "contentNumber": null,
+                            "romanNumeral": null
+                          },
+                          "pathID": "4__m.0__m.0__m.0__m.0__i",
+                          "semanticPath": "part-4/section-1/chapter-1/article-1/article-paragraph-1/in-brief",
+                          "url": "/part-4#section-1/chapter-1/article-1/article-paragraph-1/in-brief",
+                          "firstParagraphNumber": 108,
+                          "lastParagraphNumber": 110,
+                          "children": []
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "contentType": "ARTICLE",
+                  "titleData": {
+                    "title": "Bringing It All Back Home",
+                    "typeLabel": "Article",
+                    "contentNumber": 2,
+                    "romanNumeral": "II"
+                  },
+                  "pathID": "4__m.0__m.0__m.1",
+                  "semanticPath": "part-4/section-1/chapter-1/article-2",
+                  "url": "/part-4/section-1/chapter-1/article-2",
+                  "firstParagraphNumber": 111,
+                  "lastParagraphNumber": 116,
+                  "children": [
+                    {
+                      "contentType": "SUB_ARTICLE",
+                      "titleData": {
+                        "title": "I'm Ready to Go Anywhere",
+                        "typeLabel": "Subarticle",
+                        "contentNumber": 1,
+                        "romanNumeral": "I"
+                      },
+                      "pathID": "4__m.0__m.0__m.1__m.0",
+                      "semanticPath": "part-4/section-1/chapter-1/article-2/subarticle-1",
+                      "url": "/part-4/section-1/chapter-1/article-2#subarticle-1",
+                      "firstParagraphNumber": 111,
+                      "lastParagraphNumber": 111,
+                      "children": []
+                    },
+                    {
+                      "contentType": "SUB_ARTICLE",
+                      "titleData": {
+                        "title": "Swinging Madly Across the Sun",
+                        "typeLabel": "Subarticle",
+                        "contentNumber": 2,
+                        "romanNumeral": "II"
+                      },
+                      "pathID": "4__m.0__m.0__m.1__m.1",
+                      "semanticPath": "part-4/section-1/chapter-1/article-2/subarticle-2",
+                      "url": "/part-4/section-1/chapter-1/article-2#subarticle-2",
+                      "firstParagraphNumber": 112,
+                      "lastParagraphNumber": 114,
+                      "children": []
+                    },
+                    {
+                      "contentType": "IN_BRIEF",
+                      "titleData": {
+                        "title": "In Brief",
+                        "typeLabel": "In Brief",
+                        "contentNumber": null,
+                        "romanNumeral": null
+                      },
+                      "pathID": "4__m.0__m.0__m.1__i",
+                      "semanticPath": "part-4/section-1/chapter-1/article-2/in-brief",
+                      "url": "/part-4/section-1/chapter-1/article-2#in-brief",
+                      "firstParagraphNumber": 115,
+                      "lastParagraphNumber": 116,
+                      "children": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "contentType": "CHAPTER",
+              "titleData": {
+                "title": "Memoirs of Minnesota Mayors",
+                "typeLabel": "Chapter",
+                "contentNumber": 2,
+                "romanNumeral": "II"
+              },
+              "pathID": "4__m.0__m.1",
+              "semanticPath": "part-4/section-1/chapter-2",
+              "url": "/part-4/section-1/chapter-2",
+              "firstParagraphNumber": 117,
+              "lastParagraphNumber": 128,
+              "children": [
+                {
+                  "contentType": "ARTICLE",
+                  "titleData": {
+                    "title": "Highway 61 Revisited",
+                    "typeLabel": "Article",
+                    "contentNumber": 1,
+                    "romanNumeral": "I"
+                  },
+                  "pathID": "4__m.0__m.1__m.0",
+                  "semanticPath": "part-4/section-1/chapter-2/article-1",
+                  "url": "/part-4/section-1/chapter-2#article-1",
+                  "firstParagraphNumber": 117,
+                  "lastParagraphNumber": 123,
+                  "children": [
+                    {
+                      "contentType": "SUB_ARTICLE",
+                      "titleData": {
+                        "title": "Escaping on the Run",
+                        "typeLabel": "Subarticle",
+                        "contentNumber": 1,
+                        "romanNumeral": "I"
+                      },
+                      "pathID": "4__m.0__m.1__m.0__m.0",
+                      "semanticPath": "part-4/section-1/chapter-2/article-1/subarticle-1",
+                      "url": "/part-4/section-1/chapter-2#article-1/subarticle-1",
+                      "firstParagraphNumber": 117,
+                      "lastParagraphNumber": 118,
+                      "children": []
+                    },
+                    {
+                      "contentType": "SUB_ARTICLE",
+                      "titleData": {
+                        "title": "Ragged Clown",
+                        "typeLabel": "Subarticle",
+                        "contentNumber": 2,
+                        "romanNumeral": "II"
+                      },
+                      "pathID": "4__m.0__m.1__m.0__m.1",
+                      "semanticPath": "part-4/section-1/chapter-2/article-1/subarticle-2",
+                      "url": "/part-4/section-1/chapter-2#article-1/subarticle-2",
+                      "firstParagraphNumber": 119,
+                      "lastParagraphNumber": 119,
+                      "children": []
+                    },
+                    {
+                      "contentType": "IN_BRIEF",
+                      "titleData": {
+                        "title": "In Brief",
+                        "typeLabel": "In Brief",
+                        "contentNumber": null,
+                        "romanNumeral": null
+                      },
+                      "pathID": "4__m.0__m.1__m.0__i",
+                      "semanticPath": "part-4/section-1/chapter-2/article-1/in-brief",
+                      "url": "/part-4/section-1/chapter-2#article-1/in-brief",
+                      "firstParagraphNumber": 120,
+                      "lastParagraphNumber": 123,
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "contentType": "ARTICLE",
+                  "titleData": {
+                    "title": "Blood on the Tracks",
+                    "typeLabel": "Article",
+                    "contentNumber": 2,
+                    "romanNumeral": "II"
+                  },
+                  "pathID": "4__m.0__m.1__m.1",
+                  "semanticPath": "part-4/section-1/chapter-2/article-2",
+                  "url": "/part-4/section-1/chapter-2/article-2",
+                  "firstParagraphNumber": 124,
+                  "lastParagraphNumber": 128,
+                  "children": [
+                    {
+                      "contentType": "IN_BRIEF",
+                      "titleData": {
+                        "title": "In Brief",
+                        "typeLabel": "In Brief",
+                        "contentNumber": null,
+                        "romanNumeral": null
+                      },
+                      "pathID": "4__m.0__m.1__m.1__i",
+                      "semanticPath": "part-4/section-1/chapter-2/article-2/in-brief",
+                      "url": "/part-4/section-1/chapter-2/article-2#in-brief",
+                      "firstParagraphNumber": 128,
+                      "lastParagraphNumber": 128,
+                      "children": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "contentType": "CHAPTER",
+              "titleData": {
+                "title": "Every Manuscript that the Seventh Grade Gym Teacher Never Published",
+                "typeLabel": "Chapter",
+                "contentNumber": 3,
+                "romanNumeral": "III"
+              },
+              "pathID": "4__m.0__m.2",
+              "semanticPath": "part-4/section-1/chapter-3",
+              "url": "/part-4/section-1/chapter-3",
+              "firstParagraphNumber": 129,
+              "lastParagraphNumber": 143,
+              "children": [
+                {
+                  "contentType": "ARTICLE",
+                  "titleData": {
+                    "title": "Love and Theft",
+                    "typeLabel": "Article",
+                    "contentNumber": 1,
+                    "romanNumeral": "I"
+                  },
+                  "pathID": "4__m.0__m.2__m.0",
+                  "semanticPath": "part-4/section-1/chapter-3/article-1",
+                  "url": "/part-4/section-1/chapter-3#article-1",
+                  "firstParagraphNumber": 129,
+                  "lastParagraphNumber": 136,
+                  "children": [
+                    {
+                      "contentType": "SUB_ARTICLE",
+                      "titleData": {
+                        "title": "The Twisted Reach of Crazy Sorrow",
+                        "typeLabel": "Subarticle",
+                        "contentNumber": 1,
+                        "romanNumeral": "I"
+                      },
+                      "pathID": "4__m.0__m.2__m.0__m.0",
+                      "semanticPath": "part-4/section-1/chapter-3/article-1/subarticle-1",
+                      "url": "/part-4/section-1/chapter-3#article-1/subarticle-1",
+                      "firstParagraphNumber": 129,
+                      "lastParagraphNumber": 129,
+                      "children": []
+                    },
+                    {
+                      "contentType": "SUB_ARTICLE",
+                      "titleData": {
+                        "title": "Haunted and Frightened Trees",
+                        "typeLabel": "Subarticle",
+                        "contentNumber": 2,
+                        "romanNumeral": "II"
+                      },
+                      "pathID": "4__m.0__m.2__m.0__m.1",
+                      "semanticPath": "part-4/section-1/chapter-3/article-1/subarticle-2",
+                      "url": "/part-4/section-1/chapter-3#article-1/subarticle-2",
+                      "firstParagraphNumber": 130,
+                      "lastParagraphNumber": 131,
+                      "children": []
+                    },
+                    {
+                      "contentType": "IN_BRIEF",
+                      "titleData": {
+                        "title": "In Brief",
+                        "typeLabel": "In Brief",
+                        "contentNumber": null,
+                        "romanNumeral": null
+                      },
+                      "pathID": "4__m.0__m.2__m.0__i",
+                      "semanticPath": "part-4/section-1/chapter-3/article-1/in-brief",
+                      "url": "/part-4/section-1/chapter-3#article-1/in-brief",
+                      "firstParagraphNumber": 132,
+                      "lastParagraphNumber": 135,
+                      "children": []
+                    },
+                    {
+                      "contentType": "PARAGRAPH_GROUP",
+                      "titleData": {
+                        "title": "A Dozen Strange Planets",
+                        "typeLabel": "Paragraph Group",
+                        "contentNumber": 1,
+                        "romanNumeral": "I"
+                      },
+                      "pathID": "4__m.0__m.2__m.0__f.0",
+                      "semanticPath": "part-4/section-1/chapter-3/article-1/final-content",
+                      "url": "/part-4/section-1/chapter-3#article-1/final-content",
+                      "firstParagraphNumber": 136,
+                      "lastParagraphNumber": 136,
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "contentType": "ARTICLE",
+                  "titleData": {
+                    "title": "Modern Times",
+                    "typeLabel": "Article",
+                    "contentNumber": 2,
+                    "romanNumeral": "II"
+                  },
+                  "pathID": "4__m.0__m.2__m.1",
+                  "semanticPath": "part-4/section-1/chapter-3/article-2",
+                  "url": "/part-4/section-1/chapter-3/article-2",
+                  "firstParagraphNumber": 137,
+                  "lastParagraphNumber": 143,
+                  "children": [
+                    {
+                      "contentType": "SUB_ARTICLE",
+                      "titleData": {
+                        "title": "Silhouetted by the Sea",
+                        "typeLabel": "Subarticle",
+                        "contentNumber": 1,
+                        "romanNumeral": "I"
+                      },
+                      "pathID": "4__m.0__m.2__m.1__m.0",
+                      "semanticPath": "part-4/section-1/chapter-3/article-2/subarticle-1",
+                      "url": "/part-4/section-1/chapter-3/article-2#subarticle-1",
+                      "firstParagraphNumber": 137,
+                      "lastParagraphNumber": 138,
+                      "children": []
+                    },
+                    {
+                      "contentType": "SUB_ARTICLE",
+                      "titleData": {
+                        "title": "Circled by the Circus Sands",
+                        "typeLabel": "Subarticle",
+                        "contentNumber": 2,
+                        "romanNumeral": "II"
+                      },
+                      "pathID": "4__m.0__m.2__m.1__m.1",
+                      "semanticPath": "part-4/section-1/chapter-3/article-2/subarticle-2",
+                      "url": "/part-4/section-1/chapter-3/article-2#subarticle-2",
+                      "firstParagraphNumber": 139,
+                      "lastParagraphNumber": 139,
+                      "children": []
+                    },
+                    {
+                      "contentType": "IN_BRIEF",
+                      "titleData": {
+                        "title": "In Brief",
+                        "typeLabel": "In Brief",
+                        "contentNumber": null,
+                        "romanNumeral": null
+                      },
+                      "pathID": "4__m.0__m.2__m.1__i",
+                      "semanticPath": "part-4/section-1/chapter-3/article-2/in-brief",
+                      "url": "/part-4/section-1/chapter-3/article-2#in-brief",
+                      "firstParagraphNumber": 140,
+                      "lastParagraphNumber": 143,
+                      "children": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

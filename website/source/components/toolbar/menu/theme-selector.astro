@@ -1,7 +1,13 @@
 ---
 // This component is intended to be placed on the UI only once
+
+import './theme-selector.css';
+
+import Icon from '@components/icon.astro';
+
 import { Language } from '@catechism-types';
 
+import { IconEnum } from '@components/icon-enum';
 import { Theme } from '@logic/theme';
 import { translate as t } from '@logic/translation';
 import { ElementID } from '@logic/ui';
@@ -12,7 +18,6 @@ interface Props {
 
 const { language } = Astro.props;
 ---
-
 <script>
     import type { SlRadioGroup } from '@shoelace-types';
     import '@shoelace/radio-button/radio-button.js';
@@ -30,8 +35,20 @@ const { language } = Astro.props;
     });
 </script>
 
-<sl-radio-group id={ElementID.THEME_SELECTOR} name="theme" value={Theme.LIGHT} size="large">
-    <sl-radio-button value={Theme.LIGHT}>{t('Light', language)}</sl-radio-button>
-    <sl-radio-button value={Theme.DARK}>{t('Dark', language)}</sl-radio-button>
-    <sl-radio-button value={Theme.SYSTEM}>{t('Auto', language)}</sl-radio-button>
-</sl-radio-group>
+<!-- see `./theme-selector.css` for styling -->
+
+<div class="theme-selector">
+    <sl-radio-group id={ElementID.THEME_SELECTOR} name="theme" value={Theme.LIGHT}>
+        <sl-radio-button value={Theme.LIGHT}>
+            <Icon icon={IconEnum.SUN} class="size-6" />
+        </sl-radio-button>
+
+        <sl-radio-button value={Theme.DARK}>
+            <Icon icon={IconEnum.MOON} class="size-6" />
+        </sl-radio-button>
+
+        <sl-radio-button value={Theme.SYSTEM}>
+            {t('Auto', language)}
+        </sl-radio-button>
+    </sl-radio-group>
+</div>

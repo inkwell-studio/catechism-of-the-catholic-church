@@ -2,6 +2,7 @@
 import { NumberOrNumberRange } from '@catechism-types';
 
 import CrossReferenceContent from '@components/content/catechism/cross-reference-content.astro';
+import CrossReferenceNavigateToLink from '@components/content/catechism/cross-reference-navigate-to-link.astro';
 import Replacement from '@components/replacement.astro';
 
 import { getParagraphCrossReferenceContentMap, getParagraphNumberUrlMap } from '@logic/artifacts';
@@ -31,5 +32,9 @@ const url = paragraphUrlMap[firstParagraphNumber];
 ---
 
 <Replacement target={ElementID.CROSS_REFERENCE_PANEL_CONTENT_WRAPPER}>
-    <CrossReferenceContent {reference} {paragraphs} {url} {language} />
+    <CrossReferenceContent {paragraphs} {language} />
+</Replacement>
+
+<Replacement target={ElementID.CROSS_REFERENCE_PANEL_NAVIGATE_TO_WRAPPER}>
+    <CrossReferenceNavigateToLink {reference} {paragraphs} {url} {language} />
 </Replacement>

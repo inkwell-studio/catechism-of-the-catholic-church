@@ -36,6 +36,24 @@ deno task build
 deno task serve
 ```
 
+To access your local site from other devices:
+
+```shell
+# Edit the port as necessary (4321)
+ssh -R 80:localhost:4321 ssh.localhost.run
+```
+
+## Search functionality
+
+[Pagefind](https://pagefind.app/) is used to implement an interactive search on the UI. The search functionality will not work until its
+index is built, which requires a production build of the website.
+
+The index is rebuilt as part of the standard build tasks, and it can also be rebuilt on demand:
+
+```shell
+deno task build-search-index
+```
+
 ## End-to-end testing
 
 ```shell
@@ -56,7 +74,7 @@ Packages are managed with both `deno.json` and `package.json`. Deno will modify 
 
 `package.json` is used only for tracking npm packages.
 
-To format all code, and to lint and typecheck all `*.astro`, `*.ts` and `*.tsx` files, execute `deno task check-code`.
+To format all code, and to lint and typecheck all `*.astro`, `*.ts`, and `*.tsx` files, execute `deno task check-code`.
 
 ### Why are `deno.json` and `package.json` both used?
 
@@ -135,6 +153,35 @@ As an example, the following will allow type declarations to be resolved for pac
 }
 ```
 
-### Further reading
-
 For more information, see the [JSR documentation](https://jsr.io/docs/npm-compatibility#advanced-setup).
+
+## Mock data
+
+The translations of the _Catechism of the Catholic Church_ are copyrighted, so mock data are generated for development.
+
+To generate new mock data, execute the `build-mock-data` task.
+
+To modify the quantity of the mock data generated, see:
+
+- the invocation of `setLimits()` in `source/mock-data/run.ts`
+- the files within `source/mock-data/config/`
+
+Note that website build times increase at an approximately linear rate in proportion to the quantity of mock data. A website build for data
+generated using `LimitsSize.MEDIUM` may take thirty minutes.
+
+## Updating the search index
+
+[Pagefind](https://pagefind.app/) is used to implement an interactive search. Its index is generated from the
+
+## Creating demo videos
+
+Demo videos can be recorded using the `/demos` page.
+
+Videos can be compressed using [`ffmpeg`](https://ffmpeg.org/):
+
+```shell
+ffmpeg -i input.mp4 -vcodec h264 -an -strict -2 -crf 30 output.mp4
+```
+
+- `-an` removes the audio track
+- `-crf 30` sets the compression rate (a lower number designates less compression)

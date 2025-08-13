@@ -12,6 +12,16 @@ const language = getLanguageFromPathname(Astro.url.pathname) ?? DEFAULT_LANGUAGE
 const homeUrl = DEFAULT_LANGUAGE === language ? '/' : `/${language}`;
 ---
 
+<script>
+    import { DEFAULT_LANGUAGE } from '@catechism-types';
+    import { getLanguageFromPathname } from '@logic/routing';
+    import { updateToolbarNavigationText } from '@logic/toolbar';
+    import { translate as t } from '@logic/translation';
+
+    const language = getLanguageFromPathname(globalThis.location.pathname) ?? DEFAULT_LANGUAGE;
+    updateToolbarNavigationText(t('Table of Contents', language));
+</script>
+
 <ContentLayout {language}>
     <div class="h-[70vh] flex flex-col justify-center">
         <div class="flex flex-col justify-center items-center">

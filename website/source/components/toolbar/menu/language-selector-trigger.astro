@@ -1,0 +1,42 @@
+---
+import LanguageSelector from './language-selector.astro';
+import Icon from '@components/icon.astro';
+
+import { Language } from '@catechism-types';
+import { getNativeLanguageText } from '@catechism-utils/language';
+
+import { IconEnum } from '@components/icon-enum';
+import { ElementID } from '@logic/ui';
+
+interface Props {
+    language: Language;
+}
+
+const { language } = Astro.props;
+---
+<script>
+    import '@shoelace/dropdown/dropdown.js';
+</script>
+
+<sl-dropdown placement="top" distance="8" class="w-full">
+    {/* trigger */}
+    <button
+        slot="trigger"
+        type="button"
+        class:list={[
+            'w-full flex justify-center items-center gap-2 h-13',
+            'text-gray-700 rounded border border-gray-200 cursor-pointer transition-colors',
+            'hover:bg-gray-100 active:bg-gray-200 hover:text-gray-800 active:text-gray-800',
+            'dark:text-zinc-350 dark:border-zinc-600 dark:hover:bg-zinc-700 dark:hover:text-zinc-200 dark:active:bg-zinc-600 dark:active:text-zinc-100',
+        ]}
+    >
+        <!-- deno-fmt-ignore -->
+        <Icon icon={IconEnum.LANGUAGE} class="size-6" />
+        {getNativeLanguageText(language)}
+    </button>
+
+    {/* content */}
+    <div id={ElementID.LANGUAGE_SWITCHER_WRAPPER} class="w-61">
+        <LanguageSelector currentLanguage={language} />
+    </div>
+</sl-dropdown>

@@ -1,63 +1,136 @@
 ---
-import { Content, Language, PathID, TableOfContentsEntry } from '@catechism-types';
+import { Content, Language } from '@catechism-types';
 
 import PartialContentLink from '@components/partial-content-link.astro';
+import ParagraphNumbers from './paragraph-numbers.astro';
+
+import { TableOfContentsEntry } from '@artifact-types';
+import { translate as t } from '@logic/translation';
 
 interface Props {
     entry: TableOfContentsEntry;
-    level: number;
+    index: number;
+    indentationLevel: number;
     language: Language;
 }
 
-const { entry, level, language } = Astro.props;
+const { entry, index, indentationLevel, language } = Astro.props;
 
-const { titleClasses, listClasses } = getClasses(entry.contentType, entry.pathID);
+const { title, typeLabel, contentNumber, romanNumeral } = entry.titleData;
+const { firstParagraphNumber, lastParagraphNumber } = entry;
 
-function getClasses(contentType: Content, pathID: PathID): {
-    titleClasses: Array<string>;
-    listClasses: string;
-} {
-    const titleClassList = [];
-    let listClassString = '';
+const isPrologueSection = entry.contentType === Content.PROLOGUE_SECTION;
+const isSection = entry.contentType === Content.SECTION;
+const isChapter = entry.contentType === Content.CHAPTER;
+const isArticle = entry.contentType === Content.ARTICLE;
+const isSubarticle = entry.contentType === Content.SUB_ARTICLE;
+const isArticleParagraph = entry.contentType === Content.ARTICLE_PARAGRAPH;
+const isParagraphGroup = entry.contentType === Content.PARAGRAPH_GROUP;
+const isInBrief = entry.contentType === Content.IN_BRIEF;
 
-    if (Content.SECTION === contentType) {
-        titleClassList.push('font-title font-bold text-lg mb-2');
-        listClassString = 'space-y-4';
-    } else if (Content.CHAPTER === contentType) {
-        titleClassList.push('text-stone-700 font-title font-medium uppercase');
-    } else if (Content.CHAPTER_SECTION === contentType) {
-        // TODO: Implement
-    } else if (Content.ARTICLE === contentType) {
-        // TODO: Implement
-    } else if (Content.ARTICLE_PARAGRAPH === contentType) {
-        // TODO: Implement
-    } else if (Content.SUB_ARTICLE === contentType) {
-        // TODO: Implement
-    } else if (Content.PARAGRAPH_GROUP === contentType) {
-        // TODO: Implement
-    } else if (Content.PROLOGUE_SECTION === contentType) {
-        // TODO: Implement
-    } else if (Content.IN_BRIEF === contentType) {
-        // TODO: Implement
-    } else {
-        throw new Error(
-            `Unexpected content type encountered while rendering the table of contents: ${contentType}, pathID ${pathID}`,
-        );
-    }
+const isFirstItem = index === 0;
 
-    return { titleClasses: titleClassList, listClasses: listClassString };
-}
+const childIndentationLevel = indentationLevel + (isSection ? 0 : 1);
+let childIndentationClass = childIndentationLevel > 0 ? 'ml-2' : '';
 ---
 
-<li>
-    <PartialContentLink url={entry.url} {language} class:list={titleClasses}>
-        {entry.contentTypeTitle} | {entry.title}
+<li class:list={[{ 'mt-6': isSection && isFirstItem, 'mt-12': isSection && !isFirstItem }]}>
+    {isSection && !isFirstItem && <div class="h-px mb-13 bg-gray-200 dark:bg-zinc-600"></div>}
+
+    <PartialContentLink url={entry.url} {language}>
+        {
+            isPrologueSection &&
+                (
+                <div
+                    class="grid grid-cols-[3.5ch_1fr] min-h-12 items-center gap-1 font-title font-normal text-gray-800 py-1 dark:text-zinc-200"
+                >
+                    <span>{romanNumeral}.</span>
+                    <span>{title}</span>
+                </div>
+            )
+        }
+
+        {
+            isSection &&
+                (
+                <div class="font-sans">
+                    <span class="font-bold text-gray-500 tracking-wider uppercase dark:text-zinc-400">{typeLabel} {contentNumber}</span>
+                    <ParagraphNumbers {firstParagraphNumber} {lastParagraphNumber} />
+                </div>
+                <div class="font-title font-medium text-2xl text-gray-700 dark:text-zinc-300">{title}</div>
+            )
+        }
+
+        {
+            isChapter &&
+                (
+                <div class="font-sans">
+                    <span class="font-bold text-base text-gray-500 tracking-wide uppercase dark:text-zinc-400">{typeLabel}
+                        {contentNumber}</span>
+                    <ParagraphNumbers {firstParagraphNumber} {lastParagraphNumber} />
+                </div>
+                <div class="font-title font-bold text-xl text-gray-600 tracking-wide dark:text-zinc-250">{title}</div>
+            )
+        }
+
+        {
+            isArticle &&
+                (
+                <div class="font-title font-medium text-lg tracking-wide">
+                    <span class="text-gray-600 dark:text-zinc-350">{typeLabel} {contentNumber}:</span>
+                    <span class="text-gray-800 dark:font-semibold dark:text-zinc-250">{title}</span>
+                </div>
+            )
+        }
+
+        {
+            isArticleParagraph &&
+                (
+                <div class="flex flex-col font-title tracking-wide mt-6">
+                    <span class="font-normal text-sm text-gray-550 uppercase dark:text-zinc-350">{t('Paragraph', language)}
+                        {contentNumber}</span>
+                    <span class="font-medium text-lg text-gray-600 dark:text-zinc-250">{title}</span>
+                </div>
+            )
+        }
+
+        {
+            isSubarticle &&
+                (
+                <div
+                    class="grid grid-cols-[3.5ch_1fr] items-center gap-1 font-title font-normal text-sm text-gray-800 uppercase py-1 dark:text-zinc-300 dark:tracking-wider"
+                >
+                    <span>{romanNumeral}.</span>
+                    <span>{title}</span>
+                </div>
+            )
+        }
+
+        {isParagraphGroup && <div class="font-serif font-normal text-lg text-gray-600 dark:text-zinc-350">{title}</div>}
+
+        {
+            isInBrief && (
+                <div
+                    class="font-title font-normal text-sm text-gray-900 tracking-wide uppercase py-1 dark:text-zinc-300 dark:tracking-wider"
+                >
+                    {title}
+                </div>
+            )
+        }
     </PartialContentLink>
+
     {
         entry.children.length > 0 &&
             (
-            <ol class={listClasses}>
-                {entry.children.map((e) => <Astro.self entry={e} level={level + 1} {language} />)}
+            <ol
+                class:list={[childIndentationClass, {
+                    'my-6': isSection,
+                    'mt-3 mb-6': isChapter,
+                    'mt-2 mb-4': isArticle,
+                    'mt-1 mb-2': isArticleParagraph,
+                }]}
+            >
+                {entry.children.map((e, index) => <Astro.self entry={e} {index} indentationLevel={childIndentationLevel} {language} />)}
             </ol>
         )
     }

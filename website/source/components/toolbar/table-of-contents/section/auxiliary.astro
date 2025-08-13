@@ -2,6 +2,7 @@
 import { Language } from '@catechism-types';
 
 import PartialContentLink from '@components/partial-content-link.astro';
+import Title from './title.astro';
 
 import { getAuxiliaryRouteLabel } from '@logic/constants';
 import { removeLanguageTag } from '@logic/routing';
@@ -27,20 +28,20 @@ const routes = getAuxiliaryRoutes()
     });
 ---
 
-<h1 class="sticky top-0 bg-white pt-13 pb-2 mb-2 shadow-sm shadow-white">
-    <span class="font-title text-3xl text-stone-800">
+<div class="max-w-reading-with-padding mx-auto px-text">
+    <Title>
         {t('Resources', language)}
-    </span>
-</h1>
+    </Title>
 
-<ol class="list-disc list-inside marker space-y-2">
-    {
-        routes.map((route) => (
-            <li>
-                <PartialContentLink url={route.path} {language}>
-                    {route.label}
-                </PartialContentLink>
-            </li>
-        ))
-    }
-</ol>
+    <ol class="mt-6 space-y-2">
+        {
+            routes.map((route) => (
+                <li>
+                    <PartialContentLink url={route.path} {language} innerClass="grid items-center min-h-12">
+                        {route.label}
+                    </PartialContentLink>
+                </li>
+            ))
+        }
+    </ol>
+</div>

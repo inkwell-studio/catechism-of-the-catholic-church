@@ -11,9 +11,11 @@ export function defineElement(elementName: string, elementClass: CustomElementCo
 export async function shoelaceInitialized(): Promise<boolean> {
     const results = await Promise.allSettled([
         // This list should include every Shoelace component that is used in the project, and no others
+        customElements.whenDefined('sl-dialog'),
         customElements.whenDefined('sl-dropdown'),
         customElements.whenDefined('sl-radio-button'),
         customElements.whenDefined('sl-radio-group'),
+        customElements.whenDefined('sl-switch'),
         customElements.whenDefined('sl-tab'),
         customElements.whenDefined('sl-tab-group'),
         customElements.whenDefined('sl-tab-panel'),

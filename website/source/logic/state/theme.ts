@@ -18,10 +18,5 @@ export function watchForThemeChanges(): void {
 }
 
 function getThemeValue(): Theme {
-    const isBrowser = !!globalThis.window;
-    if (isBrowser) {
-        return (globalThis.localStorage.getItem(LOCAL_STORAGE_KEY_THEME) ?? Theme.SYSTEM) as Theme;
-    } else {
-        return Theme.SYSTEM;
-    }
+    return (globalThis.localStorage.getItem(LOCAL_STORAGE_KEY_THEME) ?? Theme.SYSTEM) as Theme;
 }

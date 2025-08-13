@@ -8,9 +8,14 @@ import ReferenceToOther from './reference-to-other.astro';
 interface Props {
     reference: ReferenceBase | null;
     language: Language;
+    class?: string;
 }
 
-const { reference, language } = Astro.props;
+/*
+    `...rest` is needed in order for the classes from the parent to be properly scoped for the styling specified within by parent
+    (see https://docs.astro.build/en/guides/styling/#passing-a-class-to-a-child-component)
+*/
+const { reference, language, class: classes, ...rest } = Astro.props;
 
 const isBibleReference = isBibleReferenceUtil(reference);
 const isOtherReference = isOtherReferenceUtil(reference);
@@ -20,5 +25,5 @@ if (!isBibleReference && !isOtherReference) {
 }
 ---
 
-{isBibleReference && <ReferenceToBible {reference} {language} />}
-{isOtherReference && <ReferenceToOther {reference} {language} />}
+{isBibleReference && <ReferenceToBible {reference} {language} class={classes} {...rest} />}
+{isOtherReference && <ReferenceToOther {reference} {language} class={classes} {...rest} />}

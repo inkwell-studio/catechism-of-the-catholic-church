@@ -1,9 +1,11 @@
 ---
 // This component is intended to be placed on the UI only once
 
+import Icon from '@components/icon.astro';
+
+import { IconEnum } from '@components/icon-enum';
 import { ElementID } from '@logic/ui';
 ---
-
 <script>
     import { onClick } from '@logic/dom-utils';
     import { $showCrossReferencePanel } from '@logic/state/cross-reference-panel';
@@ -13,13 +15,45 @@ import { ElementID } from '@logic/ui';
     onClick(closeButton, () => $showCrossReferencePanel.set(false));
 </script>
 
-<div class="relative max-h-[50vh] flex bg-white border-t">
-    <div class="absolute top-0 right-0">
-        <button type="button" id={ElementID.CROSS_REFERENCE_PANEL_CLOSE_BUTTON} class="p-4 mt-4 border">Close</button>
-    </div>
+<div
+    id={ElementID.CROSS_REFERENCE_PANEL}
+    class:list={[
+        '[--background:var(--color-white)] [--background-dark:var(--color-zinc-800)]',
 
-    <div class="w-full overflow-y-auto">
-        <!-- The bottom padding accounts for the height of the toolbar -->
-        <div id={ElementID.CROSS_REFERENCE_PANEL_CONTENT_WRAPPER} class="h-fit max-w-prose mx-auto pb-14"></div>
+        'z-50 relative h-[min(25rem,_50vh)] flex bg-(--background)',
+        'border-t border-t-stone-300',
+        'overflow-y-auto overscroll-y-contain',
+        'dark:bg-(--background-dark)',
+        'dark:border-t-zinc-700',
+    ]}
+>
+    <div class="relative h-fit max-w-4xl mx-auto w-full">
+        <div class="max-w-reading-with-padding mx-auto">
+            <div
+                class:list={[
+                    'sticky top-0 z-10 flex justify-between items-center gap-2',
+                    'bg-(--background) font-sans text-sm',
+                    'py-2 pl-4.5 pr-3 shadow-sm shadow-(color:--background)',
+                    'dark:bg-(--background-dark) dark:shadow-(color:--background-dark)',
+                ]}
+            >
+                <div id={ElementID.CROSS_REFERENCE_PANEL_NAVIGATE_TO_WRAPPER}></div>
+
+                <button
+                    type="button"
+                    id={ElementID.CROSS_REFERENCE_PANEL_CLOSE_BUTTON}
+                    class:list={[
+                        'grid place-content-center size-12 text-stone-450',
+                        'rounded-full cursor-pointer transition-colors',
+                        'hover:bg-stone-150 hover:text-stone-600 active:bg-stone-200 active:text-stone-600',
+                        'dark:text-stone-400 dark:hover:bg-zinc-700 dark:hover:text-stone-300 dark:active:bg-zinc-750 dark:active:text-stone-300',
+                    ]}
+                >
+                    <Icon icon={IconEnum.X_MARK} class="size-5" />
+                </button>
+            </div>
+
+            <div id={ElementID.CROSS_REFERENCE_PANEL_CONTENT_WRAPPER}></div>
+        </div>
     </div>
 </div>
