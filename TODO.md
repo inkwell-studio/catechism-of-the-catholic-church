@@ -1,9 +1,5 @@
 # Tasks to complete now
 
-- [ ] rename repos (Astro and Fresh)
-  - [ ] update links in both repos (to `www.catholiccatechism.app` and the other
-        Github repos)
-
 - [ ] switch pointer for `www.catholiccatechism.app`
   - [ ] ensure `config.ts::baseUrl` is set correctly
 

@@ -1,1 +1,1 @@
-export const baseUrl = 'https://catholic-catechism-astro.deno.dev';
+export const baseUrl = 'https://catholic-catechism.deno.dev';

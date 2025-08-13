@@ -36,6 +36,6 @@ jobs:
       - name: Upload to Deno Deploy
         uses: denoland/deployctl@v1
         with:
-          project: "catholic-catechism-astro"
+          project: "catholic-catechism"
           entrypoint: "server/entry.mjs"
           root: "website/dist"
