@@ -123,7 +123,11 @@ const homePage = isHomePage(Astro.url.pathname, language);
         {
             !homePage &&
                     (
-                <div class="flex justify-center fixed bottom-0 inset-x-0 z-20">
+                <div class="flex justify-center fixed bottom-0 inset-x-0 z-20 backdrop-blur-md pb-5">
+                    <div
+                        class="absolute inset-0 bg-linear-to-b from-transparent via-stone-50 to-stone-50/50 dark:via-zinc-900 dark:to-zinc-900/50"
+                    >
+                    </div>
                     <Toolbar {language} />
                 </div>
             )

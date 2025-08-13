@@ -25,11 +25,11 @@ const { language } = Astro.props;
 <div
     id={ElementID.TOOLBAR}
     class:list={[
-        'w-full px-1 bg-stone-100 font-sans text-stone-800 border-t border-t-stone-300 transition-transform duration-800 dark:bg-zinc-925 dark:text-zinc-350 dark:border-t-zinc-700',
+        'relative w-full px-4 bg-stone-100 font-sans text-stone-800 rounded-md mx-3 border border-stone-300 transition-transform duration-800 dark:bg-zinc-925 dark:text-zinc-350 dark:border-zinc-700',
         ElementClass.TOOLBAR_TRANSLATE_OFFSCREEN,
     ]}
 >
-    <div class="max-sm:min-h-19 max-w-reading mx-auto flex items-center gap-2">
+    <div class="max-w-reading mx-auto flex items-center gap-2">
         <Search {language} />
 
         <TableOfContentsTrigger {language} />
