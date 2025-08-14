@@ -1,9 +1,6 @@
 # Tasks to complete now
 
-- [ ] switch pointer for `www.catholiccatechism.app`
-  - [ ] ensure `config.ts::baseUrl` is set correctly
-
-- [ ] activate higher-tier Deno Deploy services
+- [ ] consider activating higher-tier Deno Deploy services
   - [ ] determine if the project can be built with full-scale mock data on Deno
         Deploy as part of the regular build process
     - [ ] consider removing the artifacts from source control
@@ -14,14 +11,6 @@
   - [ ] determine if the infinite-scroll triggers need to be updated
   - [ ] determine if a loading indicator needs to be added to the
         cross-reference panel
-
-- [ ] validate all development instructions
-
-<!-- ------------------------------------------------------------------------------------- -->
-
-- [ ] reach out to connections
-
-<!-- ------------------------------------------------------------------------------------- -->
 
 - [ ] determine why the `colors-button-stone-100` class isn't being applied to
       the table-of-contents trigger on the demo site

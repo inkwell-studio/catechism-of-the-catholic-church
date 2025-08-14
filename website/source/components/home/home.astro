@@ -190,22 +190,29 @@ const { language } = Astro.props;
         </div>
     </section>
 
-    <div class="bg-[oklch(0.92_0.02_248.11_/_1)] font-sans text-center mt-20 mb-14 py-14 md:px-text dark:bg-slate-500 md:my-32">
+    <div class="px-text mt-12 mb-20 md:my-24">
         <h2
-            class="font-bold text-2xl/12 text-sky-900 underline decoration-14 decoration-amber-300/70 underline-offset-6 mb-6 px-4 sm:text-3xl/16 sm:decoration-16 sm:underline-offset-10 dark:text-zinc-50 dark:decoration-amber-300/90"
+            class:list={[
+                'font-sans font-bold text-2xl/12 text-center text-sky-900',
+                'underline underline-offset-6 decoration-14 decoration-amber-300/70',
+                'dark:text-zinc-50 dark:decoration-amber-300/90',
+                'sm:text-3xl/16 sm:decoration-16 sm:underline-offset-10',
+            ]}
         >
             No other version of the Catechism has all these features.
         </h2>
+    </div>
 
-        <div id={ElementID.HOME_START_READING} class="mt-4 px-text pt-12">
+    <div class="bg-[oklch(0.92_0.02_248.11_/_1)] font-sans text-center mt-20 mb-14 dark:bg-(--container-background-dark) md:mt-36 md:mb-28">
+        <div id={ElementID.HOME_START_READING} class="py-14 px-text">
             <p class="font-bold text-xl text-sky-800 tracking-wide dark:text-zinc-100">
                 As you begin exploring, keep the following in mind:
             </p>
             <ul
                 class="w-max mx-auto mt-4 text-sky-900 text-left tracking-wide space-y-1 list-disc list-inside text-wrap dark:text-zinc-100"
             >
-                <li>The content structure is random.</li>
                 <li>Filler text is used throughout.</li>
+                <li>The content structure is random.</li>
                 <li>Translations are not polished.</li>
             </ul>
         </div>
@@ -247,7 +254,7 @@ const { language } = Astro.props;
     </ContentSection>
 </main>
 
-<div class="bg-sky-800 font-sans text-base text-sky-100">
+<div class="bg-sky-800 font-sans text-base text-sky-100 dark:bg-arctic-800 dark:text-arctic-100">
     <div class="flex justify-center items-center gap-2">
         {
             [
@@ -269,7 +276,9 @@ const { language } = Astro.props;
                     target={item.newTab ? '_blank' : null}
                     class:list={[
                         'min-h-19 flex justify-center items-center gap-2 px-4 sm:px-7',
-                        'transition-colors duration-200 hover:bg-sky-700 hover:text-sky-50 active:bg-sky-900 active:text-sky-50 ',
+                        'transition-colors duration-200',
+                        'hover:bg-sky-700 hover:text-sky-50 active:bg-sky-900 active:text-sky-50',
+                        'dark:hover:bg-arctic-700 dark:hover:text-arctic-50 dark:active:bg-arctic-900 dark:active:text-arctic-50',
                     ]}
                 >
                     <Icon icon={item.icon} class="size-6" />
