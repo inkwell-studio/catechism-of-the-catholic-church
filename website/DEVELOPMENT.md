@@ -7,7 +7,7 @@ For helpful extensions Visual Studio Code extensions, see `.vscode/extensions.js
 Install packages:
 
 ```shell
-deno install --allow-scripts=npm:sharp
+deno install --allow-scripts=npm:sharp,npm:@tailwindcss/oxide@4.1.8
 ```
 
 Disable Astro telemetry:
@@ -84,6 +84,11 @@ To format all code, and to lint and typecheck all `*.astro`, `*.ts`, and `*.tsx`
 - The `package.json` file is used to manage npm dependencies, as managing these with `deno.json` results in Vite errors during Astro's
   bundling process.
 
+### Using custom elements
+
+[Custom elements](https://developer.mozilla.org/en-US/docs/Web/API/Web_components/Using_custom_elements) are used in this project. Any time
+a new custom element is created, it should be added to `source/components/custom-elements-definer.astro`.
+
 ### Using Shoelace components
 
 [Shoelace components](https://shoelace.style/) are used in this project. Any time a new Shoelace component is added, the
@@ -106,10 +111,9 @@ See `.github/workflows/deploy.yml`.
 
 Packages from [jsr.io](https://jsr.io/) may be used by manually adding them to `package.json` and then executing `deno install`.
 
-For example, to add the `@std/html` package:
+For example, to add the `@std/html` package, add it to `package.json`:
 
 ```JSON
-// package.json
 {
     "dependencies": {
         "@std/html": "npm:@jsr/std__html@1"
@@ -140,10 +144,10 @@ The property value (`npm:@jsr/std__html@1` above) is derived from the original p
 Visual Studio Code may not be able to resolve the type declarations for JSR packages in `.astro` files without modifications to
 `tsconfig.json`.
 
-As an example, the following will allow type declarations to be resolved for packages from the Deno standard library:
+As an example, the following entry in `tsconfig.json` will allow type declarations to be resolved for packages from the Deno standard
+library:
 
 ```JSON
-// tsconfig.json
 {
     "compilerOptions": {
         "paths": {
@@ -168,10 +172,6 @@ To modify the quantity of the mock data generated, see:
 
 Note that website build times increase at an approximately linear rate in proportion to the quantity of mock data. A website build for data
 generated using `LimitsSize.MEDIUM` may take thirty minutes.
-
-## Updating the search index
-
-[Pagefind](https://pagefind.app/) is used to implement an interactive search. Its index is generated from the
 
 ## Creating demo videos
 
