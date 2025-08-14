@@ -6,36 +6,36 @@
         @apply transition-colors;
 
         @variant hover {
-            @apply hover:bg-stone-200;
+            @apply bg-stone-200;
         }
 
         @variant active {
-            @apply active:bg-stone-300;
+            @apply bg-stone-300;
         }
 
         @variant group-hover {
-            @apply group-hover:bg-stone-200;
+            @apply bg-stone-200;
         }
 
         @variant group-active {
-            @apply group-active:bg-stone-300;
+            @apply bg-stone-300;
         }
 
         @variant dark {
             @variant hover {
-                @apply dark:hover:bg-zinc-800;
+                @apply bg-zinc-800;
             }
 
             @variant active {
-                @apply dark:active:bg-zinc-850;
+                @apply bg-zinc-850;
             }
 
             @variant group-hover {
-                @apply dark:group-hover:bg-zinc-800;
+                @apply bg-zinc-800;
             }
 
             @variant group-active {
-                @apply dark:group-active:bg-zinc-850;
+                @apply bg-zinc-850;
             }
         }
     }
