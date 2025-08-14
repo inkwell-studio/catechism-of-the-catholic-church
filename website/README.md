@@ -1,8 +1,8 @@
-# Catechism of the Catholic Church (website)
+# Catechism of the Catholic Church: website
 
 This is an [Astro](https://astro.build/) project. See [DEVELOPMENT.md](./DEVELOPMENT.md) for development instructions.
 
-## Related links
+## Relevant websites and projects
 
 ### Other _Catechism_ websites
 
@@ -10,10 +10,12 @@ This is an [Astro](https://astro.build/) project. See [DEVELOPMENT.md](./DEVELOP
 - [Vatican (vatican.va/archive)](http://www.vatican.va/archive/ENG0015/_INDEX.HTM)
 - [USCCB](https://www.usccb.org/beliefs-and-teachings/what-we-believe/catechism/catechism-of-the-catholic-church)
 - [St. Charles Borromeo Catholic Church](https://scborromeo2.org/catechism-of-the-catholic-church)
-- [Ebook](https://dn790005.ca.archive.org/0/items/catechismofthecatholicchurch/Catechism%20of%20the%20Catholic%20Church%20-%20USCCB.pdf)
-- [CatholicCulture.org](https://www.catholicculture.org/culture/library/catechism/)
 - [cccef.com: a user-friendly wrapper around the St. Charles Borromeo website](http://cccref.com/)
 - [Catechism and Bible app from Ascension](https://ascensionpress.com/pages/ascension-app)
+- [Catholic Doors Ministry](https://www.catholicdoors.com/catechis/index.htm)
+- [CatholicCulture.org](https://www.catholicculture.org/culture/library/catechism/)
+- [Canonical Eye](https://canonicaleye.org/Catechism/)
+- [Ebook](https://dn790005.ca.archive.org/0/items/catechismofthecatholicchurch/Catechism%20of%20the%20Catholic%20Church%20-%20USCCB.pdf)
 
 ### Miscellaneous
 

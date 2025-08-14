@@ -31,6 +31,6 @@ As a rule of thumb:
 
 | text                                   | style           |
 | -------------------------------------- | --------------- |
-| Content — body text                    | `serif`         |
-| Content — some headers and titles      | `title`, `sans` |
+| Content: body text                     | `serif`         |
+| Content: some headers and titles       | `sans`, `title` |
 | Non-content text (such as menu labels) | `sans`          |

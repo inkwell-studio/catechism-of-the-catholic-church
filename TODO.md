@@ -33,11 +33,6 @@
 - [ ] consider if the homepage needs any more work (see more extensive notes
       with photo references below)
 
-- [ ] add these to the list of online versions of the Catechism (other repo):
-  - https://canonicaleye.org/Catechism/
-  - https://www.catholicdoors.com/catechis/index.htm
-  - the "non-archive" Vatican site
-
 - [ ] fix the footnotes hover-background placement on mobile
 
 - [ ] have the toolbar change color to match the table-of-contents when it is
