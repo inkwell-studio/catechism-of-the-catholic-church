@@ -3,7 +3,7 @@
 A website for the _Catechism of the Catholic Church_.
 
 It is available at
-[https://catholic-catechism.deno.dev](https://catholic-catechism.deno.dev).
+[https://www.catholiccatechism.app/](https://www.catholiccatechism.app/).
 
 ## Structure
 
