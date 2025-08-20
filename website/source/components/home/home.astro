@@ -9,14 +9,10 @@ import Tag from './tag.astro';
 import Thread from './thread.astro';
 import Title from './title.astro';
 
-import BlockLink from './navigation/block-link.astro';
-import ContentSection from './navigation/content-section.astro';
-import TableOfContents from './navigation/table-of-contents.astro';
-
 import Icon from '@components/icon.astro';
 import { IconEnum } from '@components/icon-enum';
 
-import { AuxiliaryRouteKey, AuxiliaryRoutesByKeyAndLanguage } from '@logic/constants';
+import { MainRouteKey, MainRoutesByKeyAndLanguage } from '@logic/constants';
 import { ElementID } from '@logic/ui';
 
 interface Props {
@@ -24,6 +20,8 @@ interface Props {
 }
 
 const { language } = Astro.props;
+
+const prologueUrl = MainRoutesByKeyAndLanguage[MainRouteKey.PROLOGUE][Language.ENGLISH];
 ---
 
 <style>
@@ -39,7 +37,6 @@ const { language } = Astro.props;
 
 <main
     class:list={[
-        'pb-8 md:pb-16 lg:pb-28',
         'bg-gray-50 bg-linear-to-b from-gray-50 to-sky-700/7 from-[20vh] to-[75vh]',
         'dark:bg-zinc-850 dark:bg-linear-to-b dark:from-zinc-750 dark:to-zinc-850 dark:from-10% dark:to-30% dark:text-zinc-300',
     ]}
@@ -203,55 +200,37 @@ const { language } = Astro.props;
         </h2>
     </div>
 
-    <div class="bg-[oklch(0.92_0.02_248.11_/_1)] font-sans text-center mt-20 mb-14 dark:bg-(--container-background-dark) md:mt-36 md:mb-28">
+    <div
+        class="bg-[oklch(0.92_0.02_248.11_/_1)] min-h-screen grid place-items-center font-sans text-center mt-20 dark:bg-(--container-background-dark) md:mt-36"
+    >
         <div id={ElementID.HOME_START_READING} class="py-14 px-text">
-            <p class="font-bold text-xl text-sky-800 tracking-wide dark:text-zinc-100">
-                As you begin exploring, keep the following in mind:
-            </p>
+            <div class="max-w-max mx-auto">
+                <h2 class="font-bold text-2xl text-sky-800 tracking-wide md:text-3xl dark:text-zinc-100">
+                    As&nbsp;you&nbsp;begin&nbsp;exploring, keep&nbsp;the&nbsp;following&nbsp;in&nbsp;mind:
+                </h2>
+                <div class="h-3 w-full bg-sky-50 mt-1.5 sm:mt-3 dark:bg-arctic-300"></div>
+            </div>
+
             <ul
-                class="w-max mx-auto mt-4 text-sky-900 text-left tracking-wide space-y-1 list-disc list-inside text-wrap dark:text-zinc-100"
+                class="max-w-max mx-auto mt-8 text-left leading-7 text-sky-900 space-y-4 list-disc marker:text-sky-600 max-md:pl-5 sm:space-y-6 md:mt-16 md:space-y-8 dark:text-zinc-100 dark:marker:text-arctic-500"
             >
-                <li>Filler text is used throughout.</li>
-                <li>The content structure is random.</li>
-                <li>Translations are not polished.</li>
+                <li>
+                    The text of the Catechism is copyrighted, and permission to use it has not yet been sought.<br class="max-md:hidden" />
+                    Therefore, filler text is used on this site for all translations.
+                </li>
+                <li>
+                    The structure of <em>Sections</em>, <em>Chapters</em>, <em>Articles</em>, etc. is randomly generated,
+                    <br class="max-md:hidden" /> but it always corresponds to actual patterns present within the Catechism.
+                </li>
             </ul>
+
+            <div class="mt-12 md:mt-16">
+                <LinkButton href={prologueUrl} mode="primary-alternate">
+                    Start Reading
+                </LinkButton>
+            </div>
         </div>
     </div>
-
-    <ContentSection>
-        <Fragment slot="header">Contents</Fragment>
-
-        <TableOfContents {language} class="mt-3 mx-text space-y-6 tiny:mt-6" />
-    </ContentSection>
-
-    <ContentSection class="mt-16">
-        <Fragment slot="header">Resources</Fragment>
-
-        <ul class="font-sans text-base mt-3 mx-text space-y-6 tiny:mt-6">
-            <li>
-                <BlockLink url={AuxiliaryRoutesByKeyAndLanguage[AuxiliaryRouteKey.APOSTOLIC_LETTER][language]} {language}>
-                    <Fragment slot="title">
-                        <span class="font-light">Apostolic letter</span>
-                        <em>Laetamur magnopere</em>
-                    </Fragment>
-                    <div class="text-sky-900/90 mt-2 dark:text-zinc-300">
-                        On the approval and promulgation of the Latin typical edition of the Catechism.
-                    </div>
-                </BlockLink>
-            </li>
-            <li>
-                <BlockLink url={AuxiliaryRoutesByKeyAndLanguage[AuxiliaryRouteKey.APOSTOLIC_CONSTITUTION][language]} {language}>
-                    <Fragment slot="title">
-                        <span class="font-light">Apostolic Constitution</span>
-                        <em>Fidei Depositum</em>
-                    </Fragment>
-                    <div class="text-sky-900/90 mt-2 dark:text-zinc-300">
-                        On the publication of the Catechism.
-                    </div>
-                </BlockLink>
-            </li>
-        </ul>
-    </ContentSection>
 </main>
 
 <div class="bg-sky-800 font-sans text-base text-sky-100 dark:bg-arctic-800 dark:text-arctic-100">
