@@ -1,7 +1,9 @@
 # Tasks to complete now
 
-- [ ] try fixing the infinite-backward-scrolling bug, or implementing a
-      non-problematic paradigm
+- [ ] add a note to the mechanism for avoiding the backward-infinite-scroll bug
+      (`website/source/logic/navigation-utils.ts::preventInfiniteBackwardScrollBug`)
+      (note that this doesn't seem to work on mobile devices)
+  - [ ] consider fixing the root cause
 
 - [ ] fix cross-reference: footnote z-index problem
 

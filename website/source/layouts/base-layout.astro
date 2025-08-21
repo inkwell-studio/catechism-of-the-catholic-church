@@ -96,7 +96,11 @@ const homePage = isHomePage(Astro.url.pathname, language);
         </script>
         <script>
             import { shoelaceInitialized } from '@logic/custom-elements';
-            import { respondToFirstPageLoad, watchForHtmxEvents } from '@logic/navigation-utils';
+            import {
+                preventInfiniteBackwardScrollBug,
+                respondToFirstPageLoad,
+                watchForHtmxEvents,
+            } from '@logic/navigation-utils';
             import {
                 updateReadingAreaIntersectionObservers,
                 watchForReadingAreaLastContentChanges,
@@ -111,6 +115,7 @@ const homePage = isHomePage(Astro.url.pathname, language);
             respondToFirstPageLoad();
             watchForHtmxEvents();
             watchForReadingAreaLastContentChanges();
+            preventInfiniteBackwardScrollBug();
         </script>
         <script src="/htmx.min.js" is:inline></script>
     </head>

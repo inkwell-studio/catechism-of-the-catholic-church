@@ -10,6 +10,7 @@ import {
 } from './state/reading-area.ts';
 import { setToolbarVisibility, updateToolbarForNonContentRoute } from './toolbar.ts';
 import { ElementClass, ElementID } from './ui.ts';
+import { debounce } from './utils.ts';
 
 type HtmxEvent = Event & {
     // deno-lint-ignore no-explicit-any
@@ -47,6 +48,20 @@ export function respondToFirstPageLoad(): void {
     }
 
     updateToolbarForNonContentRoute(globalThis.location.pathname);
+}
+
+export function preventInfiniteBackwardScrollBug(): void {
+    function preventScrollToTop(): void {
+        if (globalThis.scrollY === 0) {
+            globalThis.scrollTo({ top: 1 });
+        }
+    }
+
+    const debouncedHandler = debounce(() => preventScrollToTop(), 10);
+
+    document.addEventListener('scroll', () => {
+        debouncedHandler();
+    });
 }
 
 /**
