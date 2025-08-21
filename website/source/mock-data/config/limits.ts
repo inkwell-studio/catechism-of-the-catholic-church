@@ -356,7 +356,7 @@ const limitsSmall: Limits = {
         textContent: { min: 1, max: 3 },
     },
     textBlock: {
-        textWrapper: { min: 1, max: 3 },
+        textWrapper: { min: 1, max: 2 },
     },
     textWrapper: {
         part: { min: 1, max: 1 },
@@ -437,10 +437,10 @@ const limitsMedium: Limits = {
         textContent: { min: 1, max: 3 },
     },
     textBlock: {
-        textWrapper: { min: 1, max: 3 },
+        textWrapper: { min: 1, max: 2 },
     },
     textWrapper: {
-        part: { min: 1, max: 3 },
+        part: { min: 1, max: 1 },
     },
 };
 //#endregion

@@ -1,5 +1,14 @@
 # Tasks to complete now
 
+- [ ] try fixing the infinite-backward-scrolling bug, or implementing a
+      non-problematic paradigm
+
+- [ ] fix cross-reference: footnote z-index problem
+
+- [ ] consider how to make cross-reference and footnote nature and functionality
+      clearer
+  - [ ] consider using "picture instructions" like those on esv.org
+
 - [ ] consider activating higher-tier Deno Deploy services
   - [ ] determine if the project can be built with full-scale mock data on Deno
         Deploy as part of the regular build process
@@ -25,8 +34,6 @@
 - [ ] add a utility function to wrap `document.getElementByID()`
 
 - [ ] prioritize tasks below
-
-- [ ] (if time-reasonable) try fixing the infinite-backward-scrolling bug
 
 - [ ] consider adding a loading indicator to the bottom of the infinite-scroll
       content

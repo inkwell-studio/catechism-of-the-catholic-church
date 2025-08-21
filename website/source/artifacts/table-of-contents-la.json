@@ -12,12 +12,12 @@
     "semanticPath": "prooemium",
     "url": "/prooemium",
     "firstParagraphNumber": 1,
-    "lastParagraphNumber": 11,
+    "lastParagraphNumber": 14,
     "children": [
       {
         "contentType": "PROLOGUE_SECTION",
         "titleData": {
-          "title": "Quomodo Viam Ex Silva Invenire",
+          "title": "De Causa Quam Proponit Hic Liber Gravior Est Quam Biblia Familiae Aviae Tuae",
           "typeLabel": "Prooemium Sectio",
           "contentNumber": 1,
           "romanNumeral": "I"
@@ -32,7 +32,7 @@
       {
         "contentType": "PROLOGUE_SECTION",
         "titleData": {
-          "title": "Historia Cartographiae",
+          "title": "Regulae Pro Citando Latinam Nesciente Latine Vere",
           "typeLabel": "Prooemium Sectio",
           "contentNumber": 2,
           "romanNumeral": "II"
@@ -41,13 +41,13 @@
         "semanticPath": "prooemium/prooemium-sectio-2",
         "url": "/prooemium#prooemium-sectio-2",
         "firstParagraphNumber": 4,
-        "lastParagraphNumber": 4,
+        "lastParagraphNumber": 6,
         "children": []
       },
       {
         "contentType": "PROLOGUE_SECTION",
         "titleData": {
-          "title": "Fungos Comestibiles Discernere",
+          "title": "De Credendo Rebus Quas Non Potes Videre (Vel Wi-Fi)",
           "typeLabel": "Prooemium Sectio",
           "contentNumber": 3,
           "romanNumeral": "III"
@@ -55,14 +55,14 @@
         "pathID": "0__m.2",
         "semanticPath": "prooemium/prooemium-sectio-3",
         "url": "/prooemium#prooemium-sectio-3",
-        "firstParagraphNumber": 5,
-        "lastParagraphNumber": 7,
+        "firstParagraphNumber": 7,
+        "lastParagraphNumber": 8,
         "children": []
       },
       {
         "contentType": "PROLOGUE_SECTION",
         "titleData": {
-          "title": "Effectus Ignium Prati",
+          "title": "Rosarium: LIX Munera Ad Omnia Regenda",
           "typeLabel": "Prooemium Sectio",
           "contentNumber": 4,
           "romanNumeral": "IV"
@@ -70,14 +70,14 @@
         "pathID": "0__m.3",
         "semanticPath": "prooemium/prooemium-sectio-4",
         "url": "/prooemium#prooemium-sectio-4",
-        "firstParagraphNumber": 8,
-        "lastParagraphNumber": 8,
+        "firstParagraphNumber": 9,
+        "lastParagraphNumber": 11,
         "children": []
       },
       {
         "contentType": "PROLOGUE_SECTION",
         "titleData": {
-          "title": "Oceanum Deglutire",
+          "title": "Sacri Ordines, Vel Quomodo Vestimenta Cum Elegantia Gerere",
           "typeLabel": "Prooemium Sectio",
           "contentNumber": 5,
           "romanNumeral": "V"
@@ -85,8 +85,8 @@
         "pathID": "0__m.4",
         "semanticPath": "prooemium/prooemium-sectio-5",
         "url": "/prooemium#prooemium-sectio-5",
-        "firstParagraphNumber": 9,
-        "lastParagraphNumber": 11,
+        "firstParagraphNumber": 12,
+        "lastParagraphNumber": 14,
         "children": []
       }
     ]
@@ -95,7 +95,7 @@
     {
       "contentType": "PART",
       "titleData": {
-        "title": "Hiems Aestate",
+        "title": "Desiderium Dei in Omni Corde",
         "typeLabel": "Pars",
         "contentNumber": 1,
         "romanNumeral": "I"
@@ -103,13 +103,13 @@
       "pathID": "1",
       "semanticPath": "pars-1",
       "url": "/pars-1",
-      "firstParagraphNumber": 12,
-      "lastParagraphNumber": 65,
+      "firstParagraphNumber": 15,
+      "lastParagraphNumber": 19,
       "children": [
         {
           "contentType": "SECTION",
           "titleData": {
-            "title": "Omnes Vias, Qui Superficies Potest Amplio Vestri Vitae",
+            "title": "Desiderium Universale",
             "typeLabel": "Sectio",
             "contentNumber": 1,
             "romanNumeral": "I"
@@ -117,130 +117,99 @@
           "pathID": "1__m.0",
           "semanticPath": "pars-1/sectio-1",
           "url": "/pars-1#sectio-1",
-          "firstParagraphNumber": 12,
-          "lastParagraphNumber": 35,
+          "firstParagraphNumber": 16,
+          "lastParagraphNumber": 19,
+          "children": [
+            {
+              "contentType": "IN_BRIEF",
+              "titleData": {
+                "title": "Compendium",
+                "typeLabel": "Compendium",
+                "contentNumber": null,
+                "romanNumeral": null
+              },
+              "pathID": "1__m.0__i",
+              "semanticPath": "pars-1/sectio-1/compendium",
+              "url": "/pars-1#sectio-1/compendium",
+              "firstParagraphNumber": 18,
+              "lastParagraphNumber": 19,
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "contentType": "PART",
+      "titleData": {
+        "title": "Quaestio Humanitatis pro Significatu",
+        "typeLabel": "Pars",
+        "contentNumber": 2,
+        "romanNumeral": "II"
+      },
+      "pathID": "2",
+      "semanticPath": "pars-2",
+      "url": "/pars-2",
+      "firstParagraphNumber": 20,
+      "lastParagraphNumber": 34,
+      "children": [
+        {
+          "contentType": "SECTION",
+          "titleData": {
+            "title": "Miseri Substituti Pro Divino",
+            "typeLabel": "Sectio",
+            "contentNumber": 1,
+            "romanNumeral": "I"
+          },
+          "pathID": "2__m.0",
+          "semanticPath": "pars-2/sectio-1",
+          "url": "/pars-2#sectio-1",
+          "firstParagraphNumber": 21,
+          "lastParagraphNumber": 34,
           "children": [
             {
               "contentType": "CHAPTER",
               "titleData": {
-                "title": "Epistulae a Consobrinis",
+                "title": "In Historia Humana Evidens",
                 "typeLabel": "Caput",
                 "contentNumber": 1,
                 "romanNumeral": "I"
               },
-              "pathID": "1__m.0__m.0",
-              "semanticPath": "pars-1/sectio-1/caput-1",
-              "url": "/pars-1#sectio-1/caput-1",
-              "firstParagraphNumber": 12,
-              "lastParagraphNumber": 16,
+              "pathID": "2__m.0__m.0",
+              "semanticPath": "pars-2/sectio-1/caput-1",
+              "url": "/pars-2#sectio-1/caput-1",
+              "firstParagraphNumber": 21,
+              "lastParagraphNumber": 34,
               "children": [
                 {
                   "contentType": "ARTICLE",
                   "titleData": {
-                    "title": "Temporibus sunt Mutantur",
+                    "title": "Sacra Desideria Primaevae Humanitatis",
                     "typeLabel": "Articulus",
                     "contentNumber": 1,
                     "romanNumeral": "I"
                   },
-                  "pathID": "1__m.0__m.0__m.0",
-                  "semanticPath": "pars-1/sectio-1/caput-1/articulus-1",
-                  "url": "/pars-1#sectio-1/caput-1/articulus-1",
-                  "firstParagraphNumber": 12,
-                  "lastParagraphNumber": 16,
+                  "pathID": "2__m.0__m.0__m.0",
+                  "semanticPath": "pars-2/sectio-1/caput-1/articulus-1",
+                  "url": "/pars-2#sectio-1/caput-1/articulus-1",
+                  "firstParagraphNumber": 21,
+                  "lastParagraphNumber": 25,
                   "children": [
                     {
-                      "contentType": "ARTICLE_PARAGRAPH",
+                      "contentType": "SUB_ARTICLE",
                       "titleData": {
-                        "title": "Quomodo Bicicletae Fabricantur",
-                        "typeLabel": "Articulus Paragraphus",
+                        "title": "CoffeeCoffea ut Primus Sacramentum Religiosum Matutinale",
+                        "typeLabel": "Subarticulus",
                         "contentNumber": 1,
                         "romanNumeral": "I"
                       },
-                      "pathID": "1__m.0__m.0__m.0__m.0",
-                      "semanticPath": "pars-1/sectio-1/caput-1/articulus-1/articulus-paragraphus-1",
-                      "url": "/pars-1#sectio-1/caput-1/articulus-1/articulus-paragraphus-1",
-                      "firstParagraphNumber": 12,
-                      "lastParagraphNumber": 16,
-                      "children": [
-                        {
-                          "contentType": "SUB_ARTICLE",
-                          "titleData": {
-                            "title": "Et Feram, Innocentes & in e Platea Tergum",
-                            "typeLabel": "Subarticulus",
-                            "contentNumber": 1,
-                            "romanNumeral": "I"
-                          },
-                          "pathID": "1__m.0__m.0__m.0__m.0__m.0",
-                          "semanticPath": "pars-1/sectio-1/caput-1/articulus-1/articulus-paragraphus-1/subarticulus-1",
-                          "url": "/pars-1#sectio-1/caput-1/articulus-1/articulus-paragraphus-1/subarticulus-1",
-                          "firstParagraphNumber": 12,
-                          "lastParagraphNumber": 12,
-                          "children": []
-                        },
-                        {
-                          "contentType": "SUB_ARTICLE",
-                          "titleData": {
-                            "title": "Nati Sunt Currere",
-                            "typeLabel": "Subarticulus",
-                            "contentNumber": 2,
-                            "romanNumeral": "II"
-                          },
-                          "pathID": "1__m.0__m.0__m.0__m.0__m.1",
-                          "semanticPath": "pars-1/sectio-1/caput-1/articulus-1/articulus-paragraphus-1/subarticulus-2",
-                          "url": "/pars-1#sectio-1/caput-1/articulus-1/articulus-paragraphus-1/subarticulus-2",
-                          "firstParagraphNumber": 13,
-                          "lastParagraphNumber": 15,
-                          "children": []
-                        },
-                        {
-                          "contentType": "IN_BRIEF",
-                          "titleData": {
-                            "title": "Compendium",
-                            "typeLabel": "Compendium",
-                            "contentNumber": null,
-                            "romanNumeral": null
-                          },
-                          "pathID": "1__m.0__m.0__m.0__m.0__i",
-                          "semanticPath": "pars-1/sectio-1/caput-1/articulus-1/articulus-paragraphus-1/compendium",
-                          "url": "/pars-1#sectio-1/caput-1/articulus-1/articulus-paragraphus-1/compendium",
-                          "firstParagraphNumber": 16,
-                          "lastParagraphNumber": 16,
-                          "children": []
-                        }
-                      ]
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              "contentType": "CHAPTER",
-              "titleData": {
-                "title": "Ephemerides Tegumenta Pulchra Habere Possunt",
-                "typeLabel": "Caput",
-                "contentNumber": 2,
-                "romanNumeral": "II"
-              },
-              "pathID": "1__m.0__m.1",
-              "semanticPath": "pars-1/sectio-1/caput-2",
-              "url": "/pars-1/sectio-1/caput-2",
-              "firstParagraphNumber": 17,
-              "lastParagraphNumber": 35,
-              "children": [
-                {
-                  "contentType": "ARTICLE",
-                  "titleData": {
-                    "title": "Reducere Eam Omnes Reversus in Domum Suam",
-                    "typeLabel": "Articulus",
-                    "contentNumber": 1,
-                    "romanNumeral": "I"
-                  },
-                  "pathID": "1__m.0__m.1__m.0",
-                  "semanticPath": "pars-1/sectio-1/caput-2/articulus-1",
-                  "url": "/pars-1/sectio-1/caput-2#articulus-1",
-                  "firstParagraphNumber": 17,
-                  "lastParagraphNumber": 24,
-                  "children": [
+                      "pathID": "2__m.0__m.0__m.0__m.0",
+                      "semanticPath": "pars-2/sectio-1/caput-1/articulus-1/subarticulus-1",
+                      "url": "/pars-2#sectio-1/caput-1/articulus-1/subarticulus-1",
+                      "firstParagraphNumber": 21,
+                      "lastParagraphNumber": 24,
+                      "children": []
+                    },
                     {
                       "contentType": "IN_BRIEF",
                       "titleData": {
@@ -249,11 +218,11 @@
                         "contentNumber": null,
                         "romanNumeral": null
                       },
-                      "pathID": "1__m.0__m.1__m.0__i",
-                      "semanticPath": "pars-1/sectio-1/caput-2/articulus-1/compendium",
-                      "url": "/pars-1/sectio-1/caput-2#articulus-1/compendium",
-                      "firstParagraphNumber": 22,
-                      "lastParagraphNumber": 24,
+                      "pathID": "2__m.0__m.0__m.0__i",
+                      "semanticPath": "pars-2/sectio-1/caput-1/articulus-1/compendium",
+                      "url": "/pars-2#sectio-1/caput-1/articulus-1/compendium",
+                      "firstParagraphNumber": 25,
+                      "lastParagraphNumber": 25,
                       "children": []
                     }
                   ]
@@ -261,231 +230,154 @@
                 {
                   "contentType": "ARTICLE",
                   "titleData": {
-                    "title": "Via LXI Revisit",
+                    "title": "Philosophi Quodammodo Infinitas Quaestiones “Cur” Rogantes",
                     "typeLabel": "Articulus",
                     "contentNumber": 2,
                     "romanNumeral": "II"
                   },
-                  "pathID": "1__m.0__m.1__m.1",
-                  "semanticPath": "pars-1/sectio-1/caput-2/articulus-2",
-                  "url": "/pars-1/sectio-1/caput-2/articulus-2",
-                  "firstParagraphNumber": 25,
-                  "lastParagraphNumber": 35,
+                  "pathID": "2__m.0__m.0__m.1",
+                  "semanticPath": "pars-2/sectio-1/caput-1/articulus-2",
+                  "url": "/pars-2/sectio-1/caput-1/articulus-2",
+                  "firstParagraphNumber": 26,
+                  "lastParagraphNumber": 34,
                   "children": [
                     {
-                      "contentType": "ARTICLE_PARAGRAPH",
+                      "contentType": "SUB_ARTICLE",
                       "titleData": {
-                        "title": "Autocineta Rubro Colore Piguntur",
-                        "typeLabel": "Articulus Paragraphus",
+                        "title": "Stipendium Charta et Aeternitas",
+                        "typeLabel": "Subarticulus",
                         "contentNumber": 1,
                         "romanNumeral": "I"
                       },
-                      "pathID": "1__m.0__m.1__m.1__m.0",
-                      "semanticPath": "pars-1/sectio-1/caput-2/articulus-2/articulus-paragraphus-1",
-                      "url": "/pars-1/sectio-1/caput-2/articulus-2#articulus-paragraphus-1",
-                      "firstParagraphNumber": 25,
+                      "pathID": "2__m.0__m.0__m.1__m.0",
+                      "semanticPath": "pars-2/sectio-1/caput-1/articulus-2/subarticulus-1",
+                      "url": "/pars-2/sectio-1/caput-1/articulus-2#subarticulus-1",
+                      "firstParagraphNumber": 26,
                       "lastParagraphNumber": 29,
-                      "children": [
-                        {
-                          "contentType": "SUB_ARTICLE",
-                          "titleData": {
-                            "title": "Tenebris in Ore Oppidum",
-                            "typeLabel": "Subarticulus",
-                            "contentNumber": 1,
-                            "romanNumeral": "I"
-                          },
-                          "pathID": "1__m.0__m.1__m.1__m.0__m.0",
-                          "semanticPath": "pars-1/sectio-1/caput-2/articulus-2/articulus-paragraphus-1/subarticulus-1",
-                          "url": "/pars-1/sectio-1/caput-2/articulus-2#articulus-paragraphus-1/subarticulus-1",
-                          "firstParagraphNumber": 25,
-                          "lastParagraphNumber": 26,
-                          "children": []
-                        },
-                        {
-                          "contentType": "IN_BRIEF",
-                          "titleData": {
-                            "title": "Compendium",
-                            "typeLabel": "Compendium",
-                            "contentNumber": null,
-                            "romanNumeral": null
-                          },
-                          "pathID": "1__m.0__m.1__m.1__m.0__i",
-                          "semanticPath": "pars-1/sectio-1/caput-2/articulus-2/articulus-paragraphus-1/compendium",
-                          "url": "/pars-1/sectio-1/caput-2/articulus-2#articulus-paragraphus-1/compendium",
-                          "firstParagraphNumber": 27,
-                          "lastParagraphNumber": 29,
-                          "children": []
-                        }
-                      ]
+                      "children": []
                     },
                     {
-                      "contentType": "ARTICLE_PARAGRAPH",
+                      "contentType": "SUB_ARTICLE",
                       "titleData": {
-                        "title": "Aeroplana Cito Reparantur",
-                        "typeLabel": "Articulus Paragraphus",
+                        "title": "Ligatio ut Metaphora Salutis",
+                        "typeLabel": "Subarticulus",
                         "contentNumber": 2,
                         "romanNumeral": "II"
                       },
-                      "pathID": "1__m.0__m.1__m.1__m.1",
-                      "semanticPath": "pars-1/sectio-1/caput-2/articulus-2/articulus-paragraphus-2",
-                      "url": "/pars-1/sectio-1/caput-2/articulus-2/articulus-paragraphus-2",
+                      "pathID": "2__m.0__m.0__m.1__m.1",
+                      "semanticPath": "pars-2/sectio-1/caput-1/articulus-2/subarticulus-2",
+                      "url": "/pars-2/sectio-1/caput-1/articulus-2#subarticulus-2",
                       "firstParagraphNumber": 30,
-                      "lastParagraphNumber": 35,
-                      "children": [
-                        {
-                          "contentType": "SUB_ARTICLE",
-                          "titleData": {
-                            "title": "Flumen",
-                            "typeLabel": "Subarticulus",
-                            "contentNumber": 1,
-                            "romanNumeral": "I"
-                          },
-                          "pathID": "1__m.0__m.1__m.1__m.1__m.0",
-                          "semanticPath": "pars-1/sectio-1/caput-2/articulus-2/articulus-paragraphus-2/subarticulus-1",
-                          "url": "/pars-1/sectio-1/caput-2/articulus-2/articulus-paragraphus-2#subarticulus-1",
-                          "firstParagraphNumber": 30,
-                          "lastParagraphNumber": 31,
-                          "children": []
-                        },
-                        {
-                          "contentType": "SUB_ARTICLE",
-                          "titleData": {
-                            "title": "Superabimus",
-                            "typeLabel": "Subarticulus",
-                            "contentNumber": 2,
-                            "romanNumeral": "II"
-                          },
-                          "pathID": "1__m.0__m.1__m.1__m.1__m.1",
-                          "semanticPath": "pars-1/sectio-1/caput-2/articulus-2/articulus-paragraphus-2/subarticulus-2",
-                          "url": "/pars-1/sectio-1/caput-2/articulus-2/articulus-paragraphus-2#subarticulus-2",
-                          "firstParagraphNumber": 32,
-                          "lastParagraphNumber": 34,
-                          "children": []
-                        },
-                        {
-                          "contentType": "IN_BRIEF",
-                          "titleData": {
-                            "title": "Compendium",
-                            "typeLabel": "Compendium",
-                            "contentNumber": null,
-                            "romanNumeral": null
-                          },
-                          "pathID": "1__m.0__m.1__m.1__m.1__i",
-                          "semanticPath": "pars-1/sectio-1/caput-2/articulus-2/articulus-paragraphus-2/compendium",
-                          "url": "/pars-1/sectio-1/caput-2/articulus-2/articulus-paragraphus-2#compendium",
-                          "firstParagraphNumber": 35,
-                          "lastParagraphNumber": 35,
-                          "children": []
-                        }
-                      ]
+                      "lastParagraphNumber": 31,
+                      "children": []
+                    },
+                    {
+                      "contentType": "IN_BRIEF",
+                      "titleData": {
+                        "title": "Compendium",
+                        "typeLabel": "Compendium",
+                        "contentNumber": null,
+                        "romanNumeral": null
+                      },
+                      "pathID": "2__m.0__m.0__m.1__i",
+                      "semanticPath": "pars-2/sectio-1/caput-1/articulus-2/compendium",
+                      "url": "/pars-2/sectio-1/caput-1/articulus-2#compendium",
+                      "firstParagraphNumber": 32,
+                      "lastParagraphNumber": 34,
+                      "children": []
                     }
                   ]
                 }
               ]
             }
           ]
-        },
+        }
+      ]
+    },
+    {
+      "contentType": "PART",
+      "titleData": {
+        "title": "Fides Ut Responsio ad Divinam Inceptionem",
+        "typeLabel": "Pars",
+        "contentNumber": 3,
+        "romanNumeral": "III"
+      },
+      "pathID": "3",
+      "semanticPath": "pars-3",
+      "url": "/pars-3",
+      "firstParagraphNumber": 35,
+      "lastParagraphNumber": 74,
+      "children": [
         {
           "contentType": "SECTION",
           "titleData": {
-            "title": "Historia Equorum",
+            "title": "Deus Pulsat, Humanitas Simulat Se Occupatam Esse",
             "typeLabel": "Sectio",
-            "contentNumber": 2,
-            "romanNumeral": "II"
+            "contentNumber": 1,
+            "romanNumeral": "I"
           },
-          "pathID": "1__m.1",
-          "semanticPath": "pars-1/sectio-2",
-          "url": "/pars-1/sectio-2",
-          "firstParagraphNumber": 36,
-          "lastParagraphNumber": 62,
+          "pathID": "3__m.0",
+          "semanticPath": "pars-3/sectio-1",
+          "url": "/pars-3#sectio-1",
+          "firstParagraphNumber": 35,
+          "lastParagraphNumber": 69,
           "children": [
             {
               "contentType": "CHAPTER",
               "titleData": {
-                "title": "Nonnulli Libri in Pluteo Bono Ianuae Tuae Servantur Ut Facile Cum Aliis Communices",
+                "title": "Conatus Vacuae Plenitudinis",
                 "typeLabel": "Caput",
                 "contentNumber": 1,
                 "romanNumeral": "I"
               },
-              "pathID": "1__m.1__m.0",
-              "semanticPath": "pars-1/sectio-2/caput-1",
-              "url": "/pars-1/sectio-2#caput-1",
-              "firstParagraphNumber": 36,
-              "lastParagraphNumber": 50,
+              "pathID": "3__m.0__m.0",
+              "semanticPath": "pars-3/sectio-1/caput-1",
+              "url": "/pars-3#sectio-1/caput-1",
+              "firstParagraphNumber": 35,
+              "lastParagraphNumber": 52,
               "children": [
                 {
                   "contentType": "ARTICLE",
                   "titleData": {
-                    "title": "Sanguis Vestigia",
+                    "title": "Distractiones Culturae Modernae",
                     "typeLabel": "Articulus",
                     "contentNumber": 1,
                     "romanNumeral": "I"
                   },
-                  "pathID": "1__m.1__m.0__m.0",
-                  "semanticPath": "pars-1/sectio-2/caput-1/articulus-1",
-                  "url": "/pars-1/sectio-2#caput-1/articulus-1",
-                  "firstParagraphNumber": 36,
-                  "lastParagraphNumber": 41,
-                  "children": [
-                    {
-                      "contentType": "IN_BRIEF",
-                      "titleData": {
-                        "title": "Compendium",
-                        "typeLabel": "Compendium",
-                        "contentNumber": null,
-                        "romanNumeral": null
-                      },
-                      "pathID": "1__m.1__m.0__m.0__i",
-                      "semanticPath": "pars-1/sectio-2/caput-1/articulus-1/compendium",
-                      "url": "/pars-1/sectio-2#caput-1/articulus-1/compendium",
-                      "firstParagraphNumber": 38,
-                      "lastParagraphNumber": 41,
-                      "children": []
-                    }
-                  ]
-                },
-                {
-                  "contentType": "ARTICLE",
-                  "titleData": {
-                    "title": "Amor et Furtum",
-                    "typeLabel": "Articulus",
-                    "contentNumber": 2,
-                    "romanNumeral": "II"
-                  },
-                  "pathID": "1__m.1__m.0__m.1",
-                  "semanticPath": "pars-1/sectio-2/caput-1/articulus-2",
-                  "url": "/pars-1/sectio-2/caput-1/articulus-2",
-                  "firstParagraphNumber": 42,
-                  "lastParagraphNumber": 45,
+                  "pathID": "3__m.0__m.0__m.0",
+                  "semanticPath": "pars-3/sectio-1/caput-1/articulus-1",
+                  "url": "/pars-3#sectio-1/caput-1/articulus-1",
+                  "firstParagraphNumber": 35,
+                  "lastParagraphNumber": 40,
                   "children": [
                     {
                       "contentType": "SUB_ARTICLE",
                       "titleData": {
-                        "title": "Tympanistae Insani, Infelices, et Indi Aestate",
+                        "title": "Inopinatae Exercitationes Exvehendo Id ad Classem",
                         "typeLabel": "Subarticulus",
                         "contentNumber": 1,
                         "romanNumeral": "I"
                       },
-                      "pathID": "1__m.1__m.0__m.1__m.0",
-                      "semanticPath": "pars-1/sectio-2/caput-1/articulus-2/subarticulus-1",
-                      "url": "/pars-1/sectio-2/caput-1/articulus-2#subarticulus-1",
-                      "firstParagraphNumber": 42,
-                      "lastParagraphNumber": 42,
+                      "pathID": "3__m.0__m.0__m.0__m.0",
+                      "semanticPath": "pars-3/sectio-1/caput-1/articulus-1/subarticulus-1",
+                      "url": "/pars-3#sectio-1/caput-1/articulus-1/subarticulus-1",
+                      "firstParagraphNumber": 35,
+                      "lastParagraphNumber": 35,
                       "children": []
                     },
                     {
                       "contentType": "SUB_ARTICLE",
                       "titleData": {
-                        "title": "Alte in Proelio Vulnerati",
+                        "title": "Reposito Qui Divinam Gravitatem Sustinere Potest",
                         "typeLabel": "Subarticulus",
                         "contentNumber": 2,
                         "romanNumeral": "II"
                       },
-                      "pathID": "1__m.1__m.0__m.1__m.1",
-                      "semanticPath": "pars-1/sectio-2/caput-1/articulus-2/subarticulus-2",
-                      "url": "/pars-1/sectio-2/caput-1/articulus-2#subarticulus-2",
-                      "firstParagraphNumber": 43,
-                      "lastParagraphNumber": 44,
+                      "pathID": "3__m.0__m.0__m.0__m.1",
+                      "semanticPath": "pars-3/sectio-1/caput-1/articulus-1/subarticulus-2",
+                      "url": "/pars-3#sectio-1/caput-1/articulus-1/subarticulus-2",
+                      "firstParagraphNumber": 36,
+                      "lastParagraphNumber": 36,
                       "children": []
                     },
                     {
@@ -496,11 +388,11 @@
                         "contentNumber": null,
                         "romanNumeral": null
                       },
-                      "pathID": "1__m.1__m.0__m.1__i",
-                      "semanticPath": "pars-1/sectio-2/caput-1/articulus-2/compendium",
-                      "url": "/pars-1/sectio-2/caput-1/articulus-2#compendium",
-                      "firstParagraphNumber": 45,
-                      "lastParagraphNumber": 45,
+                      "pathID": "3__m.0__m.0__m.0__i",
+                      "semanticPath": "pars-3/sectio-1/caput-1/articulus-1/compendium",
+                      "url": "/pars-3#sectio-1/caput-1/articulus-1/compendium",
+                      "firstParagraphNumber": 37,
+                      "lastParagraphNumber": 40,
                       "children": []
                     }
                   ]
@@ -508,17 +400,47 @@
                 {
                   "contentType": "ARTICLE",
                   "titleData": {
-                    "title": "Modern Temporum",
+                    "title": "Falsa Idola Hodie",
                     "typeLabel": "Articulus",
-                    "contentNumber": 3,
-                    "romanNumeral": "III"
+                    "contentNumber": 2,
+                    "romanNumeral": "II"
                   },
-                  "pathID": "1__m.1__m.0__m.2",
-                  "semanticPath": "pars-1/sectio-2/caput-1/articulus-3",
-                  "url": "/pars-1/sectio-2/caput-1/articulus-3",
-                  "firstParagraphNumber": 46,
-                  "lastParagraphNumber": 50,
+                  "pathID": "3__m.0__m.0__m.1",
+                  "semanticPath": "pars-3/sectio-1/caput-1/articulus-2",
+                  "url": "/pars-3/sectio-1/caput-1/articulus-2",
+                  "firstParagraphNumber": 41,
+                  "lastParagraphNumber": 48,
                   "children": [
+                    {
+                      "contentType": "SUB_ARTICLE",
+                      "titleData": {
+                        "title": "Occultatio Libri Sub Libris Minoribus",
+                        "typeLabel": "Subarticulus",
+                        "contentNumber": 1,
+                        "romanNumeral": "I"
+                      },
+                      "pathID": "3__m.0__m.0__m.1__m.0",
+                      "semanticPath": "pars-3/sectio-1/caput-1/articulus-2/subarticulus-1",
+                      "url": "/pars-3/sectio-1/caput-1/articulus-2#subarticulus-1",
+                      "firstParagraphNumber": 41,
+                      "lastParagraphNumber": 43,
+                      "children": []
+                    },
+                    {
+                      "contentType": "SUB_ARTICLE",
+                      "titleData": {
+                        "title": "Utendo ut Ostium Pessulum, Devote",
+                        "typeLabel": "Subarticulus",
+                        "contentNumber": 2,
+                        "romanNumeral": "II"
+                      },
+                      "pathID": "3__m.0__m.0__m.1__m.1",
+                      "semanticPath": "pars-3/sectio-1/caput-1/articulus-2/subarticulus-2",
+                      "url": "/pars-3/sectio-1/caput-1/articulus-2#subarticulus-2",
+                      "firstParagraphNumber": 44,
+                      "lastParagraphNumber": 45,
+                      "children": []
+                    },
                     {
                       "contentType": "IN_BRIEF",
                       "titleData": {
@@ -527,11 +449,57 @@
                         "contentNumber": null,
                         "romanNumeral": null
                       },
-                      "pathID": "1__m.1__m.0__m.2__i",
-                      "semanticPath": "pars-1/sectio-2/caput-1/articulus-3/compendium",
-                      "url": "/pars-1/sectio-2/caput-1/articulus-3#compendium",
+                      "pathID": "3__m.0__m.0__m.1__i",
+                      "semanticPath": "pars-3/sectio-1/caput-1/articulus-2/compendium",
+                      "url": "/pars-3/sectio-1/caput-1/articulus-2#compendium",
+                      "firstParagraphNumber": 46,
+                      "lastParagraphNumber": 48,
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "contentType": "ARTICLE",
+                  "titleData": {
+                    "title": "Circenses, Colosseae, et Televisio Realitatis",
+                    "typeLabel": "Articulus",
+                    "contentNumber": 3,
+                    "romanNumeral": "III"
+                  },
+                  "pathID": "3__m.0__m.0__m.2",
+                  "semanticPath": "pars-3/sectio-1/caput-1/articulus-3",
+                  "url": "/pars-3/sectio-1/caput-1/articulus-3",
+                  "firstParagraphNumber": 49,
+                  "lastParagraphNumber": 52,
+                  "children": [
+                    {
+                      "contentType": "SUB_ARTICLE",
+                      "titleData": {
+                        "title": "Simulare Te Legisse Totum Librum",
+                        "typeLabel": "Subarticulus",
+                        "contentNumber": 1,
+                        "romanNumeral": "I"
+                      },
+                      "pathID": "3__m.0__m.0__m.2__m.0",
+                      "semanticPath": "pars-3/sectio-1/caput-1/articulus-3/subarticulus-1",
+                      "url": "/pars-3/sectio-1/caput-1/articulus-3#subarticulus-1",
                       "firstParagraphNumber": 49,
-                      "lastParagraphNumber": 50,
+                      "lastParagraphNumber": 49,
+                      "children": []
+                    },
+                    {
+                      "contentType": "IN_BRIEF",
+                      "titleData": {
+                        "title": "Compendium",
+                        "typeLabel": "Compendium",
+                        "contentNumber": null,
+                        "romanNumeral": null
+                      },
+                      "pathID": "3__m.0__m.0__m.2__i",
+                      "semanticPath": "pars-3/sectio-1/caput-1/articulus-3/compendium",
+                      "url": "/pars-3/sectio-1/caput-1/articulus-3#compendium",
+                      "firstParagraphNumber": 50,
+                      "lastParagraphNumber": 52,
                       "children": []
                     }
                   ]
@@ -541,74 +509,58 @@
             {
               "contentType": "CHAPTER",
               "titleData": {
-                "title": "Collectiones Sigillorum Portatiles",
+                "title": "Oblectatio Sine Contentione",
                 "typeLabel": "Caput",
                 "contentNumber": 2,
                 "romanNumeral": "II"
               },
-              "pathID": "1__m.1__m.1",
-              "semanticPath": "pars-1/sectio-2/caput-2",
-              "url": "/pars-1/sectio-2/caput-2",
-              "firstParagraphNumber": 51,
-              "lastParagraphNumber": 62,
+              "pathID": "3__m.0__m.1",
+              "semanticPath": "pars-3/sectio-1/caput-2",
+              "url": "/pars-3/sectio-1/caput-2",
+              "firstParagraphNumber": 53,
+              "lastParagraphNumber": 63,
               "children": [
                 {
                   "contentType": "ARTICLE",
                   "titleData": {
-                    "title": "Omnes per Specula",
+                    "title": "Commentaria Online Novum Pugnae Locus",
                     "typeLabel": "Articulus",
                     "contentNumber": 1,
                     "romanNumeral": "I"
                   },
-                  "pathID": "1__m.1__m.1__m.0",
-                  "semanticPath": "pars-1/sectio-2/caput-2/articulus-1",
-                  "url": "/pars-1/sectio-2/caput-2#articulus-1",
-                  "firstParagraphNumber": 51,
-                  "lastParagraphNumber": 58,
-                  "children": [
-                    {
-                      "contentType": "IN_BRIEF",
-                      "titleData": {
-                        "title": "Compendium",
-                        "typeLabel": "Compendium",
-                        "contentNumber": null,
-                        "romanNumeral": null
-                      },
-                      "pathID": "1__m.1__m.1__m.0__i",
-                      "semanticPath": "pars-1/sectio-2/caput-2/articulus-1/compendium",
-                      "url": "/pars-1/sectio-2/caput-2#articulus-1/compendium",
-                      "firstParagraphNumber": 55,
-                      "lastParagraphNumber": 58,
-                      "children": []
-                    }
-                  ]
-                },
-                {
-                  "contentType": "ARTICLE",
-                  "titleData": {
-                    "title": "Velut Volvens Lapis",
-                    "typeLabel": "Articulus",
-                    "contentNumber": 2,
-                    "romanNumeral": "II"
-                  },
-                  "pathID": "1__m.1__m.1__m.1",
-                  "semanticPath": "pars-1/sectio-2/caput-2/articulus-2",
-                  "url": "/pars-1/sectio-2/caput-2/articulus-2",
-                  "firstParagraphNumber": 59,
-                  "lastParagraphNumber": 62,
+                  "pathID": "3__m.0__m.1__m.0",
+                  "semanticPath": "pars-3/sectio-1/caput-2/articulus-1",
+                  "url": "/pars-3/sectio-1/caput-2#articulus-1",
+                  "firstParagraphNumber": 53,
+                  "lastParagraphNumber": 63,
                   "children": [
                     {
                       "contentType": "SUB_ARTICLE",
                       "titleData": {
-                        "title": "Non Pulmones Vestri Hoc Tempore Sunt",
+                        "title": "Ars Subtilis Paginarum Rescissio",
                         "typeLabel": "Subarticulus",
                         "contentNumber": 1,
                         "romanNumeral": "I"
                       },
-                      "pathID": "1__m.1__m.1__m.1__m.0",
-                      "semanticPath": "pars-1/sectio-2/caput-2/articulus-2/subarticulus-1",
-                      "url": "/pars-1/sectio-2/caput-2/articulus-2#subarticulus-1",
-                      "firstParagraphNumber": 59,
+                      "pathID": "3__m.0__m.1__m.0__m.0",
+                      "semanticPath": "pars-3/sectio-1/caput-2/articulus-1/subarticulus-1",
+                      "url": "/pars-3/sectio-1/caput-2#articulus-1/subarticulus-1",
+                      "firstParagraphNumber": 53,
+                      "lastParagraphNumber": 55,
+                      "children": []
+                    },
+                    {
+                      "contentType": "SUB_ARTICLE",
+                      "titleData": {
+                        "title": "Cicero: Mollis vs Dura “C” (Pugna Sequitur)",
+                        "typeLabel": "Subarticulus",
+                        "contentNumber": 2,
+                        "romanNumeral": "II"
+                      },
+                      "pathID": "3__m.0__m.1__m.0__m.1",
+                      "semanticPath": "pars-3/sectio-1/caput-2/articulus-1/subarticulus-2",
+                      "url": "/pars-3/sectio-1/caput-2#articulus-1/subarticulus-2",
+                      "firstParagraphNumber": 56,
                       "lastParagraphNumber": 60,
                       "children": []
                     },
@@ -620,11 +572,88 @@
                         "contentNumber": null,
                         "romanNumeral": null
                       },
-                      "pathID": "1__m.1__m.1__m.1__i",
-                      "semanticPath": "pars-1/sectio-2/caput-2/articulus-2/compendium",
-                      "url": "/pars-1/sectio-2/caput-2/articulus-2#compendium",
+                      "pathID": "3__m.0__m.1__m.0__i",
+                      "semanticPath": "pars-3/sectio-1/caput-2/articulus-1/compendium",
+                      "url": "/pars-3/sectio-1/caput-2#articulus-1/compendium",
                       "firstParagraphNumber": 61,
-                      "lastParagraphNumber": 62,
+                      "lastParagraphNumber": 63,
+                      "children": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "contentType": "CHAPTER",
+              "titleData": {
+                "title": "Excusationes per Historiam Oblatae",
+                "typeLabel": "Caput",
+                "contentNumber": 3,
+                "romanNumeral": "III"
+              },
+              "pathID": "3__m.0__m.2",
+              "semanticPath": "pars-3/sectio-1/caput-3",
+              "url": "/pars-3/sectio-1/caput-3",
+              "firstParagraphNumber": 64,
+              "lastParagraphNumber": 69,
+              "children": [
+                {
+                  "contentType": "ARTICLE",
+                  "titleData": {
+                    "title": "“Bos Meus Nutrimentum Exigit” (Excusatio Antiqua)",
+                    "typeLabel": "Articulus",
+                    "contentNumber": 1,
+                    "romanNumeral": "I"
+                  },
+                  "pathID": "3__m.0__m.2__m.0",
+                  "semanticPath": "pars-3/sectio-1/caput-3/articulus-1",
+                  "url": "/pars-3/sectio-1/caput-3#articulus-1",
+                  "firstParagraphNumber": 64,
+                  "lastParagraphNumber": 69,
+                  "children": [
+                    {
+                      "contentType": "SUB_ARTICLE",
+                      "titleData": {
+                        "title": "Debesne Rolâre R?",
+                        "typeLabel": "Subarticulus",
+                        "contentNumber": 1,
+                        "romanNumeral": "I"
+                      },
+                      "pathID": "3__m.0__m.2__m.0__m.0",
+                      "semanticPath": "pars-3/sectio-1/caput-3/articulus-1/subarticulus-1",
+                      "url": "/pars-3/sectio-1/caput-3#articulus-1/subarticulus-1",
+                      "firstParagraphNumber": 64,
+                      "lastParagraphNumber": 66,
+                      "children": []
+                    },
+                    {
+                      "contentType": "SUB_ARTICLE",
+                      "titleData": {
+                        "title": "Addere “-us” Ad Modum Officialem Apparere",
+                        "typeLabel": "Subarticulus",
+                        "contentNumber": 2,
+                        "romanNumeral": "II"
+                      },
+                      "pathID": "3__m.0__m.2__m.0__m.1",
+                      "semanticPath": "pars-3/sectio-1/caput-3/articulus-1/subarticulus-2",
+                      "url": "/pars-3/sectio-1/caput-3#articulus-1/subarticulus-2",
+                      "firstParagraphNumber": 67,
+                      "lastParagraphNumber": 67,
+                      "children": []
+                    },
+                    {
+                      "contentType": "IN_BRIEF",
+                      "titleData": {
+                        "title": "Compendium",
+                        "typeLabel": "Compendium",
+                        "contentNumber": null,
+                        "romanNumeral": null
+                      },
+                      "pathID": "3__m.0__m.2__m.0__i",
+                      "semanticPath": "pars-3/sectio-1/caput-3/articulus-1/compendium",
+                      "url": "/pars-3/sectio-1/caput-3#articulus-1/compendium",
+                      "firstParagraphNumber": 68,
+                      "lastParagraphNumber": 69,
                       "children": []
                     }
                   ]
@@ -636,153 +665,44 @@
         {
           "contentType": "SECTION",
           "titleData": {
-            "title": "In Magna American Fabula De Baseballum",
+            "title": "Decem Praecepta cum Notis Marginalibus",
             "typeLabel": "Sectio",
-            "contentNumber": 3,
-            "romanNumeral": "III"
+            "contentNumber": 2,
+            "romanNumeral": "II"
           },
-          "pathID": "1__m.2",
-          "semanticPath": "pars-1/sectio-3",
-          "url": "/pars-1/sectio-3",
-          "firstParagraphNumber": 63,
-          "lastParagraphNumber": 65,
-          "children": [
-            {
-              "contentType": "CHAPTER",
-              "titleData": {
-                "title": "Chartae Variae in Subsellio Vicini Tui Inventae",
-                "typeLabel": "Caput",
-                "contentNumber": 1,
-                "romanNumeral": "I"
-              },
-              "pathID": "1__m.2__m.0",
-              "semanticPath": "pars-1/sectio-3/caput-1",
-              "url": "/pars-1/sectio-3#caput-1",
-              "firstParagraphNumber": 63,
-              "lastParagraphNumber": 65,
-              "children": [
-                {
-                  "contentType": "ARTICLE",
-                  "titleData": {
-                    "title": "Tinniant eos Campanis",
-                    "typeLabel": "Articulus",
-                    "contentNumber": 1,
-                    "romanNumeral": "I"
-                  },
-                  "pathID": "1__m.2__m.0__m.0",
-                  "semanticPath": "pars-1/sectio-3/caput-1/articulus-1",
-                  "url": "/pars-1/sectio-3#caput-1/articulus-1",
-                  "firstParagraphNumber": 63,
-                  "lastParagraphNumber": 65,
-                  "children": [
-                    {
-                      "contentType": "SUB_ARTICLE",
-                      "titleData": {
-                        "title": "Ioculator Localis",
-                        "typeLabel": "Subarticulus",
-                        "contentNumber": 1,
-                        "romanNumeral": "I"
-                      },
-                      "pathID": "1__m.2__m.0__m.0__m.0",
-                      "semanticPath": "pars-1/sectio-3/caput-1/articulus-1/subarticulus-1",
-                      "url": "/pars-1/sectio-3#caput-1/articulus-1/subarticulus-1",
-                      "firstParagraphNumber": 63,
-                      "lastParagraphNumber": 64,
-                      "children": []
-                    },
-                    {
-                      "contentType": "IN_BRIEF",
-                      "titleData": {
-                        "title": "Compendium",
-                        "typeLabel": "Compendium",
-                        "contentNumber": null,
-                        "romanNumeral": null
-                      },
-                      "pathID": "1__m.2__m.0__m.0__i",
-                      "semanticPath": "pars-1/sectio-3/caput-1/articulus-1/compendium",
-                      "url": "/pars-1/sectio-3#caput-1/articulus-1/compendium",
-                      "firstParagraphNumber": 65,
-                      "lastParagraphNumber": 65,
-                      "children": []
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "contentType": "PART",
-      "titleData": {
-        "title": "A Calidum die in Vere",
-        "typeLabel": "Pars",
-        "contentNumber": 2,
-        "romanNumeral": "II"
-      },
-      "pathID": "2",
-      "semanticPath": "pars-2",
-      "url": "/pars-2",
-      "firstParagraphNumber": 66,
-      "lastParagraphNumber": 79,
-      "children": [
-        {
-          "contentType": "SECTION",
-          "titleData": {
-            "title": "Volans Cum Ullamcorper",
-            "typeLabel": "Sectio",
-            "contentNumber": 1,
-            "romanNumeral": "I"
-          },
-          "pathID": "2__m.0",
-          "semanticPath": "pars-2/sectio-1",
-          "url": "/pars-2#sectio-1",
-          "firstParagraphNumber": 67,
-          "lastParagraphNumber": 79,
+          "pathID": "3__m.1",
+          "semanticPath": "pars-3/sectio-2",
+          "url": "/pars-3/sectio-2",
+          "firstParagraphNumber": 70,
+          "lastParagraphNumber": 74,
           "children": [
             {
               "contentType": "ARTICLE",
               "titleData": {
-                "title": "Implicitus in Caeruleum",
+                "title": "“Wi-Fi Deficit” (Excusatio Moderna)",
                 "typeLabel": "Articulus",
                 "contentNumber": 1,
                 "romanNumeral": "I"
               },
-              "pathID": "2__m.0__m.0",
-              "semanticPath": "pars-2/sectio-1/articulus-1",
-              "url": "/pars-2#sectio-1/articulus-1",
-              "firstParagraphNumber": 67,
-              "lastParagraphNumber": 72,
+              "pathID": "3__m.1__m.0",
+              "semanticPath": "pars-3/sectio-2/articulus-1",
+              "url": "/pars-3/sectio-2#articulus-1",
+              "firstParagraphNumber": 71,
+              "lastParagraphNumber": 74,
               "children": [
                 {
                   "contentType": "SUB_ARTICLE",
                   "titleData": {
-                    "title": "Vis Locomotivae",
+                    "title": "In vino veritas apud Cenationes",
                     "typeLabel": "Subarticulus",
                     "contentNumber": 1,
                     "romanNumeral": "I"
                   },
-                  "pathID": "2__m.0__m.0__m.0",
-                  "semanticPath": "pars-2/sectio-1/articulus-1/subarticulus-1",
-                  "url": "/pars-2#sectio-1/articulus-1/subarticulus-1",
-                  "firstParagraphNumber": 67,
-                  "lastParagraphNumber": 67,
-                  "children": []
-                },
-                {
-                  "contentType": "SUB_ARTICLE",
-                  "titleData": {
-                    "title": "Fractus in Litore",
-                    "typeLabel": "Subarticulus",
-                    "contentNumber": 2,
-                    "romanNumeral": "II"
-                  },
-                  "pathID": "2__m.0__m.0__m.1",
-                  "semanticPath": "pars-2/sectio-1/articulus-1/subarticulus-2",
-                  "url": "/pars-2#sectio-1/articulus-1/subarticulus-2",
-                  "firstParagraphNumber": 68,
-                  "lastParagraphNumber": 68,
+                  "pathID": "3__m.1__m.0__m.0",
+                  "semanticPath": "pars-3/sectio-2/articulus-1/subarticulus-1",
+                  "url": "/pars-3/sectio-2#articulus-1/subarticulus-1",
+                  "firstParagraphNumber": 71,
+                  "lastParagraphNumber": 73,
                   "children": []
                 },
                 {
@@ -793,103 +713,11 @@
                     "contentNumber": null,
                     "romanNumeral": null
                   },
-                  "pathID": "2__m.0__m.0__i",
-                  "semanticPath": "pars-2/sectio-1/articulus-1/compendium",
-                  "url": "/pars-2#sectio-1/articulus-1/compendium",
-                  "firstParagraphNumber": 69,
-                  "lastParagraphNumber": 72,
-                  "children": []
-                }
-              ]
-            },
-            {
-              "contentType": "ARTICLE",
-              "titleData": {
-                "title": "Verisimile est Te Viam Tuam Ibis (et Ego Vadam Meum)",
-                "typeLabel": "Articulus",
-                "contentNumber": 2,
-                "romanNumeral": "II"
-              },
-              "pathID": "2__m.0__m.1",
-              "semanticPath": "pars-2/sectio-1/articulus-2",
-              "url": "/pars-2/sectio-1/articulus-2",
-              "firstParagraphNumber": 73,
-              "lastParagraphNumber": 76,
-              "children": [
-                {
-                  "contentType": "SUB_ARTICLE",
-                  "titleData": {
-                    "title": "Ambo Autostopistae Eramus",
-                    "typeLabel": "Subarticulus",
-                    "contentNumber": 1,
-                    "romanNumeral": "I"
-                  },
-                  "pathID": "2__m.0__m.1__m.0",
-                  "semanticPath": "pars-2/sectio-1/articulus-2/subarticulus-1",
-                  "url": "/pars-2/sectio-1/articulus-2#subarticulus-1",
-                  "firstParagraphNumber": 73,
-                  "lastParagraphNumber": 75,
-                  "children": []
-                },
-                {
-                  "contentType": "IN_BRIEF",
-                  "titleData": {
-                    "title": "Compendium",
-                    "typeLabel": "Compendium",
-                    "contentNumber": null,
-                    "romanNumeral": null
-                  },
-                  "pathID": "2__m.0__m.1__i",
-                  "semanticPath": "pars-2/sectio-1/articulus-2/compendium",
-                  "url": "/pars-2/sectio-1/articulus-2#compendium",
-                  "firstParagraphNumber": 76,
-                  "lastParagraphNumber": 76,
-                  "children": []
-                }
-              ]
-            },
-            {
-              "contentType": "ARTICLE",
-              "titleData": {
-                "title": "Adhæsit Intra Mobile Cum Memphis A Cappella Iterum",
-                "typeLabel": "Articulus",
-                "contentNumber": 3,
-                "romanNumeral": "III"
-              },
-              "pathID": "2__m.0__m.2",
-              "semanticPath": "pars-2/sectio-1/articulus-3",
-              "url": "/pars-2/sectio-1/articulus-3",
-              "firstParagraphNumber": 77,
-              "lastParagraphNumber": 79,
-              "children": [
-                {
-                  "contentType": "SUB_ARTICLE",
-                  "titleData": {
-                    "title": "Quaedam Machina Metallo Temperata",
-                    "typeLabel": "Subarticulus",
-                    "contentNumber": 1,
-                    "romanNumeral": "I"
-                  },
-                  "pathID": "2__m.0__m.2__m.0",
-                  "semanticPath": "pars-2/sectio-1/articulus-3/subarticulus-1",
-                  "url": "/pars-2/sectio-1/articulus-3#subarticulus-1",
-                  "firstParagraphNumber": 77,
-                  "lastParagraphNumber": 78,
-                  "children": []
-                },
-                {
-                  "contentType": "IN_BRIEF",
-                  "titleData": {
-                    "title": "Compendium",
-                    "typeLabel": "Compendium",
-                    "contentNumber": null,
-                    "romanNumeral": null
-                  },
-                  "pathID": "2__m.0__m.2__i",
-                  "semanticPath": "pars-2/sectio-1/articulus-3/compendium",
-                  "url": "/pars-2/sectio-1/articulus-3#compendium",
-                  "firstParagraphNumber": 79,
-                  "lastParagraphNumber": 79,
+                  "pathID": "3__m.1__m.0__i",
+                  "semanticPath": "pars-3/sectio-2/articulus-1/compendium",
+                  "url": "/pars-3/sectio-2#articulus-1/compendium",
+                  "firstParagraphNumber": 74,
+                  "lastParagraphNumber": 74,
                   "children": []
                 }
               ]
@@ -901,223 +729,7 @@
     {
       "contentType": "PART",
       "titleData": {
-        "title": "Et Tranquillitas Lucis Autumno Vesperam",
-        "typeLabel": "Pars",
-        "contentNumber": 3,
-        "romanNumeral": "III"
-      },
-      "pathID": "3",
-      "semanticPath": "pars-3",
-      "url": "/pars-3",
-      "firstParagraphNumber": 80,
-      "lastParagraphNumber": 104,
-      "children": [
-        {
-          "contentType": "SECTION",
-          "titleData": {
-            "title": "Cursor In Pluvia",
-            "typeLabel": "Sectio",
-            "contentNumber": 1,
-            "romanNumeral": "I"
-          },
-          "pathID": "3__m.0",
-          "semanticPath": "pars-3/sectio-1",
-          "url": "/pars-3#sectio-1",
-          "firstParagraphNumber": 80,
-          "lastParagraphNumber": 104,
-          "children": [
-            {
-              "contentType": "CHAPTER",
-              "titleData": {
-                "title": "Documenta Scholae Veteris",
-                "typeLabel": "Caput",
-                "contentNumber": 1,
-                "romanNumeral": "I"
-              },
-              "pathID": "3__m.0__m.0",
-              "semanticPath": "pars-3/sectio-1/caput-1",
-              "url": "/pars-3#sectio-1/caput-1",
-              "firstParagraphNumber": 81,
-              "lastParagraphNumber": 104,
-              "children": [
-                {
-                  "contentType": "ARTICLE",
-                  "titleData": {
-                    "title": "Unum Calicem Capulus (Vallis Infra)",
-                    "typeLabel": "Articulus",
-                    "contentNumber": 1,
-                    "romanNumeral": "I"
-                  },
-                  "pathID": "3__m.0__m.0__m.0",
-                  "semanticPath": "pars-3/sectio-1/caput-1/articulus-1",
-                  "url": "/pars-3#sectio-1/caput-1/articulus-1",
-                  "firstParagraphNumber": 81,
-                  "lastParagraphNumber": 104,
-                  "children": [
-                    {
-                      "contentType": "ARTICLE_PARAGRAPH",
-                      "titleData": {
-                        "title": "Motocycli ad Navigationem Implentur",
-                        "typeLabel": "Articulus Paragraphus",
-                        "contentNumber": 1,
-                        "romanNumeral": "I"
-                      },
-                      "pathID": "3__m.0__m.0__m.0__m.0",
-                      "semanticPath": "pars-3/sectio-1/caput-1/articulus-1/articulus-paragraphus-1",
-                      "url": "/pars-3#sectio-1/caput-1/articulus-1/articulus-paragraphus-1",
-                      "firstParagraphNumber": 81,
-                      "lastParagraphNumber": 96,
-                      "children": [
-                        {
-                          "contentType": "SUB_ARTICLE",
-                          "titleData": {
-                            "title": "Litore Alieno, Remoto",
-                            "typeLabel": "Subarticulus",
-                            "contentNumber": 1,
-                            "romanNumeral": "I"
-                          },
-                          "pathID": "3__m.0__m.0__m.0__m.0__m.0",
-                          "semanticPath": "pars-3/sectio-1/caput-1/articulus-1/articulus-paragraphus-1/subarticulus-1",
-                          "url": "/pars-3#sectio-1/caput-1/articulus-1/articulus-paragraphus-1/subarticulus-1",
-                          "firstParagraphNumber": 81,
-                          "lastParagraphNumber": 83,
-                          "children": []
-                        },
-                        {
-                          "contentType": "SUB_ARTICLE",
-                          "titleData": {
-                            "title": "Omnes Fenestras Vestras Fregi",
-                            "typeLabel": "Subarticulus",
-                            "contentNumber": 2,
-                            "romanNumeral": "II"
-                          },
-                          "pathID": "3__m.0__m.0__m.0__m.0__m.1",
-                          "semanticPath": "pars-3/sectio-1/caput-1/articulus-1/articulus-paragraphus-1/subarticulus-2",
-                          "url": "/pars-3#sectio-1/caput-1/articulus-1/articulus-paragraphus-1/subarticulus-2",
-                          "firstParagraphNumber": 84,
-                          "lastParagraphNumber": 87,
-                          "children": []
-                        },
-                        {
-                          "contentType": "SUB_ARTICLE",
-                          "titleData": {
-                            "title": "Per Omnes Ianuas Vestras Perrupi",
-                            "typeLabel": "Subarticulus",
-                            "contentNumber": 3,
-                            "romanNumeral": "III"
-                          },
-                          "pathID": "3__m.0__m.0__m.0__m.0__m.2",
-                          "semanticPath": "pars-3/sectio-1/caput-1/articulus-1/articulus-paragraphus-1/subarticulus-3",
-                          "url": "/pars-3#sectio-1/caput-1/articulus-1/articulus-paragraphus-1/subarticulus-3",
-                          "firstParagraphNumber": 88,
-                          "lastParagraphNumber": 94,
-                          "children": []
-                        },
-                        {
-                          "contentType": "IN_BRIEF",
-                          "titleData": {
-                            "title": "Compendium",
-                            "typeLabel": "Compendium",
-                            "contentNumber": null,
-                            "romanNumeral": null
-                          },
-                          "pathID": "3__m.0__m.0__m.0__m.0__i",
-                          "semanticPath": "pars-3/sectio-1/caput-1/articulus-1/articulus-paragraphus-1/compendium",
-                          "url": "/pars-3#sectio-1/caput-1/articulus-1/articulus-paragraphus-1/compendium",
-                          "firstParagraphNumber": 95,
-                          "lastParagraphNumber": 96,
-                          "children": []
-                        }
-                      ]
-                    },
-                    {
-                      "contentType": "ARTICLE_PARAGRAPH",
-                      "titleData": {
-                        "title": "Naves Velariae Nominatae ex Pilotis",
-                        "typeLabel": "Articulus Paragraphus",
-                        "contentNumber": 2,
-                        "romanNumeral": "II"
-                      },
-                      "pathID": "3__m.0__m.0__m.0__m.1",
-                      "semanticPath": "pars-3/sectio-1/caput-1/articulus-1/articulus-paragraphus-2",
-                      "url": "/pars-3/sectio-1/caput-1/articulus-1/articulus-paragraphus-2",
-                      "firstParagraphNumber": 97,
-                      "lastParagraphNumber": 104,
-                      "children": [
-                        {
-                          "contentType": "SUB_ARTICLE",
-                          "titleData": {
-                            "title": "Non Somnolentus Sum",
-                            "typeLabel": "Subarticulus",
-                            "contentNumber": 1,
-                            "romanNumeral": "I"
-                          },
-                          "pathID": "3__m.0__m.0__m.0__m.1__m.0",
-                          "semanticPath": "pars-3/sectio-1/caput-1/articulus-1/articulus-paragraphus-2/subarticulus-1",
-                          "url": "/pars-3/sectio-1/caput-1/articulus-1/articulus-paragraphus-2#subarticulus-1",
-                          "firstParagraphNumber": 97,
-                          "lastParagraphNumber": 97,
-                          "children": []
-                        },
-                        {
-                          "contentType": "SUB_ARTICLE",
-                          "titleData": {
-                            "title": "Tintinnabulum Tinnitus Mane",
-                            "typeLabel": "Subarticulus",
-                            "contentNumber": 2,
-                            "romanNumeral": "II"
-                          },
-                          "pathID": "3__m.0__m.0__m.0__m.1__m.1",
-                          "semanticPath": "pars-3/sectio-1/caput-1/articulus-1/articulus-paragraphus-2/subarticulus-2",
-                          "url": "/pars-3/sectio-1/caput-1/articulus-1/articulus-paragraphus-2#subarticulus-2",
-                          "firstParagraphNumber": 98,
-                          "lastParagraphNumber": 98,
-                          "children": []
-                        },
-                        {
-                          "contentType": "SUB_ARTICLE",
-                          "titleData": {
-                            "title": "Imperium Vesperti",
-                            "typeLabel": "Subarticulus",
-                            "contentNumber": 3,
-                            "romanNumeral": "III"
-                          },
-                          "pathID": "3__m.0__m.0__m.0__m.1__m.2",
-                          "semanticPath": "pars-3/sectio-1/caput-1/articulus-1/articulus-paragraphus-2/subarticulus-3",
-                          "url": "/pars-3/sectio-1/caput-1/articulus-1/articulus-paragraphus-2#subarticulus-3",
-                          "firstParagraphNumber": 99,
-                          "lastParagraphNumber": 100,
-                          "children": []
-                        },
-                        {
-                          "contentType": "IN_BRIEF",
-                          "titleData": {
-                            "title": "Compendium",
-                            "typeLabel": "Compendium",
-                            "contentNumber": null,
-                            "romanNumeral": null
-                          },
-                          "pathID": "3__m.0__m.0__m.0__m.1__i",
-                          "semanticPath": "pars-3/sectio-1/caput-1/articulus-1/articulus-paragraphus-2/compendium",
-                          "url": "/pars-3/sectio-1/caput-1/articulus-1/articulus-paragraphus-2#compendium",
-                          "firstParagraphNumber": 101,
-                          "lastParagraphNumber": 104,
-                          "children": []
-                        }
-                      ]
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "contentType": "PART",
-      "titleData": {
-        "title": "Aestate Sine Fine",
+        "title": "Vita in Gratia (Vel Conans)",
         "typeLabel": "Pars",
         "contentNumber": 4,
         "romanNumeral": "IV"
@@ -1125,13 +737,13 @@
       "pathID": "4",
       "semanticPath": "pars-4",
       "url": "/pars-4",
-      "firstParagraphNumber": 105,
-      "lastParagraphNumber": 143,
+      "firstParagraphNumber": 75,
+      "lastParagraphNumber": 186,
       "children": [
         {
           "contentType": "SECTION",
           "titleData": {
-            "title": "Exploratio Oblivioni Loca",
+            "title": "Virtutes et Vitia Quae Ad Confectum Finale Non Pervenerunt",
             "typeLabel": "Sectio",
             "contentNumber": 1,
             "romanNumeral": "I"
@@ -1139,13 +751,13 @@
           "pathID": "4__m.0",
           "semanticPath": "pars-4/sectio-1",
           "url": "/pars-4#sectio-1",
-          "firstParagraphNumber": 105,
-          "lastParagraphNumber": 143,
+          "firstParagraphNumber": 75,
+          "lastParagraphNumber": 134,
           "children": [
             {
               "contentType": "CHAPTER",
               "titleData": {
-                "title": "Photographiae Carnevalis Albae et Nigrae",
+                "title": "Persistens Invitatio Gratiae",
                 "typeLabel": "Caput",
                 "contentNumber": 1,
                 "romanNumeral": "I"
@@ -1153,138 +765,30 @@
               "pathID": "4__m.0__m.0",
               "semanticPath": "pars-4/sectio-1/caput-1",
               "url": "/pars-4#sectio-1/caput-1",
-              "firstParagraphNumber": 105,
-              "lastParagraphNumber": 116,
+              "firstParagraphNumber": 75,
+              "lastParagraphNumber": 77,
               "children": [
                 {
-                  "contentType": "ARTICLE",
+                  "contentType": "SUB_ARTICLE",
                   "titleData": {
-                    "title": "Temporibus sunt Mutantur",
-                    "typeLabel": "Articulus",
+                    "title": "Sic semper tyrannis in Colloquiis Politicalibus",
+                    "typeLabel": "Subarticulus",
                     "contentNumber": 1,
                     "romanNumeral": "I"
                   },
                   "pathID": "4__m.0__m.0__m.0",
-                  "semanticPath": "pars-4/sectio-1/caput-1/articulus-1",
-                  "url": "/pars-4#sectio-1/caput-1/articulus-1",
-                  "firstParagraphNumber": 105,
-                  "lastParagraphNumber": 110,
-                  "children": [
-                    {
-                      "contentType": "ARTICLE_PARAGRAPH",
-                      "titleData": {
-                        "title": "Res Quas Procyones Non Comedunt",
-                        "typeLabel": "Articulus Paragraphus",
-                        "contentNumber": 1,
-                        "romanNumeral": "I"
-                      },
-                      "pathID": "4__m.0__m.0__m.0__m.0",
-                      "semanticPath": "pars-4/sectio-1/caput-1/articulus-1/articulus-paragraphus-1",
-                      "url": "/pars-4#sectio-1/caput-1/articulus-1/articulus-paragraphus-1",
-                      "firstParagraphNumber": 105,
-                      "lastParagraphNumber": 110,
-                      "children": [
-                        {
-                          "contentType": "SUB_ARTICLE",
-                          "titleData": {
-                            "title": "Navis Magica Volubilis",
-                            "typeLabel": "Subarticulus",
-                            "contentNumber": 1,
-                            "romanNumeral": "I"
-                          },
-                          "pathID": "4__m.0__m.0__m.0__m.0__m.0",
-                          "semanticPath": "pars-4/sectio-1/caput-1/articulus-1/articulus-paragraphus-1/subarticulus-1",
-                          "url": "/pars-4#sectio-1/caput-1/articulus-1/articulus-paragraphus-1/subarticulus-1",
-                          "firstParagraphNumber": 105,
-                          "lastParagraphNumber": 107,
-                          "children": []
-                        },
-                        {
-                          "contentType": "IN_BRIEF",
-                          "titleData": {
-                            "title": "Compendium",
-                            "typeLabel": "Compendium",
-                            "contentNumber": null,
-                            "romanNumeral": null
-                          },
-                          "pathID": "4__m.0__m.0__m.0__m.0__i",
-                          "semanticPath": "pars-4/sectio-1/caput-1/articulus-1/articulus-paragraphus-1/compendium",
-                          "url": "/pars-4#sectio-1/caput-1/articulus-1/articulus-paragraphus-1/compendium",
-                          "firstParagraphNumber": 108,
-                          "lastParagraphNumber": 110,
-                          "children": []
-                        }
-                      ]
-                    }
-                  ]
-                },
-                {
-                  "contentType": "ARTICLE",
-                  "titleData": {
-                    "title": "Reducere Eam Omnes Reversus in Domum Suam",
-                    "typeLabel": "Articulus",
-                    "contentNumber": 2,
-                    "romanNumeral": "II"
-                  },
-                  "pathID": "4__m.0__m.0__m.1",
-                  "semanticPath": "pars-4/sectio-1/caput-1/articulus-2",
-                  "url": "/pars-4/sectio-1/caput-1/articulus-2",
-                  "firstParagraphNumber": 111,
-                  "lastParagraphNumber": 116,
-                  "children": [
-                    {
-                      "contentType": "SUB_ARTICLE",
-                      "titleData": {
-                        "title": "Paratus Sum Quolibet Ire",
-                        "typeLabel": "Subarticulus",
-                        "contentNumber": 1,
-                        "romanNumeral": "I"
-                      },
-                      "pathID": "4__m.0__m.0__m.1__m.0",
-                      "semanticPath": "pars-4/sectio-1/caput-1/articulus-2/subarticulus-1",
-                      "url": "/pars-4/sectio-1/caput-1/articulus-2#subarticulus-1",
-                      "firstParagraphNumber": 111,
-                      "lastParagraphNumber": 111,
-                      "children": []
-                    },
-                    {
-                      "contentType": "SUB_ARTICLE",
-                      "titleData": {
-                        "title": "Furiose Trans Solem Pendulans",
-                        "typeLabel": "Subarticulus",
-                        "contentNumber": 2,
-                        "romanNumeral": "II"
-                      },
-                      "pathID": "4__m.0__m.0__m.1__m.1",
-                      "semanticPath": "pars-4/sectio-1/caput-1/articulus-2/subarticulus-2",
-                      "url": "/pars-4/sectio-1/caput-1/articulus-2#subarticulus-2",
-                      "firstParagraphNumber": 112,
-                      "lastParagraphNumber": 114,
-                      "children": []
-                    },
-                    {
-                      "contentType": "IN_BRIEF",
-                      "titleData": {
-                        "title": "Compendium",
-                        "typeLabel": "Compendium",
-                        "contentNumber": null,
-                        "romanNumeral": null
-                      },
-                      "pathID": "4__m.0__m.0__m.1__i",
-                      "semanticPath": "pars-4/sectio-1/caput-1/articulus-2/compendium",
-                      "url": "/pars-4/sectio-1/caput-1/articulus-2#compendium",
-                      "firstParagraphNumber": 115,
-                      "lastParagraphNumber": 116,
-                      "children": []
-                    }
-                  ]
+                  "semanticPath": "pars-4/sectio-1/caput-1/subarticulus-1",
+                  "url": "/pars-4#sectio-1/caput-1/subarticulus-1",
+                  "firstParagraphNumber": 75,
+                  "lastParagraphNumber": 77,
+                  "children": []
                 }
               ]
             },
             {
               "contentType": "CHAPTER",
               "titleData": {
-                "title": "Memoriae Praefectorum Urbis Minnesotae",
+                "title": "Fortasse Textum Respondes",
                 "typeLabel": "Caput",
                 "contentNumber": 2,
                 "romanNumeral": "II"
@@ -1292,13 +796,13 @@
               "pathID": "4__m.0__m.1",
               "semanticPath": "pars-4/sectio-1/caput-2",
               "url": "/pars-4/sectio-1/caput-2",
-              "firstParagraphNumber": 117,
-              "lastParagraphNumber": 128,
+              "firstParagraphNumber": 78,
+              "lastParagraphNumber": 112,
               "children": [
                 {
                   "contentType": "ARTICLE",
                   "titleData": {
-                    "title": "Via LXI Revisit",
+                    "title": "Divinus Horologium Sine Optionis Postponendi",
                     "typeLabel": "Articulus",
                     "contentNumber": 1,
                     "romanNumeral": "I"
@@ -1306,13 +810,13 @@
                   "pathID": "4__m.0__m.1__m.0",
                   "semanticPath": "pars-4/sectio-1/caput-2/articulus-1",
                   "url": "/pars-4/sectio-1/caput-2#articulus-1",
-                  "firstParagraphNumber": 117,
-                  "lastParagraphNumber": 123,
+                  "firstParagraphNumber": 78,
+                  "lastParagraphNumber": 83,
                   "children": [
                     {
                       "contentType": "SUB_ARTICLE",
                       "titleData": {
-                        "title": "Fugens Fugans",
+                        "title": "Et cetera pro Emergenitiis Theologicis",
                         "typeLabel": "Subarticulus",
                         "contentNumber": 1,
                         "romanNumeral": "I"
@@ -1320,23 +824,8 @@
                       "pathID": "4__m.0__m.1__m.0__m.0",
                       "semanticPath": "pars-4/sectio-1/caput-2/articulus-1/subarticulus-1",
                       "url": "/pars-4/sectio-1/caput-2#articulus-1/subarticulus-1",
-                      "firstParagraphNumber": 117,
-                      "lastParagraphNumber": 118,
-                      "children": []
-                    },
-                    {
-                      "contentType": "SUB_ARTICLE",
-                      "titleData": {
-                        "title": "Scurra Pannosa",
-                        "typeLabel": "Subarticulus",
-                        "contentNumber": 2,
-                        "romanNumeral": "II"
-                      },
-                      "pathID": "4__m.0__m.1__m.0__m.1",
-                      "semanticPath": "pars-4/sectio-1/caput-2/articulus-1/subarticulus-2",
-                      "url": "/pars-4/sectio-1/caput-2#articulus-1/subarticulus-2",
-                      "firstParagraphNumber": 119,
-                      "lastParagraphNumber": 119,
+                      "firstParagraphNumber": 78,
+                      "lastParagraphNumber": 80,
                       "children": []
                     },
                     {
@@ -1350,8 +839,8 @@
                       "pathID": "4__m.0__m.1__m.0__i",
                       "semanticPath": "pars-4/sectio-1/caput-2/articulus-1/compendium",
                       "url": "/pars-4/sectio-1/caput-2#articulus-1/compendium",
-                      "firstParagraphNumber": 120,
-                      "lastParagraphNumber": 123,
+                      "firstParagraphNumber": 81,
+                      "lastParagraphNumber": 83,
                       "children": []
                     }
                   ]
@@ -1359,7 +848,7 @@
                 {
                   "contentType": "ARTICLE",
                   "titleData": {
-                    "title": "Sanguis Vestigia",
+                    "title": "Providentia Conflictus Tempestivos Pro Bono Nostro Ordinans",
                     "typeLabel": "Articulus",
                     "contentNumber": 2,
                     "romanNumeral": "II"
@@ -1367,23 +856,236 @@
                   "pathID": "4__m.0__m.1__m.1",
                   "semanticPath": "pars-4/sectio-1/caput-2/articulus-2",
                   "url": "/pars-4/sectio-1/caput-2/articulus-2",
-                  "firstParagraphNumber": 124,
-                  "lastParagraphNumber": 128,
+                  "firstParagraphNumber": 84,
+                  "lastParagraphNumber": 112,
                   "children": [
                     {
-                      "contentType": "IN_BRIEF",
+                      "contentType": "ARTICLE_PARAGRAPH",
                       "titleData": {
-                        "title": "Compendium",
-                        "typeLabel": "Compendium",
-                        "contentNumber": null,
-                        "romanNumeral": null
+                        "title": "Picturae Parietales ut Proto-Sacramenta",
+                        "typeLabel": "Articulus Paragraphus",
+                        "contentNumber": 1,
+                        "romanNumeral": "I"
                       },
-                      "pathID": "4__m.0__m.1__m.1__i",
-                      "semanticPath": "pars-4/sectio-1/caput-2/articulus-2/compendium",
-                      "url": "/pars-4/sectio-1/caput-2/articulus-2#compendium",
-                      "firstParagraphNumber": 128,
-                      "lastParagraphNumber": 128,
-                      "children": []
+                      "pathID": "4__m.0__m.1__m.1__m.0",
+                      "semanticPath": "pars-4/sectio-1/caput-2/articulus-2/articulus-paragraphus-1",
+                      "url": "/pars-4/sectio-1/caput-2/articulus-2#articulus-paragraphus-1",
+                      "firstParagraphNumber": 84,
+                      "lastParagraphNumber": 92,
+                      "children": [
+                        {
+                          "contentType": "SUB_ARTICLE",
+                          "titleData": {
+                            "title": "Cogitabunda Intuentia in Longinqua",
+                            "typeLabel": "Subarticulus",
+                            "contentNumber": 1,
+                            "romanNumeral": "I"
+                          },
+                          "pathID": "4__m.0__m.1__m.1__m.0__m.0",
+                          "semanticPath": "pars-4/sectio-1/caput-2/articulus-2/articulus-paragraphus-1/subarticulus-1",
+                          "url": "/pars-4/sectio-1/caput-2/articulus-2#articulus-paragraphus-1/subarticulus-1",
+                          "firstParagraphNumber": 84,
+                          "lastParagraphNumber": 85,
+                          "children": []
+                        },
+                        {
+                          "contentType": "SUB_ARTICLE",
+                          "titleData": {
+                            "title": "Imperium Academicum Shrugging",
+                            "typeLabel": "Subarticulus",
+                            "contentNumber": 2,
+                            "romanNumeral": "II"
+                          },
+                          "pathID": "4__m.0__m.1__m.1__m.0__m.1",
+                          "semanticPath": "pars-4/sectio-1/caput-2/articulus-2/articulus-paragraphus-1/subarticulus-2",
+                          "url": "/pars-4/sectio-1/caput-2/articulus-2#articulus-paragraphus-1/subarticulus-2",
+                          "firstParagraphNumber": 86,
+                          "lastParagraphNumber": 88,
+                          "children": []
+                        },
+                        {
+                          "contentType": "SUB_ARTICLE",
+                          "titleData": {
+                            "title": "Conversatio Ad Augustinum Redirecta",
+                            "typeLabel": "Subarticulus",
+                            "contentNumber": 3,
+                            "romanNumeral": "III"
+                          },
+                          "pathID": "4__m.0__m.1__m.1__m.0__m.2",
+                          "semanticPath": "pars-4/sectio-1/caput-2/articulus-2/articulus-paragraphus-1/subarticulus-3",
+                          "url": "/pars-4/sectio-1/caput-2/articulus-2#articulus-paragraphus-1/subarticulus-3",
+                          "firstParagraphNumber": 89,
+                          "lastParagraphNumber": 91,
+                          "children": []
+                        },
+                        {
+                          "contentType": "IN_BRIEF",
+                          "titleData": {
+                            "title": "Compendium",
+                            "typeLabel": "Compendium",
+                            "contentNumber": null,
+                            "romanNumeral": null
+                          },
+                          "pathID": "4__m.0__m.1__m.1__m.0__i",
+                          "semanticPath": "pars-4/sectio-1/caput-2/articulus-2/articulus-paragraphus-1/compendium",
+                          "url": "/pars-4/sectio-1/caput-2/articulus-2#articulus-paragraphus-1/compendium",
+                          "firstParagraphNumber": 92,
+                          "lastParagraphNumber": 92,
+                          "children": []
+                        }
+                      ]
+                    },
+                    {
+                      "contentType": "ARTICLE_PARAGRAPH",
+                      "titleData": {
+                        "title": "Venationes Mammothum et Mysticae Canticum",
+                        "typeLabel": "Articulus Paragraphus",
+                        "contentNumber": 2,
+                        "romanNumeral": "II"
+                      },
+                      "pathID": "4__m.0__m.1__m.1__m.1",
+                      "semanticPath": "pars-4/sectio-1/caput-2/articulus-2/articulus-paragraphus-2",
+                      "url": "/pars-4/sectio-1/caput-2/articulus-2/articulus-paragraphus-2",
+                      "firstParagraphNumber": 93,
+                      "lastParagraphNumber": 102,
+                      "children": [
+                        {
+                          "contentType": "SUB_ARTICLE",
+                          "titleData": {
+                            "title": "Fides in Mysteriis Invisibilibus Fida",
+                            "typeLabel": "Subarticulus",
+                            "contentNumber": 1,
+                            "romanNumeral": "I"
+                          },
+                          "pathID": "4__m.0__m.1__m.1__m.1__m.0",
+                          "semanticPath": "pars-4/sectio-1/caput-2/articulus-2/articulus-paragraphus-2/subarticulus-1",
+                          "url": "/pars-4/sectio-1/caput-2/articulus-2/articulus-paragraphus-2#subarticulus-1",
+                          "firstParagraphNumber": 93,
+                          "lastParagraphNumber": 94,
+                          "children": []
+                        },
+                        {
+                          "contentType": "SUB_ARTICLE",
+                          "titleData": {
+                            "title": "Quomodo Fides Est Usus Bluetooth Aurium",
+                            "typeLabel": "Subarticulus",
+                            "contentNumber": 2,
+                            "romanNumeral": "II"
+                          },
+                          "pathID": "4__m.0__m.1__m.1__m.1__m.1",
+                          "semanticPath": "pars-4/sectio-1/caput-2/articulus-2/articulus-paragraphus-2/subarticulus-2",
+                          "url": "/pars-4/sectio-1/caput-2/articulus-2/articulus-paragraphus-2#subarticulus-2",
+                          "firstParagraphNumber": 95,
+                          "lastParagraphNumber": 98,
+                          "children": []
+                        },
+                        {
+                          "contentType": "SUB_ARTICLE",
+                          "titleData": {
+                            "title": "Fides Ultra Probationem Scientificam",
+                            "typeLabel": "Subarticulus",
+                            "contentNumber": 3,
+                            "romanNumeral": "III"
+                          },
+                          "pathID": "4__m.0__m.1__m.1__m.1__m.2",
+                          "semanticPath": "pars-4/sectio-1/caput-2/articulus-2/articulus-paragraphus-2/subarticulus-3",
+                          "url": "/pars-4/sectio-1/caput-2/articulus-2/articulus-paragraphus-2#subarticulus-3",
+                          "firstParagraphNumber": 99,
+                          "lastParagraphNumber": 99,
+                          "children": []
+                        },
+                        {
+                          "contentType": "IN_BRIEF",
+                          "titleData": {
+                            "title": "Compendium",
+                            "typeLabel": "Compendium",
+                            "contentNumber": null,
+                            "romanNumeral": null
+                          },
+                          "pathID": "4__m.0__m.1__m.1__m.1__i",
+                          "semanticPath": "pars-4/sectio-1/caput-2/articulus-2/articulus-paragraphus-2/compendium",
+                          "url": "/pars-4/sectio-1/caput-2/articulus-2/articulus-paragraphus-2#compendium",
+                          "firstParagraphNumber": 100,
+                          "lastParagraphNumber": 102,
+                          "children": []
+                        }
+                      ]
+                    },
+                    {
+                      "contentType": "ARTICLE_PARAGRAPH",
+                      "titleData": {
+                        "title": "Socrates Hospites Comedentes Invadens",
+                        "typeLabel": "Articulus Paragraphus",
+                        "contentNumber": 3,
+                        "romanNumeral": "III"
+                      },
+                      "pathID": "4__m.0__m.1__m.1__m.2",
+                      "semanticPath": "pars-4/sectio-1/caput-2/articulus-2/articulus-paragraphus-3",
+                      "url": "/pars-4/sectio-1/caput-2/articulus-2/articulus-paragraphus-3",
+                      "firstParagraphNumber": 103,
+                      "lastParagraphNumber": 112,
+                      "children": [
+                        {
+                          "contentType": "SUB_ARTICLE",
+                          "titleData": {
+                            "title": "Cur Deus Non Semper Primo Annuo Respondit",
+                            "typeLabel": "Subarticulus",
+                            "contentNumber": 1,
+                            "romanNumeral": "I"
+                          },
+                          "pathID": "4__m.0__m.1__m.1__m.2__m.0",
+                          "semanticPath": "pars-4/sectio-1/caput-2/articulus-2/articulus-paragraphus-3/subarticulus-1",
+                          "url": "/pars-4/sectio-1/caput-2/articulus-2/articulus-paragraphus-3#subarticulus-1",
+                          "firstParagraphNumber": 103,
+                          "lastParagraphNumber": 104,
+                          "children": []
+                        },
+                        {
+                          "contentType": "SUB_ARTICLE",
+                          "titleData": {
+                            "title": "Zonae Spirituales Mortuae",
+                            "typeLabel": "Subarticulus",
+                            "contentNumber": 2,
+                            "romanNumeral": "II"
+                          },
+                          "pathID": "4__m.0__m.1__m.1__m.2__m.1",
+                          "semanticPath": "pars-4/sectio-1/caput-2/articulus-2/articulus-paragraphus-3/subarticulus-2",
+                          "url": "/pars-4/sectio-1/caput-2/articulus-2/articulus-paragraphus-3#subarticulus-2",
+                          "firstParagraphNumber": 105,
+                          "lastParagraphNumber": 108,
+                          "children": []
+                        },
+                        {
+                          "contentType": "SUB_ARTICLE",
+                          "titleData": {
+                            "title": "Rosarium: Mysteria, Noduli, et Monilia Sub Solio",
+                            "typeLabel": "Subarticulus",
+                            "contentNumber": 3,
+                            "romanNumeral": "III"
+                          },
+                          "pathID": "4__m.0__m.1__m.1__m.2__m.2",
+                          "semanticPath": "pars-4/sectio-1/caput-2/articulus-2/articulus-paragraphus-3/subarticulus-3",
+                          "url": "/pars-4/sectio-1/caput-2/articulus-2/articulus-paragraphus-3#subarticulus-3",
+                          "firstParagraphNumber": 109,
+                          "lastParagraphNumber": 111,
+                          "children": []
+                        },
+                        {
+                          "contentType": "IN_BRIEF",
+                          "titleData": {
+                            "title": "Compendium",
+                            "typeLabel": "Compendium",
+                            "contentNumber": null,
+                            "romanNumeral": null
+                          },
+                          "pathID": "4__m.0__m.1__m.1__m.2__i",
+                          "semanticPath": "pars-4/sectio-1/caput-2/articulus-2/articulus-paragraphus-3/compendium",
+                          "url": "/pars-4/sectio-1/caput-2/articulus-2/articulus-paragraphus-3#compendium",
+                          "firstParagraphNumber": 112,
+                          "lastParagraphNumber": 112,
+                          "children": []
+                        }
+                      ]
                     }
                   ]
                 }
@@ -1392,7 +1094,7 @@
             {
               "contentType": "CHAPTER",
               "titleData": {
-                "title": "Omnis Manuscriptus Quem Magister Gymnasii Septimi Gradus Numquam Edidit",
+                "title": "Servans Sanctum Fines Hebdomadis",
                 "typeLabel": "Caput",
                 "contentNumber": 3,
                 "romanNumeral": "III"
@@ -1400,13 +1102,13 @@
               "pathID": "4__m.0__m.2",
               "semanticPath": "pars-4/sectio-1/caput-3",
               "url": "/pars-4/sectio-1/caput-3",
-              "firstParagraphNumber": 129,
-              "lastParagraphNumber": 143,
+              "firstParagraphNumber": 113,
+              "lastParagraphNumber": 134,
               "children": [
                 {
                   "contentType": "ARTICLE",
                   "titleData": {
-                    "title": "Amor et Furtum",
+                    "title": "Gravitas Traditionis",
                     "typeLabel": "Articulus",
                     "contentNumber": 1,
                     "romanNumeral": "I"
@@ -1414,39 +1116,9 @@
                   "pathID": "4__m.0__m.2__m.0",
                   "semanticPath": "pars-4/sectio-1/caput-3/articulus-1",
                   "url": "/pars-4/sectio-1/caput-3#articulus-1",
-                  "firstParagraphNumber": 129,
-                  "lastParagraphNumber": 136,
+                  "firstParagraphNumber": 113,
+                  "lastParagraphNumber": 118,
                   "children": [
-                    {
-                      "contentType": "SUB_ARTICLE",
-                      "titleData": {
-                        "title": "Contorta Finis Doloris Insani",
-                        "typeLabel": "Subarticulus",
-                        "contentNumber": 1,
-                        "romanNumeral": "I"
-                      },
-                      "pathID": "4__m.0__m.2__m.0__m.0",
-                      "semanticPath": "pars-4/sectio-1/caput-3/articulus-1/subarticulus-1",
-                      "url": "/pars-4/sectio-1/caput-3#articulus-1/subarticulus-1",
-                      "firstParagraphNumber": 129,
-                      "lastParagraphNumber": 129,
-                      "children": []
-                    },
-                    {
-                      "contentType": "SUB_ARTICLE",
-                      "titleData": {
-                        "title": "Arbores Perterritae et Infestae",
-                        "typeLabel": "Subarticulus",
-                        "contentNumber": 2,
-                        "romanNumeral": "II"
-                      },
-                      "pathID": "4__m.0__m.2__m.0__m.1",
-                      "semanticPath": "pars-4/sectio-1/caput-3/articulus-1/subarticulus-2",
-                      "url": "/pars-4/sectio-1/caput-3#articulus-1/subarticulus-2",
-                      "firstParagraphNumber": 130,
-                      "lastParagraphNumber": 131,
-                      "children": []
-                    },
                     {
                       "contentType": "IN_BRIEF",
                       "titleData": {
@@ -1458,23 +1130,8 @@
                       "pathID": "4__m.0__m.2__m.0__i",
                       "semanticPath": "pars-4/sectio-1/caput-3/articulus-1/compendium",
                       "url": "/pars-4/sectio-1/caput-3#articulus-1/compendium",
-                      "firstParagraphNumber": 132,
-                      "lastParagraphNumber": 135,
-                      "children": []
-                    },
-                    {
-                      "contentType": "PARAGRAPH_GROUP",
-                      "titleData": {
-                        "title": "Duodecim Planetae Mirabiles",
-                        "typeLabel": "Paragraphus Classis",
-                        "contentNumber": 1,
-                        "romanNumeral": "I"
-                      },
-                      "pathID": "4__m.0__m.2__m.0__f.0",
-                      "semanticPath": "pars-4/sectio-1/caput-3/articulus-1/finalis-contentus",
-                      "url": "/pars-4/sectio-1/caput-3#articulus-1/finalis-contentus",
-                      "firstParagraphNumber": 136,
-                      "lastParagraphNumber": 136,
+                      "firstParagraphNumber": 118,
+                      "lastParagraphNumber": 118,
                       "children": []
                     }
                   ]
@@ -1482,7 +1139,7 @@
                 {
                   "contentType": "ARTICLE",
                   "titleData": {
-                    "title": "Modern Temporum",
+                    "title": "Solutiones Reponendi Theologiam Magna",
                     "typeLabel": "Articulus",
                     "contentNumber": 2,
                     "romanNumeral": "II"
@@ -1490,39 +1147,9 @@
                   "pathID": "4__m.0__m.2__m.1",
                   "semanticPath": "pars-4/sectio-1/caput-3/articulus-2",
                   "url": "/pars-4/sectio-1/caput-3/articulus-2",
-                  "firstParagraphNumber": 137,
-                  "lastParagraphNumber": 143,
+                  "firstParagraphNumber": 119,
+                  "lastParagraphNumber": 125,
                   "children": [
-                    {
-                      "contentType": "SUB_ARTICLE",
-                      "titleData": {
-                        "title": "A Mari Silhouettatae",
-                        "typeLabel": "Subarticulus",
-                        "contentNumber": 1,
-                        "romanNumeral": "I"
-                      },
-                      "pathID": "4__m.0__m.2__m.1__m.0",
-                      "semanticPath": "pars-4/sectio-1/caput-3/articulus-2/subarticulus-1",
-                      "url": "/pars-4/sectio-1/caput-3/articulus-2#subarticulus-1",
-                      "firstParagraphNumber": 137,
-                      "lastParagraphNumber": 138,
-                      "children": []
-                    },
-                    {
-                      "contentType": "SUB_ARTICLE",
-                      "titleData": {
-                        "title": "A Circensi Arenae Circensis Circumdatae",
-                        "typeLabel": "Subarticulus",
-                        "contentNumber": 2,
-                        "romanNumeral": "II"
-                      },
-                      "pathID": "4__m.0__m.2__m.1__m.1",
-                      "semanticPath": "pars-4/sectio-1/caput-3/articulus-2/subarticulus-2",
-                      "url": "/pars-4/sectio-1/caput-3/articulus-2#subarticulus-2",
-                      "firstParagraphNumber": 139,
-                      "lastParagraphNumber": 139,
-                      "children": []
-                    },
                     {
                       "contentType": "IN_BRIEF",
                       "titleData": {
@@ -1534,11 +1161,503 @@
                       "pathID": "4__m.0__m.2__m.1__i",
                       "semanticPath": "pars-4/sectio-1/caput-3/articulus-2/compendium",
                       "url": "/pars-4/sectio-1/caput-3/articulus-2#compendium",
-                      "firstParagraphNumber": 140,
-                      "lastParagraphNumber": 143,
+                      "firstParagraphNumber": 124,
+                      "lastParagraphNumber": 124,
+                      "children": []
+                    },
+                    {
+                      "contentType": "PARAGRAPH_GROUP",
+                      "titleData": {
+                        "title": "Ordo et Chaos in Tostamine",
+                        "typeLabel": "Paragraphus Classis",
+                        "contentNumber": 3,
+                        "romanNumeral": "III"
+                      },
+                      "pathID": "4__m.0__m.2__m.1__f.0",
+                      "semanticPath": "pars-4/sectio-1/caput-3/articulus-2/finalis-contentus",
+                      "url": "/pars-4/sectio-1/caput-3/articulus-2#finalis-contentus",
+                      "firstParagraphNumber": 125,
+                      "lastParagraphNumber": 125,
                       "children": []
                     }
                   ]
+                },
+                {
+                  "contentType": "ARTICLE",
+                  "titleData": {
+                    "title": "Admirationem Hospitum Libris Magnis Excitare",
+                    "typeLabel": "Articulus",
+                    "contentNumber": 3,
+                    "romanNumeral": "III"
+                  },
+                  "pathID": "4__m.0__m.2__m.2",
+                  "semanticPath": "pars-4/sectio-1/caput-3/articulus-3",
+                  "url": "/pars-4/sectio-1/caput-3/articulus-3",
+                  "firstParagraphNumber": 126,
+                  "lastParagraphNumber": 134,
+                  "children": [
+                    {
+                      "contentType": "SUB_ARTICLE",
+                      "titleData": {
+                        "title": "Peregrinationes: Sanctitas In Via, Cibaria Inclusa",
+                        "typeLabel": "Subarticulus",
+                        "contentNumber": 1,
+                        "romanNumeral": "I"
+                      },
+                      "pathID": "4__m.0__m.2__m.2__m.0",
+                      "semanticPath": "pars-4/sectio-1/caput-3/articulus-3/subarticulus-1",
+                      "url": "/pars-4/sectio-1/caput-3/articulus-3#subarticulus-1",
+                      "firstParagraphNumber": 126,
+                      "lastParagraphNumber": 128,
+                      "children": []
+                    },
+                    {
+                      "contentType": "SUB_ARTICLE",
+                      "titleData": {
+                        "title": "Gratia Perseverantiae In Spe, Etiam Per Concilia Oeconomica Parochialia",
+                        "typeLabel": "Subarticulus",
+                        "contentNumber": 2,
+                        "romanNumeral": "II"
+                      },
+                      "pathID": "4__m.0__m.2__m.2__m.1",
+                      "semanticPath": "pars-4/sectio-1/caput-3/articulus-3/subarticulus-2",
+                      "url": "/pars-4/sectio-1/caput-3/articulus-3#subarticulus-2",
+                      "firstParagraphNumber": 129,
+                      "lastParagraphNumber": 130,
+                      "children": []
+                    },
+                    {
+                      "contentType": "IN_BRIEF",
+                      "titleData": {
+                        "title": "Compendium",
+                        "typeLabel": "Compendium",
+                        "contentNumber": null,
+                        "romanNumeral": null
+                      },
+                      "pathID": "4__m.0__m.2__m.2__i",
+                      "semanticPath": "pars-4/sectio-1/caput-3/articulus-3/compendium",
+                      "url": "/pars-4/sectio-1/caput-3/articulus-3#compendium",
+                      "firstParagraphNumber": 131,
+                      "lastParagraphNumber": 133,
+                      "children": []
+                    },
+                    {
+                      "contentType": "PARAGRAPH_GROUP",
+                      "titleData": {
+                        "title": "Limbo Caligari Non Reperti",
+                        "typeLabel": "Paragraphus Classis",
+                        "contentNumber": 1,
+                        "romanNumeral": "I"
+                      },
+                      "pathID": "4__m.0__m.2__m.2__f.0",
+                      "semanticPath": "pars-4/sectio-1/caput-3/articulus-3/finalis-contentus",
+                      "url": "/pars-4/sectio-1/caput-3/articulus-3#finalis-contentus",
+                      "firstParagraphNumber": 134,
+                      "lastParagraphNumber": 134,
+                      "children": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "contentType": "SECTION",
+          "titleData": {
+            "title": "Parabolae pro Cotidianis Molestiis",
+            "typeLabel": "Sectio",
+            "contentNumber": 2,
+            "romanNumeral": "II"
+          },
+          "pathID": "4__m.1",
+          "semanticPath": "pars-4/sectio-2",
+          "url": "/pars-4/sectio-2",
+          "firstParagraphNumber": 135,
+          "lastParagraphNumber": 152,
+          "children": [
+            {
+              "contentType": "ARTICLE",
+              "titleData": {
+                "title": "De Pronuntiatione Disputationes Nulli Vincuntur",
+                "typeLabel": "Articulus",
+                "contentNumber": 1,
+                "romanNumeral": "I"
+              },
+              "pathID": "4__m.1__m.0",
+              "semanticPath": "pars-4/sectio-2/articulus-1",
+              "url": "/pars-4/sectio-2#articulus-1",
+              "firstParagraphNumber": 135,
+              "lastParagraphNumber": 140,
+              "children": [
+                {
+                  "contentType": "IN_BRIEF",
+                  "titleData": {
+                    "title": "Compendium",
+                    "typeLabel": "Compendium",
+                    "contentNumber": null,
+                    "romanNumeral": null
+                  },
+                  "pathID": "4__m.1__m.0__i",
+                  "semanticPath": "pars-4/sectio-2/articulus-1/compendium",
+                  "url": "/pars-4/sectio-2#articulus-1/compendium",
+                  "firstParagraphNumber": 140,
+                  "lastParagraphNumber": 140,
+                  "children": []
+                }
+              ]
+            },
+            {
+              "contentType": "ARTICLE",
+              "titleData": {
+                "title": "Sententiae Classicae Semper Impressivae",
+                "typeLabel": "Articulus",
+                "contentNumber": 2,
+                "romanNumeral": "II"
+              },
+              "pathID": "4__m.1__m.1",
+              "semanticPath": "pars-4/sectio-2/articulus-2",
+              "url": "/pars-4/sectio-2/articulus-2",
+              "firstParagraphNumber": 141,
+              "lastParagraphNumber": 143,
+              "children": [
+                {
+                  "contentType": "SUB_ARTICLE",
+                  "titleData": {
+                    "title": "Visio Beatifica: Gaudium Aeternum, Donutae Illimitatae, et Nullae Quaestiones de Statione",
+                    "typeLabel": "Subarticulus",
+                    "contentNumber": 1,
+                    "romanNumeral": "I"
+                  },
+                  "pathID": "4__m.1__m.1__m.0",
+                  "semanticPath": "pars-4/sectio-2/articulus-2/subarticulus-1",
+                  "url": "/pars-4/sectio-2/articulus-2#subarticulus-1",
+                  "firstParagraphNumber": 141,
+                  "lastParagraphNumber": 141,
+                  "children": []
+                },
+                {
+                  "contentType": "IN_BRIEF",
+                  "titleData": {
+                    "title": "Compendium",
+                    "typeLabel": "Compendium",
+                    "contentNumber": null,
+                    "romanNumeral": null
+                  },
+                  "pathID": "4__m.1__m.1__i",
+                  "semanticPath": "pars-4/sectio-2/articulus-2/compendium",
+                  "url": "/pars-4/sectio-2/articulus-2#compendium",
+                  "firstParagraphNumber": 142,
+                  "lastParagraphNumber": 143,
+                  "children": []
+                }
+              ]
+            },
+            {
+              "contentType": "ARTICLE",
+              "titleData": {
+                "title": "Quando Fingere Translationem Obliviscendi",
+                "typeLabel": "Articulus",
+                "contentNumber": 3,
+                "romanNumeral": "III"
+              },
+              "pathID": "4__m.1__m.2",
+              "semanticPath": "pars-4/sectio-2/articulus-3",
+              "url": "/pars-4/sectio-2/articulus-3",
+              "firstParagraphNumber": 144,
+              "lastParagraphNumber": 152,
+              "children": [
+                {
+                  "contentType": "IN_BRIEF",
+                  "titleData": {
+                    "title": "Compendium",
+                    "typeLabel": "Compendium",
+                    "contentNumber": null,
+                    "romanNumeral": null
+                  },
+                  "pathID": "4__m.1__m.2__i",
+                  "semanticPath": "pars-4/sectio-2/articulus-3/compendium",
+                  "url": "/pars-4/sectio-2/articulus-3#compendium",
+                  "firstParagraphNumber": 151,
+                  "lastParagraphNumber": 152,
+                  "children": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "contentType": "SECTION",
+          "titleData": {
+            "title": "Positiones Rectae pro Precatione et Tempore Quiescendi",
+            "typeLabel": "Sectio",
+            "contentNumber": 3,
+            "romanNumeral": "III"
+          },
+          "pathID": "4__m.2",
+          "semanticPath": "pars-4/sectio-3",
+          "url": "/pars-4/sectio-3",
+          "firstParagraphNumber": 153,
+          "lastParagraphNumber": 186,
+          "children": [
+            {
+              "contentType": "ARTICLE",
+              "titleData": {
+                "title": "Natura Fidei",
+                "typeLabel": "Articulus",
+                "contentNumber": 1,
+                "romanNumeral": "I"
+              },
+              "pathID": "4__m.2__m.0",
+              "semanticPath": "pars-4/sectio-3/articulus-1",
+              "url": "/pars-4/sectio-3#articulus-1",
+              "firstParagraphNumber": 154,
+              "lastParagraphNumber": 168,
+              "children": [
+                {
+                  "contentType": "ARTICLE_PARAGRAPH",
+                  "titleData": {
+                    "title": "Aristoteles Primum Tabulae Nuntiorum Scribens",
+                    "typeLabel": "Articulus Paragraphus",
+                    "contentNumber": 1,
+                    "romanNumeral": "I"
+                  },
+                  "pathID": "4__m.2__m.0__m.0",
+                  "semanticPath": "pars-4/sectio-3/articulus-1/articulus-paragraphus-1",
+                  "url": "/pars-4/sectio-3#articulus-1/articulus-paragraphus-1",
+                  "firstParagraphNumber": 154,
+                  "lastParagraphNumber": 159,
+                  "children": [
+                    {
+                      "contentType": "SUB_ARTICLE",
+                      "titleData": {
+                        "title": "Onus Libertatis: Deligere Inter Saladum et Fricta",
+                        "typeLabel": "Subarticulus",
+                        "contentNumber": 1,
+                        "romanNumeral": "I"
+                      },
+                      "pathID": "4__m.2__m.0__m.0__m.0",
+                      "semanticPath": "pars-4/sectio-3/articulus-1/articulus-paragraphus-1/subarticulus-1",
+                      "url": "/pars-4/sectio-3#articulus-1/articulus-paragraphus-1/subarticulus-1",
+                      "firstParagraphNumber": 154,
+                      "lastParagraphNumber": 154,
+                      "children": []
+                    },
+                    {
+                      "contentType": "SUB_ARTICLE",
+                      "titleData": {
+                        "title": "Conscientia Ut GPS Internus",
+                        "typeLabel": "Subarticulus",
+                        "contentNumber": 2,
+                        "romanNumeral": "II"
+                      },
+                      "pathID": "4__m.2__m.0__m.0__m.1",
+                      "semanticPath": "pars-4/sectio-3/articulus-1/articulus-paragraphus-1/subarticulus-2",
+                      "url": "/pars-4/sectio-3#articulus-1/articulus-paragraphus-1/subarticulus-2",
+                      "firstParagraphNumber": 155,
+                      "lastParagraphNumber": 158,
+                      "children": []
+                    },
+                    {
+                      "contentType": "IN_BRIEF",
+                      "titleData": {
+                        "title": "Compendium",
+                        "typeLabel": "Compendium",
+                        "contentNumber": null,
+                        "romanNumeral": null
+                      },
+                      "pathID": "4__m.2__m.0__m.0__i",
+                      "semanticPath": "pars-4/sectio-3/articulus-1/articulus-paragraphus-1/compendium",
+                      "url": "/pars-4/sectio-3#articulus-1/articulus-paragraphus-1/compendium",
+                      "firstParagraphNumber": 159,
+                      "lastParagraphNumber": 159,
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "contentType": "ARTICLE_PARAGRAPH",
+                  "titleData": {
+                    "title": "Marathones Streaming ut Peregrinationes Ersatz",
+                    "typeLabel": "Articulus Paragraphus",
+                    "contentNumber": 2,
+                    "romanNumeral": "II"
+                  },
+                  "pathID": "4__m.2__m.0__m.1",
+                  "semanticPath": "pars-4/sectio-3/articulus-1/articulus-paragraphus-2",
+                  "url": "/pars-4/sectio-3/articulus-1/articulus-paragraphus-2",
+                  "firstParagraphNumber": 160,
+                  "lastParagraphNumber": 164,
+                  "children": [
+                    {
+                      "contentType": "SUB_ARTICLE",
+                      "titleData": {
+                        "title": "Discere Ex Erroribus, Praesertim Priusquam Secundum Dessertum",
+                        "typeLabel": "Subarticulus",
+                        "contentNumber": 1,
+                        "romanNumeral": "I"
+                      },
+                      "pathID": "4__m.2__m.0__m.1__m.0",
+                      "semanticPath": "pars-4/sectio-3/articulus-1/articulus-paragraphus-2/subarticulus-1",
+                      "url": "/pars-4/sectio-3/articulus-1/articulus-paragraphus-2#subarticulus-1",
+                      "firstParagraphNumber": 160,
+                      "lastParagraphNumber": 162,
+                      "children": []
+                    },
+                    {
+                      "contentType": "IN_BRIEF",
+                      "titleData": {
+                        "title": "Compendium",
+                        "typeLabel": "Compendium",
+                        "contentNumber": null,
+                        "romanNumeral": null
+                      },
+                      "pathID": "4__m.2__m.0__m.1__i",
+                      "semanticPath": "pars-4/sectio-3/articulus-1/articulus-paragraphus-2/compendium",
+                      "url": "/pars-4/sectio-3/articulus-1/articulus-paragraphus-2#compendium",
+                      "firstParagraphNumber": 163,
+                      "lastParagraphNumber": 164,
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "contentType": "ARTICLE_PARAGRAPH",
+                  "titleData": {
+                    "title": "Stultae Emptiones pro Gratia Substitutio",
+                    "typeLabel": "Articulus Paragraphus",
+                    "contentNumber": 3,
+                    "romanNumeral": "III"
+                  },
+                  "pathID": "4__m.2__m.0__m.2",
+                  "semanticPath": "pars-4/sectio-3/articulus-1/articulus-paragraphus-3",
+                  "url": "/pars-4/sectio-3/articulus-1/articulus-paragraphus-3",
+                  "firstParagraphNumber": 165,
+                  "lastParagraphNumber": 168,
+                  "children": [
+                    {
+                      "contentType": "SUB_ARTICLE",
+                      "titleData": {
+                        "title": "CoffeeCoffea ut Primus Sacramentum Religiosum Matutinale",
+                        "typeLabel": "Subarticulus",
+                        "contentNumber": 1,
+                        "romanNumeral": "I"
+                      },
+                      "pathID": "4__m.2__m.0__m.2__m.0",
+                      "semanticPath": "pars-4/sectio-3/articulus-1/articulus-paragraphus-3/subarticulus-1",
+                      "url": "/pars-4/sectio-3/articulus-1/articulus-paragraphus-3#subarticulus-1",
+                      "firstParagraphNumber": 165,
+                      "lastParagraphNumber": 167,
+                      "children": []
+                    },
+                    {
+                      "contentType": "IN_BRIEF",
+                      "titleData": {
+                        "title": "Compendium",
+                        "typeLabel": "Compendium",
+                        "contentNumber": null,
+                        "romanNumeral": null
+                      },
+                      "pathID": "4__m.2__m.0__m.2__i",
+                      "semanticPath": "pars-4/sectio-3/articulus-1/articulus-paragraphus-3/compendium",
+                      "url": "/pars-4/sectio-3/articulus-1/articulus-paragraphus-3#compendium",
+                      "firstParagraphNumber": 168,
+                      "lastParagraphNumber": 168,
+                      "children": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "contentType": "ARTICLE",
+              "titleData": {
+                "title": "Dubium et Signi Amissio",
+                "typeLabel": "Articulus",
+                "contentNumber": 2,
+                "romanNumeral": "II"
+              },
+              "pathID": "4__m.2__m.1",
+              "semanticPath": "pars-4/sectio-3/articulus-2",
+              "url": "/pars-4/sectio-3/articulus-2",
+              "firstParagraphNumber": 169,
+              "lastParagraphNumber": 176,
+              "children": [
+                {
+                  "contentType": "SUB_ARTICLE",
+                  "titleData": {
+                    "title": "Stipendium Charta et Aeternitas",
+                    "typeLabel": "Subarticulus",
+                    "contentNumber": 1,
+                    "romanNumeral": "I"
+                  },
+                  "pathID": "4__m.2__m.1__m.0",
+                  "semanticPath": "pars-4/sectio-3/articulus-2/subarticulus-1",
+                  "url": "/pars-4/sectio-3/articulus-2#subarticulus-1",
+                  "firstParagraphNumber": 169,
+                  "lastParagraphNumber": 170,
+                  "children": []
+                },
+                {
+                  "contentType": "SUB_ARTICLE",
+                  "titleData": {
+                    "title": "Ligatio ut Metaphora Salutis",
+                    "typeLabel": "Subarticulus",
+                    "contentNumber": 2,
+                    "romanNumeral": "II"
+                  },
+                  "pathID": "4__m.2__m.1__m.1",
+                  "semanticPath": "pars-4/sectio-3/articulus-2/subarticulus-2",
+                  "url": "/pars-4/sectio-3/articulus-2#subarticulus-2",
+                  "firstParagraphNumber": 171,
+                  "lastParagraphNumber": 172,
+                  "children": []
+                },
+                {
+                  "contentType": "IN_BRIEF",
+                  "titleData": {
+                    "title": "Compendium",
+                    "typeLabel": "Compendium",
+                    "contentNumber": null,
+                    "romanNumeral": null
+                  },
+                  "pathID": "4__m.2__m.1__i",
+                  "semanticPath": "pars-4/sectio-3/articulus-2/compendium",
+                  "url": "/pars-4/sectio-3/articulus-2#compendium",
+                  "firstParagraphNumber": 173,
+                  "lastParagraphNumber": 176,
+                  "children": []
+                }
+              ]
+            },
+            {
+              "contentType": "ARTICLE",
+              "titleData": {
+                "title": "Spes in Planis Datae Illimitatae",
+                "typeLabel": "Articulus",
+                "contentNumber": 3,
+                "romanNumeral": "III"
+              },
+              "pathID": "4__m.2__m.2",
+              "semanticPath": "pars-4/sectio-3/articulus-3",
+              "url": "/pars-4/sectio-3/articulus-3",
+              "firstParagraphNumber": 177,
+              "lastParagraphNumber": 186,
+              "children": [
+                {
+                  "contentType": "IN_BRIEF",
+                  "titleData": {
+                    "title": "Compendium",
+                    "typeLabel": "Compendium",
+                    "contentNumber": null,
+                    "romanNumeral": null
+                  },
+                  "pathID": "4__m.2__m.2__i",
+                  "semanticPath": "pars-4/sectio-3/articulus-3/compendium",
+                  "url": "/pars-4/sectio-3/articulus-3#compendium",
+                  "firstParagraphNumber": 183,
+                  "lastParagraphNumber": 186,
+                  "children": []
                 }
               ]
             }

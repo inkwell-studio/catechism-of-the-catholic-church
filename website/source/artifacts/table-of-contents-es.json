@@ -12,12 +12,12 @@
     "semanticPath": "prologo",
     "url": "/prologo",
     "firstParagraphNumber": 1,
-    "lastParagraphNumber": 11,
+    "lastParagraphNumber": 14,
     "children": [
       {
         "contentType": "PROLOGUE_SECTION",
         "titleData": {
-          "title": "Cómo encontrar la salida del bosque",
+          "title": "Sobre por qué este volumen es más pesado que la Biblia familiar de tu abuela",
           "typeLabel": "Prologo Seccion",
           "contentNumber": 1,
           "romanNumeral": "I"
@@ -32,7 +32,7 @@
       {
         "contentType": "PROLOGUE_SECTION",
         "titleData": {
-          "title": "Historia de la cartografía",
+          "title": "Reglas para citar en latín sin realmente saber latín",
           "typeLabel": "Prologo Seccion",
           "contentNumber": 2,
           "romanNumeral": "II"
@@ -41,13 +41,13 @@
         "semanticPath": "prologo/prologo-seccion-2",
         "url": "/prologo#prologo-seccion-2",
         "firstParagraphNumber": 4,
-        "lastParagraphNumber": 4,
+        "lastParagraphNumber": 6,
         "children": []
       },
       {
         "contentType": "PROLOGUE_SECTION",
         "titleData": {
-          "title": "Distinguiendo los hongos comestibles",
+          "title": "Sobre creer en cosas que no puedes ver (o Wi-Fi)",
           "typeLabel": "Prologo Seccion",
           "contentNumber": 3,
           "romanNumeral": "III"
@@ -55,14 +55,14 @@
         "pathID": "0__m.2",
         "semanticPath": "prologo/prologo-seccion-3",
         "url": "/prologo#prologo-seccion-3",
-        "firstParagraphNumber": 5,
-        "lastParagraphNumber": 7,
+        "firstParagraphNumber": 7,
+        "lastParagraphNumber": 8,
         "children": []
       },
       {
         "contentType": "PROLOGUE_SECTION",
         "titleData": {
-          "title": "Efectos de los incendios en las praderas",
+          "title": "El rosario: 59 cuentas para gobernarlos a todos",
           "typeLabel": "Prologo Seccion",
           "contentNumber": 4,
           "romanNumeral": "IV"
@@ -70,14 +70,14 @@
         "pathID": "0__m.3",
         "semanticPath": "prologo/prologo-seccion-4",
         "url": "/prologo#prologo-seccion-4",
-        "firstParagraphNumber": 8,
-        "lastParagraphNumber": 8,
+        "firstParagraphNumber": 9,
+        "lastParagraphNumber": 11,
         "children": []
       },
       {
         "contentType": "PROLOGUE_SECTION",
         "titleData": {
-          "title": "Devorando el océano",
+          "title": "Órdenes sagradas, o cómo usar vestimentas con estilo",
           "typeLabel": "Prologo Seccion",
           "contentNumber": 5,
           "romanNumeral": "V"
@@ -85,8 +85,8 @@
         "pathID": "0__m.4",
         "semanticPath": "prologo/prologo-seccion-5",
         "url": "/prologo#prologo-seccion-5",
-        "firstParagraphNumber": 9,
-        "lastParagraphNumber": 11,
+        "firstParagraphNumber": 12,
+        "lastParagraphNumber": 14,
         "children": []
       }
     ]
@@ -95,7 +95,7 @@
     {
       "contentType": "PART",
       "titleData": {
-        "title": "Invierno y verano",
+        "title": "El deseo de Dios en cada corazón",
         "typeLabel": "Parte",
         "contentNumber": 1,
         "romanNumeral": "I"
@@ -103,13 +103,13 @@
       "pathID": "1",
       "semanticPath": "parte-1",
       "url": "/parte-1",
-      "firstParagraphNumber": 12,
-      "lastParagraphNumber": 65,
+      "firstParagraphNumber": 15,
+      "lastParagraphNumber": 19,
       "children": [
         {
           "contentType": "SECTION",
           "titleData": {
-            "title": "Todas las formas en que el surf puede mejorar tu vida",
+            "title": "El anhelo universal",
             "typeLabel": "Seccion",
             "contentNumber": 1,
             "romanNumeral": "I"
@@ -117,130 +117,99 @@
           "pathID": "1__m.0",
           "semanticPath": "parte-1/seccion-1",
           "url": "/parte-1#seccion-1",
-          "firstParagraphNumber": 12,
-          "lastParagraphNumber": 35,
+          "firstParagraphNumber": 16,
+          "lastParagraphNumber": 19,
+          "children": [
+            {
+              "contentType": "IN_BRIEF",
+              "titleData": {
+                "title": "Resumen",
+                "typeLabel": "Resumen",
+                "contentNumber": null,
+                "romanNumeral": null
+              },
+              "pathID": "1__m.0__i",
+              "semanticPath": "parte-1/seccion-1/resumen",
+              "url": "/parte-1#seccion-1/resumen",
+              "firstParagraphNumber": 18,
+              "lastParagraphNumber": 19,
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "contentType": "PART",
+      "titleData": {
+        "title": "La búsqueda de la humanidad de un sentido",
+        "typeLabel": "Parte",
+        "contentNumber": 2,
+        "romanNumeral": "II"
+      },
+      "pathID": "2",
+      "semanticPath": "parte-2",
+      "url": "/parte-2",
+      "firstParagraphNumber": 20,
+      "lastParagraphNumber": 34,
+      "children": [
+        {
+          "contentType": "SECTION",
+          "titleData": {
+            "title": "Pobres sustitutos de lo divino",
+            "typeLabel": "Seccion",
+            "contentNumber": 1,
+            "romanNumeral": "I"
+          },
+          "pathID": "2__m.0",
+          "semanticPath": "parte-2/seccion-1",
+          "url": "/parte-2#seccion-1",
+          "firstParagraphNumber": 21,
+          "lastParagraphNumber": 34,
           "children": [
             {
               "contentType": "CHAPTER",
               "titleData": {
-                "title": "Cartas de primos",
+                "title": "Evidente en la historia humana",
                 "typeLabel": "Capitulo",
                 "contentNumber": 1,
                 "romanNumeral": "I"
               },
-              "pathID": "1__m.0__m.0",
-              "semanticPath": "parte-1/seccion-1/capitulo-1",
-              "url": "/parte-1#seccion-1/capitulo-1",
-              "firstParagraphNumber": 12,
-              "lastParagraphNumber": 16,
+              "pathID": "2__m.0__m.0",
+              "semanticPath": "parte-2/seccion-1/capitulo-1",
+              "url": "/parte-2#seccion-1/capitulo-1",
+              "firstParagraphNumber": 21,
+              "lastParagraphNumber": 34,
               "children": [
                 {
                   "contentType": "ARTICLE",
                   "titleData": {
-                    "title": "Las veces que están cambiando",
+                    "title": "Anhelos sagrados de la humanidad primitiva",
                     "typeLabel": "Articulo",
                     "contentNumber": 1,
                     "romanNumeral": "I"
                   },
-                  "pathID": "1__m.0__m.0__m.0",
-                  "semanticPath": "parte-1/seccion-1/capitulo-1/articulo-1",
-                  "url": "/parte-1#seccion-1/capitulo-1/articulo-1",
-                  "firstParagraphNumber": 12,
-                  "lastParagraphNumber": 16,
+                  "pathID": "2__m.0__m.0__m.0",
+                  "semanticPath": "parte-2/seccion-1/capitulo-1/articulo-1",
+                  "url": "/parte-2#seccion-1/capitulo-1/articulo-1",
+                  "firstParagraphNumber": 21,
+                  "lastParagraphNumber": 25,
                   "children": [
                     {
-                      "contentType": "ARTICLE_PARAGRAPH",
+                      "contentType": "SUB_ARTICLE",
                       "titleData": {
-                        "title": "Cómo se fabrican las bicicletas",
-                        "typeLabel": "Articulo Parrafo",
+                        "title": "Café como el primer sacramento religioso de la mañana",
+                        "typeLabel": "Subartículo",
                         "contentNumber": 1,
                         "romanNumeral": "I"
                       },
-                      "pathID": "1__m.0__m.0__m.0__m.0",
-                      "semanticPath": "parte-1/seccion-1/capitulo-1/articulo-1/articulo-parrafo-1",
-                      "url": "/parte-1#seccion-1/capitulo-1/articulo-1/articulo-parrafo-1",
-                      "firstParagraphNumber": 12,
-                      "lastParagraphNumber": 16,
-                      "children": [
-                        {
-                          "contentType": "SUB_ARTICLE",
-                          "titleData": {
-                            "title": "El salvaje, el inocente & el E calle barajar",
-                            "typeLabel": "Subartículo",
-                            "contentNumber": 1,
-                            "romanNumeral": "I"
-                          },
-                          "pathID": "1__m.0__m.0__m.0__m.0__m.0",
-                          "semanticPath": "parte-1/seccion-1/capitulo-1/articulo-1/articulo-parrafo-1/subartículo-1",
-                          "url": "/parte-1#seccion-1/capitulo-1/articulo-1/articulo-parrafo-1/subartículo-1",
-                          "firstParagraphNumber": 12,
-                          "lastParagraphNumber": 12,
-                          "children": []
-                        },
-                        {
-                          "contentType": "SUB_ARTICLE",
-                          "titleData": {
-                            "title": "Nacido para correr",
-                            "typeLabel": "Subartículo",
-                            "contentNumber": 2,
-                            "romanNumeral": "II"
-                          },
-                          "pathID": "1__m.0__m.0__m.0__m.0__m.1",
-                          "semanticPath": "parte-1/seccion-1/capitulo-1/articulo-1/articulo-parrafo-1/subartículo-2",
-                          "url": "/parte-1#seccion-1/capitulo-1/articulo-1/articulo-parrafo-1/subartículo-2",
-                          "firstParagraphNumber": 13,
-                          "lastParagraphNumber": 15,
-                          "children": []
-                        },
-                        {
-                          "contentType": "IN_BRIEF",
-                          "titleData": {
-                            "title": "Resumen",
-                            "typeLabel": "Resumen",
-                            "contentNumber": null,
-                            "romanNumeral": null
-                          },
-                          "pathID": "1__m.0__m.0__m.0__m.0__i",
-                          "semanticPath": "parte-1/seccion-1/capitulo-1/articulo-1/articulo-parrafo-1/resumen",
-                          "url": "/parte-1#seccion-1/capitulo-1/articulo-1/articulo-parrafo-1/resumen",
-                          "firstParagraphNumber": 16,
-                          "lastParagraphNumber": 16,
-                          "children": []
-                        }
-                      ]
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              "contentType": "CHAPTER",
-              "titleData": {
-                "title": "Las revistas pueden tener hermosas portadas",
-                "typeLabel": "Capitulo",
-                "contentNumber": 2,
-                "romanNumeral": "II"
-              },
-              "pathID": "1__m.0__m.1",
-              "semanticPath": "parte-1/seccion-1/capitulo-2",
-              "url": "/parte-1/seccion-1/capitulo-2",
-              "firstParagraphNumber": 17,
-              "lastParagraphNumber": 35,
-              "children": [
-                {
-                  "contentType": "ARTICLE",
-                  "titleData": {
-                    "title": "Traerlo todo de vuelta a casa",
-                    "typeLabel": "Articulo",
-                    "contentNumber": 1,
-                    "romanNumeral": "I"
-                  },
-                  "pathID": "1__m.0__m.1__m.0",
-                  "semanticPath": "parte-1/seccion-1/capitulo-2/articulo-1",
-                  "url": "/parte-1/seccion-1/capitulo-2#articulo-1",
-                  "firstParagraphNumber": 17,
-                  "lastParagraphNumber": 24,
-                  "children": [
+                      "pathID": "2__m.0__m.0__m.0__m.0",
+                      "semanticPath": "parte-2/seccion-1/capitulo-1/articulo-1/subartículo-1",
+                      "url": "/parte-2#seccion-1/capitulo-1/articulo-1/subartículo-1",
+                      "firstParagraphNumber": 21,
+                      "lastParagraphNumber": 24,
+                      "children": []
+                    },
                     {
                       "contentType": "IN_BRIEF",
                       "titleData": {
@@ -249,11 +218,11 @@
                         "contentNumber": null,
                         "romanNumeral": null
                       },
-                      "pathID": "1__m.0__m.1__m.0__i",
-                      "semanticPath": "parte-1/seccion-1/capitulo-2/articulo-1/resumen",
-                      "url": "/parte-1/seccion-1/capitulo-2#articulo-1/resumen",
-                      "firstParagraphNumber": 22,
-                      "lastParagraphNumber": 24,
+                      "pathID": "2__m.0__m.0__m.0__i",
+                      "semanticPath": "parte-2/seccion-1/capitulo-1/articulo-1/resumen",
+                      "url": "/parte-2#seccion-1/capitulo-1/articulo-1/resumen",
+                      "firstParagraphNumber": 25,
+                      "lastParagraphNumber": 25,
                       "children": []
                     }
                   ]
@@ -261,231 +230,154 @@
                 {
                   "contentType": "ARTICLE",
                   "titleData": {
-                    "title": "Carretera 61 revisitada",
+                    "title": "Filósofos haciendo infinitas preguntas de \"por qué\"",
                     "typeLabel": "Articulo",
                     "contentNumber": 2,
                     "romanNumeral": "II"
                   },
-                  "pathID": "1__m.0__m.1__m.1",
-                  "semanticPath": "parte-1/seccion-1/capitulo-2/articulo-2",
-                  "url": "/parte-1/seccion-1/capitulo-2/articulo-2",
-                  "firstParagraphNumber": 25,
-                  "lastParagraphNumber": 35,
+                  "pathID": "2__m.0__m.0__m.1",
+                  "semanticPath": "parte-2/seccion-1/capitulo-1/articulo-2",
+                  "url": "/parte-2/seccion-1/capitulo-1/articulo-2",
+                  "firstParagraphNumber": 26,
+                  "lastParagraphNumber": 34,
                   "children": [
                     {
-                      "contentType": "ARTICLE_PARAGRAPH",
+                      "contentType": "SUB_ARTICLE",
                       "titleData": {
-                        "title": "Los automóviles se pintan de rojo",
-                        "typeLabel": "Articulo Parrafo",
+                        "title": "Acciones de papel y eternidad",
+                        "typeLabel": "Subartículo",
                         "contentNumber": 1,
                         "romanNumeral": "I"
                       },
-                      "pathID": "1__m.0__m.1__m.1__m.0",
-                      "semanticPath": "parte-1/seccion-1/capitulo-2/articulo-2/articulo-parrafo-1",
-                      "url": "/parte-1/seccion-1/capitulo-2/articulo-2#articulo-parrafo-1",
-                      "firstParagraphNumber": 25,
+                      "pathID": "2__m.0__m.0__m.1__m.0",
+                      "semanticPath": "parte-2/seccion-1/capitulo-1/articulo-2/subartículo-1",
+                      "url": "/parte-2/seccion-1/capitulo-1/articulo-2#subartículo-1",
+                      "firstParagraphNumber": 26,
                       "lastParagraphNumber": 29,
-                      "children": [
-                        {
-                          "contentType": "SUB_ARTICLE",
-                          "titleData": {
-                            "title": "Oscuridad en el borde de la ciudad",
-                            "typeLabel": "Subartículo",
-                            "contentNumber": 1,
-                            "romanNumeral": "I"
-                          },
-                          "pathID": "1__m.0__m.1__m.1__m.0__m.0",
-                          "semanticPath": "parte-1/seccion-1/capitulo-2/articulo-2/articulo-parrafo-1/subartículo-1",
-                          "url": "/parte-1/seccion-1/capitulo-2/articulo-2#articulo-parrafo-1/subartículo-1",
-                          "firstParagraphNumber": 25,
-                          "lastParagraphNumber": 26,
-                          "children": []
-                        },
-                        {
-                          "contentType": "IN_BRIEF",
-                          "titleData": {
-                            "title": "Resumen",
-                            "typeLabel": "Resumen",
-                            "contentNumber": null,
-                            "romanNumeral": null
-                          },
-                          "pathID": "1__m.0__m.1__m.1__m.0__i",
-                          "semanticPath": "parte-1/seccion-1/capitulo-2/articulo-2/articulo-parrafo-1/resumen",
-                          "url": "/parte-1/seccion-1/capitulo-2/articulo-2#articulo-parrafo-1/resumen",
-                          "firstParagraphNumber": 27,
-                          "lastParagraphNumber": 29,
-                          "children": []
-                        }
-                      ]
+                      "children": []
                     },
                     {
-                      "contentType": "ARTICLE_PARAGRAPH",
+                      "contentType": "SUB_ARTICLE",
                       "titleData": {
-                        "title": "Los aviones se reparan rápidamente",
-                        "typeLabel": "Articulo Parrafo",
+                        "title": "Encuadernación como metáfora de la salvación",
+                        "typeLabel": "Subartículo",
                         "contentNumber": 2,
                         "romanNumeral": "II"
                       },
-                      "pathID": "1__m.0__m.1__m.1__m.1",
-                      "semanticPath": "parte-1/seccion-1/capitulo-2/articulo-2/articulo-parrafo-2",
-                      "url": "/parte-1/seccion-1/capitulo-2/articulo-2/articulo-parrafo-2",
+                      "pathID": "2__m.0__m.0__m.1__m.1",
+                      "semanticPath": "parte-2/seccion-1/capitulo-1/articulo-2/subartículo-2",
+                      "url": "/parte-2/seccion-1/capitulo-1/articulo-2#subartículo-2",
                       "firstParagraphNumber": 30,
-                      "lastParagraphNumber": 35,
-                      "children": [
-                        {
-                          "contentType": "SUB_ARTICLE",
-                          "titleData": {
-                            "title": "El río",
-                            "typeLabel": "Subartículo",
-                            "contentNumber": 1,
-                            "romanNumeral": "I"
-                          },
-                          "pathID": "1__m.0__m.1__m.1__m.1__m.0",
-                          "semanticPath": "parte-1/seccion-1/capitulo-2/articulo-2/articulo-parrafo-2/subartículo-1",
-                          "url": "/parte-1/seccion-1/capitulo-2/articulo-2/articulo-parrafo-2#subartículo-1",
-                          "firstParagraphNumber": 30,
-                          "lastParagraphNumber": 31,
-                          "children": []
-                        },
-                        {
-                          "contentType": "SUB_ARTICLE",
-                          "titleData": {
-                            "title": "Nosotros venceremos",
-                            "typeLabel": "Subartículo",
-                            "contentNumber": 2,
-                            "romanNumeral": "II"
-                          },
-                          "pathID": "1__m.0__m.1__m.1__m.1__m.1",
-                          "semanticPath": "parte-1/seccion-1/capitulo-2/articulo-2/articulo-parrafo-2/subartículo-2",
-                          "url": "/parte-1/seccion-1/capitulo-2/articulo-2/articulo-parrafo-2#subartículo-2",
-                          "firstParagraphNumber": 32,
-                          "lastParagraphNumber": 34,
-                          "children": []
-                        },
-                        {
-                          "contentType": "IN_BRIEF",
-                          "titleData": {
-                            "title": "Resumen",
-                            "typeLabel": "Resumen",
-                            "contentNumber": null,
-                            "romanNumeral": null
-                          },
-                          "pathID": "1__m.0__m.1__m.1__m.1__i",
-                          "semanticPath": "parte-1/seccion-1/capitulo-2/articulo-2/articulo-parrafo-2/resumen",
-                          "url": "/parte-1/seccion-1/capitulo-2/articulo-2/articulo-parrafo-2#resumen",
-                          "firstParagraphNumber": 35,
-                          "lastParagraphNumber": 35,
-                          "children": []
-                        }
-                      ]
+                      "lastParagraphNumber": 31,
+                      "children": []
+                    },
+                    {
+                      "contentType": "IN_BRIEF",
+                      "titleData": {
+                        "title": "Resumen",
+                        "typeLabel": "Resumen",
+                        "contentNumber": null,
+                        "romanNumeral": null
+                      },
+                      "pathID": "2__m.0__m.0__m.1__i",
+                      "semanticPath": "parte-2/seccion-1/capitulo-1/articulo-2/resumen",
+                      "url": "/parte-2/seccion-1/capitulo-1/articulo-2#resumen",
+                      "firstParagraphNumber": 32,
+                      "lastParagraphNumber": 34,
+                      "children": []
                     }
                   ]
                 }
               ]
             }
           ]
-        },
+        }
+      ]
+    },
+    {
+      "contentType": "PART",
+      "titleData": {
+        "title": "La fe como respuesta a la iniciativa divina",
+        "typeLabel": "Parte",
+        "contentNumber": 3,
+        "romanNumeral": "III"
+      },
+      "pathID": "3",
+      "semanticPath": "parte-3",
+      "url": "/parte-3",
+      "firstParagraphNumber": 35,
+      "lastParagraphNumber": 74,
+      "children": [
         {
           "contentType": "SECTION",
           "titleData": {
-            "title": "Montar a caballo: una historia de",
+            "title": "Dios llama, la humanidad finge estar ocupada",
             "typeLabel": "Seccion",
-            "contentNumber": 2,
-            "romanNumeral": "II"
+            "contentNumber": 1,
+            "romanNumeral": "I"
           },
-          "pathID": "1__m.1",
-          "semanticPath": "parte-1/seccion-2",
-          "url": "/parte-1/seccion-2",
-          "firstParagraphNumber": 36,
-          "lastParagraphNumber": 62,
+          "pathID": "3__m.0",
+          "semanticPath": "parte-3/seccion-1",
+          "url": "/parte-3#seccion-1",
+          "firstParagraphNumber": 35,
+          "lastParagraphNumber": 69,
           "children": [
             {
               "contentType": "CHAPTER",
               "titleData": {
-                "title": "Vale la pena mantener algunos libros en un buen estante junto a la puerta de su casa, por lo que puede compartirlos fácilmente con otros",
+                "title": "Intentos de llenar el vacío",
                 "typeLabel": "Capitulo",
                 "contentNumber": 1,
                 "romanNumeral": "I"
               },
-              "pathID": "1__m.1__m.0",
-              "semanticPath": "parte-1/seccion-2/capitulo-1",
-              "url": "/parte-1/seccion-2#capitulo-1",
-              "firstParagraphNumber": 36,
-              "lastParagraphNumber": 50,
+              "pathID": "3__m.0__m.0",
+              "semanticPath": "parte-3/seccion-1/capitulo-1",
+              "url": "/parte-3#seccion-1/capitulo-1",
+              "firstParagraphNumber": 35,
+              "lastParagraphNumber": 52,
               "children": [
                 {
                   "contentType": "ARTICLE",
                   "titleData": {
-                    "title": "Sangre en las pistas",
+                    "title": "Distracciones de la cultura moderna",
                     "typeLabel": "Articulo",
                     "contentNumber": 1,
                     "romanNumeral": "I"
                   },
-                  "pathID": "1__m.1__m.0__m.0",
-                  "semanticPath": "parte-1/seccion-2/capitulo-1/articulo-1",
-                  "url": "/parte-1/seccion-2#capitulo-1/articulo-1",
-                  "firstParagraphNumber": 36,
-                  "lastParagraphNumber": 41,
-                  "children": [
-                    {
-                      "contentType": "IN_BRIEF",
-                      "titleData": {
-                        "title": "Resumen",
-                        "typeLabel": "Resumen",
-                        "contentNumber": null,
-                        "romanNumeral": null
-                      },
-                      "pathID": "1__m.1__m.0__m.0__i",
-                      "semanticPath": "parte-1/seccion-2/capitulo-1/articulo-1/resumen",
-                      "url": "/parte-1/seccion-2#capitulo-1/articulo-1/resumen",
-                      "firstParagraphNumber": 38,
-                      "lastParagraphNumber": 41,
-                      "children": []
-                    }
-                  ]
-                },
-                {
-                  "contentType": "ARTICLE",
-                  "titleData": {
-                    "title": "Amor y robo",
-                    "typeLabel": "Articulo",
-                    "contentNumber": 2,
-                    "romanNumeral": "II"
-                  },
-                  "pathID": "1__m.1__m.0__m.1",
-                  "semanticPath": "parte-1/seccion-2/capitulo-1/articulo-2",
-                  "url": "/parte-1/seccion-2/capitulo-1/articulo-2",
-                  "firstParagraphNumber": 42,
-                  "lastParagraphNumber": 45,
+                  "pathID": "3__m.0__m.0__m.0",
+                  "semanticPath": "parte-3/seccion-1/capitulo-1/articulo-1",
+                  "url": "/parte-3#seccion-1/capitulo-1/articulo-1",
+                  "firstParagraphNumber": 35,
+                  "lastParagraphNumber": 40,
                   "children": [
                     {
                       "contentType": "SUB_ARTICLE",
                       "titleData": {
-                        "title": "Tamborileros locos, vagos e indios en verano",
+                        "title": "Ejercicios accidentales por llevarlo a clase",
                         "typeLabel": "Subartículo",
                         "contentNumber": 1,
                         "romanNumeral": "I"
                       },
-                      "pathID": "1__m.1__m.0__m.1__m.0",
-                      "semanticPath": "parte-1/seccion-2/capitulo-1/articulo-2/subartículo-1",
-                      "url": "/parte-1/seccion-2/capitulo-1/articulo-2#subartículo-1",
-                      "firstParagraphNumber": 42,
-                      "lastParagraphNumber": 42,
+                      "pathID": "3__m.0__m.0__m.0__m.0",
+                      "semanticPath": "parte-3/seccion-1/capitulo-1/articulo-1/subartículo-1",
+                      "url": "/parte-3#seccion-1/capitulo-1/articulo-1/subartículo-1",
+                      "firstParagraphNumber": 35,
+                      "lastParagraphNumber": 35,
                       "children": []
                     },
                     {
                       "contentType": "SUB_ARTICLE",
                       "titleData": {
-                        "title": "Herido en lo profundo de la batalla",
+                        "title": "Estanterías que pueden soportar la gravedad divina",
                         "typeLabel": "Subartículo",
                         "contentNumber": 2,
                         "romanNumeral": "II"
                       },
-                      "pathID": "1__m.1__m.0__m.1__m.1",
-                      "semanticPath": "parte-1/seccion-2/capitulo-1/articulo-2/subartículo-2",
-                      "url": "/parte-1/seccion-2/capitulo-1/articulo-2#subartículo-2",
-                      "firstParagraphNumber": 43,
-                      "lastParagraphNumber": 44,
+                      "pathID": "3__m.0__m.0__m.0__m.1",
+                      "semanticPath": "parte-3/seccion-1/capitulo-1/articulo-1/subartículo-2",
+                      "url": "/parte-3#seccion-1/capitulo-1/articulo-1/subartículo-2",
+                      "firstParagraphNumber": 36,
+                      "lastParagraphNumber": 36,
                       "children": []
                     },
                     {
@@ -496,11 +388,11 @@
                         "contentNumber": null,
                         "romanNumeral": null
                       },
-                      "pathID": "1__m.1__m.0__m.1__i",
-                      "semanticPath": "parte-1/seccion-2/capitulo-1/articulo-2/resumen",
-                      "url": "/parte-1/seccion-2/capitulo-1/articulo-2#resumen",
-                      "firstParagraphNumber": 45,
-                      "lastParagraphNumber": 45,
+                      "pathID": "3__m.0__m.0__m.0__i",
+                      "semanticPath": "parte-3/seccion-1/capitulo-1/articulo-1/resumen",
+                      "url": "/parte-3#seccion-1/capitulo-1/articulo-1/resumen",
+                      "firstParagraphNumber": 37,
+                      "lastParagraphNumber": 40,
                       "children": []
                     }
                   ]
@@ -508,17 +400,47 @@
                 {
                   "contentType": "ARTICLE",
                   "titleData": {
-                    "title": "Tiempos modernos",
+                    "title": "Falsos ídolos hoy",
                     "typeLabel": "Articulo",
-                    "contentNumber": 3,
-                    "romanNumeral": "III"
+                    "contentNumber": 2,
+                    "romanNumeral": "II"
                   },
-                  "pathID": "1__m.1__m.0__m.2",
-                  "semanticPath": "parte-1/seccion-2/capitulo-1/articulo-3",
-                  "url": "/parte-1/seccion-2/capitulo-1/articulo-3",
-                  "firstParagraphNumber": 46,
-                  "lastParagraphNumber": 50,
+                  "pathID": "3__m.0__m.0__m.1",
+                  "semanticPath": "parte-3/seccion-1/capitulo-1/articulo-2",
+                  "url": "/parte-3/seccion-1/capitulo-1/articulo-2",
+                  "firstParagraphNumber": 41,
+                  "lastParagraphNumber": 48,
                   "children": [
+                    {
+                      "contentType": "SUB_ARTICLE",
+                      "titleData": {
+                        "title": "Esconder el libro debajo de libros más pequeños",
+                        "typeLabel": "Subartículo",
+                        "contentNumber": 1,
+                        "romanNumeral": "I"
+                      },
+                      "pathID": "3__m.0__m.0__m.1__m.0",
+                      "semanticPath": "parte-3/seccion-1/capitulo-1/articulo-2/subartículo-1",
+                      "url": "/parte-3/seccion-1/capitulo-1/articulo-2#subartículo-1",
+                      "firstParagraphNumber": 41,
+                      "lastParagraphNumber": 43,
+                      "children": []
+                    },
+                    {
+                      "contentType": "SUB_ARTICLE",
+                      "titleData": {
+                        "title": "Usarlo como tope de puerta, con reverencia",
+                        "typeLabel": "Subartículo",
+                        "contentNumber": 2,
+                        "romanNumeral": "II"
+                      },
+                      "pathID": "3__m.0__m.0__m.1__m.1",
+                      "semanticPath": "parte-3/seccion-1/capitulo-1/articulo-2/subartículo-2",
+                      "url": "/parte-3/seccion-1/capitulo-1/articulo-2#subartículo-2",
+                      "firstParagraphNumber": 44,
+                      "lastParagraphNumber": 45,
+                      "children": []
+                    },
                     {
                       "contentType": "IN_BRIEF",
                       "titleData": {
@@ -527,11 +449,57 @@
                         "contentNumber": null,
                         "romanNumeral": null
                       },
-                      "pathID": "1__m.1__m.0__m.2__i",
-                      "semanticPath": "parte-1/seccion-2/capitulo-1/articulo-3/resumen",
-                      "url": "/parte-1/seccion-2/capitulo-1/articulo-3#resumen",
+                      "pathID": "3__m.0__m.0__m.1__i",
+                      "semanticPath": "parte-3/seccion-1/capitulo-1/articulo-2/resumen",
+                      "url": "/parte-3/seccion-1/capitulo-1/articulo-2#resumen",
+                      "firstParagraphNumber": 46,
+                      "lastParagraphNumber": 48,
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "contentType": "ARTICLE",
+                  "titleData": {
+                    "title": "Circus, coliseos y televisión de realidad",
+                    "typeLabel": "Articulo",
+                    "contentNumber": 3,
+                    "romanNumeral": "III"
+                  },
+                  "pathID": "3__m.0__m.0__m.2",
+                  "semanticPath": "parte-3/seccion-1/capitulo-1/articulo-3",
+                  "url": "/parte-3/seccion-1/capitulo-1/articulo-3",
+                  "firstParagraphNumber": 49,
+                  "lastParagraphNumber": 52,
+                  "children": [
+                    {
+                      "contentType": "SUB_ARTICLE",
+                      "titleData": {
+                        "title": "Pretender que lo has leído de principio a fin",
+                        "typeLabel": "Subartículo",
+                        "contentNumber": 1,
+                        "romanNumeral": "I"
+                      },
+                      "pathID": "3__m.0__m.0__m.2__m.0",
+                      "semanticPath": "parte-3/seccion-1/capitulo-1/articulo-3/subartículo-1",
+                      "url": "/parte-3/seccion-1/capitulo-1/articulo-3#subartículo-1",
                       "firstParagraphNumber": 49,
-                      "lastParagraphNumber": 50,
+                      "lastParagraphNumber": 49,
+                      "children": []
+                    },
+                    {
+                      "contentType": "IN_BRIEF",
+                      "titleData": {
+                        "title": "Resumen",
+                        "typeLabel": "Resumen",
+                        "contentNumber": null,
+                        "romanNumeral": null
+                      },
+                      "pathID": "3__m.0__m.0__m.2__i",
+                      "semanticPath": "parte-3/seccion-1/capitulo-1/articulo-3/resumen",
+                      "url": "/parte-3/seccion-1/capitulo-1/articulo-3#resumen",
+                      "firstParagraphNumber": 50,
+                      "lastParagraphNumber": 52,
                       "children": []
                     }
                   ]
@@ -541,74 +509,58 @@
             {
               "contentType": "CHAPTER",
               "titleData": {
-                "title": "Colecciones de sellos portátiles",
+                "title": "Entretenimiento sin satisfacción",
                 "typeLabel": "Capitulo",
                 "contentNumber": 2,
                 "romanNumeral": "II"
               },
-              "pathID": "1__m.1__m.1",
-              "semanticPath": "parte-1/seccion-2/capitulo-2",
-              "url": "/parte-1/seccion-2/capitulo-2",
-              "firstParagraphNumber": 51,
-              "lastParagraphNumber": 62,
+              "pathID": "3__m.0__m.1",
+              "semanticPath": "parte-3/seccion-1/capitulo-2",
+              "url": "/parte-3/seccion-1/capitulo-2",
+              "firstParagraphNumber": 53,
+              "lastParagraphNumber": 63,
               "children": [
                 {
                   "contentType": "ARTICLE",
                   "titleData": {
-                    "title": "A lo largo de la torre de vigilancia",
+                    "title": "Comentarios en línea como nueva arena de conflicto",
                     "typeLabel": "Articulo",
                     "contentNumber": 1,
                     "romanNumeral": "I"
                   },
-                  "pathID": "1__m.1__m.1__m.0",
-                  "semanticPath": "parte-1/seccion-2/capitulo-2/articulo-1",
-                  "url": "/parte-1/seccion-2/capitulo-2#articulo-1",
-                  "firstParagraphNumber": 51,
-                  "lastParagraphNumber": 58,
-                  "children": [
-                    {
-                      "contentType": "IN_BRIEF",
-                      "titleData": {
-                        "title": "Resumen",
-                        "typeLabel": "Resumen",
-                        "contentNumber": null,
-                        "romanNumeral": null
-                      },
-                      "pathID": "1__m.1__m.1__m.0__i",
-                      "semanticPath": "parte-1/seccion-2/capitulo-2/articulo-1/resumen",
-                      "url": "/parte-1/seccion-2/capitulo-2#articulo-1/resumen",
-                      "firstParagraphNumber": 55,
-                      "lastParagraphNumber": 58,
-                      "children": []
-                    }
-                  ]
-                },
-                {
-                  "contentType": "ARTICLE",
-                  "titleData": {
-                    "title": "Como una piedra rodante",
-                    "typeLabel": "Articulo",
-                    "contentNumber": 2,
-                    "romanNumeral": "II"
-                  },
-                  "pathID": "1__m.1__m.1__m.1",
-                  "semanticPath": "parte-1/seccion-2/capitulo-2/articulo-2",
-                  "url": "/parte-1/seccion-2/capitulo-2/articulo-2",
-                  "firstParagraphNumber": 59,
-                  "lastParagraphNumber": 62,
+                  "pathID": "3__m.0__m.1__m.0",
+                  "semanticPath": "parte-3/seccion-1/capitulo-2/articulo-1",
+                  "url": "/parte-3/seccion-1/capitulo-2#articulo-1",
+                  "firstParagraphNumber": 53,
+                  "lastParagraphNumber": 63,
                   "children": [
                     {
                       "contentType": "SUB_ARTICLE",
                       "titleData": {
-                        "title": "Esta vez no son tus pulmones",
+                        "title": "El arte de pasar páginas sutilmente",
                         "typeLabel": "Subartículo",
                         "contentNumber": 1,
                         "romanNumeral": "I"
                       },
-                      "pathID": "1__m.1__m.1__m.1__m.0",
-                      "semanticPath": "parte-1/seccion-2/capitulo-2/articulo-2/subartículo-1",
-                      "url": "/parte-1/seccion-2/capitulo-2/articulo-2#subartículo-1",
-                      "firstParagraphNumber": 59,
+                      "pathID": "3__m.0__m.1__m.0__m.0",
+                      "semanticPath": "parte-3/seccion-1/capitulo-2/articulo-1/subartículo-1",
+                      "url": "/parte-3/seccion-1/capitulo-2#articulo-1/subartículo-1",
+                      "firstParagraphNumber": 53,
+                      "lastParagraphNumber": 55,
+                      "children": []
+                    },
+                    {
+                      "contentType": "SUB_ARTICLE",
+                      "titleData": {
+                        "title": "“C” suave vs. dura en Cicerón (se desata la pelea)",
+                        "typeLabel": "Subartículo",
+                        "contentNumber": 2,
+                        "romanNumeral": "II"
+                      },
+                      "pathID": "3__m.0__m.1__m.0__m.1",
+                      "semanticPath": "parte-3/seccion-1/capitulo-2/articulo-1/subartículo-2",
+                      "url": "/parte-3/seccion-1/capitulo-2#articulo-1/subartículo-2",
+                      "firstParagraphNumber": 56,
                       "lastParagraphNumber": 60,
                       "children": []
                     },
@@ -620,11 +572,88 @@
                         "contentNumber": null,
                         "romanNumeral": null
                       },
-                      "pathID": "1__m.1__m.1__m.1__i",
-                      "semanticPath": "parte-1/seccion-2/capitulo-2/articulo-2/resumen",
-                      "url": "/parte-1/seccion-2/capitulo-2/articulo-2#resumen",
+                      "pathID": "3__m.0__m.1__m.0__i",
+                      "semanticPath": "parte-3/seccion-1/capitulo-2/articulo-1/resumen",
+                      "url": "/parte-3/seccion-1/capitulo-2#articulo-1/resumen",
                       "firstParagraphNumber": 61,
-                      "lastParagraphNumber": 62,
+                      "lastParagraphNumber": 63,
+                      "children": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "contentType": "CHAPTER",
+              "titleData": {
+                "title": "Excusas ofrecidas a lo largo de la historia",
+                "typeLabel": "Capitulo",
+                "contentNumber": 3,
+                "romanNumeral": "III"
+              },
+              "pathID": "3__m.0__m.2",
+              "semanticPath": "parte-3/seccion-1/capitulo-3",
+              "url": "/parte-3/seccion-1/capitulo-3",
+              "firstParagraphNumber": 64,
+              "lastParagraphNumber": 69,
+              "children": [
+                {
+                  "contentType": "ARTICLE",
+                  "titleData": {
+                    "title": "“Mi buey necesita ser alimentado” (excusa antigua)",
+                    "typeLabel": "Articulo",
+                    "contentNumber": 1,
+                    "romanNumeral": "I"
+                  },
+                  "pathID": "3__m.0__m.2__m.0",
+                  "semanticPath": "parte-3/seccion-1/capitulo-3/articulo-1",
+                  "url": "/parte-3/seccion-1/capitulo-3#articulo-1",
+                  "firstParagraphNumber": 64,
+                  "lastParagraphNumber": 69,
+                  "children": [
+                    {
+                      "contentType": "SUB_ARTICLE",
+                      "titleData": {
+                        "title": "¿Deberías pronunciar la erre vibrante?",
+                        "typeLabel": "Subartículo",
+                        "contentNumber": 1,
+                        "romanNumeral": "I"
+                      },
+                      "pathID": "3__m.0__m.2__m.0__m.0",
+                      "semanticPath": "parte-3/seccion-1/capitulo-3/articulo-1/subartículo-1",
+                      "url": "/parte-3/seccion-1/capitulo-3#articulo-1/subartículo-1",
+                      "firstParagraphNumber": 64,
+                      "lastParagraphNumber": 66,
+                      "children": []
+                    },
+                    {
+                      "contentType": "SUB_ARTICLE",
+                      "titleData": {
+                        "title": "Añadir “-us” para parecer oficial",
+                        "typeLabel": "Subartículo",
+                        "contentNumber": 2,
+                        "romanNumeral": "II"
+                      },
+                      "pathID": "3__m.0__m.2__m.0__m.1",
+                      "semanticPath": "parte-3/seccion-1/capitulo-3/articulo-1/subartículo-2",
+                      "url": "/parte-3/seccion-1/capitulo-3#articulo-1/subartículo-2",
+                      "firstParagraphNumber": 67,
+                      "lastParagraphNumber": 67,
+                      "children": []
+                    },
+                    {
+                      "contentType": "IN_BRIEF",
+                      "titleData": {
+                        "title": "Resumen",
+                        "typeLabel": "Resumen",
+                        "contentNumber": null,
+                        "romanNumeral": null
+                      },
+                      "pathID": "3__m.0__m.2__m.0__i",
+                      "semanticPath": "parte-3/seccion-1/capitulo-3/articulo-1/resumen",
+                      "url": "/parte-3/seccion-1/capitulo-3#articulo-1/resumen",
+                      "firstParagraphNumber": 68,
+                      "lastParagraphNumber": 69,
                       "children": []
                     }
                   ]
@@ -636,153 +665,44 @@
         {
           "contentType": "SECTION",
           "titleData": {
-            "title": "La gran historia americana del béisbol",
+            "title": "Los diez mandamientos con notas al pie",
             "typeLabel": "Seccion",
-            "contentNumber": 3,
-            "romanNumeral": "III"
+            "contentNumber": 2,
+            "romanNumeral": "II"
           },
-          "pathID": "1__m.2",
-          "semanticPath": "parte-1/seccion-3",
-          "url": "/parte-1/seccion-3",
-          "firstParagraphNumber": 63,
-          "lastParagraphNumber": 65,
-          "children": [
-            {
-              "contentType": "CHAPTER",
-              "titleData": {
-                "title": "Documentos variados que se encuentran en el sótano de su vecino",
-                "typeLabel": "Capitulo",
-                "contentNumber": 1,
-                "romanNumeral": "I"
-              },
-              "pathID": "1__m.2__m.0",
-              "semanticPath": "parte-1/seccion-3/capitulo-1",
-              "url": "/parte-1/seccion-3#capitulo-1",
-              "firstParagraphNumber": 63,
-              "lastParagraphNumber": 65,
-              "children": [
-                {
-                  "contentType": "ARTICLE",
-                  "titleData": {
-                    "title": "Llamarles campanas",
-                    "typeLabel": "Articulo",
-                    "contentNumber": 1,
-                    "romanNumeral": "I"
-                  },
-                  "pathID": "1__m.2__m.0__m.0",
-                  "semanticPath": "parte-1/seccion-3/capitulo-1/articulo-1",
-                  "url": "/parte-1/seccion-3#capitulo-1/articulo-1",
-                  "firstParagraphNumber": 63,
-                  "lastParagraphNumber": 65,
-                  "children": [
-                    {
-                      "contentType": "SUB_ARTICLE",
-                      "titleData": {
-                        "title": "Comodín local",
-                        "typeLabel": "Subartículo",
-                        "contentNumber": 1,
-                        "romanNumeral": "I"
-                      },
-                      "pathID": "1__m.2__m.0__m.0__m.0",
-                      "semanticPath": "parte-1/seccion-3/capitulo-1/articulo-1/subartículo-1",
-                      "url": "/parte-1/seccion-3#capitulo-1/articulo-1/subartículo-1",
-                      "firstParagraphNumber": 63,
-                      "lastParagraphNumber": 64,
-                      "children": []
-                    },
-                    {
-                      "contentType": "IN_BRIEF",
-                      "titleData": {
-                        "title": "Resumen",
-                        "typeLabel": "Resumen",
-                        "contentNumber": null,
-                        "romanNumeral": null
-                      },
-                      "pathID": "1__m.2__m.0__m.0__i",
-                      "semanticPath": "parte-1/seccion-3/capitulo-1/articulo-1/resumen",
-                      "url": "/parte-1/seccion-3#capitulo-1/articulo-1/resumen",
-                      "firstParagraphNumber": 65,
-                      "lastParagraphNumber": 65,
-                      "children": []
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "contentType": "PART",
-      "titleData": {
-        "title": "Un día cálido en primavera",
-        "typeLabel": "Parte",
-        "contentNumber": 2,
-        "romanNumeral": "II"
-      },
-      "pathID": "2",
-      "semanticPath": "parte-2",
-      "url": "/parte-2",
-      "firstParagraphNumber": 66,
-      "lastParagraphNumber": 79,
-      "children": [
-        {
-          "contentType": "SECTION",
-          "titleData": {
-            "title": "Raquetas de nieve con osos",
-            "typeLabel": "Seccion",
-            "contentNumber": 1,
-            "romanNumeral": "I"
-          },
-          "pathID": "2__m.0",
-          "semanticPath": "parte-2/seccion-1",
-          "url": "/parte-2#seccion-1",
-          "firstParagraphNumber": 67,
-          "lastParagraphNumber": 79,
+          "pathID": "3__m.1",
+          "semanticPath": "parte-3/seccion-2",
+          "url": "/parte-3/seccion-2",
+          "firstParagraphNumber": 70,
+          "lastParagraphNumber": 74,
           "children": [
             {
               "contentType": "ARTICLE",
               "titleData": {
-                "title": "Enredado en azul",
+                "title": "“Wi-Fi está caído” (excusa moderna)",
                 "typeLabel": "Articulo",
                 "contentNumber": 1,
                 "romanNumeral": "I"
               },
-              "pathID": "2__m.0__m.0",
-              "semanticPath": "parte-2/seccion-1/articulo-1",
-              "url": "/parte-2#seccion-1/articulo-1",
-              "firstParagraphNumber": 67,
-              "lastParagraphNumber": 72,
+              "pathID": "3__m.1__m.0",
+              "semanticPath": "parte-3/seccion-2/articulo-1",
+              "url": "/parte-3/seccion-2#articulo-1",
+              "firstParagraphNumber": 71,
+              "lastParagraphNumber": 74,
               "children": [
                 {
                   "contentType": "SUB_ARTICLE",
                   "titleData": {
-                    "title": "El poder de una locomotora",
+                    "title": "En el vino está la verdad en las cenas",
                     "typeLabel": "Subartículo",
                     "contentNumber": 1,
                     "romanNumeral": "I"
                   },
-                  "pathID": "2__m.0__m.0__m.0",
-                  "semanticPath": "parte-2/seccion-1/articulo-1/subartículo-1",
-                  "url": "/parte-2#seccion-1/articulo-1/subartículo-1",
-                  "firstParagraphNumber": 67,
-                  "lastParagraphNumber": 67,
-                  "children": []
-                },
-                {
-                  "contentType": "SUB_ARTICLE",
-                  "titleData": {
-                    "title": "Roto en la playa",
-                    "typeLabel": "Subartículo",
-                    "contentNumber": 2,
-                    "romanNumeral": "II"
-                  },
-                  "pathID": "2__m.0__m.0__m.1",
-                  "semanticPath": "parte-2/seccion-1/articulo-1/subartículo-2",
-                  "url": "/parte-2#seccion-1/articulo-1/subartículo-2",
-                  "firstParagraphNumber": 68,
-                  "lastParagraphNumber": 68,
+                  "pathID": "3__m.1__m.0__m.0",
+                  "semanticPath": "parte-3/seccion-2/articulo-1/subartículo-1",
+                  "url": "/parte-3/seccion-2#articulo-1/subartículo-1",
+                  "firstParagraphNumber": 71,
+                  "lastParagraphNumber": 73,
                   "children": []
                 },
                 {
@@ -793,103 +713,11 @@
                     "contentNumber": null,
                     "romanNumeral": null
                   },
-                  "pathID": "2__m.0__m.0__i",
-                  "semanticPath": "parte-2/seccion-1/articulo-1/resumen",
-                  "url": "/parte-2#seccion-1/articulo-1/resumen",
-                  "firstParagraphNumber": 69,
-                  "lastParagraphNumber": 72,
-                  "children": []
-                }
-              ]
-            },
-            {
-              "contentType": "ARTICLE",
-              "titleData": {
-                "title": "Lo más probable es que vayas a tu manera (y me iré el mío)",
-                "typeLabel": "Articulo",
-                "contentNumber": 2,
-                "romanNumeral": "II"
-              },
-              "pathID": "2__m.0__m.1",
-              "semanticPath": "parte-2/seccion-1/articulo-2",
-              "url": "/parte-2/seccion-1/articulo-2",
-              "firstParagraphNumber": 73,
-              "lastParagraphNumber": 76,
-              "children": [
-                {
-                  "contentType": "SUB_ARTICLE",
-                  "titleData": {
-                    "title": "Ambos éramos autoestopistas",
-                    "typeLabel": "Subartículo",
-                    "contentNumber": 1,
-                    "romanNumeral": "I"
-                  },
-                  "pathID": "2__m.0__m.1__m.0",
-                  "semanticPath": "parte-2/seccion-1/articulo-2/subartículo-1",
-                  "url": "/parte-2/seccion-1/articulo-2#subartículo-1",
-                  "firstParagraphNumber": 73,
-                  "lastParagraphNumber": 75,
-                  "children": []
-                },
-                {
-                  "contentType": "IN_BRIEF",
-                  "titleData": {
-                    "title": "Resumen",
-                    "typeLabel": "Resumen",
-                    "contentNumber": null,
-                    "romanNumeral": null
-                  },
-                  "pathID": "2__m.0__m.1__i",
-                  "semanticPath": "parte-2/seccion-1/articulo-2/resumen",
-                  "url": "/parte-2/seccion-1/articulo-2#resumen",
-                  "firstParagraphNumber": 76,
-                  "lastParagraphNumber": 76,
-                  "children": []
-                }
-              ]
-            },
-            {
-              "contentType": "ARTICLE",
-              "titleData": {
-                "title": "Atrapado dentro de Mobile con el Memphis Blues nuevamente",
-                "typeLabel": "Articulo",
-                "contentNumber": 3,
-                "romanNumeral": "III"
-              },
-              "pathID": "2__m.0__m.2",
-              "semanticPath": "parte-2/seccion-1/articulo-3",
-              "url": "/parte-2/seccion-1/articulo-3",
-              "firstParagraphNumber": 77,
-              "lastParagraphNumber": 79,
-              "children": [
-                {
-                  "contentType": "SUB_ARTICLE",
-                  "titleData": {
-                    "title": "Un motor de metal templado",
-                    "typeLabel": "Subartículo",
-                    "contentNumber": 1,
-                    "romanNumeral": "I"
-                  },
-                  "pathID": "2__m.0__m.2__m.0",
-                  "semanticPath": "parte-2/seccion-1/articulo-3/subartículo-1",
-                  "url": "/parte-2/seccion-1/articulo-3#subartículo-1",
-                  "firstParagraphNumber": 77,
-                  "lastParagraphNumber": 78,
-                  "children": []
-                },
-                {
-                  "contentType": "IN_BRIEF",
-                  "titleData": {
-                    "title": "Resumen",
-                    "typeLabel": "Resumen",
-                    "contentNumber": null,
-                    "romanNumeral": null
-                  },
-                  "pathID": "2__m.0__m.2__i",
-                  "semanticPath": "parte-2/seccion-1/articulo-3/resumen",
-                  "url": "/parte-2/seccion-1/articulo-3#resumen",
-                  "firstParagraphNumber": 79,
-                  "lastParagraphNumber": 79,
+                  "pathID": "3__m.1__m.0__i",
+                  "semanticPath": "parte-3/seccion-2/articulo-1/resumen",
+                  "url": "/parte-3/seccion-2#articulo-1/resumen",
+                  "firstParagraphNumber": 74,
+                  "lastParagraphNumber": 74,
                   "children": []
                 }
               ]
@@ -901,223 +729,7 @@
     {
       "contentType": "PART",
       "titleData": {
-        "title": "La luz tranquila de una noche de otoño",
-        "typeLabel": "Parte",
-        "contentNumber": 3,
-        "romanNumeral": "III"
-      },
-      "pathID": "3",
-      "semanticPath": "parte-3",
-      "url": "/parte-3",
-      "firstParagraphNumber": 80,
-      "lastParagraphNumber": 104,
-      "children": [
-        {
-          "contentType": "SECTION",
-          "titleData": {
-            "title": "Borrajes en la lluvia",
-            "typeLabel": "Seccion",
-            "contentNumber": 1,
-            "romanNumeral": "I"
-          },
-          "pathID": "3__m.0",
-          "semanticPath": "parte-3/seccion-1",
-          "url": "/parte-3#seccion-1",
-          "firstParagraphNumber": 80,
-          "lastParagraphNumber": 104,
-          "children": [
-            {
-              "contentType": "CHAPTER",
-              "titleData": {
-                "title": "Documentos de la vieja escuela",
-                "typeLabel": "Capitulo",
-                "contentNumber": 1,
-                "romanNumeral": "I"
-              },
-              "pathID": "3__m.0__m.0",
-              "semanticPath": "parte-3/seccion-1/capitulo-1",
-              "url": "/parte-3#seccion-1/capitulo-1",
-              "firstParagraphNumber": 81,
-              "lastParagraphNumber": 104,
-              "children": [
-                {
-                  "contentType": "ARTICLE",
-                  "titleData": {
-                    "title": "Una taza de café más (Valle de abajo)",
-                    "typeLabel": "Articulo",
-                    "contentNumber": 1,
-                    "romanNumeral": "I"
-                  },
-                  "pathID": "3__m.0__m.0__m.0",
-                  "semanticPath": "parte-3/seccion-1/capitulo-1/articulo-1",
-                  "url": "/parte-3#seccion-1/capitulo-1/articulo-1",
-                  "firstParagraphNumber": 81,
-                  "lastParagraphNumber": 104,
-                  "children": [
-                    {
-                      "contentType": "ARTICLE_PARAGRAPH",
-                      "titleData": {
-                        "title": "Las motocicletas se empacan para su envío",
-                        "typeLabel": "Articulo Parrafo",
-                        "contentNumber": 1,
-                        "romanNumeral": "I"
-                      },
-                      "pathID": "3__m.0__m.0__m.0__m.0",
-                      "semanticPath": "parte-3/seccion-1/capitulo-1/articulo-1/articulo-parrafo-1",
-                      "url": "/parte-3#seccion-1/capitulo-1/articulo-1/articulo-parrafo-1",
-                      "firstParagraphNumber": 81,
-                      "lastParagraphNumber": 96,
-                      "children": [
-                        {
-                          "contentType": "SUB_ARTICLE",
-                          "titleData": {
-                            "title": "Una costa lejana y alienígena",
-                            "typeLabel": "Subartículo",
-                            "contentNumber": 1,
-                            "romanNumeral": "I"
-                          },
-                          "pathID": "3__m.0__m.0__m.0__m.0__m.0",
-                          "semanticPath": "parte-3/seccion-1/capitulo-1/articulo-1/articulo-parrafo-1/subartículo-1",
-                          "url": "/parte-3#seccion-1/capitulo-1/articulo-1/articulo-parrafo-1/subartículo-1",
-                          "firstParagraphNumber": 81,
-                          "lastParagraphNumber": 83,
-                          "children": []
-                        },
-                        {
-                          "contentType": "SUB_ARTICLE",
-                          "titleData": {
-                            "title": "He roto todas tus ventanas",
-                            "typeLabel": "Subartículo",
-                            "contentNumber": 2,
-                            "romanNumeral": "II"
-                          },
-                          "pathID": "3__m.0__m.0__m.0__m.0__m.1",
-                          "semanticPath": "parte-3/seccion-1/capitulo-1/articulo-1/articulo-parrafo-1/subartículo-2",
-                          "url": "/parte-3#seccion-1/capitulo-1/articulo-1/articulo-parrafo-1/subartículo-2",
-                          "firstParagraphNumber": 84,
-                          "lastParagraphNumber": 87,
-                          "children": []
-                        },
-                        {
-                          "contentType": "SUB_ARTICLE",
-                          "titleData": {
-                            "title": "He derribado todas tus puertas",
-                            "typeLabel": "Subartículo",
-                            "contentNumber": 3,
-                            "romanNumeral": "III"
-                          },
-                          "pathID": "3__m.0__m.0__m.0__m.0__m.2",
-                          "semanticPath": "parte-3/seccion-1/capitulo-1/articulo-1/articulo-parrafo-1/subartículo-3",
-                          "url": "/parte-3#seccion-1/capitulo-1/articulo-1/articulo-parrafo-1/subartículo-3",
-                          "firstParagraphNumber": 88,
-                          "lastParagraphNumber": 94,
-                          "children": []
-                        },
-                        {
-                          "contentType": "IN_BRIEF",
-                          "titleData": {
-                            "title": "Resumen",
-                            "typeLabel": "Resumen",
-                            "contentNumber": null,
-                            "romanNumeral": null
-                          },
-                          "pathID": "3__m.0__m.0__m.0__m.0__i",
-                          "semanticPath": "parte-3/seccion-1/capitulo-1/articulo-1/articulo-parrafo-1/resumen",
-                          "url": "/parte-3#seccion-1/capitulo-1/articulo-1/articulo-parrafo-1/resumen",
-                          "firstParagraphNumber": 95,
-                          "lastParagraphNumber": 96,
-                          "children": []
-                        }
-                      ]
-                    },
-                    {
-                      "contentType": "ARTICLE_PARAGRAPH",
-                      "titleData": {
-                        "title": "Veleros que llevan el nombre de pilotos",
-                        "typeLabel": "Articulo Parrafo",
-                        "contentNumber": 2,
-                        "romanNumeral": "II"
-                      },
-                      "pathID": "3__m.0__m.0__m.0__m.1",
-                      "semanticPath": "parte-3/seccion-1/capitulo-1/articulo-1/articulo-parrafo-2",
-                      "url": "/parte-3/seccion-1/capitulo-1/articulo-1/articulo-parrafo-2",
-                      "firstParagraphNumber": 97,
-                      "lastParagraphNumber": 104,
-                      "children": [
-                        {
-                          "contentType": "SUB_ARTICLE",
-                          "titleData": {
-                            "title": "No tengo sueño",
-                            "typeLabel": "Subartículo",
-                            "contentNumber": 1,
-                            "romanNumeral": "I"
-                          },
-                          "pathID": "3__m.0__m.0__m.0__m.1__m.0",
-                          "semanticPath": "parte-3/seccion-1/capitulo-1/articulo-1/articulo-parrafo-2/subartículo-1",
-                          "url": "/parte-3/seccion-1/capitulo-1/articulo-1/articulo-parrafo-2#subartículo-1",
-                          "firstParagraphNumber": 97,
-                          "lastParagraphNumber": 97,
-                          "children": []
-                        },
-                        {
-                          "contentType": "SUB_ARTICLE",
-                          "titleData": {
-                            "title": "Tintineo sonar mañana",
-                            "typeLabel": "Subartículo",
-                            "contentNumber": 2,
-                            "romanNumeral": "II"
-                          },
-                          "pathID": "3__m.0__m.0__m.0__m.1__m.1",
-                          "semanticPath": "parte-3/seccion-1/capitulo-1/articulo-1/articulo-parrafo-2/subartículo-2",
-                          "url": "/parte-3/seccion-1/capitulo-1/articulo-1/articulo-parrafo-2#subartículo-2",
-                          "firstParagraphNumber": 98,
-                          "lastParagraphNumber": 98,
-                          "children": []
-                        },
-                        {
-                          "contentType": "SUB_ARTICLE",
-                          "titleData": {
-                            "title": "Imperio de la tarde",
-                            "typeLabel": "Subartículo",
-                            "contentNumber": 3,
-                            "romanNumeral": "III"
-                          },
-                          "pathID": "3__m.0__m.0__m.0__m.1__m.2",
-                          "semanticPath": "parte-3/seccion-1/capitulo-1/articulo-1/articulo-parrafo-2/subartículo-3",
-                          "url": "/parte-3/seccion-1/capitulo-1/articulo-1/articulo-parrafo-2#subartículo-3",
-                          "firstParagraphNumber": 99,
-                          "lastParagraphNumber": 100,
-                          "children": []
-                        },
-                        {
-                          "contentType": "IN_BRIEF",
-                          "titleData": {
-                            "title": "Resumen",
-                            "typeLabel": "Resumen",
-                            "contentNumber": null,
-                            "romanNumeral": null
-                          },
-                          "pathID": "3__m.0__m.0__m.0__m.1__i",
-                          "semanticPath": "parte-3/seccion-1/capitulo-1/articulo-1/articulo-parrafo-2/resumen",
-                          "url": "/parte-3/seccion-1/capitulo-1/articulo-1/articulo-parrafo-2#resumen",
-                          "firstParagraphNumber": 101,
-                          "lastParagraphNumber": 104,
-                          "children": []
-                        }
-                      ]
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "contentType": "PART",
-      "titleData": {
-        "title": "Verano sin fin",
+        "title": "La vida en gracia (o intentando)",
         "typeLabel": "Parte",
         "contentNumber": 4,
         "romanNumeral": "IV"
@@ -1125,13 +737,13 @@
       "pathID": "4",
       "semanticPath": "parte-4",
       "url": "/parte-4",
-      "firstParagraphNumber": 105,
-      "lastParagraphNumber": 143,
+      "firstParagraphNumber": 75,
+      "lastParagraphNumber": 186,
       "children": [
         {
           "contentType": "SECTION",
           "titleData": {
-            "title": "Explorando lugares olvidados",
+            "title": "Virtudes y vicios que no llegaron al borrador final",
             "typeLabel": "Seccion",
             "contentNumber": 1,
             "romanNumeral": "I"
@@ -1139,13 +751,13 @@
           "pathID": "4__m.0",
           "semanticPath": "parte-4/seccion-1",
           "url": "/parte-4#seccion-1",
-          "firstParagraphNumber": 105,
-          "lastParagraphNumber": 143,
+          "firstParagraphNumber": 75,
+          "lastParagraphNumber": 134,
           "children": [
             {
               "contentType": "CHAPTER",
               "titleData": {
-                "title": "Fotografías de carnaval en blanco y negro",
+                "title": "Persistente invitación de la gracia",
                 "typeLabel": "Capitulo",
                 "contentNumber": 1,
                 "romanNumeral": "I"
@@ -1153,138 +765,30 @@
               "pathID": "4__m.0__m.0",
               "semanticPath": "parte-4/seccion-1/capitulo-1",
               "url": "/parte-4#seccion-1/capitulo-1",
-              "firstParagraphNumber": 105,
-              "lastParagraphNumber": 116,
+              "firstParagraphNumber": 75,
+              "lastParagraphNumber": 77,
               "children": [
                 {
-                  "contentType": "ARTICLE",
+                  "contentType": "SUB_ARTICLE",
                   "titleData": {
-                    "title": "Las veces que están cambiando",
-                    "typeLabel": "Articulo",
+                    "title": "Sic semper tyrannis en conversaciones políticas",
+                    "typeLabel": "Subartículo",
                     "contentNumber": 1,
                     "romanNumeral": "I"
                   },
                   "pathID": "4__m.0__m.0__m.0",
-                  "semanticPath": "parte-4/seccion-1/capitulo-1/articulo-1",
-                  "url": "/parte-4#seccion-1/capitulo-1/articulo-1",
-                  "firstParagraphNumber": 105,
-                  "lastParagraphNumber": 110,
-                  "children": [
-                    {
-                      "contentType": "ARTICLE_PARAGRAPH",
-                      "titleData": {
-                        "title": "Cosas que los mapaches no comen",
-                        "typeLabel": "Articulo Parrafo",
-                        "contentNumber": 1,
-                        "romanNumeral": "I"
-                      },
-                      "pathID": "4__m.0__m.0__m.0__m.0",
-                      "semanticPath": "parte-4/seccion-1/capitulo-1/articulo-1/articulo-parrafo-1",
-                      "url": "/parte-4#seccion-1/capitulo-1/articulo-1/articulo-parrafo-1",
-                      "firstParagraphNumber": 105,
-                      "lastParagraphNumber": 110,
-                      "children": [
-                        {
-                          "contentType": "SUB_ARTICLE",
-                          "titleData": {
-                            "title": "Magia remolino barco",
-                            "typeLabel": "Subartículo",
-                            "contentNumber": 1,
-                            "romanNumeral": "I"
-                          },
-                          "pathID": "4__m.0__m.0__m.0__m.0__m.0",
-                          "semanticPath": "parte-4/seccion-1/capitulo-1/articulo-1/articulo-parrafo-1/subartículo-1",
-                          "url": "/parte-4#seccion-1/capitulo-1/articulo-1/articulo-parrafo-1/subartículo-1",
-                          "firstParagraphNumber": 105,
-                          "lastParagraphNumber": 107,
-                          "children": []
-                        },
-                        {
-                          "contentType": "IN_BRIEF",
-                          "titleData": {
-                            "title": "Resumen",
-                            "typeLabel": "Resumen",
-                            "contentNumber": null,
-                            "romanNumeral": null
-                          },
-                          "pathID": "4__m.0__m.0__m.0__m.0__i",
-                          "semanticPath": "parte-4/seccion-1/capitulo-1/articulo-1/articulo-parrafo-1/resumen",
-                          "url": "/parte-4#seccion-1/capitulo-1/articulo-1/articulo-parrafo-1/resumen",
-                          "firstParagraphNumber": 108,
-                          "lastParagraphNumber": 110,
-                          "children": []
-                        }
-                      ]
-                    }
-                  ]
-                },
-                {
-                  "contentType": "ARTICLE",
-                  "titleData": {
-                    "title": "Traerlo todo de vuelta a casa",
-                    "typeLabel": "Articulo",
-                    "contentNumber": 2,
-                    "romanNumeral": "II"
-                  },
-                  "pathID": "4__m.0__m.0__m.1",
-                  "semanticPath": "parte-4/seccion-1/capitulo-1/articulo-2",
-                  "url": "/parte-4/seccion-1/capitulo-1/articulo-2",
-                  "firstParagraphNumber": 111,
-                  "lastParagraphNumber": 116,
-                  "children": [
-                    {
-                      "contentType": "SUB_ARTICLE",
-                      "titleData": {
-                        "title": "Estoy listo para ir a cualquier parte",
-                        "typeLabel": "Subartículo",
-                        "contentNumber": 1,
-                        "romanNumeral": "I"
-                      },
-                      "pathID": "4__m.0__m.0__m.1__m.0",
-                      "semanticPath": "parte-4/seccion-1/capitulo-1/articulo-2/subartículo-1",
-                      "url": "/parte-4/seccion-1/capitulo-1/articulo-2#subartículo-1",
-                      "firstParagraphNumber": 111,
-                      "lastParagraphNumber": 111,
-                      "children": []
-                    },
-                    {
-                      "contentType": "SUB_ARTICLE",
-                      "titleData": {
-                        "title": "Balanceándome locamente a través del sol",
-                        "typeLabel": "Subartículo",
-                        "contentNumber": 2,
-                        "romanNumeral": "II"
-                      },
-                      "pathID": "4__m.0__m.0__m.1__m.1",
-                      "semanticPath": "parte-4/seccion-1/capitulo-1/articulo-2/subartículo-2",
-                      "url": "/parte-4/seccion-1/capitulo-1/articulo-2#subartículo-2",
-                      "firstParagraphNumber": 112,
-                      "lastParagraphNumber": 114,
-                      "children": []
-                    },
-                    {
-                      "contentType": "IN_BRIEF",
-                      "titleData": {
-                        "title": "Resumen",
-                        "typeLabel": "Resumen",
-                        "contentNumber": null,
-                        "romanNumeral": null
-                      },
-                      "pathID": "4__m.0__m.0__m.1__i",
-                      "semanticPath": "parte-4/seccion-1/capitulo-1/articulo-2/resumen",
-                      "url": "/parte-4/seccion-1/capitulo-1/articulo-2#resumen",
-                      "firstParagraphNumber": 115,
-                      "lastParagraphNumber": 116,
-                      "children": []
-                    }
-                  ]
+                  "semanticPath": "parte-4/seccion-1/capitulo-1/subartículo-1",
+                  "url": "/parte-4#seccion-1/capitulo-1/subartículo-1",
+                  "firstParagraphNumber": 75,
+                  "lastParagraphNumber": 77,
+                  "children": []
                 }
               ]
             },
             {
               "contentType": "CHAPTER",
               "titleData": {
-                "title": "Memorias de alcaldes de Minnesota",
+                "title": "Probablemente responderás con un mensaje",
                 "typeLabel": "Capitulo",
                 "contentNumber": 2,
                 "romanNumeral": "II"
@@ -1292,13 +796,13 @@
               "pathID": "4__m.0__m.1",
               "semanticPath": "parte-4/seccion-1/capitulo-2",
               "url": "/parte-4/seccion-1/capitulo-2",
-              "firstParagraphNumber": 117,
-              "lastParagraphNumber": 128,
+              "firstParagraphNumber": 78,
+              "lastParagraphNumber": 112,
               "children": [
                 {
                   "contentType": "ARTICLE",
                   "titleData": {
-                    "title": "Carretera 61 revisitada",
+                    "title": "Reloj despertador divino sin opción de posponer",
                     "typeLabel": "Articulo",
                     "contentNumber": 1,
                     "romanNumeral": "I"
@@ -1306,13 +810,13 @@
                   "pathID": "4__m.0__m.1__m.0",
                   "semanticPath": "parte-4/seccion-1/capitulo-2/articulo-1",
                   "url": "/parte-4/seccion-1/capitulo-2#articulo-1",
-                  "firstParagraphNumber": 117,
-                  "lastParagraphNumber": 123,
+                  "firstParagraphNumber": 78,
+                  "lastParagraphNumber": 83,
                   "children": [
                     {
                       "contentType": "SUB_ARTICLE",
                       "titleData": {
-                        "title": "Escapando a la carrera",
+                        "title": "Etcétera para emergencias teológicas",
                         "typeLabel": "Subartículo",
                         "contentNumber": 1,
                         "romanNumeral": "I"
@@ -1320,23 +824,8 @@
                       "pathID": "4__m.0__m.1__m.0__m.0",
                       "semanticPath": "parte-4/seccion-1/capitulo-2/articulo-1/subartículo-1",
                       "url": "/parte-4/seccion-1/capitulo-2#articulo-1/subartículo-1",
-                      "firstParagraphNumber": 117,
-                      "lastParagraphNumber": 118,
-                      "children": []
-                    },
-                    {
-                      "contentType": "SUB_ARTICLE",
-                      "titleData": {
-                        "title": "Payaso harapiento",
-                        "typeLabel": "Subartículo",
-                        "contentNumber": 2,
-                        "romanNumeral": "II"
-                      },
-                      "pathID": "4__m.0__m.1__m.0__m.1",
-                      "semanticPath": "parte-4/seccion-1/capitulo-2/articulo-1/subartículo-2",
-                      "url": "/parte-4/seccion-1/capitulo-2#articulo-1/subartículo-2",
-                      "firstParagraphNumber": 119,
-                      "lastParagraphNumber": 119,
+                      "firstParagraphNumber": 78,
+                      "lastParagraphNumber": 80,
                       "children": []
                     },
                     {
@@ -1350,8 +839,8 @@
                       "pathID": "4__m.0__m.1__m.0__i",
                       "semanticPath": "parte-4/seccion-1/capitulo-2/articulo-1/resumen",
                       "url": "/parte-4/seccion-1/capitulo-2#articulo-1/resumen",
-                      "firstParagraphNumber": 120,
-                      "lastParagraphNumber": 123,
+                      "firstParagraphNumber": 81,
+                      "lastParagraphNumber": 83,
                       "children": []
                     }
                   ]
@@ -1359,7 +848,7 @@
                 {
                   "contentType": "ARTICLE",
                   "titleData": {
-                    "title": "Sangre en las pistas",
+                    "title": "La providencia programa conflictos de horario para nuestro bien",
                     "typeLabel": "Articulo",
                     "contentNumber": 2,
                     "romanNumeral": "II"
@@ -1367,23 +856,236 @@
                   "pathID": "4__m.0__m.1__m.1",
                   "semanticPath": "parte-4/seccion-1/capitulo-2/articulo-2",
                   "url": "/parte-4/seccion-1/capitulo-2/articulo-2",
-                  "firstParagraphNumber": 124,
-                  "lastParagraphNumber": 128,
+                  "firstParagraphNumber": 84,
+                  "lastParagraphNumber": 112,
                   "children": [
                     {
-                      "contentType": "IN_BRIEF",
+                      "contentType": "ARTICLE_PARAGRAPH",
                       "titleData": {
-                        "title": "Resumen",
-                        "typeLabel": "Resumen",
-                        "contentNumber": null,
-                        "romanNumeral": null
+                        "title": "Pinturas rupestres como proto-sacramentos",
+                        "typeLabel": "Articulo Parrafo",
+                        "contentNumber": 1,
+                        "romanNumeral": "I"
                       },
-                      "pathID": "4__m.0__m.1__m.1__i",
-                      "semanticPath": "parte-4/seccion-1/capitulo-2/articulo-2/resumen",
-                      "url": "/parte-4/seccion-1/capitulo-2/articulo-2#resumen",
-                      "firstParagraphNumber": 128,
-                      "lastParagraphNumber": 128,
-                      "children": []
+                      "pathID": "4__m.0__m.1__m.1__m.0",
+                      "semanticPath": "parte-4/seccion-1/capitulo-2/articulo-2/articulo-parrafo-1",
+                      "url": "/parte-4/seccion-1/capitulo-2/articulo-2#articulo-parrafo-1",
+                      "firstParagraphNumber": 84,
+                      "lastParagraphNumber": 92,
+                      "children": [
+                        {
+                          "contentType": "SUB_ARTICLE",
+                          "titleData": {
+                            "title": "Mirar pensativamente a la distancia",
+                            "typeLabel": "Subartículo",
+                            "contentNumber": 1,
+                            "romanNumeral": "I"
+                          },
+                          "pathID": "4__m.0__m.1__m.1__m.0__m.0",
+                          "semanticPath": "parte-4/seccion-1/capitulo-2/articulo-2/articulo-parrafo-1/subartículo-1",
+                          "url": "/parte-4/seccion-1/capitulo-2/articulo-2#articulo-parrafo-1/subartículo-1",
+                          "firstParagraphNumber": 84,
+                          "lastParagraphNumber": 85,
+                          "children": []
+                        },
+                        {
+                          "contentType": "SUB_ARTICLE",
+                          "titleData": {
+                            "title": "Encogerse de hombros con autoridad académica",
+                            "typeLabel": "Subartículo",
+                            "contentNumber": 2,
+                            "romanNumeral": "II"
+                          },
+                          "pathID": "4__m.0__m.1__m.1__m.0__m.1",
+                          "semanticPath": "parte-4/seccion-1/capitulo-2/articulo-2/articulo-parrafo-1/subartículo-2",
+                          "url": "/parte-4/seccion-1/capitulo-2/articulo-2#articulo-parrafo-1/subartículo-2",
+                          "firstParagraphNumber": 86,
+                          "lastParagraphNumber": 88,
+                          "children": []
+                        },
+                        {
+                          "contentType": "SUB_ARTICLE",
+                          "titleData": {
+                            "title": "Redirigir la conversación a Agustín",
+                            "typeLabel": "Subartículo",
+                            "contentNumber": 3,
+                            "romanNumeral": "III"
+                          },
+                          "pathID": "4__m.0__m.1__m.1__m.0__m.2",
+                          "semanticPath": "parte-4/seccion-1/capitulo-2/articulo-2/articulo-parrafo-1/subartículo-3",
+                          "url": "/parte-4/seccion-1/capitulo-2/articulo-2#articulo-parrafo-1/subartículo-3",
+                          "firstParagraphNumber": 89,
+                          "lastParagraphNumber": 91,
+                          "children": []
+                        },
+                        {
+                          "contentType": "IN_BRIEF",
+                          "titleData": {
+                            "title": "Resumen",
+                            "typeLabel": "Resumen",
+                            "contentNumber": null,
+                            "romanNumeral": null
+                          },
+                          "pathID": "4__m.0__m.1__m.1__m.0__i",
+                          "semanticPath": "parte-4/seccion-1/capitulo-2/articulo-2/articulo-parrafo-1/resumen",
+                          "url": "/parte-4/seccion-1/capitulo-2/articulo-2#articulo-parrafo-1/resumen",
+                          "firstParagraphNumber": 92,
+                          "lastParagraphNumber": 92,
+                          "children": []
+                        }
+                      ]
+                    },
+                    {
+                      "contentType": "ARTICLE_PARAGRAPH",
+                      "titleData": {
+                        "title": "Cacerías de mamuts y cantos místicos",
+                        "typeLabel": "Articulo Parrafo",
+                        "contentNumber": 2,
+                        "romanNumeral": "II"
+                      },
+                      "pathID": "4__m.0__m.1__m.1__m.1",
+                      "semanticPath": "parte-4/seccion-1/capitulo-2/articulo-2/articulo-parrafo-2",
+                      "url": "/parte-4/seccion-1/capitulo-2/articulo-2/articulo-parrafo-2",
+                      "firstParagraphNumber": 93,
+                      "lastParagraphNumber": 102,
+                      "children": [
+                        {
+                          "contentType": "SUB_ARTICLE",
+                          "titleData": {
+                            "title": "Confiar en misterios invisibles",
+                            "typeLabel": "Subartículo",
+                            "contentNumber": 1,
+                            "romanNumeral": "I"
+                          },
+                          "pathID": "4__m.0__m.1__m.1__m.1__m.0",
+                          "semanticPath": "parte-4/seccion-1/capitulo-2/articulo-2/articulo-parrafo-2/subartículo-1",
+                          "url": "/parte-4/seccion-1/capitulo-2/articulo-2/articulo-parrafo-2#subartículo-1",
+                          "firstParagraphNumber": 93,
+                          "lastParagraphNumber": 94,
+                          "children": []
+                        },
+                        {
+                          "contentType": "SUB_ARTICLE",
+                          "titleData": {
+                            "title": "Cómo la fe es como usar auriculares Bluetooth",
+                            "typeLabel": "Subartículo",
+                            "contentNumber": 2,
+                            "romanNumeral": "II"
+                          },
+                          "pathID": "4__m.0__m.1__m.1__m.1__m.1",
+                          "semanticPath": "parte-4/seccion-1/capitulo-2/articulo-2/articulo-parrafo-2/subartículo-2",
+                          "url": "/parte-4/seccion-1/capitulo-2/articulo-2/articulo-parrafo-2#subartículo-2",
+                          "firstParagraphNumber": 95,
+                          "lastParagraphNumber": 98,
+                          "children": []
+                        },
+                        {
+                          "contentType": "SUB_ARTICLE",
+                          "titleData": {
+                            "title": "Fe más allá de la prueba científica",
+                            "typeLabel": "Subartículo",
+                            "contentNumber": 3,
+                            "romanNumeral": "III"
+                          },
+                          "pathID": "4__m.0__m.1__m.1__m.1__m.2",
+                          "semanticPath": "parte-4/seccion-1/capitulo-2/articulo-2/articulo-parrafo-2/subartículo-3",
+                          "url": "/parte-4/seccion-1/capitulo-2/articulo-2/articulo-parrafo-2#subartículo-3",
+                          "firstParagraphNumber": 99,
+                          "lastParagraphNumber": 99,
+                          "children": []
+                        },
+                        {
+                          "contentType": "IN_BRIEF",
+                          "titleData": {
+                            "title": "Resumen",
+                            "typeLabel": "Resumen",
+                            "contentNumber": null,
+                            "romanNumeral": null
+                          },
+                          "pathID": "4__m.0__m.1__m.1__m.1__i",
+                          "semanticPath": "parte-4/seccion-1/capitulo-2/articulo-2/articulo-parrafo-2/resumen",
+                          "url": "/parte-4/seccion-1/capitulo-2/articulo-2/articulo-parrafo-2#resumen",
+                          "firstParagraphNumber": 100,
+                          "lastParagraphNumber": 102,
+                          "children": []
+                        }
+                      ]
+                    },
+                    {
+                      "contentType": "ARTICLE_PARAGRAPH",
+                      "titleData": {
+                        "title": "Sócrates molestando a los invitados a la cena",
+                        "typeLabel": "Articulo Parrafo",
+                        "contentNumber": 3,
+                        "romanNumeral": "III"
+                      },
+                      "pathID": "4__m.0__m.1__m.1__m.2",
+                      "semanticPath": "parte-4/seccion-1/capitulo-2/articulo-2/articulo-parrafo-3",
+                      "url": "/parte-4/seccion-1/capitulo-2/articulo-2/articulo-parrafo-3",
+                      "firstParagraphNumber": 103,
+                      "lastParagraphNumber": 112,
+                      "children": [
+                        {
+                          "contentType": "SUB_ARTICLE",
+                          "titleData": {
+                            "title": "Por qué Dios no siempre responde en la primera llamada",
+                            "typeLabel": "Subartículo",
+                            "contentNumber": 1,
+                            "romanNumeral": "I"
+                          },
+                          "pathID": "4__m.0__m.1__m.1__m.2__m.0",
+                          "semanticPath": "parte-4/seccion-1/capitulo-2/articulo-2/articulo-parrafo-3/subartículo-1",
+                          "url": "/parte-4/seccion-1/capitulo-2/articulo-2/articulo-parrafo-3#subartículo-1",
+                          "firstParagraphNumber": 103,
+                          "lastParagraphNumber": 104,
+                          "children": []
+                        },
+                        {
+                          "contentType": "SUB_ARTICLE",
+                          "titleData": {
+                            "title": "Zonas espirituales muertas",
+                            "typeLabel": "Subartículo",
+                            "contentNumber": 2,
+                            "romanNumeral": "II"
+                          },
+                          "pathID": "4__m.0__m.1__m.1__m.2__m.1",
+                          "semanticPath": "parte-4/seccion-1/capitulo-2/articulo-2/articulo-parrafo-3/subartículo-2",
+                          "url": "/parte-4/seccion-1/capitulo-2/articulo-2/articulo-parrafo-3#subartículo-2",
+                          "firstParagraphNumber": 105,
+                          "lastParagraphNumber": 108,
+                          "children": []
+                        },
+                        {
+                          "contentType": "SUB_ARTICLE",
+                          "titleData": {
+                            "title": "El rosario: misterios, nudos y cuentas bajo el sofá",
+                            "typeLabel": "Subartículo",
+                            "contentNumber": 3,
+                            "romanNumeral": "III"
+                          },
+                          "pathID": "4__m.0__m.1__m.1__m.2__m.2",
+                          "semanticPath": "parte-4/seccion-1/capitulo-2/articulo-2/articulo-parrafo-3/subartículo-3",
+                          "url": "/parte-4/seccion-1/capitulo-2/articulo-2/articulo-parrafo-3#subartículo-3",
+                          "firstParagraphNumber": 109,
+                          "lastParagraphNumber": 111,
+                          "children": []
+                        },
+                        {
+                          "contentType": "IN_BRIEF",
+                          "titleData": {
+                            "title": "Resumen",
+                            "typeLabel": "Resumen",
+                            "contentNumber": null,
+                            "romanNumeral": null
+                          },
+                          "pathID": "4__m.0__m.1__m.1__m.2__i",
+                          "semanticPath": "parte-4/seccion-1/capitulo-2/articulo-2/articulo-parrafo-3/resumen",
+                          "url": "/parte-4/seccion-1/capitulo-2/articulo-2/articulo-parrafo-3#resumen",
+                          "firstParagraphNumber": 112,
+                          "lastParagraphNumber": 112,
+                          "children": []
+                        }
+                      ]
                     }
                   ]
                 }
@@ -1392,7 +1094,7 @@
             {
               "contentType": "CHAPTER",
               "titleData": {
-                "title": "Cada manuscrito que el profesor de gimnasio de séptimo grado nunca publicó",
+                "title": "Guardar santo el fin de semana",
                 "typeLabel": "Capitulo",
                 "contentNumber": 3,
                 "romanNumeral": "III"
@@ -1400,13 +1102,13 @@
               "pathID": "4__m.0__m.2",
               "semanticPath": "parte-4/seccion-1/capitulo-3",
               "url": "/parte-4/seccion-1/capitulo-3",
-              "firstParagraphNumber": 129,
-              "lastParagraphNumber": 143,
+              "firstParagraphNumber": 113,
+              "lastParagraphNumber": 134,
               "children": [
                 {
                   "contentType": "ARTICLE",
                   "titleData": {
-                    "title": "Amor y robo",
+                    "title": "El peso de la tradición",
                     "typeLabel": "Articulo",
                     "contentNumber": 1,
                     "romanNumeral": "I"
@@ -1414,39 +1116,9 @@
                   "pathID": "4__m.0__m.2__m.0",
                   "semanticPath": "parte-4/seccion-1/capitulo-3/articulo-1",
                   "url": "/parte-4/seccion-1/capitulo-3#articulo-1",
-                  "firstParagraphNumber": 129,
-                  "lastParagraphNumber": 136,
+                  "firstParagraphNumber": 113,
+                  "lastParagraphNumber": 118,
                   "children": [
-                    {
-                      "contentType": "SUB_ARTICLE",
-                      "titleData": {
-                        "title": "Alcance retorcido del dolor loco",
-                        "typeLabel": "Subartículo",
-                        "contentNumber": 1,
-                        "romanNumeral": "I"
-                      },
-                      "pathID": "4__m.0__m.2__m.0__m.0",
-                      "semanticPath": "parte-4/seccion-1/capitulo-3/articulo-1/subartículo-1",
-                      "url": "/parte-4/seccion-1/capitulo-3#articulo-1/subartículo-1",
-                      "firstParagraphNumber": 129,
-                      "lastParagraphNumber": 129,
-                      "children": []
-                    },
-                    {
-                      "contentType": "SUB_ARTICLE",
-                      "titleData": {
-                        "title": "Árboles embrujados y asustados",
-                        "typeLabel": "Subartículo",
-                        "contentNumber": 2,
-                        "romanNumeral": "II"
-                      },
-                      "pathID": "4__m.0__m.2__m.0__m.1",
-                      "semanticPath": "parte-4/seccion-1/capitulo-3/articulo-1/subartículo-2",
-                      "url": "/parte-4/seccion-1/capitulo-3#articulo-1/subartículo-2",
-                      "firstParagraphNumber": 130,
-                      "lastParagraphNumber": 131,
-                      "children": []
-                    },
                     {
                       "contentType": "IN_BRIEF",
                       "titleData": {
@@ -1458,23 +1130,8 @@
                       "pathID": "4__m.0__m.2__m.0__i",
                       "semanticPath": "parte-4/seccion-1/capitulo-3/articulo-1/resumen",
                       "url": "/parte-4/seccion-1/capitulo-3#articulo-1/resumen",
-                      "firstParagraphNumber": 132,
-                      "lastParagraphNumber": 135,
-                      "children": []
-                    },
-                    {
-                      "contentType": "PARAGRAPH_GROUP",
-                      "titleData": {
-                        "title": "Una Docena de Planetas Extraños",
-                        "typeLabel": "Parrafo Grupo",
-                        "contentNumber": 1,
-                        "romanNumeral": "I"
-                      },
-                      "pathID": "4__m.0__m.2__m.0__f.0",
-                      "semanticPath": "parte-4/seccion-1/capitulo-3/articulo-1/contenido-final",
-                      "url": "/parte-4/seccion-1/capitulo-3#articulo-1/contenido-final",
-                      "firstParagraphNumber": 136,
-                      "lastParagraphNumber": 136,
+                      "firstParagraphNumber": 118,
+                      "lastParagraphNumber": 118,
                       "children": []
                     }
                   ]
@@ -1482,7 +1139,7 @@
                 {
                   "contentType": "ARTICLE",
                   "titleData": {
-                    "title": "Tiempos modernos",
+                    "title": "Soluciones de almacenamiento para la teología voluminosa",
                     "typeLabel": "Articulo",
                     "contentNumber": 2,
                     "romanNumeral": "II"
@@ -1490,39 +1147,9 @@
                   "pathID": "4__m.0__m.2__m.1",
                   "semanticPath": "parte-4/seccion-1/capitulo-3/articulo-2",
                   "url": "/parte-4/seccion-1/capitulo-3/articulo-2",
-                  "firstParagraphNumber": 137,
-                  "lastParagraphNumber": 143,
+                  "firstParagraphNumber": 119,
+                  "lastParagraphNumber": 125,
                   "children": [
-                    {
-                      "contentType": "SUB_ARTICLE",
-                      "titleData": {
-                        "title": "Siluetas junto al mar",
-                        "typeLabel": "Subartículo",
-                        "contentNumber": 1,
-                        "romanNumeral": "I"
-                      },
-                      "pathID": "4__m.0__m.2__m.1__m.0",
-                      "semanticPath": "parte-4/seccion-1/capitulo-3/articulo-2/subartículo-1",
-                      "url": "/parte-4/seccion-1/capitulo-3/articulo-2#subartículo-1",
-                      "firstParagraphNumber": 137,
-                      "lastParagraphNumber": 138,
-                      "children": []
-                    },
-                    {
-                      "contentType": "SUB_ARTICLE",
-                      "titleData": {
-                        "title": "Rodeadas por las arenas del circo",
-                        "typeLabel": "Subartículo",
-                        "contentNumber": 2,
-                        "romanNumeral": "II"
-                      },
-                      "pathID": "4__m.0__m.2__m.1__m.1",
-                      "semanticPath": "parte-4/seccion-1/capitulo-3/articulo-2/subartículo-2",
-                      "url": "/parte-4/seccion-1/capitulo-3/articulo-2#subartículo-2",
-                      "firstParagraphNumber": 139,
-                      "lastParagraphNumber": 139,
-                      "children": []
-                    },
                     {
                       "contentType": "IN_BRIEF",
                       "titleData": {
@@ -1534,11 +1161,503 @@
                       "pathID": "4__m.0__m.2__m.1__i",
                       "semanticPath": "parte-4/seccion-1/capitulo-3/articulo-2/resumen",
                       "url": "/parte-4/seccion-1/capitulo-3/articulo-2#resumen",
-                      "firstParagraphNumber": 140,
-                      "lastParagraphNumber": 143,
+                      "firstParagraphNumber": 124,
+                      "lastParagraphNumber": 124,
+                      "children": []
+                    },
+                    {
+                      "contentType": "PARAGRAPH_GROUP",
+                      "titleData": {
+                        "title": "Orden y caos en la secadora",
+                        "typeLabel": "Parrafo Grupo",
+                        "contentNumber": 3,
+                        "romanNumeral": "III"
+                      },
+                      "pathID": "4__m.0__m.2__m.1__f.0",
+                      "semanticPath": "parte-4/seccion-1/capitulo-3/articulo-2/contenido-final",
+                      "url": "/parte-4/seccion-1/capitulo-3/articulo-2#contenido-final",
+                      "firstParagraphNumber": 125,
+                      "lastParagraphNumber": 125,
                       "children": []
                     }
                   ]
+                },
+                {
+                  "contentType": "ARTICLE",
+                  "titleData": {
+                    "title": "Impresionar a los invitados con libros grandes",
+                    "typeLabel": "Articulo",
+                    "contentNumber": 3,
+                    "romanNumeral": "III"
+                  },
+                  "pathID": "4__m.0__m.2__m.2",
+                  "semanticPath": "parte-4/seccion-1/capitulo-3/articulo-3",
+                  "url": "/parte-4/seccion-1/capitulo-3/articulo-3",
+                  "firstParagraphNumber": 126,
+                  "lastParagraphNumber": 134,
+                  "children": [
+                    {
+                      "contentType": "SUB_ARTICLE",
+                      "titleData": {
+                        "title": "Peregrinaciones: santidad en la carretera, con bocadillos incluidos",
+                        "typeLabel": "Subartículo",
+                        "contentNumber": 1,
+                        "romanNumeral": "I"
+                      },
+                      "pathID": "4__m.0__m.2__m.2__m.0",
+                      "semanticPath": "parte-4/seccion-1/capitulo-3/articulo-3/subartículo-1",
+                      "url": "/parte-4/seccion-1/capitulo-3/articulo-3#subartículo-1",
+                      "firstParagraphNumber": 126,
+                      "lastParagraphNumber": 128,
+                      "children": []
+                    },
+                    {
+                      "contentType": "SUB_ARTICLE",
+                      "titleData": {
+                        "title": "La gracia de la perseverancia en la esperanza, incluso durante reuniones financieras parroquiales",
+                        "typeLabel": "Subartículo",
+                        "contentNumber": 2,
+                        "romanNumeral": "II"
+                      },
+                      "pathID": "4__m.0__m.2__m.2__m.1",
+                      "semanticPath": "parte-4/seccion-1/capitulo-3/articulo-3/subartículo-2",
+                      "url": "/parte-4/seccion-1/capitulo-3/articulo-3#subartículo-2",
+                      "firstParagraphNumber": 129,
+                      "lastParagraphNumber": 130,
+                      "children": []
+                    },
+                    {
+                      "contentType": "IN_BRIEF",
+                      "titleData": {
+                        "title": "Resumen",
+                        "typeLabel": "Resumen",
+                        "contentNumber": null,
+                        "romanNumeral": null
+                      },
+                      "pathID": "4__m.0__m.2__m.2__i",
+                      "semanticPath": "parte-4/seccion-1/capitulo-3/articulo-3/resumen",
+                      "url": "/parte-4/seccion-1/capitulo-3/articulo-3#resumen",
+                      "firstParagraphNumber": 131,
+                      "lastParagraphNumber": 133,
+                      "children": []
+                    },
+                    {
+                      "contentType": "PARAGRAPH_GROUP",
+                      "titleData": {
+                        "title": "Limo para el calzado no encontrado",
+                        "typeLabel": "Parrafo Grupo",
+                        "contentNumber": 1,
+                        "romanNumeral": "I"
+                      },
+                      "pathID": "4__m.0__m.2__m.2__f.0",
+                      "semanticPath": "parte-4/seccion-1/capitulo-3/articulo-3/contenido-final",
+                      "url": "/parte-4/seccion-1/capitulo-3/articulo-3#contenido-final",
+                      "firstParagraphNumber": 134,
+                      "lastParagraphNumber": 134,
+                      "children": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "contentType": "SECTION",
+          "titleData": {
+            "title": "Parábolas para las molestias diarias",
+            "typeLabel": "Seccion",
+            "contentNumber": 2,
+            "romanNumeral": "II"
+          },
+          "pathID": "4__m.1",
+          "semanticPath": "parte-4/seccion-2",
+          "url": "/parte-4/seccion-2",
+          "firstParagraphNumber": 135,
+          "lastParagraphNumber": 152,
+          "children": [
+            {
+              "contentType": "ARTICLE",
+              "titleData": {
+                "title": "Debates de pronunciación que nadie gana",
+                "typeLabel": "Articulo",
+                "contentNumber": 1,
+                "romanNumeral": "I"
+              },
+              "pathID": "4__m.1__m.0",
+              "semanticPath": "parte-4/seccion-2/articulo-1",
+              "url": "/parte-4/seccion-2#articulo-1",
+              "firstParagraphNumber": 135,
+              "lastParagraphNumber": 140,
+              "children": [
+                {
+                  "contentType": "IN_BRIEF",
+                  "titleData": {
+                    "title": "Resumen",
+                    "typeLabel": "Resumen",
+                    "contentNumber": null,
+                    "romanNumeral": null
+                  },
+                  "pathID": "4__m.1__m.0__i",
+                  "semanticPath": "parte-4/seccion-2/articulo-1/resumen",
+                  "url": "/parte-4/seccion-2#articulo-1/resumen",
+                  "firstParagraphNumber": 140,
+                  "lastParagraphNumber": 140,
+                  "children": []
+                }
+              ]
+            },
+            {
+              "contentType": "ARTICLE",
+              "titleData": {
+                "title": "Frases clásicas que siempre impresionan",
+                "typeLabel": "Articulo",
+                "contentNumber": 2,
+                "romanNumeral": "II"
+              },
+              "pathID": "4__m.1__m.1",
+              "semanticPath": "parte-4/seccion-2/articulo-2",
+              "url": "/parte-4/seccion-2/articulo-2",
+              "firstParagraphNumber": 141,
+              "lastParagraphNumber": 143,
+              "children": [
+                {
+                  "contentType": "SUB_ARTICLE",
+                  "titleData": {
+                    "title": "La visión beatífica: alegría eterna, donas ilimitadas y no más problemas de estacionamiento",
+                    "typeLabel": "Subartículo",
+                    "contentNumber": 1,
+                    "romanNumeral": "I"
+                  },
+                  "pathID": "4__m.1__m.1__m.0",
+                  "semanticPath": "parte-4/seccion-2/articulo-2/subartículo-1",
+                  "url": "/parte-4/seccion-2/articulo-2#subartículo-1",
+                  "firstParagraphNumber": 141,
+                  "lastParagraphNumber": 141,
+                  "children": []
+                },
+                {
+                  "contentType": "IN_BRIEF",
+                  "titleData": {
+                    "title": "Resumen",
+                    "typeLabel": "Resumen",
+                    "contentNumber": null,
+                    "romanNumeral": null
+                  },
+                  "pathID": "4__m.1__m.1__i",
+                  "semanticPath": "parte-4/seccion-2/articulo-2/resumen",
+                  "url": "/parte-4/seccion-2/articulo-2#resumen",
+                  "firstParagraphNumber": 142,
+                  "lastParagraphNumber": 143,
+                  "children": []
+                }
+              ]
+            },
+            {
+              "contentType": "ARTICLE",
+              "titleData": {
+                "title": "Cuándo fingir que olvidaste la traducción",
+                "typeLabel": "Articulo",
+                "contentNumber": 3,
+                "romanNumeral": "III"
+              },
+              "pathID": "4__m.1__m.2",
+              "semanticPath": "parte-4/seccion-2/articulo-3",
+              "url": "/parte-4/seccion-2/articulo-3",
+              "firstParagraphNumber": 144,
+              "lastParagraphNumber": 152,
+              "children": [
+                {
+                  "contentType": "IN_BRIEF",
+                  "titleData": {
+                    "title": "Resumen",
+                    "typeLabel": "Resumen",
+                    "contentNumber": null,
+                    "romanNumeral": null
+                  },
+                  "pathID": "4__m.1__m.2__i",
+                  "semanticPath": "parte-4/seccion-2/articulo-3/resumen",
+                  "url": "/parte-4/seccion-2/articulo-3#resumen",
+                  "firstParagraphNumber": 151,
+                  "lastParagraphNumber": 152,
+                  "children": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "contentType": "SECTION",
+          "titleData": {
+            "title": "Las posturas adecuadas para la oración y la siesta",
+            "typeLabel": "Seccion",
+            "contentNumber": 3,
+            "romanNumeral": "III"
+          },
+          "pathID": "4__m.2",
+          "semanticPath": "parte-4/seccion-3",
+          "url": "/parte-4/seccion-3",
+          "firstParagraphNumber": 153,
+          "lastParagraphNumber": 186,
+          "children": [
+            {
+              "contentType": "ARTICLE",
+              "titleData": {
+                "title": "La naturaleza de la fe",
+                "typeLabel": "Articulo",
+                "contentNumber": 1,
+                "romanNumeral": "I"
+              },
+              "pathID": "4__m.2__m.0",
+              "semanticPath": "parte-4/seccion-3/articulo-1",
+              "url": "/parte-4/seccion-3#articulo-1",
+              "firstParagraphNumber": 154,
+              "lastParagraphNumber": 168,
+              "children": [
+                {
+                  "contentType": "ARTICLE_PARAGRAPH",
+                  "titleData": {
+                    "title": "Aristóteles redactando el primer tablón de anuncios",
+                    "typeLabel": "Articulo Parrafo",
+                    "contentNumber": 1,
+                    "romanNumeral": "I"
+                  },
+                  "pathID": "4__m.2__m.0__m.0",
+                  "semanticPath": "parte-4/seccion-3/articulo-1/articulo-parrafo-1",
+                  "url": "/parte-4/seccion-3#articulo-1/articulo-parrafo-1",
+                  "firstParagraphNumber": 154,
+                  "lastParagraphNumber": 159,
+                  "children": [
+                    {
+                      "contentType": "SUB_ARTICLE",
+                      "titleData": {
+                        "title": "La carga de la libertad: elegir entre ensalada o papas fritas",
+                        "typeLabel": "Subartículo",
+                        "contentNumber": 1,
+                        "romanNumeral": "I"
+                      },
+                      "pathID": "4__m.2__m.0__m.0__m.0",
+                      "semanticPath": "parte-4/seccion-3/articulo-1/articulo-parrafo-1/subartículo-1",
+                      "url": "/parte-4/seccion-3#articulo-1/articulo-parrafo-1/subartículo-1",
+                      "firstParagraphNumber": 154,
+                      "lastParagraphNumber": 154,
+                      "children": []
+                    },
+                    {
+                      "contentType": "SUB_ARTICLE",
+                      "titleData": {
+                        "title": "La conciencia como GPS interior",
+                        "typeLabel": "Subartículo",
+                        "contentNumber": 2,
+                        "romanNumeral": "II"
+                      },
+                      "pathID": "4__m.2__m.0__m.0__m.1",
+                      "semanticPath": "parte-4/seccion-3/articulo-1/articulo-parrafo-1/subartículo-2",
+                      "url": "/parte-4/seccion-3#articulo-1/articulo-parrafo-1/subartículo-2",
+                      "firstParagraphNumber": 155,
+                      "lastParagraphNumber": 158,
+                      "children": []
+                    },
+                    {
+                      "contentType": "IN_BRIEF",
+                      "titleData": {
+                        "title": "Resumen",
+                        "typeLabel": "Resumen",
+                        "contentNumber": null,
+                        "romanNumeral": null
+                      },
+                      "pathID": "4__m.2__m.0__m.0__i",
+                      "semanticPath": "parte-4/seccion-3/articulo-1/articulo-parrafo-1/resumen",
+                      "url": "/parte-4/seccion-3#articulo-1/articulo-parrafo-1/resumen",
+                      "firstParagraphNumber": 159,
+                      "lastParagraphNumber": 159,
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "contentType": "ARTICLE_PARAGRAPH",
+                  "titleData": {
+                    "title": "Maratones de streaming como peregrinaciones sustitutas",
+                    "typeLabel": "Articulo Parrafo",
+                    "contentNumber": 2,
+                    "romanNumeral": "II"
+                  },
+                  "pathID": "4__m.2__m.0__m.1",
+                  "semanticPath": "parte-4/seccion-3/articulo-1/articulo-parrafo-2",
+                  "url": "/parte-4/seccion-3/articulo-1/articulo-parrafo-2",
+                  "firstParagraphNumber": 160,
+                  "lastParagraphNumber": 164,
+                  "children": [
+                    {
+                      "contentType": "SUB_ARTICLE",
+                      "titleData": {
+                        "title": "Aprender de los errores, preferentemente antes del segundo postre",
+                        "typeLabel": "Subartículo",
+                        "contentNumber": 1,
+                        "romanNumeral": "I"
+                      },
+                      "pathID": "4__m.2__m.0__m.1__m.0",
+                      "semanticPath": "parte-4/seccion-3/articulo-1/articulo-parrafo-2/subartículo-1",
+                      "url": "/parte-4/seccion-3/articulo-1/articulo-parrafo-2#subartículo-1",
+                      "firstParagraphNumber": 160,
+                      "lastParagraphNumber": 162,
+                      "children": []
+                    },
+                    {
+                      "contentType": "IN_BRIEF",
+                      "titleData": {
+                        "title": "Resumen",
+                        "typeLabel": "Resumen",
+                        "contentNumber": null,
+                        "romanNumeral": null
+                      },
+                      "pathID": "4__m.2__m.0__m.1__i",
+                      "semanticPath": "parte-4/seccion-3/articulo-1/articulo-parrafo-2/resumen",
+                      "url": "/parte-4/seccion-3/articulo-1/articulo-parrafo-2#resumen",
+                      "firstParagraphNumber": 163,
+                      "lastParagraphNumber": 164,
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "contentType": "ARTICLE_PARAGRAPH",
+                  "titleData": {
+                    "title": "Compras compulsivas en sustitución de la gracia",
+                    "typeLabel": "Articulo Parrafo",
+                    "contentNumber": 3,
+                    "romanNumeral": "III"
+                  },
+                  "pathID": "4__m.2__m.0__m.2",
+                  "semanticPath": "parte-4/seccion-3/articulo-1/articulo-parrafo-3",
+                  "url": "/parte-4/seccion-3/articulo-1/articulo-parrafo-3",
+                  "firstParagraphNumber": 165,
+                  "lastParagraphNumber": 168,
+                  "children": [
+                    {
+                      "contentType": "SUB_ARTICLE",
+                      "titleData": {
+                        "title": "Café como el primer sacramento religioso de la mañana",
+                        "typeLabel": "Subartículo",
+                        "contentNumber": 1,
+                        "romanNumeral": "I"
+                      },
+                      "pathID": "4__m.2__m.0__m.2__m.0",
+                      "semanticPath": "parte-4/seccion-3/articulo-1/articulo-parrafo-3/subartículo-1",
+                      "url": "/parte-4/seccion-3/articulo-1/articulo-parrafo-3#subartículo-1",
+                      "firstParagraphNumber": 165,
+                      "lastParagraphNumber": 167,
+                      "children": []
+                    },
+                    {
+                      "contentType": "IN_BRIEF",
+                      "titleData": {
+                        "title": "Resumen",
+                        "typeLabel": "Resumen",
+                        "contentNumber": null,
+                        "romanNumeral": null
+                      },
+                      "pathID": "4__m.2__m.0__m.2__i",
+                      "semanticPath": "parte-4/seccion-3/articulo-1/articulo-parrafo-3/resumen",
+                      "url": "/parte-4/seccion-3/articulo-1/articulo-parrafo-3#resumen",
+                      "firstParagraphNumber": 168,
+                      "lastParagraphNumber": 168,
+                      "children": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "contentType": "ARTICLE",
+              "titleData": {
+                "title": "Duda y pérdida de señal",
+                "typeLabel": "Articulo",
+                "contentNumber": 2,
+                "romanNumeral": "II"
+              },
+              "pathID": "4__m.2__m.1",
+              "semanticPath": "parte-4/seccion-3/articulo-2",
+              "url": "/parte-4/seccion-3/articulo-2",
+              "firstParagraphNumber": 169,
+              "lastParagraphNumber": 176,
+              "children": [
+                {
+                  "contentType": "SUB_ARTICLE",
+                  "titleData": {
+                    "title": "Acciones de papel y eternidad",
+                    "typeLabel": "Subartículo",
+                    "contentNumber": 1,
+                    "romanNumeral": "I"
+                  },
+                  "pathID": "4__m.2__m.1__m.0",
+                  "semanticPath": "parte-4/seccion-3/articulo-2/subartículo-1",
+                  "url": "/parte-4/seccion-3/articulo-2#subartículo-1",
+                  "firstParagraphNumber": 169,
+                  "lastParagraphNumber": 170,
+                  "children": []
+                },
+                {
+                  "contentType": "SUB_ARTICLE",
+                  "titleData": {
+                    "title": "Encuadernación como metáfora de la salvación",
+                    "typeLabel": "Subartículo",
+                    "contentNumber": 2,
+                    "romanNumeral": "II"
+                  },
+                  "pathID": "4__m.2__m.1__m.1",
+                  "semanticPath": "parte-4/seccion-3/articulo-2/subartículo-2",
+                  "url": "/parte-4/seccion-3/articulo-2#subartículo-2",
+                  "firstParagraphNumber": 171,
+                  "lastParagraphNumber": 172,
+                  "children": []
+                },
+                {
+                  "contentType": "IN_BRIEF",
+                  "titleData": {
+                    "title": "Resumen",
+                    "typeLabel": "Resumen",
+                    "contentNumber": null,
+                    "romanNumeral": null
+                  },
+                  "pathID": "4__m.2__m.1__i",
+                  "semanticPath": "parte-4/seccion-3/articulo-2/resumen",
+                  "url": "/parte-4/seccion-3/articulo-2#resumen",
+                  "firstParagraphNumber": 173,
+                  "lastParagraphNumber": 176,
+                  "children": []
+                }
+              ]
+            },
+            {
+              "contentType": "ARTICLE",
+              "titleData": {
+                "title": "Esperanza en planes de datos ilimitados",
+                "typeLabel": "Articulo",
+                "contentNumber": 3,
+                "romanNumeral": "III"
+              },
+              "pathID": "4__m.2__m.2",
+              "semanticPath": "parte-4/seccion-3/articulo-3",
+              "url": "/parte-4/seccion-3/articulo-3",
+              "firstParagraphNumber": 177,
+              "lastParagraphNumber": 186,
+              "children": [
+                {
+                  "contentType": "IN_BRIEF",
+                  "titleData": {
+                    "title": "Resumen",
+                    "typeLabel": "Resumen",
+                    "contentNumber": null,
+                    "romanNumeral": null
+                  },
+                  "pathID": "4__m.2__m.2__i",
+                  "semanticPath": "parte-4/seccion-3/articulo-3/resumen",
+                  "url": "/parte-4/seccion-3/articulo-3#resumen",
+                  "firstParagraphNumber": 183,
+                  "lastParagraphNumber": 186,
+                  "children": []
                 }
               ]
             }

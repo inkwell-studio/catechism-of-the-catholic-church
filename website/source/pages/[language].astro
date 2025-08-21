@@ -1,6 +1,6 @@
 ---
 import Home from '@components/home/home.astro';
-import ContentLayout from '@layouts/content-layout.astro';
+import BaseLayout from '@layouts/base-layout.astro';
 
 import { ContentRoute, getHomePageRoutes } from '@pages/_routes';
 
@@ -11,6 +11,6 @@ export function getStaticPaths(): Array<ContentRoute> {
 const language = Astro.params.language;
 ---
 
-<ContentLayout {language}>
+<BaseLayout {language}>
     <Home {language} />
-</ContentLayout>
+</BaseLayout>
