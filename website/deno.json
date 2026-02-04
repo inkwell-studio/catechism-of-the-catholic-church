@@ -1,8 +1,6 @@
 {
     "tasks": {
         "disable-telemetry": "astro telemetry disable",
-        "astro-dev-toolbar-disable": "astro preferences disable devToolbar",
-        "astro-dev-toolbar-enable": "astro preferences enable devToolbar",
 
         "lint": "deno lint",
         "format": "deno fmt",

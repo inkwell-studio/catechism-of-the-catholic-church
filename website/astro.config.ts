@@ -40,6 +40,10 @@ export default defineConfig({
     experimental: {
         preserveScriptOrder: true,
     },
+
+    devToolbar: {
+        enabled: false,
+    },
 });
 
 function buildSitemapConfig() {
