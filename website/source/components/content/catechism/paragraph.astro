@@ -31,23 +31,20 @@ const firstChildIsTextBlock = isTextBlock(childContent[0]);
         childContent.map((c, index) => {
             if (isParagraphSubitemContainer(c)) {
                 return (
-            <ParagraphSubitemContainer paragraphSubitemContainer={c} {language} />
+            <ParagraphSubitemContainer
+                paragraphSubitemContainer={c}
+                {language}
+            />
         );
-            } else if (isTextHeading(c)) {
-                return (
-            <TextHeading textHeading={c} />
-        );
-            } else if (isTextBlock(c)) {
-                return (
-            <TextBlock textBlock={c} {language} paragraphNumber={index === 0 ? paragraph.paragraphNumber : undefined} />
-        );
-            } else if (isBlockQuote(c)) {
-                return (
-            <BlockQuote blockQuote={c} {language} />
-        );
-            }
+        } else if (isTextHeading(c)) {
+            return <TextHeading textHeading={c} />;
+        } else if (isTextBlock(c)) {
+            return <TextBlock textBlock={c} {language} paragraphNumber={index === 0 ? paragraph.paragraphNumber : undefined} />;
+        } else if (isBlockQuote(c)) {
+            return <BlockQuote blockQuote={c} {language} />;
+        }
 
-            return <UnknownContent content={c} />;
+        return <UnknownContent content={c} />;
         })
     }
 </div>

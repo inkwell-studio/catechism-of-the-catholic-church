@@ -68,7 +68,7 @@ const languagesAndUrls = getLanguages()
             <li>
                 {
                     language === currentLanguage &&
-                (
+    (
                         <span
                             class="flex justify-center items-center gap-2 min-h-12 bg-gray-50 text-stone-500 rounded cursor-default dark:bg-zinc-750 dark:text-zinc-400"
                         >
@@ -82,7 +82,7 @@ const languagesAndUrls = getLanguages()
                 }
                 {
                     language !== currentLanguage &&
-                (
+    (
                         <PrefetchOnMouseover {url}>
                             <a
                                 href={url}

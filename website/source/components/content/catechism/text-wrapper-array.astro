@@ -24,8 +24,8 @@ const { content, language } = Astro.props;
             {spacer}<TextWrapper textWrapper={c} {language} />
         </>
     );
-        } else {
-            return <ContentBase content={c} {language} />;
+    } else {
+        return <ContentBase content={c} {language} />;
         }
     })
 }

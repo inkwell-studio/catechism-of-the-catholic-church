@@ -106,23 +106,7 @@
       issue, and the workaround of adding `source/css/colors.css`, and having
       the Deno formatter exclude that file from formatting)
 
-- [ ] upgrade to lastest version of Deno
-  - [ ] determine if `tsconfig.json` usage can be simplified
-        (https://deno.com/blog/v2.4#better-tsconfigjson-support)
-
 - [ ] consider/try centralizing UI logic via an NgRx-like paradigm
-
-- [ ] upgrade to Astro 5.7 (or latest?)
-  - [ ] add the `experimental: preserveScriptOrder` flag (with a value of
-        `true`), and make any necessary changes
-    - see https://astro.build/blog/astro-550/#type-safe-experimental-sessions
-      (Experimental: preserve order of style and script tags)
-  - [ ] use the `astro:config` virtual module (e.g.
-        `import { trailingSlash, base } from 'astro:config/client';`):
-    - [ ] use this instead of the `website/config.ts` import in `robots.txt.ts`
-    - [ ] remove `website/config.ts`
-    - see https://astro.build/blog/astro-570/ (Config Imports)
-- [ ] merge
 
 - [ ] consider "vendoring" dependencies
 

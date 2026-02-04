@@ -36,6 +36,10 @@ export default defineConfig({
             allowedHosts: ['.lhr.life'],
         },
     },
+
+    experimental: {
+        preserveScriptOrder: true,
+    },
 });
 
 function buildSitemapConfig() {

@@ -74,7 +74,7 @@ Packages are managed with both `deno.json` and `package.json`. Deno will modify 
 
 `package.json` is used only for tracking npm packages.
 
-To format all code, and to lint and typecheck all `*.astro`, `*.ts`, and `*.tsx` files, execute `deno task check-code`.
+To format all code, and to lint and typecheck all `*.astro` and `*.ts` files, execute `deno task check-code`.
 
 ### Why are `deno.json` and `package.json` both used?
 
