@@ -185,3 +185,4 @@
 # Tasks to complete once it has been decided to release a production-ready version
 
 - [ ] ensure all translations in are correct
+- [ ] update `robots.txt` to allow indexing
