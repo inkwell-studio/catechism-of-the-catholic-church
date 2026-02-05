@@ -1,6 +1,6 @@
 @import 'tailwindcss';
 
-/* The class referenced here must match the value of the `DARK_MODE_CLASS_TAILWIND` constant in `source/logic/theme.ts` */
+/* The class referenced here must match the value of the `DARK_MODE_CLASS` constant in `source/logic/theme.ts` */
 @custom-variant dark (&:where(.dark, .dark *));
 
 /* The class referenced here must match that specified by the `UiClass.HIDE_CROSS_REFERENCES` value in `source/logic/ui.ts` */
