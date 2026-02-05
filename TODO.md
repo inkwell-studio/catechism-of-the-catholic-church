@@ -7,6 +7,9 @@
 
 - [ ] fix cross-reference: footnote z-index problem
 
+- [ ] use the `before/after/Each/All` test utilities
+      (https://docs.deno.com/api/deno/~/Deno.DenoTest)
+
 - [ ] consider how to make cross-reference and footnote nature and functionality
       clearer
   - [ ] consider using "picture instructions" like those on esv.org
