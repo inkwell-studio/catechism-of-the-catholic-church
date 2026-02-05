@@ -1,6 +1,6 @@
 # Development Instructions
 
-For helpful extensions Visual Studio Code extensions, see `.vscode/extensions.json`.
+For helpful Visual Studio Code extensions, see `.vscode/extensions.json`.
 
 ## Setup
 

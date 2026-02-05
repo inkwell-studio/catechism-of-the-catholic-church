@@ -1,5 +1,7 @@
 # Tasks to complete now
 
+- [ ] copy updates made to the Deno & Astro Template repository
+
 - [ ] add a note to the mechanism for avoiding the backward-infinite-scroll bug
       (`website/source/logic/navigation-utils.ts::preventInfiniteBackwardScrollBug`)
       (note that this doesn't seem to work on mobile devices)
