@@ -100,6 +100,7 @@
 
     @font-face {
         font-family: 'Aleo';
+        font-display: swap;
         src:
             local('Aleo'),
             url(/fonts/Aleo-VariableFont_wght.ttf) format('truetype');
@@ -107,6 +108,7 @@
 
     @font-face {
         font-family: 'Crimson Pro';
+        font-display: swap;
         src:
             local('Crimson Pro'),
             url(/fonts/CrimsonPro-VariableFont_wght.ttf) format('truetype');
@@ -115,6 +117,7 @@
     @font-face {
         font-family: 'Crimson Pro';
         font-style: italic;
+        font-display: swap;
         src:
             local('Crimson Pro Italic'),
             url(/fonts/CrimsonPro-Italic-VariableFont_wght.ttf) format('truetype');
@@ -123,6 +126,7 @@
     @font-face {
         font-family: 'PTSans';
         font-weight: 400;
+        font-display: swap;
         src:
             local('PT Sans'),
             url(/fonts/PTSans-Regular.ttf) format('truetype');
@@ -132,6 +136,7 @@
         font-family: 'PTSans';
         font-weight: 400;
         font-style: italic;
+        font-display: swap;
         src:
             local('PT Sans Italic'),
             url(/fonts/PTSans-Italic.ttf) format('truetype');
@@ -140,6 +145,7 @@
     @font-face {
         font-family: 'PTSans';
         font-weight: 700;
+        font-display: swap;
         src:
             local('PT Sans Bold'),
             url(/fonts/PTSans-Bold.ttf) format('truetype');
@@ -149,6 +155,7 @@
         font-family: 'PTSans';
         font-weight: 700;
         font-style: italic;
+        font-display: swap;
         src:
             local('PT Sans Bold Italic'),
             url(/fonts/PTSans-BoldItalic.ttf) format('truetype');
