@@ -66,9 +66,10 @@
     --tailwind-default-font-serif: ui-serif, Georgia, Cambria, 'Times New Roman', Times, serif;
     --tailwind-default-font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
 
-    --font-sans: PTSans, var(--tailwind-default-font-sans);
-    --font-serif: 'Crimson Pro', var(--tailwind-default-font-serif);
-    --font-title: 'Aleo', var(--tailwind-default-font-serif);
+    /* For an unknown reason, the `local()` fonts used by the custom `@font-face` fonts are not used if the corresponding font family is the first value in these lists */
+    --font-sans: dummyValue, PTSans, var(--tailwind-default-font-sans);
+    --font-serif: dummyValue, 'Crimson Pro', var(--tailwind-default-font-serif);
+    --font-title: dummyValue, 'Aleo', var(--tailwind-default-font-serif);
 
     /* The standard amount of horizontal spacing that should exist around text */
     --spacing-text: 1.75rem;
