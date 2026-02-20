@@ -102,7 +102,8 @@
         font-family: 'Aleo';
         font-display: swap;
         src:
-            local('Aleo'),
+            local('Aleo Regular Regular'),
+            local('Aleo-Regular'),
             url(/fonts/Aleo-VariableFont_wght.ttf) format('truetype');
     }
 
@@ -110,7 +111,8 @@
         font-family: 'Crimson Pro';
         font-display: swap;
         src:
-            local('Crimson Pro'),
+            local('Crimson Pro Regular Regular'),
+            local('CrimsonPro-Regular'),
             url(/fonts/CrimsonPro-VariableFont_wght.ttf) format('truetype');
     }
 
@@ -119,7 +121,8 @@
         font-style: italic;
         font-display: swap;
         src:
-            local('Crimson Pro Italic'),
+            local('Crimson Pro Italic Italic'),
+            local('CrimsonPro-Italic'),
             url(/fonts/CrimsonPro-Italic-VariableFont_wght.ttf) format('truetype');
     }
 
@@ -129,6 +132,7 @@
         font-display: swap;
         src:
             local('PT Sans'),
+            local('PTSans-Regular'),
             url(/fonts/PTSans-Regular.ttf) format('truetype');
     }
 
@@ -139,6 +143,7 @@
         font-display: swap;
         src:
             local('PT Sans Italic'),
+            local('PTSans-Italic'),
             url(/fonts/PTSans-Italic.ttf) format('truetype');
     }
 
@@ -148,6 +153,7 @@
         font-display: swap;
         src:
             local('PT Sans Bold'),
+            local('PTSans-Bold'),
             url(/fonts/PTSans-Bold.ttf) format('truetype');
     }
 
@@ -158,6 +164,7 @@
         font-display: swap;
         src:
             local('PT Sans Bold Italic'),
+            local('PTSans-BoldItalic'),
             url(/fonts/PTSans-BoldItalic.ttf) format('truetype');
     }
 }

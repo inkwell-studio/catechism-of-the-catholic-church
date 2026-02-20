@@ -52,7 +52,8 @@
 - [ ] have the toolbar change color to match the table-of-contents when it is
       open
 
-- [ ] thoroughly investigate if fonts are properly configured
+- [ ] thoroughly investigate if fonts are properly configured (especially
+      Crimson Pro)
 
 - [ ] consider upgrading Astro to 5.12.8 for risk mitigation
 
