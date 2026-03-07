@@ -104,6 +104,8 @@ See `.github/workflows/deploy.yml`.
 
 ## Using JSR packages
 
+_This process is based on Deno 2.6, and may be able to be simplified as of Deno 2.7._
+
 Packages from [jsr.io](https://jsr.io/) may be used in Astro components by manually adding them to `package.json` and then executing
 `deno install`.
 
