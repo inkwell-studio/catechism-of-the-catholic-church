@@ -119,6 +119,21 @@
 
 ## Unprioritized
 
+- [ ] consider these paragraphs with special formatting needs: is there any more
+      work required to accommodate them?
+  - [ ] 421
+  - [ ] 1061
+  - [ ] 117
+  - [ ] 576
+  - [ ] 2096
+  - [ ] 2173-2174
+  - [ ] 2195-2196
+  - [ ] 2141-2142
+  - [ ] 2167-2168
+  - [ ] 2558
+  - [ ] 1076
+  - [ ] 2075 (an optional `In Brief`)
+
 - [ ] determine long-term "technical debt"/"technical health" tasks, such as:
   - [ ] centralizing the logic UI
   - [ ] polishing the UI (animations, consistent styling, etc.)
@@ -130,12 +145,12 @@
   - Puppeteer: https://github.com/puppeteer/puppeteer
 
 - [ ] add a 500 page
-- [ ] consider addding a concordance
+- [ ] consider adding a concordance
 - [ ] populate the index pages
 - [ ] simplify the favicon fileset:
       https://evilmartians.com/chronicles/how-to-favicon-in-2021-six-files-that-fit-most-needs
 - [ ] consider improving artifact management
-  - should artifacts not be commited, and instead be built during deployment?
+  - should artifacts not be committed, and instead be built during deployment?
 - [ ] add e2e UI tests to validate links
 - [ ] add JSON validation for `catechism.json`
 - [ ] add an indicator in the main content text on words that are in the
@@ -167,7 +182,7 @@
     - infinite scrolling is useful (even if it were limited to "big chunks",
       such as a book) (likes this better than "flipping pages")
   - [ ] Ascension App (should be re-examined)
-  - [ ] accomodate Forced Colors mode (see Polypane blog)
+  - [ ] accommodate Forced Colors mode (see Polypane blog)
 - [ ] navigation bar
   - [ ] "progress bar" functionality, as thought of by William
 - [ ] handle RTL languages
@@ -179,7 +194,7 @@
 - [ ] note-taking and highlighting
   - [ ] permanent and temporary storage (easily toggleable)
 - [ ] narration
-  - [ ] recordered audio (better than a screen reader)
+  - [ ] recorded audio (better than a screen reader)
   - [ ] text is highlighted to follow along (toggleable)
 
 # Tasks to complete once it has been decided to release a production-ready version
