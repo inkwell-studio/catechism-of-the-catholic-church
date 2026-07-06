@@ -1,5 +1,15 @@
 # Tasks to complete now
 
+- [ ] determine if any changes need to be made to accommodate upgrading Deno
+  - https://deno.com/blog/v2.7#jsr-scheme-support-in-packagejson
+    - update `website/DEVELOPMENT.md` if necessary
+  - https://deno.com/blog/v2.8#settimeout-and-setinterval
+  - https://deno.com/blog/v2.9#prefer-packagejson
+  - https://deno.com/blog/v2.9#jsr-dependencies-in-node_modules
+
+- [ ] fix the in-editor formatting functionality of `.astro` files
+  - consider re-adding to `deno.json`: `"unstable": ["fmt-component"]`
+
 - [ ] copy updates made to the Deno & Astro Template repository
 
 - [ ] add a note to the mechanism for avoiding the backward-infinite-scroll bug
